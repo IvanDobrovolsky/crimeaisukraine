@@ -10,11 +10,11 @@ We audited **121 digital platforms** across 12 categories. Crimea is internation
 
 | Metric | Value |
 |--------|-------|
-| Platforms audited | **180** |
-| Correct (Ukraine) | **47** |
-| Incorrect (Russia) | **21** |
-| Ambiguous | **75** |
-| Blocked (sanctions) | **29** |
+| Platforms audited | **200** |
+| Correct (Ukraine) | **73** |
+| Incorrect (Russia) | **25** |
+| Ambiguous | **83** |
+| Blocked | **11** |
 | npm downloads affected | **30.4M/week** |
 | Natural Earth open issues | **33** |
 | GDELT articles analyzed | **2,485** |
