@@ -1458,28 +1458,100 @@
       "evidence": "",
       "notes": "",
       "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Google Search (knowledge panel)",
+      "category": "search_engine",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "Searched 'Crimea' on Google. Knowledge panel country: None. Screenshot saved.",
+      "url": "https://www.google.com/search?q=Crimea",
+      "evidence": "country=None",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Bing Search (knowledge panel)",
+      "category": "search_engine",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "Searched 'Crimea' on Bing. Knowledge panel: both_mentioned. Screenshot saved.",
+      "url": "https://www.bing.com/search?q=Crimea",
+      "evidence": "country=both_mentioned",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "DuckDuckGo (info box)",
+      "category": "search_engine",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "Searched 'Crimea' on DuckDuckGo. Info box: unclear. Screenshot saved.",
+      "url": "https://duckduckgo.com/?q=Crimea",
+      "evidence": "country=unclear",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "TripAdvisor (browser check)",
+      "category": "travel",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "TripAdvisor Crimea page — country unclear. Screenshot saved.",
+      "url": "https://www.tripadvisor.com/Tourism-g313972-Crimea-Vacations.html",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Booking.com (browser check)",
+      "category": "travel",
+      "status": "blocked",
+      "status_icon": "🚫",
+      "method": "automated_api",
+      "detail": "Booking.com returns no results for Simferopol (sanctions). Screenshot saved.",
+      "url": "https://www.booking.com/searchresults.html?ss=Simferopol",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "weather.com (browser verified)",
+      "category": "weather",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "weather.com timeout or blocked: Page.goto: Navigation to \"https://weather.com/weather/today/l/Simferopol+Ukraine\" is interrupted by another navigation to \"https://www.google.com/maps/place/Crimea/\"\nCall log:\n  - navigating to \"https://weather.com/weather/today/l/Simferopol+Ukraine\", waiting until \"domcontentloaded\"\n. Screenshot saved.",
+      "url": "https://weather.com/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
     }
   ],
   "summary": {
-    "total_platforms": 121,
+    "total_platforms": 127,
     "by_status": {
       "n/a": 7,
       "incorrect": 20,
-      "ambiguous": 48,
+      "ambiguous": 53,
       "correct": 35,
-      "blocked": 11
+      "blocked": 12
     },
     "by_category": {
       "open_source": 13,
       "data_visualization": 18,
       "ip_geolocation": 5,
       "reference": 18,
-      "search_engine": 3,
-      "travel": 8,
+      "search_engine": 6,
+      "travel": 10,
       "gaming": 4,
       "tech_infrastructure": 21,
       "map_service": 11,
-      "weather": 10,
+      "weather": 11,
       "social_media": 5,
       "sports": 5
     },
