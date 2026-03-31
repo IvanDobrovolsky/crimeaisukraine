@@ -2358,15 +2358,63 @@
       "evidence": "",
       "notes": "Most comprehensive physical map audit. This project extends it to digital platforms.",
       "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Zoom",
+      "category": "tech_infrastructure",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "manual",
+      "detail": "Stopped selling to Russia/Belarus April 2022. Crimea included. Free accounts still work but no paid services.",
+      "url": "https://zoom.us/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Canva",
+      "category": "tech_infrastructure",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "manual",
+      "detail": "Australian design platform. Suspended premium services in Russia March 2022. Crimea included.",
+      "url": "https://www.canva.com/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Figma",
+      "category": "tech_infrastructure",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "manual",
+      "detail": "Blocked Russian accounts March 2022. Adobe subsidiary. Crimea included in restrictions.",
+      "url": "https://www.figma.com/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "GitHub",
+      "category": "tech_infrastructure",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "manual",
+      "detail": "Microsoft-owned. Restricted some Russian enterprise accounts but free tier remains available. Crimea access depends on IP routing. Hosts Natural Earth repo (the root cause).",
+      "url": "https://github.com/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
     }
   ],
   "summary": {
-    "total_platforms": 196,
+    "total_platforms": 200,
     "by_status": {
       "n/a": 8,
       "incorrect": 25,
-      "ambiguous": 82,
-      "correct": 70,
+      "ambiguous": 83,
+      "correct": 73,
       "blocked": 11
     },
     "by_category": {
@@ -2377,7 +2425,7 @@
       "search_engine": 6,
       "travel": 11,
       "gaming": 4,
-      "tech_infrastructure": 46,
+      "tech_infrastructure": 50,
       "map_service": 18,
       "weather": 12,
       "social_media": 11,
