@@ -1050,14 +1050,38 @@
       "evidence": "CSV: country_iso=UA, region=UA-43, ident=UKFF, alt=URFF",
       "notes": "",
       "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Domain TLD (.ru/.ua)",
+      "category": "tech_infrastructure",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "crimea.ru resolves (78.110.50.145). crimea.ua resolves (5.9.228.67). Both ccTLDs are active for Crimea-related domains. simferopol.ru resolves; simferopol.ua does not. Russian registrars readily serve Crimean entities; Ukrainian .ua registration requires Ukrainian legal entity status, effectively excluding occupied territory.",
+      "url": "https://www.iana.org/domains/root/db",
+      "evidence": "crimea.ru=78.110.50.145, crimea.ua=5.9.228.67, simferopol.ua=NXDOMAIN",
+      "notes": "The asymmetry (simferopol.ru works, simferopol.ua does not) reflects operational control vs legal sovereignty.",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Cloudflare CDN",
+      "category": "tech_infrastructure",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "manual",
+      "detail": "No Cloudflare POP in Simferopol/Crimea. Crimean traffic routes to nearest POP — likely Kyiv (Ukraine-connected ISPs) or Moscow/Krasnodar (Russian-connected ISPs). CDN routing follows BGP paths, not country assignment. Sanctions may restrict CF services to Crimea.",
+      "url": "https://www.cloudflare.com/network/",
+      "evidence": "",
+      "notes": "Needs verification with actual traceroute from Crimean IP.",
+      "date_checked": "2026-03-31"
     }
   ],
   "summary": {
-    "total_platforms": 87,
+    "total_platforms": 89,
     "by_status": {
       "n/a": 7,
       "incorrect": 16,
-      "ambiguous": 37,
+      "ambiguous": 39,
       "correct": 24,
       "blocked": 3
     },
@@ -1069,7 +1093,7 @@
       "search_engine": 3,
       "travel": 8,
       "gaming": 4,
-      "tech_infrastructure": 8,
+      "tech_infrastructure": 10,
       "map_service": 7,
       "weather": 8,
       "social_media": 4
