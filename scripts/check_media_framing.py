@@ -36,7 +36,8 @@ import requests
 
 GDELT_API = "https://api.gdeltproject.org/api/v2/doc/doc"
 MAX_RECORDS = 250  # API cap per request
-REQUEST_DELAY = 1.5  # seconds between API calls to avoid 429s
+REQUEST_DELAY = 8.0  # seconds between API calls (GDELT rate limit is strict)
+MAX_RETRIES = 3      # retry on 429 with exponential backoff
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(PROJECT_ROOT, "data")
@@ -161,14 +162,24 @@ def gdelt_query(query_text: str, max_records: int = MAX_RECORDS,
     if sourcelang:
         params["query"] += f" sourcelang:{sourcelang}"
 
-    try:
-        resp = requests.get(GDELT_API, params=params, timeout=30)
-        resp.raise_for_status()
-        data = resp.json()
-        return data.get("articles", [])
-    except (requests.RequestException, json.JSONDecodeError) as exc:
-        print(f"  [WARN] API error for query '{query_text}': {exc}", file=sys.stderr)
-        return []
+    for attempt in range(MAX_RETRIES):
+        try:
+            resp = requests.get(GDELT_API, params=params, timeout=30)
+            if resp.status_code == 429:
+                wait = (attempt + 1) * 5
+                print(f"[429 rate-limit, waiting {wait}s]", end=" ", flush=True)
+                time.sleep(wait)
+                continue
+            resp.raise_for_status()
+            data = resp.json()
+            return data.get("articles", [])
+        except (requests.RequestException, json.JSONDecodeError) as exc:
+            if attempt < MAX_RETRIES - 1:
+                time.sleep((attempt + 1) * 3)
+                continue
+            print(f"  [WARN] API error for query '{query_text}': {exc}", file=sys.stderr)
+            return []
+    return []
 
 
 def get_tld(url: str) -> str:
@@ -463,7 +474,7 @@ def write_json(data: dict, stats: dict):
 def write_markdown(stats: dict):
     """Write markdown report."""
     os.makedirs(DOCS_DIR, exist_ok=True)
-    outpath = os.path.join(DOCS_DIR, "media.md")
+    outpath = os.path.join(DOCS_DIR, "media_gdelt_results.md")
 
     lines = [
         "# Media Sovereignty Framing: Crimea",

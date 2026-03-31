@@ -380,18 +380,6 @@
       "date_checked": "2026-03-31"
     },
     {
-      "platform": "DuckDuckGo",
-      "category": "search_engine",
-      "status": "ambiguous",
-      "status_icon": "⚠️",
-      "method": "manual",
-      "detail": "NEEDS MANUAL CHECK: Search 'Crimea' on DuckDuckGo. Check the instant answer box.",
-      "url": "https://duckduckgo.com/?q=Crimea",
-      "evidence": "",
-      "notes": "Placeholder — update after manual verification.",
-      "date_checked": "2026-03-31"
-    },
-    {
       "platform": "Skyscanner",
       "category": "travel",
       "status": "ambiguous",
@@ -1170,27 +1158,87 @@
       "evidence": "",
       "notes": "",
       "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Wikidata (Q7835: Crimea)",
+      "category": "reference",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "Crimea (Q7835) lists BOTH Ukraine (Q212) and Russia (Q159) as country (P17), both at \"preferred\" rank. Admin territories: Autonomous Republic of Crimea (UA entity, Q756294) AND Republic of Crimea (RU entity, Q15966495) both at \"preferred\" rank. Wikidata feeds many downstream knowledge systems.",
+      "url": "https://www.wikidata.org/wiki/Q7835",
+      "evidence": "P17: Q212 (Ukraine, preferred, from 1991), Q159 (Russia, preferred, from 2014)",
+      "notes": "Dual \"preferred\" rank = treats both claims as equally valid.",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "OSM Overpass API (admin boundaries)",
+      "category": "map_service",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_api",
+      "detail": "Autonomous Republic of Crimea: admin_level=4, ISO3166-2=UA-43, is_in:country_code=UA. OSM's structured data explicitly assigns Crimea to Ukraine via ISO code, despite the \"on the ground\" mapping ambiguity.",
+      "url": "https://wiki.openstreetmap.org/wiki/WikiProject_Crimea",
+      "evidence": "ISO3166-2=UA-43, is_in:country_code=UA, wikidata=Q756294",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "DuckDuckGo",
+      "category": "search_engine",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "Instant Answer API returns Wikipedia as source for Crimea but no country field in the structured response. Needs browser-based manual verification for knowledge panel content.",
+      "url": "https://duckduckgo.com/?q=Crimea",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Spotify",
+      "category": "tech_infrastructure",
+      "status": "blocked",
+      "status_icon": "🚫",
+      "method": "manual",
+      "detail": "Exited Russia April 2022. Crimea included in the exit. No separate Crimea region in Spotify's country list.",
+      "url": "https://www.spotify.com/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Netflix",
+      "category": "tech_infrastructure",
+      "status": "blocked",
+      "status_icon": "🚫",
+      "method": "manual",
+      "detail": "Left Russia March 2022. Crimea included in block. Content availability in Crimea depends on IP geolocation routing.",
+      "url": "https://www.netflix.com/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
     }
   ],
   "summary": {
-    "total_platforms": 97,
+    "total_platforms": 101,
     "by_status": {
       "n/a": 7,
       "incorrect": 17,
-      "ambiguous": 40,
-      "correct": 30,
-      "blocked": 3
+      "ambiguous": 41,
+      "correct": 31,
+      "blocked": 5
     },
     "by_category": {
       "open_source": 13,
       "data_visualization": 18,
       "ip_geolocation": 5,
-      "reference": 9,
+      "reference": 10,
       "search_engine": 3,
       "travel": 8,
       "gaming": 4,
-      "tech_infrastructure": 12,
-      "map_service": 10,
+      "tech_infrastructure": 14,
+      "map_service": 11,
       "weather": 10,
       "social_media": 4,
       "sports": 1
