@@ -18,27 +18,28 @@ This audit systematically examines how digital platforms, open source libraries,
 
 | Metric | Count |
 |--------|-------|
-| Platforms/services checked | 64 |
-| Correctly shows Ukraine | 19 |
-| Ambiguous/disputed/unclear | 28 |
-| Incorrectly shows Russia | 8 |
-| Blocked by sanctions | 4 |
-| Needs direct verification | 5 |
+| Platforms/services checked | **87** |
+| Correctly shows Ukraine | 24 |
+| Ambiguous/disputed/unclear | 37 |
+| Incorrectly shows Russia | 16 |
+| Blocked (sanctions) | 3 |
+| Not applicable | 7 |
 
 ### By Category
 
 | Category | Checked | Key Finding |
 |----------|---------|-------------|
-| Open source data | 9 | Natural Earth assigns Crimea to Russia at all resolutions |
-| Data visualization | 13 | 27M+ weekly downloads inherit incorrect classification |
-| Map services | 8 | Google/OSM geo-dependent; Apple correct outside Russia; Nat Geo inconsistent |
-| Travel platforms | 6 | Sanctions block bookings; TripAdvisor lists Crimea without country |
-| Social media | 4 | Instagram allows both "Russia" and "Ukraine" tags for same cities |
-| Weather services | 10 | Most consistent category — all verified services show Ukraine |
-| IP geolocation | 3 | Mixed — depends on ISP registration, not centralized policy |
-| Reference (Wikipedia) | 4 | German/Spanish correct; English/French ambiguous; Italian concerning |
-| Gaming | 4 | Needs manual verification |
-| Search engines | 3 | Needs manual verification |
+| Data visualization | 18 | 30M+ weekly npm downloads inherit NE's incorrect classification |
+| Open source data | 13 | Natural Earth root cause: SOVEREIGNT=Russia, SOV_A3=RUS |
+| Reference | 9 | CIA Factbook, GeoNames correct; Wikipedia varies by language |
+| Travel platforms | 8 | Sanctions block bookings; TripAdvisor avoids country label |
+| Tech infrastructure | 8 | IANA tzdata RU,UA; libphonenumber dual; postal codes RU |
+| Weather services | 8 | Gold standard -- all 8 show Ukraine |
+| Map services | 7 | Apple best (correct since 2022); Google "disputed"; OSM dual |
+| IP geolocation | 5 | MaxMind correct; ip-api mixed by ISP registration origin |
+| Social media | 4 | Instagram dual tags; TikTok fixed region; FB/X need verification |
+| Gaming | 4 | Steam/Epic block via sanctions |
+| Search engines | 3 | Need manual VPN-based verification |
 
 ---
 
