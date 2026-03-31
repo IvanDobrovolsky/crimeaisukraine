@@ -33,20 +33,7 @@ const categoryOrder = [
 const statusOrder = { correct: 0, incorrect: 1, ambiguous: 2, blocked: 3, 'n/a': 4 } as Record<string, number>;
 const sortByStatus = (a: any, b: any) => (statusOrder[a.status] ?? 5) - (statusOrder[b.status] ?? 5);
 
-const categoryLabels = {
-  data_visualization: 'Data Visualization',
-  open_source: 'Open Source Data',
-  map_service: 'Map Services',
-  tech_infrastructure: 'Tech Infrastructure',
-  weather: 'Weather Services',
-  reference: 'Reference',
-  travel: 'Travel Platforms',
-  ip_geolocation: 'IP Geolocation',
-  social_media: 'Social Media',
-  gaming: 'Gaming',
-  search_engine: 'Search Engines',
-  sports: 'Sports',
-};
+const categoryLabels = t.categories;
 
 // Chart percentages
 const pCorrect = Math.round(correct / total * 100);
@@ -317,9 +304,9 @@ const propagation = [
         <table class="w-full text-sm">
           <thead>
             <tr class="text-left text-[#64748b] border-b border-[#1e293b]">
-              <th class="py-2 px-3 w-8"></th>
-              <th class="py-2 px-3">Platform</th>
-              <th class="py-2 px-3 hidden md:table-cell">Detail</th>
+              <th class="py-2 px-3 w-8">{t.colStatus}</th>
+              <th class="py-2 px-3">{t.colPlatform}</th>
+              <th class="py-2 px-3 hidden md:table-cell">{t.colDetail}</th>
             </tr>
           </thead>
           <tbody>
