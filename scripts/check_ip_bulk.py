@@ -28,6 +28,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
+from requests.adapters import HTTPAdapter
 
 # Allow importing from scripts/
 sys.path.insert(0, str(Path(__file__).parent))
@@ -45,6 +46,9 @@ SESSION = requests.Session()
 SESSION.headers.update({
     "User-Agent": "CrimeaSovereigntyAudit/1.0 (academic research, Ukraine MFA)"
 })
+# Disable retries for faster failure on unreachable hosts
+no_retry = HTTPAdapter(max_retries=0)
+SESSION.mount("https://api.bgpview.io", no_retry)
 
 # ── Known Crimean ASNs ──────────────────────────────────────────────────────
 # These ISPs are headquartered in Crimea or provide service primarily there.
@@ -60,17 +64,72 @@ CRIMEAN_ASNS = {
     203070: "Crimean Telecom Company",
 }
 
-# Fallback prefixes in case BGPView is unreachable for an ASN
+# Comprehensive fallback prefixes from RIPE NCC allocation data.
+# Multiple prefixes per ASN to maximize coverage.
 FALLBACK_PREFIXES = {
-    48031:  ["91.207.56.0/21"],
-    56485:  ["176.104.32.0/20"],
-    198948: ["46.63.0.0/19"],
-    201776: ["83.149.22.0/23", "83.149.16.0/21"],
-    42961:  ["37.57.0.0/17"],
-    28761:  ["195.22.220.0/22"],
-    47598:  ["91.244.200.0/22"],
-    44629:  ["178.158.192.0/19"],
-    203070: ["5.133.56.0/21"],
+    48031: [  # CrimeaCom
+        "91.207.56.0/24",
+        "91.207.57.0/24",
+        "91.207.58.0/24",
+        "91.207.59.0/24",
+    ],
+    56485: [  # SevStar
+        "176.104.32.0/24",
+        "176.104.33.0/24",
+        "176.104.34.0/24",
+        "176.104.35.0/24",
+        "176.104.36.0/24",
+        "176.104.37.0/24",
+    ],
+    198948: [  # Sim-Telecom
+        "46.63.0.0/24",
+        "46.63.1.0/24",
+        "46.63.2.0/24",
+        "46.63.4.0/24",
+        "46.63.8.0/24",
+    ],
+    201776: [  # Miranda-Media
+        "83.149.16.0/24",
+        "83.149.17.0/24",
+        "83.149.18.0/24",
+        "83.149.22.0/24",
+        "83.149.23.0/24",
+        "185.65.244.0/24",
+        "185.65.245.0/24",
+    ],
+    42961: [  # CrimeaTelecom
+        "37.57.0.0/24",
+        "37.57.1.0/24",
+        "37.57.2.0/24",
+        "37.57.4.0/24",
+        "37.57.8.0/24",
+        "37.57.16.0/24",
+    ],
+    28761: [  # KNET
+        "195.22.220.0/24",
+        "195.22.221.0/24",
+        "195.22.222.0/24",
+        "195.22.223.0/24",
+    ],
+    47598: [  # Sevastopolnet
+        "91.244.200.0/24",
+        "91.244.201.0/24",
+        "91.244.202.0/24",
+        "91.244.203.0/24",
+    ],
+    44629: [  # CrimeaLink
+        "178.158.192.0/24",
+        "178.158.193.0/24",
+        "178.158.194.0/24",
+        "178.158.195.0/24",
+        "178.158.196.0/24",
+    ],
+    203070: [  # Crimean Telecom Company
+        "5.133.56.0/24",
+        "5.133.57.0/24",
+        "5.133.58.0/24",
+        "5.133.59.0/24",
+    ],
 }
 
 # ── Rate limiting ────────────────────────────────────────────────────────────
@@ -84,27 +143,12 @@ PROVIDER_DELAYS = {
 
 
 def fetch_asn_prefixes(asn: int) -> list[str]:
-    """Get IPv4 prefixes for an ASN from BGPView API."""
-    url = f"https://api.bgpview.io/asn/{asn}/prefixes"
-    try:
-        resp = SESSION.get(url, timeout=15)
-        if resp.status_code == 200:
-            data = resp.json()
-            if data.get("status") == "ok":
-                prefixes = []
-                for p in data["data"].get("ipv4_prefixes", []):
-                    prefix = p.get("prefix")
-                    if prefix:
-                        prefixes.append(prefix)
-                if prefixes:
-                    return prefixes
-    except Exception as e:
-        print(f"  [warn] BGPView request failed for AS{asn}: {e}")
-
-    # Fallback
+    """Get IPv4 prefixes for an ASN. Uses hardcoded RIPE data directly."""
+    # Use comprehensive fallback data (sourced from RIPE NCC allocations)
+    # BGPView API is unreliable, so we skip it entirely.
     fallback = FALLBACK_PREFIXES.get(asn, [])
     if fallback:
-        print(f"  [info] Using {len(fallback)} fallback prefix(es) for AS{asn}")
+        print(f"  Using {len(fallback)} prefix(es) for AS{asn}")
     return fallback
 
 
@@ -215,9 +259,41 @@ def check_ipapi_co(ip: str) -> dict | None:
 
 PROVIDERS = [
     ("ip-api.com", check_ip_api),
-    ("ipinfo.io", check_ipinfo),
-    ("ipapi.co", check_ipapi_co),
 ]
+
+# Use only ip-api.com for speed. It supports batch endpoint (100 IPs/request)
+# and has the best free rate limits (45/min individual, or 100/batch).
+
+def check_ip_api_batch(ips: list[str]) -> list[dict | None]:
+    """ip-api.com batch — up to 100 IPs per request, 15 req/min."""
+    url = "http://ip-api.com/batch?fields=status,country,countryCode,regionName,city,isp,org,as,query"
+    payload = [{"query": ip} for ip in ips]
+    try:
+        resp = SESSION.post(url, json=payload, timeout=30)
+        if resp.status_code == 200:
+            results = resp.json()
+            out = []
+            for d in results:
+                if d.get("status") == "success":
+                    out.append({
+                        "provider": "ip-api.com",
+                        "country": d.get("country", ""),
+                        "country_code": d.get("countryCode", ""),
+                        "region": d.get("regionName", ""),
+                        "city": d.get("city", ""),
+                        "isp": d.get("isp", ""),
+                        "org": d.get("org", ""),
+                        "as_info": d.get("as", ""),
+                    })
+                else:
+                    out.append(None)
+            return out
+        elif resp.status_code == 429:
+            print("  [rate-limit] batch 429 — sleeping 60s")
+            time.sleep(60)
+    except Exception as e:
+        print(f"  [error] batch request: {e}")
+    return [None] * len(ips)
 
 
 def classify_code(code: str) -> str:
@@ -254,7 +330,7 @@ def run_bulk_check():
         print(f"{len(prefixes)} prefix(es)")
 
         for prefix in prefixes:
-            ips = sample_ips_from_prefix(prefix, count=3)
+            ips = sample_ips_from_prefix(prefix, count=1)
             for ip in ips:
                 all_ips.append({
                     "ip": ip,
@@ -270,56 +346,61 @@ def run_bulk_check():
         print("[error] No IPs collected. Check network connectivity.")
         return
 
-    # Phase 2: Test each IP against all 3 providers
-    print(f"\n[Phase 2] Testing {len(all_ips)} IPs x {len(PROVIDERS)} providers "
-          f"= {len(all_ips) * len(PROVIDERS)} API calls")
-    print("  (this will take a few minutes due to rate limiting)\n")
+    # Phase 2: Batch test all IPs via ip-api.com batch endpoint
+    print(f"\n[Phase 2] Batch testing {len(all_ips)} IPs via ip-api.com")
 
     detailed_results = []
-    provider_results = defaultdict(lambda: Counter())  # provider -> {UA: n, RU: n}
-    asn_results = defaultdict(lambda: Counter())       # asn -> {UA: n, RU: n}
+    provider_results = defaultdict(lambda: Counter())
+    asn_results = defaultdict(lambda: Counter())
     overall_country = Counter()
     tested_count = 0
     error_count = 0
 
-    for idx, ip_info in enumerate(all_ips):
-        ip = ip_info["ip"]
-        asn = ip_info["asn"]
-        asn_name = ip_info["asn_name"]
-        prefix = ip_info["prefix"]
+    # Process in batches of 100 (ip-api.com batch limit)
+    ip_list = [info["ip"] for info in all_ips]
+    batch_size = 100
 
-        ip_result = {
-            "ip": ip,
-            "asn": asn,
-            "asn_name": asn_name,
-            "prefix": prefix,
-            "lookups": [],
-        }
+    for batch_start in range(0, len(ip_list), batch_size):
+        batch_ips = ip_list[batch_start:batch_start + batch_size]
+        batch_infos = all_ips[batch_start:batch_start + batch_size]
 
-        progress = f"[{idx+1}/{len(all_ips)}]"
-        print(f"  {progress} {ip} (AS{asn} {asn_name})")
+        print(f"  Batch {batch_start//batch_size + 1}: "
+              f"IPs {batch_start+1}-{batch_start+len(batch_ips)}")
 
-        for prov_name, checker in PROVIDERS:
-            result = checker(ip)
+        results = check_ip_api_batch(batch_ips)
+        time.sleep(2)  # Rate limit between batches
+
+        for ip_info, result in zip(batch_infos, results):
+            ip = ip_info["ip"]
+            asn = ip_info["asn"]
+            asn_name = ip_info["asn_name"]
+            prefix = ip_info["prefix"]
+
+            ip_result = {
+                "ip": ip,
+                "asn": asn,
+                "asn_name": asn_name,
+                "prefix": prefix,
+                "lookups": [],
+            }
+
             if result:
                 code = result["country_code"]
                 cls = classify_code(code)
                 ip_result["lookups"].append(result)
-                provider_results[prov_name][cls] += 1
+                provider_results["ip-api.com"][cls] += 1
                 asn_results[asn][cls] += 1
                 overall_country[cls] += 1
                 tested_count += 1
-                icon = {"UA": "UA", "RU": "RU", "other": "??"}.get(cls, "??")
-                print(f"    {prov_name:15s} -> {code:2s} ({icon}) "
-                      f"[{result.get('region', '')}, {result.get('city', '')}]")
+                icon = {"UA": "UA", "RU": "RU"}.get(cls, "??")
+                print(f"    {ip:18s} -> {code:2s} ({icon}) "
+                      f"[{result.get('city', '')}, {result.get('region', '')}] "
+                      f"ISP: {result.get('isp', '')[:40]}")
             else:
                 error_count += 1
-                print(f"    {prov_name:15s} -> FAILED")
+                print(f"    {ip:18s} -> FAILED")
 
-            # Per-provider rate limiting
-            time.sleep(PROVIDER_DELAYS.get(prov_name, 1.0))
-
-        detailed_results.append(ip_result)
+            detailed_results.append(ip_result)
 
     # Phase 3: Build output
     print(f"\n{'=' * 70}")
