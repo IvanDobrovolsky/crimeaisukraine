@@ -2,6 +2,7 @@
 import type { Lang } from '../i18n/translations';
 import { translations } from '../i18n/translations';
 import platformsData from '../data/platforms.json';
+import findingsUk from '../data/findings_uk.json';
 
 interface Props {
   lang: Lang;
@@ -9,6 +10,9 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = translations[lang];
+
+const ukDetails = findingsUk as Record<string, string>;
+const getDetail = (f: any) => lang === 'uk' ? (ukDetails[f.platform] || f.detail) : f.detail;
 
 const findings = platformsData.findings;
 const total = findings.length;
@@ -314,7 +318,7 @@ const propagation = [
               <tr class="border-b border-[#1e293b]/30 hover:bg-[#1e293b]/20">
                 <td class="py-2 px-3">{f.status_icon}</td>
                 <td class="py-2 px-3 font-medium text-white whitespace-nowrap">{f.platform}</td>
-                <td class="py-2 px-3 text-[#64748b] hidden md:table-cell text-xs leading-relaxed">{f.detail}</td>
+                <td class="py-2 px-3 text-[#64748b] hidden md:table-cell text-xs leading-relaxed">{getDetail(f)}</td>
               </tr>
             ))}
           </tbody>
