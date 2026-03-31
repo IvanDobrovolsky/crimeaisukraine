@@ -1,0 +1,374 @@
+---
+import type { Lang } from '../i18n/translations';
+import { translations } from '../i18n/translations';
+import platformsData from '../data/platforms.json';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = translations[lang];
+
+const findings = platformsData.findings;
+const total = findings.length;
+const correct = findings.filter((f: any) => f.status === 'correct').length;
+const incorrect = findings.filter((f: any) => f.status === 'incorrect').length;
+const ambiguous = findings.filter((f: any) => f.status === 'ambiguous').length;
+const blocked = findings.filter((f: any) => f.status === 'blocked').length;
+const na = findings.filter((f: any) => f.status === 'n/a').length;
+
+const categories = {} as Record<string, any[]>;
+findings.forEach((f: any) => {
+  if (!categories[f.category]) categories[f.category] = [];
+  categories[f.category].push(f);
+});
+
+const categoryOrder = [
+  'data_visualization', 'open_source', 'map_service', 'tech_infrastructure',
+  'weather', 'reference', 'travel', 'ip_geolocation', 'social_media',
+  'gaming', 'search_engine', 'sports'
+];
+
+const statusOrder = { correct: 0, incorrect: 1, ambiguous: 2, blocked: 3, 'n/a': 4 } as Record<string, number>;
+const sortByStatus = (a: any, b: any) => (statusOrder[a.status] ?? 5) - (statusOrder[b.status] ?? 5);
+
+const categoryLabels = {
+  data_visualization: 'Data Visualization',
+  open_source: 'Open Source Data',
+  map_service: 'Map Services',
+  tech_infrastructure: 'Tech Infrastructure',
+  weather: 'Weather Services',
+  reference: 'Reference',
+  travel: 'Travel Platforms',
+  ip_geolocation: 'IP Geolocation',
+  social_media: 'Social Media',
+  gaming: 'Gaming',
+  search_engine: 'Search Engines',
+  sports: 'Sports',
+};
+
+// Chart percentages
+const pCorrect = Math.round(correct / total * 100);
+const pIncorrect = Math.round(incorrect / total * 100);
+const pAmbiguous = Math.round(ambiguous / total * 100);
+const pBlocked = Math.round(blocked / total * 100);
+const pNA = Math.round(na / total * 100);
+
+// Category stats for bar chart
+const catStats = categoryOrder.filter(c => categories[c]).map(c => {
+  const items = categories[c];
+  return {
+    name: (categoryLabels as any)[c] || c,
+    total: items.length,
+    correct: items.filter((f: any) => f.status === 'correct').length,
+    incorrect: items.filter((f: any) => f.status === 'incorrect').length,
+    ambiguous: items.filter((f: any) => f.status === 'ambiguous').length,
+  };
+});
+
+const infraRows = [
+  ['IP Geolocation', 'MaxMind, GeoNames (UA)', 'Post-2014 RU ISPs \u2192 RU'],
+  ['CDN Routing', 'Cloudflare: UA-43 (~20% of web)', '\u2014'],
+  ['Geocoding', 'OSM Nominatim: all cities UA', '\u2014'],
+  ['DNS / TLD', '.crimea.ua active', '.crimea.ru doesn\u2019t exist'],
+  ['Timezones', 'zone.tab: UA only', 'zone1970.tab: RU,UA; UTC+3'],
+  ['Phone Numbers', '\u2014', 'libphonenumber: +7-365/978 = RU'],
+  ['Postal Codes', '\u2014', 'Russian Post: 295xxx = RU'],
+];
+
+const weatherServices = ['AccuWeather', 'Weather Underground', 'TimeAndDate', 'Weather Spark', 'Meteoblue', 'Ventusky', 'Weather Atlas', 'Weather-Forecast', 'BBC Weather', 'weather.com'];
+
+const propagation = [
+  { name: 'd3-geo', dl: '13.4M/wk', pct: 100, status: 'bad' },
+  { name: 'Leaflet', dl: '4.2M/wk', pct: 31, status: 'bad' },
+  { name: 'topojson-client', dl: '3.8M/wk', pct: 28, status: 'bad' },
+  { name: 'ECharts', dl: '2.3M/wk', pct: 17, status: 'warn' },
+  { name: 'Highcharts', dl: '2.3M/wk', pct: 17, status: 'good' },
+  { name: 'Plotly.js', dl: '965K/wk', pct: 7, status: 'bad' },
+];
+---
+
+<!-- Nav -->
+<nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+  <div class="flex items-center gap-3">
+    <div class="w-8 h-4 rounded-sm overflow-hidden flex flex-col">
+      <div class="flex-1 bg-[#0057b7]"></div>
+      <div class="flex-1 bg-[#ffd700]"></div>
+    </div>
+    <span class="text-sm font-medium text-[#94a3b8] tracking-wide">{t.siteName}</span>
+  </div>
+  <a href={t.altLang} class="text-sm font-medium text-[#64748b] hover:text-white border border-[#334155] px-3 py-1 rounded transition">
+    {t.altLabel}
+  </a>
+</nav>
+
+<!-- Hero -->
+<header class="relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-[#0057b7]/20 via-transparent to-[#ffd700]/10"></div>
+  <div class="relative max-w-6xl mx-auto px-6 pt-12 pb-16">
+    <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+      <span class="text-[#0057b7]">{t.heroTitle1}</span><br />
+      <span class="text-[#ffd700]">{t.heroTitle2}</span>
+    </h1>
+
+    <p class="text-xl md:text-2xl text-[#94a3b8] max-w-3xl mb-4" set:html={t.heroSub} />
+    <p class="text-lg text-[#64748b] max-w-3xl mb-10" set:html={t.heroDesc} />
+
+    <div class="flex flex-wrap gap-4">
+      <a href="#findings" class="bg-[#0057b7] hover:bg-[#0057b7]/80 text-white font-semibold px-6 py-3 rounded-lg transition">
+        {t.viewFindings}
+      </a>
+      <a href="https://github.com/IvanDobrovolskyi/crimeaisukraine" target="_blank" class="border border-[#334155] hover:border-[#94a3b8] text-[#94a3b8] font-semibold px-6 py-3 rounded-lg transition">
+        {t.github}
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Stats + Donut Chart -->
+<section class="max-w-6xl mx-auto px-6 mb-16">
+  <div class="grid md:grid-cols-[1fr_280px] gap-8 items-start">
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      <div class="bg-[#111827] rounded-xl p-5 border border-[#1e293b]">
+        <div class="text-3xl font-black text-white">{total}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{t.statPlatforms}</div>
+      </div>
+      <div class="bg-[#111827] rounded-xl p-5 border border-[#22c55e]/30">
+        <div class="text-3xl font-black text-[#22c55e]">{correct}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{t.statCorrect}</div>
+      </div>
+      <div class="bg-[#111827] rounded-xl p-5 border border-[#ef4444]/30">
+        <div class="text-3xl font-black text-[#ef4444]">{incorrect}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{t.statIncorrect}</div>
+      </div>
+      <div class="bg-[#111827] rounded-xl p-5 border border-[#f59e0b]/30">
+        <div class="text-3xl font-black text-[#f59e0b]">{ambiguous}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{t.statAmbiguous}</div>
+      </div>
+      <div class="bg-[#111827] rounded-xl p-5 border border-[#8b5cf6]/30">
+        <div class="text-3xl font-black text-[#8b5cf6]">{blocked}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{t.statBlocked}</div>
+      </div>
+    </div>
+
+    <!-- Donut Chart (CSS only) -->
+    <div class="flex flex-col items-center">
+      <div class="text-sm text-[#64748b] mb-3 font-medium">{t.chartTitle}</div>
+      <div class="relative w-48 h-48">
+        <svg viewBox="0 0 36 36" class="w-full h-full -rotate-90">
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1e293b" stroke-width="3.5" />
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="#22c55e" stroke-width="3.5"
+            stroke-dasharray={`${pCorrect} ${100 - pCorrect}`} stroke-dashoffset="0" />
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="#ef4444" stroke-width="3.5"
+            stroke-dasharray={`${pIncorrect} ${100 - pIncorrect}`} stroke-dashoffset={`${-pCorrect}`} />
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f59e0b" stroke-width="3.5"
+            stroke-dasharray={`${pAmbiguous} ${100 - pAmbiguous}`} stroke-dashoffset={`${-(pCorrect + pIncorrect)}`} />
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="#8b5cf6" stroke-width="3.5"
+            stroke-dasharray={`${pBlocked} ${100 - pBlocked}`} stroke-dashoffset={`${-(pCorrect + pIncorrect + pAmbiguous)}`} />
+        </svg>
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <div class="text-2xl font-black text-white">{total}</div>
+          <div class="text-[10px] text-[#64748b]">platforms</div>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs text-[#94a3b8] justify-center">
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>{t.chartCorrect}</span>
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>{t.chartIncorrect}</span>
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>{t.chartAmbiguous}</span>
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#8b5cf6]"></span>{t.chartBlocked}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Category Bar Chart -->
+<section class="max-w-6xl mx-auto px-6 mb-20">
+  <div class="bg-[#111827] rounded-2xl p-6 md:p-8 border border-[#1e293b]">
+    <h2 class="text-lg font-bold mb-6">{t.chartTitle} by Category</h2>
+    <div class="space-y-3">
+      {catStats.map(cat => {
+        const maxLen = Math.max(...catStats.map(c => c.total));
+        const scale = 100 / maxLen;
+        return (
+          <div class="flex items-center gap-3">
+            <div class="w-32 md:w-44 text-xs text-[#94a3b8] text-right truncate flex-shrink-0">{cat.name}</div>
+            <div class="flex-1 flex h-5 rounded-full overflow-hidden bg-[#0a0e1a]">
+              {cat.correct > 0 && <div class="bg-[#22c55e] h-full" style={`width: ${cat.correct * scale}%`}></div>}
+              {cat.incorrect > 0 && <div class="bg-[#ef4444] h-full" style={`width: ${cat.incorrect * scale}%`}></div>}
+              {cat.ambiguous > 0 && <div class="bg-[#f59e0b] h-full" style={`width: ${cat.ambiguous * scale}%`}></div>}
+            </div>
+            <div class="w-6 text-xs text-[#64748b] flex-shrink-0">{cat.total}</div>
+          </div>
+        );
+      })}
+    </div>
+    <div class="flex gap-4 mt-4 text-xs text-[#64748b]">
+      <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>{t.chartCorrect}</span>
+      <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>{t.chartIncorrect}</span>
+      <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>{t.chartAmbiguous}</span>
+    </div>
+  </div>
+</section>
+
+<!-- Propagation Chain -->
+<section class="max-w-6xl mx-auto px-6 mb-20">
+  <div class="bg-gradient-to-r from-[#ef4444]/10 to-[#111827] border border-[#ef4444]/30 rounded-2xl p-8 md:p-12">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">{t.rootCauseTitle}</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <p class="text-[#94a3b8] mb-4" set:html={t.rootCauseP1} />
+        <p class="text-[#94a3b8] mb-4" set:html={t.rootCauseP2} />
+        <p class="text-[#94a3b8]" set:html={t.rootCauseP3} />
+      </div>
+      <div class="space-y-3">
+        <div class="text-sm text-[#64748b] mb-2 uppercase tracking-wider">{t.weeklyDownloads}</div>
+        {propagation.map(item => (
+          <div class="flex items-center gap-3">
+            <div class={`w-2 h-2 rounded-full flex-shrink-0 ${item.status === 'good' ? 'bg-[#22c55e]' : item.status === 'warn' ? 'bg-[#f59e0b]' : 'bg-[#ef4444]'}`}></div>
+            <div class={`flex-1 bg-[#0a0e1a] rounded-lg border overflow-hidden ${item.status === 'good' ? 'border-[#22c55e]/30' : 'border-[#1e293b]'}`}>
+              <div class="flex items-center justify-between px-4 py-2">
+                <span class={`text-sm font-medium ${item.status === 'good' ? 'text-[#22c55e]' : 'text-white'}`}>{item.name}</span>
+                <span class={`text-xs ${item.status === 'good' ? 'text-[#22c55e]' : 'text-[#64748b]'}`}>{item.dl}{item.status === 'good' ? ' \u2014 Correct!' : ''}</span>
+              </div>
+              <div class={`h-1 ${item.status === 'good' ? 'bg-[#22c55e]' : item.status === 'warn' ? 'bg-[#f59e0b]' : 'bg-[#ef4444]'}`} style={`width: ${item.pct}%`}></div>
+            </div>
+          </div>
+        ))}
+        <div class="text-right text-sm text-[#f59e0b] font-bold mt-4">{t.totalAffected}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2022 Bifurcation -->
+<section class="max-w-6xl mx-auto px-6 mb-20">
+  <h2 class="text-2xl md:text-3xl font-bold mb-4">{t.bifurcationTitle}</h2>
+  <p class="text-[#94a3b8] max-w-3xl mb-8">{t.bifurcationDesc}</p>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-[#111827] rounded-xl p-6 border border-[#22c55e]/30">
+      <h3 class="text-lg font-bold text-[#22c55e] mb-4">{t.changedTitle}</h3>
+      <ul class="space-y-2 text-sm text-[#94a3b8]">
+        {t.changed.map(item => <li class="flex gap-2"><span class="text-[#22c55e] flex-shrink-0">&#x2713;</span><span>{item}</span></li>)}
+      </ul>
+    </div>
+    <div class="bg-[#111827] rounded-xl p-6 border border-[#ef4444]/30">
+      <h3 class="text-lg font-bold text-[#ef4444] mb-4">{t.unchangedTitle}</h3>
+      <ul class="space-y-2 text-sm text-[#94a3b8]">
+        {t.unchanged.map(item => <li class="flex gap-2"><span class="text-[#ef4444] flex-shrink-0">&#x2717;</span><span>{item}</span></li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Infrastructure Stack -->
+<section class="max-w-6xl mx-auto px-6 mb-20">
+  <h2 class="text-2xl md:text-3xl font-bold mb-4">{t.infraTitle}</h2>
+  <p class="text-[#94a3b8] max-w-3xl mb-8">{t.infraDesc}</p>
+  <div class="overflow-x-auto">
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="text-left text-[#64748b] border-b border-[#1e293b]">
+          <th class="py-3 px-4">Layer</th>
+          <th class="py-3 px-4 text-[#22c55e]">{t.infraLegal}</th>
+          <th class="py-3 px-4 text-[#ef4444]">{t.infraOp}</th>
+        </tr>
+      </thead>
+      <tbody class="text-[#94a3b8]">
+        {infraRows.map(([layer, ua, ru]) => (
+          <tr class="border-b border-[#1e293b]/50 hover:bg-[#1e293b]/30">
+            <td class="py-3 px-4 font-medium text-white">{layer}</td>
+            <td class="py-3 px-4">{ua}</td>
+            <td class="py-3 px-4">{ru}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Weather Gold Standard -->
+<section class="max-w-6xl mx-auto px-6 mb-20">
+  <div class="bg-gradient-to-r from-[#22c55e]/10 to-[#111827] border border-[#22c55e]/30 rounded-2xl p-8">
+    <h2 class="text-2xl font-bold mb-2 text-[#22c55e]">{t.weatherTitle}</h2>
+    <p class="text-[#94a3b8] mb-6">{t.weatherDesc}</p>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+      {weatherServices.map(name => (
+        <div class="bg-[#0a0e1a] rounded-lg px-3 py-2 text-sm flex items-center gap-2 border border-[#1e293b]">
+          <span class="text-[#22c55e] flex-shrink-0">&#x2705;</span>
+          <span class="text-[#94a3b8] truncate">{name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- All Findings -->
+<section id="findings" class="max-w-6xl mx-auto px-6 mb-20">
+  <h2 class="text-2xl md:text-3xl font-bold mb-8">{t.allFindings} ({total})</h2>
+  {categoryOrder.filter(cat => categories[cat]).map(cat => (
+    <div class="mb-10">
+      <h3 class="text-lg font-bold text-[#94a3b8] mb-3 flex items-center gap-2">
+        {(categoryLabels as any)[cat] || cat}
+        <span class="text-sm font-normal text-[#64748b]">({categories[cat].length})</span>
+      </h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-[#64748b] border-b border-[#1e293b]">
+              <th class="py-2 px-3 w-8"></th>
+              <th class="py-2 px-3">Platform</th>
+              <th class="py-2 px-3 hidden md:table-cell">Detail</th>
+            </tr>
+          </thead>
+          <tbody>
+            {categories[cat].sort(sortByStatus).map((f: any) => (
+              <tr class="border-b border-[#1e293b]/30 hover:bg-[#1e293b]/20">
+                <td class="py-2 px-3">{f.status_icon}</td>
+                <td class="py-2 px-3 font-medium text-white whitespace-nowrap">{f.platform}</td>
+                <td class="py-2 px-3 text-[#64748b] hidden md:table-cell">{f.detail.slice(0, 140)}{f.detail.length > 140 ? '...' : ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  ))}
+</section>
+
+<!-- About -->
+<section class="max-w-6xl mx-auto px-6 mb-20">
+  <h2 class="text-2xl md:text-3xl font-bold mb-6">{t.aboutTitle}</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-[#111827] rounded-xl p-6 border border-[#1e293b]">
+      <h3 class="font-bold mb-2">{t.aboutAuto}</h3>
+      <p class="text-sm text-[#94a3b8]">{t.aboutAutoDesc}</p>
+    </div>
+    <div class="bg-[#111827] rounded-xl p-6 border border-[#1e293b]">
+      <h3 class="font-bold mb-2">{t.aboutMedia}</h3>
+      <p class="text-sm text-[#94a3b8]">{t.aboutMediaDesc}</p>
+    </div>
+    <div class="bg-[#111827] rounded-xl p-6 border border-[#1e293b]">
+      <h3 class="font-bold mb-2">{t.aboutRepro}</h3>
+      <p class="text-sm text-[#94a3b8]">{t.aboutReproDesc}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="max-w-6xl mx-auto px-6 py-12 border-t border-[#1e293b]">
+  <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+    <div>
+      <p class="text-sm text-[#94a3b8]">
+        {t.footerBy} <strong class="text-white">{t.footerName}</strong>
+      </p>
+      <p class="text-xs text-[#64748b] mt-1">{t.footerRole}</p>
+    </div>
+    <div class="flex flex-wrap gap-4 text-sm text-[#64748b]">
+      <a href="https://github.com/IvanDobrovolskyi/crimeaisukraine" class="hover:text-white transition">{t.github}</a>
+      <span class="hidden md:inline">&middot;</span>
+      <span>{t.footerData}</span>
+    </div>
+  </div>
+</footer>
