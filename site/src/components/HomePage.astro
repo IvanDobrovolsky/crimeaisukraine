@@ -327,7 +327,7 @@ const propagation = [
               <tr class="border-b border-[#1e293b]/30 hover:bg-[#1e293b]/20">
                 <td class="py-2 px-3">{f.status_icon}</td>
                 <td class="py-2 px-3 font-medium text-white whitespace-nowrap">{f.platform}</td>
-                <td class="py-2 px-3 text-[#64748b] hidden md:table-cell">{f.detail.slice(0, 140)}{f.detail.length > 140 ? '...' : ''}</td>
+                <td class="py-2 px-3 text-[#64748b] hidden md:table-cell text-xs leading-relaxed">{f.detail}</td>
               </tr>
             ))}
           </tbody>
