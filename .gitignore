@@ -1,28 +1,37 @@
 # Python
 __pycache__/
 *.py[cod]
+*$py.class
 *.egg-info/
 dist/
 build/
 .eggs/
-*.egg
-venv/
 .venv/
+venv/
 
-# Data (large files - keep structure, not bulk data)
+# Data (large files)
 data/raw/
 data/geolite2/
 *.mmdb
 *.csv.gz
 
+# Credentials & secrets
+.env
+.env.*
+*.pem
+
 # IDE
 .vscode/
 .idea/
 *.swp
+*.swo
+*~
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Environment
-.env
+# Claude
+.claude
+CLAUDE.md
+SPEC.md
