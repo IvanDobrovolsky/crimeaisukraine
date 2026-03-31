@@ -1,18 +1,18 @@
 {
-  "generated": "2026-03-31T04:07:05.132871+00:00",
+  "generated": "2026-03-31T04:16:59.232080+00:00",
   "methodology": "GDELT DOC API v2 article-level search for Crimea sovereignty framing. Articles are classified by: (1) search query framing category, (2) URL path sovereignty signals, (3) title keyword analysis. Language clusters assigned via GDELT language field + TLD inference.",
   "statistics": {
-    "total_articles": 2703,
+    "total_articles": 2485,
     "framing_counts": {
-      "pro_russia": 761,
+      "pro_russia": 759,
       "neutral_critical": 1288,
-      "pro_ukraine": 654
+      "pro_ukraine": 438
     },
     "language_cluster_framing": {
       "Arabic": {
         "pro_russia": 14,
         "neutral_critical": 3,
-        "pro_ukraine": 5
+        "pro_ukraine": 4
       },
       "Chinese": {
         "pro_russia": 5,
@@ -21,7 +21,7 @@
       "English": {
         "pro_russia": 109,
         "neutral_critical": 154,
-        "pro_ukraine": 84
+        "pro_ukraine": 16
       },
       "French": {
         "pro_russia": 11,
@@ -31,21 +31,21 @@
       "German": {
         "pro_russia": 11,
         "neutral_critical": 151,
-        "pro_ukraine": 88
+        "pro_ukraine": 31
       },
       "Italian": {
         "pro_russia": 12,
         "neutral_critical": 17,
-        "pro_ukraine": 10
+        "pro_ukraine": 6
       },
       "Other": {
         "pro_russia": 98,
         "neutral_critical": 210,
-        "pro_ukraine": 83
+        "pro_ukraine": 42
       },
       "Russian": {
-        "pro_russia": 435,
-        "pro_ukraine": 187,
+        "pro_russia": 433,
+        "pro_ukraine": 167,
         "neutral_critical": 236
       },
       "Spanish": {
@@ -55,95 +55,94 @@
       },
       "Ukrainian": {
         "pro_russia": 43,
-        "pro_ukraine": 172,
+        "pro_ukraine": 147,
         "neutral_critical": 414
       }
     },
     "country_framing": {
       "Ukraine": {
         "pro_russia": 83,
-        "pro_ukraine": 274,
+        "pro_ukraine": 234,
         "neutral_critical": 526
       },
       "Russia": {
-        "pro_russia": 397,
+        "pro_russia": 395,
         "neutral_critical": 69,
-        "pro_ukraine": 74
+        "pro_ukraine": 70
       },
       "Germany": {
         "pro_russia": 13,
         "neutral_critical": 157,
-        "pro_ukraine": 80
+        "pro_ukraine": 30
       },
       "United States": {
         "neutral_critical": 71,
         "pro_russia": 43,
-        "pro_ukraine": 25
+        "pro_ukraine": 7
       },
       "Spain": {
         "pro_russia": 14,
         "neutral_critical": 49,
         "pro_ukraine": 12
       },
-      "Bulgaria": {
-        "pro_russia": 4,
-        "neutral_critical": 32,
-        "pro_ukraine": 14
-      },
-      "Greece": {
-        "pro_russia": 8,
-        "neutral_critical": 19,
-        "pro_ukraine": 19
-      },
       "Romania": {
         "pro_russia": 7,
         "neutral_critical": 33,
         "pro_ukraine": 5
       },
-      "Italy": {
-        "pro_russia": 12,
-        "neutral_critical": 17,
-        "pro_ukraine": 10
+      "Bulgaria": {
+        "pro_russia": 4,
+        "neutral_critical": 32,
+        "pro_ukraine": 6
       },
       "Vietnam": {
         "pro_russia": 21,
         "neutral_critical": 6,
         "pro_ukraine": 10
       },
-      "Czech Republic": {
-        "pro_russia": 7,
-        "neutral_critical": 16,
-        "pro_ukraine": 10
+      "Italy": {
+        "pro_russia": 12,
+        "neutral_critical": 17,
+        "pro_ukraine": 6
       },
       "Poland": {
         "pro_russia": 3,
         "neutral_critical": 19,
-        "pro_ukraine": 9
-      },
-      "Unknown": {
-        "pro_russia": 20,
-        "neutral_critical": 3,
         "pro_ukraine": 7
+      },
+      "Greece": {
+        "pro_russia": 8,
+        "neutral_critical": 19,
+        "pro_ukraine": 2
       },
       "Slovak Republic": {
         "pro_russia": 9,
         "neutral_critical": 17,
         "pro_ukraine": 2
       },
-      "Serbia": {
-        "pro_russia": 15,
-        "neutral_critical": 8,
+      "Czech Republic": {
+        "pro_russia": 7,
+        "neutral_critical": 16,
         "pro_ukraine": 5
       },
       "Lithuania": {
         "pro_russia": 4,
-        "neutral_critical": 22,
-        "pro_ukraine": 1
+        "neutral_critical": 22
+      },
+      "Unknown": {
+        "pro_russia": 20,
+        "neutral_critical": 3,
+        "pro_ukraine": 2
+      },
+      "Serbia": {
+        "pro_russia": 15,
+        "neutral_critical": 8,
+        "pro_ukraine": 2
       },
       "United Kingdom": {
         "pro_russia": 5,
         "neutral_critical": 18,
-        "pro_ukraine": 3
+        "pro_ukraine": 1
       },
       "Portugal": {
         "pro_russia": 1,
@@ -155,55 +154,53 @@
         "neutral_critical": 6,
         "pro_ukraine": 7
       },
-      "Croatia": {
-        "pro_russia": 11,
-        "neutral_critical": 4,
-        "pro_ukraine": 4
-      },
-      "India": {
-        "neutral_critical": 8,
-        "pro_ukraine": 11
-      },
       "Belarus": {
         "pro_russia": 2,
         "neutral_critical": 13,
         "pro_ukraine": 3
+      },
+      "Croatia": {
+        "pro_russia": 11,
+        "neutral_critical": 4,
+        "pro_ukraine": 2
       },
       "China": {
         "pro_russia": 5,
         "neutral_critical": 9,
         "pro_ukraine": 2
       },
-      "Australia": {
-        "pro_russia": 3,
-        "neutral_critical": 4,
-        "pro_ukraine": 8
-      },
       "Finland": {
         "neutral_critical": 15
-      },
-      "Latvia": {
-        "pro_russia": 5,
-        "neutral_critical": 8,
-        "pro_ukraine": 1
       },
       "Egypt": {
         "pro_russia": 11,
         "neutral_critical": 1,
         "pro_ukraine": 2
       },
-      "Switzerland": {
-        "neutral_critical": 6,
-        "pro_ukraine": 7
+      "Latvia": {
+        "pro_russia": 5,
+        "neutral_critical": 8
       },
-      "Canada": {
-        "pro_russia": 2,
+      "Argentina": {
+        "pro_russia": 1,
         "neutral_critical": 9,
         "pro_ukraine": 1
       },
-      "Austria": {
-        "neutral_critical": 10,
+      "Canada": {
+        "pro_russia": 2,
+        "neutral_critical": 9
+      },
+      "Syria": {
+        "pro_russia": 5,
+        "neutral_critical": 3,
         "pro_ukraine": 2
+      },
+      "Austria": {
+        "neutral_critical": 10
+      },
+      "Azerbaijan": {
+        "pro_russia": 1,
+        "neutral_critical": 8
       }
     },
     "top_domains": [
@@ -218,9 +215,9 @@
       },
       {
         "domain": "24tv.ua",
-        "total": 66,
+        "total": 59,
         "framing": {
-          "pro_ukraine": 22,
+          "pro_ukraine": 15,
           "pro_russia": 2,
           "neutral_critical": 42
         }
@@ -245,38 +242,29 @@
       },
       {
         "domain": "pravda.com.ua",
-        "total": 37,
+        "total": 36,
         "framing": {
           "pro_russia": 3,
           "neutral_critical": 26,
-          "pro_ukraine": 8
+          "pro_ukraine": 7
         }
       },
       {
         "domain": "dw.com",
-        "total": 37,
+        "total": 35,
         "framing": {
           "pro_russia": 3,
           "neutral_critical": 30,
-          "pro_ukraine": 4
+          "pro_ukraine": 2
         }
       },
       {
         "domain": "gazeta.ua",
-        "total": 33,
+        "total": 30,
         "framing": {
           "pro_russia": 2,
           "neutral_critical": 13,
-          "pro_ukraine": 18
-        }
-      },
-      {
-        "domain": "radiosvoboda.org",
-        "total": 30,
-        "framing": {
-          "pro_russia": 5,
-          "neutral_critical": 22,
-          "pro_ukraine": 3
+          "pro_ukraine": 15
         }
       },
       {
@@ -289,21 +277,29 @@
         }
       },
       {
+        "domain": "radiosvoboda.org",
+        "total": 27,
+        "framing": {
+          "pro_russia": 5,
+          "neutral_critical": 22
+        }
+      },
+      {
         "domain": "ua.korrespondent.net",
-        "total": 28,
+        "total": 27,
         "framing": {
           "pro_russia": 1,
           "neutral_critical": 19,
-          "pro_ukraine": 8
+          "pro_ukraine": 7
         }
       },
       {
         "domain": "korrespondent.net",
-        "total": 25,
+        "total": 24,
         "framing": {
           "pro_russia": 3,
           "neutral_critical": 15,
-          "pro_ukraine": 7
+          "pro_ukraine": 6
         }
       },
       {
@@ -324,38 +320,20 @@
         }
       },
       {
-        "domain": "merkur.de",
-        "total": 24,
-        "framing": {
-          "pro_russia": 2,
-          "neutral_critical": 10,
-          "pro_ukraine": 12
-        }
-      },
-      {
-        "domain": "dialog.ua",
-        "total": 23,
-        "framing": {
-          "pro_russia": 2,
-          "neutral_critical": 17,
-          "pro_ukraine": 4
-        }
-      },
-      {
-        "domain": "focus.ua",
-        "total": 23,
-        "framing": {
-          "pro_russia": 4,
-          "pro_ukraine": 10,
-          "neutral_critical": 9
-        }
-      },
-      {
         "domain": "vesti.ru",
         "total": 22,
         "framing": {
           "pro_russia": 21,
           "pro_ukraine": 1
+        }
+      },
+      {
+        "domain": "dialog.ua",
+        "total": 22,
+        "framing": {
+          "pro_russia": 2,
+          "neutral_critical": 17,
+          "pro_ukraine": 3
         }
       },
       {
@@ -386,15 +364,6 @@
         }
       },
       {
-        "domain": "unian.ua",
-        "total": 19,
-        "framing": {
-          "pro_russia": 3,
-          "neutral_critical": 12,
-          "pro_ukraine": 4
-        }
-      },
-      {
         "domain": "5.ua",
         "total": 19,
         "framing": {
@@ -420,12 +389,21 @@
         }
       },
       {
-        "domain": "n-tv.de",
+        "domain": "unian.ua",
         "total": 18,
         "framing": {
-          "pro_russia": 2,
-          "neutral_critical": 11,
-          "pro_ukraine": 5
+          "pro_russia": 3,
+          "neutral_critical": 12,
+          "pro_ukraine": 3
+        }
+      },
+      {
+        "domain": "focus.ua",
+        "total": 17,
+        "framing": {
+          "pro_russia": 4,
+          "pro_ukraine": 4,
+          "neutral_critical": 9
         }
       },
       {
@@ -443,15 +421,6 @@
           "pro_russia": 1,
           "neutral_critical": 9,
           "pro_ukraine": 7
-        }
-      },
-      {
-        "domain": "glavcom.ua",
-        "total": 17,
-        "framing": {
-          "pro_russia": 1,
-          "neutral_critical": 14,
-          "pro_ukraine": 2
         }
       },
       {
@@ -481,12 +450,12 @@
         }
       },
       {
-        "domain": "hna.de",
+        "domain": "glavcom.ua",
         "total": 16,
         "framing": {
           "pro_russia": 1,
-          "neutral_critical": 8,
-          "pro_ukraine": 7
+          "neutral_critical": 14,
+          "pro_ukraine": 1
         }
       },
       {
@@ -499,11 +468,29 @@
         }
       },
       {
+        "domain": "n-tv.de",
+        "total": 15,
+        "framing": {
+          "pro_russia": 2,
+          "neutral_critical": 11,
+          "pro_ukraine": 2
+        }
+      },
+      {
         "domain": "rbc.ua",
         "total": 15,
         "framing": {
           "pro_russia": 3,
           "neutral_critical": 12
+        }
+      },
+      {
+        "domain": "merkur.de",
+        "total": 15,
+        "framing": {
+          "pro_russia": 2,
+          "neutral_critical": 10,
+          "pro_ukraine": 3
         }
       },
       {
@@ -525,15 +512,6 @@
         }
       },
       {
-        "domain": "lenta.ru",
-        "total": 12,
-        "framing": {
-          "pro_russia": 9,
-          "neutral_critical": 2,
-          "pro_ukraine": 1
-        }
-      },
-      {
         "domain": "15min.lt",
         "total": 12,
         "framing": {
@@ -542,19 +520,35 @@
         }
       },
       {
-        "domain": "aif.ru",
-        "total": 12,
-        "framing": {
-          "pro_russia": 4,
-          "pro_ukraine": 8
-        }
-      },
-      {
         "domain": "uainfo.org",
         "total": 12,
         "framing": {
           "pro_russia": 2,
           "neutral_critical": 9,
+          "pro_ukraine": 1
+        }
+      },
+      {
+        "domain": "mngz.ru",
+        "total": 12,
+        "framing": {
+          "pro_russia": 12
+        }
+      },
+      {
+        "domain": "espreso.tv",
+        "total": 12,
+        "framing": {
+          "neutral_critical": 10,
+          "pro_ukraine": 2
+        }
+      },
+      {
+        "domain": "lenta.ru",
+        "total": 11,
+        "framing": {
+          "pro_russia": 8,
+          "neutral_critical": 2,
           "pro_ukraine": 1
         }
       }
@@ -8218,6 +8212,17 @@
       "seen_date": "20260122T144500Z"
     },
     {
+      "url": "https://adevarul.ro/stiri-externe/europa/putin-cladeste-noua-rusie-in-ucraina-ocupata-2518705.html",
+      "title": "Putin clădește „ Noua Rusie  în Ucraina ocupată : cum a integrat teritoriile anexate în economia rusă",
+      "domain": "adevarul.ro",
+      "language": "Romanian",
+      "source_country": "Romania",
+      "language_cluster": "Other",
+      "framing": "pro_russia",
+      "query_label": "crimea reunification",
+      "seen_date": "20260329T024500Z"
+    },
+    {
       "url": "https://dagpravda.ru/obshestvo/teplo-krymskoj-vesny/",
       "title": "Тепло Крымской весны - Dagpravda . ru",
       "domain": "dagpravda.ru",
@@ -8238,17 +8243,6 @@
       "framing": "pro_russia",
       "query_label": "crimea reunification",
       "seen_date": "20260316T090000Z"
-    },
-    {
-      "url": "https://adevarul.ro/stiri-externe/europa/putin-cladeste-noua-rusie-in-ucraina-ocupata-2518705.html",
-      "title": "Putin clădește „ Noua Rusie  în Ucraina ocupată : cum a integrat teritoriile anexate în economia rusă",
-      "domain": "adevarul.ro",
-      "language": "Romanian",
-      "source_country": "Romania",
-      "language_cluster": "Other",
-      "framing": "pro_russia",
-      "query_label": "crimea reunification",
-      "seen_date": "20260329T024500Z"
     },
     {
       "url": "https://fedpress.ru/article/3421412",
@@ -9747,6 +9741,17 @@
       "seen_date": "20260116T071500Z"
     },
     {
+      "url": "https://glavnoe.in.ua/news/ataka-bezpilotnykiv-na-leninhradsku-oblast-u-portu-ust-luha-pochalasya-nova-pozhezha",
+      "title": "Атака безпілотників на Ленінградську область : у порту Усть - Луга почалася нова пожежа",
+      "domain": "glavnoe.in.ua",
+      "language": "Ukrainian",
+      "source_country": "Ukraine",
+      "language_cluster": "Ukrainian",
+      "framing": "neutral_critical",
+      "query_label": "annexed crimea",
+      "seen_date": "20260329T104500Z"
+    },
+    {
       "url": "https://nbnews.com.ua/suspilstvo/2022/08/18/na-khersonshchini-okupanti-zmusheni-zapus/",
       "title": "На Херсонщині окупанти змушені запускати продовольчі тури до анексованого Криму",
       "domain": "nbnews.com.ua",
@@ -9767,17 +9772,6 @@
       "framing": "neutral_critical",
       "query_label": "annexed crimea",
       "seen_date": "20260316T221500Z"
-    },
-    {
-      "url": "https://glavnoe.in.ua/news/ataka-bezpilotnykiv-na-leninhradsku-oblast-u-portu-ust-luha-pochalasya-nova-pozhezha",
-      "title": "Атака безпілотників на Ленінградську область : у порту Усть - Луга почалася нова пожежа",
-      "domain": "glavnoe.in.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "neutral_critical",
-      "query_label": "annexed crimea",
-      "seen_date": "20260329T104500Z"
     },
     {
       "url": "https://www.lrytas.lt/pasaulis/konfliktai-ir-saugumas/2026/01/16/news/karas-ukrainoje-naujas-ginklas-nauja-gresme-ekspertai-kalba-apie-kritini-momenta-40967127/",
@@ -10968,17 +10962,6 @@
       "seen_date": "20260324T124500Z"
     },
     {
-      "url": "https://www.ceskenoviny.cz/zpravy/kreml-vini-britanii-z-podilu-na-smrticim-utoku-na-brjansk/2797869",
-      "title": "Kreml viní Británii z podílu na smrtícím útoku na Brjansk",
-      "domain": "ceskenoviny.cz",
-      "language": "Czech",
-      "source_country": "Czech Republic",
-      "language_cluster": "Other",
-      "framing": "neutral_critical",
-      "query_label": "annexed crimea",
-      "seen_date": "20260311T133000Z"
-    },
-    {
       "url": "https://focus.ua/uk/voennye-novosti/748838-okupovani-teritoriji-rf-posileno-integruye-ta-rozbudovuye-zahopleniy-pivden-ukrajini-reuters",
       "title": "Окуповані території - РФ посилено інтегрує та розбудовує захоплений південь України",
       "domain": "focus.ua",
@@ -10988,6 +10971,17 @@
       "framing": "neutral_critical",
       "query_label": "annexed crimea",
       "seen_date": "20260329T170000Z"
+    },
+    {
+      "url": "https://www.ceskenoviny.cz/zpravy/kreml-vini-britanii-z-podilu-na-smrticim-utoku-na-brjansk/2797869",
+      "title": "Kreml viní Británii z podílu na smrtícím útoku na Brjansk",
+      "domain": "ceskenoviny.cz",
+      "language": "Czech",
+      "source_country": "Czech Republic",
+      "language_cluster": "Other",
+      "framing": "neutral_critical",
+      "query_label": "annexed crimea",
+      "seen_date": "20260311T133000Z"
     },
     {
       "url": "https://www.kyivpost.com/post/69637",
@@ -13652,17 +13646,6 @@
       "seen_date": "20260128T080000Z"
     },
     {
-      "url": "https://www.diariosur.es/internacional/europa/rusia-reitera-paz-ucrania-cede-donbas-20260127191024-ntrc.html",
-      "title": "Rusia reitera que no habrá paz en Ucrania si no le cede el Donbás",
-      "domain": "diariosur.es",
-      "language": "Spanish",
-      "source_country": "Spain",
-      "language_cluster": "Spanish",
-      "framing": "neutral_critical",
-      "query_label": "crimea annexation",
-      "seen_date": "20260127T184500Z"
-    },
-    {
       "url": "https://adevarul.ro/stiri-externe/de-ce-sustine-moscova-separatismul-in-vest-in-2518536.html",
       "title": "De ce susține Moscova separatismul în Vest , în timp ce îl pedepsește cu închisoarea acasă",
       "domain": "adevarul.ro",
@@ -13672,6 +13655,17 @@
       "framing": "neutral_critical",
       "query_label": "crimea annexation",
       "seen_date": "20260330T053000Z"
+    },
+    {
+      "url": "https://www.diariosur.es/internacional/europa/rusia-reitera-paz-ucrania-cede-donbas-20260127191024-ntrc.html",
+      "title": "Rusia reitera que no habrá paz en Ucrania si no le cede el Donbás",
+      "domain": "diariosur.es",
+      "language": "Spanish",
+      "source_country": "Spain",
+      "language_cluster": "Spanish",
+      "framing": "neutral_critical",
+      "query_label": "crimea annexation",
+      "seen_date": "20260127T184500Z"
     },
     {
       "url": "https://www.elcomercio.es/internacional/europa/rusia-reitera-paz-ucrania-cede-donbas-20260127191024-ntrc.html",
@@ -14345,6 +14339,17 @@
       "seen_date": "20260207T034500Z"
     },
     {
+      "url": "https://www.segabg.com/hot/category-bulgaria/bulgariya-predade-rusnaci-na-sasht-vupreki-zakanite-na-moskva",
+      "title": "България предаде руснаци на САЩ въпреки заканите на Москва",
+      "domain": "segabg.com",
+      "language": "Bulgarian",
+      "source_country": "Bulgaria",
+      "language_cluster": "English",
+      "framing": "neutral_critical",
+      "query_label": "crimea annexation",
+      "seen_date": "20260330T074500Z"
+    },
+    {
       "url": "https://www.parlamentnilisty.cz/politika/politici-volicum/Havel-TOP-09-Pokud-chceme-odradit-Putina-musime-navysit-vydaje-na-obranu-na-5-HDP-787472",
       "title": "Havel ( TOP 09 ): Pokud chceme odradit Putina , musíme navýšit výdaje na obranu na 5 % HDP | ParlamentniListy . cz – politika ze všech stran",
       "domain": "parlamentnilisty.cz",
@@ -14365,17 +14370,6 @@
       "framing": "neutral_critical",
       "query_label": "crimea annexation",
       "seen_date": "20260302T140000Z"
-    },
-    {
-      "url": "https://www.segabg.com/hot/category-bulgaria/bulgariya-predade-rusnaci-na-sasht-vupreki-zakanite-na-moskva",
-      "title": "България предаде руснаци на САЩ въпреки заканите на Москва",
-      "domain": "segabg.com",
-      "language": "Bulgarian",
-      "source_country": "Bulgaria",
-      "language_cluster": "English",
-      "framing": "neutral_critical",
-      "query_label": "crimea annexation",
-      "seen_date": "20260330T074500Z"
     },
     {
       "url": "https://www.ukrinform.ua/rubric-world/4104742-zbitta-mn17-zmusilo-niderlandciv-bilse-pomicati-realnist-deputatka-miskradi-dordrehta.html",
@@ -15280,17 +15274,6 @@
       "seen_date": "20260226T083000Z"
     },
     {
-      "url": "https://www.radiosvoboda.org/a/aresht-kyyiv-krym-sizo/33652448.html",
-      "title": " « Виконувала накази РФ »: у Києві заарештували директорку школи з Криму . Хто вона ? ",
-      "domain": "radiosvoboda.org",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "neutral_critical",
-      "query_label": "occupied crimea",
-      "seen_date": "20260117T213000Z"
-    },
-    {
       "url": "https://ua.korrespondent.net/ukraine/4866382-sbs-za-nich-znyschyly-try-rosiiski-smerchi",
       "title": "СБС за ніч знищили три російські Смерчі",
       "domain": "ua.korrespondent.net",
@@ -15300,6 +15283,17 @@
       "framing": "neutral_critical",
       "query_label": "occupied crimea",
       "seen_date": "20260329T103000Z"
+    },
+    {
+      "url": "https://www.radiosvoboda.org/a/aresht-kyyiv-krym-sizo/33652448.html",
+      "title": " « Виконувала накази РФ »: у Києві заарештували директорку школи з Криму . Хто вона ? ",
+      "domain": "radiosvoboda.org",
+      "language": "Ukrainian",
+      "source_country": "Ukraine",
+      "language_cluster": "Ukrainian",
+      "framing": "neutral_critical",
+      "query_label": "occupied crimea",
+      "seen_date": "20260117T213000Z"
     },
     {
       "url": "https://www.dialog.ua/war/329777_1772792136",
@@ -16776,17 +16770,6 @@
       "seen_date": "20260324T061500Z"
     },
     {
-      "url": "https://podrobnosti.ua/2512654-gnat-rosja-zdjsnila-somij-masovanij-obstrl-ukrani-u-ljutomu.html",
-      "title": "Ігнат : росія здійснила сьомий масований обстріл України у лютому",
-      "domain": "podrobnosti.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "neutral_critical",
-      "query_label": "occupied crimea",
-      "seen_date": "20260226T110000Z"
-    },
-    {
       "url": "https://zn.ua/ukr/war/rf-zapustila-kindzhali-po-ukrajini-vibukhi-na-khmelnichchini.html",
       "title": "Росія вдарила Кинджалами по Хмельницькій області",
       "domain": "zn.ua",
@@ -16796,6 +16779,17 @@
       "framing": "neutral_critical",
       "query_label": "occupied crimea",
       "seen_date": "20260329T001500Z"
+    },
+    {
+      "url": "https://podrobnosti.ua/2512654-gnat-rosja-zdjsnila-somij-masovanij-obstrl-ukrani-u-ljutomu.html",
+      "title": "Ігнат : росія здійснила сьомий масований обстріл України у лютому",
+      "domain": "podrobnosti.ua",
+      "language": "Ukrainian",
+      "source_country": "Ukraine",
+      "language_cluster": "Ukrainian",
+      "framing": "neutral_critical",
+      "query_label": "occupied crimea",
+      "seen_date": "20260226T110000Z"
     },
     {
       "url": "https://24tv.ua/ataka-shahedami-19-bereznya-skilki-droniv-zapushheno-zbito_n3031366",
@@ -25543,2437 +25537,6 @@
       "seen_date": "20260120T111500Z"
     },
     {
-      "url": "https://lenta.ru/news/2026/02/08/glava-mid-ukrainy-zhestko-vyskazalsya-o-donbasse-i-kryme/",
-      "title": "Глава МИД Украины жестко высказался о Донбассе и Крыме",
-      "domain": "lenta.ru",
-      "language": "Russian",
-      "source_country": "Russia",
-      "language_cluster": "Russian",
-      "framing": "pro_russia",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T203000Z"
-    },
-    {
-      "url": "https://www.kathimerini.gr/world/564087835/krimaia-enas-nekros-se-pligma-oykranikoy-drone-sti-sevastoypoli/",
-      "title": "Κριμαία : Ενας νεκρός από πλήγμα ουκρανικού drone στη Σεβαστούπολη",
-      "domain": "kathimerini.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260220T073000Z"
-    },
-    {
-      "url": "https://wek.ru/krym-priglashaet-trampa-uvidet-poluostrov-svoimi-glazami",
-      "title": "Крым приглашает Трампа увидеть полуостров своими глазами",
-      "domain": "wek.ru",
-      "language": "Russian",
-      "source_country": "Russia",
-      "language_cluster": "Russian",
-      "framing": "pro_russia",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260216T053000Z"
-    },
-    {
-      "url": "https://24tv.ua/raketniy-kompleks-bastion-shho-vidomo-pro-pershiy-vipadok-urazhennya_n3037110",
-      "title": "Ракетний комплекс Бастіон - що відомо про перший випадок ураження Бастіону",
-      "domain": "24tv.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260327T110000Z"
-    },
-    {
-      "url": "https://www.protothema.gr/world/article/1777147/nekros-apo-pligma-oukranikou-drone-sti-sevastoupoli/",
-      "title": "Νεκρός από πλήγμα ουκρανικού drone στη Σεβαστούπολη",
-      "domain": "protothema.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260220T021500Z"
-    },
-    {
-      "url": "https://www.sigmalive.com/news/international/1304379/oykrania-enas-nekros-apo-plighma-drone-sti-sevastoupoli",
-      "title": "Ουκρανία : Ένας νεκρός από πλήγμα drone στη Σεβαστούπολη",
-      "domain": "sigmalive.com",
-      "language": "Greek",
-      "source_country": "Cyprus",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260220T054500Z"
-    },
-    {
-      "url": "https://www.iefimerida.gr/kosmos/enas-nekros-pligma-oykranikoy-drone-sebastoypoli",
-      "title": "Ένας νεκρός σε πλήγμα ουκρανικού drone στη Σεβαστούπολη",
-      "domain": "iefimerida.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260220T040000Z"
-    },
-    {
-      "url": "https://www.skai.gr/news/world/enas-nekros-se-pligma-drone-tis-oukranias-sti-sevastoupoli",
-      "title": "Ένας νεκρός σε πλήγμα drone της Ουκρανίας στη Σεβαστούπολη",
-      "domain": "skai.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260220T040000Z"
-    },
-    {
-      "url": "https://tsn.ua/politika/stsenariy-peremohy-za-ukrayinoiu-shvetsiia-zrobyla-huchnu-zaiavu-pro-deokupatsiiu-krymu-3028103.html",
-      "title": "Війна в Україні – у Швеції зробили заяву про Крим Політика",
-      "domain": "tsn.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T101500Z"
-    },
-    {
-      "url": "https://aif.ru/incidents/v-kieve-i-lvove-progremeli-moshchnye-vzryvy",
-      "title": "В Киеве и Львове прогремели мощные взрывы",
-      "domain": "aif.ru",
-      "language": "Russian",
-      "source_country": "Russia",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260108T233000Z"
-    },
-    {
-      "url": "https://fakti.bg/world/1037681-dmitro-pletenchuk-rusia-izpolzva-krim-kato-baza-za-udari-po-ukraina",
-      "title": "Дмитро Плетенчук : Русия използва Крим като база за удари по Украйна ᐉ Новини от Fakti . bg - Свят",
-      "domain": "fakti.bg",
-      "language": "Bulgarian",
-      "source_country": "Bulgaria",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260226T121500Z"
-    },
-    {
-      "url": "https://www.liga.net/ua/politics/opinion/zamorozhennia-viyny-tymchasovi-postupky-ukrainy-mozhut-roztiahnuty-okupatsiiu-na-desiatylittia",
-      "title": "Чи зможе Україна повернути Крим і Донбас – уроки історії та прогноз експерта з безпеки : Пітер Гарріс | Новини України",
-      "domain": "liga.net",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260113T141500Z"
-    },
-    {
-      "url": "https://24tv.ua/urazhennya-korabliv-litakiv-rosiyi-krimu-shho-vidomo-pro-naslidki_n3014241",
-      "title": "Ураження кораблів і літаків Росії у Криму - що відомо про наслідки ударів СОУ",
-      "domain": "24tv.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260221T154500Z"
-    },
-    {
-      "url": "https://aif.ru/incidents/rogov-vo-lvovskoy-oblasti-progremeli-shest-vzryvov-neveroyatnoy-moshchnosti",
-      "title": "Рогов : во Львовской области прогремели шесть взрывов невероятной мощности",
-      "domain": "aif.ru",
-      "language": "Russian",
-      "source_country": "Russia",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260108T233000Z"
-    },
-    {
-      "url": "https://24tv.ua/ru/porazhenie-korablej-i-samoletov-rossii-v-krymu-chto-izvestno-o-posledstvijah-udarov-sou_n3014246",
-      "title": "Поражение кораблей и самолетов России в Крыму - что известно о последствиях ударов СОУ",
-      "domain": "24tv.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260221T163000Z"
-    },
-    {
-      "url": "https://vecer.com/svet/z-gumo-in-lesom-kljubujejo-sovraznikovim-dronon-kako-so-rusi-zmotno-mislili-da-so-sklatili-ukrajinsko-bojno-letalo-10404423",
-      "title": "Z gumo in lesom kljubujejo sovražnikovim dronon : Kako so Rusi zmotno mislili , da so sklatili ukrajinsko bojno letalo",
-      "domain": "vecer.com",
-      "language": "Slovenian",
-      "source_country": "Slovenia",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260201T021500Z"
-    },
-    {
-      "url": "https://vecer.com/svet/z-gumo-in-lesom-nad-sovraznikove-drone-kako-so-rusi-zmotno-mislili-da-so-sklatili-ukrajinsko-bojno-letalo-10404423",
-      "title": "Z gumo in lesom nad sovražnikove drone : Kako so Rusi zmotno mislili , da so sklatili ukrajinsko bojno letalo",
-      "domain": "vecer.com",
-      "language": "Slovenian",
-      "source_country": "Slovenia",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260131T213000Z"
-    },
-    {
-      "url": "https://demokracija.si/fokus/v-tiskani-izdaji-demokracije-preberite-vojna-v-ukrajini-vstopa-v-peto-leto/",
-      "title": "V tiskani izdaji Demokracije preberite : Vojna v Ukrajini vstopa v peto leto",
-      "domain": "demokracija.si",
-      "language": "Slovenian",
-      "source_country": "Slovenia",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260304T080000Z"
-    },
-    {
-      "url": "https://aif.ru/incidents/poyavilis-kadry-predpolozhitelno-udarov-po-obektam-vo-lvovskoy-oblasti",
-      "title": "Появились кадры , предположительно , ударов по объектам во Львовской области",
-      "domain": "aif.ru",
-      "language": "Russian",
-      "source_country": "Russia",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260109T021500Z"
-    },
-    {
-      "url": "https://www.radiosvoboda.org/a/news-fedorov-plan-vijny/33686903.html",
-      "title": "Федоров представив план дій у війні – « наші кроки , щоб примусити Росію до миру » ",
-      "domain": "radiosvoboda.org",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T133000Z"
-    },
-    {
-      "url": "https://financy.24tv.ua/zolota-lihomanka-koli-vona-bula-ukrayini_n3004557",
-      "title": "Золота лихоманка - коли вона була в Україні",
-      "domain": "financy.24tv.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260209T051500Z"
-    },
-    {
-      "url": "https://www.focus-news.net/novini/mejdunarodni/Shte-zashtitim-granicite-si-ot-nacistkata-durzhava-koyato-Zapadut-suzdade-v-U-2884008",
-      "title": "  Ще защитим границите си от нацистката държава , която Западът създаде в Украйна : Лавров заяви , че Русия няма да допусне разполагането на оръжия , които да заплашват Москва",
-      "domain": "focus-news.net",
-      "language": "Bulgarian",
-      "source_country": "Bulgaria",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260209T094500Z"
-    },
-    {
-      "url": "https://www.ceskenoviny.cz/zpravy/rusove-postupuji-pomalu-a-ukrajina-je-schopna-se-dal-branit-rekl-rutte/2785656",
-      "title": "Rusové postupují pomalu a Ukrajina je schopna se dál bránit , řekl Rutte",
-      "domain": "ceskenoviny.cz",
-      "language": "Czech",
-      "source_country": "Czech Republic",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260212T133000Z"
-    },
-    {
-      "url": "https://www.radiosvoboda.org/a/33686649.html",
-      "title": " « Чотири роки , як Путін бере Київ за три дні » – Зеленський звернувся до українців у роковини вторгнення",
-      "domain": "radiosvoboda.org",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T091500Z"
-    },
-    {
-      "url": "https://www.ceskenoviny.cz/zpravy/jednani-usa-rusko-ukrajina-pro-dnesek-skoncila-tvrdi-agentury/2781893",
-      "title": "Jednání united states - Rusko - Ukrajina pro dnešek skončila , tvrdí agentury",
-      "domain": "ceskenoviny.cz",
-      "language": "Czech",
-      "source_country": "Czech Republic",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T173000Z"
-    },
-    {
-      "url": "https://www.news.at/politik/ukraine-gelingen-grosse-gelande-ruckeroberungen",
-      "title": "Ukraine gelingen große Gelände - Rückeroberungen",
-      "domain": "news.at",
-      "language": "German",
-      "source_country": "Austria",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260217T233000Z"
-    },
-    {
-      "url": "https://www.azernews.az/region/253718.html",
-      "title": "Inside the Ukraine War : Russia casualties rise as territorial changes slow",
-      "domain": "azernews.az",
-      "language": "English",
-      "source_country": "Azerbaijan",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260130T110000Z"
-    },
-    {
-      "url": "https://www.skai.gr/news/world/metopo",
-      "title": "Ρωσία vs Ουκρανία : Από την « πτώση του Κιέβου σε 3 μέρες » σε έναν εξαντλητικό πόλεμο φθοράς",
-      "domain": "skai.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T101500Z"
-    },
-    {
-      "url": "https://www.perthnow.com.au/news/conflict/ukraine-russia-begin-second-round-of-uae-peace-talks-c-21531866",
-      "title": "Ukraine , Russia begin second round of UAE peace talks",
-      "domain": "perthnow.com.au",
-      "language": "English",
-      "source_country": "Australia",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T143000Z"
-    },
-    {
-      "url": "https://de.nachrichten.yahoo.com/region-donezk-ukrainische-verteidigungslinie-pokrowsk-123507928.html",
-      "title": "Region Donezk - Ukrainische Verteidigungslinie bei Pokrowsk vor dem Kollaps",
-      "domain": "de.nachrichten.yahoo.com",
-      "language": "German",
-      "source_country": "United States",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260217T150000Z"
-    },
-    {
-      "url": "https://www.rundschau-online.de:443/politik/ukraine-gelingt-grosser-front-erfolg-putins-pantsir-arsenal-schrumpft-1222989",
-      "title": "Ukraine mit großem Front - Erfolg – und Putins Arsenal schrumpft",
-      "domain": "rundschau-online.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260216T214500Z"
-    },
-    {
-      "url": "https://demokracija.si/fokus/minevajo-stiri-leta-od-zacetka-ruske-invazije-na-ukrajino/",
-      "title": "Minevajo štiri leta od začetka ruske invazije na Ukrajino",
-      "domain": "demokracija.si",
-      "language": "Slovenian",
-      "source_country": "Slovenia",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T110000Z"
-    },
-    {
-      "url": "https://www.vienna.at/ukraine-gelingen-grosse-gelaende-rueckeroberungen/9995252",
-      "title": "Ukraine erobert 201 km² von Russland zurück",
-      "domain": "vienna.at",
-      "language": "German",
-      "source_country": "Austria",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260218T231500Z"
-    },
-    {
-      "url": "https://www.24sata.hr/news/foto-ovako-je-poceo-rat-prve-snimke-ruske-invazije-sokirale-svijet-prije-cetiri-godine-1110278",
-      "title": "FOTO Ovako je počeo rat : Prve snimke ruske invazije šokirale svijet prije četiri godine ! ",
-      "domain": "24sata.hr",
-      "language": "Croatian",
-      "source_country": "Croatia",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T101500Z"
-    },
-    {
-      "url": "https://www.vecernji.hr/vijesti/foto-ovako-je-zapoceo-rat-siri-se-snimka-koja-je-zauvijek-promjenila-europu-1936917",
-      "title": "FOTO Ovako je započeo rat : Širi se snimka koja je  zauvijek promjenila Europu  ",
-      "domain": "vecernji.hr",
-      "language": "Croatian",
-      "source_country": "Croatia",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T110000Z"
-    },
-    {
-      "url": "https://focus.ua/ukraine/741872-pogoda-v-ukraine-prognoz-ot-natalki-didenko-na-29-yanvarya",
-      "title": "Погода в Украине прогноз от Наталки Диденко на 29 января",
-      "domain": "focus.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260128T173000Z"
-    },
-    {
-      "url": "https://www.bild.de/politik/ausland-und-internationales/ukraine-erobert-so-viel-land-wie-seit-zwei-jahren-nicht-liegt-es-an-elon-musk-69940599f1c55d28ade6a9d2",
-      "title": "Ukraine erobert so viel Land wie seit zwei Jahren nicht – liegt es an Elon Musk ? ",
-      "domain": "bild.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260217T074500Z"
-    },
-    {
-      "url": "https://www.canberratimes.com.au/story/9168324/ukraine-russia-begin-second-round-of-uae-peace-talks/",
-      "title": "Ukraine , Russia begin second round of UAE peace talks",
-      "domain": "canberratimes.com.au",
-      "language": "English",
-      "source_country": "Australia",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T143000Z"
-    },
-    {
-      "url": "https://athina984.gr/2026/02/20/enas-nekros-se-pligma-drone-tis-oykranias-sti-sevastoypoli/",
-      "title": "Ένας νεκρός σε πλήγμα drone της Ουκρανίας στη Σεβαστούπολη",
-      "domain": "athina984.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260220T040000Z"
-    },
-    {
-      "url": "https://dialogos.com.cy/enas-nekros-se-pligma-drone-tis-oykranias-sti-sevastoypoli/",
-      "title": "Ένας νεκρός σε πλήγμα drone της Ουκρανίας στη Σεβαστούπολη",
-      "domain": "dialogos.com.cy",
-      "language": "Greek",
-      "source_country": "Cyprus",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260220T060000Z"
-    },
-    {
-      "url": "https://www.novinky.cz/clanek/komentare-trefa-milana-mikuleckeho-rusko-a-jeho-vecne-manipulace-s-historii-40558454",
-      "title": "Trefa Milana Mikuleckého : Rusko a jeho věčné manipulace s historií",
-      "domain": "novinky.cz",
-      "language": "Czech",
-      "source_country": "Czech Republic",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260119T151500Z"
-    },
-    {
-      "url": "https://www.newsbeast.gr/world/arthro/12927060/rosia-oukrania-o-mystikos-chartis-tou-trab-gia-na-teleiosei-ton-polemo-se-mia-nychta",
-      "title": "Ρωσία – Ουκρανία : Ο μυστικός χάρτης του Τραμπ για να « τελειώσει » τον πόλεμο σε μια νύχτα",
-      "domain": "newsbeast.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260227T174500Z"
-    },
-    {
-      "url": "https://www.independent.ie/world-news/europe/trump-and-putin-envoys-say-davos-meeting-on-ukraine-was-very-positive-and-constructive/a1691410914.html",
-      "title": "Trump and Putin envoys say Davos meeting on Ukraine was  very positive  and  constructive  ",
-      "domain": "independent.ie",
-      "language": "English",
-      "source_country": "Ireland",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260121T161500Z"
-    },
-    {
-      "url": "https://informer.rs/planeta/vesti/1089889/sad-rusija-ukrajina",
-      "title": "Sibiha : Rešenje rata u rukama lidera i Trampa , Ukrajina ne pristaje na teritorijalne ustupke",
-      "domain": "informer.rs",
-      "language": "Serbian",
-      "source_country": "Serbia",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T211500Z"
-    },
-    {
-      "url": "https://www.perthnow.com.au/news/conflict/us-and-russian-envoys-say-meeting-on-ukraine-positive-c-21372504",
-      "title": "US and Russian envoys say meeting on Ukraine  positive  ",
-      "domain": "perthnow.com.au",
-      "language": "English",
-      "source_country": "Australia",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260120T210000Z"
-    },
-    {
-      "url": "https://telegrafi.com/ukrainasit-shkaterrojne-akullthyesin-e-fsb-se/",
-      "title": "Ukrainasit shkatërrojnë akullthyesin e FSB - së",
-      "domain": "telegrafi.com",
-      "language": "Albanian",
-      "source_country": "Kosovo",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260325T153000Z"
-    },
-    {
-      "url": "https://www.reporter.gr/diethnh/diethneis-eidhseis/666119-neos-gyros-synomilion-rosias-oukranias-ipa-tin-erxomeni-vdomada",
-      "title": "Νέος γύρος συνομιλιών Ρωσίας - Ουκρανίας - ΗΠΑ την ερχόμενη βδομάδα",
-      "domain": "reporter.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260213T120000Z"
-    },
-    {
-      "url": "https://www.t-online.de/nachrichten/ukraine/id_101132198/ukraine-macht-so-viele-gelaendegewinne-wie-zuletzt-2023.html",
-      "title": "Ukraine macht so viele Geländegewinne wie zuletzt 2023",
-      "domain": "t-online.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260217T043000Z"
-    },
-    {
-      "url": "https://www.t-online.de/nachrichten/ukraine/id_101132198/ukraine-macht-so-viele-gelaendegewinne-wie-zuletzt-in-2023.html",
-      "title": "Ukraine macht so viele Geländegewinne wie zuletzt in 2023",
-      "domain": "t-online.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260217T083000Z"
-    },
-    {
-      "url": "https://www.stern.de/politik/ausland/ukraine--groesster-gelaendegewinn-seit-2023---was-musk-damit-zu-tun-hat-37143652.html",
-      "title": "Ukraine : Grter Geländegewinn seit 2023 – was Musk damit zu tun hat",
-      "domain": "stern.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260217T091500Z"
-    },
-    {
-      "url": "https://www.rte.ie/news/2026/0216/1558832-starlink-shutdown-hits-russia-fuels-ukrainian-advances/",
-      "title": "Starlink shutdown hits Russia , fuels Ukrainian advances",
-      "domain": "rte.ie",
-      "language": "English",
-      "source_country": "Ireland",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260216T191500Z"
-    },
-    {
-      "url": "https://www.radiosvoboda.org/a/turetskyy-blakytnyy-potoky-chorne-more-putin-krym-peregovory/33694809.html",
-      "title": " « Жалюгідні сльози » Кремля : навіщо Путін лякає підривом « Турецького потоку » під час розмов про мир ? ",
-      "domain": "radiosvoboda.org",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260304T111500Z"
-    },
-    {
-      "url": "https://focus.ua/ukraine/743955-pogoda-na-zavtra-prognoz-pogody-na-16-17-fevralya-po-ukraine",
-      "title": "Погода на завтра прогноз погоды на 16 - 17 февраля по Украине",
-      "domain": "focus.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260215T193000Z"
-    },
-    {
-      "url": "https://focus.ua/uk/ukraine/743955-pogoda-na-zavtra-prognoz-pogodi-na-16-17-lyutogo-po-ukrajini",
-      "title": "Погода на завтра прогноз погоди на 16 - 17 лютого по Україні",
-      "domain": "focus.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260215T161500Z"
-    },
-    {
-      "url": "https://www.straitstimes.com/world/europe/trump-and-putin-envoys-say-davos-meting-on-ukraine-was-very-positive-and-constructive",
-      "title": "Trump and Putin envoys say Davos meting on Ukraine was  very positive  and  constructive  ",
-      "domain": "straitstimes.com",
-      "language": "English",
-      "source_country": "Singapore",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260120T203000Z"
-    },
-    {
-      "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/01/20/trump-and-putin-envoys-say-davos-meting-on-ukraine-was-very-positive-and-constructive",
-      "title": "Trump and Putin envoys say Davos meting on Ukraine was  very positive  and  constructive  ",
-      "domain": "internazionale.it",
-      "language": "English",
-      "source_country": "Italy",
-      "language_cluster": "Italian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260121T001500Z"
-    },
-    {
-      "url": "https://24tv.ua/ru/lavrov-zajavil-chto-rossija-zahvatit-vsju-zaporozhskuju-i-hersonskuju-oblasti_n3007283",
-      "title": "Лавров заявил , что Россия захватит всю Запорожскую и Херсонскую области",
-      "domain": "24tv.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260211T111500Z"
-    },
-    {
-      "url": "https://newpost.gr/eidiseis/neo-gyro-eirineytikon-synomilion-tin-epomeni-evdomada-anakoinose-to-kremlino-piezoyn-oi-ipa-quot-symfonia-mechri-to-kalokairi-quot/",
-      "title": "Νέο γύρο ειρηνευτικών συνομιλιών την επόμενη εβδομάδα ανακοίνωσε το Κρεμλίνο – Πιέζουν οι ΗΠΑ :  Συμφωνία μέχρι το καλοκαίρι  ",
-      "domain": "newpost.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260213T114500Z"
-    },
-    {
-      "url": "https://gazeta.ua/ru/articles/np/_vrag-nanosit-artillerijskie-udary-i-pytaetsya-prorvatsya-v-kupyansk-genshtab/1240662",
-      "title": "Враг наносит артиллерийские удары и пытается прорваться в Купянск - Генштаб",
-      "domain": "gazeta.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260108T163000Z"
-    },
-    {
-      "url": "https://gazeta.ua/articles/np/_vorog-zavdaye-artilerijskih-udariv-i-namagayetsya-prorvatisya-v-kupyansk-genshtab/1240662",
-      "title": "Ворог завдає артилерійських ударів і намагається прорватися в Куп  янськ - Генштаб",
-      "domain": "gazeta.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260108T173000Z"
-    },
-    {
-      "url": "https://www.affaritaliani.it/esteri/ucraina-nave-gasiera-russa-affondata-nel-mediterraneo-mosca-accusa-kiev-non-si-ferma-la-pioggia-di-droni.html",
-      "title": "Ucraina , nave gasiera russa affondata nel Mediterraneo : Mosca accusa Kiev . Non si ferma la pioggia di droni",
-      "domain": "affaritaliani.it",
-      "language": "Italian",
-      "source_country": "Italy",
-      "language_cluster": "Italian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260305T084500Z"
-    },
-    {
-      "url": "https://focus.ua/lifestyle/741213-lyubov-uspenskaya-pevica-priznana-licom-kotoroe-ugrozhaet-nacbezopasnosti",
-      "title": "Любовь Успенская певица признана лицом , которое угрожает нацбезопасности",
-      "domain": "focus.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260122T144500Z"
-    },
-    {
-      "url": "https://www.novinky.cz/clanek/valka-na-ukrajine-jednani-o-konci-valky-na-ukrajine-prulom-neprinasi-co-stoji-miru-v-ceste-40563189",
-      "title": "Jednání o konci války na Ukrajině průlom nepřináší . Co stojí míru v cestě ? ",
-      "domain": "novinky.cz",
-      "language": "Czech",
-      "source_country": "Czech Republic",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260221T160000Z"
-    },
-    {
-      "url": "https://www.focus.de/politik/ausland/ukrainische-verteidigungslinie-bei-pokrowsk-steht-vor-dem-kollaps_39d2a9db-9bd9-4019-88f1-f48c35f41094.html",
-      "title": "Ukrainische Verteidigungslinie bei Pokrowsk steht vor dem Kollaps",
-      "domain": "focus.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260219T064500Z"
-    },
-    {
-      "url": "https://indianexpress.com/article/opinion/editorials/four-years-later-for-russia-ukraine-peace-remains-elusive-10552531/",
-      "title": "Four years later , for Russia - Ukraine , peace remains elusive",
-      "domain": "indianexpress.com",
-      "language": "English",
-      "source_country": "India",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260226T034500Z"
-    },
-    {
-      "url": "https://korrespondent.net/ukraine/4858360-zelenskyi-obiasnyl-pochemu-ne-otdast-donbass-rf",
-      "title": "Зеленский объяснил , почему не отдаст Донбасс РФ",
-      "domain": "korrespondent.net",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260227T090000Z"
-    },
-    {
-      "url": "https://ua.korrespondent.net/ukraine/4858360-zelenskym-poiasnyv-chomu-ne-viddast-donbas-rosii",
-      "title": "Зеленським пояснив , чому не віддасть Донбас Росії",
-      "domain": "ua.korrespondent.net",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260227T081500Z"
-    },
-    {
-      "url": "https://metro.co.uk/2026/02/24/map-shows-much-territory-russia-gained-lost-ukraine-war-27082210/",
-      "title": "Map shows how much territory Russia has gained and lost in Ukraine war",
-      "domain": "metro.co.uk",
-      "language": "English",
-      "source_country": "United Kingdom",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T123000Z"
-    },
-    {
-      "url": "https://vecer.mk/svet/ukraina-i-rusija-ja-zapochnaa-vtorata-runda-pregovori-vo-abu-dabi-1bc9141e-4ef4-4f7a-92d3-708992b30cd3",
-      "title": "Украина и Русија ја започнаа втората рунда преговори во Абу Даби",
-      "domain": "vecer.mk",
-      "language": "Macedonian",
-      "source_country": "Macedonia",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T130000Z"
-    },
-    {
-      "url": "https://economictimes.indiatimes.com/news/defence/ukraine-says-only-trump-can-end-war-with-russia/articleshow/128082446.cms",
-      "title": "Ukraine says only Trump can end war with Russia",
-      "domain": "economictimes.indiatimes.com",
-      "language": "English",
-      "source_country": "India",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T194500Z"
-    },
-    {
-      "url": "http://www.merkur.de/politik/starlink-blackout-wird-zu-putins-albtraum-ukraine-startet-blitzangriffe-an-drei-fronten-94176824.html",
-      "title": "Starlink - Blackout wird zu Putins Albtraum – Ukraine startet Blitzangriffe an drei Fronten",
-      "domain": "merkur.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260218T223000Z"
-    },
-    {
-      "url": "https://www.merkur.de/politik/starlink-blackout-wird-zu-putins-albtraum-ukraine-startet-blitzangriffe-an-drei-fronten-94176824.html",
-      "title": "Starlink - Blackout wird zu Putins Albtraum – Ukraine startet Blitzangriffe an drei Fronten",
-      "domain": "merkur.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260218T230000Z"
-    },
-    {
-      "url": "https://gazeta.ua/ru/articles/politics/_rossiya-blefuet-i-zatyagivaet-peregovory-postoyannyj-predstavitel-ukrainy-pri-oon/1246856",
-      "title": "Переговоры по Украине - постпред при ООН заявил о блефе России",
-      "domain": "gazeta.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260324T134500Z"
-    },
-    {
-      "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/02/04/ukraine-russia-begin-second-round-of-us-brokered-peace-talks-in-abu-dhabi",
-      "title": "Ukraine , Russia begin second round of US - brokered peace talks in Abu Dhabi",
-      "domain": "internazionale.it",
-      "language": "English",
-      "source_country": "Italy",
-      "language_cluster": "Italian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T123000Z"
-    },
-    {
-      "url": "https://www.dialog.ua/russia/327465_1769003294",
-      "title": "Путин получил украинско - американский черновик мирного плана – Bloomberg узнало реакцию Кремля - ",
-      "domain": "dialog.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260121T143000Z"
-    },
-    {
-      "url": "https://www.marketscreener.com/news/ukraine-russia-begin-second-round-of-us-brokered-peace-talks-in-abu-dhabi-ce7e5adad880f625",
-      "title": "Ukraine , Russia begin second round of US - brokered peace talks in Abu Dhabi",
-      "domain": "marketscreener.com",
-      "language": "English",
-      "source_country": "Unknown",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T103000Z"
-    },
-    {
-      "url": "https://www.investor.bg/a/516-politika/426048-rusiya-postavya-novo-uslovie-za-mir-svetat-da-priznae-donbas-za-ruski",
-      "title": "Русия поставя ново условие за мир - светът да признае Донбас за руски",
-      "domain": "investor.bg",
-      "language": "Bulgarian",
-      "source_country": "Bulgaria",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260205T221500Z"
-    },
-    {
-      "url": "https://www.thetoc.gr/diethni/article/polemos-stin-oukrania-tessera-xronia-sugkrouseon---oi-arithmoi-pou-sokaroun/",
-      "title": "Πόλεμος στην Ουκρανία : Τέσσερα χρόνια συγκρούσεων - Οι αριθμοί που ... ",
-      "domain": "thetoc.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T081500Z"
-    },
-    {
-      "url": "https://www.al-monitor.com/originals/2026/02/ukraine-russia-begin-second-round-us-brokered-peace-talks-abu-dhabi",
-      "title": "Ukraine , Russia begin second round of US - brokered peace talks in Abu Dhabi",
-      "domain": "al-monitor.com",
-      "language": "English",
-      "source_country": "Israel",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T103000Z"
-    },
-    {
-      "url": "https://www.thehindu.com/news/international/ukraine-russia-begin-second-round-of-us-brokered-peace-talks-in-abu-dhabi/article70591430.ece",
-      "title": "Ukraine , Russia begin second round of U . S .- brokered peace talks in Abu Dhabi",
-      "domain": "thehindu.com",
-      "language": "English",
-      "source_country": "India",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T123000Z"
-    },
-    {
-      "url": "https://www.thestar.com.my/news/world/2026/02/04/ukraine-russia-begin-second-round-of-us-brokered-peace-talks-in-abu-dhabi",
-      "title": "Ukraine , Russia begin second round of US - brokered peace talks in Abu Dhabi",
-      "domain": "thestar.com.my",
-      "language": "English",
-      "source_country": "Malaysia",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T104500Z"
-    },
-    {
-      "url": "https://www.unian.ua/economics/other/chi-bude-na-donbasi-vilna-ekonomichna-zona-pislya-viyni-zelenskiy-vidpoviv-13279323.html",
-      "title": "Зеленський - президент відповів , чи буде на Донбасі вільна економічна зона після війни",
-      "domain": "unian.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260207T120000Z"
-    },
-    {
-      "url": "https://www.t-online.de/nachrichten/ukraine/id_101132304/russlands-angriffskrieg-ukraine-meldet-ueberraschende-gelaendegewinne.html",
-      "title": "Russlands Angriffskrieg : Ukraine meldet überraschende Geländegewinne",
-      "domain": "t-online.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260217T121500Z"
-    },
-    {
-      "url": "https://www.enikos.gr/international/polemos-stin-oukrania-tessera-chronia-apo-tin-rosiki-eisvoli-ta-noumera-tis-sygkrousis-pou-allaxe-tin-evropi/2538161/",
-      "title": "Πόλεμος στην Ουκρανία : Τέσσερα χρόνια από την ρωσική εισβολή - Τα νούμερα της σύγκρουσης που άλλαξε την Ευρώπη",
-      "domain": "enikos.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T043000Z"
-    },
-    {
-      "url": "https://www.cross.bg/ykraiina-lavrov-moskva-1790011.html",
-      "title": "Лавров заяви , че Русия няма да допусне разполагането на оръжия , които да заплашват Москва",
-      "domain": "cross.bg",
-      "language": "Bulgarian",
-      "source_country": "Bulgaria",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260209T134500Z"
-    },
-    {
-      "url": "https://www.unian.net/war/putin-stolknetsya-s-nevidimoy-armiey-esli-ukraina-ustupit-territoriyu-the-telegraph-13247397.html",
-      "title": "Путин столкнется с невидимой армией , если Украина уступит территорию , ",
-      "domain": "unian.net",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260106T131500Z"
-    },
-    {
-      "url": "https://regionews.ua/ukr/news/bukovyna/1770279937-nichniy-zemletrus-na-bukovini-shcho-kazhut-seysmologi",
-      "title": "Нічний землетрус на Буковині : що кажуть сейсмологи",
-      "domain": "regionews.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260205T100000Z"
-    },
-    {
-      "url": "https://focus.ua/uk/politics/741087-mirni-peremovini-putin-otrimav-mirnu-ugodu-pogodzhenu-z-ukrajinoyu-ta-yevropoyu",
-      "title": "Мирні перемовини Путін отримав мирну угоду , погоджену з Україною та Європою",
-      "domain": "focus.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260121T161500Z"
-    },
-    {
-      "url": "https://www.watson.ch/international/ukraine/226083827-ukraine-krieg-so-wenig-hat-sich-an-der-front-im-letzten-jahr-veraendert",
-      "title": "Ukraine - Krieg : So wenig hat sich an der Front im letzten Jahr verändert",
-      "domain": "watson.ch",
-      "language": "German",
-      "source_country": "Switzerland",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T043000Z"
-    },
-    {
-      "url": "https://www.kathimerini.gr/world/564068683/oykrania-rosikes-pieseis-sto-pokrovsk-kathos-mainontai-oi-teleytaies-maches/",
-      "title": "Ουκρανία : Ρωσικές πιέσεις στο Ποκρόβσκ καθώς μαίνονται οι « τελευταίες μάχες » ",
-      "domain": "kathimerini.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260209T163000Z"
-    },
-    {
-      "url": "https://www.rp.pl/swiat/art43952091-wojna-rosji-z-ukraina-dzien-1478",
-      "title": "Wojna Rosji z Ukrainą . Dzień 1478 . Relacja na żywo",
-      "domain": "rp.pl",
-      "language": "Polish",
-      "source_country": "Poland",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260312T064500Z"
-    },
-    {
-      "url": "https://www.eleftherostypos.gr/diethni/4-chronia-polemou-stin-oukrania-oi-sokaristikoi-arithmoi-piso-apo-tin-aimatochysia-kai-tin-katastrofi",
-      "title": "4 χρόνια πολέμου στην Ουκρανία : Οι σοκαριστικοί αριθμοί πίσω από την αιματοχυσία και την καταστροφή",
-      "domain": "eleftherostypos.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T080000Z"
-    },
-    {
-      "url": "https://www.firstpost.com/world/russian-losses-twice-than-ukraines-as-casualties-near-2-million-study-13973495.html",
-      "title": "Russian losses twice than Ukraine as casualties near 2 million : Study – Firstpost",
-      "domain": "firstpost.com",
-      "language": "English",
-      "source_country": "India",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260128T134500Z"
-    },
-    {
-      "url": "https://tribune.com.pk/story/2590907/ukraine-and-russia-resume-us-brokered-peace-talks-in-abu-dhabi",
-      "title": "Ukraine and Russia resume US - brokered peace talks in Abu Dhabi",
-      "domain": "tribune.com.pk",
-      "language": "English",
-      "source_country": "Pakistan",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260205T120000Z"
-    },
-    {
-      "url": "https://www.theglobeandmail.com/world/article-ukraine-russia-us-peace-talks-abu-dhabi/",
-      "title": "Ukraine , Russia hold second day of U . S .- brokered peace talks in Abu Dhabi",
-      "domain": "theglobeandmail.com",
-      "language": "English",
-      "source_country": "Canada",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260205T120000Z"
-    },
-    {
-      "url": "https://timesofindia.indiatimes.com/world/europe/drone-attack-russian-oil-port-blasts-fuel-tanks-damaged-in-attack-by-ukraine-3-killed/articleshow/127122496.cms",
-      "title": "Drone attack : Russian oil port blasts , fuel tanks damaged in attack by Ukraine ; 3 killed",
-      "domain": "timesofindia.indiatimes.com",
-      "language": "English",
-      "source_country": "India",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260122T090000Z"
-    },
-    {
-      "url": "https://www.okaz.com.sa/politics/na/2235051",
-      "title": "لافروف : لا مستقبل مشرقاً لروسيا في علاقتها مع أمريكا",
-      "domain": "okaz.com.sa",
-      "language": "English",
-      "source_country": "Saudi Arabia",
-      "language_cluster": "Arabic",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260209T230000Z"
-    },
-    {
-      "url": "https://nbnews.com.ua/politika-uk/2024/03/01/zmi-diznalisya-shcho-moskva-proponuvala-u/",
-      "title": "ЗМІ дізналися , що Москва пропонувала Україні для завершення війни у квітні 2022 року",
-      "domain": "nbnews.com.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260131T213000Z"
-    },
-    {
-      "url": "https://www.gdnonline.com:443/Details/1375287",
-      "title": "World News : Ukraine , Russia start second day of  productive  peace talks in Abu Dhabi",
-      "domain": "gdnonline.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260205T164500Z"
-    },
-    {
-      "url": "https://www.eurointegration.com.ua/rus/interview/2026/03/4/7232391/",
-      "title": "  Поражение Украины – это когда Путин управляет вашей страной . Интервью Бориса Джонсона",
-      "domain": "eurointegration.com.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260304T063000Z"
-    },
-    {
-      "url": "https://www.eurointegration.com.ua/interview/2026/03/4/7232391/",
-      "title": "  Поразка України – це коли Путін керує вашою країною . Інтерв  ю Бориса Джонсона",
-      "domain": "eurointegration.com.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260304T063000Z"
-    },
-    {
-      "url": "https://www.tagesanzeiger.ch/ukraine-krieg-1-8-millionen-opfer-nach-vier-jahren-konflikt-192529900343",
-      "title": "Ukraine - Krieg : 1 , 8 Millionen Opfer nach vier Jahren Konflikt",
-      "domain": "tagesanzeiger.ch",
-      "language": "German",
-      "source_country": "Switzerland",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T091500Z"
-    },
-    {
-      "url": "https://www.bazonline.ch/ukraine-krieg-1-8-millionen-opfer-nach-vier-jahren-konflikt-192529900343",
-      "title": "Ukraine - Krieg : 1 , 8 Millionen Opfer nach vier Jahren Konflikt",
-      "domain": "bazonline.ch",
-      "language": "German",
-      "source_country": "Switzerland",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T091500Z"
-    },
-    {
-      "url": "https://www.bernerzeitung.ch/ukraine-krieg-1-8-millionen-opfer-nach-vier-jahren-konflikt-192529900343",
-      "title": "Ukraine - Krieg : 1 , 8 Millionen Opfer nach vier Jahren Konflikt",
-      "domain": "bernerzeitung.ch",
-      "language": "German",
-      "source_country": "Switzerland",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T091500Z"
-    },
-    {
-      "url": "https://www.enikos.gr/international/oukrania-mono-o-trab-borei-na-stamatisei-ton-polemo-leei-o-ypex-ta-pio-dyskola-zitimata-gia-tin-epitefxi-eirinis/2529587/",
-      "title": "Ουκρανία : « Μόνο ο Τραμπ μπορεί να σταματήσει τον πόλεμο », λέει ο ΥΠΕΞ - Τα πιο δύσκολα ζητήματα για την επίτευξη ειρήνης",
-      "domain": "enikos.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260209T094500Z"
-    },
-    {
-      "url": "https://www.n-tv.de/politik/Ukrainische-Armee-befreit-in-vier-Tagen-rund-200-Quadratkilometer-id30369487.html",
-      "title": "  Vormarsch ist bemerkenswert : Ukrainische Armee befreit in vier Tagen rund 200 Quadratkilometer",
-      "domain": "n-tv.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260216T220000Z"
-    },
-    {
-      "url": "https://bnn-news.com/lavrov-russia-calls-on-the-un-to-equate-donbas-and-crimea-with-greenland-276740",
-      "title": "Lavrov : Russia calls on the UN to equate Donbas and Crimea with Greenland",
-      "domain": "bnn-news.com",
-      "language": "English",
-      "source_country": "Latvia",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260130T130000Z"
-    },
-    {
-      "url": "http://www.wa.de/politik/ukraine-krieg-aktuell-kiew-truppen-schiessen-putins-kampfjet-stuetzpunkt-hinter-der-front-in-brand-verluste-steigen-zr-94215893.html",
-      "title": "Ukraine - Krieg aktuell : Kiew - Truppen schießen Putins Kampfjet - Stützpunkt in Brand – Verluste steigen",
-      "domain": "wa.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260313T164500Z"
-    },
-    {
-      "url": "https://www.moneycontrol.com/world/ukraine-urges-acceleration-of-peace-talks-says-only-trump-can-broker-deal-article-13817418.html",
-      "title": "Ukraine urges acceleration of peace talks , says only Trump can broker deal",
-      "domain": "moneycontrol.com",
-      "language": "English",
-      "source_country": "India",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T124500Z"
-    },
-    {
-      "url": "https://www.haz.de/politik/14-999-tote-zivilisten-5-9-millionen-gefluechtete-vier-jahre-ukraine-krieg-in-zahlen-YAWCAHM6RNFDDNV2EBQ7RQVPDY.html",
-      "title": "14 . 999 tote Zivilisten , 5 , 9 Millionen Geflüchtete : Vier Jahre Ukraine - Krieg in Zahlen",
-      "domain": "haz.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T113000Z"
-    },
-    {
-      "url": "https://www.maz-online.de/politik/vier-jahre-ukraine-krieg-ein-ueberblick-in-zahlen-YAWCAHM6RNFDDNV2EBQ7RQVPDY.html",
-      "title": "Vier Jahre Ukraine - Krieg : Ein Überblick in Zahlen",
-      "domain": "maz-online.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T110000Z"
-    },
-    {
-      "url": "https://24tv.ua/rosiya-vdarila-raketoyu-tsirkon-po-kiyevu-yaki-osoblivosti-tsih_n2995623",
-      "title": "Росія вдарила ракетою Циркон по Києву - які особливості цих ракет",
-      "domain": "24tv.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260124T220000Z"
-    },
-    {
-      "url": "https://24tv.ua/ru/rossija-udarila-raketoj-cirkon-po-kievu-kakie-osobennosti-jetih_n2995624",
-      "title": "Россия ударила ракетой Циркон по Киеву - какие особенности этих ракет",
-      "domain": "24tv.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260124T220000Z"
-    },
-    {
-      "url": "https://www.reflex.cz/clanek/komentare/133671/kyjevska-rana-posukum-macinka-se-profiluje-proti-okamurovi-rajchlovi-a-klausovi.html",
-      "title": "Kyjevská rána „ pošukům . Macinka se profiluje proti Okamurovi , Rajchlovi a Klausovi",
-      "domain": "reflex.cz",
-      "language": "Czech",
-      "source_country": "Czech Republic",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260111T063000Z"
-    },
-    {
-      "url": "https://www.dnn.de/politik/14-999-tote-zivilisten-5-9-millionen-gefluechtete-vier-jahre-ukraine-krieg-in-zahlen-YAWCAHM6RNFDDNV2EBQ7RQVPDY.html",
-      "title": "14 . 999 tote Zivilisten , 5 , 9 Millionen Geflüchtete : Vier Jahre Ukraine - Krieg in Zahlen",
-      "domain": "dnn.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T133000Z"
-    },
-    {
-      "url": "https://harpers.org/archive/2026/04/conflict-resolution-olivier-kempf-kyiv-ukraine-russia/",
-      "title": "Conflict Resolution , by Olivier Kempf",
-      "domain": "harpers.org",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260318T200000Z"
-    },
-    {
-      "url": "https://www.watson.ch/international/gesellschaft-politik/201566445-ukraine-russland-verliert-im-minutentakt-soldaten",
-      "title": "Ukraine : Russland verliert im Minutentakt Soldaten",
-      "domain": "watson.ch",
-      "language": "German",
-      "source_country": "Switzerland",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260216T210000Z"
-    },
-    {
-      "url": "https://www.investor.bg/a/593-sigurnost-i-otbrana/427845-v-rusiya-se-pritesnyavat-ot-ukrainskite-ataki-po-krim-dronove-letyat-i-kam-moskva",
-      "title": "В Русия се притесняват от украинските атаки по Крим , дронове летят и към Москва",
-      "domain": "investor.bg",
-      "language": "Bulgarian",
-      "source_country": "Bulgaria",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260316T061500Z"
-    },
-    {
-      "url": "https://news.bg/int-politics/isw-lavrov-obvini-sasht-che-provalyat-mirnite-pregovori-za-ukrayna.html",
-      "title": "ISW : Лавров обвини САЩ , че провалят мирните преговори за Украйна",
-      "domain": "news.bg",
-      "language": "Bulgarian",
-      "source_country": "Bulgaria",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260210T051500Z"
-    },
-    {
-      "url": "https://www.dw.com/uk/pare-zatverdila-sklad-platformi-demokraticnih-sil-rosii/a-75663000",
-      "title": "ПАРЄ затвердила склад Платформи демократичних сил Росії",
-      "domain": "dw.com",
-      "language": "Ukrainian",
-      "source_country": "Germany",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260126T131500Z"
-    },
-    {
-      "url": "https://www.firstpost.com/world/focused-on-practical-solutions-ukraine-calls-first-day-of-us-backed-peace-talks-productive-13976272.html",
-      "title": "  Focused on practical solution : Ukraine calls first day of US - backed peace talks  productive  – Firstpost",
-      "domain": "firstpost.com",
-      "language": "English",
-      "source_country": "India",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T190000Z"
-    },
-    {
-      "url": "https://www.ksl.com:443/article/51443045/ukraine-russia-begin-second-round-of-us-brokered-peace-talks-in-abu-dhabi",
-      "title": "Ukraine , Russia begin second round of US - brokered peace talks in Abu Dhabi",
-      "domain": "ksl.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T220000Z"
-    },
-    {
-      "url": "http://www.merkur.de/politik/ukraine-krieg-putins-armee-kriecht-an-der-front-nur-voran-zr-94145486.html",
-      "title": "Ukraine - Krieg : Putins Armee kriecht an der Front nur voran",
-      "domain": "merkur.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260129T133000Z"
-    },
-    {
-      "url": "http://www.merkur.de/politik/voran-ukraine-krieg-putins-armee-kriecht-an-der-front-nur-zr-94145486.html",
-      "title": "Ukraine - Schmach für Putin : Neue Analyse offenbart russisches Kern - Problem",
-      "domain": "merkur.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260130T054500Z"
-    },
-    {
-      "url": "http://www.merkur.de/politik/der-front-nur-voran-ukraine-krieg-putins-armee-kriecht-an-zr-94145486.html",
-      "title": "Ukraine - Schmach für Putin : Neue Analyse offenbart russisches Kern - Problem",
-      "domain": "merkur.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260131T183000Z"
-    },
-    {
-      "url": "https://www.nzz.ch/international/elon-musk-kommt-der-ukraine-zu-hilfe-nun-werden-russische-starlink-drohnen-blockiert-ld.1923011",
-      "title": "Ukraine : Elon Musk kommt Kiew im Drohnenkrieg zu Hilfe",
-      "domain": "nzz.ch",
-      "language": "German",
-      "source_country": "Switzerland",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260201T163000Z"
-    },
-    {
-      "url": "https://www.blic.rs/vesti/svet/sta-putin-zaista-zeli-od-ovoga-zavisi-kraj-rata-u-ukrajini/bq5pmg9",
-      "title": "Šta Putin zaista želi ? Od ovoga zavisi kraj rata u Ukrajini",
-      "domain": "blic.rs",
-      "language": "Serbian",
-      "source_country": "Serbia",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260314T204500Z"
-    },
-    {
-      "url": "https://www.livemint.com/global/russia-cheers-the-growing-nato-rift-over-greenland-11768973820567.html",
-      "title": "Russia cheers the growing NATO rift over Greenland",
-      "domain": "livemint.com",
-      "language": "English",
-      "source_country": "India",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260121T083000Z"
-    },
-    {
-      "url": "http://www.tz.de/politik/nur-voran-ukraine-krieg-putins-armee-kriecht-an-der-front-zr-94145486.html",
-      "title": "Ukraine - Schmach für Putin : Neue Analyse offenbart russisches Kern - Problem",
-      "domain": "tz.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260130T183000Z"
-    },
-    {
-      "url": "http://www.tz.de/politik/ukraine-krieg-putins-armee-kriecht-an-der-front-nur-voran-zr-94145486.html",
-      "title": "Ukraine - Krieg : Putins Armee kriecht an der Front nur voran",
-      "domain": "tz.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260129T133000Z"
-    },
-    {
-      "url": "https://www.kyivpost.com/post/70336",
-      "title": "  Americans Will Have a Key Role in Monitoring : Ceasefire Terms Take Shape in Geneva Talks",
-      "domain": "kyivpost.com",
-      "language": "English",
-      "source_country": "Ukraine",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260219T084500Z"
-    },
-    {
-      "url": "https://time.mk/ai/71e8b7d1be/mk/",
-      "title": "Time . ai",
-      "domain": "time.mk",
-      "language": "Macedonian",
-      "source_country": "Macedonia",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T091500Z"
-    },
-    {
-      "url": "https://glavcom.ua/country/society/rosija-zbiraje-miljoni-hektariv-vrozhaju-na-okupovanikh-teritorijakh-doslidzhennja-1100341.html",
-      "title": "Росіяни можуть потирати руки ? Дослідження показало , що відбувається із врожаєм на окупованих територіях",
-      "domain": "glavcom.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260129T164500Z"
-    },
-    {
-      "url": "https://www.waz-online.de/politik/14-999-tote-zivilisten-5-9-millionen-gefluechtete-vier-jahre-ukraine-krieg-in-zahlen-YAWCAHM6RNFDDNV2EBQ7RQVPDY.html",
-      "title": "14 . 999 tote Zivilisten , 5 , 9 Millionen Geflüchtete : Vier Jahre Ukraine - Krieg in Zahlen",
-      "domain": "waz-online.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T130000Z"
-    },
-    {
-      "url": "http://www.hna.de/politik/nur-voran-ukraine-krieg-putins-armee-kriecht-an-der-front-zr-94145486.html",
-      "title": "Ukraine - Schmach für Putin : Neue Analyse offenbart russisches Kern - Problem",
-      "domain": "hna.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260130T183000Z"
-    },
-    {
-      "url": "https://www.hna.de/politik/ukraine-krieg-putins-armee-kriecht-an-der-front-nur-voran-zr-94145486.html",
-      "title": "Ukraine - Krieg : Putins Armee kriecht an der Front nur voran",
-      "domain": "hna.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260129T133000Z"
-    },
-    {
-      "url": "http://www.wa.de/politik/nur-voran-ukraine-krieg-putins-armee-kriecht-an-der-front-zr-94145486.html",
-      "title": "Ukraine - Schmach für Putin : Neue Analyse offenbart russisches Kern - Problem",
-      "domain": "wa.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260130T183000Z"
-    },
-    {
-      "url": "http://www.hna.de/politik/steigen-ukraine-krieg-aktuell-kiew-truppen-schiessen-putins-kampfjet-stuetzpunkt-hinter-der-front-in-brand-verluste-zr-94215893.html",
-      "title": "Ukraine - Krieg aktuell : Kiew - Truppen schießen Putins Kampfjet - Stützpunkt in Brand – Verluste steigen",
-      "domain": "hna.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260314T060000Z"
-    },
-    {
-      "url": "https://www.eng.kavkaz-uzel.eu/articles/72275",
-      "title": "Caucasian Knot | Eight drones were shot down over the Rostov region . ",
-      "domain": "eng.kavkaz-uzel.eu",
-      "language": "English",
-      "source_country": "Unknown",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260125T234500Z"
-    },
-    {
-      "url": "https://glavnoe.in.ua/news/csis-oczinyv-vtraty-rf-u-vijni-proty-ukrayiny-u-12-mln-osib",
-      "title": "CSIS оцінив втрати РФ у війні проти України у 1 , 2 млн осіб",
-      "domain": "glavnoe.in.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260128T180000Z"
-    },
-    {
-      "url": "http://www.come-on.de/politik/steigen-ukraine-krieg-aktuell-kiew-truppen-schiessen-putins-kampfjet-stuetzpunkt-hinter-der-front-in-brand-verluste-zr-94215893.html",
-      "title": "Ukraine - Krieg aktuell : Kiew - Truppen schießen Putins Kampfjet - Stützpunkt in Brand – Verluste steigen",
-      "domain": "come-on.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260314T060000Z"
-    },
-    {
-      "url": "http://www.fnp.de/politik/ukraine-krieg-putins-armee-kriecht-an-der-front-nur-voran-zr-94145486.html",
-      "title": "Ukraine - Schmach für Putin : Neue Analyse offenbart russisches Kern - Problem",
-      "domain": "fnp.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260129T141500Z"
-    },
-    {
-      "url": "https://www.singletonargus.com.au/story/9168324/ukraine-russia-begin-second-round-of-uae-peace-talks/",
-      "title": "Ukraine , Russia begin second round of UAE peace talks",
-      "domain": "singletonargus.com.au",
-      "language": "English",
-      "source_country": "Australia",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T143000Z"
-    },
-    {
-      "url": "https://tyzhden.ua/toj-samyj-voroh/",
-      "title": "Той самий ворог | Український тиждень",
-      "domain": "tyzhden.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260225T113000Z"
-    },
-    {
-      "url": "https://www.ekriti.gr/kosmos/oykrania-tessera-hronia-polemoy-apo-ta-harakomata-sto-trapezi-ton-diapragmateyseon",
-      "title": "Ουκρανία : Τέσσερα χρόνια πολέμου - Από τα χαρακώματα στο τραπέζι των διαπραγματεύσεων",
-      "domain": "ekriti.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T070000Z"
-    },
-    {
-      "url": "https://www.pravda.com.ua/rus/articles/2026/03/07/8024093/",
-      "title": "Реваншизм в ХХ и ХХI веках : от ремилитаризации Рейнской области до агрессии РФ",
-      "domain": "pravda.com.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260307T060000Z"
-    },
-    {
-      "url": "http://www.op-online.de/politik/steigen-ukraine-krieg-aktuell-kiew-truppen-schiessen-putins-kampfjet-stuetzpunkt-hinter-der-front-in-brand-verluste-zr-94215893.html",
-      "title": "Ukraine - Krieg aktuell : Kiew - Truppen schießen Putins Kampfjet - Stützpunkt in Brand – Verluste steigen",
-      "domain": "op-online.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260314T060000Z"
-    },
-    {
-      "url": "https://www.rp.pl/swiat/art43850811-wojna-rosji-z-ukraina-dzien-1461",
-      "title": "Wojna Rosji z Ukrainą . Dzień 1461 . Relacja na żywo",
-      "domain": "rp.pl",
-      "language": "Polish",
-      "source_country": "Poland",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260223T074500Z"
-    },
-    {
-      "url": "https://www.kyivpost.com/post/70264",
-      "title": "  Meaningful Progress , Says Witkoff - But 6 - Hour Geneva Talks Reportedly Strained",
-      "domain": "kyivpost.com",
-      "language": "English",
-      "source_country": "Ukraine",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260218T081500Z"
-    },
-    {
-      "url": "https://www.rga.de/politik/vier-jahre-ukraine-krieg-ein-ueberblick-in-zahlen-YAWCAHM6RNFDDNV2EBQ7RQVPDY.html",
-      "title": "Vier Jahre Ukraine - Krieg : Ein Überblick in Zahlen",
-      "domain": "rga.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T101500Z"
-    },
-    {
-      "url": "https://www.rga.de/politik/14-999-tote-zivilisten-5-9-millionen-gefluechtete-vier-jahre-ukraine-krieg-in-zahlen-YAWCAHM6RNFDDNV2EBQ7RQVPDY.html",
-      "title": "14 . 999 tote Zivilisten , 5 , 9 Millionen Geflüchtete : Vier Jahre Ukraine - Krieg in Zahlen",
-      "domain": "rga.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T113000Z"
-    },
-    {
-      "url": "https://www.n-tv.de/politik/So-zementiert-Russland-seinen-Anspruch-auf-ukrainische-Gebiete-id30529145.html",
-      "title": "Autobahnen , Schienen , Häfen : So zementiert Russland seinen Anspruch auf ukrainische Gebiete",
-      "domain": "n-tv.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260330T180000Z"
-    },
-    {
-      "url": "https://fakti.bg/world/1033641-isw-rusia-obvinava-sasht-za-lipsata-na-napredak-po-voinata-v-ukraina",
-      "title": "ISW : Русия обвинява САЩ за липсата на напредък по войната в Украйна ᐉ Новини от Fakti . bg - Свят",
-      "domain": "fakti.bg",
-      "language": "Bulgarian",
-      "source_country": "Bulgaria",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260210T083000Z"
-    },
-    {
-      "url": "https://www.dw.com/ru/pase-utverdila-sostav-platformy-demokraticeskih-sil-rossii/a-75652367",
-      "title": "ПАСЕ утвердила состав Платформы демократических сил России",
-      "domain": "dw.com",
-      "language": "Russian",
-      "source_country": "Germany",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260126T133000Z"
-    },
-    {
-      "url": "https://focus.ua/uk/voennye-novosti/743518-viyna-v-ukrajini-u-kremli-ye-dedlayni-shchodo-zahoplennya-donbasu-nardep",
-      "title": "Війна в Україні - у Кремлі є дедлайни щодо захоплення Донбасу",
-      "domain": "focus.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260211T180000Z"
-    },
-    {
-      "url": "https://www.cnn.com/2026/03/22/europe/ukraine-underground-railroad-rescue-children-from-russia",
-      "title": "Inside the  underground railroad  Ukraine is using to bring back children from Russia",
-      "domain": "cnn.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260322T061500Z"
-    },
-    {
-      "url": "https://us.cnn.com/2026/03/22/europe/ukraine-underground-railroad-rescue-children-from-russia",
-      "title": "Inside the  underground railroad  Ukraine is using to bring back children from Russia",
-      "domain": "us.cnn.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260322T051500Z"
-    },
-    {
-      "url": "http://www.merkur.de/politik/ein-terroranschlag-ukraine-krieg-aktuell-explosionen-erschuettern-lwiw-und-kiew-definitiv-zr-94181085.html",
-      "title": "Ukraine - Krieg aktuell : Slowakei stellt Notstromlieferungen an Ukraine ein",
-      "domain": "merkur.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T054500Z"
-    },
-    {
-      "url": "http://www.tz.de/politik/ein-terroranschlag-ukraine-krieg-aktuell-explosionen-erschuettern-lwiw-und-kiew-definitiv-zr-94181085.html",
-      "title": "Ukraine - Krieg aktuell : Slowakei stellt Notstromlieferungen an Ukraine ein",
-      "domain": "tz.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T054500Z"
-    },
-    {
-      "url": "https://www.yahoo.com/news/articles/ukraine-marks-four-years-conflict-062836299.html",
-      "title": "Ukraine marks four years of conflict , as losses rise with no end in sight",
-      "domain": "yahoo.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T091500Z"
-    },
-    {
-      "url": "https://www.christianpost.com/news/patriarch-filaret-critic-of-russian-expansion-in-ukraine-dies.html",
-      "title": "Patriarch Filaret , critic of Russian expansion in Ukraine , dies",
-      "domain": "christianpost.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260323T170000Z"
-    },
-    {
-      "url": "http://www.hna.de/politik/ein-terroranschlag-ukraine-krieg-aktuell-explosionen-erschuettern-lwiw-und-kiew-definitiv-zr-94181085.html",
-      "title": "Ukraine - Krieg aktuell : Slowakei stellt Notstromlieferungen an Ukraine ein",
-      "domain": "hna.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T054500Z"
-    },
-    {
-      "url": "http://www.wa.de/politik/ein-terroranschlag-ukraine-krieg-aktuell-explosionen-erschuettern-lwiw-und-kiew-definitiv-zr-94181085.html",
-      "title": "Ukraine - Krieg aktuell : Slowakei stellt Notstromlieferungen an Ukraine ein",
-      "domain": "wa.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T070000Z"
-    },
-    {
-      "url": "https://24tv.ua/ru/dmitrij-korotkov-protoierej-v-krymu-rassledovanie-o-prestuplenijah-i-agenture_n2962816",
-      "title": "Дмитрий Коротков протоиерей в Крыму - расследование о преступлениях и агентуре",
-      "domain": "24tv.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260115T053000Z"
-    },
-    {
-      "url": "http://www.come-on.de/politik/ein-terroranschlag-ukraine-krieg-aktuell-explosionen-erschuettern-lwiw-und-kiew-definitiv-zr-94181085.html",
-      "title": "Ukraine - Krieg aktuell : Slowakei stellt Notstromlieferungen an Ukraine ein",
-      "domain": "come-on.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T051500Z"
-    },
-    {
-      "url": "https://www.lrt.lt/ru/novosti/17/2818248/pase-utverdila-sostav-platformy-demokraticheskikh-sil-rossii",
-      "title": "ПАСЕ утвердила состав Платформы демократических сил России",
-      "domain": "lrt.lt",
-      "language": "Russian",
-      "source_country": "Lithuania",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260126T153000Z"
-    },
-    {
-      "url": "http://www.wa.de/politik/steigen-ukraine-krieg-aktuell-kiew-truppen-schiessen-putins-kampfjet-stuetzpunkt-hinter-der-front-in-brand-verluste-zr-94215893.html",
-      "title": "Ukraine - Krieg aktuell : Kiew - Truppen schießen Putins Kampfjet - Stützpunkt in Brand – Verluste steigen",
-      "domain": "wa.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260314T111500Z"
-    },
-    {
-      "url": "http://www.fnp.de/politik/ein-terroranschlag-ukraine-krieg-aktuell-explosionen-erschuettern-lwiw-und-kiew-definitiv-zr-94181085.html",
-      "title": "Ukraine - Krieg aktuell : Slowakei stellt Notstromlieferungen an Ukraine ein",
-      "domain": "fnp.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T054500Z"
-    },
-    {
-      "url": "https://mkd.mk/svet/vesti-svet/evropski-razuznavachi-rusija-ne-saka-mir-pregovorite-se-samo-pretstava/",
-      "title": "Европски разузнавачи : Русија не сака мир , преговорите се само претстава",
-      "domain": "mkd.mk",
-      "language": "Macedonian",
-      "source_country": "Macedonia",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260219T154500Z"
-    },
-    {
-      "url": "http://www.bgnes.com/conflicts/ukraine-records-its-largest-territorial-recapture-since-june-2023",
-      "title": "Ukraine Records Its Largest Territorial Recapture Since June 2023",
-      "domain": "bgnes.com",
-      "language": "English",
-      "source_country": "Bulgaria",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260216T200000Z"
-    },
-    {
-      "url": "https://cyprus-mail.com/2026/01/20/trump-and-putin-envoys-say-davos-meting-on-ukraine-was-very-positive-and-constructive",
-      "title": "Trump and Putin envoys say Davos meting on Ukraine was  very positive  and  constructive  ",
-      "domain": "cyprus-mail.com",
-      "language": "English",
-      "source_country": "Cyprus",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260120T211500Z"
-    },
-    {
-      "url": "https://artdaily.com/news/190754/From-missiles-to-melodies--Zhanna-Kadyrova-s-Instrument-debuts-at-Galleria-Continua",
-      "title": "From missiles to melodies : Zhanna Kadyrova Instrument debuts at Galleria Continua",
-      "domain": "artdaily.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260206T071500Z"
-    },
-    {
-      "url": "https://www.n-tv.de/politik/Ukraine-Gespraeche-enden-nach-zwei-Stunden-id30376510.html",
-      "title": "  Schwer , aber sachlich : Ukraine - Gespräche enden nach zwei Stunden",
-      "domain": "n-tv.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260218T120000Z"
-    },
-    {
-      "url": "https://english.aawsat.com/world/5240852-zelenskiy-says-us-too-often-asks-ukraine-not-russia-concessions",
-      "title": "Zelenskiy Says US Too often Asks Ukraine , Not Russia , for Concessions",
-      "domain": "english.aawsat.com",
-      "language": "English",
-      "source_country": "Syria",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260214T191500Z"
-    },
-    {
-      "url": "https://japantoday.com/category/world/ukraine-urges-acceleration-of-peace-talks-says-only-trump-can-broker-deal",
-      "title": "Ukraine urges acceleration of peace talks ; says only Trump can broker deal",
-      "domain": "japantoday.com",
-      "language": "English",
-      "source_country": "Japan",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T234500Z"
-    },
-    {
-      "url": "https://www.enikos.gr/international/oukrania-analytes-vlepoun-megali-rosiki-epithesi-tin-anoixi-kai-to-kalokairi-giati-i-moscha-den-proetoimazetai-gia-eirini/2530106/",
-      "title": "Ουκρανία : Αναλυτές « βλέπουν » μεγάλη ρωσική επίθεση την άνοιξη και το καλοκαίρι - Γιατί η Μόσχα δεν προετοιμάζεται για ειρήνη",
-      "domain": "enikos.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260210T084500Z"
-    },
-    {
-      "url": "https://www.alo.rs/vesti/ukrajina/16596111/kljucni-grad-pada-u-sake-neprijatelju-cim-se-ocisti-podrucje-odmah-sve-miniraju-.html",
-      "title": "KLJUČNI GRAD PADA U ŠAKE NEPRIJATELJU !  Čim se očisti područje , odmah sve miniraju  |Ukrajina",
-      "domain": "alo.rs",
-      "language": "Serbian",
-      "source_country": "Serbia",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260209T144500Z"
-    },
-    {
-      "url": "https://fakty.ua/467259-v-2022-m-pvo-sbila-raketu-vozle-rodnogo-sela-alekseeva-v-vinnickoj-oblasti-o-generale-kotorogo-podstrelili-v-moskve-rasskazali-ego-odnoselchane",
-      "title": "Односельці підстреленого у Москві генерал - лейтенанта Володимира Алєксєєва розповіли про нього ФАКТАМ",
-      "domain": "fakty.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260211T220000Z"
-    },
-    {
-      "url": "https://www.dailysabah.com/world/europe/kyiv-pushes-to-pick-up-pace-in-peace-talks-praises-trump-efforts",
-      "title": "Kyiv pushes to pick up pace in peace talks , praises Trump efforts",
-      "domain": "dailysabah.com",
-      "language": "English",
-      "source_country": "Turkey",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T151500Z"
-    },
-    {
-      "url": "https://world.comments.ua/news/russia/lavrov-nazval-usloviya-rossii-dlya-peregovorov-s-ukrainoy-dlya-okonchaniya-voyny-794475.html",
-      "title": "Лавров назвал условия России для переговоров с Украиной для окончания войны",
-      "domain": "world.comments.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260120T111500Z"
-    },
-    {
-      "url": "https://www.kyivpost.com/analysis/70388",
-      "title": "Analysis : Ukrainian Kamikaze Drones Expand Target List in Russia",
-      "domain": "kyivpost.com",
-      "language": "English",
-      "source_country": "Ukraine",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260219T181500Z"
-    },
-    {
-      "url": "https://fondsk.ru/news/2026/02/15/specialnaya-voennaya-operaciya-i-situaciya-na-ukraine-15-fevralya-den.html",
-      "title": "Специальная военная операция и ситуация на Украине 15 февраля , день Фонд стратегической культуры",
-      "domain": "fondsk.ru",
-      "language": "Russian",
-      "source_country": "Russia",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260215T123000Z"
-    },
-    {
-      "url": "https://society.comments.ua/news/warrussia/otkaz-ot-donbassa-v-obmen-na-garantii-bezopasnosti-ssha-ostanovit-li-eto-rossiyu-802265.html",
-      "title": "Отказ Украины от Донбасса в обмен на гарантии безопасности США не остановит Россию",
-      "domain": "society.comments.ua",
-      "language": "Russian",
-      "source_country": "Ukraine",
-      "language_cluster": "Russian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260330T061500Z"
-    },
-    {
-      "url": "https://www.queanbeyanage.com.au/story/9157419/us-and-russian-envoys-say-meeting-on-ukraine-positive/",
-      "title": "US and Russian envoys say meeting on Ukraine  positive  ",
-      "domain": "queanbeyanage.com.au",
-      "language": "English",
-      "source_country": "Australia",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260120T210000Z"
-    },
-    {
-      "url": "http://www.merkur.de/politik/verluste-steigen-ukraine-krieg-aktuell-kiew-truppen-schiessen-putins-kampfjet-stuetzpunkt-hinter-der-front-in-brand-zr-94215893.html",
-      "title": "Ukraine - Krieg aktuell : Kiew - Truppen schießen Putins Kampfjet - Stützpunkt in Brand – Verluste steigen",
-      "domain": "merkur.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260315T041500Z"
-    },
-    {
-      "url": "https://www.journal-news.com/news/nation-world/trump-claims-putin-agreed-to-temporary-halt-in-energy-attacks-on-ukraine-but-terms-are-unclear/4MSCKL2SNVKRLKZACONMLPMQKM/",
-      "title": "Trump claims Putin agreed to temporary halt in energy attacks on Ukraine , but terms are unclear",
-      "domain": "journal-news.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260130T163000Z"
-    },
-    {
-      "url": "http://www.kreisbote.de/politik/ukraine-krieg-aktuell-kiew-truppen-schiessen-putins-kampfjet-stuetzpunkt-hinter-der-front-in-brand-verluste-steigen-zr-94215893.html",
-      "title": "Ukraine - Krieg aktuell : Kiew - Truppen schießen Putins Kampfjet - Stützpunkt in Brand – Verluste steigen",
-      "domain": "kreisbote.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260313T104500Z"
-    },
-    {
-      "url": "https://www.livemint.com/opinion/online-views/ukraine-russia-war-peace-formula-great-power-prestige-sovereignty-ceasefire-kyiv-moscow-11772122018410.html",
-      "title": "Ukraine - Russia War : A peace formula will need to balance Russia great - power prestige with Ukraine sovereignty",
-      "domain": "livemint.com",
-      "language": "English",
-      "source_country": "India",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260301T110000Z"
-    },
-    {
-      "url": "https://www.merkur.de/politik/kreml-preist-putins-hauptziel-vier-jahre-nach-beginn-von-russlands-ukrainekrieg-zr-94185522.html",
-      "title": "Trotz massiver Verluste im Ukraine - Krieg : Putin nennt „ Hauptziel  ",
-      "domain": "merkur.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260225T073000Z"
-    },
-    {
-      "url": "http://www.merkur.de/politik/ukrainekrieg-kreml-preist-putins-hauptziel-vier-jahre-nach-beginn-von-russlands-zr-94185522.html",
-      "title": "Trotz massiver Verluste im Ukraine - Krieg : Putin nennt „ Hauptziel  ",
-      "domain": "merkur.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260226T054500Z"
-    },
-    {
-      "url": "http://www.tz.de/politik/kreml-preist-putins-hauptziel-vier-jahre-nach-beginn-von-russlands-ukrainekrieg-zr-94185522.html",
-      "title": "Trotz massiver Verluste im Ukraine - Krieg : Putin nennt „ Hauptziel  ",
-      "domain": "tz.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260225T073000Z"
-    },
-    {
-      "url": "http://www.tz.de/politik/russlands-ukrainekrieg-kreml-preist-putins-hauptziel-vier-jahre-nach-beginn-von-zr-94185522.html",
-      "title": "Trotz massiver Verluste im Ukraine - Krieg : Putin nennt „ Hauptziel  ",
-      "domain": "tz.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260226T184500Z"
-    },
-    {
-      "url": "https://www.yahoo.com/news/articles/ukraine-urges-acceleration-peace-talks-120258363.html",
-      "title": "Ukraine urges acceleration of peace talks , says only Trump can broker deal",
-      "domain": "yahoo.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T140000Z"
-    },
-    {
-      "url": "https://www.thehindu.com/news/international/ukraine-urges-acceleration-of-peace-talks-says-only-trump-can-broker-deal/article70607452.ece",
-      "title": "Ukraine urges acceleration of peace talks , says only Trump can broker deal",
-      "domain": "thehindu.com",
-      "language": "English",
-      "source_country": "India",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T134500Z"
-    },
-    {
-      "url": "https://www.parlamentnilisty.cz/arena/monitor/-To-zverejnili-Prekvapiva-slova-o-Ukrajine-Ze-Zapadu-787691",
-      "title": " „ To zveřejnili ? Překvapivá slova o Ukrajině . Ze Západu | ParlamentniListy . cz – politika ze všech stran",
-      "domain": "parlamentnilisty.cz",
-      "language": "Czech",
-      "source_country": "Czech Republic",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260227T151500Z"
-    },
-    {
-      "url": "https://www.irishtimes.com/world/europe/2026/02/08/only-trump-can-stop-the-war-says-ukrainian-foreign-minister/",
-      "title": "  Only Trump can stop the war , says Ukrainian foreign minister – The Irish Times",
-      "domain": "irishtimes.com",
-      "language": "English",
-      "source_country": "Ireland",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T170000Z"
-    },
-    {
-      "url": "http://www.wa.de/politik/ukrainekrieg-kreml-preist-putins-hauptziel-vier-jahre-nach-beginn-von-russlands-zr-94185522.html",
-      "title": "Trotz massiver Verluste im Ukraine - Krieg : Putin nennt „ Hauptziel  ",
-      "domain": "wa.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260226T051500Z"
-    },
-    {
-      "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/02/08/ukraine-urges-acceleration-of-peace-talks-says-only-trump-can-broker-deal",
-      "title": "Ukraine urges acceleration of peace talks , says only Trump can broker deal",
-      "domain": "internazionale.it",
-      "language": "English",
-      "source_country": "Italy",
-      "language_cluster": "Italian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T124500Z"
-    },
-    {
-      "url": "https://meduza.io/en/feature/2026/02/05/russia-s-new-law-protects-the-red-cross-name-but-enforcing-it-in-occupied-ukraine-would-expose-the-very-ties-moscow-denies",
-      "title": "Russia new law protects the Red Cross name , but enforcing it in occupied Ukraine would expose the very ties Moscow denies Meduza",
-      "domain": "meduza.io",
-      "language": "English",
-      "source_country": "British Indian Ocean Territory",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260205T004500Z"
-    },
-    {
-      "url": "https://www.marketscreener.com/news/ukraine-urges-acceleration-of-peace-talks-says-only-trump-can-broker-deal-ce7e5adedb8ef52d",
-      "title": "Ukraine urges acceleration of peace talks , says only Trump can broker deal",
-      "domain": "marketscreener.com",
-      "language": "English",
-      "source_country": "Unknown",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T133000Z"
-    },
-    {
-      "url": "https://www.newcastleherald.com.au/story/9157419/us-and-russian-envoys-say-meeting-on-ukraine-positive/",
-      "title": "US and Russian envoys say meeting on Ukraine  positive  ",
-      "domain": "newcastleherald.com.au",
-      "language": "English",
-      "source_country": "Unknown",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260120T203000Z"
-    },
-    {
-      "url": "https://www.maitlandmercury.com.au/story/9157419/us-and-russian-envoys-say-meeting-on-ukraine-positive/",
-      "title": "US and Russian envoys say meeting on Ukraine  positive  ",
-      "domain": "maitlandmercury.com.au",
-      "language": "English",
-      "source_country": "Australia",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260120T203000Z"
-    },
-    {
-      "url": "https://www.edenmagnet.com.au/story/9157419/us-and-russian-envoys-say-meeting-on-ukraine-positive/",
-      "title": "US and Russian envoys say meeting on Ukraine  positive  ",
-      "domain": "edenmagnet.com.au",
-      "language": "English",
-      "source_country": "Australia",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260120T203000Z"
-    },
-    {
-      "url": "https://www.military.com/daily-news/2026/01/30/trump-claims-putin-agreed-temporary-halt-energy-attacks-ukraine-terms-are-unclear.html",
-      "title": "Trump Claims Putin Agreed to Temporary Halt in Energy Attacks on Ukraine , but Terms Are Unclear",
-      "domain": "military.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260130T203000Z"
-    },
-    {
-      "url": "https://www.bbc.com/ukrainian/articles/cr4knwgk7wgo",
-      "title": "Війна Росії проти України триває вже довше за  Велику Вітчизняну . Що далі",
-      "domain": "bbc.com",
-      "language": "Ukrainian",
-      "source_country": "United Kingdom",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260112T071500Z"
-    },
-    {
-      "url": "https://www.globalissues.org/news/2026/02/23/42405",
-      "title": "Doing what right is  not a spectator sport , Human Rights Council warned Global Issues",
-      "domain": "globalissues.org",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260223T194500Z"
-    },
-    {
-      "url": "https://united24media.com/latest-news/russia-appears-to-prepare-escalation-near-ukraine-what-satellite-images-reveal-15519",
-      "title": "Russia Appears to Prepare Escalation Near Ukraine . What Satellite Images Reveal",
-      "domain": "united24media.com",
-      "language": "English",
-      "source_country": "Unknown",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260131T100000Z"
-    },
-    {
-      "url": "https://indianexpress.com/article/opinion/columns/india-russia-ukraine-war-trump-kyiv-putin-zelenskyy-10548775/",
-      "title": "Four years on , India must realise : On Russia - Ukraine war , a hands - off strategy is not ideal",
-      "domain": "indianexpress.com",
-      "language": "English",
-      "source_country": "India",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T060000Z"
-    },
-    {
-      "url": "https://www.spokesman.com/stories/2026/feb/06/us-aims-for-march-peace-deal-in-ukraine-quick-elec/",
-      "title": "U . S . aims for March peace deal in Ukraine , quick elections , sources say",
-      "domain": "spokesman.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260207T101500Z"
-    },
-    {
-      "url": "https://www.wishtv.com/news/international/trump-claims-putin-agreed-to-temporary-halt-in-energy-attacks-on-ukraine-but-terms-are-unclear/",
-      "title": "Trump claims Putin agreed to temporary halt in energy attacks on Ukraine , but terms are unclear",
-      "domain": "wishtv.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260130T234500Z"
-    },
-    {
-      "url": "https://www.bworldonline.com/world/2026/02/05/728673/ukraine-russia-wrap-productive-first-day-of-us-backed-peace-talks/",
-      "title": "Ukraine , Russia wrap  productive  first day of US - backed peace talks",
-      "domain": "bworldonline.com",
-      "language": "English",
-      "source_country": "Philippines",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260205T043000Z"
-    },
-    {
-      "url": "https://www.stabroeknews.com/2026/02/05/news/world/ukraine-russia-wrap-productive-first-day-of-us-backed-peace-talks/",
-      "title": "Ukraine , Russia wrap  productive  first day of US - backed peace talks",
-      "domain": "stabroeknews.com",
-      "language": "English",
-      "source_country": "Guyana",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260205T063000Z"
-    },
-    {
-      "url": "http://www.hna.de/politik/verluste-steigen-ukraine-krieg-aktuell-kiew-truppen-schiessen-putins-kampfjet-stuetzpunkt-hinter-der-front-in-brand-zr-94215893.html",
-      "title": "Ukraine - Krieg aktuell : Selenskyj wirft Russland Drohnendeal mit Iran vor",
-      "domain": "hna.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260315T074500Z"
-    },
-    {
-      "url": "https://www.foreignaffairs.com/russia/price-peace-ukraine",
-      "title": "The Price of Peace in Ukraine",
-      "domain": "foreignaffairs.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260216T081500Z"
-    },
-    {
-      "url": "https://vv.com.ua/20260208/chi-byde-na-donbasi-vilna-ekonomichna-zona-pislia-viini-zelenskii-vidpoviv/",
-      "title": "Чи буде на Донбасі вільна економічна зона після війни : Зеленський відповів",
-      "domain": "vv.com.ua",
-      "language": "Ukrainian",
-      "source_country": "Ukraine",
-      "language_cluster": "Ukrainian",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T011500Z"
-    },
-    {
-      "url": "http://www.come-on.de/politik/verluste-steigen-ukraine-krieg-aktuell-kiew-truppen-schiessen-putins-kampfjet-stuetzpunkt-hinter-der-front-in-brand-zr-94215893.html",
-      "title": "Ukraine - Krieg aktuell : Slowakei lenkt ein – EU verlängert Sanktionen gegen Russland",
-      "domain": "come-on.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260315T144500Z"
-    },
-    {
-      "url": "https://www.typosthes.gr/diethni/420322_tessera-hronia-polemoy-stin-oykrania-sokaroyn-oi-arithmoi",
-      "title": "Τέσσερα χρόνια πολέμου στην Ουκρανία : Σοκάρουν οι αριθμοί",
-      "domain": "typosthes.gr",
-      "language": "Greek",
-      "source_country": "Greece",
-      "language_cluster": "Other",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260224T081500Z"
-    },
-    {
-      "url": "https://www.rte.ie/news/2026/0208/1557356-ukraine-russia/",
-      "title": "Ukraine urges peace talks , says only Trump can make deal",
-      "domain": "rte.ie",
-      "language": "English",
-      "source_country": "Ireland",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260208T161500Z"
-    },
-    {
-      "url": "https://www.yahoo.com/news/articles/ukraine-russia-begin-second-round-095554690.html",
-      "title": "Ukraine , Russia wrap  productive  first day of US - backed peace talks",
-      "domain": "yahoo.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260204T230000Z"
-    },
-    {
-      "url": "https://www.seattletimes.com/nation-world/world/iran-war-deflects-attention-from-ukraine-as-an-emboldened-russia-starts-spring-offensive/",
-      "title": "Iran war deflects attention from Ukraine as an emboldened Russia starts spring offensive",
-      "domain": "seattletimes.com",
-      "language": "English",
-      "source_country": "United States",
-      "language_cluster": "English",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260326T064500Z"
-    },
-    {
-      "url": "http://www.fnp.de/politik/verluste-steigen-ukraine-krieg-aktuell-kiew-truppen-schiessen-putins-kampfjet-stuetzpunkt-hinter-der-front-in-brand-zr-94215893.html",
-      "title": "Ukraine - Krieg aktuell : Selenskyj wirft Russland Drohnendeal mit Iran vor",
-      "domain": "fnp.de",
-      "language": "German",
-      "source_country": "Germany",
-      "language_cluster": "German",
-      "framing": "pro_ukraine",
-      "query_label": "crimea ukraine territory",
-      "seen_date": "20260315T071500Z"
-    },
-    {
       "url": "https://russian.rt.com/world/news/1597244-sheremet-hruscheva-krym-predatelstvo",
       "title": "В Госдуме назвали предательством слова правнучки Хрущёва о Крыме",
       "domain": "russian.rt.com",
@@ -28170,6 +25733,17 @@
       "framing": "pro_ukraine",
       "query_label": "liberation crimea",
       "seen_date": "20260306T133000Z"
+    },
+    {
+      "url": "https://tsn.ua/politika/stsenariy-peremohy-za-ukrayinoiu-shvetsiia-zrobyla-huchnu-zaiavu-pro-deokupatsiiu-krymu-3028103.html",
+      "title": "Війна в Україні – у Швеції зробили заяву про Крим Політика",
+      "domain": "tsn.ua",
+      "language": "Ukrainian",
+      "source_country": "Ukraine",
+      "language_cluster": "Ukrainian",
+      "framing": "pro_ukraine",
+      "query_label": "liberation crimea",
+      "seen_date": "20260224T101500Z"
     },
     {
       "url": "https://24tv.ua/ukrayinski-sili-postiyno-likviduyut-voyenni-obyekti-okupovanomu_n3025264",
@@ -29074,6 +26648,17 @@
       "seen_date": "20260321T073000Z"
     },
     {
+      "url": "https://www.unian.net/war/putin-stolknetsya-s-nevidimoy-armiey-esli-ukraina-ustupit-territoriyu-the-telegraph-13247397.html",
+      "title": "Путин столкнется с невидимой армией , если Украина уступит территорию , ",
+      "domain": "unian.net",
+      "language": "Russian",
+      "source_country": "Ukraine",
+      "language_cluster": "Russian",
+      "framing": "pro_ukraine",
+      "query_label": "liberation crimea",
+      "seen_date": "20260106T131500Z"
+    },
+    {
       "url": "https://re-port.ru:443/pressreleases/v_hersonskoi_oblasti_rosgvardeicy_peredali_v_muzei_admiralteiskii_jakor_podnjatyi_so_dna_azovskogo_morja/",
       "title": "В Херсонской области росгвардейцы передали в музей адмиралтейский якорь , поднятый со дна Азовского моря",
       "domain": "re-port.ru",
@@ -29501,6 +27086,17 @@
       "framing": "pro_ukraine",
       "query_label": "liberation crimea",
       "seen_date": "20260226T101500Z"
+    },
+    {
+      "url": "https://www.novinky.cz/clanek/valka-na-ukrajine-jednani-o-konci-valky-na-ukrajine-prulom-neprinasi-co-stoji-miru-v-ceste-40563189",
+      "title": "Jednání o konci války na Ukrajině průlom nepřináší . Co stojí míru v cestě ? ",
+      "domain": "novinky.cz",
+      "language": "Czech",
+      "source_country": "Czech Republic",
+      "language_cluster": "Other",
+      "framing": "pro_ukraine",
+      "query_label": "liberation crimea",
+      "seen_date": "20260221T160000Z"
     },
     {
       "url": "https://www.vesti.ru/ns/pushilin-rasskazal-ob-obstanovke-na-fronte-i-vyzovakh-v-otrasli-zhkkh",
