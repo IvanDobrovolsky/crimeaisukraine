@@ -404,7 +404,8 @@ def run_bulk_check():
     # Phase 2b: Cross-validate with ipinfo.io and ipapi.co on a subset
     secondary_providers = [
         ("ipinfo.io", check_ipinfo),
-        ("ipapi.co", check_ipapi_co),
+        # ipapi.co disabled: aggressively rate-limits (429s on free tier)
+        # ("ipapi.co", check_ipapi_co),
     ]
     # Test every 3rd IP with secondary providers (to stay within rate limits)
     subset = all_ips[::3]
