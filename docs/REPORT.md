@@ -18,10 +18,10 @@ This audit systematically examines how digital platforms, open source libraries,
 
 | Metric | Count |
 |--------|-------|
-| Platforms/services checked | **87** |
-| Correctly shows Ukraine | 24 |
-| Ambiguous/disputed/unclear | 37 |
-| Incorrectly shows Russia | 16 |
+| Platforms/services checked | **101** |
+| Correctly shows Ukraine | 33 |
+| Ambiguous/disputed/unclear | 41 |
+| Incorrectly shows Russia | 17 |
 | Blocked (sanctions) | 3 |
 | Not applicable | 7 |
 
@@ -102,10 +102,11 @@ TripAdvisor lists Crimea directly under "Europe" without any country designation
 - [Prior Research Survey](PRIOR_RESEARCH.md)
 
 ### Completed Reports
-- [Map Services](maps.md) — Google Maps, Apple Maps, OpenStreetMap, Bing, Natural Earth, National Geographic
+- [Map Services](maps.md) — Google Maps, Apple Maps, OpenStreetMap, Bing, Natural Earth, National Geographic, HERE Maps
 - [Travel Platforms](travel.md) — Booking.com, Airbnb, Expedia, TripAdvisor, Google Flights
 - [Social Media](social_media.md) — Instagram, TikTok, Facebook, X/Twitter location tags
 - [Weather Services](weather.md) — AccuWeather, Weather Underground, BBC Weather, and 8 others
+- [Remaining Platforms](remaining_platforms.md) — HERE Maps, Yandex, Mapbox, TomTom, Britannica, CIA Factbook, UN, ESPN, weather.com, BBC Weather, Domain registrars, Cloudflare, Akamai, mledoze/countries
 
 ### Reports in Progress
 - `gaming.md` — Gaming platforms and in-game maps

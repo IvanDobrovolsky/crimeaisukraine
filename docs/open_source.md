@@ -389,13 +389,17 @@ Major open geographic database used by MaxMind, postal code databases, and many 
 
 ### 16b. mledoze/countries
 
-**Status: Investigation needed**
+**Status: Correct**
 
-- **GitHub stars:** 6,200
+- **GitHub stars:** 6,200+
 - **Data:** World countries in JSON/YAML/CSV/XML with GeoJSON boundaries
-- **Crimea handling:** Not explicitly documented, but GeoJSON outlines likely derived from Natural Earth
-- **Impact:** One of the most popular country data repositories on GitHub
-- **Fixable:** Yes -- issue can be filed
+- **GeoJSON source:** thematicmapping.org/downloads/world_borders.php (NOT Natural Earth)
+- **Crimea handling:** **Verified 2026-03-30 via direct polygon analysis:**
+  - `ukr.geo.json`: Ukraine's MultiPolygon includes 358 coordinate points spanning the full Crimean peninsula (lon 32.51-36.15, lat 44.38-46.00)
+  - `rus.geo.json`: Russia's MultiPolygon has NO points in the Crimean peninsula; only 54 points in the Taman/Kerch Strait area (lon 36.58-36.97) on the Russian mainland side
+  - **Crimea is correctly included in Ukraine and excluded from Russia**
+- **Impact:** One of the most popular country data repositories on GitHub; published as `world-countries` on npm
+- **Fixable:** N/A -- already correct
 
 **Source:** https://github.com/mledoze/countries
 
