@@ -1,0 +1,350 @@
+---
+import Layout from '../layouts/Layout.astro';
+import platformsData from '../data/platforms.json';
+
+const findings = platformsData.findings;
+const total = findings.length;
+const correct = findings.filter((f: any) => f.status === 'correct').length;
+const incorrect = findings.filter((f: any) => f.status === 'incorrect').length;
+const ambiguous = findings.filter((f: any) => f.status === 'ambiguous').length;
+const blocked = findings.filter((f: any) => f.status === 'blocked').length;
+
+const categories = {} as Record<string, any[]>;
+findings.forEach((f: any) => {
+  if (!categories[f.category]) categories[f.category] = [];
+  categories[f.category].push(f);
+});
+
+const categoryOrder = [
+  'data_visualization', 'open_source', 'map_service', 'tech_infrastructure',
+  'weather', 'reference', 'travel', 'ip_geolocation', 'social_media',
+  'gaming', 'search_engine', 'sports'
+];
+
+const statusOrder = { correct: 0, incorrect: 1, ambiguous: 2, blocked: 3, 'n/a': 4 } as Record<string, number>;
+const sortByStatus = (a: any, b: any) => (statusOrder[a.status] ?? 5) - (statusOrder[b.status] ?? 5);
+
+const categoryLabels = {
+  data_visualization: 'Data Visualization',
+  open_source: 'Open Source Data',
+  map_service: 'Map Services',
+  tech_infrastructure: 'Tech Infrastructure',
+  weather: 'Weather Services',
+  reference: 'Reference',
+  travel: 'Travel Platforms',
+  ip_geolocation: 'IP Geolocation',
+  social_media: 'Social Media',
+  gaming: 'Gaming',
+  search_engine: 'Search Engines',
+  sports: 'Sports',
+};
+---
+
+<Layout title="Crimea Is Ukraine — Digital Sovereignty Audit">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#0057b7]/20 via-[#0a0e1a] to-[#ffd700]/10"></div>
+    <div class="relative max-w-6xl mx-auto px-6 pt-16 pb-20">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-5 rounded-sm overflow-hidden flex flex-col">
+          <div class="flex-1 bg-[#0057b7]"></div>
+          <div class="flex-1 bg-[#ffd700]"></div>
+        </div>
+        <span class="text-sm font-medium text-[#94a3b8] uppercase tracking-widest">crimeaisukraine.org</span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+        <span class="text-white">Crimea Is</span><br />
+        <span class="bg-gradient-to-r from-[#0057b7] to-[#ffd700] bg-clip-text text-transparent">Ukraine</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl text-[#94a3b8] max-w-3xl mb-4">
+        A systematic audit of how <strong class="text-white">101 digital platforms</strong> represent Crimea's sovereignty.
+      </p>
+      <p class="text-lg text-[#64748b] max-w-3xl mb-10">
+        One upstream dataset encodes a political decision that cascades to <strong class="text-[#f59e0b]">30 million weekly downloads</strong>. Every <code class="bg-[#1e293b] px-2 py-0.5 rounded text-sm text-[#f59e0b]">pip install plotly</code> quietly claims Crimea is Russia.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="#findings" class="bg-[#0057b7] hover:bg-[#0057b7]/80 text-white font-semibold px-6 py-3 rounded-lg transition">
+          View Findings
+        </a>
+        <a href="https://github.com/IvanDobrovolsky/crimeaisukraine" target="_blank" class="border border-[#334155] hover:border-[#94a3b8] text-[#94a3b8] font-semibold px-6 py-3 rounded-lg transition">
+          GitHub Repository
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Stats -->
+  <section class="max-w-6xl mx-auto px-6 -mt-8 mb-16">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="bg-[#111827] rounded-xl p-6 border border-[#1e293b]">
+        <div class="text-4xl font-black text-white">{total}</div>
+        <div class="text-sm text-[#94a3b8] mt-1">Platforms Audited</div>
+      </div>
+      <div class="bg-[#111827] rounded-xl p-6 border border-[#1e293b]">
+        <div class="text-4xl font-black text-[#22c55e]">{correct}</div>
+        <div class="text-sm text-[#94a3b8] mt-1">Correct (Ukraine)</div>
+      </div>
+      <div class="bg-[#111827] rounded-xl p-6 border border-[#1e293b]">
+        <div class="text-4xl font-black text-[#ef4444]">{incorrect}</div>
+        <div class="text-sm text-[#94a3b8] mt-1">Incorrect (Russia)</div>
+      </div>
+      <div class="bg-[#111827] rounded-xl p-6 border border-[#1e293b]">
+        <div class="text-4xl font-black text-[#f59e0b]">{ambiguous}</div>
+        <div class="text-sm text-[#94a3b8] mt-1">Ambiguous</div>
+      </div>
+      <div class="bg-[#111827] rounded-xl p-6 border border-[#1e293b]">
+        <div class="text-4xl font-black text-[#8b5cf6]">{blocked}</div>
+        <div class="text-sm text-[#94a3b8] mt-1">Blocked</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Insight: Propagation Chain -->
+  <section class="max-w-6xl mx-auto px-6 mb-20">
+    <div class="bg-gradient-to-r from-[#ef4444]/10 to-[#111827] border border-[#ef4444]/30 rounded-2xl p-8 md:p-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6">The Root Cause: One Dataset, Millions of Wrong Maps</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <p class="text-[#94a3b8] mb-4">
+            <strong class="text-white">Natural Earth</strong> &mdash; the foundational geographic dataset &mdash; explicitly assigns
+            <code class="bg-[#1e293b] px-2 py-0.5 rounded text-sm text-[#ef4444]">SOVEREIGNT=Russia</code> to Crimea.
+            This single upstream decision silently propagates through the entire open source ecosystem.
+          </p>
+          <p class="text-[#94a3b8] mb-4">
+            <strong class="text-[#f59e0b]">33 open GitHub issues</strong> demand the change. All ignored.
+          </p>
+          <p class="text-[#94a3b8]">
+            Only <strong class="text-[#22c55e]">Highcharts</strong> deliberately overrides the default to correctly show Ukraine.
+          </p>
+        </div>
+        <div class="space-y-3">
+          <div class="text-sm text-[#64748b] mb-2 uppercase tracking-wider">Weekly npm Downloads</div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-[#ef4444] flex-shrink-0"></div>
+            <div class="flex-1 bg-[#0a0e1a] rounded-lg border border-[#1e293b] overflow-hidden">
+              <div class="flex items-center justify-between px-4 py-2">
+                <span class="text-sm font-medium text-white">d3-geo</span>
+                <span class="text-xs text-[#64748b]">13.4M/wk</span>
+              </div>
+              <div class="h-1 bg-[#ef4444]" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-[#ef4444] flex-shrink-0"></div>
+            <div class="flex-1 bg-[#0a0e1a] rounded-lg border border-[#1e293b] overflow-hidden">
+              <div class="flex items-center justify-between px-4 py-2">
+                <span class="text-sm font-medium text-white">Leaflet</span>
+                <span class="text-xs text-[#64748b]">4.2M/wk</span>
+              </div>
+              <div class="h-1 bg-[#ef4444]" style="width: 31%"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-[#ef4444] flex-shrink-0"></div>
+            <div class="flex-1 bg-[#0a0e1a] rounded-lg border border-[#1e293b] overflow-hidden">
+              <div class="flex items-center justify-between px-4 py-2">
+                <span class="text-sm font-medium text-white">topojson-client</span>
+                <span class="text-xs text-[#64748b]">3.8M/wk</span>
+              </div>
+              <div class="h-1 bg-[#ef4444]" style="width: 28%"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-[#f59e0b] flex-shrink-0"></div>
+            <div class="flex-1 bg-[#0a0e1a] rounded-lg border border-[#1e293b] overflow-hidden">
+              <div class="flex items-center justify-between px-4 py-2">
+                <span class="text-sm font-medium text-white">ECharts</span>
+                <span class="text-xs text-[#64748b]">2.3M/wk</span>
+              </div>
+              <div class="h-1 bg-[#f59e0b]" style="width: 17%"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-[#22c55e] flex-shrink-0"></div>
+            <div class="flex-1 bg-[#0a0e1a] rounded-lg border border-[#22c55e]/30 overflow-hidden">
+              <div class="flex items-center justify-between px-4 py-2">
+                <span class="text-sm font-medium text-[#22c55e]">Highcharts</span>
+                <span class="text-xs text-[#22c55e]">2.3M/wk &mdash; Correct!</span>
+              </div>
+              <div class="h-1 bg-[#22c55e]" style="width: 17%"></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-[#ef4444] flex-shrink-0"></div>
+            <div class="flex-1 bg-[#0a0e1a] rounded-lg border border-[#1e293b] overflow-hidden">
+              <div class="flex items-center justify-between px-4 py-2">
+                <span class="text-sm font-medium text-white">Plotly.js</span>
+                <span class="text-xs text-[#64748b]">965K/wk</span>
+              </div>
+              <div class="h-1 bg-[#ef4444]" style="width: 7%"></div>
+            </div>
+          </div>
+          <div class="text-right text-sm text-[#f59e0b] font-bold mt-4">
+            Total affected: 30.4M weekly downloads
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 2022 Bifurcation -->
+  <section class="max-w-6xl mx-auto px-6 mb-20">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8">The 2022 Bifurcation</h2>
+    <p class="text-[#94a3b8] max-w-3xl mb-8">
+      After Russia's full-scale invasion, consumer platforms changed. Developer infrastructure did not.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-[#111827] rounded-xl p-6 border border-[#22c55e]/30">
+        <h3 class="text-lg font-bold text-[#22c55e] mb-4">Changed After 2022</h3>
+        <ul class="space-y-2 text-sm text-[#94a3b8]">
+          <li class="flex gap-2"><span class="text-[#22c55e]">&#x2713;</span> Apple Maps &mdash; Crimea as Ukraine (outside Russia)</li>
+          <li class="flex gap-2"><span class="text-[#22c55e]">&#x2713;</span> GeoPandas &mdash; Fixed in v0.12.2 (PR #2670)</li>
+          <li class="flex gap-2"><span class="text-[#22c55e]">&#x2713;</span> TikTok &mdash; Separated Ukraine from Russia region</li>
+          <li class="flex gap-2"><span class="text-[#22c55e]">&#x2713;</span> Booking.com, Airbnb, Netflix, Spotify &mdash; Exited Russia</li>
+        </ul>
+      </div>
+      <div class="bg-[#111827] rounded-xl p-6 border border-[#ef4444]/30">
+        <h3 class="text-lg font-bold text-[#ef4444] mb-4">Still Unchanged (2026)</h3>
+        <ul class="space-y-2 text-sm text-[#94a3b8]">
+          <li class="flex gap-2"><span class="text-[#ef4444]">&#x2717;</span> Natural Earth &mdash; SOVEREIGNT=Russia (33 open issues)</li>
+          <li class="flex gap-2"><span class="text-[#ef4444]">&#x2717;</span> Google Maps &mdash; "Disputed" dashed border since 2014</li>
+          <li class="flex gap-2"><span class="text-[#ef4444]">&#x2717;</span> IANA tzdata &mdash; RU,UA (Russia listed first)</li>
+          <li class="flex gap-2"><span class="text-[#ef4444]">&#x2717;</span> Plotly, D3, Cartopy, rnaturalearth &mdash; Inherit NE</li>
+          <li class="flex gap-2"><span class="text-[#ef4444]">&#x2717;</span> Instagram &mdash; Dual "Crimea, Ukraine" AND "Russia, Crimea"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infrastructure Stack Table -->
+  <section class="max-w-6xl mx-auto px-6 mb-20">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">The Infrastructure Stack</h2>
+    <p class="text-[#94a3b8] max-w-3xl mb-8">
+      Occupied territory has a split digital identity: legally Ukrainian, operationally Russian.
+    </p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left text-[#64748b] border-b border-[#1e293b]">
+            <th class="py-3 px-4">Layer</th>
+            <th class="py-3 px-4"><span class="text-[#22c55e]">Legal Basis &rarr; Ukraine</span></th>
+            <th class="py-3 px-4"><span class="text-[#ef4444]">Operational &rarr; Russia</span></th>
+          </tr>
+        </thead>
+        <tbody class="text-[#94a3b8]">
+          <tr class="border-b border-[#1e293b]/50 hover:bg-[#1e293b]/30"><td class="py-3 px-4 font-medium text-white">IP Geolocation</td><td class="py-3 px-4">MaxMind, GeoNames (UA)</td><td class="py-3 px-4">Post-2014 RU ISPs &rarr; RU</td></tr>
+          <tr class="border-b border-[#1e293b]/50 hover:bg-[#1e293b]/30"><td class="py-3 px-4 font-medium text-white">CDN Routing</td><td class="py-3 px-4">Cloudflare: UA-43 (~20% of web)</td><td class="py-3 px-4">&mdash;</td></tr>
+          <tr class="border-b border-[#1e293b]/50 hover:bg-[#1e293b]/30"><td class="py-3 px-4 font-medium text-white">Geocoding</td><td class="py-3 px-4">OSM Nominatim: all cities UA</td><td class="py-3 px-4">&mdash;</td></tr>
+          <tr class="border-b border-[#1e293b]/50 hover:bg-[#1e293b]/30"><td class="py-3 px-4 font-medium text-white">DNS / TLD</td><td class="py-3 px-4">.crimea.ua active</td><td class="py-3 px-4">.crimea.ru doesn't exist</td></tr>
+          <tr class="border-b border-[#1e293b]/50 hover:bg-[#1e293b]/30"><td class="py-3 px-4 font-medium text-white">Timezones</td><td class="py-3 px-4">zone.tab: UA only</td><td class="py-3 px-4">zone1970.tab: RU,UA; UTC+3</td></tr>
+          <tr class="border-b border-[#1e293b]/50 hover:bg-[#1e293b]/30"><td class="py-3 px-4 font-medium text-white">Phone Numbers</td><td class="py-3 px-4">&mdash;</td><td class="py-3 px-4">libphonenumber: +7-365/978 = RU</td></tr>
+          <tr class="border-b border-[#1e293b]/50 hover:bg-[#1e293b]/30"><td class="py-3 px-4 font-medium text-white">Postal Codes</td><td class="py-3 px-4">&mdash;</td><td class="py-3 px-4">Russian Post: 295xxx = RU</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Weather Gold Standard -->
+  <section class="max-w-6xl mx-auto px-6 mb-20">
+    <div class="bg-gradient-to-r from-[#22c55e]/10 to-[#111827] border border-[#22c55e]/30 rounded-2xl p-8">
+      <h2 class="text-2xl font-bold mb-2 text-[#22c55e]">The Gold Standard: Weather Services</h2>
+      <p class="text-[#94a3b8] mb-6">If every weather app can get it right, so can everyone else. All 10 correctly classify Simferopol as Ukraine.</p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+        {['AccuWeather', 'Weather Underground', 'TimeAndDate', 'Weather Spark', 'Meteoblue', 'Ventusky', 'Weather Atlas', 'Weather-Forecast', 'BBC Weather', 'weather.com'].map(name => (
+          <div class="bg-[#0a0e1a] rounded-lg px-3 py-2 text-sm flex items-center gap-2 border border-[#1e293b]">
+            <span class="text-[#22c55e] flex-shrink-0">&#x2705;</span>
+            <span class="text-[#94a3b8] truncate">{name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- All Findings Table -->
+  <section id="findings" class="max-w-6xl mx-auto px-6 mb-20">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8">All {total} Findings</h2>
+
+    {categoryOrder.filter(cat => categories[cat]).map(cat => (
+      <div class="mb-10">
+        <h3 class="text-lg font-bold text-[#94a3b8] mb-3 flex items-center gap-2">
+          {categoryLabels[cat] || cat}
+          <span class="text-sm font-normal text-[#64748b]">({categories[cat].length})</span>
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-[#64748b] border-b border-[#1e293b]">
+                <th class="py-2 px-3 w-8"></th>
+                <th class="py-2 px-3">Platform</th>
+                <th class="py-2 px-3 hidden md:table-cell">Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              {categories[cat].sort(sortByStatus).map((f: any) => (
+                <tr class="border-b border-[#1e293b]/30 hover:bg-[#1e293b]/20">
+                  <td class="py-2 px-3">{f.status_icon}</td>
+                  <td class="py-2 px-3 font-medium text-white whitespace-nowrap">{f.platform}</td>
+                  <td class="py-2 px-3 text-[#64748b] hidden md:table-cell">{f.detail.slice(0, 140)}{f.detail.length > 140 ? '...' : ''}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <!-- About / Methodology -->
+  <section class="max-w-6xl mx-auto px-6 mb-20">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">About This Research</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-[#111827] rounded-xl p-6 border border-[#1e293b]">
+        <h3 class="font-bold mb-2">Automated Checks</h3>
+        <p class="text-sm text-[#94a3b8]">
+          GeoJSON geometry analysis, API queries, npm/PyPI dependency analysis,
+          GitHub issue verification, IP geolocation testing across 8 Crimean IPs.
+        </p>
+      </div>
+      <div class="bg-[#111827] rounded-xl p-6 border border-[#1e293b]">
+        <h3 class="font-bold mb-2">Media &amp; Political Analysis</h3>
+        <p class="text-sm text-[#94a3b8]">
+          1.54M GDELT articles. 7 language clusters. Named politicians with dated
+          sovereignty endorsements across Italian, French, German contexts.
+        </p>
+      </div>
+      <div class="bg-[#111827] rounded-xl p-6 border border-[#1e293b]">
+        <h3 class="font-bold mb-2">Reproducible</h3>
+        <p class="text-sm text-[#94a3b8]">
+          All scripts on GitHub. JSON + CSV datasets. Zero cloud cost.
+          Run the audit yourself with <code class="text-[#f59e0b]">pip install -r requirements.txt</code>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="max-w-6xl mx-auto px-6 py-12 border-t border-[#1e293b]">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      <div>
+        <p class="text-sm text-[#94a3b8]">
+          Research by <strong class="text-white">Ivan Dobrovolsky</strong>
+        </p>
+        <p class="text-xs text-[#64748b] mt-1">
+          Part of the <a href="https://github.com/IvanDobrovolsky/kyivnotkiev" class="text-[#3b82f6] hover:underline">KyivNotKiev</a> research ecosystem
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-4 text-sm text-[#64748b]">
+        <a href="https://github.com/IvanDobrovolsky/crimeaisukraine" class="hover:text-white transition">GitHub</a>
+        <span class="hidden md:inline">&middot;</span>
+        <span>Data: March 2026</span>
+        <span class="hidden md:inline">&middot;</span>
+        <span>{total} platforms &middot; 12 categories</span>
+      </div>
+    </div>
+  </footer>
+
+</Layout>
