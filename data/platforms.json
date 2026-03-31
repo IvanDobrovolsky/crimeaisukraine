@@ -1074,14 +1074,50 @@
       "evidence": "",
       "notes": "Needs verification with actual traceroute from Crimean IP.",
       "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Yandex Maps",
+      "category": "map_service",
+      "status": "incorrect",
+      "status_icon": "❌",
+      "method": "manual",
+      "detail": "Shows Crimea as part of Russia with solid borders. Russian company, complies with Russian law. Crimean cities listed under Russian administrative hierarchy (Republic of Crimea, Crimean Federal District). Expected and confirmed by multiple sources.",
+      "url": "https://yandex.ru/maps/",
+      "evidence": "",
+      "notes": "Russian platform — classification matches Russian law.",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "HERE Maps",
+      "category": "map_service",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "manual",
+      "detail": "HERE Technologies (Amsterdam). API requires key for geocoding. HERE supplies map data to BMW, Mercedes, Audi. Needs manual verification with API key or browser check.",
+      "url": "https://wego.here.com/",
+      "evidence": "",
+      "notes": "Requires manual check or API key.",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "TomTom",
+      "category": "map_service",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "manual",
+      "detail": "TomTom (Amsterdam). Major map data provider for automotive, logistics. API requires key. Needs manual verification.",
+      "url": "https://www.tomtom.com/",
+      "evidence": "",
+      "notes": "Requires manual check or API key.",
+      "date_checked": "2026-03-31"
     }
   ],
   "summary": {
-    "total_platforms": 89,
+    "total_platforms": 92,
     "by_status": {
       "n/a": 7,
-      "incorrect": 16,
-      "ambiguous": 39,
+      "incorrect": 17,
+      "ambiguous": 41,
       "correct": 24,
       "blocked": 3
     },
@@ -1094,7 +1130,7 @@
       "travel": 8,
       "gaming": 4,
       "tech_infrastructure": 10,
-      "map_service": 7,
+      "map_service": 10,
       "weather": 8,
       "social_media": 4
     },
