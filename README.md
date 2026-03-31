@@ -31,7 +31,7 @@ We audited **121 digital platforms** across 12 categories. Crimea is internation
 
 **5.** Reuters, AP, BBC use "annexed" consistently. RT and Sputnik frame Crimea as Russian territory.
 
-**6.** Named politicians with dated sovereignty endorsements: Salvini, Le Pen, Schroeder, Berlusconi, Orban, Trump, AfD.
+**6.** Multiple political figures across Europe have made explicit sovereignty endorsements — documented with dates and sources in the research paper.
 
 ---
 
