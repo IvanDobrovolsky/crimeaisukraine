@@ -318,19 +318,18 @@ def run_bulk_check():
     print("=" * 70)
 
     # Phase 1: Gather IP prefixes from all ASNs
-    print("\n[Phase 1] Fetching IP prefixes from BGPView...")
+    print("\n[Phase 1] Loading IP prefixes for Crimean ASNs...")
     asn_prefixes: dict[int, list[str]] = {}
     all_ips: list[dict] = []  # {"ip": ..., "asn": ..., "asn_name": ..., "prefix": ...}
 
     for asn, name in CRIMEAN_ASNS.items():
         print(f"  AS{asn} ({name})...", end=" ", flush=True)
-        time.sleep(1)  # BGPView rate limit
         prefixes = fetch_asn_prefixes(asn)
         asn_prefixes[asn] = prefixes
         print(f"{len(prefixes)} prefix(es)")
 
         for prefix in prefixes:
-            ips = sample_ips_from_prefix(prefix, count=1)
+            ips = sample_ips_from_prefix(prefix, count=2)
             for ip in ips:
                 all_ips.append({
                     "ip": ip,
@@ -401,6 +400,41 @@ def run_bulk_check():
                 print(f"    {ip:18s} -> FAILED")
 
             detailed_results.append(ip_result)
+
+    # Phase 2b: Cross-validate with ipinfo.io and ipapi.co on a subset
+    secondary_providers = [
+        ("ipinfo.io", check_ipinfo),
+        ("ipapi.co", check_ipapi_co),
+    ]
+    # Test every 3rd IP with secondary providers (to stay within rate limits)
+    subset = all_ips[::3]
+    print(f"\n[Phase 2b] Cross-validating {len(subset)} IPs with ipinfo.io & ipapi.co")
+
+    for idx, ip_info in enumerate(subset):
+        ip = ip_info["ip"]
+        asn = ip_info["asn"]
+        # Find the matching detailed_result
+        dr = next((d for d in detailed_results if d["ip"] == ip), None)
+        if dr is None:
+            continue
+
+        for prov_name, checker in secondary_providers:
+            result = checker(ip)
+            if result:
+                code = result["country_code"]
+                cls = classify_code(code)
+                dr["lookups"].append(result)
+                provider_results[prov_name][cls] += 1
+                asn_results[asn][cls] += 1
+                overall_country[cls] += 1
+                tested_count += 1
+                icon = {"UA": "UA", "RU": "RU"}.get(cls, "??")
+                print(f"    [{idx+1}/{len(subset)}] {ip:18s} {prov_name:15s} -> "
+                      f"{code:2s} ({icon})")
+            else:
+                error_count += 1
+
+            time.sleep(PROVIDER_DELAYS.get(prov_name, 1.0))
 
     # Phase 3: Build output
     print(f"\n{'=' * 70}")
