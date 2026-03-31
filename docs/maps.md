@@ -90,11 +90,17 @@
 
 ## 5. HERE Maps (HERE WeGo)
 
-**Rating:** ⚠️ Insufficient data
+**Rating:** ⚠️ Ambiguous (geo-dependent, configurable)
 
-No specific documentation was found about HERE Maps' current Crimea representation in 2024-2026.
+HERE Maps implements a "political view" system via its Raster Tile API, Map Image API, and Geocoding & Search API. Customers set a `politicalView` parameter using ISO 3166-1 alpha-3 country codes (e.g., `politicalView=RUS`).
 
-**Action needed:** Direct platform verification at wego.here.com required.
+**Default behavior:** Defined by the "HERE Geopolitical Board" -- shows disputed borders with dashed lines. For unsupported country codes, falls back to this default.
+
+**Key issue:** A Russian political view (`RUS`) exists and likely shows Crimea as Russian. No Ukraine-specific political view (`UKR`) was documented.
+
+**Sources:**
+- [HERE Geocoding & Search API - Political Views](https://developer.here.com/documentation/geocoding-search-api/dev_guide/topics/political-views.html)
+- [HERE Raster Tile API - Geopolitical Views](https://www.here.com/docs/bundle/raster-tile-api-developer-guide/page/topics/geopolitical-views.html)
 
 ---
 
@@ -154,5 +160,5 @@ Their Europe Wall Map reportedly describes Crimea as part of the Russian Federat
 | Bing Maps | ⚠️ Likely disputed | Unknown | ⚠️ Needs verification |
 | Natural Earth | ❌ Russia (default) | N/A | ❌ Russia (default) |
 | Nat. Geographic | ❌ Varies | N/A | ❌ Varies |
-| HERE Maps | Unknown | Unknown | Needs verification |
+| HERE Maps | ⚠️ Default disputed | ❌ Russia (RUS view) | ⚠️ Disputed (default) |
 | Waze | Unknown | Unknown | Needs verification |

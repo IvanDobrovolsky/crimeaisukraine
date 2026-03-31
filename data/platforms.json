@@ -944,18 +944,6 @@
       "date_checked": "2026-03-31"
     },
     {
-      "platform": "mledoze/countries (GitHub, 6.2K stars)",
-      "category": "open_source",
-      "status": "ambiguous",
-      "status_icon": "⚠️",
-      "method": "source_code",
-      "detail": "One of the most popular country data repos. GeoJSON boundaries likely derived from Natural Earth. Crimea handling not explicitly documented. Needs boundary inspection.",
-      "url": "https://github.com/mledoze/countries",
-      "evidence": "",
-      "notes": "",
-      "date_checked": "2026-03-31"
-    },
-    {
       "platform": "Postal code databases (Russian Post)",
       "category": "tech_infrastructure",
       "status": "incorrect",
@@ -980,18 +968,6 @@
       "date_checked": "2026-03-31"
     },
     {
-      "platform": "Encyclopaedia Britannica",
-      "category": "reference",
-      "status": "ambiguous",
-      "status_icon": "⚠️",
-      "method": "manual",
-      "detail": "Britannica has a dedicated Crimea article. Page blocked for automated access (403). Needs manual verification. Historically describes Crimea as autonomous republic of Ukraine, annexed by Russia in 2014.",
-      "url": "https://www.britannica.com/place/Crimea",
-      "evidence": "",
-      "notes": "Requires manual browser check.",
-      "date_checked": "2026-03-31"
-    },
-    {
       "platform": "UN M49 / UNGA Resolution 68/262",
       "category": "reference",
       "status": "correct",
@@ -1001,18 +977,6 @@
       "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
       "evidence": "",
       "notes": "",
-      "date_checked": "2026-03-31"
-    },
-    {
-      "platform": "Mapbox",
-      "category": "map_service",
-      "status": "ambiguous",
-      "status_icon": "⚠️",
-      "method": "source_code",
-      "detail": "Has a \"worldview\" system allowing developers to filter borders for different geopolitical perspectives. Style spec references worldview parameter. Developers must explicitly choose; default behavior depends on implementation.",
-      "url": "https://docs.mapbox.com/data/boundaries/guides/",
-      "evidence": "",
-      "notes": "Technically the most flexible approach among map providers. Quality depends on developer choices.",
       "date_checked": "2026-03-31"
     },
     {
@@ -1064,18 +1028,6 @@
       "date_checked": "2026-03-31"
     },
     {
-      "platform": "Cloudflare CDN",
-      "category": "tech_infrastructure",
-      "status": "ambiguous",
-      "status_icon": "⚠️",
-      "method": "manual",
-      "detail": "No Cloudflare POP in Simferopol/Crimea. Crimean traffic routes to nearest POP — likely Kyiv (Ukraine-connected ISPs) or Moscow/Krasnodar (Russian-connected ISPs). CDN routing follows BGP paths, not country assignment. Sanctions may restrict CF services to Crimea.",
-      "url": "https://www.cloudflare.com/network/",
-      "evidence": "",
-      "notes": "Needs verification with actual traceroute from Crimean IP.",
-      "date_checked": "2026-03-31"
-    },
-    {
       "platform": "Yandex Maps",
       "category": "map_service",
       "status": "incorrect",
@@ -1088,15 +1040,75 @@
       "date_checked": "2026-03-31"
     },
     {
+      "platform": "Encyclopaedia Britannica",
+      "category": "reference",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "manual",
+      "detail": "Describes Crimea as \"autonomous republic, southern Ukraine\". States Russia \"illegally annexed\" Crimea. One of the clearest reference sources. Updated March 2026.",
+      "url": "https://www.britannica.com/place/Crimea",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "mledoze/countries (GitHub, 6.2K stars)",
+      "category": "open_source",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_data",
+      "detail": "CORRECTED: Direct GeoJSON verification — Crimea IN Ukraine polygon (358 points), EXCLUDED from Russia. Uses thematicmapping.org, NOT Natural Earth. Breaks the NE propagation chain.",
+      "url": "https://github.com/mledoze/countries",
+      "evidence": "ukr.geo.json: 358 Crimea points. rus.geo.json: 0",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Cloudflare CDN",
+      "category": "tech_infrastructure",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_data",
+      "detail": "Classifies Crimea as country=UA, subdivision=UA-43. Affects ~20% of all websites. WAF RU-block does NOT capture Crimea. Crimean users appear as Ukrainian.",
+      "url": "https://community.cloudflare.com/t/waf-block-sanctioned-countries-crimea/401191",
+      "evidence": "",
+      "notes": "One of most significant findings: internet infra layer treats Crimea as UA.",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Domain TLD (.crimea.ua/.crimea.ru)",
+      "category": "tech_infrastructure",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_data",
+      "detail": ".crimea.ua EXISTS and is active/registrable. .crimea.ru does NOT exist. DNS hierarchy recognizes Crimea under Ukraine TLD.",
+      "url": "https://nic.ua/en/domains/.crimea.ua",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
       "platform": "HERE Maps",
       "category": "map_service",
       "status": "ambiguous",
       "status_icon": "⚠️",
       "method": "manual",
-      "detail": "HERE Technologies (Amsterdam). API requires key for geocoding. HERE supplies map data to BMW, Mercedes, Audi. Needs manual verification with API key or browser check.",
-      "url": "https://wego.here.com/",
+      "detail": "Political view system: RUS view available but NO Ukraine view. Default shows disputed borders. Asymmetry: occupier perspective exists, sovereign nation perspective does not.",
+      "url": "https://developer.here.com/",
       "evidence": "",
-      "notes": "Requires manual check or API key.",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Mapbox",
+      "category": "map_service",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "source_code",
+      "detail": "11 worldviews. US default. RU worldview added v3.4. NO Ukraine worldview exists — same asymmetry as HERE Maps.",
+      "url": "https://docs.mapbox.com/help/glossary/worldview/",
+      "evidence": "",
+      "notes": "Absence of UA worldview while RU exists is a key finding.",
       "date_checked": "2026-03-31"
     },
     {
@@ -1105,20 +1117,68 @@
       "status": "ambiguous",
       "status_icon": "⚠️",
       "method": "manual",
-      "detail": "TomTom (Amsterdam). Major map data provider for automotive, logistics. API requires key. Needs manual verification.",
-      "url": "https://www.tomtom.com/",
+      "detail": "Ukraine listed with complete coverage. Crimea not under any Russia zone. Dutch company, EU sanctions apply. Likely UA but unconfirmed.",
+      "url": "https://help.tomtom.com/",
       "evidence": "",
-      "notes": "Requires manual check or API key.",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "ESPN",
+      "category": "sports",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "manual",
+      "detail": "Editorial: \"annexed by Russia\" (accurate). Sports DB: Crimean clubs under Russian league. Split between editorial correctness and structural classification.",
+      "url": "https://www.espn.com/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "weather.com (The Weather Channel)",
+      "category": "weather",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "manual",
+      "detail": "Sister product Weather Underground (same IBM parent) lists Simferopol under Ukraine. Same geographic database. Likely correct.",
+      "url": "https://www.wunderground.com/forecast/ua/simferopol",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "BBC Weather",
+      "category": "weather",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "manual",
+      "detail": "Uses GeoNames ID 693805 (Simferopol = Ukraine). BBC editorial uses \"annexed\". URL: bbc.com/weather/693805.",
+      "url": "https://www.bbc.com/weather/693805",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Akamai CDN",
+      "category": "tech_infrastructure",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "manual",
+      "detail": "Proprietary EdgeScape geolocation. No public Crimea docs. Likely UA based on industry norms but unconfirmed.",
+      "url": "https://techdocs.akamai.com/",
+      "evidence": "",
+      "notes": "",
       "date_checked": "2026-03-31"
     }
   ],
   "summary": {
-    "total_platforms": 92,
+    "total_platforms": 97,
     "by_status": {
       "n/a": 7,
       "incorrect": 17,
-      "ambiguous": 41,
-      "correct": 24,
+      "ambiguous": 40,
+      "correct": 30,
       "blocked": 3
     },
     "by_category": {
@@ -1129,10 +1189,11 @@
       "search_engine": 3,
       "travel": 8,
       "gaming": 4,
-      "tech_infrastructure": 10,
+      "tech_infrastructure": 12,
       "map_service": 10,
-      "weather": 8,
-      "social_media": 4
+      "weather": 10,
+      "social_media": 4,
+      "sports": 1
     },
     "last_updated": "2026-03-31"
   }
