@@ -4,24 +4,61 @@ import '../styles/global.css'
 interface Props {
   title: string;
   description?: string;
+  lang?: string;
 }
 
-const { title, description = "Systematic audit of how 101 digital platforms represent Crimea's sovereignty. Crimea is Ukraine." } = Astro.props;
+const {
+  title,
+  description = "How do 121 digital platforms classify Crimea? We audited maps, data libraries, streaming, travel, and infrastructure. Natural Earth assigns SOVEREIGNT=Russia, cascading to 30M+ weekly npm downloads.",
+  lang = 'en'
+} = Astro.props;
+
+const siteUrl = 'https://crimeaisukraine.org';
+const ogImage = `${siteUrl}/og.png`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Ivan Dobrovolskyi" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Crimea Is Ukraine — 121 platforms audited. 35 correct, 20 incorrect, 48 ambiguous." />
+    <meta property="og:locale" content={lang === 'uk' ? 'uk_UA' : 'en_US'} />
+    <meta property="og:site_name" content="Crimea Is Ukraine" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="Crimea Is Ukraine — 121 platforms audited. 35 correct, 20 incorrect, 48 ambiguous." />
+
+    <!-- Canonical + Language alternates -->
+    <link rel="canonical" href={lang === 'uk' ? `${siteUrl}/uk` : siteUrl} />
+    <link rel="alternate" hreflang="en" href={siteUrl} />
+    <link rel="alternate" hreflang="uk" href={`${siteUrl}/uk`} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <title>{title}</title>
   </head>
   <body class="min-h-screen">
     <slot />
