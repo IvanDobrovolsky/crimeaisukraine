@@ -18,12 +18,12 @@ This audit systematically examines how digital platforms, open source libraries,
 
 | Metric | Count |
 |--------|-------|
-| Platforms/services checked | 42 |
-| Correctly shows Ukraine | 5 |
-| Ambiguous/disputed/unclear | 24 |
-| Incorrectly shows Russia | 6 |
-| Blocked (sanctions) | 0 |
-| Not applicable | 7 |
+| Platforms/services checked | 64 |
+| Correctly shows Ukraine | 19 |
+| Ambiguous/disputed/unclear | 28 |
+| Incorrectly shows Russia | 8 |
+| Blocked by sanctions | 4 |
+| Needs direct verification | 5 |
 
 ### By Category
 
@@ -31,10 +31,12 @@ This audit systematically examines how digital platforms, open source libraries,
 |----------|---------|-------------|
 | Open source data | 9 | Natural Earth assigns Crimea to Russia at all resolutions |
 | Data visualization | 13 | 27M+ weekly downloads inherit incorrect classification |
+| Map services | 8 | Google/OSM geo-dependent; Apple correct outside Russia; Nat Geo inconsistent |
+| Travel platforms | 6 | Sanctions block bookings; TripAdvisor lists Crimea without country |
+| Social media | 4 | Instagram allows both "Russia" and "Ukraine" tags for same cities |
+| Weather services | 10 | Most consistent category — all verified services show Ukraine |
 | IP geolocation | 3 | Mixed — depends on ISP registration, not centralized policy |
 | Reference (Wikipedia) | 4 | German/Spanish correct; English/French ambiguous; Italian concerning |
-| Travel | 5 | Mostly needs manual verification |
-| Weather | 1 | AccuWeather inconclusive |
 | Gaming | 4 | Needs manual verification |
 | Search engines | 3 | Needs manual verification |
 
@@ -65,7 +67,23 @@ Highcharts Maps (2.3M weekly downloads) deliberately assigns Crimea to Ukraine i
 
 Crimean IPs are not consistently classified. Pre-2014 Ukrainian ISPs still resolve to UA; post-2014 Russian entities resolve to RU. One Ukrainian ISP (CrimeaCom) resolves to Hungary, likely due to re-routing.
 
-### 4. Wikipedia Language Disparity
+### 4. Google Maps "Disputed" Default Is False Equivalence
+
+Google Maps shows Crimea with a **dashed "disputed" border** to users outside Russia and Ukraine. This framing treats the situation as a bilateral disagreement, ignoring that UNGA Resolution 68/262 affirmed Crimea as Ukrainian territory by a 100-11 vote. Only 11 countries voted against. Apple Maps corrected this in March 2022, showing Crimea as Ukraine outside Russia.
+
+### 5. Instagram's Dual Location Tags Normalize Russian Claims
+
+Instagram maintains **both** "Crimea, Ukraine" and "Russia, Crimea, Yalta" as active location tags. Users can freely choose either, effectively allowing the platform to serve as a vehicle for normalizing Russia's sovereignty claim over Crimea.
+
+### 6. Weather Services Are the Gold Standard
+
+All 8 verified weather services (AccuWeather, Weather Underground, TimeAndDate, Weather Spark, Meteoblue, Weather-Forecast.com, Ventusky, Weather Atlas) classify Simferopol under **Ukraine**. This consistency stems from reliance on standardized geographic databases (GeoNames, ISO 3166).
+
+### 7. TripAdvisor's "Europe > Crimea" Avoids the Question
+
+TripAdvisor lists Crimea directly under "Europe" without any country designation — neither Ukraine nor Russia. While less harmful than labeling it as Russia, this evasion fails to reflect the internationally recognized status.
+
+### 8. Wikipedia Language Disparity
 
 | Language | Crimea framing |
 |----------|---------------|
@@ -82,9 +100,13 @@ Crimean IPs are not consistently classified. Pre-2014 Ukrainian ISPs still resol
 - [Tech Infrastructure & IP Geolocation](tech.md)
 - [Prior Research Survey](PRIOR_RESEARCH.md)
 
+### Completed Reports
+- [Map Services](maps.md) — Google Maps, Apple Maps, OpenStreetMap, Bing, Natural Earth, National Geographic
+- [Travel Platforms](travel.md) — Booking.com, Airbnb, Expedia, TripAdvisor, Google Flights
+- [Social Media](social_media.md) — Instagram, TikTok, Facebook, X/Twitter location tags
+- [Weather Services](weather.md) — AccuWeather, Weather Underground, BBC Weather, and 8 others
+
 ### Reports in Progress
-- `maps.md` — Map services (Google, Apple, Bing, OSM)
-- `travel.md` — Travel and booking platforms
 - `gaming.md` — Gaming platforms and in-game maps
 - `media.md` — News media framing (references kyivnotkiev analysis)
 
