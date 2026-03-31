@@ -35,3 +35,8 @@ Thumbs.db
 .claude
 CLAUDE.md
 SPEC.md
+
+# Research-only docs (contain named individuals, kept for paper not public repo)
+docs/media_framing_by_language.md
+docs/media.md
+docs/PAPER_STRUCTURE.md
