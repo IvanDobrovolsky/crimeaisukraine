@@ -272,18 +272,6 @@
       "date_checked": "2026-03-31"
     },
     {
-      "platform": "ip-api.com",
-      "category": "ip_geolocation",
-      "status": "correct",
-      "status_icon": "✅",
-      "method": "automated_api",
-      "detail": "Tested 4 Crimean IPs: 2 resolved to UA, 1 resolved to RU, 1 other.",
-      "url": "https://ip-api.com",
-      "evidence": "91.207.56.1 (CrimeaCom (Ukrainian ISP, AS48031)): Hungary (HU); 176.104.32.1 (SevStar (Sevastopol ISP, AS56485)): Ukraine (UA); 46.63.0.1 (Sim-Telecom (Simferopol, AS198948)): Ukraine (UA); 83.149.22.1 (Miranda-Media (Crimean ISP, AS201776)): Russia (RU)",
-      "notes": "Pre-2014, all these IPs were registered to Ukrainian entities. Post-annexation, some were re-registered under Russian entities.",
-      "date_checked": "2026-03-31"
-    },
-    {
       "platform": "ipinfo.io",
       "category": "ip_geolocation",
       "status": "correct",
@@ -1458,28 +1446,136 @@
       "evidence": "",
       "notes": "",
       "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Bing Search (knowledge panel)",
+      "category": "search_engine",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "Searched 'Crimea' on Bing. Knowledge panel: both_mentioned. Screenshot saved.",
+      "url": "https://www.bing.com/search?q=Crimea",
+      "evidence": "country=both_mentioned",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Google Search (knowledge panel)",
+      "category": "search_engine",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "Searched 'Crimea' on Google. Knowledge panel country: None. Screenshot saved.",
+      "url": "https://www.google.com/search?q=Crimea",
+      "evidence": "country=None",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "DuckDuckGo (info box)",
+      "category": "search_engine",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "Searched 'Crimea' on DuckDuckGo. Info box: both_mentioned. Screenshot saved.",
+      "url": "https://duckduckgo.com/?q=Crimea",
+      "evidence": "country=both_mentioned",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "TripAdvisor (browser check)",
+      "category": "travel",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "TripAdvisor Crimea page — country unclear. Screenshot saved.",
+      "url": "https://www.tripadvisor.com/Tourism-g313972-Crimea-Vacations.html",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Booking.com (browser check)",
+      "category": "travel",
+      "status": "blocked",
+      "status_icon": "🚫",
+      "method": "automated_api",
+      "detail": "Booking.com returns no results for Simferopol (sanctions). Screenshot saved.",
+      "url": "https://www.booking.com/searchresults.html?ss=Simferopol",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "AccuWeather (browser verified)",
+      "category": "weather",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_api",
+      "detail": "AccuWeather URL contains /ua/ (Ukraine). Simferopol classified as Ukraine.. Screenshot saved.",
+      "url": "https://www.accuweather.com/en/ua/simferopol/322464/weather-forecast/322464",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Google Maps (browser check)",
+      "category": "map_service",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "Google Maps Crimea — dashed border (disputed default from non-RU location). Screenshot saved.",
+      "url": "https://www.google.com/maps/place/Crimea/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "weather.com (browser verified)",
+      "category": "weather",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_api",
+      "detail": "weather.com shows Simferopol under Ukraine. Screenshot saved.",
+      "url": "https://weather.com/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "ip-api.com",
+      "category": "ip_geolocation",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_api",
+      "detail": "Bulk test: 45 lookups across 45 Crimean IPs from 9 ASNs — 7 RU (16%), 24 UA (53%), 14 other.",
+      "url": "https://ip-api.com",
+      "evidence": "91.207.56.128 (AS48031): HU; 91.207.57.128 (AS48031): BE; 91.207.58.128 (AS48031): RU; 91.207.59.128 (AS48031): RU; 176.104.32.128 (AS56485): UA; 176.104.33.128 (AS56485): UA; 176.104.34.128 (AS56485): UA; 176.104.35.128 (AS56485): UA; 176.104.36.128 (AS56485): UA; 176.104.37.128 (AS56485): UA; 46.63.0.128 (AS198948): UA; 46.63.1.128 (AS198948): UA; 46.63.2.128 (AS198948): UA; 46.63.4.128 (AS198948): UA; 46.63.8.128 (AS198948): UA; 83.149.16.128 (AS201776): RU; 83.149.17.128 (AS201776): RU; 83.149.18.128 (AS201776): RU; 83.149.22.128 (AS201776): RU; 83.149.23.128 (AS201776): RU; 185.65.244.128 (AS201776): UA; 185.65.245.128 (AS201776): UA; 37.57.0.128 (AS42961): UA; 37.57.1.128 (AS42961): UA; 37.57.2.128 (AS42961): UA; 37.57.4.128 (AS42961): UA; 37.57.8.128 (AS42961): UA; 37.57.16.128 (AS42961): UA; 195.22.220.128 (AS28761): AR; 195.22.221.128 (AS28761): CL ... (+15 more)",
+      "notes": "Tested IP ranges from 9 Crimean ASNs including CrimeaCom, SevStar, Miranda-Media, CrimeaTelecom, etc. All prefixes were originally allocated to Ukrainian entities by RIPE NCC.",
+      "date_checked": "2026-03-31"
     }
   ],
   "summary": {
-    "total_platforms": 121,
+    "total_platforms": 129,
     "by_status": {
       "n/a": 7,
       "incorrect": 20,
-      "ambiguous": 48,
-      "correct": 35,
-      "blocked": 11
+      "ambiguous": 53,
+      "correct": 37,
+      "blocked": 12
     },
     "by_category": {
       "open_source": 13,
       "data_visualization": 18,
       "ip_geolocation": 5,
       "reference": 18,
-      "search_engine": 3,
-      "travel": 8,
+      "search_engine": 6,
+      "travel": 10,
       "gaming": 4,
       "tech_infrastructure": 21,
-      "map_service": 11,
-      "weather": 10,
+      "map_service": 12,
+      "weather": 12,
       "social_media": 5,
       "sports": 5
     },
