@@ -1,257 +1,173 @@
-# Media & Public Figure Sovereignty Framing — Crimea
+# Media Sovereignty Framing: Crimea
 
-**Audit date:** 2026-03-31
-**Data sources:** GDELT analysis (kyivnotkiev project, 1.54M articles), web research, public statements
-**Methodology:** Cross-language analysis of editorial framing, not just transliteration choice
+*Generated: 2026-03-31 04:07 UTC*
 
----
+## Methodology
 
-## Critical Distinction: Transliteration vs. Sovereignty Framing
+This analysis uses the [GDELT DOC API v2](https://api.gdeltproject.org/api/v2/doc/doc) to search for recent articles mentioning Crimea with explicit sovereignty framing. Articles are classified into three categories:
 
-The kyivnotkiev CRIMEA_ANALYSIS.md established that Crimea/Krym variant choice is primarily **linguistic**, not political (unlike Kyiv/Kiev). Using "Krym" instead of "Crimea" is a transliteration artifact — it does **not** imply endorsement of Russian sovereignty. Italian, Vietnamese, Brazilian, and Cuban outlets using "Krym" are following linguistic conventions shaped by Soviet-era transliteration paths, not making editorial sovereignty claims.
+- **Pro-Russia**: Frames Crimea as Russian territory ("Russian Crimea", "Republic of Crimea, Russia")
+- **Neutral/Critical**: Acknowledges annexation/occupation ("annexed Crimea", "occupied")
+- **Pro-Ukraine**: Frames Crimea as Ukrainian territory ("Ukrainian Crimea", "deoccupation")
 
-**What this section focuses on instead:**
-
-| Tier | What it is | Example | Severity |
-|------|-----------|---------|----------|
-| 1. **Explicit sovereignty claim** | Using "Crimea, Russia" as a location label or dateline | eturbonews.com: "Crimea Russia New Venue" | High |
-| 2. **Normalization by omission** | Covering Crimea without "occupied"/"annexed" qualifier | Describing events in Crimea with no sovereignty context | Medium |
-| 3. **Political advocacy** | Public figures calling for recognition of Russian sovereignty | Salvini: "referendum was legitimate" | High |
-| 4. **Transliteration only** | Using "Krym" vs "Crimea" | ANSA.it using "Krym" 57.6% of the time | **Low — linguistic, not political** |
-
-**The ANSA case illustrates the distinction:** ANSA's 57.6% "Krym" usage is a transliteration pattern, likely caused by RSS feed routing through Russian-language intermediaries. ANSA is NOT editorially calling Crimea "Russian territory." This is noteworthy as a linguistic study but is **not a sovereignty violation.** The real concern with Italian media lies elsewhere — in the political statements of Italian politicians (Salvini, Berlusconi) who made explicit sovereignty endorsements.
+Language-specific queries are run in Spanish, French, German, Italian, Turkish, Arabic, and Chinese.
 
 ---
 
-## By Language Cluster
+## Overall Framing Distribution
 
-### Italian Media & Politics
+**Total articles analyzed: 2703**
 
-**GDELT transliteration signal:** 55-67% "Krym" usage across Italian outlets — anomalous for Western Europe where "Crimea" is the standard Italian term. However, this is a **linguistic pattern** (likely RSS feed artifacts from Russian-language sources), not a sovereignty claim.
-
-**The real Italian concern is political, not editorial:**
-
-| Person | Role | Sovereignty Statement | Date |
-|--------|------|----------------------|------|
-| **Matteo Salvini** (Lega) | Deputy PM, party leader | Called Crimea referendum "legitimate." Visited Moscow in Putin T-shirt. Lega signed cooperation agreement with United Russia. | 2014-2018 |
-| **Silvio Berlusconi** (deceased 2023) | Ex-PM | Defended annexation: "Crimean residents wanted to be part of Russia." Visited occupied Crimea with Putin. | 2015 |
-
-**Italian outlets with elevated "Krym" transliteration (linguistic, not political):**
-
-| Outlet | Type | Krym % | Articles | Note |
-|--------|------|--------|----------|------|
-| zazoom.it | Aggregator | 61.0% | 5,598 | Volume driver |
-| ANSA.it | Wire service | 57.6% | 1,055 | Linguistic — NOT a sovereignty claim |
-| ilgiornale.it | National (right) | 55.8% | 344 | Editorially pro-Russia but Krym usage is transliteration |
-| iltempo.it | National (right) | 58.7% | 404 | Same pattern |
-| ilmessaggero.it | National | — | 72 | Only Italian outlet with URL-level "Russian Crimea" framing |
-
-**Key nuance:** Only `ilmessaggero.it` showed URL-level sovereignty framing ("Russian Crimea" in URLs). The other outlets use the Russian transliteration "Krym" but do NOT editorially call Crimea part of Russia. The political statements (Salvini, Berlusconi) are the actual sovereignty violations — and they may have created a permissive environment for looser editorial standards.
-
-### Spanish-Language Media
-
-**Key outlets to investigate:**
-
-| Outlet | Country | Type | Concern Level |
-|--------|---------|------|---------------|
-| actualidad.rt.com | Russia (Spanish) | State media | High (55.7% Russian variant) |
-| sputniknews.lat | Russia (LatAm) | State media | High (58.5% Russian variant) |
-| prensa-latina.cu | Cuba | State media | High (95.9% Russian variant) |
-| hispantv.com | Iran (Spanish) | State media | High (54.8% Russian variant) |
-| telesurtv.net | Venezuela | State-aligned | High |
-| elpuntavui.cat | Catalonia | Regional | Medium (12% URL-level sovereignty framing) |
-
-**Political context:**
-- **Cuba, Venezuela, Nicaragua, Bolivia:** Voted against UNGA 68/262. State media in these countries routinely frames Crimea as Russian.
-- **TeleSUR:** Venezuelan-funded pan-Latin American news network. Editorial line aligns with Russian position.
-- **Mainstream Spanish media** (El País, El Mundo, La Vanguardia): Generally use correct framing ("annexed," "occupied").
-- **Mexican media:** Generally neutral-to-correct framing. Mexico abstained on UNGA 68/262.
-
-### French-Language Media
-
-**Key outlets to investigate:**
-
-| Outlet | Country | Type | Notes |
-|--------|---------|------|-------|
-| RT France | Russia | State media | Banned in EU since March 2022 |
-| Sputnik France | Russia | State media | Banned in EU since March 2022 |
-| africanews.com | Pan-African | Euronews subsidiary | Framing varies |
-| rfi.fr | France | Public radio | Generally correct ("annexed") |
-| france24.com | France | Public TV | Generally correct |
-
-**Political context:**
-- **Marine Le Pen (Rassemblement National):** Recognized Crimea's annexation as legitimate in 2017. Her party received a €9M loan from a Russian-linked bank. Softened position after 2022 but never explicitly retracted.
-- **Éric Zemmour (Reconquête):** Called Crimea "historically Russian" during 2022 presidential campaign.
-- **African francophone media:** Limited coverage of Crimea. Some outlets in Mali, Burkina Faso, and Central African Republic (countries with Wagner/Russian military presence) may adopt pro-Russian framing.
-- **French mainstream** (Le Monde, Le Figaro, Libération): Consistently use "annexion" or "annexion illégale."
-
-### German-Language Media
-
-**Key outlets:**
-
-| Outlet | Type | Russian Variant % | Articles |
-|--------|------|-------------------|----------|
-| n-tv.de | TV news | 52.9% | 10,427 |
-| dw.com | Public broadcaster | 47.5% | 7,850 |
-| merkur.de | Regional | 49.1% | 6,895 |
-
-**Political context:**
-- **Gerhard Schröder (ex-Chancellor):** Board member of Rosneft and Nord Stream AG. Publicly questioned Crimea sanctions. Called the Crimea referendum "understandable." One of the most prominent Western defenders of Russia's position.
-- **AfD (Alternative for Germany):** Party leadership has called for recognition of Crimea as Russian. Multiple AfD politicians visited occupied Crimea. AfD's 2024 European election manifesto called for ending sanctions related to Crimea.
-- **Sahra Wagenknecht (BSW):** Has questioned Western sanctions on Russia and called for "diplomatic solutions" that implicitly accept the status quo.
-- **German mainstream media:** Generally very strong — "Krim" (from Ukrainian) used increasingly over "Krim" (which in German is the same word but articles consistently frame it as "von Russland annektiert").
-- **German Wikipedia:** "Halbinsel der Ukraine" (peninsula of Ukraine) — among the strongest framing in any language.
-
-### Chinese-Language Media
-
-**Key outlets:**
-
-| Outlet | Type | Likely Framing |
-|--------|------|---------------|
-| Xinhua | State news agency | Neutral-to-ambiguous |
-| CGTN | State TV (English) | Neutral-to-ambiguous |
-| Global Times | State tabloid (hawkish) | Leans pro-Russia |
-| People's Daily | CPC organ | Follows official line |
-
-**Political context:**
-- **China's official position:** Did not recognize Russia's annexation. Abstained on UNGA 68/262 (did not vote for OR against).
-- **Chinese media framing:** Typically describes Crimea as "克里米亚" (Crimea) without explicit sovereignty attribution. Uses phrases like "并入俄罗斯" (incorporated into Russia) rather than "annexed" or "occupied."
-- **Xi Jinping:** Has never publicly endorsed Russia's claim to Crimea. China's "territorial integrity" principle (relevant to Taiwan, Tibet, Xinjiang) makes explicit endorsement politically risky.
-- **Academic literature:** Some Chinese scholars frame the Crimea situation as a response to NATO expansion, implicitly legitimizing Russia's actions without explicitly endorsing sovereignty transfer.
-
-### Indian Media
-
-**Key outlets:**
-
-| Outlet | Type | Notes |
-|--------|------|-------|
-| indiatimes.com | National | 4.6% URL-level sovereignty framing |
-| NDTV | National TV | Generally neutral |
-| Times of India | National | Generally neutral |
-| The Hindu | National | Leans analytical |
-| Hindustan Times | National | Generally neutral |
-| WION | TV news | Varied — some pro-Russian commentary |
-
-**Political context:**
-- **India's official position:** Abstained on UNGA 68/262. Maintained "balanced" position throughout.
-- **Modi government:** Has avoided condemning Russia's annexation. India's dependence on Russian military equipment and oil imports shapes the diplomatic position.
-- **Post-2022:** Indian media coverage increased dramatically but framing remained neutral — typically "Russia-annexed Crimea" (descriptive) rather than "Russian Crimea" (normative).
-- **WION news:** Some commentators have presented pro-Russian perspectives, framing Crimea's status as a legitimate dispute.
-
-### Turkish Media
-
-**Key outlets:**
-
-| Outlet | Type | Notes |
-|--------|------|-------|
-| Anadolu Agency | State wire | Generally correct — uses "annexed" |
-| TRT World | State TV | Correct — acknowledges Ukrainian sovereignty |
-| Daily Sabah | Pro-government | Generally correct |
-
-**Political context:**
-- **Turkey's official position:** Does NOT recognize Russia's annexation. Voted FOR UNGA 68/262.
-- **Erdoğan:** Repeatedly stated Crimea should be returned to Ukraine. Turkey has strong ties to Crimean Tatars.
-- **Crimean Tatar diaspora:** Significant community in Turkey. Crimean Tatar Mejlis (parliament-in-exile) operates from Kyiv.
-- **Turkey is an exception** among countries with close Russia ties — its Crimean position is driven by ethnic/cultural ties to Crimean Tatars, not by Western alignment.
+| Framing | Count | Share |
+|---------|------:|------:|
+| ❌ Pro-Russia | 761 | 28.2% |
+| ⚠️ Neutral/Critical | 1288 | 47.7% |
+| ✅ Pro-Ukraine | 654 | 24.2% |
 
 ---
 
-## Notable Public Figures
+## Framing by Language Cluster
 
-### Politicians Who Have Endorsed Crimea as Russian
-
-| Person | Country | Position | Statement/Action | Date |
-|--------|---------|----------|-------------------|------|
-| Gerhard Schröder | Germany | Ex-Chancellor | Questioned Crimea sanctions, called referendum "understandable" | 2014-2022 |
-| Marine Le Pen | France | RN leader | Recognized annexation as legitimate; party received Russian-linked loan | 2017 |
-| Matteo Salvini | Italy | Lega leader | Called Crimea referendum "legitimate"; wore Putin T-shirt in Moscow | 2014-2018 |
-| Silvio Berlusconi | Italy | Ex-PM | Defended annexation, visited Crimea with Putin | 2015 |
-| Viktor Orbán | Hungary | PM | Blocked EU statements on Crimea; close relationship with Putin | 2014-present |
-| Éric Zemmour | France | Reconquête leader | Called Crimea "historically Russian" | 2022 |
-| Donald Trump | USA | President | Said he would "look at" recognizing Crimea as Russian (2016); 2025 negotiations over Crimea's status | 2016-2025 |
-| AfD leadership | Germany | Party | Called for recognition of Crimea; multiple visits to occupied territory | 2018-present |
-
-### Figures Who Shifted Position After 2022
-
-| Person | Before 2022 | After 2022 |
-|--------|-------------|------------|
-| Marine Le Pen | Explicit recognition | Softened; avoids direct statements |
-| Matteo Salvini | Pro-Russia | Largely silent on Crimea since invasion |
-| Multiple European business leaders | Engagement | Disengagement (sanctions) |
+| Language | Pro-Russia | Neutral/Critical | Pro-Ukraine | Total |
+|----------|----------:|----------------:|------------:|------:|
+| Arabic | 14 | 3 | 5 | 22 |
+| Chinese | 5 | 9 | 0 | 14 |
+| English | 109 | 154 | 84 | 347 |
+| French | 11 | 10 | 7 | 28 |
+| German | 11 | 151 | 88 | 250 |
+| Italian | 12 | 17 | 10 | 39 |
+| Other | 98 | 210 | 83 | 391 |
+| Russian | 435 | 236 | 187 | 858 |
+| Spanish | 23 | 84 | 18 | 125 |
+| Ukrainian | 43 | 414 | 172 | 629 |
 
 ---
 
-## Events Held in "Crimea, Russia" Post-2014
+## Framing by Source Country (Top 20)
 
-(To be expanded with background research results)
-
-- **Mrs. America 2015:** Pageant held in Crimea, promoted as "Crimea, Russia" venue (eturbonews.com)
-- **Crimea Economic Forum:** Annual Russian-organized event presenting Crimea as Russian territory
-- **Victory Day parades in Sevastopol:** Russian military celebrations framing the city as Russian
-- **Putin's visits:** Regular presidential visits treating Crimea as domestic territory
-
----
-
-## Quantitative Summary (from GDELT)
-
-### Coverage Volume by Media Origin (Post-2022)
-
-| Media Category | Total Articles | Share |
-|---|---|---|
-| International media | 983,401 | 63.8% |
-| Russian media (.ru) | 375,335 | 24.4% |
-| Ukrainian media (.ua) | 181,637 | 11.8% |
-| **Total** | **1,540,373** | |
-
-### Year-over-Year Trends
-
-| Year | "Crimea" (standard) | "Krym" (Russian) | Total | Krym % |
-|---|---|---|---|---|
-| 2022 | 228,774 | 163,822 | 392,596 | 41.7% |
-| 2023 | 366,589 | 314,150 | 680,739 | 46.2% |
-| 2024 | 137,666 | 100,405 | 238,071 | 42.2% |
-| 2025 | 114,710 | 86,364 | 201,074 | 42.9% |
-
-**Note:** The 2023 spike in "Krym" (46.2%) coincides with increased Russian-language coverage during the counteroffensive and international debates about Crimea's future.
+| Country | Pro-Russia | Neutral/Critical | Pro-Ukraine | Total |
+|---------|----------:|----------------:|------------:|------:|
+| Ukraine | 83 | 526 | 274 | 883 |
+| Russia | 397 | 69 | 74 | 540 |
+| Germany | 13 | 157 | 80 | 250 |
+| United States | 43 | 71 | 25 | 139 |
+| Spain | 14 | 49 | 12 | 75 |
+| Bulgaria | 4 | 32 | 14 | 50 |
+| Greece | 8 | 19 | 19 | 46 |
+| Romania | 7 | 33 | 5 | 45 |
+| Italy | 12 | 17 | 10 | 39 |
+| Vietnam | 21 | 6 | 10 | 37 |
+| Czech Republic | 7 | 16 | 10 | 33 |
+| Poland | 3 | 19 | 9 | 31 |
+| Unknown | 20 | 3 | 7 | 30 |
+| Slovak Republic | 9 | 17 | 2 | 28 |
+| Serbia | 15 | 8 | 5 | 28 |
+| Lithuania | 4 | 22 | 1 | 27 |
+| United Kingdom | 5 | 18 | 3 | 26 |
+| Portugal | 1 | 18 | 2 | 21 |
+| France | 7 | 6 | 7 | 20 |
+| Croatia | 11 | 4 | 4 | 19 |
 
 ---
 
-## Key Patterns
+## Top Domains by Volume
 
-### 1. Transliteration ≠ Sovereignty (The Most Important Caveat)
-The Crimea/Krym transliteration ratio measures **linguistic convention**, not political stance. Italian, Vietnamese, Brazilian, and Cuban media using "Krym" are following how the word entered their languages via Soviet/Russian channels. This is fundamentally different from an outlet editorially stating "Crimea, Russia" as a location. The paper must be precise about this distinction — conflating the two weakens the argument.
-
-### 2. Political Statements Are the Real Signal
-The strongest evidence of sovereignty framing comes from **named politicians making explicit statements** (Salvini: "referendum was legitimate"; Berlusconi: "residents wanted to be part of Russia"; Le Pen: recognized annexation; Schröder: questioned sanctions). These are verifiable, dated, and unambiguous — unlike transliteration ratios.
-
-### 3. State Media Follows State Policy
-Countries that voted against UNGA 68/262 (Cuba, Venezuela, Nicaragua, Bolivia, Syria, DPRK, Belarus) have state media that consistently frames Crimea as Russian. Prensa Latina (Cuba, 95.9% "Krym") is state media following state policy — but even here, the GDELT signal measures transliteration, not sovereignty framing.
-
-### 4. The 2022 Inflection Point
-Several European politicians softened their positions after the full-scale invasion (Le Pen, Salvini). However, their earlier explicit endorsements remain in the public record and continue to be cited by pro-Russian sources. The question for the paper: did media framing in their countries shift measurably after 2022?
-
-### 5. China's Calculated Ambiguity
-Chinese media avoids both "Russian Crimea" and "occupied Crimea." This is a distinct framing category — neither endorsement nor condemnation. Reflects China's Taiwan/Tibet constraints.
-
-### 6. Turkey Is the Surprising Exception
-Despite complex Russia relations, Turkey has the strongest pro-Ukraine Crimea position of any non-Western country — driven by ethnic ties to Crimean Tatars, not Western alignment.
-
-### 7. Only 2 Outlets (of 50+ checked) Used Explicit Sovereignty Framing
-From the GDELT URL-level analysis (2024+), only `eturbonews.com` and `hellenicshippingnews.com` used "Russian Crimea" or "Crimea, Russia" as a territorial designation (not just in a news headline about Russia-Ukraine conflict). This rarity is itself a finding — explicit sovereignty framing is rare even among outlets with high "Krym" transliteration rates.
+| Domain | Total | Pro-Russia | Neutral/Critical | Pro-Ukraine |
+|--------|------:|----------:|----------------:|------------:|
+| news.mail.ru | 76 | 74 | 1 | 1 |
+| 24tv.ua | 66 | 2 | 42 | 22 |
+| ukrinform.ua | 53 | 3 | 44 | 6 |
+| obozrevatel.com | 39 | 5 | 24 | 10 |
+| pravda.com.ua | 37 | 3 | 26 | 8 |
+| dw.com | 37 | 3 | 30 | 4 |
+| gazeta.ua | 33 | 2 | 13 | 18 |
+| radiosvoboda.org | 30 | 5 | 22 | 3 |
+| war.obozrevatel.com | 29 | 2 | 19 | 8 |
+| ua.korrespondent.net | 28 | 1 | 19 | 8 |
+| korrespondent.net | 25 | 3 | 15 | 7 |
+| ria.ru | 24 | 23 | 0 | 1 |
+| lb.ua | 24 | 1 | 18 | 5 |
+| merkur.de | 24 | 2 | 10 | 12 |
+| dialog.ua | 23 | 2 | 17 | 4 |
+| focus.ua | 23 | 4 | 9 | 10 |
+| vesti.ru | 22 | 21 | 0 | 1 |
+| blackseanews.net | 21 | 3 | 15 | 3 |
+| unn.ua | 21 | 1 | 5 | 15 |
+| vz.ru | 19 | 13 | 3 | 3 |
+| unian.ua | 19 | 3 | 12 | 4 |
+| 5.ua | 19 | 0 | 8 | 11 |
+| ostro.org | 19 | 0 | 14 | 5 |
+| iz.ru | 18 | 13 | 2 | 3 |
+| n-tv.de | 18 | 2 | 11 | 5 |
+| tsn.ua | 17 | 0 | 9 | 8 |
+| ua.interfax.com.ua | 17 | 1 | 9 | 7 |
+| glavcom.ua | 17 | 1 | 14 | 2 |
+| svoboda.org | 16 | 2 | 14 | 0 |
+| life.ru | 16 | 13 | 1 | 2 |
 
 ---
 
-## Recommendations
+## Key Findings
 
-### For the Journal Paper
-1. **Be precise about transliteration vs. sovereignty** — the Italian "Krym" cluster is a linguistic finding, not a sovereignty violation. Present it that way. The paper's credibility depends on not overclaiming.
-2. **Politicians are the strongest evidence** — named individuals, dated quotes, verifiable. Salvini/Berlusconi/Le Pen/Schröder/Orbán/AfD statements are the real media story.
-3. **The rarity of explicit sovereignty framing** is itself a finding — only 2 of 50+ GDELT-tracked outlets used "Russian Crimea" as a territorial designation. Media is mostly *not* endorsing Russian sovereignty, even when using Russian transliterations.
-4. **Chinese ambiguity** as a distinct framing category — worth its own analysis section.
-5. **Turkey as counter-example** challenges assumptions about non-Western alignment.
+### Outlets framing Crimea as Russian territory
 
-### For Media Outreach
-1. Focus on politicians, not media outlets — the strongest "naming" story is Salvini visiting Moscow in a Putin T-shirt, not ANSA using "Krym" in RSS feeds
-2. Highlight the 2022 inflection — politicians who backed down but never retracted
-3. Weather services as benchmark — "if every weather app classifies Simferopol as Ukraine, the data exists to get this right"
-4. **Do not conflate Crimea/Krym with Kyiv/Kiev** — the kyivnotkiev analysis already warned against this. Kyiv/Kiev is a strong political signal. Crimea/Krym is not.
+These outlets appeared in pro-Russia framing queries and showed URL/title signals indicating editorial treatment of Crimea as part of Russia:
+
+- **news.mail.ru** (74 articles)
+- **24tv.ua** (2 articles)
+- **ukrinform.ua** (3 articles)
+- **obozrevatel.com** (5 articles)
+- **pravda.com.ua** (3 articles)
+- **dw.com** (3 articles)
+- **gazeta.ua** (2 articles)
+- **radiosvoboda.org** (5 articles)
+- **war.obozrevatel.com** (2 articles)
+- **ua.korrespondent.net** (1 articles)
+- **korrespondent.net** (3 articles)
+- **ria.ru** (23 articles)
+- **lb.ua** (1 articles)
+- **merkur.de** (2 articles)
+- **dialog.ua** (2 articles)
+
+### Outlets using neutral/critical framing
+
+These outlets use "annexed", "occupied", or other terms acknowledging the illegal nature of Russia's control:
+
+- **news.mail.ru** (1 articles)
+- **24tv.ua** (42 articles)
+- **ukrinform.ua** (44 articles)
+- **obozrevatel.com** (24 articles)
+- **pravda.com.ua** (26 articles)
+- **dw.com** (30 articles)
+- **gazeta.ua** (13 articles)
+- **radiosvoboda.org** (22 articles)
+- **war.obozrevatel.com** (19 articles)
+- **ua.korrespondent.net** (19 articles)
+- **korrespondent.net** (15 articles)
+- **lb.ua** (18 articles)
+- **merkur.de** (10 articles)
+- **dialog.ua** (17 articles)
+- **focus.ua** (9 articles)
+
+### Outlets with pro-Ukraine framing
+
+- **news.mail.ru** (1 articles)
+- **24tv.ua** (22 articles)
+- **ukrinform.ua** (6 articles)
+- **obozrevatel.com** (10 articles)
+- **pravda.com.ua** (8 articles)
+- **dw.com** (4 articles)
+- **gazeta.ua** (18 articles)
+- **radiosvoboda.org** (3 articles)
+- **war.obozrevatel.com** (8 articles)
+- **ua.korrespondent.net** (8 articles)
+- **korrespondent.net** (7 articles)
+- **ria.ru** (1 articles)
+- **lb.ua** (5 articles)
+- **merkur.de** (12 articles)
+- **dialog.ua** (4 articles)
+
+---
+
+*Data source: GDELT DOC API v2 (free, no BigQuery required)*
+*Raw data: `data/media_framing.json`*
