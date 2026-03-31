@@ -272,18 +272,6 @@
       "date_checked": "2026-03-31"
     },
     {
-      "platform": "ipinfo.io",
-      "category": "ip_geolocation",
-      "status": "correct",
-      "status_icon": "✅",
-      "method": "automated_api",
-      "detail": "Tested 4 Crimean IPs: 2 resolved to UA, 1 resolved to RU, 1 other.",
-      "url": "https://ipinfo.io",
-      "evidence": "91.207.56.1 (CrimeaCom (Ukrainian ISP, AS48031)): HU (HU); 176.104.32.1 (SevStar (Sevastopol ISP, AS56485)): UA (UA); 46.63.0.1 (Sim-Telecom (Simferopol, AS198948)): UA (UA); 83.149.22.1 (Miranda-Media (Crimean ISP, AS201776)): RU (RU)",
-      "notes": "Pre-2014, all these IPs were registered to Ukrainian entities. Post-annexation, some were re-registered under Russian entities.",
-      "date_checked": "2026-03-31"
-    },
-    {
       "platform": "ipapi.co",
       "category": "ip_geolocation",
       "status": "correct",
@@ -1544,18 +1532,6 @@
       "date_checked": "2026-03-31"
     },
     {
-      "platform": "ip-api.com",
-      "category": "ip_geolocation",
-      "status": "correct",
-      "status_icon": "✅",
-      "method": "automated_api",
-      "detail": "Bulk test: 45 lookups across 45 Crimean IPs from 9 ASNs — 7 RU (16%), 24 UA (53%), 14 other.",
-      "url": "https://ip-api.com",
-      "evidence": "91.207.56.128 (AS48031): HU; 91.207.57.128 (AS48031): BE; 91.207.58.128 (AS48031): RU; 91.207.59.128 (AS48031): RU; 176.104.32.128 (AS56485): UA; 176.104.33.128 (AS56485): UA; 176.104.34.128 (AS56485): UA; 176.104.35.128 (AS56485): UA; 176.104.36.128 (AS56485): UA; 176.104.37.128 (AS56485): UA; 46.63.0.128 (AS198948): UA; 46.63.1.128 (AS198948): UA; 46.63.2.128 (AS198948): UA; 46.63.4.128 (AS198948): UA; 46.63.8.128 (AS198948): UA; 83.149.16.128 (AS201776): RU; 83.149.17.128 (AS201776): RU; 83.149.18.128 (AS201776): RU; 83.149.22.128 (AS201776): RU; 83.149.23.128 (AS201776): RU; 185.65.244.128 (AS201776): UA; 185.65.245.128 (AS201776): UA; 37.57.0.128 (AS42961): UA; 37.57.1.128 (AS42961): UA; 37.57.2.128 (AS42961): UA; 37.57.4.128 (AS42961): UA; 37.57.8.128 (AS42961): UA; 37.57.16.128 (AS42961): UA; 195.22.220.128 (AS28761): AR; 195.22.221.128 (AS28761): CL ... (+15 more)",
-      "notes": "Tested IP ranges from 9 Crimean ASNs including CrimeaCom, SevStar, Miranda-Media, CrimeaTelecom, etc. All prefixes were originally allocated to Ukrainian entities by RIPE NCC.",
-      "date_checked": "2026-03-31"
-    },
-    {
       "platform": "Google Scholar",
       "category": "reference",
       "status": "ambiguous",
@@ -2165,6 +2141,30 @@
       "url": "https://www.kyivstar.ua/",
       "evidence": "",
       "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "ip-api.com",
+      "category": "ip_geolocation",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_api",
+      "detail": "Bulk test: 90 lookups across 90 Crimean IPs from 9 ASNs — 14 RU (16%), 48 UA (53%), 28 other.",
+      "url": "https://ip-api.com",
+      "evidence": "91.207.56.85 (AS48031): HU; 91.207.56.169 (AS48031): HU; 91.207.57.85 (AS48031): BE; 91.207.57.169 (AS48031): BE; 91.207.58.85 (AS48031): RU; 91.207.58.169 (AS48031): RU; 91.207.59.85 (AS48031): RU; 91.207.59.169 (AS48031): RU; 176.104.32.85 (AS56485): UA; 176.104.32.169 (AS56485): UA; 176.104.33.85 (AS56485): UA; 176.104.33.169 (AS56485): UA; 176.104.34.85 (AS56485): UA; 176.104.34.169 (AS56485): UA; 176.104.35.85 (AS56485): UA; 176.104.35.169 (AS56485): UA; 176.104.36.85 (AS56485): UA; 176.104.36.169 (AS56485): UA; 176.104.37.85 (AS56485): UA; 176.104.37.169 (AS56485): UA; 46.63.0.85 (AS198948): UA; 46.63.0.169 (AS198948): UA; 46.63.1.85 (AS198948): UA; 46.63.1.169 (AS198948): UA; 46.63.2.85 (AS198948): UA; 46.63.2.169 (AS198948): UA; 46.63.4.85 (AS198948): UA; 46.63.4.169 (AS198948): UA; 46.63.8.85 (AS198948): UA; 46.63.8.169 (AS198948): UA ... (+60 more)",
+      "notes": "Tested IP ranges from 9 Crimean ASNs including CrimeaCom, SevStar, Miranda-Media, CrimeaTelecom, etc. All prefixes were originally allocated to Ukrainian entities by RIPE NCC.",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "ipinfo.io",
+      "category": "ip_geolocation",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_api",
+      "detail": "Bulk test: 30 lookups across 90 Crimean IPs from 9 ASNs — 5 RU (17%), 16 UA (53%), 9 other.",
+      "url": "https://ipinfo.io",
+      "evidence": "91.207.56.85 (AS48031): HU; 91.207.57.169 (AS48031): BE; 91.207.59.85 (AS48031): RU; 176.104.32.169 (AS56485): UA; 176.104.34.85 (AS56485): UA; 176.104.35.169 (AS56485): UA; 176.104.37.85 (AS56485): UA; 46.63.0.169 (AS198948): UA; 46.63.2.85 (AS198948): UA; 46.63.4.169 (AS198948): UA; 83.149.16.85 (AS201776): RU; 83.149.17.169 (AS201776): RU; 83.149.22.85 (AS201776): RU; 83.149.23.169 (AS201776): RU; 185.65.245.85 (AS201776): UA; 37.57.0.169 (AS42961): UA; 37.57.2.85 (AS42961): UA; 37.57.4.169 (AS42961): UA; 37.57.16.85 (AS42961): UA; 195.22.220.169 (AS28761): AR; 195.22.222.85 (AS28761): PE; 195.22.223.169 (AS28761): HK; 91.244.201.85 (AS47598): FR; 91.244.202.169 (AS47598): FR; 178.158.192.85 (AS44629): UA; 178.158.193.169 (AS44629): UA; 178.158.195.85 (AS44629): UA; 178.158.196.169 (AS44629): UA; 5.133.57.85 (AS203070): IT; 5.133.58.169 (AS203070): IT",
+      "notes": "Tested IP ranges from 9 Crimean ASNs including CrimeaCom, SevStar, Miranda-Media, CrimeaTelecom, etc. All prefixes were originally allocated to Ukrainian entities by RIPE NCC.",
       "date_checked": "2026-03-31"
     }
   ],
