@@ -352,7 +352,7 @@ def run_all():
     findings = []
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=False)
         context = browser.new_context(
             viewport={"width": 1280, "height": 800},
             locale="en-US",
