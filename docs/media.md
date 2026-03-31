@@ -6,42 +6,47 @@
 
 ---
 
-## Key Distinction: Transliteration vs. Sovereignty Framing
+## Critical Distinction: Transliteration vs. Sovereignty Framing
 
-The kyivnotkiev CRIMEA_ANALYSIS.md established that Crimea/Krym variant choice is primarily **linguistic**, not political (unlike Kyiv/Kiev). This section goes further — identifying outlets that **editorially frame Crimea as Russian territory**, not just use a particular transliteration.
+The kyivnotkiev CRIMEA_ANALYSIS.md established that Crimea/Krym variant choice is primarily **linguistic**, not political (unlike Kyiv/Kiev). Using "Krym" instead of "Crimea" is a transliteration artifact — it does **not** imply endorsement of Russian sovereignty. Italian, Vietnamese, Brazilian, and Cuban outlets using "Krym" are following linguistic conventions shaped by Soviet-era transliteration paths, not making editorial sovereignty claims.
 
-Three tiers of concern:
-1. **Explicit sovereignty claim:** "Crimea, Russia" or "Russian Crimea" as a location label
-2. **Normalization through omission:** Covering Crimea without mentioning it's Ukrainian/occupied
-3. **Political advocacy:** Public figures calling for recognition of Russian sovereignty
+**What this section focuses on instead:**
+
+| Tier | What it is | Example | Severity |
+|------|-----------|---------|----------|
+| 1. **Explicit sovereignty claim** | Using "Crimea, Russia" as a location label or dateline | eturbonews.com: "Crimea Russia New Venue" | High |
+| 2. **Normalization by omission** | Covering Crimea without "occupied"/"annexed" qualifier | Describing events in Crimea with no sovereignty context | Medium |
+| 3. **Political advocacy** | Public figures calling for recognition of Russian sovereignty | Salvini: "referendum was legitimate" | High |
+| 4. **Transliteration only** | Using "Krym" vs "Crimea" | ANSA.it using "Krym" 57.6% of the time | **Low — linguistic, not political** |
+
+**The ANSA case illustrates the distinction:** ANSA's 57.6% "Krym" usage is a transliteration pattern, likely caused by RSS feed routing through Russian-language intermediaries. ANSA is NOT editorially calling Crimea "Russian territory." This is noteworthy as a linguistic study but is **not a sovereignty violation.** The real concern with Italian media lies elsewhere — in the political statements of Italian politicians (Salvini, Berlusconi) who made explicit sovereignty endorsements.
 
 ---
 
 ## By Language Cluster
 
-### Italian Media (Highest Concern in Western Europe)
+### Italian Media & Politics
 
-**GDELT signal:** 55-67% Russian variant usage — anomalous for a Western European country where "Crimea" is the standard Italian term.
+**GDELT transliteration signal:** 55-67% "Krym" usage across Italian outlets — anomalous for Western Europe where "Crimea" is the standard Italian term. However, this is a **linguistic pattern** (likely RSS feed artifacts from Russian-language sources), not a sovereignty claim.
 
-**Key outlets:**
+**The real Italian concern is political, not editorial:**
 
-| Outlet | Type | Russian Variant % | Articles | Concern Level |
-|--------|------|-------------------|----------|---------------|
-| zazoom.it | Aggregator | 61.0% | 5,598 | High (volume) |
-| ANSA.it | Wire service | 57.6% | 1,055 | High (influences all Italian media) |
-| giornaledibrescia.it | Regional | 67.4% | 227 | Medium |
-| lagazzettadelmezzogiorno.it | Regional | 65.0% | 223 | Medium |
-| lapresse.it | Wire | 61.7% | 235 | High (wire service) |
-| ilfattoquotidiano.it | National | 56.2% | 331 | High (editorial influence) |
-| ilgiornale.it | National (right-wing) | 55.8% | 344 | High |
-| iltempo.it | National (right-wing) | 58.7% | 404 | High |
-| globalist.it | National | 60.2% | 236 | Medium |
-| ilmessaggero.it | National | — | 72 | Medium (URL-level "Russian Crimea") |
+| Person | Role | Sovereignty Statement | Date |
+|--------|------|----------------------|------|
+| **Matteo Salvini** (Lega) | Deputy PM, party leader | Called Crimea referendum "legitimate." Visited Moscow in Putin T-shirt. Lega signed cooperation agreement with United Russia. | 2014-2018 |
+| **Silvio Berlusconi** (deceased 2023) | Ex-PM | Defended annexation: "Crimean residents wanted to be part of Russia." Visited occupied Crimea with Putin. | 2015 |
 
-**Political context:**
-- **Matteo Salvini (Lega):** Visited Moscow in 2014 wearing a Putin T-shirt. Called the Crimea referendum "legitimate." His party signed a cooperation agreement with United Russia.
-- **Silvio Berlusconi (deceased 2023):** Publicly defended Putin's annexation of Crimea, saying in 2015 that Crimean residents "wanted to be part of Russia." Visited occupied Crimea with Putin in 2015.
-- **ANSA (Italy's main wire service):** At 57.6% Russian variant, ANSA sets the editorial standard for downstream Italian media. This single wire service may be the root cause of the Italian cluster.
+**Italian outlets with elevated "Krym" transliteration (linguistic, not political):**
+
+| Outlet | Type | Krym % | Articles | Note |
+|--------|------|--------|----------|------|
+| zazoom.it | Aggregator | 61.0% | 5,598 | Volume driver |
+| ANSA.it | Wire service | 57.6% | 1,055 | Linguistic — NOT a sovereignty claim |
+| ilgiornale.it | National (right) | 55.8% | 344 | Editorially pro-Russia but Krym usage is transliteration |
+| iltempo.it | National (right) | 58.7% | 404 | Same pattern |
+| ilmessaggero.it | National | — | 72 | Only Italian outlet with URL-level "Russian Crimea" framing |
+
+**Key nuance:** Only `ilmessaggero.it` showed URL-level sovereignty framing ("Russian Crimea" in URLs). The other outlets use the Russian transliteration "Krym" but do NOT editorially call Crimea part of Russia. The political statements (Salvini, Berlusconi) are the actual sovereignty violations — and they may have created a permissive environment for looser editorial standards.
 
 ### Spanish-Language Media
 
@@ -213,32 +218,40 @@ Three tiers of concern:
 
 ## Key Patterns
 
-### 1. The "Wire Service Multiplier" Effect
-When a wire service (ANSA, Prensa Latina, AFP) adopts a particular framing, it cascades to hundreds of downstream outlets. ANSA's 57.6% Russian variant rate likely explains the entire Italian media cluster.
+### 1. Transliteration ≠ Sovereignty (The Most Important Caveat)
+The Crimea/Krym transliteration ratio measures **linguistic convention**, not political stance. Italian, Vietnamese, Brazilian, and Cuban media using "Krym" are following how the word entered their languages via Soviet/Russian channels. This is fundamentally different from an outlet editorially stating "Crimea, Russia" as a location. The paper must be precise about this distinction — conflating the two weakens the argument.
 
-### 2. Political Alignment Predicts Media Framing
-Countries whose governments voted against UNGA 68/262 (Cuba, Venezuela, Nicaragua, Bolivia, Syria, DPRK, Belarus) have media ecosystems that consistently frame Crimea as Russian. This is correlation, not just causation — state media follows state policy.
+### 2. Political Statements Are the Real Signal
+The strongest evidence of sovereignty framing comes from **named politicians making explicit statements** (Salvini: "referendum was legitimate"; Berlusconi: "residents wanted to be part of Russia"; Le Pen: recognized annexation; Schröder: questioned sanctions). These are verifiable, dated, and unambiguous — unlike transliteration ratios.
 
-### 3. The 2022 Inflection Point
-Several European politicians who previously endorsed Russia's position softened after the full-scale invasion (Le Pen, Salvini). However, their earlier statements remain in the public record and continue to be cited by pro-Russian sources.
+### 3. State Media Follows State Policy
+Countries that voted against UNGA 68/262 (Cuba, Venezuela, Nicaragua, Bolivia, Syria, DPRK, Belarus) have state media that consistently frames Crimea as Russian. Prensa Latina (Cuba, 95.9% "Krym") is state media following state policy — but even here, the GDELT signal measures transliteration, not sovereignty framing.
 
-### 4. China's Calculated Ambiguity
-Chinese media avoids both "Russian Crimea" and "occupied Crimea" — using neutral geographic descriptions that neither endorse nor condemn. This is a deliberate position reflecting China's balancing act between Russia ties and its own territorial integrity principles.
+### 4. The 2022 Inflection Point
+Several European politicians softened their positions after the full-scale invasion (Le Pen, Salvini). However, their earlier explicit endorsements remain in the public record and continue to be cited by pro-Russian sources. The question for the paper: did media framing in their countries shift measurably after 2022?
 
-### 5. Turkey Is the Surprising Exception
-Despite being a NATO member with complex Russia relations, Turkey has the strongest pro-Ukraine Crimea position of any non-Western country — driven by ethnic ties to Crimean Tatars, not Western alignment.
+### 5. China's Calculated Ambiguity
+Chinese media avoids both "Russian Crimea" and "occupied Crimea." This is a distinct framing category — neither endorsement nor condemnation. Reflects China's Taiwan/Tibet constraints.
+
+### 6. Turkey Is the Surprising Exception
+Despite complex Russia relations, Turkey has the strongest pro-Ukraine Crimea position of any non-Western country — driven by ethnic ties to Crimean Tatars, not Western alignment.
+
+### 7. Only 2 Outlets (of 50+ checked) Used Explicit Sovereignty Framing
+From the GDELT URL-level analysis (2024+), only `eturbonews.com` and `hellenicshippingnews.com` used "Russian Crimea" or "Crimea, Russia" as a territorial designation (not just in a news headline about Russia-Ukraine conflict). This rarity is itself a finding — explicit sovereignty framing is rare even among outlets with high "Krym" transliteration rates.
 
 ---
 
 ## Recommendations
 
 ### For the Journal Paper
-1. **Italian media cluster** is the most publishable finding in Western Europe — a major wire service (ANSA) potentially driving an entire national media ecosystem toward Russian-aligned framing
-2. **The political-media feedback loop** — Le Pen/Salvini/Schröder statements and their measurable effect on media framing in their countries
-3. **Chinese ambiguity** as a distinct framing category worthy of its own analysis
-4. **Turkey as counter-example** to the assumption that non-Western = pro-Russia
+1. **Be precise about transliteration vs. sovereignty** — the Italian "Krym" cluster is a linguistic finding, not a sovereignty violation. Present it that way. The paper's credibility depends on not overclaiming.
+2. **Politicians are the strongest evidence** — named individuals, dated quotes, verifiable. Salvini/Berlusconi/Le Pen/Schröder/Orbán/AfD statements are the real media story.
+3. **The rarity of explicit sovereignty framing** is itself a finding — only 2 of 50+ GDELT-tracked outlets used "Russian Crimea" as a territorial designation. Media is mostly *not* endorsing Russian sovereignty, even when using Russian transliterations.
+4. **Chinese ambiguity** as a distinct framing category — worth its own analysis section.
+5. **Turkey as counter-example** challenges assumptions about non-Western alignment.
 
 ### For Media Outreach
-1. Engage ANSA directly — as Italy's wire service, they set the standard
-2. Highlight the 2022 shift — politicians who changed their position after the full-scale invasion
-3. Use weather services as the benchmark — "if weather apps can get it right, so can news media"
+1. Focus on politicians, not media outlets — the strongest "naming" story is Salvini visiting Moscow in a Putin T-shirt, not ANSA using "Krym" in RSS feeds
+2. Highlight the 2022 inflection — politicians who backed down but never retracted
+3. Weather services as benchmark — "if every weather app classifies Simferopol as Ukraine, the data exists to get this right"
+4. **Do not conflate Crimea/Krym with Kyiv/Kiev** — the kyivnotkiev analysis already warned against this. Kyiv/Kiev is a strong political signal. Crimea/Krym is not.
