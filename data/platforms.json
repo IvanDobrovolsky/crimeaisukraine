@@ -510,25 +510,99 @@
       "evidence": "",
       "notes": "Placeholder — update after manual verification.",
       "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "IANA Timezone Database (zone1970.tab)",
+      "category": "tech_infrastructure",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "source_code",
+      "detail": "Europe/Simferopol mapped to country codes: 'RU,UA'. In zone1970.tab format, 'RU,UA' means both countries claim the zone. Russia is listed FIRST. The older zone.tab lists only 'UA'.",
+      "url": "https://github.com/eggert/tz",
+      "evidence": "RU,UA\t+4457+03406\tEurope/Simferopol\tCrimea",
+      "notes": "Key git history: 2014-03-19 'Crimea switches to Moscow time', 2016-12-06 'Just say Crimea rather than going into politics'. The tz database switched Crimea from MSK+2 (EET) to MSK (Moscow time) in 2014. This affects every OS, programming language, and app that uses tzdata.",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "IANA Timezone Database (zone.tab, legacy)",
+      "category": "tech_infrastructure",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "source_code",
+      "detail": "Legacy zone.tab maps Europe/Simferopol to 'UA'. Older format only supports one country code per zone.",
+      "url": "https://github.com/eggert/tz",
+      "evidence": "UA\t+4457+03406\tEurope/Simferopol\tCrimea",
+      "notes": "",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Google libphonenumber",
+      "category": "tech_infrastructure",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "source_code",
+      "detail": "Crimean phones classified under BOTH countries. Under Russia (+7): 2 entries (e.g., 736|Simferopol). Under Ukraine (+380): 3 entries (e.g., 38065|Crimea). Carrier data lists 4 operators for +7-978 (Crimean mobile): Elemte-Invest, K-Telecom Ltd, MTS, Sevastopol TELECOM.",
+      "url": "https://github.com/google/libphonenumber",
+      "evidence": "RU entries: 736|Simferopol; 7869|Sevastopol. UA entries: 3806297|Mangosh/Yalta, Donetsk; 38065|Crimea; 38069|Sevastopol city",
+      "notes": "libphonenumber (17k+ GitHub stars) is used by Android, Chrome, and most phone number validation worldwide. Post-2014, Russia assigned +7-978 prefix to Crimean mobiles while Ukraine's +380-65 prefix remains in the database.",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "OpenStreetMap Nominatim",
+      "category": "map_service",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_api",
+      "detail": "Tested 6 Crimean cities: 6 returned UA, 0 returned RU. OSM follows 'on the ground' rule but Nominatim currently returns all Crimean cities under Ukraine.",
+      "url": "https://nominatim.openstreetmap.org/",
+      "evidence": "Simferopol=UA; Sevastopol=UA; Yalta=UA; Kerch=UA; Feodosia=UA; Evpatoria=UA",
+      "notes": "OpenStreetMap has a complex policy for Crimea (see WikiProject Crimea). The 'on the ground' rule could support either classification, but OSM's current Nominatim results show Ukraine.",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "IP Geolocation (extended, ip-api.com)",
+      "category": "ip_geolocation",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_api",
+      "detail": "Tested 8 Crimean IPs. Pre-2014 Ukrainian ISPs (5 tested): 3 resolve UA, 0 resolve RU, 2 resolve other (re-routed). Post-2014 Russian entities (3 tested): 3 resolve RU, 0 resolve UA. Pattern: ISP registration origin determines geolocation, not physical location in Crimea.",
+      "url": "https://ip-api.com/",
+      "evidence": "91.207.56.1 (CrimeaCom AS48031): HU; 176.104.32.1 (SevStar AS56485): UA; 46.63.0.1 (Sim-Telecom AS198948): UA; 83.149.22.1 (Miranda-Media AS201776): RU; 185.31.160.1 (CrimeaTelecom AS42961): RU; 5.133.64.1 (KNET AS28761): LT; 193.19.228.1 (CrimeanFederalUniv): UA; 95.47.152.1 (Win-Mobile/K-Telecom): RU",
+      "notes": "Some Ukrainian ISPs have re-routed through third countries (Hungary, Lithuania) rather than through Russian infrastructure. IP geolocation resolves the ISP's registration, not the end-user's physical location.",
+      "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Natural Earth Propagation (aggregate)",
+      "category": "open_source",
+      "status": "incorrect",
+      "status_icon": "❌",
+      "method": "automated_api",
+      "detail": "Natural Earth's Crimea=Russia propagates to: 30,403,325 weekly npm downloads, 1,215,492 monthly PyPI downloads, 4,202 dependent repositories, 17,971 dependent packages. Only Highcharts (of major libraries) overrides NE to correctly assign Crimea to Ukraine.",
+      "url": "https://www.naturalearthdata.com/",
+      "evidence": "",
+      "notes": "Aggregate propagation metric across npm + PyPI ecosystems.",
+      "date_checked": "2026-03-31"
     }
   ],
   "summary": {
-    "total_platforms": 42,
+    "total_platforms": 48,
     "by_status": {
       "n/a": 7,
-      "incorrect": 6,
-      "ambiguous": 24,
-      "correct": 5
+      "incorrect": 7,
+      "ambiguous": 27,
+      "correct": 7
     },
     "by_category": {
-      "open_source": 9,
+      "open_source": 10,
       "data_visualization": 13,
-      "ip_geolocation": 3,
+      "ip_geolocation": 4,
       "reference": 4,
       "weather": 1,
       "search_engine": 3,
       "travel": 5,
-      "gaming": 4
+      "gaming": 4,
+      "tech_infrastructure": 3,
+      "map_service": 1
     },
     "last_updated": "2026-03-31"
   }
