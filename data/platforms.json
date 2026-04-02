@@ -340,7 +340,7 @@
       "detail": "NEEDS MANUAL CHECK: Search 'Crimea' on Google. Check the knowledge panel on the right side. Does it say 'Country: Ukraine' or 'Country: Russia'? Also check from different country VPNs (US, UK, Germany, Russia).",
       "url": "https://www.google.com/search?q=Crimea",
       "evidence": "",
-      "notes": "Placeholder — update after manual verification.",
+      "notes": "Placeholder — update after manual verification. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -352,7 +352,7 @@
       "detail": "NEEDS MANUAL CHECK: Search 'Crimea' on Bing. Check the knowledge panel. What country does it show?",
       "url": "https://www.bing.com/search?q=Crimea",
       "evidence": "",
-      "notes": "Placeholder — update after manual verification.",
+      "notes": "Placeholder — update after manual verification. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -376,7 +376,7 @@
       "detail": "NEEDS MANUAL CHECK: Search flights to SIP — what country is listed?",
       "url": "https://www.google.com/travel/flights",
       "evidence": "",
-      "notes": "Placeholder — update after manual verification.",
+      "notes": "Placeholder — update after manual verification. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -388,7 +388,7 @@
       "detail": "NEEDS MANUAL CHECK: Check country/region settings. Steam blocks Crimea under US sanctions. Verify store region list — is Crimea listed separately?",
       "url": "https://store.steampowered.com/",
       "evidence": "",
-      "notes": "Placeholder — update after manual verification.",
+      "notes": "Placeholder — update after manual verification. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -400,7 +400,7 @@
       "detail": "NEEDS MANUAL CHECK: Check region restrictions. Known to block Crimea.",
       "url": "https://store.epicgames.com/",
       "evidence": "",
-      "notes": "Placeholder — update after manual verification.",
+      "notes": "Placeholder — update after manual verification. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -412,7 +412,7 @@
       "detail": "NEEDS MANUAL CHECK: Check player nationalities for Crimean-born players. Are they listed as Ukrainian or Russian?",
       "url": "https://www.ea.com/games/ea-sports-fc",
       "evidence": "",
-      "notes": "Placeholder — update after manual verification.",
+      "notes": "Placeholder — update after manual verification. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -424,7 +424,7 @@
       "detail": "NEEDS MANUAL CHECK: Check map data files — how is Crimea's state/province defined?",
       "url": "https://store.steampowered.com/app/394360/Hearts_of_Iron_IV/",
       "evidence": "",
-      "notes": "Placeholder — update after manual verification.",
+      "notes": "Placeholder — update after manual verification. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -508,19 +508,19 @@
       "detail": "Geo-dependent borders: solid international border (Russia) from Russia, light internal border (Ukraine) from Ukraine, dashed 'disputed' border from all other countries. No policy change since 2014. The 'disputed' framing is itself problematic — UNGA Res 68/262 affirmed Crimea as Ukrainian.",
       "url": "https://maps.google.com/",
       "evidence": "Google: 'In countries where we have a localized version, we follow local laws on representing borders.'",
-      "notes": "30+ localized map versions exist.",
+      "notes": "30+ localized map versions exist. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Apple Maps",
       "category": "map_service",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Shows Crimea as part of Ukraine outside Russia since March 2022. From Russia: shows as part of Russia (per Russian law). Apple ceased operations in Russia, so RU version may no longer be maintained. Best major map service for Crimea.",
       "url": "https://maps.apple.com/",
       "evidence": "AppleInsider (2022-03-04): 'Apple Maps now shows Crimea as part of Ukraine'. Ukrainer Stop Mapaganda (2023): 'Apple Maps shows Ukraine's borders correctly.'",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -532,7 +532,7 @@
       "detail": "Insufficient public documentation for 2025-2026 state. Historically showed dashed border similar to Google. Needs direct VPN-based verification.",
       "url": "https://www.bing.com/maps",
       "evidence": "",
-      "notes": "Requires manual verification with VPN.",
+      "notes": "Requires manual verification with VPN. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -544,7 +544,7 @@
       "detail": "Dual mapping: Crimea simultaneously in both Ukraine and Russia administrative hierarchies since 2014. 'On the ground' rule creates ambiguity. Nominatim geocoder returns Ukraine. Rendered maps vary by tile provider.",
       "url": "https://wiki.openstreetmap.org/wiki/WikiProject_Crimea",
       "evidence": "WikiProject Crimea documents the dual-mapping policy.",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -556,7 +556,7 @@
       "detail": "Inconsistent: five different representations across products. Europe Wall Map labels Crimea as Russian. Other products show disputed borders. No single policy.",
       "url": "https://www.nationalgeographic.com/",
       "evidence": "NatGeo 2014 article: 'How Should Crimea Be Shown?' describes internal debate.",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -658,37 +658,37 @@
     {
       "platform": "Booking.com",
       "category": "travel",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Suspended all Russia and Crimea operations since 2022 due to EU/US sanctions. No Crimea properties bookable.",
       "url": "https://www.booking.com/",
       "evidence": "",
-      "notes": "EU sanctions on Crimea renewed through June 23, 2026.",
+      "notes": "EU sanctions on Crimea renewed through June 23, 2026. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Airbnb",
       "category": "travel",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Explicitly blocks all Crimea listings per sanctions policy. Announced 2022: 'suspended all operations in Russia and Belarus'.",
       "url": "https://news.airbnb.com/airbnbs-actions-in-response-to-the-ukraine-crisis/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Expedia / Hotels.com",
       "category": "travel",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Ceased all Russia travel sales in 2022.",
       "url": "https://www.expedia.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -712,7 +712,7 @@
       "detail": "Lists Crimea under 'Europe' with NO country designation — neither Ukraine nor Russia. Avoids the sovereignty question entirely.",
       "url": "https://www.tripadvisor.com/Tourism-g313972-Crimea-Vacations.html",
       "evidence": "",
-      "notes": "Evasion is less harmful than 'Russia' but still fails to reflect internationally recognized status.",
+      "notes": "Evasion is less harmful than 'Russia' but still fails to reflect internationally recognized status. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -730,13 +730,13 @@
     {
       "platform": "Instagram",
       "category": "social_media",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Maintains BOTH 'Crimea, Ukraine' and 'Russia, Crimea, Yalta' as active location tags. Users can freely choose either, effectively normalizing Russia's sovereignty claim.",
       "url": "https://www.instagram.com/",
       "evidence": "",
-      "notes": "Dual tags allow users to label the same location under either country.",
+      "notes": "Dual tags allow users to label the same location under either country. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -748,7 +748,7 @@
       "detail": "Moved Ukraine out of shared 'Russia + Ukraine' region category in 2022 after Ukraine's Ministry of Digital Transformation intervened. Crimea-specific city tags need verification.",
       "url": "https://imi.org.ua/en/news/tiktok-moves-ukraine-from-shared-region-with-russia-ministry-of-digital-transformation-i46927",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -760,7 +760,7 @@
       "detail": "Likely shares Instagram's location database (both Meta). May have contradictory location tags. Needs direct verification.",
       "url": "https://www.facebook.com/",
       "evidence": "",
-      "notes": "Placeholder — needs manual check.",
+      "notes": "Placeholder — needs manual check. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -772,7 +772,7 @@
       "detail": "No structured country enforcement on location tags. Users can set free-text locations. Needs verification of any location autocomplete behavior for Crimean cities.",
       "url": "https://x.com/",
       "evidence": "",
-      "notes": "Placeholder — needs manual check.",
+      "notes": "Placeholder — needs manual check. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -934,13 +934,13 @@
     {
       "platform": "UN M49 / UNGA Resolution 68/262",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "UN M49 lists Ukraine (804) as sovereign state. No separate Crimea entity. UNGA Resolution 68/262 (2014) affirmed Ukrainian territorial integrity including Crimea, passed 100-11. This is the authoritative international legal baseline.",
       "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -994,25 +994,25 @@
     {
       "platform": "Yandex Maps",
       "category": "map_service",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Shows Crimea as part of Russia with solid borders. Russian company, complies with Russian law. Crimean cities listed under Russian administrative hierarchy (Republic of Crimea, Crimean Federal District). Expected and confirmed by multiple sources.",
       "url": "https://yandex.ru/maps/",
       "evidence": "",
-      "notes": "Russian platform — classification matches Russian law.",
+      "notes": "Russian platform — classification matches Russian law. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Encyclopaedia Britannica",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Describes Crimea as \"autonomous republic, southern Ukraine\". States Russia \"illegally annexed\" Crimea. One of the clearest reference sources. Updated March 2026.",
       "url": "https://www.britannica.com/place/Crimea",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1060,7 +1060,7 @@
       "detail": "Political view system: RUS view available but NO Ukraine view. Default shows disputed borders. Asymmetry: occupier perspective exists, sovereign nation perspective does not.",
       "url": "https://developer.here.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1084,7 +1084,7 @@
       "detail": "Ukraine listed with complete coverage. Crimea not under any Russia zone. Dutch company, EU sanctions apply. Likely UA but unconfirmed.",
       "url": "https://help.tomtom.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1096,31 +1096,31 @@
       "detail": "Editorial: \"annexed by Russia\" (accurate). Sports DB: Crimean clubs under Russian league. Split between editorial correctness and structural classification.",
       "url": "https://www.espn.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "weather.com (The Weather Channel)",
       "category": "weather",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Sister product Weather Underground (same IBM parent) lists Simferopol under Ukraine. Same geographic database. Likely correct.",
       "url": "https://www.wunderground.com/forecast/ua/simferopol",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "BBC Weather",
       "category": "weather",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Uses GeoNames ID 693805 (Simferopol = Ukraine). BBC editorial uses \"annexed\". URL: bbc.com/weather/693805.",
       "url": "https://www.bbc.com/weather/693805",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1132,7 +1132,7 @@
       "detail": "Proprietary EdgeScape geolocation. No public Crimea docs. Likely UA based on industry norms but unconfirmed.",
       "url": "https://techdocs.akamai.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1174,13 +1174,13 @@
     {
       "platform": "Spotify",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Exited Russia April 2022. Crimea included in the exit. No separate Crimea region in Spotify's country list.",
       "url": "https://www.spotify.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1192,7 +1192,7 @@
       "detail": "Crimean clubs moved into Russian football system by UEFA in 2014. After 2022 Russia suspension, moot for international play. Player nationalities follow FIFA registration (birth country vs national team separate).",
       "url": "https://www.fifa.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1204,7 +1204,7 @@
       "detail": "Created \"special zone\" for Crimean clubs in 2015. Banned them from Russian AND Ukrainian leagues. After 2022 Russia suspended from all competitions.",
       "url": "https://www.uefa.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1228,19 +1228,19 @@
       "detail": "IOC does not recognize separate Crimean Olympic committee. Crimean athletes must compete under Ukraine or Russia (when not banned). Post-2022 Russian athletes compete as neutrals.",
       "url": "https://www.olympic.org/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Netflix",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Exited Russia March 2022. Crimea included. No content available. Previously listed under Russia region.",
       "url": "https://www.netflix.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1252,43 +1252,43 @@
       "detail": "Uses ISO 3166-1 for content regions (UA and RU separate). Content availability in Crimea depends on IP geolocation (MaxMind=UA). Some Russia-restricted content may be accessible from Crimea via UA classification.",
       "url": "https://www.youtube.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Amazon Prime Video",
       "category": "tech_infrastructure",
-      "status": "blocked",
-      "status_icon": "🚫",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Amazon does not operate in Russia. AWS restricted in Crimea under OFAC sanctions. Prime Video unavailable.",
       "url": "https://www.amazon.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Disney+",
       "category": "tech_infrastructure",
-      "status": "blocked",
-      "status_icon": "🚫",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Never launched in Russia. Crimea inaccessible. Service unavailable.",
       "url": "https://www.disneyplus.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Apple Music",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Apple ceased operations in Russia March 2022. Apple Music, App Store unavailable. Crimea included in block.",
       "url": "https://www.apple.com/apple-music/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1300,67 +1300,67 @@
       "detail": "French streaming service. Suspended new subscriptions in Russia 2022. Crimea availability unclear. Uses ISO country codes.",
       "url": "https://www.deezer.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Reuters",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Uses \"Russia-annexed Crimea\" consistently in reporting. Reuters style guide specifies \"annexed\" framing. Wire service reaches thousands of downstream outlets.",
       "url": "https://www.reuters.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Associated Press (AP)",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "AP Stylebook: \"Crimea, which was annexed by Russia in 2014\" — consistent framing. AP wire service reaches majority of US and international media.",
       "url": "https://apnews.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "BBC News",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "BBC editorial guidelines use \"annexed\" or \"illegally annexed\" for Crimea. Consistent across BBC News, BBC World Service, BBC Ukrainian.",
       "url": "https://www.bbc.com/news",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "RT (Russia Today)",
       "category": "reference",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Russian state media. Frames Crimea as Russian territory. Uses \"reunification\" not \"annexation\". Banned in EU since March 2022. Still operates globally online.",
       "url": "https://www.rt.com/",
       "evidence": "",
-      "notes": "Banned in EU but accessible via VPN and outside EU.",
+      "notes": "Banned in EU but accessible via VPN and outside EU. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Sputnik",
       "category": "reference",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Russian state media. Frames Crimea as integral Russian territory across all language editions (English, Spanish, French, Arabic). Banned in EU since March 2022.",
       "url": "https://sputnikglobe.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1372,7 +1372,7 @@
       "detail": "Uses \"Russia-annexed Crimea\" in English edition. Arabic edition framing varies. Qatar abstained on UNGA 68/262.",
       "url": "https://www.aljazeera.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1384,55 +1384,55 @@
       "detail": "Chinese state media English channel. Avoids both \"annexed\" and \"Russian Crimea\". Uses neutral geographic descriptions. Reflects China's deliberate ambiguity.",
       "url": "https://www.cgtn.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "TeleSUR (Venezuela)",
       "category": "reference",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Venezuelan state-funded. Editorially treats Crimea as Russian territory. Venezuela voted against UNGA 68/262.",
       "url": "https://www.telesurtv.net/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Uber",
       "category": "tech_infrastructure",
-      "status": "blocked",
-      "status_icon": "🚫",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Sold Russian operations to Yandex in 2018. No Uber service in Crimea. Region served by Yandex.Taxi (Russian).",
       "url": "https://www.uber.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "eBay",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Blocked sellers and buyers in Russia/Crimea since 2022. OFAC sanctions compliance.",
       "url": "https://www.ebay.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Etsy",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Suspended accounts in Russia including Crimea in 2022. Sanctions compliance.",
       "url": "https://www.etsy.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1540,7 +1540,7 @@
       "detail": "Author affiliations from Crimean institutions may list Russia or Ukraine depending on the author. No centralized country classification for Crimea in Scholar.",
       "url": "https://scholar.google.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1552,7 +1552,7 @@
       "detail": "Academic database. Crimean university affiliations may appear under either country. Elsevier follows institutional self-reporting.",
       "url": "https://www.scopus.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1564,43 +1564,43 @@
       "detail": "Researcher ID system. Country field is self-reported. Crimean researchers may list UA or RU.",
       "url": "https://orcid.org/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "UPS",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "UPS suspended services to Russia including Crimea in 2022. Cannot ship to Crimean addresses.",
       "url": "https://www.ups.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "FedEx",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "FedEx suspended services to Russia and Ukraine conflict zones. Crimea included in restrictions.",
       "url": "https://www.fedex.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "DHL",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "DHL suspended deliveries to/from Russia in 2022. Crimea included.",
       "url": "https://www.dhl.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1612,31 +1612,31 @@
       "detail": "SWIFT codes: Crimean banks operate under Russian banking system (CBR) since 2014. Ukrainian bank codes no longer functional in Crimea. Similar to phone number routing — de facto Russian.",
       "url": "https://www.swift.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "PayPal",
       "category": "tech_infrastructure",
-      "status": "blocked",
-      "status_icon": "🚫",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "PayPal never operated in Russia. Crimea blocked under OFAC sanctions. No service available.",
       "url": "https://www.paypal.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Visa / Mastercard",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Visa and Mastercard suspended operations in Russia March 2022. Cards issued by Russian banks no longer work internationally. Crimea affected.",
       "url": "https://www.visa.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1648,7 +1648,7 @@
       "detail": "Country selection uses ISO 3166-1. Available in Ukraine. Russia access restricted for some courses. Crimea depends on IP geolocation.",
       "url": "https://www.coursera.org/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1660,7 +1660,7 @@
       "detail": "Available in both Russia and Ukraine. Country selection for profile uses ISO 3166-1. No separate Crimea option.",
       "url": "https://www.duolingo.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1672,19 +1672,19 @@
       "detail": "Country/region for developers and users follows Google account settings. Crimean users with MaxMind UA IP appear as Ukrainian users. Some Russia-restricted apps may be accessible.",
       "url": "https://play.google.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Apple App Store",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Apple ceased Russia operations March 2022. App Store unavailable. Crimea included in block.",
       "url": "https://www.apple.com/app-store/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1696,91 +1696,91 @@
       "detail": "Uses GPS location, not country classification. Crimean users see nearby profiles regardless of country assignment. No explicit sovereignty determination.",
       "url": "https://www.tinder.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "AWS (Amazon Web Services)",
       "category": "tech_infrastructure",
-      "status": "blocked",
-      "status_icon": "🚫",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "AWS restricted in Crimea under OFAC sanctions. Cannot create accounts or provision resources from Crimean IPs.",
       "url": "https://aws.amazon.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Microsoft Azure",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Azure restricted in Russia and Crimea. Microsoft suspended new sales March 2022.",
       "url": "https://azure.microsoft.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Google Cloud",
       "category": "tech_infrastructure",
-      "status": "blocked",
-      "status_icon": "🚫",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "GCP has no Russia region. Services restricted in Crimea under sanctions.",
       "url": "https://cloud.google.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Interpol",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Interpol member countries list follows UN membership. Ukraine is member state. Crimea falls under Ukrainian jurisdiction in Interpol systems.",
       "url": "https://www.interpol.int/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "WHO (World Health Organization)",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "WHO follows UN system. Ukraine listed as member state with full territory including Crimea. Health statistics for Crimea reported under Ukraine.",
       "url": "https://www.who.int/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Uber Eats",
       "category": "tech_infrastructure",
-      "status": "blocked",
-      "status_icon": "🚫",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Not available in Russia or Crimea. Uber sold Russian operations to Yandex.",
       "url": "https://www.ubereats.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Glovo",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Glovo operated in Ukraine but exited Russia. Not available in Crimea.",
       "url": "https://www.glovoapp.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1792,7 +1792,7 @@
       "detail": "Tesla uses a mix of map providers (Google, Mapbox, TomTom depending on region). Crimea map display likely inherits from provider. Tesla not sold in Russia since 2022.",
       "url": "https://www.tesla.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1804,7 +1804,7 @@
       "detail": "Google-owned. Follows Google Maps geo-dependent policy. Crimea likely shows disputed border internationally. Community-edited map data.",
       "url": "https://www.waze.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1816,19 +1816,19 @@
       "detail": "GPS navigation company. Map data from HERE and OSM. Crimea classification depends on data provider. US company — OFAC sanctions apply.",
       "url": "https://www.garmin.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "LinkedIn",
       "category": "social_media",
-      "status": "blocked",
-      "status_icon": "🚫",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "LinkedIn blocked in Russia since November 2016 (Roskomnadzor). Crimea access depends on ISP routing. Profile location uses ISO 3166-1 countries.",
       "url": "https://www.linkedin.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1840,7 +1840,7 @@
       "detail": "Job search. Country filter uses ISO 3166-1. Jobs in Crimea could appear under either Ukraine or Russia depending on employer listing.",
       "url": "https://www.indeed.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1852,67 +1852,67 @@
       "detail": "Company reviews. Location field depends on employer input. Crimean companies may list under either country.",
       "url": "https://www.glassdoor.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Binance",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Binance exited Russia entirely in 2024 (sold to CommEX). Crimea explicitly blocked under sanctions since 2022. KYC requires country verification.",
       "url": "https://www.binance.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Coinbase",
       "category": "tech_infrastructure",
-      "status": "blocked",
-      "status_icon": "🚫",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "US-based. Crimea blocked under OFAC sanctions. Cannot create accounts from Crimean IPs or with Crimean addresses.",
       "url": "https://www.coinbase.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Lonely Planet",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Travel guide publisher. Crimea covered under Ukraine section. Website lists Crimea as part of Ukraine with travel warnings about occupation.",
       "url": "https://www.lonelyplanet.com/ukraine/crimea",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Rough Guides",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Travel guide publisher. Crimea listed under Ukraine. Notes Russian occupation and travel restrictions.",
       "url": "https://www.roughguides.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Wikitravel",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Community travel wiki. Crimea page states: \"Crimea is an autonomous republic of Ukraine currently occupied by Russia.\" Clear sovereignty framing.",
       "url": "https://wikitravel.org/en/Crimea",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1924,7 +1924,7 @@
       "detail": "Dubai-based (founded by Russian-born Durov). No country-based location system. User phone numbers determine region (+7 = RU, +380 = UA). Widely used in both Russia and Ukraine.",
       "url": "https://telegram.org/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1936,7 +1936,7 @@
       "detail": "Phone number-based. Crimean users with +7 numbers appear as Russian contacts. Those with +380 appear as Ukrainian. No explicit location tagging.",
       "url": "https://www.whatsapp.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1948,7 +1948,7 @@
       "detail": "Privacy-focused messenger. Phone number-based. No country classification system. Available in all countries.",
       "url": "https://signal.org/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1960,31 +1960,31 @@
       "detail": "ITU assigned +7 country code to Russia (USSR legacy). Crimean phone infrastructure now operates under +7. ITU does not make sovereignty determinations but its code assignments have de facto implications.",
       "url": "https://www.itu.int/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "ICAO (Intl Civil Aviation Org)",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Simferopol airport primary ICAO code is UKFF (UK prefix = Ukraine). Russian alternate code URFF exists. ICAO follows UNGA recognition — primary code is Ukrainian.",
       "url": "https://www.icao.int/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "IATA",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Simferopol airport IATA code SIP. Listed under Ukraine in IATA databases. Airport operationally closed since February 2022.",
       "url": "https://www.iata.org/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -1996,7 +1996,7 @@
       "detail": "Same as Google Maps — geo-dependent borders. Desktop app shows disputed dashed border internationally. Russian version shows solid border.",
       "url": "https://earth.google.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -2008,31 +2008,31 @@
       "detail": "Enterprise GIS platform. Uses multiple data sources including HERE and Esri-curated boundaries. Living Atlas has configurable boundary views.",
       "url": "https://www.arcgis.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "GoDaddy",
       "category": "tech_infrastructure",
-      "status": "blocked",
-      "status_icon": "🚫",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "US domain registrar. Cannot register domains with Crimean addresses under OFAC sanctions. .ua and .ru TLDs handled by respective country registrars.",
       "url": "https://www.godaddy.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Namecheap",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Suspended all services for Russian-registered users in March 2022. Crimea included. Ukrainian-founded company.",
       "url": "https://www.namecheap.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -2044,7 +2044,7 @@
       "detail": "No location-based content system. r/crimea and r/ukraine subreddits exist. No platform-level sovereignty determination. Flair and user input determines framing.",
       "url": "https://www.reddit.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -2080,31 +2080,31 @@
       "detail": "Crimean business listings follow Google Maps geo-dependent policy. Reviews visible but business country depends on viewer location.",
       "url": "https://business.google.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Yelp",
       "category": "tech_infrastructure",
-      "status": "n/a",
-      "status_icon": "➖",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Yelp does not operate in Ukraine or Russia. No Crimea listings.",
       "url": "https://www.yelp.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "World Nomads (travel insurance)",
       "category": "travel",
-      "status": "blocked",
-      "status_icon": "🚫",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Travel insurance provider. Does not cover travel to Crimea — listed as sanctioned/conflict zone. Classification: occupied territory.",
       "url": "https://www.worldnomads.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -2116,31 +2116,31 @@
       "detail": "VPN provider. Has servers in Ukraine but not in Crimea or Russia. Crimean users connecting via UA server appear as Ukrainian. Lithuanian company.",
       "url": "https://nordvpn.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Vodafone Ukraine",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Vodafone Ukraine lists Crimea in its coverage map as part of Ukraine. Service unavailable in occupied Crimea since 2014 (network taken over by Russian operators).",
       "url": "https://www.vodafone.ua/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Kyivstar",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Ukrainian mobile operator. Lists Crimea as part of Ukraine. Service disconnected in occupied territory. +380 numbers no longer route to Crimea.",
       "url": "https://www.kyivstar.ua/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -2176,31 +2176,31 @@
       "detail": "Germany most popular school atlas. Shows Crimea inconsistently across editions — sometimes disputed, sometimes Russian, sometimes separate. Westermann is aware of the issue. Used in majority of German schools.",
       "url": "https://diercke.westermann.de/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Marco Polo / MairDumont Group",
       "category": "reference",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Largest German map publisher (Marco Polo, Falk, ADAC, Kunth brands). Shows Crimea with disputed/contested borders. Produces over 50% of German school atlases. Identified by Stop Mapaganda as the single largest source of incorrect Crimea cartography in the West.",
       "url": "https://www.mairdumont.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "National Geographic Atlas",
       "category": "reference",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Shows Crimea as part of Russia \"claimed by Ukraine\" using de facto policy. Marks Ukraine borders five different ways across products. NatGeo acknowledged the issue in 2014 but adopted de facto approach.",
       "url": "https://www.nationalgeographic.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -2212,7 +2212,7 @@
       "detail": "UK atlas publisher. Needs physical verification of current edition for Crimea classification.",
       "url": "https://www.harpercollins.co.uk/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -2224,55 +2224,55 @@
       "detail": "Published by HarperCollins. Premium reference atlas. Needs physical verification for Crimea.",
       "url": "https://www.timesatlas.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Oxford University Press (geog.3)",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "CORRECTED: 2015 edition showed Crimea as Russia. Withdrawn after complaints. 2016 edition correctly states Crimea is Ukraine under international law. Free exchanges offered. Replicable correction model.",
       "url": "https://global.oup.com/",
       "evidence": "",
-      "notes": "One of few documented corrections in print publishing.",
+      "notes": "One of few documented corrections in print publishing. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Russian state history textbook (2023)",
       "category": "reference",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Unified Russian history textbook by Medinsky/Torkunov. Treats Crimea as Russian territory. Distributed to ~15 million students including in occupied Ukrainian territories. Condemned by Amnesty International and Ukrainian government.",
       "url": "https://www.amnesty.org/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "AP Human Geography (College Board)",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Uses Crimea annexation as case study of irredentism. Correctly framed as illegal annexation. Taken by ~230,000 US students annually.",
       "url": "https://apstudents.collegeboard.org/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Replogle Globes",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "US globe manufacturer. Follows US State Department guidelines which do not recognize Russian annexation. Crimea shown as Ukraine.",
       "url": "https://www.replogleglobes.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -2284,31 +2284,31 @@
       "detail": "German globe manufacturer. Identified by Stop Mapaganda project as showing Crimea incorrectly. Needs current edition verification.",
       "url": "https://www.columbus-verlag.de/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Lonely Planet Ukraine (print)",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Crimea included in Ukraine guide. Last edition 2018 (5th edition). Covers Crimea with travel warnings about Russian occupation. No new edition since 2022 full-scale invasion.",
       "url": "https://www.lonelyplanet.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Bradt Guide to Ukraine",
       "category": "reference",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Includes Crimea under Ukraine. Last edition outdated. Bradt specializes in off-beaten-path destinations. Notes occupation.",
       "url": "https://www.bradtguides.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -2320,7 +2320,7 @@
       "detail": "Major academic publisher. Author affiliations follow institutional self-reporting. Crimean Federal University (Russian-established post-2014) papers may list Russia. No publisher-level policy on Crimea classification found.",
       "url": "https://www.springernature.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -2332,7 +2332,7 @@
       "detail": "Academic publisher. Geography and political science texts vary. Some use \"annexed\" framing. No centralized Crimea editorial policy found.",
       "url": "https://www.cambridge.org/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -2344,55 +2344,55 @@
       "detail": "Free education platform. Geography content uses various map sources. Crimea classification depends on specific lesson/map used. No explicit policy.",
       "url": "https://www.khanacademy.org/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Stop Mapaganda audit (physical maps)",
       "category": "reference",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Mykola Holubei audited 400+ cartographic products sold in European stores. Found 90% of German educational map products show Crimea incorrectly. MairDumont Group identified as largest single source. Full 400-page report available.",
       "url": "https://www.ukrainer.net/en/en-stop-mapaganda/",
       "evidence": "",
-      "notes": "Most comprehensive physical map audit. This project extends it to digital platforms.",
+      "notes": "Most comprehensive physical map audit. This project extends it to digital platforms. [REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Zoom",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Stopped selling to Russia/Belarus April 2022. Crimea included. Free accounts still work but no paid services.",
       "url": "https://zoom.us/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Canva",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Australian design platform. Suspended premium services in Russia March 2022. Crimea included.",
       "url": "https://www.canva.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Figma",
       "category": "tech_infrastructure",
-      "status": "correct",
-      "status_icon": "✅",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Blocked Russian accounts March 2022. Adobe subsidiary. Crimea included in restrictions.",
       "url": "https://www.figma.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
@@ -2404,67 +2404,67 @@
       "detail": "Microsoft-owned. Restricted some Russian enterprise accounts but free tier remains available. Crimea access depends on IP routing. Hosts Natural Earth repo (the root cause).",
       "url": "https://github.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-03-31"
     },
     {
       "platform": "Metro AG (Germany)",
       "category": "tech_infrastructure",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "2 supermarkets in Simferopol and Sevastopol operating in occupied Crimea despite EU sanctions. German company exploiting Russian subsidiary loophole. Investigated but continued operations.",
       "url": "https://www.metro-cc.ru/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-04-02"
     },
     {
       "platform": "Auchan (France)",
       "category": "tech_infrastructure",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Hypermarket in occupied Crimea. Part of Mulliez family group (also Leroy Merlin). Continued operating via Russian subsidiaries despite EU sanctions. Major French sanctions violator.",
       "url": "https://www.auchan.ru/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-04-02"
     },
     {
       "platform": "Leroy Merlin (France)",
       "category": "tech_infrastructure",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Home improvement stores in Crimea via Russian operations. Same Mulliez group as Auchan. Continued Crimea presence despite EU non-recognition.",
       "url": "https://leroymerlin.ru/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-04-02"
     },
     {
       "platform": "Siemens (turbine diversion)",
       "category": "tech_infrastructure",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "4 gas turbines (EUR 111M) diverted to Crimea power plants in 2015-16. 5 people criminally charged in Germany in 2024. Siemens claimed deception by Russian partners. 8 years from violation to prosecution.",
       "url": "https://www.reuters.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-04-02"
     },
     {
       "platform": "DHL (Crimea operations)",
       "category": "tech_infrastructure",
-      "status": "incorrect",
-      "status_icon": "❌",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
       "method": "manual",
       "detail": "Only major international courier maintaining limited services in Crimea. Investigated by Ukraine SBU in 2018. German company operating in sanctioned territory.",
       "url": "https://www.dhl.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-04-02"
     },
     {
@@ -2476,7 +2476,7 @@
       "detail": "Briefly blocked phones in Crimea for sanctions compliance in 2021, then reversed. Chinese company navigating between Western sanctions and Russian market.",
       "url": "https://www.mi.com/",
       "evidence": "",
-      "notes": "",
+      "notes": "[REVIEW PENDING - awaiting human verification]",
       "date_checked": "2026-04-02"
     }
   ],
