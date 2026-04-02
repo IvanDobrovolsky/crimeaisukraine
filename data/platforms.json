@@ -3,7 +3,7 @@
     "project": "Crimea Digital Sovereignty Audit",
     "author": "Ivan Dobrovolsky",
     "created": "2026-03-31",
-    "last_updated": "2026-03-31",
+    "last_updated": "2026-04-02",
     "description": "Systematic audit of how digital platforms represent Crimea's sovereignty status"
   },
   "findings": [
@@ -2406,14 +2406,86 @@
       "evidence": "",
       "notes": "",
       "date_checked": "2026-03-31"
+    },
+    {
+      "platform": "Metro AG (Germany)",
+      "category": "tech_infrastructure",
+      "status": "incorrect",
+      "status_icon": "❌",
+      "method": "manual",
+      "detail": "2 supermarkets in Simferopol and Sevastopol operating in occupied Crimea despite EU sanctions. German company exploiting Russian subsidiary loophole. Investigated but continued operations.",
+      "url": "https://www.metro-cc.ru/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "Auchan (France)",
+      "category": "tech_infrastructure",
+      "status": "incorrect",
+      "status_icon": "❌",
+      "method": "manual",
+      "detail": "Hypermarket in occupied Crimea. Part of Mulliez family group (also Leroy Merlin). Continued operating via Russian subsidiaries despite EU sanctions. Major French sanctions violator.",
+      "url": "https://www.auchan.ru/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "Leroy Merlin (France)",
+      "category": "tech_infrastructure",
+      "status": "incorrect",
+      "status_icon": "❌",
+      "method": "manual",
+      "detail": "Home improvement stores in Crimea via Russian operations. Same Mulliez group as Auchan. Continued Crimea presence despite EU non-recognition.",
+      "url": "https://leroymerlin.ru/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "Siemens (turbine diversion)",
+      "category": "tech_infrastructure",
+      "status": "incorrect",
+      "status_icon": "❌",
+      "method": "manual",
+      "detail": "4 gas turbines (EUR 111M) diverted to Crimea power plants in 2015-16. 5 people criminally charged in Germany in 2024. Siemens claimed deception by Russian partners. 8 years from violation to prosecution.",
+      "url": "https://www.reuters.com/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "DHL (Crimea operations)",
+      "category": "tech_infrastructure",
+      "status": "incorrect",
+      "status_icon": "❌",
+      "method": "manual",
+      "detail": "Only major international courier maintaining limited services in Crimea. Investigated by Ukraine SBU in 2018. German company operating in sanctioned territory.",
+      "url": "https://www.dhl.com/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "Xiaomi (Crimea)",
+      "category": "tech_infrastructure",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "manual",
+      "detail": "Briefly blocked phones in Crimea for sanctions compliance in 2021, then reversed. Chinese company navigating between Western sanctions and Russian market.",
+      "url": "https://www.mi.com/",
+      "evidence": "",
+      "notes": "",
+      "date_checked": "2026-04-02"
     }
   ],
   "summary": {
-    "total_platforms": 200,
+    "total_platforms": 206,
     "by_status": {
       "n/a": 8,
-      "incorrect": 25,
-      "ambiguous": 83,
+      "incorrect": 30,
+      "ambiguous": 84,
       "correct": 73,
       "blocked": 11
     },
@@ -2425,12 +2497,12 @@
       "search_engine": 6,
       "travel": 11,
       "gaming": 4,
-      "tech_infrastructure": 50,
+      "tech_infrastructure": 56,
       "map_service": 18,
       "weather": 12,
       "social_media": 11,
       "sports": 5
     },
-    "last_updated": "2026-03-31"
+    "last_updated": "2026-04-02"
   }
 }
