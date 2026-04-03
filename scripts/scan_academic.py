@@ -193,7 +193,7 @@ def main():
                     parsed["ua_score"] = round(result.ua_score, 3)
                     parsed["ru_score"] = round(result.ru_score, 3)
                     parsed["signals"] = [
-                        {"matched": s.matched, "label": s.label}
+                        {"matched": s.matched, "label": s.direction}
                         for s in result.signals[:5]
                     ]
                     all_results.append(parsed)
@@ -231,7 +231,7 @@ def main():
                     parsed["ua_score"] = round(result.ua_score, 3)
                     parsed["ru_score"] = round(result.ru_score, 3)
                     parsed["signals"] = [
-                        {"matched": s.matched, "label": s.label}
+                        {"matched": s.matched, "label": s.direction}
                         for s in result.signals[:5]
                     ]
                     all_results.append(parsed)
