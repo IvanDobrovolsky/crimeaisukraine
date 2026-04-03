@@ -1081,30 +1081,6 @@
       "date_checked": "2026-04-02"
     },
     {
-      "platform": "weather.com",
-      "category": "weather",
-      "status": "correct",
-      "status_icon": "✅",
-      "method": "browser_verified",
-      "detail": "Operated by The Weather Company (IBM). Simferopol listed under Ukraine.",
-      "url": "https://weather.com/",
-      "evidence": "",
-      "notes": "Same geographic database as Weather Underground.",
-      "date_checked": "2026-03-31"
-    },
-    {
-      "platform": "BBC Weather",
-      "category": "weather",
-      "status": "correct",
-      "status_icon": "✅",
-      "method": "browser_verified",
-      "detail": "Uses GeoNames ID 693805 (Simferopol = Ukraine). BBC editorial refers to Crimea as 'annexed'.",
-      "url": "https://www.bbc.com/weather/693805",
-      "evidence": "",
-      "notes": "UK public broadcaster.",
-      "date_checked": "2026-03-31"
-    },
-    {
       "platform": "OSM Nominatim",
       "category": "map_service",
       "status": "correct",
@@ -1177,18 +1153,6 @@
       "date_checked": "2026-04-03"
     },
     {
-      "platform": "Apple Maps",
-      "category": "map_service",
-      "status": "correct",
-      "status_icon": "✅",
-      "method": "manual",
-      "detail": "Shows Crimea as part of Ukraine from non-Russian locations since March 2022. Uses worldview system — from Russia shows as Russia.",
-      "url": "https://maps.apple.com/",
-      "evidence": "AppleInsider (2022-03-04): 'Apple Maps now shows Crimea as part of Ukraine'",
-      "notes": "Apple ceased operations in Russia. Best major map service for Crimea.",
-      "date_checked": "2026-04-02"
-    },
-    {
       "platform": "Google Maps",
       "category": "map_service",
       "status": "ambiguous",
@@ -1225,18 +1189,6 @@
       "date_checked": "2026-04-02"
     },
     {
-      "platform": "HERE Maps",
-      "category": "map_service",
-      "status": "ambiguous",
-      "status_icon": "⚠️",
-      "method": "manual",
-      "detail": "JS-rendered, API requires authentication. Historically shows Crimea as part of Ukraine in most markets.",
-      "url": "https://wego.here.com/",
-      "evidence": "",
-      "notes": "Requires browser verification.",
-      "date_checked": "2026-04-02"
-    },
-    {
       "platform": "Yandex Maps",
       "category": "map_service",
       "status": "incorrect",
@@ -1261,18 +1213,6 @@
       "date_checked": "2026-04-02"
     },
     {
-      "platform": "Waze (Google)",
-      "category": "map_service",
-      "status": "ambiguous",
-      "status_icon": "⚠️",
-      "method": "manual",
-      "detail": "Google subsidiary, likely follows Google's worldview system. JS-rendered, requires browser verification.",
-      "url": "https://www.waze.com/",
-      "evidence": "",
-      "notes": "",
-      "date_checked": "2026-04-02"
-    },
-    {
       "platform": "Sygic / Tripomatic",
       "category": "map_service",
       "status": "ambiguous",
@@ -1282,18 +1222,6 @@
       "url": "https://travel.sygic.com/",
       "evidence": "",
       "notes": "Same platform shows both classifications.",
-      "date_checked": "2026-04-02"
-    },
-    {
-      "platform": "National Geographic",
-      "category": "map_service",
-      "status": "ambiguous",
-      "status_icon": "⚠️",
-      "method": "manual",
-      "detail": "Policy: depicts 'de facto situations'. Crimea shaded gray with dashed borders. Uses 5 different representations across products.",
-      "url": "https://www.nationalgeographic.com/",
-      "evidence": "Ukrinform found 5 different Crimea representations across NatGeo products.",
-      "notes": "",
       "date_checked": "2026-04-02"
     },
     {
