@@ -304,172 +304,121 @@ const propagation = [
   </div>
 </section>
 
-<!-- Sovereignty Framing Analysis -->
-<section id="framing" class="max-w-6xl mx-auto px-6 mb-12">
+<!-- Media Framing (GDELT) -->
+<section id="media-framing" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingTitle}</h2>
-    <p class="text-[#94a3b8] mb-8">{t.framingDesc}</p>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingMediaTitle} — 154K {lang === 'uk' ? 'статей' : 'Articles'}</h2>
+    <p class="text-[#94a3b8] mb-6">{lang === 'uk' ? 'GDELT, 2015-2026. Класифіковано 81 сигналом суверенітету на 3 мовах.' : 'GDELT, 2015–2026. Classified with 81 sovereignty signals in 3 languages.'}</p>
 
-    <!-- Two-column: Media + Academic overview -->
-    <div class="grid md:grid-cols-2 gap-6 mb-10">
-      <!-- Media (GDELT) -->
-      <div class="bg-[#0a0e1a] rounded-xl p-6 border border-[#1e293b]">
-        <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">{t.framingMediaTitle}</h3>
-        <div class="text-4xl font-black text-white mb-1">{gdelt.classified.toLocaleString()}</div>
-        <div class="text-xs text-[#64748b] mb-4">{lang === 'uk' ? 'статей класифіковано (з 154K)' : 'articles classified (of 154K)'}</div>
-        <div class="flex gap-3 mb-3">
-          <div class="flex-1 text-center p-2 rounded-lg bg-[#22c55e]/10 border border-[#22c55e]/20">
-            <div class="text-xl font-bold text-[#22c55e]">{gdelt.ukraine.toLocaleString()}</div>
-            <div class="text-[10px] text-[#64748b]">Ukraine</div>
-          </div>
-          <div class="flex-1 text-center p-2 rounded-lg bg-[#ef4444]/10 border border-[#ef4444]/20">
-            <div class="text-xl font-bold text-[#ef4444]">{gdelt.russia.toLocaleString()}</div>
-            <div class="text-[10px] text-[#64748b]">Russia</div>
-          </div>
-          <div class="flex-1 text-center p-2 rounded-lg bg-[#f59e0b]/10 border border-[#f59e0b]/20">
-            <div class="text-xl font-bold text-[#f59e0b]">{gdelt.disputed}</div>
-            <div class="text-[10px] text-[#64748b]">Disputed</div>
-          </div>
-        </div>
-        <div class="h-3 rounded-full overflow-hidden bg-[#1e293b] flex">
-          <div class="bg-[#22c55e] h-full" style={`width: ${Math.round(gdelt.ukraine / gdelt.classified * 100)}%`}></div>
-          <div class="bg-[#ef4444] h-full" style={`width: ${Math.round(gdelt.russia / gdelt.classified * 100)}%`}></div>
-          <div class="bg-[#f59e0b] h-full" style={`width: ${Math.round(gdelt.disputed / gdelt.classified * 100)}%`}></div>
-        </div>
+    <!-- Stats row -->
+    <div class="flex gap-3 mb-6">
+      <div class="flex-1 text-center p-3 rounded-lg bg-[#22c55e]/10 border border-[#22c55e]/20">
+        <div class="text-2xl font-bold text-[#22c55e]">{gdelt.ukraine.toLocaleString()}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Україна' : 'Ukraine'}</div>
       </div>
-
-      <!-- Academic (OpenAlex) -->
-      <div class="bg-[#0a0e1a] rounded-xl p-6 border border-[#1e293b]">
-        <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">{t.framingAcademicTitle}</h3>
-        <div class="text-4xl font-black text-white mb-1">{academic.total_papers}</div>
-        <div class="text-xs text-[#64748b] mb-4">{lang === 'uk' ? 'наукових робіт з DOI' : 'papers with DOIs'}</div>
-        <div class="flex gap-3 mb-3">
-          <div class="flex-1 text-center p-2 rounded-lg bg-[#22c55e]/10 border border-[#22c55e]/20">
-            <div class="text-xl font-bold text-[#22c55e]">{academic.ukraine}</div>
-            <div class="text-[10px] text-[#64748b]">Ukraine</div>
-          </div>
-          <div class="flex-1 text-center p-2 rounded-lg bg-[#ef4444]/10 border border-[#ef4444]/20">
-            <div class="text-xl font-bold text-[#ef4444]">{academic.russia}</div>
-            <div class="text-[10px] text-[#64748b]">Russia</div>
-          </div>
-        </div>
-        <div class="h-3 rounded-full overflow-hidden bg-[#1e293b] flex">
-          <div class="bg-[#22c55e] h-full" style={`width: ${Math.round(academic.ukraine / academic.total_papers * 100)}%`}></div>
-          <div class="bg-[#ef4444] h-full" style={`width: ${Math.round(academic.russia / academic.total_papers * 100)}%`}></div>
-        </div>
+      <div class="flex-1 text-center p-3 rounded-lg bg-[#ef4444]/10 border border-[#ef4444]/20">
+        <div class="text-2xl font-bold text-[#ef4444]">{gdelt.russia.toLocaleString()}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Росія' : 'Russia'}</div>
+      </div>
+      <div class="flex-1 text-center p-3 rounded-lg bg-[#f59e0b]/10 border border-[#f59e0b]/20">
+        <div class="text-2xl font-bold text-[#f59e0b]">{gdelt.disputed}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Спірно' : 'Disputed'}</div>
       </div>
     </div>
 
-    <!-- Year-by-year trends: Media + Academic side by side -->
-    <div class="mb-10">
-      <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">{t.framingTrendTitle}</h3>
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Media (GDELT) trend -->
-        <div>
-          <div class="text-xs text-[#64748b] mb-2 font-medium">{lang === 'uk' ? 'Медіа (GDELT, 2015-2026)' : 'Media (GDELT, 2015–2026)'}</div>
-          <div class="space-y-1">
-            {mediaYears.map((year: string) => {
-              const d = gdeltByYear[year] || {};
-              const ua = d.ukraine || 0;
-              const ru = d.russia || 0;
-              const total = ua + ru;
-              if (total === 0) return null;
-              const ruPct = Math.round(ru / total * 100);
-              return (
-                <div class="flex items-center gap-2">
-                  <div class="w-8 text-[10px] text-[#64748b] text-right flex-shrink-0">{year}</div>
-                  <div class="flex-1 flex h-4 rounded-full overflow-hidden bg-[#1e293b]">
-                    <div class="bg-[#22c55e] h-full" style={`width: ${100 - ruPct}%`}></div>
-                    <div class="bg-[#ef4444] h-full" style={`width: ${ruPct}%`}></div>
-                  </div>
-                  <div class="w-8 text-[10px] text-[#ef4444] flex-shrink-0 text-right">{ruPct}%</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <!-- Academic trend -->
-        <div>
-          <div class="text-xs text-[#64748b] mb-2 font-medium">{lang === 'uk' ? 'Академія (OpenAlex, 2012-2026)' : 'Academic (OpenAlex, 2012–2026)'}</div>
-          <div class="space-y-1">
-            {acadYears.map((year: string) => {
-              const d = (academic.by_year as any)[year] || {};
-              const ua = d.ukraine || 0;
-              const ru = d.russia || 0;
-              const total = ua + ru;
-              if (total === 0) return null;
-              const ruPct = Math.round(ru / total * 100);
-              return (
-                <div class="flex items-center gap-2">
-                  <div class="w-8 text-[10px] text-[#64748b] text-right flex-shrink-0">{year}</div>
-                  <div class="flex-1 flex h-4 rounded-full overflow-hidden bg-[#1e293b]">
-                    <div class="bg-[#22c55e] h-full" style={`width: ${100 - ruPct}%`}></div>
-                    <div class="bg-[#ef4444] h-full" style={`width: ${ruPct}%`}></div>
-                  </div>
-                  <div class="w-8 text-[10px] text-[#ef4444] flex-shrink-0 text-right">{ruPct}%</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+    <!-- Line chart -->
+    <div class="mb-6">
+      <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? '% російського фреймінгу у медіа за роками' : '% Russian framing in media by year'}</div>
+      <div class="relative" style="height: 200px;">
+        <canvas id="media-chart" class="w-full h-full"></canvas>
       </div>
-      <div class="flex gap-4 mt-3 text-xs text-[#94a3b8]">
-        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>{lang === 'uk' ? 'Україна' : 'Ukraine framing'}</span>
-        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>{lang === 'uk' ? 'Росія' : 'Russia framing'}</span>
+      <div class="flex gap-4 mt-2 text-xs text-[#94a3b8]">
+        <span class="flex items-center gap-1"><span class="w-3 h-0.5 bg-[#ef4444] inline-block"></span>{lang === 'uk' ? '% Російський фреймінг' : '% Russian framing'}</span>
       </div>
     </div>
 
-    <!-- Non-Russian media violators by country -->
-    <div class="mb-10">
-      <h3 class="text-sm font-bold text-[#ef4444] uppercase tracking-wider mb-4">{t.framingViolatorsTitle}</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mb-4">
-        {mediaByCountry.slice(0, 12).map((c: any) => (
-          <div class="bg-[#0a0e1a] rounded-lg px-3 py-2 text-sm border border-[#ef4444]/20">
-            <div class="flex items-center justify-between">
-              <span class="text-[#e2e8f0] text-xs font-medium">{c.country}</span>
-              <span class="text-[#ef4444] text-xs font-bold">{c.russia}</span>
-            </div>
+    <!-- Violators by country -->
+    <div class="mb-6">
+      <h3 class="text-sm font-bold text-[#ef4444] uppercase tracking-wider mb-3">{t.framingViolatorsTitle}</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+        {mediaByCountry.slice(0, 10).map((c: any) => (
+          <div class="bg-[#0a0e1a] rounded-lg px-3 py-2 border border-[#ef4444]/20 flex items-center justify-between">
+            <span class="text-[#e2e8f0] text-xs">{c.country}</span>
+            <span class="text-[#ef4444] text-xs font-bold">{c.russia}</span>
           </div>
         ))}
       </div>
     </div>
 
-    <!-- Sample violator URLs (media) -->
-    <div class="mb-10">
-      <h3 class="text-xs font-bold text-[#64748b] uppercase tracking-wider mb-3">
-        {lang === 'uk' ? 'Приклади статей (неросійські джерела)' : 'Sample articles (non-Russian sources)'}
+    <!-- Sample URLs -->
+    <div>
+      <h3 class="text-xs font-bold text-[#64748b] uppercase tracking-wider mb-2">
+        {lang === 'uk' ? 'Приклади (неросійські джерела)' : 'Sample violations (non-Russian sources)'}
       </h3>
-      <div class="space-y-1 max-h-60 overflow-y-auto">
-        {mediaViolators.slice(0, 20).map((v: any) => (
-          <div class="flex items-start gap-2 text-[10px] py-1 border-b border-[#1e293b]/30">
-            <span class="text-[#ef4444] flex-shrink-0 w-16">{v.country}</span>
-            <a href={v.url} target="_blank" rel="noopener" class="text-[#94a3b8] hover:text-white truncate flex-1">{v.domain} — {v.signals.join(", ")}</a>
+      <div class="space-y-1 max-h-48 overflow-y-auto">
+        {mediaViolators.slice(0, 15).map((v: any) => (
+          <div class="flex items-center gap-2 text-[10px] py-1 border-b border-[#1e293b]/30">
+            <span class="text-[#ef4444] flex-shrink-0 w-14">{v.country}</span>
+            <a href={v.url} target="_blank" rel="noopener" class="text-[#94a3b8] hover:text-white truncate">{v.domain} — {v.signals.join(", ")}</a>
           </div>
         ))}
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Academic violators with DOIs -->
-    <div class="mb-8">
-      <h3 class="text-xs font-bold text-[#64748b] uppercase tracking-wider mb-3">
-        {t.framingAcadViolatorsTitle} ({academic.violators_total})
-      </h3>
-      <div class="space-y-1 max-h-60 overflow-y-auto">
-        {acadViolators.slice(0, 20).map((v: any) => (
-          <div class="flex items-start gap-2 text-[10px] py-1 border-b border-[#1e293b]/30">
-            <span class="text-[#64748b] flex-shrink-0 w-10">{v.year}</span>
-            <a href={v.doi} target="_blank" rel="noopener" class="text-[#94a3b8] hover:text-white flex-1 leading-tight">{v.title.slice(0, 80)}</a>
-            <span class="text-[#64748b] flex-shrink-0 truncate max-w-32">{v.journal.slice(0, 30)}</span>
-          </div>
-        ))}
+<!-- Academic Framing (OpenAlex) -->
+<section id="academic-framing" class="max-w-6xl mx-auto px-6 mb-12">
+  <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingAcademicTitle} — {academic.total_papers} {lang === 'uk' ? 'робіт' : 'Papers'}</h2>
+    <p class="text-[#94a3b8] mb-6">{lang === 'uk' ? 'OpenAlex, 2010-2026. Усі з DOI — постійно індексовані в глобальному академічному реєстрі.' : 'OpenAlex, 2010–2026. All with DOIs — permanently indexed in the global academic record.'}</p>
+
+    <!-- Stats row -->
+    <div class="flex gap-3 mb-6">
+      <div class="flex-1 text-center p-3 rounded-lg bg-[#22c55e]/10 border border-[#22c55e]/20">
+        <div class="text-2xl font-bold text-[#22c55e]">{academic.ukraine}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Україна' : 'Ukraine'}</div>
+      </div>
+      <div class="flex-1 text-center p-3 rounded-lg bg-[#ef4444]/10 border border-[#ef4444]/20">
+        <div class="text-2xl font-bold text-[#ef4444]">{academic.russia}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Росія' : 'Russia'}</div>
+      </div>
+    </div>
+
+    <!-- Line chart -->
+    <div class="mb-6">
+      <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? '% російського фреймінгу в академії за роками' : '% Russian framing in academia by year'}</div>
+      <div class="relative" style="height: 200px;">
+        <canvas id="academic-chart" class="w-full h-full"></canvas>
+      </div>
+      <div class="flex gap-4 mt-2 text-xs text-[#94a3b8]">
+        <span class="flex items-center gap-1"><span class="w-3 h-0.5 bg-[#ef4444] inline-block"></span>{lang === 'uk' ? '% Російський фреймінг' : '% Russian framing'}</span>
+        <span class="flex items-center gap-1"><span class="w-3 h-0.5 bg-[#ef4444]/30 inline-block border-t border-dashed border-[#ffd700]"></span>{lang === 'uk' ? 'Анексія 2014' : '2014 Annexation'}</span>
+        <span class="flex items-center gap-1"><span class="w-3 h-0.5 bg-[#ef4444]/30 inline-block border-t border-dashed border-[#ffd700]"></span>{lang === 'uk' ? 'Вторгнення 2022' : '2022 Invasion'}</span>
       </div>
     </div>
 
     <!-- Insight -->
-    <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30">
+    <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 mb-6">
       <p class="text-sm text-[#94a3b8]">
         <span class="text-[#ef4444] font-bold">{lang === 'uk' ? 'Висновок' : 'Key finding'}:</span> {t.framingInsight}
       </p>
+    </div>
+
+    <!-- Violator papers with DOIs -->
+    <div>
+      <h3 class="text-xs font-bold text-[#64748b] uppercase tracking-wider mb-2">
+        {t.framingAcadViolatorsTitle} ({academic.violators_total})
+      </h3>
+      <div class="space-y-1 max-h-64 overflow-y-auto">
+        {acadViolators.slice(0, 25).map((v: any) => (
+          <div class="flex items-start gap-2 text-[10px] py-1.5 border-b border-[#1e293b]/30">
+            <span class="text-[#64748b] flex-shrink-0 w-8">{v.year}</span>
+            <a href={v.doi} target="_blank" rel="noopener" class="text-[#94a3b8] hover:text-white flex-1 leading-tight">{v.title.slice(0, 90)}</a>
+            <span class="text-[#64748b] flex-shrink-0 truncate max-w-28 text-right">{v.journal.slice(0, 25)}</span>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
@@ -1304,6 +1253,121 @@ const propagation = [
   </div>
 </footer>
 
-<script>
-// Charts removed — framing data now shown via static bars
+<script define:vars={{ gdeltByYear, academic }}>
+// Line charts for media + academic framing trends
+
+function drawLineChart(canvasId, dataByYear, options = {}) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  const W = canvas.width = canvas.offsetWidth * 2;
+  const H = canvas.height = canvas.offsetHeight * 2;
+  ctx.scale(2, 2);
+  const w = W/2, h = H/2;
+  const pad = { t: 15, r: 15, b: 30, l: 35 };
+  const cw = w - pad.l - pad.r;
+  const ch = h - pad.t - pad.b;
+
+  ctx.fillStyle = '#111827';
+  ctx.fillRect(0, 0, w, h);
+
+  const years = Object.keys(dataByYear).sort();
+  if (!years.length) return;
+
+  // Compute % Russian framing per year
+  const points = years.map(y => {
+    const d = dataByYear[y];
+    const ua = d.ukraine || 0;
+    const ru = d.russia || 0;
+    const total = ua + ru;
+    return { year: y, pct: total > 0 ? (ru / total * 100) : 0, total };
+  }).filter(p => p.total > 0);
+
+  if (!points.length) return;
+
+  const maxPct = Math.max(60, ...points.map(p => p.pct));
+
+  // Grid
+  ctx.strokeStyle = '#1e293b';
+  ctx.lineWidth = 0.5;
+  for (let i = 0; i <= 4; i++) {
+    const y = pad.t + ch * (1 - i/4);
+    ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(w - pad.r, y); ctx.stroke();
+    ctx.fillStyle = '#64748b'; ctx.font = '9px sans-serif';
+    ctx.fillText(Math.round(maxPct * i/4) + '%', 2, y + 3);
+  }
+
+  // Year labels
+  points.forEach((p, i) => {
+    const x = pad.l + (i / (points.length - 1)) * cw;
+    if (i % 2 === 0 || points.length <= 8) {
+      ctx.fillStyle = '#64748b'; ctx.font = '9px sans-serif';
+      ctx.fillText(p.year, x - 12, h - 8);
+    }
+  });
+
+  // Event markers
+  const eventYears = options.events || [];
+  eventYears.forEach(ey => {
+    const idx = points.findIndex(p => p.year === ey);
+    if (idx >= 0) {
+      const x = pad.l + (idx / (points.length - 1)) * cw;
+      ctx.strokeStyle = '#ffd700'; ctx.lineWidth = 0.8; ctx.setLineDash([4, 3]);
+      ctx.beginPath(); ctx.moveTo(x, pad.t); ctx.lineTo(x, pad.t + ch); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#ffd700'; ctx.font = '8px sans-serif';
+      ctx.fillText(ey, x + 2, pad.t + 10);
+    }
+  });
+
+  // Area fill
+  ctx.beginPath();
+  points.forEach((p, i) => {
+    const x = pad.l + (i / (points.length - 1)) * cw;
+    const y = pad.t + ch * (1 - p.pct / maxPct);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  // Close path for fill
+  const lastX = pad.l + ((points.length - 1) / (points.length - 1)) * cw;
+  ctx.lineTo(lastX, pad.t + ch);
+  ctx.lineTo(pad.l, pad.t + ch);
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(239, 68, 68, 0.1)';
+  ctx.fill();
+
+  // Line
+  ctx.beginPath();
+  ctx.strokeStyle = '#ef4444'; ctx.lineWidth = 2.5;
+  points.forEach((p, i) => {
+    const x = pad.l + (i / (points.length - 1)) * cw;
+    const y = pad.t + ch * (1 - p.pct / maxPct);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  // Dots + labels
+  points.forEach((p, i) => {
+    const x = pad.l + (i / (points.length - 1)) * cw;
+    const y = pad.t + ch * (1 - p.pct / maxPct);
+    ctx.beginPath();
+    ctx.arc(x, y, 3, 0, Math.PI * 2);
+    ctx.fillStyle = '#ef4444';
+    ctx.fill();
+    // Label on key points
+    if (p.pct > 15 || i === 0 || i === points.length - 1) {
+      ctx.fillStyle = '#ef4444'; ctx.font = 'bold 9px sans-serif';
+      ctx.fillText(Math.round(p.pct) + '%', x - 10, y - 8);
+    }
+  });
+}
+
+setTimeout(() => {
+  drawLineChart('media-chart', gdeltByYear, { events: ['2022'] });
+  drawLineChart('academic-chart', academic.by_year, { events: ['2014', '2022'] });
+}, 100);
+window.addEventListener('resize', () => {
+  drawLineChart('media-chart', gdeltByYear, { events: ['2022'] });
+  drawLineChart('academic-chart', academic.by_year, { events: ['2014', '2022'] });
+});
 </script>
