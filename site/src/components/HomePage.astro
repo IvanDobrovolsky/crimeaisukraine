@@ -2,6 +2,7 @@
 import type { Lang } from '../i18n/translations';
 import { translations } from '../i18n/translations';
 import platformsData from '../data/platforms.json';
+import manifest from '../data/manifest.json';
 import findingsUk from '../data/findings_uk.json';
 
 interface Props {
@@ -10,23 +11,47 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = translations[lang];
+const m = manifest as any;
+
+// Template variable replacer — substitutes {key} with manifest values
+const vars: Record<string, string> = {
+  total: String(m.global.total_platforms),
+  categories: String(m.global.total_categories),
+  source_code: String(m.methodology.source_code),
+  automated_api: String(m.methodology.automated_api),
+  automated_data: String(m.methodology.automated_data),
+  ip_ips: String(m.ip_geolocation.total_ips_tested),
+  ip_asns: String(m.ip_geolocation.total_asns_tested),
+  weather_total: String(m.weather.total),
+};
+const fill = (s: string) => s.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? `{${k}}`);
+
+// Override t with filled values for keys that have templates
+const tFilled = new Proxy(t, {
+  get(target, prop: string) {
+    const val = (target as any)[prop];
+    return typeof val === 'string' ? fill(val) : val;
+  }
+});
+// Use tFilled for display, keep t for non-string access
+const T = tFilled as typeof t;
 
 const ukDetails = findingsUk as Record<string, string>;
 const getDetail = (f: any) => lang === 'uk' ? (ukDetails[f.platform] || f.detail) : f.detail;
 
 const findings = platformsData.findings || [];
-const summary = (platformsData as any).summary || {};
 const trends = (platformsData as any).trends || {};
 const ipResults = (platformsData as any).ip_results || {};
-const companiesSummary = (platformsData as any).companies_summary || {};
 
-const total = findings.length;
-const correct = findings.filter((f: any) => f.status === 'correct').length;
-const incorrect = findings.filter((f: any) => f.status === 'incorrect').length;
-const ambiguous = findings.filter((f: any) => f.status === 'ambiguous').length;
-const blocked = findings.filter((f: any) => f.status === 'blocked').length;
-const na = findings.filter((f: any) => f.status === 'n/a').length;
+// --- Global stats from manifest ---
+const total = m.global.total_platforms;
+const correct = m.global.by_status.correct || 0;
+const incorrect = m.global.by_status.incorrect || 0;
+const ambiguous = m.global.by_status.ambiguous || 0;
+const blocked = m.global.by_status.blocked || 0;
+const na = m.global.by_status['n/a'] || 0;
 
+// Group findings by category (still needed for listings)
 const categories = {} as Record<string, any[]>;
 findings.forEach((f: any) => {
   if (!categories[f.category]) categories[f.category] = [];
@@ -41,87 +66,89 @@ const categoryOrder = [
 
 const statusOrder = { correct: 0, incorrect: 1, ambiguous: 2, blocked: 3, 'n/a': 4 } as Record<string, number>;
 const sortByStatus = (a: any, b: any) => (statusOrder[a.status] ?? 5) - (statusOrder[b.status] ?? 5);
-
 const categoryLabels = t.categories;
 
-// Chart percentages
+// --- Chart percentages from manifest ---
 const pCorrect = Math.round(correct / total * 100);
 const pIncorrect = Math.round(incorrect / total * 100);
 const pAmbiguous = Math.round(ambiguous / total * 100);
 const pBlocked = Math.round(blocked / total * 100);
 const pNA = Math.round(na / total * 100);
 
-// Category stats for bar chart
-const catStats = categoryOrder.filter(c => categories[c]).map(c => {
-  const items = categories[c];
-  return {
-    name: (categoryLabels as any)[c] || c,
-    total: items.length,
-    correct: items.filter((f: any) => f.status === 'correct').length,
-    incorrect: items.filter((f: any) => f.status === 'incorrect').length,
-    ambiguous: items.filter((f: any) => f.status === 'ambiguous').length,
-  };
-});
+// Category bar chart — from manifest
+const catStats = categoryOrder.filter(c => m.by_category[c]).map(c => ({
+  name: (categoryLabels as any)[c] || c,
+  total: m.by_category[c].total,
+  correct: m.by_category[c].correct,
+  incorrect: m.by_category[c].incorrect,
+  ambiguous: m.by_category[c].ambiguous,
+}));
 
-// IP Geolocation — computed from enriched data
-const ipData = ipResults as any;
-const ipTotalLookups = ipData.total_lookups || 120;
-const ipTotalIPs = ipData.total_ips || 90;
-const ipTotalASNs = ipData.total_asns || 9;
-const ipByCountry = ipData.by_country || { UA: 64, RU: 19, other: 37 };
-const ipByProvider = ipData.by_provider || {};
-const ipByASN = ipData.by_asn || {};
-const ipTotalResults = (ipByCountry.UA || 0) + (ipByCountry.RU || 0) + (ipByCountry.other || 0);
-const ipPctUA = Math.round((ipByCountry.UA || 0) / ipTotalResults * 100);
-const ipPctRU = Math.round((ipByCountry.RU || 0) / ipTotalResults * 100);
-const ipPctOther = Math.round((ipByCountry.other || 0) / ipTotalResults * 100);
+// --- Helper: get category findings + stats from manifest ---
+const catFindings = (cat: string) => findings.filter((f: any) => f.category === cat);
+const cs = (cat: string) => m[cat] || m.by_category[cat] || { total: 0, correct: 0, incorrect: 0, ambiguous: 0, blocked: 0, 'n/a': 0 };
+const pct = (n: number, t: number) => t > 0 ? Math.round(n / t * 100) : 0;
 
-// Sort ASNs: Ukrainian first, then mixed, then rerouted
+// --- Per-section data (findings + manifest stats) ---
+// Weather
+const weatherFindings = catFindings('weather');
+const wS = cs('weather');
+const wCorrect = weatherFindings.filter((f: any) => f.status === 'correct');
+const wIncorrect = weatherFindings.filter((f: any) => f.status === 'incorrect');
+const wAmbiguous = weatherFindings.filter((f: any) => f.status === 'ambiguous');
+const wNA = weatherFindings.filter((f: any) => f.status === 'n/a');
+const wTotal = wS.total;
+const wPctCorrect = pct(wS.correct, wTotal);
+const wPctIncorrect = pct(wS.incorrect, wTotal);
+const wPctAmbiguous = pct(wS.ambiguous, wTotal);
+const wPctNA = pct(wS['n/a'], wTotal);
+
+// Map services
+const mapFindings = catFindings('map_service');
+const mS = cs('map_service');
+const mCorrect = mapFindings.filter((f: any) => f.status === 'correct');
+const mIncorrect = mapFindings.filter((f: any) => f.status === 'incorrect');
+const mAmbiguous = mapFindings.filter((f: any) => f.status === 'ambiguous');
+const mTotal = mS.total;
+const mPctCorrect = pct(mS.correct, mTotal);
+const mPctIncorrect = pct(mS.incorrect, mTotal);
+const mPctAmbiguous = pct(mS.ambiguous, mTotal);
+
+// IP Geolocation
+const ipM = m.ip_geolocation;
+const ipTotalLookups = ipM.total_lookups;
+const ipTotalIPs = ipM.total_ips_tested;
+const ipTotalASNs = ipM.total_asns_tested;
+const ipByCountry = ipM.by_country;
+const ipByProvider = ipResults.by_provider || {};
+const ipByASN = ipResults.by_asn || {};
+const ipPctUA = ipM.pct_ua;
+const ipPctRU = ipM.pct_ru;
+const ipPctOther = ipM.pct_other;
 const asnEntries = Object.entries(ipByASN).map(([id, info]: [string, any]) => ({ id, ...info }));
 const asnSorted = asnEntries.sort((a: any, b: any) => {
   const order: Record<string, number> = { ukrainian: 0, mixed: 1, mixed_ru: 1, rerouted: 2 };
   return (order[a.origin] ?? 3) - (order[b.origin] ?? 3);
 });
 
-// Map services — computed from data
-const mapFindings = findings.filter((f: any) => f.category === 'map_service');
-const mCorrect = mapFindings.filter((f: any) => f.status === 'correct');
-const mIncorrect = mapFindings.filter((f: any) => f.status === 'incorrect');
-const mAmbiguous = mapFindings.filter((f: any) => f.status === 'ambiguous');
-const mTotal = mapFindings.length;
-const mPctCorrect = mTotal > 0 ? Math.round(mCorrect.length / mTotal * 100) : 0;
-const mPctIncorrect = mTotal > 0 ? Math.round(mIncorrect.length / mTotal * 100) : 0;
-const mPctAmbiguous = mTotal > 0 ? Math.round(mAmbiguous.length / mTotal * 100) : 0;
-
-// Telecom — computed from data
-const telecomFindings = findings.filter((f: any) => f.category === 'telecom');
+// Telecom
+const telecomFindings = catFindings('telecom');
+const tcS = cs('telecom');
 const tcCorrect = telecomFindings.filter((f: any) => f.status === 'correct');
 const tcIncorrect = telecomFindings.filter((f: any) => f.status === 'incorrect');
 const tcBlocked = telecomFindings.filter((f: any) => f.status === 'blocked');
 const tcNA = telecomFindings.filter((f: any) => f.status === 'n/a');
-const tcTotal = telecomFindings.length;
 
-// Tech infrastructure — computed from actual findings
-const infraFindings = findings.filter((f: any) => f.category === 'tech_infrastructure');
+// Tech infrastructure
+const infraFindings = catFindings('tech_infrastructure');
+const iS = cs('tech_infrastructure');
 const iCorrect = infraFindings.filter((f: any) => f.status === 'correct');
 const iIncorrect = infraFindings.filter((f: any) => f.status === 'incorrect');
 const iAmbiguous = infraFindings.filter((f: any) => f.status === 'ambiguous');
-const iTotal = infraFindings.length;
-const iPctCorrect = iTotal > 0 ? Math.round(iCorrect.length / iTotal * 100) : 0;
-const iPctIncorrect = iTotal > 0 ? Math.round(iIncorrect.length / iTotal * 100) : 0;
-const iPctAmbiguous = iTotal > 0 ? Math.round(iAmbiguous.length / iTotal * 100) : 0;
-
-// Weather services — computed from actual data
-const weatherFindings = findings.filter((f: any) => f.category === 'weather');
-const wCorrect = weatherFindings.filter((f: any) => f.status === 'correct');
-const wIncorrect = weatherFindings.filter((f: any) => f.status === 'incorrect');
-const wAmbiguous = weatherFindings.filter((f: any) => f.status === 'ambiguous');
-const wNA = weatherFindings.filter((f: any) => f.status === 'n/a');
-const wTotal = weatherFindings.length;
-const wPctCorrect = Math.round(wCorrect.length / wTotal * 100);
-const wPctIncorrect = Math.round(wIncorrect.length / wTotal * 100);
-const wPctAmbiguous = Math.round(wAmbiguous.length / wTotal * 100);
-const wPctNA = Math.round(wNA.length / wTotal * 100);
+const iTotal = iS.total;
+const iPctCorrect = pct(iS.correct, iTotal);
+const iPctIncorrect = pct(iS.incorrect, iTotal);
+const iPctAmbiguous = pct(iS.ambiguous, iTotal);
 
 const propagation = [
   { name: 'd3-geo', dl: '13.4M/wk', pct: 100, status: 'bad' },
@@ -156,8 +183,8 @@ const propagation = [
       <span class="text-[#ffd700]">{t.heroTitle2}</span>
     </h1>
 
-    <p class="text-xl md:text-2xl text-[#94a3b8] max-w-3xl mb-4" set:html={t.heroSub} />
-    <p class="text-lg text-[#64748b] max-w-3xl mb-10" set:html={t.heroDesc} />
+    <p class="text-xl md:text-2xl text-[#94a3b8] max-w-3xl mb-4" set:html={T.heroSub} />
+    <p class="text-lg text-[#64748b] max-w-3xl mb-10" set:html={T.heroDesc} />
 
     <div class="flex flex-wrap gap-4">
       <a href="#findings" class="bg-[#0057b7] hover:bg-[#0057b7]/80 text-white font-semibold px-6 py-3 rounded-lg transition">
@@ -972,28 +999,28 @@ const propagation = [
 <!-- Three-Tier Methodology -->
 <section class="max-w-6xl mx-auto px-6 mb-20">
   <h2 class="text-2xl md:text-3xl font-bold mb-4">{t.methodTitle}</h2>
-  <p class="text-[#94a3b8] max-w-3xl mb-8">{t.methodDesc}</p>
+  <p class="text-[#94a3b8] max-w-3xl mb-8">{T.methodDesc}</p>
   <div class="grid md:grid-cols-3 gap-6">
     <div class="bg-[#111827] rounded-xl p-6 border border-[#22c55e]/40">
       <div class="flex items-center justify-between mb-3">
         <h3 class="font-bold text-[#22c55e]">{t.tier1}</h3>
-        <span class="text-xs bg-[#22c55e]/20 text-[#22c55e] px-2 py-1 rounded-full font-medium">{t.tier1count}</span>
+        <span class="text-xs bg-[#22c55e]/20 text-[#22c55e] px-2 py-1 rounded-full font-medium">{T.tier1count}</span>
       </div>
-      <p class="text-sm text-[#94a3b8]">{t.tier1desc}</p>
+      <p class="text-sm text-[#94a3b8]">{T.tier1desc}</p>
     </div>
     <div class="bg-[#111827] rounded-xl p-6 border border-[#f59e0b]/40">
       <div class="flex items-center justify-between mb-3">
         <h3 class="font-bold text-[#f59e0b]">{t.tier2}</h3>
-        <span class="text-xs bg-[#f59e0b]/20 text-[#f59e0b] px-2 py-1 rounded-full font-medium">{t.tier2count}</span>
+        <span class="text-xs bg-[#f59e0b]/20 text-[#f59e0b] px-2 py-1 rounded-full font-medium">{T.tier2count}</span>
       </div>
-      <p class="text-sm text-[#94a3b8]">{t.tier2desc}</p>
+      <p class="text-sm text-[#94a3b8]">{T.tier2desc}</p>
     </div>
     <div class="bg-[#111827] rounded-xl p-6 border border-[#64748b]/40">
       <div class="flex items-center justify-between mb-3">
         <h3 class="font-bold text-[#94a3b8]">{t.tier3}</h3>
-        <span class="text-xs bg-[#64748b]/20 text-[#94a3b8] px-2 py-1 rounded-full font-medium">{t.tier3count}</span>
+        <span class="text-xs bg-[#64748b]/20 text-[#94a3b8] px-2 py-1 rounded-full font-medium">{T.tier3count}</span>
       </div>
-      <p class="text-sm text-[#94a3b8]">{t.tier3desc}</p>
+      <p class="text-sm text-[#94a3b8]">{T.tier3desc}</p>
     </div>
   </div>
 </section>
