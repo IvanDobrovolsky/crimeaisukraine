@@ -83,7 +83,10 @@ all: audit-core audit-api export site ## Run full audit pipeline and build site
 export: ## Export findings to CSV and sync to site JSON
 	$(PYTHON) $(SCRIPTS)/export_findings.py
 
-site: ## Build the static site
+manifest: ## Regenerate manifest.json (single source of truth for all site numbers)
+	$(PYTHON) $(SCRIPTS)/generate_manifest.py
+
+site: manifest ## Build the static site (regenerates manifest first)
 	cd site && npm run build
 
 site-dev: ## Start site dev server
