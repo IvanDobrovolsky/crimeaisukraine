@@ -23,6 +23,41 @@ from pathlib import Path
 
 from sovereignty_classifier import SovereigntyClassifier
 
+# TLD → country mapping for major domains
+TLD_COUNTRY = {
+    'ru': 'Russia', 'su': 'Russia', 'ua': 'Ukraine', 'by': 'Belarus',
+    'de': 'Germany', 'fr': 'France', 'it': 'Italy', 'es': 'Spain',
+    'uk': 'UK', 'pl': 'Poland', 'cz': 'Czechia', 'nl': 'Netherlands',
+    'tr': 'Turkey', 'cn': 'China', 'jp': 'Japan', 'kr': 'South Korea',
+    'in': 'India', 'br': 'Brazil', 'ae': 'UAE', 'il': 'Israel',
+    'ge': 'Georgia', 'kz': 'Kazakhstan', 'az': 'Azerbaijan',
+    'md': 'Moldova', 'lv': 'Latvia', 'lt': 'Lithuania', 'ee': 'Estonia',
+}
+
+# Known domains and their countries (for .com/.org/.net)
+KNOWN_DOMAINS = {
+    'bbc.com': 'UK', 'bbc.co.uk': 'UK', 'reuters.com': 'UK',
+    'nytimes.com': 'US', 'washingtonpost.com': 'US', 'cnn.com': 'US',
+    'theguardian.com': 'UK', 'dw.com': 'Germany', 'aljazeera.com': 'Qatar',
+    'rt.com': 'Russia', 'sputniknews.com': 'Russia',
+    'pravda.com.ua': 'Ukraine', 'kyivindependent.com': 'Ukraine',
+    'eurointegration.com.ua': 'Ukraine', 'ukrinform.net': 'Ukraine',
+    'ura.news': 'Russia', 'gazeta.ru': 'Russia', 'rbc.ru': 'Russia',
+    'meduza.io': 'Russia', 'novayagazeta.eu': 'Russia',
+}
+
+
+def get_domain_country(domain: str) -> str:
+    """Determine the country of a domain from TLD or known list."""
+    domain = domain.lower().strip()
+    # Check known domains first
+    for known, country in KNOWN_DOMAINS.items():
+        if domain == known or domain.endswith('.' + known):
+            return country
+    # Check TLD
+    tld = domain.rsplit('.', 1)[-1] if '.' in domain else ''
+    return TLD_COUNTRY.get(tld, '')
+
 PROJECT = Path(__file__).parent.parent
 DATA = PROJECT / "data"
 
@@ -124,8 +159,11 @@ def main():
                     continue
                 seen_urls.add(url)
 
-                # Classify based on title + URL
-                result = clf.classify_url(url, title)
+                # Detect domain country
+                domain_country = get_domain_country(source)
+
+                # Classify based on title ONLY (not URL — URL TLDs are not framing)
+                result = clf.classify(title)
 
                 if result.label == "no_signal":
                     continue
@@ -135,6 +173,7 @@ def main():
                     "url": url,
                     "title": title,
                     "source": source,
+                    "domain_country": domain_country,
                     "date": date,
                     "language": language,
                     "period": period_label,
@@ -187,22 +226,32 @@ def main():
             y = by_year[year]
             print(f"    {year}: UA={y['ukraine']:3d}  RU={y['russia']:3d}  disputed={y['disputed']:3d}")
 
-    # Flagged violators
+    # Flagged violators — split by domain country
     flagged = [r for r in all_results if r["label"] == "russia"]
+    ru_domain = [r for r in flagged if r.get("domain_country") == "Russia"]
+    non_ru_domain = [r for r in flagged if r.get("domain_country") != "Russia"]
+
     if flagged:
-        print(f"\n❌ VIOLATORS — {len(flagged)} articles framing Crimea as Russian:")
-        # Group by source
+        print(f"\n❌ TOTAL Russian-framing articles: {len(flagged)}")
+        print(f"   From Russian domains (expected): {len(ru_domain)}")
+        print(f"   From non-Russian domains (SIGNIFICANT): {len(non_ru_domain)}")
+
+    if non_ru_domain:
+        print(f"\n🔴 NON-RUSSIAN SOURCES using Russian framing ({len(non_ru_domain)}):")
+        for r in non_ru_domain:
+            country = r.get('domain_country') or 'Unknown'
+            print(f"  [{country:10s}] {r['source']:25s} {r['title'][:55]}")
+            print(f"  {'':10s}  {'':25s} {r['url']}")
+            signals = ', '.join(s['matched'] for s in r['signals'][:3])
+            print(f"  {'':10s}  {'':25s} Signals: {signals}")
+
+    if ru_domain:
+        print(f"\n  Russian-domain articles (noise, {len(ru_domain)}):")
         by_source = {}
-        for r in flagged:
-            s = r["source"]
-            if s not in by_source:
-                by_source[s] = []
-            by_source[s].append(r)
-        for source, articles in sorted(by_source.items(), key=lambda x: -len(x[1]))[:20]:
-            print(f"  {source} ({len(articles)} articles)")
-            for a in articles[:2]:
-                print(f"    {a['title'][:70]}")
-                print(f"    {a['url']}")
+        for r in ru_domain:
+            by_source.setdefault(r["source"], []).append(r)
+        for source, arts in sorted(by_source.items(), key=lambda x: -len(x[1]))[:10]:
+            print(f"    {source}: {len(arts)} articles")
 
     # Save
     output = DATA / "gdelt_framing_results.json"
