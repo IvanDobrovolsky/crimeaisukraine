@@ -1,0 +1,42 @@
+company,country,sector,activity_in_crimea,violation_type,sanctions_status,enforcement_action,period,evidence_source,date_of_evidence,tier
+Metro AG,Germany,Retail,"Operated 2 supermarkets (Simferopol, Sevastopol)",Spirit of EU sanctions,Not designated for Crimea specifically,None formal,"2014-2022",UAWire; Crimean News Agency,2017-2022,1
+Auchan (Mulliez),France,Retail,Operated hypermarket(s) in Crimea,Spirit of EU sanctions,Not designated for Crimea specifically,None formal,"2014-2022+",Mind.ua; Business & Human Rights Centre,2022,1
+Leroy Merlin (Mulliez),France,Retail/DIY,Operated stores in Crimea,Spirit of EU sanctions,Not designated for Crimea specifically,None formal,"2014-2023",Moscow Times,2023,1
+DHL Express,Germany,Logistics,Maintained delivery/service points in Crimea,Under SBU investigation,SBU criminal case,SBU investigation 2018,"2014-2022",Euromaidan Press; Ukrinform,2017-2018,1
+Siemens AG,Germany,Industrial/Energy,4 gas turbines diverted to Crimea power plants,Criminal violation EU sanctions,Criminal charges filed,5 individuals charged March 2024,"2015-2016",CNBC; Euromaidan Press; GIR,2024,1
+Dieseko Group B.V.,Netherlands,Construction,Supplied pile driving machines for Kerch Bridge,Criminal violation EU sanctions,Convicted/settled,EUR 1.78M settlement,"2015-2016",Euromaidan Press; Kyiv Independent,2024,1
+Dutch companies (6+),Netherlands,Construction,Equipment for Kerch Bridge,Criminal violation EU sanctions,Convicted/fined,EUR 160K fines; community service,"2014-2017",DutchNews; Kyiv Post,2023,1
+Binance,Global (Cayman Islands),Crypto/Fintech,Matched trades with Crimea users,OFAC violation,OFAC settlement,$968.6M settlement,"2017-2022",US Treasury,2023,1
+Swedbank Latvia,Sweden/Latvia,Banking,E-banking services for Crimea clients,$3.3M routed through US banks,OFAC settlement,$3.43M settlement,"2015-2016",OFAC; OCCRP,2023,1
+TradeStation Securities,USA,Brokerage,Brokerage services to Crimea users,OFAC violation,OFAC settlement,$1.11M settlement,"2021-2022",OFAC,2026,1
+Eutelsat,France,Satellite/Broadcasting,Distributed Russian propaganda channels via RSCC satellites,Partial compliance,Ordered to stop by Arcom,Terminated some contracts,"2014-2026",Kyiv Post; SpaceNews; Advanced Television,2025,1
+Adidas AG,Germany,Sportswear,Possible operations in Crimea,Under SBU investigation,SBU criminal case,Investigation 2018; results unknown,Pre-2018,KyivPost,2018,2
+Puma SE,Germany,Sportswear,Possible operations in Crimea,Under SBU investigation,SBU criminal case,Investigation 2018; results unknown,Pre-2018,KyivPost,2018,2
+PwC Cyprus,Cyprus/UK,Professional services,Serviced 12+ Russian clients sanctioned for Crimea,Under investigation,ICIJ investigation,None formal,Pre-2022,ICIJ/OCCRP Cyprus Confidential,2023,2
+BNY Mellon (subsidiary),USA/UK,Banking,13% stake in Cypriot firm owning Crimea hotel,Potential violation,Reported by RFE/RL,None formal,2016+,RFE/RL Crimea Circumvention,2020,2
+Cyprus offshore firms (scores),Cyprus,Various,"Hotels, ferries, tourism in Crimea",EU sanctions circumvention,Identified by investigation,None formal,2014+,RFE/RL Crimea Circumvention,2020,2
+Greek shipping companies,Greece,Shipping,275 port calls to Crimea in 2015,EU sanctions circumvention,Identified by OCCRP,None formal,2015+,OCCRP,2016,2
+K-Telecom / Win Mobile,Russia,Telecom,Primary mobile operator in Crimea since Aug 2014,Enables Russian occupation infrastructure,Not designated by EU/US,None,"2014-present",Wikipedia; HB Radiofrequency,2025,3
+Miranda-Media,Russia,Internet,Primary fixed-line internet provider; operates submarine cable,Enables Russian occupation infrastructure,OpenSanctions listed,None,"2014-present",Wikipedia; OpenSanctions; Hal.science,2020,3
+Rostelecom,Russia (state),Internet backbone,Deployed submarine cable; parent of Miranda-Media,Enables Russian occupation infrastructure,President sanctioned,None,"2014-present",DCD; Slate,2022,3
+Tricolor TV / NSC,Russia,Satellite TV,Largest DTH provider broadcasting to Crimea,Propaganda delivery to occupied territory,NOT SANCTIONED,None,"2014-present",Wikipedia; most.ks.ua,2023,3
+NTV-Plus,Russia,Satellite TV,Satellite TV provider in Crimea,Propaganda delivery to occupied territory,NOT SANCTIONED,None,"2014-present",Diderot Committee report,2024,3
+RSCC,Russia (state),Satellite operator,Operates satellite fleet for all Crimea broadcasting,Critical propaganda infrastructure,NOT SANCTIONED,None,"2014-present",Diderot Committee report,2024,3
+RNKB (now VTB),Russia,Banking,Largest bank in Crimea; absorbed Ukrainian banking assets,Occupation financial infrastructure,EU/US/UK sanctioned (2014),Asset freezes,"2014-2025",Wikipedia; OpenSanctions; OFAC,2014,3
+GenBank,Russia,Banking,Banking services in Crimea,Occupation financial infrastructure,UK/EU sanctioned,Asset freezes,"2014-present",UAWire; BlackSeaNews,2020,3
+Bank Rossiya,Russia,Banking,Subsidiary acquired Massandra Winery for $72M,Occupation financial infrastructure,EU/US/UK/CA sanctioned (2014),Asset freezes,"2014-present",Wikipedia; NGO Report,2020,3
+Chernomorneftegaz,Russia,Energy,Operates seized Ukrainian oil/gas fields and platforms,Seized Ukrainian state assets,OFAC SDN (April 2014),Asset freezes,"2014-present",Wikipedia; OpenSanctions; RFE/RL,2014,3
+Technopromexport,Russia,Energy/Construction,"Built Balaklava TPS and Tavria TPS with diverted Siemens turbines",Crimea infrastructure prohibited by sanctions,EU/US/UK/CA sanctioned,Asset freezes,"2016-present",OpenSanctions; Euromaidan Press,2017,3
+Stroygazmontazh,Russia,Construction,Primary contractor for Kerch Bridge (EUR 3.23B),Crimea infrastructure,EU sanctioned (July 2018),Asset freezes,"2015-present",RFE/RL; Wikipedia,2018,3
+Mostotrest,Russia,Construction,Kerch Bridge construction,Crimea infrastructure,EU sanctioned (July 2018),Asset freezes,"2015-present",RFE/RL,2018,3
+CJSC VAD,Russia,Construction,Kerch Bridge construction,Crimea infrastructure,EU sanctioned (July 2018),Asset freezes,"2015-present",RFE/RL,2018,3
+Zaliv Shipyard,Russia (Crimea),Shipbuilding,Kerch Bridge construction,Crimea infrastructure,EU sanctioned (July 2018),Asset freezes,"2015-present",RFE/RL,2018,3
+Grand Service Express,Russia,Railway,Railway service Russia-Crimea via Kerch Bridge,Crimea transport infrastructure,EU sanctioned (Oct 2020),Asset freezes + visa bans,"2019-present",EU Council,2020,3
+First Crimean Insurance,Russia (Crimea),Insurance,Insured Kerch Bridge (~$3B liability),Crimea infrastructure support,EU sanctioned (Oct 2020),Asset freezes,"2015-present",OpenSanctions; KHPG,2020,3
+Massandra Winery,Russia (Crimea),Agriculture/Wine,Seized Ukrainian state winery; sold to Bank Rossiya subsidiary,Seized Ukrainian state assets,EU/US/UK/CA sanctioned,Asset freezes,"2014-present",Wikipedia; NGO Report,2020,3
+Yandex,Russia,Tech/Digital,All services operate in Crimea (Search/Maps/Taxi/Mail/Market),Enables Russian digital occupation,Deputy CEO sanctioned,Ukraine blocked 2017,"2014-present",Jamestown; Freedom House,2022,3
+VK Company,Russia,Tech/Social media,VK social network and services in Crimea,Enables Russian digital occupation,CEO sanctioned,Ukraine blocked 2017,"2014-present",DCD; TechCrunch,2022,3
+1C Company,Russia,Business software,Accounting/business software used by all Crimea businesses,Enables Russian economic occupation,Ukraine blocked,Not EU/US sanctioned,"2014-present",Freedom House,2019,3
+Garantex,Russia,Crypto,Processed $100M+ illicit transactions enabling sanctions evasion,Sanctions evasion,OFAC designated 2022,Seized,"2019-2022",US Treasury,2022,3
+Crimean Sea Ports (SUE),Russia (Crimea),Port operations,"Operates Kerch, Theodosia, Sevastopol, Yalta, Evpatoria ports",Seized Ukrainian infrastructure,Sanctioned,Asset freezes,"2014-present",Ukraine closure order June 2014,2014,3
+Xiaomi,China,Electronics,Brief Crimea block (Sept 2021) then reversed; products reach Crimea via Russia,Awareness demonstrated,Not sanctioned for Crimea,None,"2021",Euromaidan Press; KyivPost,2021,Other
