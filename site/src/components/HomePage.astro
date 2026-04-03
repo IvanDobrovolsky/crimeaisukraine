@@ -101,19 +101,15 @@ const tcBlocked = telecomFindings.filter((f: any) => f.status === 'blocked');
 const tcNA = telecomFindings.filter((f: any) => f.status === 'n/a');
 const tcTotal = telecomFindings.length;
 
-// Infrastructure stack — visual split data
-const infraLayers = [
-  { layer: 'IP Geolocation', ua: 'MaxMind, GeoNames (UA)', ru: 'Post-2014 RU ISPs', uaPct: 70, ruPct: 30, icon: '🌐' },
-  { layer: 'CDN Routing', ua: 'Cloudflare: UA-43', ru: '', uaPct: 100, ruPct: 0, icon: '☁️' },
-  { layer: 'Geocoding', ua: 'OSM Nominatim: all cities UA', ru: '', uaPct: 100, ruPct: 0, icon: '📍' },
-  { layer: 'DNS / TLD', ua: '.crimea.ua active', ru: '.crimea.ru doesn\u2019t exist', uaPct: 80, ruPct: 20, icon: '🔗' },
-  { layer: 'Timezones', ua: 'zone.tab: UA only', ru: 'zone1970.tab: RU,UA', uaPct: 50, ruPct: 50, icon: '🕐' },
-  { layer: 'Phone Numbers', ua: '', ru: 'libphonenumber: +7-365 = RU', uaPct: 0, ruPct: 100, icon: '📞' },
-  { layer: 'Postal Codes', ua: '', ru: 'Russian Post: 295xxx', uaPct: 0, ruPct: 100, icon: '📮' },
-];
-const infraUaCount = infraLayers.filter(l => l.uaPct > 50).length;
-const infraRuCount = infraLayers.filter(l => l.ruPct > 50).length;
-const infraSplitCount = infraLayers.filter(l => l.uaPct > 0 && l.uaPct <= 50 && l.ruPct > 0 && l.ruPct <= 50).length;
+// Tech infrastructure — computed from actual findings
+const infraFindings = findings.filter((f: any) => f.category === 'tech_infrastructure');
+const iCorrect = infraFindings.filter((f: any) => f.status === 'correct');
+const iIncorrect = infraFindings.filter((f: any) => f.status === 'incorrect');
+const iAmbiguous = infraFindings.filter((f: any) => f.status === 'ambiguous');
+const iTotal = infraFindings.length;
+const iPctCorrect = iTotal > 0 ? Math.round(iCorrect.length / iTotal * 100) : 0;
+const iPctIncorrect = iTotal > 0 ? Math.round(iIncorrect.length / iTotal * 100) : 0;
+const iPctAmbiguous = iTotal > 0 ? Math.round(iAmbiguous.length / iTotal * 100) : 0;
 
 // Weather services — computed from actual data
 const weatherFindings = findings.filter((f: any) => f.category === 'weather');
@@ -710,49 +706,6 @@ const propagation = [
   </div>
 </section>
 
-<!-- Companies in Crimea -->
-{companiesSummary.total > 0 && (
-<section class="max-w-6xl mx-auto px-6 mb-20">
-  <div class="bg-gradient-to-r from-[#ef4444]/10 to-[#111827] border border-[#ef4444]/30 rounded-2xl p-8">
-    <h2 class="text-2xl font-bold mb-2">{lang === 'uk' ? 'Компанії в окупованому Криму' : 'Companies Operating in Occupied Crimea'}</h2>
-    <p class="text-[#94a3b8] mb-6">{lang === 'uk' ? `${companiesSummary.total} міжнародних компаній ідентифіковано. Штрафи за порушення санкцій: $968M (Binance), EUR 1.78M (Dieseko), $3.4M (Swedbank).` : `${companiesSummary.total} international entities identified. Sanctions fines: $968M (Binance), EUR 1.78M (Dieseko), $3.4M (Swedbank).`}</p>
-    <div class="grid md:grid-cols-3 gap-4 text-sm">
-      <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#1e293b]">
-        <div class="text-[#ef4444] font-bold mb-2">{lang === 'uk' ? 'Європейські порушники' : 'EU Sanctions Violators'}</div>
-        <ul class="space-y-1 text-[#94a3b8] text-xs">
-          <li>Metro AG (DE) — 2 supermarkets</li>
-          <li>Auchan (FR) — retail stores</li>
-          <li>Leroy Merlin (FR) — DIY stores</li>
-          <li>Siemens (DE) — EUR 111M turbines</li>
-          <li>DHL (DE) — courier services</li>
-          <li>7 Dutch firms — Kerch Bridge</li>
-        </ul>
-      </div>
-      <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#1e293b]">
-        <div class="text-[#f59e0b] font-bold mb-2">{lang === 'uk' ? 'Не санкціоновані (прогалини)' : 'NOT Sanctioned (Critical Gaps)'}</div>
-        <ul class="space-y-1 text-[#94a3b8] text-xs">
-          <li>Tricolor TV — satellite propaganda</li>
-          <li>K-Telecom — main mobile operator</li>
-          <li>RSCC — satellite broadcaster</li>
-          <li>1C Company — business software</li>
-          <li>GenBank — Crimea banking</li>
-        </ul>
-      </div>
-      <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#1e293b]">
-        <div class="text-[#8b5cf6] font-bold mb-2">{lang === 'uk' ? 'Штрафи за санкції' : 'Sanctions Fines'}</div>
-        <ul class="space-y-1 text-[#94a3b8] text-xs">
-          <li>Binance — $968M (OFAC)</li>
-          <li>Swedbank — $3.4M</li>
-          <li>Dieseko (NL) — EUR 1.78M</li>
-          <li>TradeStation — $1.1M</li>
-          <li>Siemens — 5 criminally charged</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-)}
-
 <!-- 2022 Bifurcation -->
 <section class="max-w-6xl mx-auto px-6 mb-20">
   <h2 class="text-2xl md:text-3xl font-bold mb-4">{t.bifurcationTitle}</h2>
@@ -773,57 +726,114 @@ const propagation = [
   </div>
 </section>
 
-<!-- Infrastructure Stack — Visual -->
+<!-- Tech Infrastructure — Data-driven -->
 <section id="infrastructure" class="max-w-6xl mx-auto px-6 mb-20">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.infraTitle}</h2>
     <p class="text-[#94a3b8] mb-8">{t.infraDesc}</p>
 
-    <!-- Summary cards -->
-    <div class="grid grid-cols-3 gap-3 mb-8">
-      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30 text-center">
-        <div class="text-3xl font-black text-[#0057b7]">{infraUaCount}</div>
-        <div class="text-xs text-[#94a3b8] mt-1">{t.infraLegal}</div>
-      </div>
-      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#f59e0b]/30 text-center">
-        <div class="text-3xl font-black text-[#f59e0b]">{infraSplitCount}</div>
-        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'Розщеплено' : 'Split'}</div>
-      </div>
-      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
-        <div class="text-3xl font-black text-[#ef4444]">{infraRuCount}</div>
-        <div class="text-xs text-[#94a3b8] mt-1">{t.infraOp}</div>
-      </div>
-    </div>
-
-    <!-- Split bars per layer -->
-    <div class="space-y-3">
-      {infraLayers.map((layer: any) => (
-        <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#1e293b]">
-          <div class="flex items-center justify-between mb-2">
-            <div class="flex items-center gap-2">
-              <span class="text-base">{layer.icon}</span>
-              <span class="text-sm font-medium text-white">{layer.layer}</span>
-            </div>
-            <div class="text-[10px] text-[#64748b]">
-              {layer.uaPct > 0 && layer.ruPct > 0 ? `${layer.uaPct}% UA / ${layer.ruPct}% RU` : layer.uaPct === 100 ? '100% UA' : '100% RU'}
-            </div>
-          </div>
-          <div class="flex h-4 rounded-full overflow-hidden bg-[#1e293b]">
-            {layer.uaPct > 0 && <div class="bg-[#0057b7] h-full transition-all" style={`width: ${layer.uaPct}%`}></div>}
-            {layer.ruPct > 0 && <div class="bg-[#ef4444] h-full transition-all" style={`width: ${layer.ruPct}%`}></div>}
-          </div>
-          <div class="flex justify-between mt-1.5 text-[10px] text-[#64748b]">
-            <span>{layer.ua || '\u2014'}</span>
-            <span>{layer.ru || '\u2014'}</span>
+    <!-- Donut + Stats (same pattern as other sections) -->
+    <div class="grid md:grid-cols-[240px_1fr] gap-8 mb-10">
+      <div class="flex flex-col items-center">
+        <div class="relative w-44 h-44">
+          <svg viewBox="0 0 36 36" class="w-full h-full -rotate-90">
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1e293b" stroke-width="3.8" />
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#22c55e" stroke-width="3.8"
+              stroke-dasharray={`${iPctCorrect} ${100 - iPctCorrect}`} stroke-dashoffset="0" />
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#ef4444" stroke-width="3.8"
+              stroke-dasharray={`${iPctIncorrect} ${100 - iPctIncorrect}`} stroke-dashoffset={`${-iPctCorrect}`} />
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f59e0b" stroke-width="3.8"
+              stroke-dasharray={`${iPctAmbiguous} ${100 - iPctAmbiguous}`} stroke-dashoffset={`${-(iPctCorrect + iPctIncorrect)}`} />
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <div class="text-3xl font-black text-white">{iTotal}</div>
+            <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'систем' : 'systems'}</div>
           </div>
         </div>
-      ))}
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-4 text-xs text-[#94a3b8] justify-center">
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>{iCorrect.length} {t.infraLegal}</span>
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>{iIncorrect.length} {t.infraOp}</span>
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>{iAmbiguous.length} {lang === 'uk' ? 'Розщеплено' : 'Split'}</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3">
+        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#22c55e]/30 text-center">
+          <div class="text-3xl font-black text-[#22c55e]">{iCorrect.length}</div>
+          <div class="text-xs text-[#94a3b8] mt-1">{t.infraLegal}</div>
+          <div class="text-[10px] text-[#64748b] mt-0.5">{iPctCorrect}%</div>
+        </div>
+        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
+          <div class="text-3xl font-black text-[#ef4444]">{iIncorrect.length}</div>
+          <div class="text-xs text-[#94a3b8] mt-1">{t.infraOp}</div>
+          <div class="text-[10px] text-[#64748b] mt-0.5">{iPctIncorrect}%</div>
+        </div>
+        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#f59e0b]/30 text-center">
+          <div class="text-3xl font-black text-[#f59e0b]">{iAmbiguous.length}</div>
+          <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'Розщеплено' : 'Split'}</div>
+          <div class="text-[10px] text-[#64748b] mt-0.5">{iPctAmbiguous}%</div>
+        </div>
+      </div>
     </div>
 
-    <!-- Legend -->
-    <div class="flex gap-6 mt-6 text-xs text-[#94a3b8]">
-      <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-[#0057b7]"></span>{t.infraLegal}</span>
-      <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-[#ef4444]"></span>{t.infraOp}</span>
+    <!-- Grouped listings -->
+    <div class="space-y-6">
+      <!-- Correct (Ukraine) -->
+      <div>
+        <h3 class="text-sm font-bold text-[#22c55e] uppercase tracking-wider mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>
+          {t.infraLegal} ({iCorrect.length})
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {iCorrect.map((f: any) => (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#22c55e]/20">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-[#22c55e] flex-shrink-0 text-xs">&#x2713;</span>
+                <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
+              </div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Ambiguous (Split) -->
+      <div>
+        <h3 class="text-sm font-bold text-[#f59e0b] uppercase tracking-wider mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>
+          {lang === 'uk' ? 'Розщеплена ідентичність' : 'Split Identity'} ({iAmbiguous.length})
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {iAmbiguous.map((f: any) => (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#f59e0b]/20">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-[#f59e0b] flex-shrink-0 text-xs">&#x26A0;</span>
+                <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
+              </div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Incorrect (Russia) -->
+      <div>
+        <h3 class="text-sm font-bold text-[#ef4444] uppercase tracking-wider mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>
+          {t.infraOp} ({iIncorrect.length})
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {iIncorrect.map((f: any) => (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#ef4444]/20">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-[#ef4444] flex-shrink-0 text-xs">&#x2717;</span>
+                <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
+              </div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 </section>
