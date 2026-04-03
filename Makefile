@@ -55,7 +55,18 @@ audit-media: ## GDELT media framing analysis
 audit-trends: ## Google Trends + Ngrams sovereignty framing
 	$(PYTHON) $(SCRIPTS)/check_trends.py
 
+audit-gdelt-framing: ## Scan GDELT for sovereignty framing (2010-2026)
+	$(PYTHON) $(SCRIPTS)/scan_gdelt_framing.py --start 2010
+
+audit-gdelt-quick: ## Quick GDELT framing scan (last 3 months)
+	$(PYTHON) $(SCRIPTS)/scan_gdelt_framing.py --quick
+
+audit-academic: ## Scan academic papers via OpenAlex + CrossRef (2010-present)
+	$(PYTHON) $(SCRIPTS)/scan_academic.py --start 2010
+
 audit-api: audit-platforms audit-map-services audit-ip audit-media audit-trends ## Run all API-based checks
+
+audit-framing: audit-gdelt-framing audit-academic ## Run all sovereignty framing scans
 
 # ─── Browser-based audit (needs Playwright + Chromium) ──
 
