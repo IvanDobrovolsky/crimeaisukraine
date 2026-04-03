@@ -9,7 +9,7 @@ interface Props {
 
 const {
   title,
-  description = "How do 81 digital platforms classify Crimea? We audited maps, data libraries, streaming, travel, shipping, finance, and infrastructure. Natural Earth assigns SOVEREIGNT=Russia, cascading to 30M+ weekly npm downloads.",
+  description = "154K media articles and 661 academic papers analyzed for Crimea sovereignty framing. Russian framing in academia accelerating to 57%. Fully automated, reproducible audit.",
   lang = 'en'
 } = Astro.props;
 
@@ -35,7 +35,7 @@ const ogImage = `${siteUrl}/og.png`;
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Crimea Is Ukraine — 81 platforms verified through automated testing. 125 more pending human review." />
+    <meta property="og:image:alt" content="Crimea Is Ukraine — 154K articles analyzed, 114 platforms audited. Automated digital sovereignty research." />
     <meta property="og:locale" content={lang === 'uk' ? 'uk_UA' : 'en_US'} />
     <meta property="og:site_name" content="Crimea Is Ukraine" />
 
@@ -44,7 +44,7 @@ const ogImage = `${siteUrl}/og.png`;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content="Crimea Is Ukraine — 81 platforms verified through automated testing. 125 more pending human review." />
+    <meta name="twitter:image:alt" content="Crimea Is Ukraine — automated digital sovereignty audit" />
 
     <!-- Canonical + Language alternates -->
     <link rel="canonical" href={lang === 'uk' ? `${siteUrl}/uk` : siteUrl} />

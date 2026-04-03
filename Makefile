@@ -105,6 +105,19 @@ site-dev: ## Start site dev server
 
 # ─── Utility ───────────────────────────────────────────
 
+export-hf: ## Export dataset to Hugging Face Hub (requires: pip install huggingface_hub)
+	@echo "Exporting datasets to Hugging Face..."
+	$(PYTHON) -c "\
+from huggingface_hub import HfApi; \
+api = HfApi(); \
+repo = 'IvanDobrovolsky/crimeaisukraine'; \
+api.create_repo(repo, repo_type='dataset', exist_ok=True); \
+api.upload_file(path_or_fileobj='$(DATA)/crimea_full.jsonl', path_in_repo='gdelt/crimea_2015_2026.jsonl', repo_id=repo, repo_type='dataset'); \
+api.upload_file(path_or_fileobj='$(DATA)/academic_framing_results.json', path_in_repo='academic/openalex_2010_2026.json', repo_id=repo, repo_type='dataset'); \
+api.upload_file(path_or_fileobj='$(SITE_DATA)/platforms.json', path_in_repo='platforms/platforms.json', repo_id=repo, repo_type='dataset'); \
+api.upload_file(path_or_fileobj='$(SITE_DATA)/manifest.json', path_in_repo='platforms/manifest.json', repo_id=repo, repo_type='dataset'); \
+print('Done: https://huggingface.co/datasets/' + repo)"
+
 clean: ## Remove generated data (keeps raw sources)
 	rm -f $(DATA)/map_services_results.json
 	rm -f $(DATA)/double_game_results.json

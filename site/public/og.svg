@@ -5,49 +5,45 @@
       <stop offset="50%" style="stop-color:#0f1629"/>
       <stop offset="100%" style="stop-color:#0a0e1a"/>
     </linearGradient>
-    <linearGradient id="flag" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#0057b7"/>
-      <stop offset="50%" style="stop-color:#0057b7"/>
-      <stop offset="50%" style="stop-color:#ffd700"/>
-      <stop offset="100%" style="stop-color:#ffd700"/>
-    </linearGradient>
   </defs>
 
   <rect width="1200" height="630" fill="url(#bg)"/>
 
-  <!-- Flag accent bar -->
-  <rect x="0" y="0" width="8" height="630" fill="url(#flag)"/>
+  <!-- Ukraine flag top bar -->
+  <rect x="0" y="0" width="1200" height="6" fill="#0057b7"/>
+  <rect x="0" y="6" width="1200" height="6" fill="#ffd700"/>
 
   <!-- Title -->
   <text x="80" y="180" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="72" fill="#0057b7">Crimea Is</text>
   <text x="80" y="270" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="72" fill="#ffd700">Ukraine</text>
 
   <!-- Subtitle -->
-  <text x="80" y="340" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="28" fill="#94a3b8">Digital Sovereignty Audit</text>
+  <text x="80" y="330" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="24" fill="#94a3b8">Automated Digital Sovereignty Audit</text>
 
-  <!-- Stats boxes -->
-  <rect x="80" y="400" width="180" height="90" rx="12" fill="#111827" stroke="#1e293b" stroke-width="1"/>
-  <text x="110" y="450" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="36" fill="#ffffff">121</text>
-  <text x="110" y="475" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="14" fill="#94a3b8">Platforms Audited</text>
+  <!-- Stats row -->
+  <rect x="80" y="380" width="200" height="80" rx="12" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="110" y="425" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="32" fill="#ffffff">154K</text>
+  <text x="110" y="448" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="13" fill="#94a3b8">Media Articles</text>
 
-  <rect x="280" y="400" width="180" height="90" rx="12" fill="#111827" stroke="#22c55e" stroke-width="1" stroke-opacity="0.3"/>
-  <text x="310" y="450" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="36" fill="#22c55e">35</text>
-  <text x="310" y="475" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="14" fill="#94a3b8">Correct (Ukraine)</text>
+  <rect x="300" y="380" width="200" height="80" rx="12" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="330" y="425" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="32" fill="#ffffff">661</text>
+  <text x="330" y="448" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="13" fill="#94a3b8">Academic Papers</text>
 
-  <rect x="480" y="400" width="180" height="90" rx="12" fill="#111827" stroke="#ef4444" stroke-width="1" stroke-opacity="0.3"/>
-  <text x="510" y="450" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="36" fill="#ef4444">20</text>
-  <text x="510" y="475" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="14" fill="#94a3b8">Incorrect (Russia)</text>
+  <rect x="520" y="380" width="200" height="80" rx="12" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="550" y="425" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="32" fill="#ffffff">114</text>
+  <text x="550" y="448" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="13" fill="#94a3b8">Platforms Audited</text>
 
-  <rect x="680" y="400" width="180" height="90" rx="12" fill="#111827" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.3"/>
-  <text x="710" y="450" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="36" fill="#f59e0b">48</text>
-  <text x="710" y="475" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="14" fill="#94a3b8">Ambiguous</text>
+  <!-- Key finding badge -->
+  <rect x="800" y="180" width="320" height="120" rx="16" fill="#111827" stroke="#ef4444" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="830" y="225" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="40" fill="#ef4444">57%</text>
+  <text x="830" y="255" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="15" fill="#94a3b8">Russian framing in academia</text>
+  <text x="830" y="278" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="13" fill="#64748b">accelerating, not declining (2025)</text>
 
-  <!-- URL -->
-  <text x="80" y="570" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="20" fill="#64748b">crimeaisukraine.org</text>
+  <!-- URL + Author -->
+  <text x="80" y="550" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="18" fill="#64748b">crimeaisukraine.org</text>
+  <text x="1120" y="550" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="16" fill="#64748b" text-anchor="end">Ivan Dobrovolskyi</text>
 
-  <!-- 30M badge -->
-  <rect x="880" y="160" width="240" height="100" rx="16" fill="#111827" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.3"/>
-  <text x="920" y="210" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="32" fill="#f59e0b">30.4M</text>
-  <text x="920" y="240" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="14" fill="#94a3b8">weekly npm downloads</text>
-  <text x="920" y="255" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="12" fill="#64748b">affected by one dataset</text>
+  <!-- Bottom flag bar -->
+  <rect x="0" y="618" width="1200" height="6" fill="#0057b7"/>
+  <rect x="0" y="624" width="1200" height="6" fill="#ffd700"/>
 </svg>
