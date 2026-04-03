@@ -101,15 +101,19 @@ const tcBlocked = telecomFindings.filter((f: any) => f.status === 'blocked');
 const tcNA = telecomFindings.filter((f: any) => f.status === 'n/a');
 const tcTotal = telecomFindings.length;
 
-const infraRows = [
-  ['IP Geolocation', 'MaxMind, GeoNames (UA)', 'Post-2014 RU ISPs \u2192 RU'],
-  ['CDN Routing', 'Cloudflare: UA-43 (~20% of web)', '\u2014'],
-  ['Geocoding', 'OSM Nominatim: all cities UA', '\u2014'],
-  ['DNS / TLD', '.crimea.ua active', '.crimea.ru doesn\u2019t exist'],
-  ['Timezones', 'zone.tab: UA only', 'zone1970.tab: RU,UA; UTC+3'],
-  ['Phone Numbers', '\u2014', 'libphonenumber: +7-365/978 = RU'],
-  ['Postal Codes', '\u2014', 'Russian Post: 295xxx = RU'],
+// Infrastructure stack — visual split data
+const infraLayers = [
+  { layer: 'IP Geolocation', ua: 'MaxMind, GeoNames (UA)', ru: 'Post-2014 RU ISPs', uaPct: 70, ruPct: 30, icon: '🌐' },
+  { layer: 'CDN Routing', ua: 'Cloudflare: UA-43', ru: '', uaPct: 100, ruPct: 0, icon: '☁️' },
+  { layer: 'Geocoding', ua: 'OSM Nominatim: all cities UA', ru: '', uaPct: 100, ruPct: 0, icon: '📍' },
+  { layer: 'DNS / TLD', ua: '.crimea.ua active', ru: '.crimea.ru doesn\u2019t exist', uaPct: 80, ruPct: 20, icon: '🔗' },
+  { layer: 'Timezones', ua: 'zone.tab: UA only', ru: 'zone1970.tab: RU,UA', uaPct: 50, ruPct: 50, icon: '🕐' },
+  { layer: 'Phone Numbers', ua: '', ru: 'libphonenumber: +7-365 = RU', uaPct: 0, ruPct: 100, icon: '📞' },
+  { layer: 'Postal Codes', ua: '', ru: 'Russian Post: 295xxx', uaPct: 0, ruPct: 100, icon: '📮' },
 ];
+const infraUaCount = infraLayers.filter(l => l.uaPct > 50).length;
+const infraRuCount = infraLayers.filter(l => l.ruPct > 50).length;
+const infraSplitCount = infraLayers.filter(l => l.uaPct > 0 && l.uaPct <= 50 && l.ruPct > 0 && l.ruPct <= 50).length;
 
 // Weather services — computed from actual data
 const weatherFindings = findings.filter((f: any) => f.category === 'weather');
@@ -769,29 +773,58 @@ const propagation = [
   </div>
 </section>
 
-<!-- Infrastructure Stack -->
-<section class="max-w-6xl mx-auto px-6 mb-20">
-  <h2 class="text-2xl md:text-3xl font-bold mb-4">{t.infraTitle}</h2>
-  <p class="text-[#94a3b8] max-w-3xl mb-8">{t.infraDesc}</p>
-  <div class="overflow-x-auto">
-    <table class="w-full text-sm">
-      <thead>
-        <tr class="text-left text-[#64748b] border-b border-[#1e293b]">
-          <th class="py-3 px-4">Layer</th>
-          <th class="py-3 px-4 text-[#22c55e]">{t.infraLegal}</th>
-          <th class="py-3 px-4 text-[#ef4444]">{t.infraOp}</th>
-        </tr>
-      </thead>
-      <tbody class="text-[#94a3b8]">
-        {infraRows.map(([layer, ua, ru]) => (
-          <tr class="border-b border-[#1e293b]/50 hover:bg-[#1e293b]/30">
-            <td class="py-3 px-4 font-medium text-white">{layer}</td>
-            <td class="py-3 px-4">{ua}</td>
-            <td class="py-3 px-4">{ru}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+<!-- Infrastructure Stack — Visual -->
+<section id="infrastructure" class="max-w-6xl mx-auto px-6 mb-20">
+  <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.infraTitle}</h2>
+    <p class="text-[#94a3b8] mb-8">{t.infraDesc}</p>
+
+    <!-- Summary cards -->
+    <div class="grid grid-cols-3 gap-3 mb-8">
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30 text-center">
+        <div class="text-3xl font-black text-[#0057b7]">{infraUaCount}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{t.infraLegal}</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#f59e0b]/30 text-center">
+        <div class="text-3xl font-black text-[#f59e0b]">{infraSplitCount}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'Розщеплено' : 'Split'}</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
+        <div class="text-3xl font-black text-[#ef4444]">{infraRuCount}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{t.infraOp}</div>
+      </div>
+    </div>
+
+    <!-- Split bars per layer -->
+    <div class="space-y-3">
+      {infraLayers.map((layer: any) => (
+        <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#1e293b]">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-base">{layer.icon}</span>
+              <span class="text-sm font-medium text-white">{layer.layer}</span>
+            </div>
+            <div class="text-[10px] text-[#64748b]">
+              {layer.uaPct > 0 && layer.ruPct > 0 ? `${layer.uaPct}% UA / ${layer.ruPct}% RU` : layer.uaPct === 100 ? '100% UA' : '100% RU'}
+            </div>
+          </div>
+          <div class="flex h-4 rounded-full overflow-hidden bg-[#1e293b]">
+            {layer.uaPct > 0 && <div class="bg-[#0057b7] h-full transition-all" style={`width: ${layer.uaPct}%`}></div>}
+            {layer.ruPct > 0 && <div class="bg-[#ef4444] h-full transition-all" style={`width: ${layer.ruPct}%`}></div>}
+          </div>
+          <div class="flex justify-between mt-1.5 text-[10px] text-[#64748b]">
+            <span>{layer.ua || '\u2014'}</span>
+            <span>{layer.ru || '\u2014'}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Legend -->
+    <div class="flex gap-6 mt-6 text-xs text-[#94a3b8]">
+      <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-[#0057b7]"></span>{t.infraLegal}</span>
+      <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-[#ef4444]"></span>{t.infraOp}</span>
+    </div>
   </div>
 </section>
 
@@ -955,37 +988,7 @@ const propagation = [
   </div>
 </section>
 
-<section id="findings" class="max-w-6xl mx-auto px-6 mb-20">
-  <h2 class="text-2xl md:text-3xl font-bold mb-8">{t.allFindings} ({total})</h2>
-  {categoryOrder.filter(cat => categories[cat]).map(cat => (
-    <div class="mb-10">
-      <h3 class="text-lg font-bold text-[#94a3b8] mb-3 flex items-center gap-2">
-        {(categoryLabels as any)[cat] || cat}
-        <span class="text-sm font-normal text-[#64748b]">({categories[cat].length})</span>
-      </h3>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm">
-          <thead>
-            <tr class="text-left text-[#64748b] border-b border-[#1e293b]">
-              <th class="py-2 px-3 w-8">{t.colStatus}</th>
-              <th class="py-2 px-3">{t.colPlatform}</th>
-              <th class="py-2 px-3 hidden md:table-cell">{t.colDetail}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {categories[cat].sort(sortByStatus).map((f: any) => (
-              <tr class="border-b border-[#1e293b]/30 hover:bg-[#1e293b]/20">
-                <td class="py-2 px-3">{f.status_icon}</td>
-                <td class="py-2 px-3 font-medium text-white whitespace-nowrap">{f.platform}</td>
-                <td class="py-2 px-3 text-[#64748b] hidden md:table-cell text-xs leading-relaxed">{getDetail(f)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  ))}
-</section>
+<!-- All findings are now shown in dedicated visual sections above -->
 
 <!-- About -->
 <section class="max-w-6xl mx-auto px-6 mb-20">
