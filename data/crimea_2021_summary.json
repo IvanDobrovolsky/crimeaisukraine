@@ -1,0 +1,23 @@
+{
+  "scan_date": "2026-04-03T16:47:01.889821+00:00",
+  "input": "data/crimea_2021_urls.json",
+  "total": 12482,
+  "processed": 12283,
+  "by_label": {
+    "fetch_failed": 6629,
+    "ukraine": 2516,
+    "russia": 163,
+    "no_signal": 2391,
+    "no_crimea_ref": 578,
+    "disputed": 6
+  },
+  "russia_framing_by_country": {
+    "Unknown": 74,
+    "Ukraine": 18,
+    "Russia": 69,
+    "Germany": 2,
+    "UK": 1,
+    "Belarus": 1,
+    "Qatar": 1
+  }
+}

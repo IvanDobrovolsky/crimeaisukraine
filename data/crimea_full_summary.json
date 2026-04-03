@@ -1,0 +1,37 @@
+{
+  "scan_date": "2026-04-03T22:21:03.301254+00:00",
+  "input": "data/crimea_2015_2026_urls.json",
+  "total": 153937,
+  "processed": 153905,
+  "by_label": {
+    "no_signal": 45708,
+    "ukraine": 33112,
+    "russia": 5194,
+    "fetch_failed": 54778,
+    "no_crimea_ref": 14756,
+    "disputed": 357
+  },
+  "russia_framing_by_country": {
+    "Russia": 883,
+    "Unknown": 3635,
+    "UK": 301,
+    "Ukraine": 179,
+    "Germany": 19,
+    "Italy": 59,
+    "Turkey": 5,
+    "Jordan": 12,
+    "France": 1,
+    "US": 13,
+    "India": 11,
+    "Australia": 44,
+    "New Zealand": 2,
+    "Ireland": 9,
+    "Canada": 5,
+    "Czechia": 3,
+    "UAE": 2,
+    "Japan": 1,
+    "Belarus": 5,
+    "Qatar": 4,
+    "Spain": 1
+  }
+}
