@@ -40,3 +40,5 @@ SPEC.md
 docs/media_framing_by_language.md
 docs/media.md
 docs/PAPER_STRUCTURE.md
+crimealens/templates/.cache/
+crimealens/.venv/
