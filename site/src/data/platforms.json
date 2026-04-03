@@ -3882,30 +3882,5 @@
         "origin": "rerouted"
       }
     }
-  },
-  "companies_summary": {
-    "total": 41,
-    "by_tier": {
-      "1": 11,
-      "2": 6,
-      "3": 23,
-      "Other": 1
-    },
-    "by_country": {
-      "Germany": 5,
-      "France": 3,
-      "Netherlands": 2,
-      "Global (Cayman Islands)": 1,
-      "Sweden/Latvia": 1,
-      "USA": 1,
-      "Cyprus/UK": 1,
-      "USA/UK": 1,
-      "Cyprus": 1,
-      "Greece": 1,
-      "Russia": 17,
-      "Russia (state)": 2,
-      "Russia (Crimea)": 4,
-      "China": 1
-    }
   }
 }
