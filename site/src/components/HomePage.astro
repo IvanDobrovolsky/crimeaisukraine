@@ -275,9 +275,9 @@ const propagation = [
 </section>
 
 <!-- Category Bar Chart -->
-<section class="max-w-6xl mx-auto px-6 mb-20">
+<section class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] rounded-2xl p-6 md:p-8 border border-[#1e293b]">
-    <h2 class="text-lg font-bold mb-6">{t.chartTitle} by Category</h2>
+    <h2 class="text-lg font-bold mb-6">{lang === 'uk' ? 'Результати за категорією' : 'Results by Category'}</h2>
     <div class="space-y-3">
       {catStats.map(cat => {
         const maxLen = Math.max(...catStats.map(c => c.total));
@@ -304,7 +304,7 @@ const propagation = [
 </section>
 
 <!-- Map Services — Expanded Section -->
-<section id="map-services" class="max-w-6xl mx-auto px-6 mb-20">
+<section id="map-services" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.mapTitle}</h2>
     <p class="text-[#94a3b8] mb-8">{t.mapDesc}</p>
@@ -384,7 +384,7 @@ const propagation = [
                 <span class="text-[#f59e0b] flex-shrink-0 text-xs">&#x26A0;</span>
                 <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
               </div>
-              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 200 ? f.detail.slice(0, 200) + '...' : f.detail}</div>
             </div>
           ))}
         </div>
@@ -420,7 +420,7 @@ const propagation = [
 </section>
 
 <!-- IP Geolocation — Expanded Section -->
-<section id="ip-geolocation" class="max-w-6xl mx-auto px-6 mb-20">
+<section id="ip-geolocation" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.ipTitle}</h2>
     <p class="text-[#94a3b8] mb-8">{t.ipDesc}</p>
@@ -572,7 +572,7 @@ const propagation = [
 </section>
 
 <!-- Internet & Telecommunications Section -->
-<section id="telecom" class="max-w-6xl mx-auto px-6 mb-20">
+<section id="telecom" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.telecomTitle}</h2>
     <p class="text-[#94a3b8] mb-8">{t.telecomDesc}</p>
@@ -613,7 +613,7 @@ const propagation = [
                 <span class="text-[#64748b] flex-shrink-0 text-xs">&#x2796;</span>
                 <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
               </div>
-              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 100 ? f.detail.slice(0, 100) + '...' : f.detail}</div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 200 ? f.detail.slice(0, 200) + '...' : f.detail}</div>
             </div>
           ))}
         </div>
@@ -634,7 +634,7 @@ const propagation = [
                 <span class="text-[#ef4444] flex-shrink-0 text-xs">&#x2717;</span>
                 <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
               </div>
-              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 200 ? f.detail.slice(0, 200) + '...' : f.detail}</div>
             </div>
           ))}
         </div>
@@ -655,7 +655,7 @@ const propagation = [
                 <span class="text-[#8b5cf6] flex-shrink-0 text-xs">&#x1F6AB;</span>
                 <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
               </div>
-              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 100 ? f.detail.slice(0, 100) + '...' : f.detail}</div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 200 ? f.detail.slice(0, 200) + '...' : f.detail}</div>
             </div>
           ))}
         </div>
@@ -676,7 +676,7 @@ const propagation = [
                 <span class="text-[#22c55e] flex-shrink-0 text-xs">&#x2713;</span>
                 <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
               </div>
-              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 200 ? f.detail.slice(0, 200) + '...' : f.detail}</div>
             </div>
           ))}
         </div>
@@ -694,7 +694,7 @@ const propagation = [
 </section>
 
 <!-- Tech Infrastructure — Data-driven -->
-<section id="infrastructure" class="max-w-6xl mx-auto px-6 mb-20">
+<section id="infrastructure" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.infraTitle}</h2>
     <p class="text-[#94a3b8] mb-8">{t.infraDesc}</p>
@@ -758,7 +758,7 @@ const propagation = [
                 <span class="text-[#22c55e] flex-shrink-0 text-xs">&#x2713;</span>
                 <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
               </div>
-              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 200 ? f.detail.slice(0, 200) + '...' : f.detail}</div>
             </div>
           ))}
         </div>
@@ -777,7 +777,7 @@ const propagation = [
                 <span class="text-[#f59e0b] flex-shrink-0 text-xs">&#x26A0;</span>
                 <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
               </div>
-              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 200 ? f.detail.slice(0, 200) + '...' : f.detail}</div>
             </div>
           ))}
         </div>
@@ -796,7 +796,7 @@ const propagation = [
                 <span class="text-[#ef4444] flex-shrink-0 text-xs">&#x2717;</span>
                 <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
               </div>
-              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 200 ? f.detail.slice(0, 200) + '...' : f.detail}</div>
             </div>
           ))}
         </div>
@@ -806,7 +806,7 @@ const propagation = [
 </section>
 
 <!-- Weather Services — Expanded Section -->
-<section id="weather" class="max-w-6xl mx-auto px-6 mb-20">
+<section id="weather" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.weatherTitle}</h2>
     <p class="text-[#94a3b8] mb-8">{t.weatherDesc}</p>
@@ -936,7 +936,7 @@ const propagation = [
 </section>
 
 <!-- Propagation Chain — The Root Cause -->
-<section class="max-w-6xl mx-auto px-6 mb-20">
+<section class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-gradient-to-r from-[#ef4444]/10 to-[#111827] border border-[#ef4444]/30 rounded-2xl p-8 md:p-12">
     <h2 class="text-2xl md:text-3xl font-bold mb-6">{t.rootCauseTitle}</h2>
     <div class="grid md:grid-cols-2 gap-8">
@@ -966,7 +966,7 @@ const propagation = [
 </section>
 
 <!-- 2022 Bifurcation -->
-<section class="max-w-6xl mx-auto px-6 mb-20">
+<section class="max-w-6xl mx-auto px-6 mb-12">
   <h2 class="text-2xl md:text-3xl font-bold mb-4">{t.bifurcationTitle}</h2>
   <p class="text-[#94a3b8] max-w-3xl mb-8">{t.bifurcationDesc}</p>
   <div class="grid md:grid-cols-2 gap-6">
@@ -985,38 +985,8 @@ const propagation = [
   </div>
 </section>
 
-<!-- Google Trends Chart -->
-<section class="max-w-6xl mx-auto px-6 mb-20">
-  <div class="bg-[#111827] rounded-2xl p-6 md:p-8 border border-[#1e293b]">
-    <h2 class="text-lg font-bold mb-2">{lang === 'uk' ? 'Пошукові тренди: «Крим — це Україна» vs «Крим — це Росія»' : 'Search Trends: "Crimea is Ukraine" vs "Crimea is Russia"'}</h2>
-    <p class="text-xs text-[#64748b] mb-4">{lang === 'uk' ? 'Google Trends, щомісячно, 2013–2026. 100 = пікова популярність.' : 'Google Trends, monthly, 2013–2026. 100 = peak popularity.'}</p>
-    <div class="relative" style="height: 200px;">
-      <canvas id="trends-chart" width="800" height="200" class="w-full h-full"></canvas>
-    </div>
-    <div class="flex gap-6 mt-3 text-xs">
-      <span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-[#0057b7] inline-block"></span>{lang === 'uk' ? '«Крим — це Україна»' : '"Crimea is Ukraine"'}</span>
-      <span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-[#ef4444] inline-block"></span>{lang === 'uk' ? '«Крим — це Росія»' : '"Crimea is Russia"'}</span>
-    </div>
-  </div>
-</section>
-
-<!-- Ngrams Chart -->
-<section class="max-w-6xl mx-auto px-6 mb-20">
-  <div class="bg-[#111827] rounded-2xl p-6 md:p-8 border border-[#1e293b]">
-    <h2 class="text-lg font-bold mb-2">{lang === 'uk' ? 'У книгах: «анексований Крим» vs «російський Крим»' : 'In Books: "Annexed Crimea" vs "Russian Crimea"'}</h2>
-    <p class="text-xs text-[#64748b] mb-4">{lang === 'uk' ? 'Google Ngrams (англомовні книги), 1950–2019. Автори використовують правильне формулювання.' : 'Google Ngrams (English books), 1950–2019. Authors use the correct framing.'}</p>
-    <div class="relative" style="height: 200px;">
-      <canvas id="ngrams-chart" width="800" height="200" class="w-full h-full"></canvas>
-    </div>
-    <div class="flex gap-6 mt-3 text-xs">
-      <span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-[#22c55e] inline-block"></span>{lang === 'uk' ? '«Анексований Крим»' : '"Annexed Crimea"'}</span>
-      <span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-[#ef4444] inline-block"></span>{lang === 'uk' ? '«Російський Крим»' : '"Russian Crimea"'}</span>
-    </div>
-  </div>
-</section>
-
 <!-- Sovereignty Framing Analysis -->
-<section id="framing" class="max-w-6xl mx-auto px-6 mb-20">
+<section id="framing" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingTitle}</h2>
     <p class="text-[#94a3b8] mb-8">{t.framingDesc}</p>
@@ -1156,7 +1126,7 @@ const propagation = [
 </section>
 
 <!-- SovereignMap Tool -->
-<section id="tool" class="max-w-6xl mx-auto px-6 mb-20">
+<section id="tool" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-gradient-to-r from-[#0057b7]/10 to-[#111827] border border-[#0057b7]/30 rounded-2xl p-8 md:p-10">
     <div class="grid md:grid-cols-[1fr_400px] gap-8">
       <div>
@@ -1192,7 +1162,7 @@ const propagation = [
 </section>
 
 <!-- Methodology -->
-<section class="max-w-6xl mx-auto px-6 mb-20">
+<section class="max-w-6xl mx-auto px-6 mb-12">
   <h2 class="text-2xl md:text-3xl font-bold mb-4">{t.methodTitle}</h2>
   <p class="text-[#94a3b8] max-w-3xl mb-8">{T.methodDesc}</p>
   <div class="grid md:grid-cols-3 gap-6">
@@ -1223,7 +1193,7 @@ const propagation = [
 <!-- All findings are now shown in dedicated visual sections above -->
 
 <!-- About -->
-<section class="max-w-6xl mx-auto px-6 mb-20">
+<section class="max-w-6xl mx-auto px-6 mb-12">
   <h2 class="text-2xl md:text-3xl font-bold mb-6">{t.aboutTitle}</h2>
   <div class="grid md:grid-cols-3 gap-6">
     <div class="bg-[#111827] rounded-xl p-6 border border-[#1e293b]">
@@ -1256,143 +1226,6 @@ const propagation = [
   </div>
 </footer>
 
-<script define:vars={{ trends }}>
-// Render Google Trends chart
-function drawTrends() {
-  const canvas = document.getElementById('trends-chart');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const data = trends.is_sovereignty || [];
-  if (!data.length) return;
-
-  const W = canvas.width = canvas.offsetWidth * 2;
-  const H = canvas.height = canvas.offsetHeight * 2;
-  ctx.scale(2, 2);
-  const w = W/2, h = H/2;
-  const pad = { t: 10, r: 10, b: 25, l: 30 };
-  const cw = w - pad.l - pad.r;
-  const ch = h - pad.t - pad.b;
-
-  ctx.fillStyle = '#111827';
-  ctx.fillRect(0, 0, w, h);
-
-  // Grid lines
-  ctx.strokeStyle = '#1e293b';
-  ctx.lineWidth = 0.5;
-  for (let i = 0; i <= 4; i++) {
-    const y = pad.t + ch * (1 - i/4);
-    ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(w - pad.r, y); ctx.stroke();
-    ctx.fillStyle = '#64748b'; ctx.font = '8px sans-serif';
-    ctx.fillText(String(i * 25), 2, y + 3);
-  }
-
-  // Year labels
-  const years = new Set();
-  data.forEach((d, i) => {
-    if (d.d && d.d.endsWith('-01')) {
-      const year = d.d.split('-')[0];
-      if (!years.has(year)) {
-        years.add(year);
-        const x = pad.l + (i / data.length) * cw;
-        ctx.fillStyle = '#64748b'; ctx.font = '8px sans-serif';
-        ctx.fillText(year, x - 10, h - 5);
-      }
-    }
-  });
-
-  // Draw lines
-  function drawLine(key, color) {
-    ctx.beginPath(); ctx.strokeStyle = color; ctx.lineWidth = 1.5;
-    data.forEach((d, i) => {
-      const x = pad.l + (i / data.length) * cw;
-      const y = pad.t + ch * (1 - (d[key] || 0) / 100);
-      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-    });
-    ctx.stroke();
-  }
-
-  drawLine('ua', '#0057b7');
-  drawLine('ru', '#ef4444');
-
-  // 2014 and 2022 markers
-  data.forEach((d, i) => {
-    if (d.d === '2014-03' || d.d === '2022-02') {
-      const x = pad.l + (i / data.length) * cw;
-      ctx.strokeStyle = '#ffd700'; ctx.lineWidth = 0.5; ctx.setLineDash([3,3]);
-      ctx.beginPath(); ctx.moveTo(x, pad.t); ctx.lineTo(x, pad.t + ch); ctx.stroke();
-      ctx.setLineDash([]);
-      ctx.fillStyle = '#ffd700'; ctx.font = '7px sans-serif';
-      ctx.fillText(d.d === '2014-03' ? '2014 annexation' : '2022 invasion', x + 2, pad.t + 10);
-    }
-  });
-}
-
-// Render Ngrams chart
-function drawNgrams() {
-  const canvas = document.getElementById('ngrams-chart');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const data = trends.framing || [];
-  if (!data.length) return;
-
-  const W = canvas.width = canvas.offsetWidth * 2;
-  const H = canvas.height = canvas.offsetHeight * 2;
-  ctx.scale(2, 2);
-  const w = W/2, h = H/2;
-  const pad = { t: 10, r: 10, b: 25, l: 30 };
-  const cw = w - pad.l - pad.r;
-  const ch = h - pad.t - pad.b;
-
-  ctx.fillStyle = '#111827';
-  ctx.fillRect(0, 0, w, h);
-
-  const maxVal = Math.max(...data.map(d => Math.max(d.annexed || 0, d.russian || 0)));
-
-  // Grid
-  ctx.strokeStyle = '#1e293b'; ctx.lineWidth = 0.5;
-  for (let i = 0; i <= 4; i++) {
-    const y = pad.t + ch * (1 - i/4);
-    ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(w - pad.r, y); ctx.stroke();
-  }
-
-  // Year labels
-  const years = new Set();
-  data.forEach((d, i) => {
-    if (d.d && d.d.endsWith('-01')) {
-      const year = d.d.split('-')[0];
-      if (!years.has(year) && parseInt(year) % 2 === 0) {
-        years.add(year);
-        const x = pad.l + (i / data.length) * cw;
-        ctx.fillStyle = '#64748b'; ctx.font = '8px sans-serif';
-        ctx.fillText(year, x - 10, h - 5);
-      }
-    }
-  });
-
-  function drawLine(key, color) {
-    ctx.beginPath(); ctx.strokeStyle = color; ctx.lineWidth = 1.5;
-    data.forEach((d, i) => {
-      const x = pad.l + (i / data.length) * cw;
-      const y = pad.t + ch * (1 - (d[key] || 0) / (maxVal || 1));
-      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-    });
-    ctx.stroke();
-  }
-
-  drawLine('annexed', '#22c55e');
-  drawLine('russian', '#ef4444');
-
-  // 2014 marker
-  data.forEach((d, i) => {
-    if (d.d === '2014-03') {
-      const x = pad.l + (i / data.length) * cw;
-      ctx.strokeStyle = '#ffd700'; ctx.lineWidth = 0.5; ctx.setLineDash([3,3]);
-      ctx.beginPath(); ctx.moveTo(x, pad.t); ctx.lineTo(x, pad.t + ch); ctx.stroke();
-      ctx.setLineDash([]);
-    }
-  });
-}
-
-setTimeout(() => { drawTrends(); drawNgrams(); }, 100);
-window.addEventListener('resize', () => { drawTrends(); drawNgrams(); });
+<script>
+// Charts removed — framing data now shown via static bars
 </script>
