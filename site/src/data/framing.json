@@ -1205,7 +1205,69 @@
         "confidence": 0.6
       }
     ],
-    "violators_total": 4132
+    "violators_total": 4132,
+    "by_year_classified": {
+      "2015": {
+        "ukraine": 2504,
+        "russia": 2171,
+        "disputed": 27
+      },
+      "2016": {
+        "ukraine": 3699,
+        "russia": 507,
+        "disputed": 39
+      },
+      "2017": {
+        "ukraine": 2595,
+        "russia": 294,
+        "disputed": 37
+      },
+      "2018": {
+        "ukraine": 5140,
+        "russia": 391,
+        "disputed": 106
+      },
+      "2019": {
+        "ukraine": 3289,
+        "russia": 292,
+        "disputed": 37
+      },
+      "2020": {
+        "ukraine": 1983,
+        "russia": 101,
+        "disputed": 6
+      },
+      "2021": {
+        "ukraine": 2609,
+        "russia": 165,
+        "disputed": 6
+      },
+      "2022": {
+        "ukraine": 2609,
+        "russia": 454,
+        "disputed": 32
+      },
+      "2023": {
+        "ukraine": 5893,
+        "russia": 467,
+        "disputed": 45
+      },
+      "2024": {
+        "ukraine": 1649,
+        "russia": 110,
+        "disputed": 6
+      },
+      "2025": {
+        "ukraine": 1118,
+        "russia": 229,
+        "disputed": 16
+      },
+      "2026": {
+        "ukraine": 24,
+        "russia": 13,
+        "disputed": 0
+      }
+    }
   },
   "academic": {
     "total_papers": 661,

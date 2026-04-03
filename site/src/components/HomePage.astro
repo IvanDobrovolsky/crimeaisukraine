@@ -156,8 +156,9 @@ const fd = framingData as any;
 const gdelt = fd.gdelt;
 const academic = fd.academic;
 
-// Media year-by-year for chart
-const mediaYears = Object.keys(gdelt.by_year).filter(y => y >= '2015').sort();
+// Media year-by-year for chart (use classified data)
+const gdeltByYear = (fd.gdelt as any).by_year_classified || {};
+const mediaYears = Object.keys(gdeltByYear).filter((y: string) => y >= '2015').sort();
 const acadYears = Object.keys(academic.by_year).filter(y => y >= '2012').sort();
 
 // Non-RU/UA media violators (filtered by default)
@@ -359,28 +360,58 @@ const propagation = [
       </div>
     </div>
 
-    <!-- Year-by-year trend (academic — the strongest signal) -->
+    <!-- Year-by-year trends: Media + Academic side by side -->
     <div class="mb-10">
       <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">{t.framingTrendTitle}</h3>
-      <div class="space-y-1.5">
-        {acadYears.map((year: string) => {
-          const d = (academic.by_year as any)[year] || {};
-          const ua = d.ukraine || 0;
-          const ru = d.russia || 0;
-          const total = ua + ru;
-          if (total === 0) return null;
-          const ruPct = Math.round(ru / total * 100);
-          return (
-            <div class="flex items-center gap-3">
-              <div class="w-10 text-xs text-[#64748b] text-right flex-shrink-0">{year}</div>
-              <div class="flex-1 flex h-5 rounded-full overflow-hidden bg-[#1e293b]">
-                <div class="bg-[#22c55e] h-full" style={`width: ${100 - ruPct}%`}></div>
-                <div class="bg-[#ef4444] h-full" style={`width: ${ruPct}%`}></div>
-              </div>
-              <div class="w-24 text-[10px] text-[#64748b] flex-shrink-0">UA={ua} RU={ru} ({ruPct}%)</div>
-            </div>
-          );
-        })}
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Media (GDELT) trend -->
+        <div>
+          <div class="text-xs text-[#64748b] mb-2 font-medium">{lang === 'uk' ? 'Медіа (GDELT, 2015-2026)' : 'Media (GDELT, 2015–2026)'}</div>
+          <div class="space-y-1">
+            {mediaYears.map((year: string) => {
+              const d = gdeltByYear[year] || {};
+              const ua = d.ukraine || 0;
+              const ru = d.russia || 0;
+              const total = ua + ru;
+              if (total === 0) return null;
+              const ruPct = Math.round(ru / total * 100);
+              return (
+                <div class="flex items-center gap-2">
+                  <div class="w-8 text-[10px] text-[#64748b] text-right flex-shrink-0">{year}</div>
+                  <div class="flex-1 flex h-4 rounded-full overflow-hidden bg-[#1e293b]">
+                    <div class="bg-[#22c55e] h-full" style={`width: ${100 - ruPct}%`}></div>
+                    <div class="bg-[#ef4444] h-full" style={`width: ${ruPct}%`}></div>
+                  </div>
+                  <div class="w-8 text-[10px] text-[#ef4444] flex-shrink-0 text-right">{ruPct}%</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <!-- Academic trend -->
+        <div>
+          <div class="text-xs text-[#64748b] mb-2 font-medium">{lang === 'uk' ? 'Академія (OpenAlex, 2012-2026)' : 'Academic (OpenAlex, 2012–2026)'}</div>
+          <div class="space-y-1">
+            {acadYears.map((year: string) => {
+              const d = (academic.by_year as any)[year] || {};
+              const ua = d.ukraine || 0;
+              const ru = d.russia || 0;
+              const total = ua + ru;
+              if (total === 0) return null;
+              const ruPct = Math.round(ru / total * 100);
+              return (
+                <div class="flex items-center gap-2">
+                  <div class="w-8 text-[10px] text-[#64748b] text-right flex-shrink-0">{year}</div>
+                  <div class="flex-1 flex h-4 rounded-full overflow-hidden bg-[#1e293b]">
+                    <div class="bg-[#22c55e] h-full" style={`width: ${100 - ruPct}%`}></div>
+                    <div class="bg-[#ef4444] h-full" style={`width: ${ruPct}%`}></div>
+                  </div>
+                  <div class="w-8 text-[10px] text-[#ef4444] flex-shrink-0 text-right">{ruPct}%</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
       <div class="flex gap-4 mt-3 text-xs text-[#94a3b8]">
         <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>{lang === 'uk' ? 'Україна' : 'Ukraine framing'}</span>
@@ -1163,34 +1194,81 @@ const propagation = [
 
 <!-- Methodology -->
 <section class="max-w-6xl mx-auto px-6 mb-12">
-  <h2 class="text-2xl md:text-3xl font-bold mb-4">{t.methodTitle}</h2>
-  <p class="text-[#94a3b8] max-w-3xl mb-8">{T.methodDesc}</p>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="bg-[#111827] rounded-xl p-6 border border-[#22c55e]/40">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="font-bold text-[#22c55e]">{t.tier1}</h3>
-        <span class="text-xs bg-[#22c55e]/20 text-[#22c55e] px-2 py-1 rounded-full font-medium">{T.tier1count}</span>
+  <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.methodTitle}</h2>
+    <p class="text-[#94a3b8] mb-8">{T.methodDesc}</p>
+
+    <!-- Three methods -->
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <div class="bg-[#0a0e1a] rounded-xl p-5 border border-[#22c55e]/30">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="font-bold text-[#22c55e] text-sm">{t.tier1}</h3>
+          <span class="text-xs bg-[#22c55e]/20 text-[#22c55e] px-2 py-0.5 rounded-full">{T.tier1count}</span>
+        </div>
+        <p class="text-xs text-[#94a3b8]">{T.tier1desc}</p>
       </div>
-      <p class="text-sm text-[#94a3b8]">{T.tier1desc}</p>
+      <div class="bg-[#0a0e1a] rounded-xl p-5 border border-[#0057b7]/30">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="font-bold text-[#0057b7] text-sm">{t.tier2}</h3>
+          <span class="text-xs bg-[#0057b7]/20 text-[#0057b7] px-2 py-0.5 rounded-full">{T.tier2count}</span>
+        </div>
+        <p class="text-xs text-[#94a3b8]">{T.tier2desc}</p>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-5 border border-[#64748b]/30">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="font-bold text-[#94a3b8] text-sm">{t.tier3}</h3>
+          <span class="text-xs bg-[#64748b]/20 text-[#94a3b8] px-2 py-0.5 rounded-full">{T.tier3count}</span>
+        </div>
+        <p class="text-xs text-[#94a3b8]">{T.tier3desc}</p>
+      </div>
     </div>
-    <div class="bg-[#111827] rounded-xl p-6 border border-[#f59e0b]/40">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="font-bold text-[#f59e0b]">{t.tier2}</h3>
-        <span class="text-xs bg-[#f59e0b]/20 text-[#f59e0b] px-2 py-1 rounded-full font-medium">{T.tier2count}</span>
+
+    <!-- Sovereignty Classifier -->
+    <div class="mb-8">
+      <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-3">
+        {lang === 'uk' ? 'Класифікатор суверенітету' : 'Sovereignty Classifier'}
+      </h3>
+      <div class="bg-[#0a0e1a] rounded-xl p-5 border border-[#1e293b]">
+        <p class="text-xs text-[#94a3b8] mb-3">
+          {lang === 'uk'
+            ? 'Класифікатор на основі правил з 81 сигналом на 3 мовах (англійська, російська, українська). Виявляє мітки місцезнаходження, адміністративні назви, мову фреймінгу та структурні сигнали. Жодних ML-моделей — чисте зіставлення шаблонів.'
+            : 'Rule-based classifier with 81 sovereignty signals across 3 languages (English, Russian, Ukrainian). Detects location labels, administrative names, framing language, and structural signals. No ML models — pure pattern matching.'}
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+          <div class="bg-[#111827] rounded-lg p-2">
+            <div class="text-lg font-bold text-white">81</div>
+            <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'сигналів' : 'signals'}</div>
+          </div>
+          <div class="bg-[#111827] rounded-lg p-2">
+            <div class="text-lg font-bold text-white">3</div>
+            <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'мови' : 'languages'}</div>
+          </div>
+          <div class="bg-[#111827] rounded-lg p-2">
+            <div class="text-lg font-bold text-white">18/18</div>
+            <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'тестів' : 'tests pass'}</div>
+          </div>
+          <div class="bg-[#111827] rounded-lg p-2">
+            <div class="text-lg font-bold text-white">0</div>
+            <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'ML моделей' : 'ML models'}</div>
+          </div>
+        </div>
       </div>
-      <p class="text-sm text-[#94a3b8]">{T.tier2desc}</p>
     </div>
-    <div class="bg-[#111827] rounded-xl p-6 border border-[#64748b]/40">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="font-bold text-[#94a3b8]">{t.tier3}</h3>
-        <span class="text-xs bg-[#64748b]/20 text-[#94a3b8] px-2 py-1 rounded-full font-medium">{T.tier3count}</span>
-      </div>
-      <p class="text-sm text-[#94a3b8]">{T.tier3desc}</p>
+
+    <!-- Known Limitations -->
+    <div>
+      <h3 class="text-sm font-bold text-[#f59e0b] uppercase tracking-wider mb-3">
+        {lang === 'uk' ? 'Відомі обмеження' : 'Known Limitations'}
+      </h3>
+      <ul class="space-y-1.5 text-xs text-[#94a3b8]">
+        <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">1.</span>{lang === 'uk' ? 'Виявлення заперечень: «відмовляється визнати Крим частиною Росії» хибно позначається як російський фреймінг. Оцінка хибнопозитивних: ~5%.' : 'Negation detection: "refuses to recognize Crimea as part of Russia" is falsely flagged as Russian framing. Estimated false positive rate: ~5%.'}</li>
+        <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">2.</span>{lang === 'uk' ? 'Цитування vs схвалення: медіа, що цитують російський наратив для критики, класифікуються як «російський фреймінг». Контекстне розуміння обмежене.' : 'Quotation vs endorsement: media quoting Russian narrative for criticism is classified as "Russian framing." Context understanding is limited.'}</li>
+        <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">3.</span>{lang === 'uk' ? 'GDELT починається з 2015 (v2). Медіадані 2010-2014 недоступні через цей API.' : 'GDELT starts at 2015 (v2). Media data for 2010-2014 is not available through this API.'}</li>
+        <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">4.</span>{lang === 'uk' ? 'Мертві посилання: 53% URL-адрес GDELT 2021 року повертають помилки. Старіші роки мають вищий показник.' : 'Dead links: 53% of 2021 GDELT URLs return errors. Older years have higher rates.'}</li>
+      </ul>
     </div>
   </div>
 </section>
-
-<!-- All findings are now shown in dedicated visual sections above -->
 
 <!-- About -->
 <section class="max-w-6xl mx-auto px-6 mb-12">
