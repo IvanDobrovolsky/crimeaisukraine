@@ -60,8 +60,8 @@ findings.forEach((f: any) => {
 
 const categoryOrder = [
   'data_visualization', 'open_source', 'map_service', 'tech_infrastructure',
-  'weather', 'reference', 'travel', 'ip_geolocation', 'social_media',
-  'gaming', 'search_engine', 'sports', 'telecom'
+  'weather', 'reference', 'travel', 'ip_geolocation',
+  'search_engine', 'sports', 'telecom'
 ];
 
 const statusOrder = { correct: 0, incorrect: 1, ambiguous: 2, blocked: 3, 'n/a': 4 } as Record<string, number>;
@@ -190,16 +190,7 @@ const propagation = [
     </h1>
 
     <p class="text-xl md:text-2xl text-[#94a3b8] max-w-3xl mb-4" set:html={T.heroSub} />
-    <p class="text-lg text-[#64748b] max-w-3xl mb-10" set:html={T.heroDesc} />
-
-    <div class="flex flex-wrap gap-4">
-      <a href="#findings" class="bg-[#0057b7] hover:bg-[#0057b7]/80 text-white font-semibold px-6 py-3 rounded-lg transition">
-        {t.viewFindings}
-      </a>
-      <a href="https://github.com/IvanDobrovolsky/crimeaisukraine" target="_blank" class="border border-[#334155] hover:border-[#94a3b8] text-[#94a3b8] font-semibold px-6 py-3 rounded-lg transition">
-        {t.github}
-      </a>
-    </div>
+    <p class="text-lg text-[#64748b] max-w-3xl" set:html={T.heroDesc} />
   </div>
 </header>
 
@@ -1096,10 +1087,8 @@ const propagation = [
       </p>
       <p class="text-xs text-[#64748b] mt-1">{t.footerRole}</p>
     </div>
-    <div class="flex flex-wrap gap-4 text-sm text-[#64748b]">
-      <a href="https://github.com/IvanDobrovolsky/crimeaisukraine" class="hover:text-white transition">{t.github}</a>
-      <span class="hidden md:inline">&middot;</span>
-      <span>{t.footerData}</span>
+    <div class="text-sm text-[#64748b]">
+      <span>{T.footerData}</span>
     </div>
   </div>
 </footer>
