@@ -1,0 +1,733 @@
+Academic Publication Sovereignty Scanner
+Source: openalex | Period: 2010-present
+============================================================
+
+Query: Crimea sovereignty
+  ✅ [ukraine ] (2026) Türkiye's Policies Regarding the Annexation of Crimea (2014): Bal
+  ✅ [ukraine ] (2026) Postcolonial Struggles and Symbolic Capital: Ukrainian Political 
+  ✅ [ukraine ] (2026) Geopolitical Crises and Consensus in the European Parliament: Ini
+  ❌ [russia  ] (2026) People's diplomacy as a way to mutual understanding during armed 
+  ✅ [ukraine ] (2026) International Sanctions and Economic Restructuring: Modelling the
+  ✅ [ukraine ] (2026) THE UKRAINIAN STATE UNDER PRESSURE: A CLASH OF INTERESTS BETWEEN 
+  ✅ [ukraine ] (2026) Правовий статус Представника Президента України в Автономній Респ
+  ✅ [ukraine ] (2026) Poland’s securitization of Russian threat: a case study from anne
+  ✅ [ukraine ] (2026) Language policy in the temporarily occupied territories of Ukrain
+  ✅ [ukraine ] (2025) Legal status of the Representative of the President of Ukraine in
+  ✅ [ukraine ] (2025) The problem of de-occupation and Ukraine’s international obligati
+  ✅ [ukraine ] (2025) THEORIES OF DEMOCRATIC CONTROL OF ARMED FORCES AND THEIR APPLICAT
+  ✅ [ukraine ] (2025) STRENGTHENING THE EUROPEAN UNION’S FOREIGN POLICY AGENDA IN THE F
+  ✅ [ukraine ] (2025) Public sources
+  ✅ [ukraine ] (2025) Public sources
+  ✅ [ukraine ] (2025) Правове регулювання взаємодії Представника Президента України з В
+  ✅ [ukraine ] (2025) Crimea and Eastern Ukraine: Values, Security, and Business
+  ✅ [ukraine ] (2025) International Sanctions Against the Russian Federation Imposed Du
+  ✅ [ukraine ] (2025) 179“Novorossiya” in Russian spatial imaginaries from Catherine II
+  ✅ [ukraine ] (2025) The Russia-Ukraine War in the Context of Nato’s Expansion Policy 
+  ✅ [ukraine ] (2025) From Realpolitik to ‘Digitalpolitik'
+  ✅ [ukraine ] (2025) Introduction
+  ✅ [ukraine ] (2025) Hybrid Warfare Case Study: Syria Civil War, 2011 And Annexation o
+  ✅ [ukraine ] (2025) Producing Feminist Discourses in the Debris of Destruction: Maria
+  ✅ [ukraine ] (2025) The Impact of Security Perceptions on Russia’s Economic Developme
+  ✅ [ukraine ] (2025) The Russian Resilience Against Sanctions: The Roles of Proactive 
+  ✅ [ukraine ] (2025) The Media’s Role in Preparing Russian Society for War with the We
+  ✅ [ukraine ] (2025) The Role of International Actors in the Reintegration of Temporar
+  ✅ [ukraine ] (2025) The Russian-Ukrainian war; it’s causes, background and effect
+  ✅ [ukraine ] (2025) Bread as the Basis of Ensuring Human Life and a Symbol of Indomit
+  ✅ [ukraine ] (2025) Disrupting the Narrative: Ukrainian Agency in Resisting Russia an
+  ✅ [ukraine ] (2025) TRANSFORMATION OF THE RELIGIOUS LANDSCAPE OF UKRAINE UNDER THE WA
+  ✅ [ukraine ] (2025) Memory of Forced Displacements in the Discourse and Coping Strate
+  ✅ [ukraine ] (2025) So Ashamed Not to Know “Our” History
+  ✅ [ukraine ] (2025) FOREIGN POLICY OF EUROPEAN COUNTRIES AS A FACTOR IN SHAPING A NEW
+  ✅ [ukraine ] (2025) Partnerskapet som förblivit partnerskap : en teoriprövande tvåfal
+  ✅ [ukraine ] (2025) Sovereignty, self-determination and the contending logics of terr
+  ✅ [ukraine ] (2025) Defense, Deterrence, Defiance: Explaining Eastern Europe's Respon
+  ✅ [ukraine ] (2025) The evolution of the representation of the crimean tatar people i
+  ✅ [ukraine ] (2024) “Why Nations Fight?”: An Analysis of the Causes of the Russian Fe
+  ✅ [ukraine ] (2024) UATV: Ukraine’s Voice on the Information Battlefield
+  ✅ [ukraine ] (2024) A study of the factors of the war between Russia and Ukraine from
+  ✅ [ukraine ] (2024) Chapter 6 Shia Muslims of Ukraine during the Russian invasion
+  ✅ [ukraine ] (2024) Strategies and Plans for De-occupying Crimea: Maritime Policy’s L
+  ✅ [ukraine ] (2024) The Russian invasion of Ukraine and changes in MEPs’ conceptions 
+  ✅ [ukraine ] (2024) Krimska oblast kao uzrok nestabilnosti i sukoba između Ukrajine i
+  ✅ [ukraine ] (2024) Brazylia wobec agresji Federacji Rosyjskiej na Ukrainę
+  ✅ [ukraine ] (2024) From Conflict to Stability: Intersecting Regional and Euro-Atlant
+  ❌ [russia  ] (2024) Участие Краснодарского края в процессах интеграции Республики Кры
+  ✅ [ukraine ] (2024) Reshaping the Baltic Identity: Russian Soft Power and the Securit
+  ✅ [ukraine ] (2024) Evolution of Baltic Security: Analysis of Threats and Strategic R
+  ✅ [ukraine ] (2024) Bloodless but deadly : Information warfare in Russian military sc
+  ✅ [ukraine ] (2024) How War Is Rebordering Ukraine
+  ✅ [ukraine ] (2024) Disinformation campaign of the Russian Federation during the anne
+  ✅ [ukraine ] (2024) Eastern Europe Conflicts: Does Russia Occupies Ukraine?
+  ✅ [ukraine ] (2024) The security and deterrence policy of the Baltic states in 2014-2
+  ✅ [ukraine ] (2024) Implications of EU Economic and Financial Sanctions against Russi
+  ✅ [ukraine ] (2024) Implications Of Economic Sanctions On Potential Crude Oil And Nat
+  ✅ [ukraine ] (2024) JOHN MEARSHEIMER’S REALISM AND THE UKRAINIAN CRISIS
+  ✅ [ukraine ] (2024) Reimagining NATO after Crimea: Defender of the rule-based order a
+  ✅ [ukraine ] (2024) PELANGGARAN PRINSIP-PRINSIP PIAGAM PBB 1945 DALAM SERANGAN MILITE
+  ✅ [ukraine ] (2024) The Annexation of Crimea and Türkiye's Balancing Role in the Russ
+  ✅ [ukraine ] (2024) RUSYA’DA DEMOKRASİ: 2020 ANAYASA REFERANDUMU VE ABD’NİN PUTİN ELE
+  ✅ [ukraine ] (2024) Rethinking change in Japan's security policy: punctuated equilibr
+  ✅ [ukraine ] (2024) From the 2014 Annexation of Crimea to the 2022 Russian War on Ukr
+  ✅ [ukraine ] (2024) Prisoners of Impunity: What the Global Community Should Know abou
+  ✅ [ukraine ] (2024) From the Arctic to the Pacific: The Emergence of New Strategic Pa
+  ✅ [ukraine ] (2024) The 2014 Crimean Crisis: Collective Self-Determination, Territori
+  ✅ [ukraine ] (2024) Participation of Crimean Tatars in the political life of Ukraine 
+  ✅ [ukraine ] (2024) Kaliningrad Oblast 2024: Russia's vessel of havoc on the Baltic S
+  ✅ [ukraine ] (2024) Political Participation of the Crimean Tatars – the Indigenous Pe
+  ✅ [ukraine ] (2024) PROSPECTS AND CHALLENGES OF THE REINTEGRATION OF THE AUTONOMOUS R
+  ✅ [ukraine ] (2024) A POSTAGE STAMP AS AN ELEMENT OF THE HYBRID WAR OF RUSSIA AGAINST
+  ✅ [ukraine ] (2024) UKRAINIAN DIPLOMACY: FROM INDEPENDENCE TO MODERN CHALLENGES
+  ✅ [ukraine ] (2024) Neutral, Neutered or Pacifist? Can Ireland’s Model of Neutrality 
+  ✅ [ukraine ] (2024) NATO’s Warfighting Capstone Concept: How Able to Anticipate the C
+  ✅ [ukraine ] (2023) Diaspora Mobilization and Identity Construction of Ukrainian Immi
+  ✅ [ukraine ] (2023) THE WAR BETWEEN UKRAINE AND RUSSIA AS A HISTORICAL AND CIVILIZATI
+  ✅ [ukraine ] (2023) The Position of Japan and South Korea Regarding the Russian-Ukrai
+  ✅ [ukraine ] (2023) EU Solidarity in the Face of External Security Threats: The examp
+  ✅ [ukraine ] (2023) Exorbitant Privilege of Nuclear-weapon States in a Multipolar Wor
+  ✅ [ukraine ] (2023) The future of Russian-Ukrainian relations
+  ✅ [ukraine ] (2023) Dampak Eskalasi Konflik Rusia-Ukraina terhadap Keamanan Nasional 
+  ✅ [ukraine ] (2023) Kin majorities: identity and citizenship in Crimea and Moldova
+  ✅ [ukraine ] (2023) New Generation Leadership in Shaping EU Foreign Policy in the Fac
+  ✅ [ukraine ] (2023) Grain, Coal, and Gas. Ukraine’s Economy since the Eighteenth Cent
+  ✅ [ukraine ] (2023) Scientific work of O.V. Zadoroznіy on the issue of the annexation
+  ✅ [ukraine ] (2023) Constructing Nazis on Political Demand: Agenda-Setting and Framin
+  ✅ [ukraine ] (2023) The EU use of restrictive measures as a response to the War on Uk
+  ✅ [ukraine ] (2023) A Look at the Crimean Declaration of Independence through the Len
+  ✅ [ukraine ] (2023) Invoking Article 73 TRIPS in good faith: no recourse to ‘security
+  ✅ [ukraine ] (2023) Hooked on a Feeling: Russia's Annexation of Crimea Through the Le
+  ✅ [ukraine ] (2023) Appraising war's impacts on neurosurgical delivery in Ukraine
+  ✅ [ukraine ] (2023) The Case of the Austrian Radical Right and Russia During the War 
+  ✅ [ukraine ] (2023) Letter: Appraising War’s Impacts On Neurosurgical Delivery In Ukr
+  ✅ [ukraine ] (2023) СТРАТЕГІЧНІ ОРІЄНТИРИ РОЗВИТКУ ЕКОНОМІКИ В УМОВАХ ГЛОБАЛЬНИХ ВИКЛ
+  ✅ [ukraine ] (2023) WHY DID RUSSIA INVADE UKRAINE? HISTORICAL INSIGHTS AND CONFLICT A
+  ✅ [ukraine ] (2023) States and Their Organs
+  ✅ [ukraine ] (2023) RUSSIAN-UKRAINIAN WAR OF 2022 : HISTORICAL ORIGINS OF TRAGEDY AND
+  ✅ [ukraine ] (2023) One year of Ukraine-Russia conflict: Assessing the causes, impact
+  ✅ [ukraine ] (2023) English Mass-Media Discourse Around the Political Events in Ukrai
+  ✅ [ukraine ] (2023) Security in Central and Eastern Europe in a period of strategic s
+  ✅ [ukraine ] (2023) Legal Aspects of Creating a Special International Tribunal for th
+  ✅ [ukraine ] (2023) The foreign policy strategy of Russia towards the Baltic states i
+  ✅ [ukraine ] (2023) Murky Tides: Improving NATO's Defensive Posture in the Black Sea 
+  ✅ [ukraine ] (2023) Prehodnocovanie strategickej suverenity Európskej únie po vypuknu
+  ✅ [ukraine ] (2023) THE PROBLEM OF THE DE-OCCUPATION OF CRIMEA IN TURKISH-UKRAINIAN R
+  ✅ [ukraine ] (2023) PUTIN’S WAR AGAINST UKRAINE FROM THE HYBRID AGGRESSION TO FULL-SC
+  ✅ [ukraine ] (2023) A Shift in IR Approach after Ukraine War: Remilitarization of Eur
+  ✅ [ukraine ] (2023) The Ukrainian crisis and the question of sovereignty and territor
+
+Query: Crimea annexed Ukraine
+  ✅ [ukraine ] (2026) The Rise and Fall of ‘Hybrid Warfare’
+  ✅ [ukraine ] (2026) Diasporic group boundaries and solidarity in the making: collecti
+  ✅ [ukraine ] (2026) Poland’s securitization of Russian threat: a case study from anne
+  ✅ [ukraine ] (2025) Russia’s Desire for a Cordon Sanitaire
+  ✅ [ukraine ] (2025) The Border Problem in Ukrainian-Russian Relations: History and Pr
+  ✅ [ukraine ] (2025) Guarding Against the Future
+  ✅ [ukraine ] (2025) Another Brick in the (Russian) Wall: Graffiti Propaganda in Serbi
+  ✅ [ukraine ] (2025) Deutscher Umgang mit Produkten aus israelischen Siedlungen in Pal
+  ✅ [ukraine ] (2025) THE CONCEPT OF «ENEMY» IN THE NOVEL ANDRIY KURKOV᾽S «GRAY BEES»
+  ✅ [ukraine ] (2024) “My War” as a Means of Preserving the Individual and Collective M
+  ✅ [ukraine ] (2024) Straits, Bridges, and Canals: The Black Sea Region and Russo-Ukra
+  ✅ [ukraine ] (2024) Supporting the War in Ukraine Compared to the Annexation of Crime
+  ✅ [ukraine ] (2024) &amp;lsquo;Ukraine&amp;rsquo;s Cause is Ours!&amp;rsquo; Diaspora
+  ✅ [ukraine ] (2024) Ukrainian Students in Poland: Attitudes Towards Language, Identit
+  ✅ [ukraine ] (2024) The Communicative Transformation of the Image of Russia in the Us
+  ✅ [ukraine ] (2024) Cultural Diplomacy and Sanctions as Foreign Policy Instruments du
+  ✅ [ukraine ] (2024) INDIA’S POLICIES IN THE RUSSIAN-UKRAINIAN CRISIS: ASSESSING NEW T
+  ✅ [ukraine ] (2024) ВІДНОВЛЕННЯ ПУБЛІЧНОЇ ВЛАДИ НА ТИМЧАСОВО ОКУПОВАНИХ ТЕРИТОРІЯХ АВ
+  ✅ [ukraine ] (2024) Commentary
+  ✅ [ukraine ] (2024) Faces Behind the Masks in Times of War
+  ✅ [ukraine ] (2024) The A2/AD (Anti Access/Area Denial) Concept – Between Theory and 
+  ❌ [russia  ] (2024) Ukraine war: ten years after Putin annexed Crimea, Russia’s grip 
+  ✅ [ukraine ] (2024) Casualties of border changes: evidence from nighttime lights and 
+  ✅ [ukraine ] (2024) Responding to Fait Accompli: Lessons from Crimea
+  ✅ [ukraine ] (2024) RUSYA’DA DEMOKRASİ: 2020 ANAYASA REFERANDUMU VE ABD’NİN PUTİN ELE
+  ✅ [ukraine ] (2024) Ukraine’s Strategic Interactions with the EU and Russia during th
+  ✅ [ukraine ] (2024) Ethnonationalism or a Financial-Criminal Incentive Structure? Exp
+  ✅ [ukraine ] (2024) EU actorness in a mirror: the war in Ukraine
+  ✅ [ukraine ] (2024) EU ACTORNESS IN A MIRROR: THE WAR IN UKRAINE
+  ✅ [ukraine ] (2024) Introduction: The Massacre That Changed Ukraine and the World
+  ✅ [ukraine ] (2024) Kaliningrad Oblast 2024: Russia's vessel of havoc on the Baltic S
+  ✅ [ukraine ] (2024) Exploring NATO's Impact on the War in Ukraine: An Investigation i
+  ✅ [ukraine ] (2023) SHAPING NARRATIVES IN THE HYBRID WAR: THE CONCEPT OF “CRIMEA” IN 
+  ✅ [ukraine ] (2023) Russian policy of discrimination and assimilation regarding ethni
+  ✅ [ukraine ] (2023) Diasporic group boundaries and solidarity in the making: collecti
+  ✅ [ukraine ] (2023) The Concept of the “Russkiy Mir”: History of the Concept and Ukra
+  ✅ [ukraine ] (2023) Sanctions and Countersanctions
+  ✅ [ukraine ] (2023) Museums as Humanitarian and Spiritual Help for Ukrainians and Cri
+  ✅ [ukraine ] (2023) The Maidan Massacre Trial and Investigation Revelations: Implicat
+  ✅ [ukraine ] (2023) Housing and integration of internally displaced persons: The case
+  ✅ [ukraine ] (2023) GRUNDLAGEN DER MODERNEN WISSENSCHAFTLICHEN FORSCHUNG
+  ✅ [ukraine ] (2023) UNBALANCED ENERGY SYSTEM OF UKRAINE AS AN ISSUE OF ENERGY SECURIT
+  ✅ [ukraine ] (2023) Western Sanctions Against Russia's Energy Sector and Russia's Res
+  ✅ [ukraine ] (2023) Fake News and Content Manipulation Under Russian Information Aggr
+  ✅ [ukraine ] (2023) RESOURCE ASPECTS OF SPORTS TOURISM DEVELOPMENT IN UKRAINE IN THE 
+  ✅ [ukraine ] (2023) THE IMPACT OF THE ILLEGAL RUSSIAN ANNEXATION OF CRIMEA ON THE RIG
+  ✅ [ukraine ] (2023) Ieguldījumu aizsardzība okupētajās un kara postītajās teritorijās
+  ✅ [ukraine ] (2023) THE RIGHT TO EDUCATION OF THE INDIGENOUS PEOPLES OF UKRAINE IN TH
+  ✅ [ukraine ] (2023) Internally Displaced Persons in Ukraine: Socio-Economic Situation
+  ✅ [ukraine ] (2023) The 2014 Russian Invasion of Crimea: Identity and Geopolitics
+  ✅ [ukraine ] (2022) Appendix I: Timeline of Events
+  ✅ [ukraine ] (2022) Troubled waters [Crimea - Infrastructure]
+  ✅ [ukraine ] (2022) Vladimir Putin
+  ✅ [ukraine ] (2022) The Russia-Ukraine War and the Maidan in Ukraine
+  ✅ [ukraine ] (2022) Constructive Role Ambiguity and How Russia Couldn’t ‘Get Away’ wi
+  ✅ [ukraine ] (2022) East Asia Forum Quarterly: Volume 14, Number 3, 2022
+  ✅ [ukraine ] (2022) Russian Private Military and Ukraine: Hybrid Surrogate Warfare an
+  ✅ [ukraine ] (2022) A Situation of the Crimeans Diocese of the Orthodox Church of Ukr
+  ✅ [ukraine ] (2022) Pakistan–Russia Relations: Kashmir and the Primakov Doctrine
+  ✅ [ukraine ] (2022) Russian roulette: the Kremlin’s escalation strategy from the Balt
+  ✅ [ukraine ] (2022) Russia’s Justifications of Annexation of Crimea in Ukraine from t
+  ✅ [ukraine ] (2022) Ukrainian Maritime Industry under Fire: Consequences of Russian I
+  ✅ [ukraine ] (2022) Indicators and warnings of Russian military offensives
+  ✅ [ukraine ] (2022) Conflict Resolution and Neoclassical Realism: An Analysis of the 
+  ✅ [ukraine ] (2022) Russian Empire in the Fight against the Ottoman Heritage: Conques
+  ✅ [ukraine ] (2022) ОБҐРУНТУВАННЯ НЕОБХІДНОСТІ ВДОСКОНАЛЕННЯ СИСТЕМИ КОНТРОЛЮ ТА НАДА
+  ❌ [russia  ] (2022) The Government of the Russian Federation
+  ✅ [ukraine ] (2022) Introduction: Analyzing the Shifts in Sino-Russian Strategic Coop
+  ✅ [ukraine ] (2022) Occupation or annexation of Crimea? (based on Ukrainian encyclope
+  ✅ [ukraine ] (2022) Positions of the Bundestag parties in the debate on the annexatio
+  ✅ [ukraine ] (2022) BRIDGE OF WAR
+  ✅ [ukraine ] (2022) The role of focusing events on agenda-setting: changes in the Lit
+  ❌ [russia  ] (2022) Die Geister, die wir riefen? Eine völkerrechtliche Einordnung: Di
+  ✅ [ukraine ] (2022) Financial Contagion in Central and Eastern European Capital Marke
+  ✅ [ukraine ] (2022) About annexed Crimea in online encyclopedias worldwide
+  ✅ [ukraine ] (2021) AN ANALYSIS OF ICT IMPACT ON UKRAINE AND RUSSIA CONFLICT
+  ✅ [ukraine ] (2021) Çatışma Çözümü ve Neoklasik Realizm: Kırım’ın İlhakı ve Rusya-Ukr
+  ⚠️ [disputed] (2021) Russian Approaches to the Right of Peoples to Self-Determination:
+  ✅ [ukraine ] (2021) 
+  ✅ [ukraine ] (2021) Great Power Politics in Post-Cold War Period: The Ukraine Crisis 
+  ✅ [ukraine ] (2021) The Religious Freedom in Crimea During the Russian Occupation
+  ✅ [ukraine ] (2021) The social-political challenges of internal displacements in Ukra
+  ✅ [ukraine ] (2021) A Border on the move
+  ✅ [ukraine ] (2021) МІЛІТАРИЗАЦІЯ ОСВІТНЬО-ВИХОВНОГО ПРОЦЕСУ НА ТЕРИТОРІЇ ОКУПОВАНОГО
+  ❌ [russia  ] (2021) Do not forget the Crimean crisis: why Russia “Annexed” the Penins
+  ✅ [ukraine ] (2021) ДЕРЖАВНЕ РЕГУЛЮВАННЯ МІЖНАЦІОНАЛЬНИХ ВІДНОСИН В УКРАЇНІ НА ТЛІ РО
+  ✅ [ukraine ] (2020) The Coverage of Events After Maidan Protests and the Annexation o
+  ✅ [ukraine ] (2020) Formation of the Power Structures and Policies in Crimea During t
+  ✅ [ukraine ] (2020) Russia’s Legitimizing Narrative for Annexation: Impetus or Pretex
+  ✅ [ukraine ] (2020) Protection of children’s rights and interests under war condition
+  ✅ [ukraine ] (2020) Disruptions. Energy Supply in Post-Annexation Crimea, 2014–2018
+  ✅ [ukraine ] (2020) ANNEXATION OF CRIMEA BY RUSSIAN FEDERATION, UNITED STATES AND EUR
+  ✅ [ukraine ] (2020) The European Union and the conflict in Ukraine (2014–2018)
+  ✅ [ukraine ] (2020) ПРОЄКТ «КРИМ.РЕАЛІЇ» УКРАЇНСЬКОЇ РЕДАКЦІЇ РАДІО «СВОБОДА»: ІНФОРМ
+  ✅ [ukraine ] (2020) Features of the Organization of Work of Public Affairs Divisions 
+  ✅ [ukraine ] (2020) UATV – narzędzie dyplomacji publicznej czy propagandy zewnętrznej
+  ✅ [ukraine ] (2020) The Cracking of Crimea: two Sides to Every Annexation
+  ✅ [ukraine ] (2020) The 1954 transfer of Crimea : debunking the myth of a 'Royal Gift
+  ✅ [ukraine ] (2020) Risk change of publicly listed Russian companies during the econo
+  ✅ [ukraine ] (2020) Annexation of Crimea – seizure of territories without a declarati
+  ✅ [ukraine ] (2020) Shutting Down Russia's Superiority Complex. An Analysis of the In
+  ✅ [ukraine ] (2020) Rational Bureaucratic Actors: Examining Germany's Russlandpolitik
+  ✅ [ukraine ] (2020) Crimea as Saguntum?
+  ✅ [ukraine ] (2019) THE CHALLENGES OF ‘SITTING ON TWO CHAIRS’. TESTING SERBIA’S NEUTR
+  ✅ [ukraine ] (2019) 3. Eden in Taurus: The “Crimean Myth” in Russian Culture of the 1
+  ✅ [ukraine ] (2019) Revolution and War in Contemporary Ukraine: The Challenge of Chan
+  ✅ [ukraine ] (2019) Shaping public Orthodoxy
+  ✅ [ukraine ] (2019) The Annexation of Crimea: A Realist Look from the Energy Resource
+  ✅ [ukraine ] (2019) Russia’s Propaganda in Europe and EU’s Structural Heterogeneity
+  ✅ [ukraine ] (2019) Russia’s Imperial Ambitions, Ukraine, and the West
+  ✅ [ukraine ] (2019) THE RISE OF A STRATEGIC SPOILER: RUSSIA’S EUROPEAN SECURITY STRAT
+  ✅ [ukraine ] (2019) ASPECTS OF THE COMMON SECURITY AND DEFENCE POLICY OF THE EUROPEAN
+  ✅ [ukraine ] (2019) The Annexation of the Autonomous Republic of Crimea and the Armed
+  ✅ [ukraine ] (2019) Russian-occupied Crimea and the state of exception: repression, p
+  ✅ [ukraine ] (2019) Arms Control and Deterrence in the Age of Cross-Domain Coercion
+  ✅ [ukraine ] (2019) Alienation and cooperation
+  ✅ [ukraine ] (2019) FOREIGN POLICY ALIGNMENT OF THE WESTERN BALKAN COUNTRIES WITH THE
+  ✅ [ukraine ] (2019) ÖNDE GELEN ULUSLARARASI ÖRGÜTLERİN KIRIM’IN YASADIŞI İLHAKINA TEP
+  ✅ [ukraine ] (2019) Entfremdung und Kooperation
+  ✅ [ukraine ] (2019) Dr. Jekyll or Mr. Hyde? - A qualitative analysis of Russian strat
+  ✅ [ukraine ] (2019) THE ATTITUDE OF THE PEOPLE'S REPUBLIC OF CHINA TOWARDS THE ANNEXA
+  ✅ [ukraine ] (2019) The Crimean Tatar Muslim Community: Between Annexed Crimea and Ma
+  ✅ [ukraine ] (2019) Cold, dark, and dangerous: international cooperation in the arcti
+  ❌ [russia  ] (2019) THE CRIMEAN ANNEXATION CRISIS AND ITS ECONOMIC CONSEQUENCES: EU S
+  ✅ [ukraine ] (2018) Hybrid war: real casualties in Ukraine
+  ✅ [ukraine ] (2018) Miejsce i rola Federacji Rosyjskiej w austriackiej „polityce wsch
+  ✅ [ukraine ] (2018) HUMAN RIGHTS ABUSES IN RUSSIAN-OCCUPIED CRIMEA
+  ✅ [ukraine ] (2018) DEFENDING RUSSIA, SECURITISING THE FUTURE: HOW THE PAST SHAPED RU
+  ✅ [ukraine ] (2018) Security Strategy of Ukraine in the Context of Ethnopolitical Cha
+  ✅ [ukraine ] (2018) “They've conspired against us”: Understanding the role of social 
+  ✅ [ukraine ] (2018) Assessing Russia’s doctrine of Realpolitik as strategic re-contou
+  ✅ [ukraine ] (2018) ПОЛІТИЧНА ОБУМОВЛЕНІСТЬ РЕЛІГІЙНОЇ СИТУАЦІЇ В АНЕКСОВАНОМУ КРИМУ
+  ✅ [ukraine ] (2018) Protection of energy investments under the Russia-Ukraine bilater
+  ✅ [ukraine ] (2018) (Re)securitisation in Europe: the Baltic States and Russia
+  ✅ [ukraine ] (2018) ANALYSIS OF SOCIO-ECONOMIC DEVELOPMENT AND ORGANIZATION OF TOURIS
+  ✅ [ukraine ] (2018) The framing of information warfare: a comparative analysis of Est
+  ✅ [ukraine ] (2018) Internal and External Factors Shaping Russia’s Foreign Policy tow
+  ✅ [ukraine ] (2018) EU Member States and Russia: national and European debates in an 
+  ✅ [ukraine ] (2018) EUROINTEGRATION CRISIS AND ITS EFFECT ON UKRAINE'S FOREIGN POLICY
+  ✅ [ukraine ] (2018) Blending New-generation Warfare and Soft Power: Hybrid Dimensions
+  ✅ [ukraine ] (2017) Assessing possible improvements in NATO's non-strategic nuclear d
+  ✅ [ukraine ] (2017) Application of the international convention for the suppression o
+  ✅ [ukraine ] (2017) Russian-Ukrainian War in the Discourse of Western Mass Media (201
+  ✅ [ukraine ] (2017) Prospects for Ukraine in 2018
+  ✅ [ukraine ] (2017) Russia and the Ukrainian Crisis: A Multiperspective Analysis of R
+  ✅ [ukraine ] (2017) Russian New Art of Hybrid Warfare in Ukraine
+  ✅ [ukraine ] (2017) The best army Ukraine has ever had. Changes in Ukraine’s armed fo
+  ✅ [ukraine ] (2017) Energy Safety of Ukraine: Russian Factor
+  ✅ [ukraine ] (2017) Facing increased Russian aggressiveness: Popular militias, a pote
+  ✅ [ukraine ] (2017) The Donbas Blockade: Another blow to the Minsk peace process. CEP
+  ✅ [ukraine ] (2017) THE BESIEGED FORTRESS: MAKING SENSE OF RUSSIA'S ANNEXATION OF CRI
+  ✅ [ukraine ] (2017) SECURITY CHALLENGES AND THREATS FOR CENTRAL ASIAN STATES IN LIGHT
+  ✅ [ukraine ] (2017) From principles to pragmatism? : ontological insecurity and the E
+  ✅ [ukraine ] (2017) The dynamics of geopolitical orientations of the population as a 
+  ✅ [ukraine ] (2017) Still a Normative Power Europe?: The European Union’s promotion o
+  ✅ [ukraine ] (2017) Russian Geopolitical Advancements in the Black Sea Region: the An
+  ✅ [ukraine ] (2017) “Moving out of “Their Places”: 1991 - 2016 Migration of Ukrainian
+  ✅ [ukraine ] (2017) Russian Geopolitical Advancements in the Black Sea Region: the An
+  ✅ [ukraine ] (2017) Russian Strategic Culture After the Cold War: A Comparative Case-
+  ✅ [ukraine ] (2017) The economic and geopolitical weight in the balance of internatio
+  ✅ [ukraine ] (2017) Journalism in Times of Increaseing Propaganda. Western Media and 
+  ✅ [ukraine ] (2017) EU Sanctions against Russia: A Punishment, a Signal of Displeasur
+  ✅ [ukraine ] (2016) The Swedish Perception of European Security in Light of the Crisi
+  ✅ [ukraine ] (2016) Russia and Its International Image: From Sochi Olympic Games to A
+  ❌ [russia  ] (2016) Crimea’s Annexation in the Light of International Law. A Critique
+  ❌ [russia  ] (2016) The Annexation of Crimea and Attempts to Justify It in the Contex
+  ✅ [ukraine ] (2016) UNDER RUSSIAN INFLUENCE? A quantitative study on the effect of eu
+  ✅ [ukraine ] (2016) NATO's Warsaw Summit: In Brief
+  ✅ [ukraine ] (2016) Invasion as a Practice: Understanding State Behavior in Putin’s R
+  ❌ [russia  ] (2016) Secession and Intervention in the Former Soviet Space: The Crimea
+  ✅ [ukraine ] (2016) Assessment of damages caused by natural areas, located on the ter
+  ✅ [ukraine ] (2016) The Effects of Sanctions and Counter-Sanctions on EU-Russian Trad
+  ✅ [ukraine ] (2016) ‘Crimea is ours’: A discursive history
+  ✅ [ukraine ] (2016) Impaled on Morton's Fork: Kosovo, Crimea, and the Sui Generis Cir
+  ✅ [ukraine ] (2016) Beyond Crimea
+  ✅ [ukraine ] (2016) Borders in Flux : Ukraine as a Case Study of Russia's Approach to
+  ❌ [russia  ] (2016) Engaging Crimea and Beyond: Perspectives on Conflict, Cooperation
+  ✅ [ukraine ] (2016) War in Ukraine: A Crisis between NATO and RUSSIA
+  ❌ [russia  ] (2016) The Difference Between Russian & American Media Framing Technique
+  ✅ [ukraine ] (2016) Holding the Line
+  ✅ [ukraine ] (2016) Communicating conflict: Russian mediated diplomacy in relation to
+  ✅ [ukraine ] (2016) The Situation of National Minorities in Crimea Following its Anne
+  ✅ [ukraine ] (2016) A nation in transition : language policy and its impact on Russia
+  ✅ [ukraine ] (2015) Putin v. Purse Power: Confronting International Laws, Russian Sty
+  ✅ [ukraine ] (2015) The Ukraine crisis and the demise of the European Security order.
+  ✅ [ukraine ] (2015) The Geopolitics of Central Asia after the Annexation of Crimea in
+  ✅ [ukraine ] (2015) Hybrid Conflict and Encirclement: Reconfiguration of Eastern Euro
+  ✅ [ukraine ] (2015) The Annexation of Crimea by Russia and Its Potential Impacts on t
+  ✅ [ukraine ] (2015) Identity politics and kin-state relations from the bottom-up in C
+  ❌ [russia  ] (2015) Law, Rhetoric, Strategy: Russia and Self-Determination Before and
+  ❌ [russia  ] (2015) "Crimean Offence": myth, its instrumentalization and geopolitical
+  ✅ [ukraine ] (2015) THE CRIMEA MODEL: WILL RUSSIA ANNEX THE NORTHERN REGION OF KAZAKH
+  ✅ [ukraine ] (2015) Reality check for the EU: The stand-off with Russia challenges th
+  ✅ [ukraine ] (2015) The Annexation of Crimea in Russian Literature of the 18th and 21
+  ✅ [ukraine ] (2015) Annexation of Crimea
+  ✅ [ukraine ] (2015) The Reminiscence of the Cold War in Europe: Contemporary Perspect
+  ✅ [ukraine ] (2015) Is a Greater Russia Really So Bad
+  ✅ [ukraine ] (2015) Russian Geopolitics and Ukrainian War
+  ✅ [ukraine ] (2015) Foreign and Security Policy
+  ✅ [ukraine ] (2015) Ukrainische Identität – historische Tatsache oder moderne Ideolog
+  ✅ [ukraine ] (2015) The Rising Cost of Russia’s Authoritarian Foreign Policy
+  ✅ [ukraine ] (2014) What next for Moldova's minorities after Crimea?
+  ✅ [ukraine ] (2014) A bottomless pit: the costs of Crimea’s annexation by Russia. OSW
+  ✅ [ukraine ] (2014) The geopolitical implications of Russia’s invasion of Ukraine
+  ✅ [ukraine ] (2014) Responding to the Russian Invasion of Crimea: Policy Recommendati
+  ✅ [ukraine ] (2014) The Ukraine Crisis and the End of the Post-Cold War European Orde
+  ✅ [ukraine ] (2014) Strategy Versus Statecraft in Crimea
+  ✅ [ukraine ] (2014) History and Its Rules
+  ✅ [ukraine ] (2014) The Annexation of Crimea and the Secessionist War in Eastern Ukra
+  ❌ [russia  ] (2014) Putin's 'couldn't care less' attitude towards Russia's internatio
+  ✅ [ukraine ] (2014) Interview with Dr. Gábor Kardos
+  ✅ [ukraine ] (2014) NATO-Russia relations after the Newport summit: reassurance, coop
+  ✅ [ukraine ] (2014) Taking the Shortcut to Popularity : How Putin’s Power is Sustaine
+  ✅ [ukraine ] (2012) "Through the National Lens": Nationality, Territory, and the Form
+
+Query: Crimea Russia territory
+  ✅ [ukraine ] (2026) An updated analytical framework on cyber resilience and managing 
+  ✅ [ukraine ] (2026) The Return of a Long-Forgotten War Crime of Forced Conscription: 
+  ✅ [ukraine ] (2026) Poland’s securitization of Russian threat: a case study from anne
+  ❌ [russia  ] (2026) Euonymus nanus (Celastraceae): first record for the Russian Far E
+  ✅ [ukraine ] (2025) ЗМІНИ РЕЛІГІЙНОГО ЛАНДШАФТУ НА ТИМЧАСОВО ОКУПОВАНИХ ТЕРИТОРІЯХ ПІ
+  ✅ [ukraine ] (2025) ДІЯЛЬНІСТЬ ВЕРХОВНОЇ РАДИ VII СКЛИКАННЯ ПІД ЧАС АНЕКСІЇ КРИМУ
+  ✅ [ukraine ] (2025) Keeping the Memory Alive: Ukrainian Commemoration Practices in Pu
+  ✅ [ukraine ] (2025) Finland’s Policy on Supporting Ukraine during Full-Scale Russian 
+  ✅ [ukraine ] (2025) Canada’s position on the Russian-Ukrainian War
+  ✅ [ukraine ] (2025) THE ROLE OF FEMALE DOCTORS IN THE UNDERGROUND MOVEMENT OF CRIMEA 
+  ❌ [russia  ] (2025) Dynamics of bronchial asthma morbidity in Crimea
+  ❌ [russia  ] (2025) НАУЧНОЕ ОБОСНОВАНИЕ СОЗДАНИЯ БОТАНИЧЕСКОГО ЗАКАЗНИКА«ЛИМЕНСКАЯ ДО
+  ✅ [ukraine ] (2025) Legal regulation of the interaction of the Representative of the 
+  ✅ [ukraine ] (2025) Правове регулювання взаємодії Представника Президента України з В
+  ❌ [russia  ] (2025) First record of Bembecia (Opacosphecia) eversmanni O. Gorbunov, 2
+  ✅ [ukraine ] (2025) НОМІНАЦІЇ НА ПОЗНАЧЕННЯ НАЗВ ОКУПАЦІЙНОЇ ВЛАДИ В УКРАЇНСЬКОМУ МЕД
+  ❌ [russia  ] (2025) To the distribution of Bembecia (Bembecia) ichneumoniformis ([Den
+  ❌ [russia  ] (2025) “Masters of Death”: a Note by Junior Sergeant V.N. Nakidnev about
+  ❌ [russia  ] (2025) Territorial and Settlement Characteristics of the Dynamics of Pop
+  ✅ [ukraine ] (2025) The Russian Annexation of Crimea
+  ✅ [ukraine ] (2025) From Maidan to war: legal qualification and international dimensi
+  ❌ [russia  ] (2025) INTERNATIONAL LAW AND LEGISLATION OF THE RUSSIAN FEDERATION AND T
+  ❌ [russia  ] (2025) Marketing factors in promoting eno tourism
+  ❌ [russia  ] (2025) THE STORY «SON OF THE REGIMENT» IN THE REALITIES OF THE CRIMEAN P
+  ❌ [russia  ] (2025) Unknown Vasiliy Makurin: towards the history of the family and th
+  ✅ [ukraine ] (2025) Міжнародні санкції, запроваджені через анексію Криму як інструмен
+  ❌ [russia  ] (2025) To the distribution of Conopia stomoxiformis (Hübner, 1790) (Lepi
+  ❌ [russia  ] (2025) Information support for the assessment of the state and protectio
+  ✅ [ukraine ] (2025) &lt;i&gt;OVERALL CONTROL &lt;/i&gt;DALAM KONFLIK RUSIA DAN UKRAIN
+  ❌ [russia  ] (2025) To the distribution of Microsphecia brosiformis (Hübner, 1813) (L
+  ✅ [ukraine ] (2025) Russia-Ukraine War: the gendered effects of the war on men, women
+  ❌ [russia  ] (2025) The Use of Information and Digital Technologies in the Activities
+  ❌ [russia  ] (2025) Agitation and propaganda of the underground members of the Crimea
+  ❌ [russia  ] (2025) Digression-demutation processes of riparian forests along the Kac
+  ✅ [ukraine ] (2025) ГІБРИДНА ВІЙНА В ЛІТЕРАТУРІ: ВІРТУАЛЬНЕ ТОПОГРАФУВАННЯ СХОДУ
+  ✅ [ukraine ] (2025) Children of the Occupied Territories of Ukraine
+  ✅ [ukraine ] (2025) Understanding Russian Reality and Attitude toward Ukrainian War t
+  ❌ [russia  ] (2025) Features of the biomorphological and geographic structure of sege
+  ✅ [ukraine ] (2025) PROBLEMS AND PROSPECTS OF DEVELOPMENT OF THE CONSTRUCTION INDUSTR
+  ✅ [ukraine ] (2025) Spatial Manifestation of Migration Flows of Internally Displaced 
+  ❌ [russia  ] (2025) Amino acid and fatty acid composition of feed additives based on 
+  ✅ [ukraine ] (2025) Geopolitical conflict and author affiliation : Designation of Ukr
+  ❌ [russia  ] (2025) PROBLEMS AND PROSPECTS OF DEVELOPMENT OF THE METALWORKING INDUSTR
+  ✅ [ukraine ] (2024) MILITARIZATION OF YOUTH CONSCIOUSNESS IN TEMPORARILY OCCUPIED CRI
+  ✅ [ukraine ] (2024) ВПЛИВ ВІЙНИ НА ДИНАМІКУ УКРАЇНСЬКОЇ ПРИКОРДОННОЇ ТЕРМІНОЛОГІЇ
+  ✅ [ukraine ] (2024) THE STATUS OF INTERNALLY DISPLACED PERSONS: CONCEPT AND SOME ISSU
+  ✅ [ukraine ] (2024) Героїзм як вияв національно-патріотичного виховання українських в
+  ✅ [ukraine ] (2024) Displacement and Belonging: Redefining ‘Homeland’ and ‘Return’ am
+  ✅ [ukraine ] (2024) Filiz Tutku Aydın, Èmıgrè, Exıle, Dıaspora and Transnatıonal Move
+  ❌ [russia  ] (2024) Images of “Us” and “Others” as a Factor in the Identification of 
+  ✅ [ukraine ] (2024) Higher Education Amid the War: A Resilience Test for Ukraine’s In
+  ✅ [ukraine ] (2024) THE CONCEPT OF WARFARE IN CYBERSPACE AS AN EXAMPLE OF HYBRID WARF
+  ❌ [russia  ] (2024) SPECIAL MILITARY OPERATION IN UKRAINE AS A CHALLENGE FOR RUSSIAN 
+  ✅ [ukraine ] (2024) КЛЮЧОВІ АСПЕКТИ РЕІНТЕГРАЦІЇ ТА РЕГУЛЮВАННЯ СТАТУСУ ТИМЧАСОВО ОКУ
+  ✅ [ukraine ] (2024) Addressing war crimes in Ukraine: international response, account
+  ❌ [russia  ] (2024) Formation of Civil Identity in the Educational Policy System in t
+  ❌ [russia  ] (2024) Current Trends in HIV Infection in the Republic of Crimea
+  ❌ [russia  ] (2024) Экономика знаний в контексте развития Республики Крым
+  ✅ [ukraine ] (2024) Türkiye-European Union Relations In The Framework Of Common Forei
+  ✅ [ukraine ] (2024) Majority-minority relations in Ukraine
+  ✅ [ukraine ] (2024) CHAPTER 15 NATO Members’ Burden Sharing Behaviour in the Aftermat
+  ❌ [russia  ] (2024) Promising Directions of Economic Development of Rural Areas: The 
+  ✅ [ukraine ] (2024) Conclusion
+  ❌ [russia  ] (2024) THE IMAGE OF RUSSIA IN THE PRESENT AND FUTURE IN THE PERCEPTIONS 
+  ✅ [ukraine ] (2024) Could the war in Ukraine have been avoided?: The responsibilities
+  ❌ [russia  ] (2024) Formation of Russian Identity in the Crimea and Sevastopol City
+  ❌ [russia  ] (2024) Results of Epizootiological Survey of the Territories of the Repu
+
+Query: Republic of Crimea
+  ❌ [russia  ] (2026) Analysis of Dynamics and Factors of Fertility in the Republic of 
+  ❌ [russia  ] (2026) Developing accessible sports infrastructure in municipal educatio
+  ❌ [russia  ] (2026) Molecular-Genetic Aspects of Familial Mediterranean Fever and the
+  ❌ [russia  ] (2026) О НЕИЗВЕСТНОЙ РУКОПИСИ Н. П. СУСЛОВОЙ В ФОНДАХ КРЫМСКОГО АРХИВА: 
+  ❌ [russia  ] (2026) О НЕИЗВЕСТНОЙ РУКОПИСИ Н. П. СУСЛОВОЙ В ФОНДАХ КРЫМСКОГО АРХИВА: 
+  ❌ [russia  ] (2026) INFLUENCE OF MULTICULTURAL ENVIRONMENT ON THE PSYCHOEMOTIONAL STA
+  ❌ [russia  ] (2026) INFLUENCE OF MULTICULTURAL ENVIRONMENT ON THE PSYCHOEMOTIONAL STA
+  ❌ [russia  ] (2026) STATE PUBLIC PAGES AS A DIALOGUE FORMAT BETWEEN GOVERNMENT AUTHOR
+  ❌ [russia  ] (2026) STATE PUBLIC PAGES AS A DIALOGUE FORMAT BETWEEN GOVERNMENT AUTHOR
+  ❌ [russia  ] (2026) DEVELOPMENT OF FAMILY TOURISM IN THE REPUBLIC OF CRIMEA. PROBLEMS
+  ❌ [russia  ] (2026) HINDU COMMUNITIES OF THE REPUBLIC OF CRIMEA AND THE CITY OF SEVAS
+  ❌ [russia  ] (2026) HINDU COMMUNITIES OF THE REPUBLIC OF CRIMEA AND THE CITY OF SEVAS
+  ✅ [ukraine ] (2026) Social challenges in the reintegration of temporarily occupied Cr
+  ✅ [ukraine ] (2026) Social challenges in the reintegration of temporarily occupied Cr
+  ❌ [russia  ] (2026) Communicative Potential of National-Cultural Autonomies of the Re
+  ❌ [russia  ] (2026) Communicative Potential of National-Cultural Autonomies of the Re
+  ❌ [russia  ] (2026) Status and forecast of changes in areas under vegetable crops and
+  ❌ [russia  ] (2026) Chest pain as a reason for calling an ambulance: an epidemiologic
+  ❌ [russia  ] (2026) Visceral leishmaniasis in Crimea: key features for 2025
+  ❌ [russia  ] (2026) Visceral leishmaniasis in Crimea: key features for 2025
+  ❌ [russia  ] (2026) Optimization of the placement of persimmon varieties in the Crime
+  ✅ [ukraine ] (2026) RUSYA-UKRAYNA SAVAŞI'NIN POLONYA'NIN SAVUNMA KAPASİTESİNE ETKİSİ:
+  ✅ [ukraine ] (2026) Правовий статус Представника Президента України в Автономній Респ
+  ✅ [ukraine ] (2026) Poland’s securitization of Russian threat: a case study from anne
+  ❌ [russia  ] (2026) Analysis of primary and overall childhood disabilities in the Rep
+  ❌ [russia  ] (2026) THE IMPACT OF MIGRATION PROCESSES ON THE FORMATION OF THE LABOR M
+  ❌ [russia  ] (2026) THE SEVERITY OF DEPRESSION AMONG MEDICAL WORKERS IN THE REPUBLIC 
+  ❌ [russia  ] (2026) Comprehensive experimental studies of the dynamics of wind wave d
+  ❌ [russia  ] (2026) INITIAL ASSESSMENT OF THE PROSPECTS FOR USING AGROHYDROLOGICAL MO
+  ❌ [russia  ] (2026) SOCIAL TOURISM IN THE REPUBLIC OF CRIMEA: ORGANIZATION, PROBLEMS,
+  ✅ [ukraine ] (2026) Vascular plant records (2003–2013) from steppe regions of Ukraine
+  ❌ [russia  ] (2025) Elemental status as a factor in individualization of cerebral met
+  ❌ [russia  ] (2025) The obscure Ethem Feizi: life and journalism in the light of litt
+  ❌ [russia  ] (2025) Trends and prospects for the development of small and medium-size
+  ❌ [russia  ] (2025) Prospects for Regional Production of Canned Fruit (Exemplified by
+  ❌ [russia  ] (2025) Export Potential of the Republic of Crimea in the Direction of Pr
+  ❌ [russia  ] (2025) ACTIVITIES OF CULTURAL INSTITUTIONS OF THE CRIMEAN REGION FOR THE
+  ❌ [russia  ] (2025) «DUVAN’S HOUSE» IN SIMFEROPOL: VERSIONS AND DOCUMENTARY FACTS
+  ❌ [russia  ] (2025) FEATURES OF FOREST IMPROVEMENT OF AGRICULTURAL TERRITORIES OF THE
+  ✅ [ukraine ] (2025) Правове регулювання взаємодії Представника Президента України з В
+  ❌ [russia  ] (2025) DYNAMICS OF CHANGES IN THE NUTRITION OF SCHOOLCHILDREN AND STUDEN
+  ❌ [russia  ] (2025) INFORMATION SUPPORT FOR CIVIC PARTICIPATION PROGRAMS IN SOCIAL ME
+  ❌ [russia  ] (2025) HYBRID FINANCING MODELS FOR AGROTOURISM IN RUSSIA: EVALUATING THE
+  ❌ [russia  ] (2025) The influence of the institutional mechanism of the Republic of C
+  ❌ [russia  ] (2025) STRUCTURE DATA OF ACUTE CHEMICAL POISONINGS AT THE PREHOSPITAL ST
+  ❌ [russia  ] (2025) ANALYSISOF WOODYAND SHRUBBYPLANTSOF THE FOROSPARKOF THE REPUBLICO
+  ❌ [russia  ] (2025) SOCIO-ECONOMIC FACTORS IN THE FORMATION OF SPECIALIZATION OF RURA
+  ❌ [russia  ] (2025) Features of calculation and design of a bulwark at the condition 
+  ✅ [ukraine ] (2025) Non-jurisdictional form of protection of personal non-property ri
+  ✅ [ukraine ] (2025) Неюрисдикційна форма захисту особистих немайнових прав військовос
+  ❌ [russia  ] (2025) Comparative assessment of the agro-climatic conditions of two win
+  ❌ [russia  ] (2025) High school students’ subjective assessment of the role of the sc
+  ❌ [russia  ] (2025) Features of the morphology of the berry cones of the Crimean tree
+  ❌ [russia  ] (2025) Prospects for using persimmon in landscape design and amateur gar
+  ❌ [russia  ] (2025) IMPACT OF STATE REGULATION INSTRUMENTS ON THE MARKET SUPPLY OF EG
+  ❌ [russia  ] (2025) Actual problems of ensuring the energy security of the Republic o
+  ❌ [russia  ] (2025) Neuroinvasive forms of West Nile fever in children in the Republi
+  ❌ [russia  ] (2025) Tomato varieties and hybrids during drip irrigation in open groun
+  ❌ [russia  ] (2025) ВЛИЯНИЕ МИГРАЦИОННЫХ ПОТОКОВ НА УСТОЙЧИВОЕ РАЗВИТИЕ РЕСПУБЛИКИ КР
+  ❌ [russia  ] (2025) STATE FINANCING OF THE AGRO-INDUSTRIAL COMPLEX TO ENSURE FOOD SEC
+  ❌ [russia  ] (2025) Study of seasonal variations in the component composition of esse
+  ❌ [russia  ] (2025) Methodological foundations and principles of the Russian Language
+  ❌ [russia  ] (2025) Muslim metric books of the Tauride province of Bakhchisarai distr
+  ❌ [russia  ] (2025) STUDY OF ANALYTICAL CHARACTERISTICS OF PECTIN SUBSTANCES OF CORNU
+  ❌ [russia  ] (2025) Epidemiological Characteristics of Multiple Myeloma in the Republ
+  ❌ [russia  ] (2025) CATALASE AND PEROXIDASE ACTIVITY IN WHEAT AND TOMATO PLANTS INOCU
+  ❌ [russia  ] (2025) LOCALIZATION OF TWO SPECIES OF FUNGI GOLOVINOMYCES CICHORACEARUM 
+  ✅ [ukraine ] (2025) Russia - China trade activities under western sanctions (2014–202
+  ❌ [russia  ] (2025) Comparative analysis of epidemiology of HIV-associated tuberculos
+  ❌ [russia  ] (2025) AN APPROACH TO ASSESSING THE STABILITY OF REINFORCED CONCRETE SLA
+  ❌ [russia  ] (2025) To the distribution of Chamaesphecia (Scopulosphecia) schmidtiifo
+  ❌ [russia  ] (2025) Surgical thyroid pathology in Crimea and Sevastopol: the way COVI
+  ❌ [russia  ] (2025) Conjuncture Deformations and Ways of Butter Market Development
+  ❌ [russia  ] (2025) CAPABILITIES OF NEURAL NETWORKS IN WORK ON RECONSTRUCTION OF SACR
+  ❌ [russia  ] (2025) National policy in the Crimean ASSR in the interwar period (1920–
+  ❌ [russia  ] (2025) Analysis of treatment adherence in patients with osteoporosis in 
+  ❌ [russia  ] (2025) Features of pharmaceutical consulting for the release of calcium 
+  ❌ [russia  ] (2025) Transformation of Traditional Crimean Tatar Belt Wrestling into a
+  ❌ [russia  ] (2025) Comfort of the educational environment in the subjective evaluati
+  ❌ [russia  ] (2025) Formation of an active citizenship of student youth based on the 
+  ❌ [russia  ] (2025) The experience of performing metroplasty at placenta accreta in t
+  ❌ [russia  ] (2025) Treatment of children with blunt spleen injury throughout 25-year
+  ❌ [russia  ] (2025) Potential of national-cultural autonomy in the implementation of 
+  ❌ [russia  ] (2025) ANALYSIS OF SOME VARIETIES OF THYMUS VULGARIS CULTIVATED IN THE N
+  ❌ [russia  ] (2025) Formation and development of schooling in the Crimean ASSR (1920s
+  ❌ [russia  ] (2025) SOME ASPECTS OF CITIZEN PARTICIPATION IN THE CREATION OF INITIATI
+  ❌ [russia  ] (2025) ANALYSIS OF INCOME OF THE POPULATION OF RUSSIA: REGIONAL ASPECT (
+  ✅ [ukraine ] (2025) Partnerskapet som förblivit partnerskap : en teoriprövande tvåfal
+  ❌ [russia  ] (2025) Organization of mass physical culture and recreation work with yo
+  ❌ [russia  ] (2025) NEW SPECIES FOR REGIONAL MYCOBIOTAS OF RUSSIA. 10. REPORT 2025
+  ❌ [russia  ] (2025) TRANSPORT PROVISION OF THE POPULATION OF THE REPUBLIC OF CRIMEA I
+  ❌ [russia  ] (2025) ETHNOPEDAGOGY: PROBLEMS AND DEVELOPMENT PROSPECTS IN THE REPUBLIC
+  ❌ [russia  ] (2025) STAFFING SHORTAGE IN THE TOURISM INDUSTRY OF THE REPUBLIC OF CRIM
+  ❌ [russia  ] (2025) PRELIMINARY RESULTS OF THE INTRODUCTION OF SOME SPECIES OF THE GE
+  ❌ [russia  ] (2025) THE EFFECT OF DRIP IRRIGATION ON PRODUCTIVITY AND QUALITY OF TABL
+  ❌ [russia  ] (2025) COMPARATIVE ANALYSIS OF POPULATION AGING IN THE REPUBLIC OF CRIME
+  ❌ [russia  ] (2025) STATE REGULATION OF THE TOURISM INDUSTRY IN CRIMEA
+  ❌ [russia  ] (2025) Natural attractions as specially protected natural areas of local
+  ❌ [russia  ] (2025) VARIETIES OF SWEET SORGHUM FOR USE IN SYRUP PRODUCTION IN IN THE 
+  ❌ [russia  ] (2025) Clinical and Laboratory Characteristics of Patients with Bronchia
+  ❌ [russia  ] (2025) The Viability of a Rural Settlement Center: The Case of Oktyabrsk
+  ✅ [ukraine ] (2025) AUTONOMOUS ENTITIES IN POST-CONFLICT STATE-BUILDING: INTERNATIONA
+  ❌ [russia  ] (2025) Customs institutions of the Tauride province in the second half o
+  ✅ [ukraine ] (2025) LEGAL STATUS OF DEPUTIES OF THE VERKHOVNA RADA OF THE AUTONOMOUS 
+  ❌ [russia  ] (2025) [Prognostic factors in elderly patients with diffuse large B-cell
+  ✅ [ukraine ] (2025) Western sanctions and their impact on Russian capital in the Czec
+  ❌ [russia  ] (2025) ASPECTS OF DEVELOPMENT AND SUPPORT OF TOURISM IN THE REPUBLIC OF 
+  ❌ [russia  ] (2025) K. G. Petrichenko — Organizer of the Underground Struggle in the 
+  ❌ [russia  ] (2025) IRRIGATION REGIME AND FERTILIZATION OF TOMATOES UNDER DRIP IRRIGA
+  ❌ [russia  ] (2025) DEVELOPMENT OF THE PASSENGER RAILWAYTRANSPORTATION SYSTEM IN THE 
+  ❌ [russia  ] (2024) Wine and Gastronomic Tourism as a Tool for Popularizing the Cultu
+  ❌ [russia  ] (2024) Use of indicator experiments in ecological and hydrogeological st
+  ❌ [russia  ] (2024) INVESTIGATION OF STRENGTH GAIN OF HEAVY CONCRETE IN AN AGGRESSIVE
+  ❌ [russia  ] (2024) КРЫМ В ЦИВИЛИЗАЦИОННОЙ ПАРАДИГМЕ РОССИИ
+  ❌ [russia  ] (2024) Features of the Armament of the Salgir Fieldwork, the First Russi
+  ❌ [russia  ] (2024) Simferopol God-pleasing institutions during the Crimean War over 
+  ❌ [russia  ] (2024) GENEALOGICAL STRUCTURE OF THE ABERDEEN-ANGUS BREED HERD OF THE PE
+  ❌ [russia  ] (2024) THE IMPACT OF THE SOCIAL AND POLITICAL SITUATION ON THE INTERETHN
+  ❌ [russia  ] (2024) Materials for the history of the Trebizond expedition of 1917: a 
+  ❌ [russia  ] (2024) Organization of antiepizootic work in case of African swine fever
+  ✅ [ukraine ] (2024) Chapter 6 Shia Muslims of Ukraine during the Russian invasion
+  ✅ [ukraine ] (2024) Героїзм як вияв національно-патріотичного виховання українських в
+  ❌ [russia  ] (2024) Trends and tools for the digital transformation of healthcare in 
+  ❌ [russia  ] (2024) MORPHOLOGICAL CRITERIA OF ONTOGENETIC STATUS AND POPULATION STRUT
+  ❌ [russia  ] (2024) CULTURAL FOUNDATIONS FOR THE FORMATION OF THE PROCESS OF POLYOCOM
+  ❌ [russia  ] (2024) New Species for Regional Mycobiotas of Russia. 9. Report: 2024
+  ❌ [russia  ] (2024) ASSESSMENT OF THE SANITARY CONDITION OF THE MAIN FOREST-FORMING S
+  ❌ [russia  ] (2024) Hantaviruses (Hantaviridae) in the Republic of Crimea
+  ✅ [ukraine ] (2024) HOW DOES THE WAGNER GROUP SERVE AS A TOOL OF RUSSIAN FOREIGN POLI
+  ❌ [russia  ] (2024) Detection of Spatial Trade Clusters by Means of Geoinformation Te
+  ❌ [russia  ] (2024) IDENTIFICATION OF MAJOR MUTATION IN GENES OF HEREDITARY PREDISPOS
+  ❌ [russia  ] (2024) Подходы к формированию организационной структуры страховых компан
+  ❌ [russia  ] (2024) Transformation of Water Use and Disposal in the Republic of Crime
+  ❌ [russia  ] (2024) FEATURES AND PROSPECTS OF VITICULTURE DEVELOPMENT IN THE SOUTH OF
+  ❌ [russia  ] (2024) COMPARATIVE ANALYSIS OF NATURAL CONDITIONS FOR THE PURPOSES OF DE
+  ❌ [russia  ] (2024) PROTECTIVE PLANTATIONS ALONG THE A-291 «TAVRIDA» HIGHWAY, REPUBLI
+  ❌ [russia  ] (2024) ПОГРЕБЕНИЯ С ИНВЕНТАРЕМ ИЗ МУСУЛЬМАНСКОГО НЕКРОПОЛЯ КЫРК-АЗИЗЛЕР 
+  ❌ [russia  ] (2024) Water Resources of the Crimean Peninsula and Their Use under Cond
+  ❌ [russia  ] (2024) Organization of Palliative Care for the Population of the Republi
+  ❌ [russia  ] (2024) WATER RESOURCES OF THE CRIMEAN PENINSULA AND THEIR USE UNDER COND
+  ❌ [russia  ] (2024) PROSPECTS OF USING BIOGAS PLANTS TO COVER ELECTRICITY NEEDS IN TH
+  ❌ [russia  ] (2024) ISSUES OF ORGANIZATION OF INTERREGIONAL PASSENGER RAIL TRANSPORTA
+  ❌ [russia  ] (2024) Tasks of Preventive Diplomacy to Prevent the Unleashing of a New 
+
+Query: Crimean peninsula political status
+  ✅ [ukraine ] (2026) Poland’s securitization of Russian threat: a case study from anne
+  ✅ [ukraine ] (2025) Hybrid Warfare and Informational Strategies: Russia’s Campaign in
+  ✅ [ukraine ] (2024) УЧАСТЬ КРИМСЬКОТАТАРСЬКОГО КОРІННОГО НАРОДУ У ВИБОРАХ ДО ВЕРХОВНО
+  ✅ [ukraine ] (2024) SPECIAL OPERATION OF THE RUSSIAN FEDERATION TO OCCUPY THE CRIMEAN
+  ❌ [russia  ] (2024) SETTLEMENT SUSTAINABILITY AS A RESULT OF THE HUMAN AND SOCIAL CAP
+  ✅ [ukraine ] (2023) Політична участь кримськотатарського народу в контексті російсько
+  ✅ [ukraine ] (2023) Геополітичний аналіз чорноморської політики Туреччини
+  ✅ [ukraine ] (2023) Shouting absences: Disentangling the ghosts of Ukraine in occupie
+  ❌ [russia  ] (2023) The impact of tourism at the end of the 20th and the beginning of
+  ✅ [ukraine ] (2022) Türkiye’s policy on Russia-Ukraine war: Geopolitical legsplit in 
+  ✅ [ukraine ] (2022) Military law in Ukraine: future prospects for development
+  ✅ [ukraine ] (2022) POLAND-LITHUANIA BINOMINAL AND THE EVOLUTION PROSPECTS OF THE LUB
+  ✅ [ukraine ] (2022) Retrospective and perspective analysis of the development of unde
+  ✅ [ukraine ] (2022) Krym. Rossiya…Navsegda? Critical Junctures, Critical Antecedents,
+  ❌ [russia  ] (2021) Ethnocultural Resources Of Rural Settlement Environment Of The Re
+  ✅ [ukraine ] (2021) Information Support of Russian Media for the Tourist Destination 
+  ❌ [russia  ] (2021) Development of electricity industry on the basis of the use of th
+  ❌ [russia  ] (2021) IDENTITY OF THE INHABITANTS OF THE CRIMEAN PENINSULA: IS THERE A 
+  ✅ [ukraine ] (2020) BLACK SEA SECURITY: THE ROMANIAN PERSPECTIVE NATO- EU INTEROPERAB
+  ✅ [ukraine ] (2020) Dimitar Bechev, Rival Power: Russia’s Influence in Southeast Euro
+  ✅ [ukraine ] (2020) Russia’s Weapon of Words in Numbers. Evolution of Russian Asserti
+  ✅ [ukraine ] (2020) Asia-Pacific’s responses to the Ukrainian crisis: third-party ali
+  ✅ [ukraine ] (2020) Military Conflict in Eastern Ukraine and its Social and Political
+  ✅ [ukraine ] (2020) The Cracking of Crimea: two Sides to Every Annexation
+  ✅ [ukraine ] (2020) Annexation of Crimea – seizure of territories without a declarati
+  ✅ [ukraine ] (2019) Russian nationalism shifting. The selective use of populism and n
+  ✅ [ukraine ] (2019) THE RISE OF A STRATEGIC SPOILER: RUSSIA’S EUROPEAN SECURITY STRAT
+  ✅ [ukraine ] (2019) The Weaponization ofPostmodernism:Russia’s New War with Europe. L
+  ✅ [ukraine ] (2019) The Annexation of Crimea and Continuing Instability in the Black 
+  ✅ [ukraine ] (2019) Islamophobia in Ukraine and occupied Crimea: NationalReport 2018
+  ✅ [ukraine ] (2019) Integration of Ukraine into NATO and its geopolitical implication
+  ✅ [ukraine ] (2019) US-Russia policy hits European energy supply
+  ✅ [ukraine ] (2018) THE INFLUENCE OF THE CONFLICT IN UKRAINE ON THE MODERNIZATION OF 
+  ✅ [ukraine ] (2018) Russia's Turn to the East
+  ✅ [ukraine ] (2018) Internal and External Factors Shaping Russia’s Foreign Policy tow
+  ❌ [russia  ] (2018) Reunification of Crimea with Russia: socio-historical, political 
+  ✅ [ukraine ] (2017) Russia's Turn to the East
+  ❌ [russia  ] (2017) The Development of the Russian Legal System after the “Accession”
+  ✅ [ukraine ] (2017) Application of the international convention for the suppression o
+  ✅ [ukraine ] (2017) The best army Ukraine has ever had. Changes in Ukraine’s armed fo
+  ✅ [ukraine ] (2017) Å kommunisere en konflikt – aktører i RTs dekning av situasjonen 
+  ✅ [ukraine ] (2017) Catch Flies with Honey, not Vinegar: A Prescriptive Analysis of t
+  ✅ [ukraine ] (2017) Presidential Power in Putin’s Third Term: Was Crimea a Critical J
+  ✅ [ukraine ] (2017) From principles to pragmatism? : ontological insecurity and the E
+  ✅ [ukraine ] (2017) Krimkrisen med ryska ögon
+  ❌ [russia  ] (2017) Lessons of World War II and the annexation of Crimea
+  ✅ [ukraine ] (2017) “Moving out of “Their Places”: 1991 - 2016 Migration of Ukrainian
+  ✅ [ukraine ] (2016) UNDER RUSSIAN INFLUENCE? A quantitative study on the effect of eu
+  ✅ [ukraine ] (2016) Are Empires Striking Back? A Political and Cultural Comparison of
+  ✅ [ukraine ] (2016) Russian Special Operations Forces in Crimea and Donbas
+  ❌ [russia  ] (2016) Russia's quest for international status during Vladimir Putin's t
+  ✅ [ukraine ] (2016) War in Ukraine: A Crisis between NATO and RUSSIA
+  ✅ [ukraine ] (2016) Communicating conflict: Russian mediated diplomacy in relation to
+  ✅ [ukraine ] (2016) The Role of the "New Cold War" Concept in Constructing Russia's G
+  ✅ [ukraine ] (2015) The End of the End of the Cold War: Current Dilemmas Confronting 
+  ✅ [ukraine ] (2015) Toward a Theory of Hybrid Warfare: The Russian Conduct of War Dur
+  ⚠️ [disputed] (2015) The Electoral History of the Post-Soviet Crimea: from UkSSR to Ru
+  ✅ [ukraine ] (2015) Crimean Tatars From Mass Deportation to Hardships in Occupied Cri
+  ❌ [russia  ] (2015) Law, Rhetoric, Strategy: Russia and Self-Determination Before and
+  ✅ [ukraine ] (2015) Power, National Unity, and Territorial Integrity: the Cases of Ru
+  ⚠️ [disputed] (2015) The Electoral History of the Post-Soviet Crimea: from UkSSR to Ru
+  ✅ [ukraine ] (2015) How Russia, Step by Step, Wants to Regain an Imperial Role in the
+  ✅ [ukraine ] (2015) A CRITIQUE OF EUROPEAN NEIGHBOURHOOD POLICY: THE CASE OF RUSSIAN 
+  ✅ [ukraine ] (2015) Annexation of Crimea to Russia: Contrast between Right to Self-De
+  ✅ [ukraine ] (2014) Assessing NATO's Eastern European "Flank"
+  ✅ [ukraine ] (2014) A bottomless pit: the costs of Crimea’s annexation by Russia. OSW
+  ✅ [ukraine ] (2014) Crimean Tatars after Russia's annexation of the Crimean Peninsula
+  ✅ [ukraine ] (2014) Interview with Dr. Gábor Kardos
+  ✅ [ukraine ] (2014) Annexation of Crimea: Causes, Analysis and Global Implications
+  ✅ [ukraine ] (2013) Introduction: Thucydides after the post-cold war
+  ✅ [ukraine ] (2012) "Through the National Lens": Nationality, Territory, and the Form
+  ✅ [ukraine ] (2012) Amphora Graffiti from the Byzantine Shipwreck at Novy Svet, Crime
+  ✅ [ukraine ] (2012) The Slavs and the Crimea Tatars : social and political changes in
+
+Query: Simferopol Ukraine Russia
+  ✅ [ukraine ] (2025) Geopolitical conflict and author affiliation: Designation of Ukra
+  ✅ [ukraine ] (2025) Geopolitical conflict and author affiliation : Designation of Ukr
+  ✅ [ukraine ] (2024) Geopolitical conflict's impact on author affiliation: Misattribut
+  ❌ [russia  ] (2024) МУСУЛЬМАНСКИЕ СРЕДНЕВЕКОВЫЕ ПАМЯТНИКИ ПОСЕЛЕНИЯ ОТУЗЫ (С. ЩЕБЕТОВ
+  ❌ [russia  ] (2024) Guiding a Russian region’s development under the moral paradigm: 
+  ✅ [ukraine ] (2024) РЕПРЕСИВНІ ЗАХОДИ УРЯДУ РФ ПІСЛЯ АНЕКСІЇ КРИМУ З 2014 РОКУ
+  ❌ [russia  ] (2024) “... fearlessly clutching the rifle with my hand, I will strike t
+  ❌ [russia  ] (2024) "Старый дворец" близ Симферополя: отечественная историография о м
+  ❌ [russia  ] (2024) FERTILIZER RATES FOR YOUNG TABLE GRAPE VINEYARDS WITH DRIP IRRIGA
+  ✅ [ukraine ] (2023) Ісламський вектор релігійної політики німецької військової адміні
+  ✅ [ukraine ] (2023) Religious freedom and war
+  ❌ [russia  ] (2023) Russian-ukrainian Relations In 2014–2022: The Main Geopolitical D
+  ✅ [ukraine ] (2023) The Problem of Ukrainian Identity Preservation in the Occupied Cr
+  ❌ [russia  ] (2023) Russia in the Crimea: Civilizer or Oppressor? Images of the Imper
+  ❌ [russia  ] (2023) ASSESSMENT OF GREENHOUSE GAS EMISSIONS IN CRIMEAN FORESTS UNDER T
+  ❌ [russia  ] (2023) Assessment of the degree of heterogeneity of the ethnic structure
+  ❌ [russia  ] (2023) ANALYSIS OF WATER RECLAMATION IN RUSSIAN VINEYARDS
+  ❌ [russia  ] (2023) Regional Meat Market: Movement to Self-Supply (Exemplified by the
+  ❌ [russia  ] (2021) BILINGUAL EDUCATION IN THE CRIMEA AS AN EFFECTIVE MEANS OF MULTIC
+  ❌ [russia  ] (2021) Features of the tourist enterprises image formation
+  ❌ [russia  ] (2021) Iodine Deficiency Disorders: Current State of the Problem in the 
+  ❌ [russia  ] (2021) ANALYSIS OF THE AGRO-INDUSTRIAL COMPLEX OF CRIMEA: FOOD SECURITY 
+  ✅ [ukraine ] (2021) ТРАНСФОРМАЦІЯ СИСТЕМИ ЗМІ КРИМУ В КОНТЕКСТІ АНЕКСІЇ 2014 РОКУ: СТ
+  ❌ [russia  ] (2021) ONTOMORPHOGENESIS AND CОENOPOPULATION STRUCTURE OF CREPIS PURPURE
+  ❌ [russia  ] (2021) APPLICATION OF LANDSAT-8 SATELLITE IMAGES FOR MONITORING LANDSCAP
+  ❌ [russia  ] (2021) Review of the Novorossiya Committee Activities (1801–03): Materia
+  ❌ [russia  ] (2021) POLITICAL MEANING OF CRIMEA FOR UKRAINE IN 1991‒2014
+  ❌ [russia  ] (2021) ETHNIC AND RELIGIOUS RELATIONS AS A FACTOR OF THE ETHNOPOLITICAL 
+  ❌ [russia  ] (2020) A GIS-Based Retrospective Analysis of the Epizootiologic and Epid
+  ❌ [russia  ] (2020) Drug-Induced Anaphylactic Shock
+  ✅ [ukraine ] (2020) New Generation of Victors : Narrating the Nation in Russian Presi
+  ✅ [ukraine ] (2020) The Cracking of Crimea: two Sides to Every Annexation
+  ✅ [ukraine ] (2020) Annexation of Crimea – seizure of territories without a declarati
+  ❌ [russia  ] (2020) Analysis of Factors of Entrepreneurial Environment Formation of S
+  ❌ [russia  ] (2020) Geoinformation modeling of potential productivity in agricultural
+  ❌ [russia  ] (2020) Review of methods and approaches of abandoned lands identificatio
+  ❌ [russia  ] (2019) RULE-MAKING POLICY OF THE REPUBLIC OF CRIMEA IN THE CONDITIONS OF
+  ❌ [russia  ] (2019) Dialectological description of the Russian language functioning i
+  ✅ [ukraine ] (2018) On the Use of Monumental Propaganda by Russia as an Element of th
+  ❌ [russia  ] (2018) The Question of Reforming of System of Taxes and Fees of the Russ
+  ❌ [russia  ] (2018) ENERGY SECURITY OF THE REPUBLIC OF CRIMEA UNDER THE INTERNATIONAL
+  ❌ [russia  ] (2018) Крымские караимы и развитие табачной промышленности в Российской 
+  ❌ [russia  ] (2018) REVIVAL OF WORLD JUSTICE IN THE REPUBLIC OF CRIMEA
+  ❌ [russia  ] (2017) Analysis of burn ability and subsequent changes in the mountain f
+  ❌ [russia  ] (2017) MANAGING SUSTAINABLE DEVELOPMENT OF CRIMEA BASED ON THE TOURISM C
+  ✅ [ukraine ] (2017) TO THE QUESTION OF HISTORIOGRAPHY OF THE PROBLEM OF LAW REGULATIO
+  ❌ [russia  ] (2017) The Role and Influence of the Tourism Industry of the Crimean Reg
+  ❌ [russia  ] (2016) Tourist Complex of South of Russia in the Current Conditions: The
+  ❌ [russia  ] (2015) THE LEVEL OF INTENSITY OF IMMUNITY TO DIPHTHERIA AND TETANUS AMON
+  ✅ [ukraine ] (2014) Crimean Tatars after Russia's annexation of the Crimean Peninsula
+  ❌ [russia  ] (2014) Медресе-мечеть Узбека в Старом Крыму: сквозь пространство и время
+  ❌ [russia  ] (2014) Послевоенный Крым: административно-территориальное устройство и д
+  ✅ [ukraine ] (2012) "Through the National Lens": Nationality, Territory, and the Form
+  ✅ [ukraine ] (2012) 
+
+============================================================
+SCAN COMPLETE: 661 papers with sovereignty signals
+  ⚠️ disputed: 3
+  ❌ russia: 218
+  ✅ ukraine: 440
+
+  Year-by-year:
+    2012: UA=  6  RU=  0  disputed=  0  (total=6)
+    2013: UA=  1  RU=  0  disputed=  0  (total=1)
+    2014: UA= 17  RU=  3  disputed=  0  (total=20)
+    2015: UA= 23  RU=  4  disputed=  2  (total=29)
+    2016: UA= 22  RU=  7  disputed=  0  (total=29)
+    2017: UA= 32  RU=  5  disputed=  0  (total=37)
+    2018: UA= 20  RU=  5  disputed=  0  (total=25)
+    2019: UA= 27  RU=  3  disputed=  0  (total=30)
+    2020: UA= 27  RU=  5  disputed=  0  (total=32)
+    2021: UA= 11  RU= 13  disputed=  1  (total=25)
+    2022: UA= 28  RU=  2  disputed=  0  (total=30)
+    2023: UA= 58  RU=  7  disputed=  0  (total=65)
+    2024: UA= 80  RU= 47  disputed=  0  (total=127)
+    2025: UA= 67  RU= 90  disputed=  0  (total=157)
+    2026: UA= 21  RU= 27  disputed=  0  (total=48)
+
+❌ FLAGGED — 218 papers using Russian framing:
+  (2026) People's diplomacy as a way to mutual understanding during armed confl
+      DOI: https://doi.org/10.33920/vne-01-2601-04
+  (2024) Участие Краснодарского края в процессах интеграции Республики Крым в э
+    Historical bulletin  DOI: https://doi.org/10.58224/2658-5685-2024-7-6-94-100
+  (2024) Ukraine war: ten years after Putin annexed Crimea, Russia’s grip on th
+      DOI: https://doi.org/10.64628/ab.x59979mve
+  (2022) The Government of the Russian Federation
+      DOI: https://doi.org/10.4324/9781003280965-5
+  (2022) Die Geister, die wir riefen? Eine völkerrechtliche Einordnung: Die Ann
+    Humanitäres Völkerrecht  DOI: https://doi.org/10.35998/huv-2022-0012
+  (2021) Do not forget the Crimean crisis: why Russia “Annexed” the Peninsula? 
+    Global Affairs  DOI: https://doi.org/10.1080/23340460.2021.1948800
+  (2019) THE CRIMEAN ANNEXATION CRISIS AND ITS ECONOMIC CONSEQUENCES: EU SANCTI
+    Marmara Avrupa araştırmaları dergisi/Ma  DOI: https://doi.org/10.29228/mjes.24
+  (2016) Crimea’s Annexation in the Light of International Law. A Critique of R
+    Kyiv-Mohyla Law and Politics Journal  DOI: https://doi.org/10.18523/kmlpj88181.2016-2.37-89
+  (2016) The Annexation of Crimea and Attempts to Justify It in the Context of 
+    Lithuanian Annual Strategic Review  DOI: https://doi.org/10.1515/lasr-2016-0001
+  (2016) Secession and Intervention in the Former Soviet Space: The Crimean Inc
+    Liverpool Law Review  DOI: https://doi.org/10.1007/s10991-016-9187-x
+  (2016) Engaging Crimea and Beyond: Perspectives on Conflict, Cooperation and 
+    Carleton University's Institutional Repo  DOI: https://doi.org/10.14282/2198-0403-gd-11
+  (2016) The Difference Between Russian & American Media Framing Techniques On 
+    Furman University Scholar Exchange (Furm  DOI: 
+  (2015) Law, Rhetoric, Strategy: Russia and Self-Determination Before and Afte
+    eYLS (Yale Law School)  DOI: 
+  (2015) "Crimean Offence": myth, its instrumentalization and geopolitical proj
+    Skhid  DOI: https://doi.org/10.21847/1728-9343.2015.2(134).40317
+  (2014) Putin's 'couldn't care less' attitude towards Russia's international c
+    Archive of European Integration (AEI) (U  DOI: 
+
+Results saved to /Users/tati/Desktop/ivan/crimeaisukraine/data/academic_framing_results.json
