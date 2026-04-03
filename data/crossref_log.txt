@@ -1,0 +1,34 @@
+Skipping 541 existing DOIs from OpenAlex
+CrossRef: Crimea sovereignty
+  R (2026) Analysis of Dynamics and Factors of Fertility in the Republi
+  R (2026) Molecular-Genetic Aspects of Familial Mediterranean Fever an
+  U (2026) Türkiye's Policies Regarding the Annexation of Crimea (2014)
+  R (2026) DEVELOPMENT OF FAMILY TOURISM IN THE REPUBLIC OF CRIMEA. PRO
+  R (2026) Status and forecast of changes in areas under vegetable crop
+  R (2026) Optimization of the placement of persimmon varieties in the 
+  R (2026) People's diplomacy as a way to mutual understanding during a
+  U (2026) Diplomacy in the context of hybrid warfare: historical chall
+  R (2026) Analysis of primary and overall childhood disabilities in th
+  U (2026) Annexation of Crimea
+  R (2026) SOCIAL TOURISM IN THE REPUBLIC OF CRIMEA: ORGANIZATION, PROB
+  R (2026) THE SEVERITY OF DEPRESSION AMONG MEDICAL WORKERS  IN THE REP
+  R (2026) THE IMPACT OF MIGRATION PROCESSES ON THE FORMATION OF THE LA
+  U (2025) 6 Crimea, 2014 – Russia’s Annexation of Crimea
+  U (2025) Legal status of the Representative of the President of Ukrai
+  U (2025) ДІЯЛЬНІСТЬ ВЕРХОВНОЇ РАДИ VII СКЛИКАННЯ ПІД ЧАС  АНЕКСІЇ КРИ
+  R (2025) Dynamics of bronchial asthma morbidity in Crimea
+  U (2025) THE ROLE OF FEMALE DOCTORS IN THE UNDERGROUND MOVEMENT OF CR
+  R (2025) Trends and prospects for the development of small and medium
+  R (2025) Prospects for Regional Production of Canned Fruit (Exemplifi
+  R (2025) Export Potential of the Republic of Crimea in the Direction 
+CrossRef: Crimea annexed Ukraine
+  U (2026) Intricacies and Challenges in Building a Lasting Peace for U
+  U (2026) Strategic Fanaticism
+CrossRef: Crimea Russia territory
+  U (2026) Postcolonial Struggles and Symbolic Capital: Ukrainian Polit
+CrossRef: Republic of Crimea
+CrossRef: Crimean peninsula political status
+CrossRef: Simferopol Ukraine Russia
+
+CrossRef: 24 new papers
+Saved to data/crossref_results.json
