@@ -1,10 +1,10 @@
 """
 Fetch article bodies and classify sovereignty framing.
-Works with GDELT BigQuery exports and OpenAlex data.
+Writes JSONL incrementally — never loses progress. Supports resume.
 
 Usage:
-    python scripts/fetch_and_classify.py --input data/crimea_2021_urls.json --output data/crimea_2021_classified.json
-    python scripts/fetch_and_classify.py --input data/crimea_2021_urls.json --output data/crimea_2021_classified.json --limit 100
+    python scripts/fetch_and_classify.py --input data/crimea_2021_urls.json --output data/crimea_2021.jsonl
+    python scripts/fetch_and_classify.py --input data/crimea_2015_2026_urls.json --output data/crimea_full.jsonl --resume
 """
 
 import argparse
@@ -12,6 +12,8 @@ import json
 import re
 import time
 import urllib.request
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 import sys
@@ -33,7 +35,6 @@ TLD_COUNTRY = {
     'nl': 'Netherlands', 'tr': 'Turkey', 'cn': 'China', 'jp': 'Japan',
     'com.au': 'Australia', 'co.nz': 'New Zealand', 'ca': 'Canada',
     'ie': 'Ireland', 'in': 'India', 'br': 'Brazil', 'ae': 'UAE',
-    'kr': 'South Korea', 'jp': 'Japan',
 }
 
 KNOWN_DOMAINS = {
@@ -47,8 +48,7 @@ KNOWN_DOMAINS = {
     'gordonua.com': 'Ukraine', 'globalsecurity.org': 'US',
     'menafn.com': 'Jordan', 'dailytelegraph.com.au': 'Australia',
     'couriermail.com.au': 'Australia', 'heraldsun.com.au': 'Australia',
-    'goldcoastbulletin.com.au': 'Australia', 'bendbulletin.com': 'US',
-    'thechronicle.com.au': 'Australia', 'tin247.com': 'Vietnam',
+    'bendbulletin.com': 'US', 'tin247.com': 'Vietnam',
 }
 
 
@@ -70,13 +70,11 @@ def extract_text(html: str) -> str:
     html = re.sub(r'<(script|style|nav|footer|header|aside|iframe)[^>]*>.*?</\1>', '', html, flags=re.DOTALL | re.IGNORECASE)
     text = re.sub(r'<[^>]+>', ' ', html)
     text = text.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&nbsp;', ' ')
-    text = text.replace('&#39;', "'").replace('&quot;', '"')
     text = re.sub(r'\s+', ' ', text).strip()
     return text[:8000]
 
 
 def fetch_url(url: str) -> tuple[str, str]:
-    """Returns (text, status)."""
     req = urllib.request.Request(url, headers=HEADERS)
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
@@ -95,12 +93,30 @@ def fetch_url(url: str) -> tuple[str, str]:
         return "", type(e).__name__
 
 
+def load_done_urls(output_path: str) -> set:
+    """Load already-processed URLs from existing JSONL output."""
+    done = set()
+    p = Path(output_path)
+    if p.exists():
+        with open(p) as f:
+            for line in f:
+                if line.strip():
+                    try:
+                        r = json.loads(line)
+                        done.add(r.get("url", ""))
+                    except json.JSONDecodeError:
+                        pass
+    return done
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", required=True)
     parser.add_argument("--output", required=True)
-    parser.add_argument("--limit", type=int, default=0, help="Limit articles (0=all)")
-    parser.add_argument("--delay", type=float, default=0.15, help="Seconds between fetches")
+    parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument("--delay", type=float, default=0.05)
+    parser.add_argument("--workers", type=int, default=15, help="Parallel fetch threads")
+    parser.add_argument("--resume", action="store_true", help="Skip already-processed URLs")
     args = parser.parse_args()
 
     with open(args.input) as f:
@@ -109,111 +125,116 @@ def main():
     if args.limit > 0:
         articles = articles[:args.limit]
 
-    clf = SovereigntyClassifier()
-    results = []
-    stats = {"ok": 0, "errors": 0, "no_crimea": 0}
-    by_label = {}
+    # Resume support
+    done_urls = set()
+    if args.resume:
+        done_urls = load_done_urls(args.output)
+        print(f"Resume: {len(done_urls)} already processed, skipping")
 
+    clf = SovereigntyClassifier()
+    stats = {"ok": 0, "errors": 0, "no_crimea": 0, "skipped": 0}
+    by_label = {}
     total = len(articles)
-    print(f"Fetching + classifying {total} articles...")
     start_time = time.time()
 
-    for i, a in enumerate(articles):
+    # Open output in append mode for resume, write mode otherwise
+    mode = "a" if args.resume and done_urls else "w"
+    outf = open(args.output, mode)
+
+    # Filter to unprocessed
+    to_process = [a for a in articles if a["url"] not in done_urls]
+    stats["skipped"] = len(articles) - len(to_process)
+    print(f"Fetching + classifying {len(to_process)} articles ({stats['skipped']} skipped) → {args.output}")
+    print(f"Workers: {args.workers}")
+
+    write_lock = threading.Lock()
+    counter = {"done": 0}
+
+    def process_one(a):
         url = a["url"]
         domain = a.get("domain", "")
-
-        # Fetch
         text, fetch_status = fetch_url(url)
 
+        row = {
+            "url": url,
+            "domain": domain,
+            "domain_country": get_domain_country(domain),
+            "date": a.get("date", ""),
+            "fetch_status": fetch_status,
+        }
+
         if fetch_status == "ok" and text:
-            stats["ok"] += 1
+            if clf.has_crimea_reference(text):
+                result = clf.classify(text)
+                row["label"] = result.label
+                row["confidence"] = round(result.confidence, 3)
+                row["ua_score"] = round(result.ua_score, 3)
+                row["ru_score"] = round(result.ru_score, 3)
+                row["signal_count"] = len(result.signals)
+                row["signals"] = [
+                    {"matched": s.matched, "direction": s.direction, "type": s.signal_type}
+                    for s in result.signals[:10]
+                ]
+            else:
+                row["label"] = "no_crimea_ref"
         else:
-            stats["errors"] += 1
+            row["label"] = "fetch_failed"
 
-        # Classify
-        if text and clf.has_crimea_reference(text):
-            result = clf.classify(text)
-            a["label"] = result.label
-            a["confidence"] = round(result.confidence, 3)
-            a["ua_score"] = round(result.ua_score, 3)
-            a["ru_score"] = round(result.ru_score, 3)
-            a["signal_count"] = len(result.signals)
-            a["signals"] = [
-                {"matched": s.matched, "direction": s.direction, "type": s.signal_type}
-                for s in result.signals[:10]
-            ]
-        elif text:
-            a["label"] = "no_crimea_ref"
-            stats["no_crimea"] += 1
-            a["confidence"] = 0
-            a["signals"] = []
-        else:
-            a["label"] = "fetch_failed"
-            a["confidence"] = 0
-            a["signals"] = []
+        # Write with lock
+        with write_lock:
+            by_label[row["label"]] = by_label.get(row["label"], 0) + 1
+            if row.get("fetch_status") == "ok":
+                stats["ok"] += 1
+            else:
+                stats["errors"] += 1
+            outf.write(json.dumps(row, ensure_ascii=False) + "\n")
+            outf.flush()
+            counter["done"] += 1
+            n = counter["done"]
+            if n % 500 == 0:
+                elapsed = time.time() - start_time
+                rate = n / max(elapsed, 1)
+                remaining = len(to_process) - n
+                eta = remaining / max(rate, 0.01) / 60
+                print(f"  [{n}/{len(to_process)}] {rate:.1f}/s ETA={eta:.0f}min | {by_label}")
 
-        a["fetch_status"] = fetch_status
-        a["domain_country"] = get_domain_country(domain)
-        by_label[a["label"]] = by_label.get(a["label"], 0) + 1
-        results.append(a)
+    try:
+        with ThreadPoolExecutor(max_workers=args.workers) as pool:
+            futures = [pool.submit(process_one, a) for a in to_process]
+            for f in as_completed(futures):
+                try:
+                    f.result()
+                except Exception as e:
+                    pass  # individual failures are already handled
+    finally:
+        outf.close()
 
-        # Progress every 100
-        if (i + 1) % 100 == 0:
-            elapsed = time.time() - start_time
-            rate = (i + 1) / elapsed
-            eta = (total - i - 1) / rate / 60
-            print(f"  [{i+1}/{total}] {rate:.1f}/s ETA={eta:.1f}min | {by_label}")
-
-        time.sleep(args.delay)
-
-    # Summary
     elapsed = time.time() - start_time
-    print(f"\n{'='*60}")
-    print(f"DONE in {elapsed/60:.1f} minutes")
-    print(f"  Fetched: {stats['ok']} ok, {stats['errors']} errors, {stats['no_crimea']} no Crimea ref")
+    print(f"\nDONE in {elapsed/60:.1f} minutes")
+    print(f"  Fetched: {stats['ok']} ok, {stats['errors']} errors, {stats['skipped']} skipped")
     print(f"  By label: {by_label}")
 
-    # Non-Russian-domain violators
-    violators = [r for r in results if r["label"] == "russia"]
-    non_ru_violators = [r for r in violators if r.get("domain_country") not in ("Russia", "")]
-    ru_violators = [r for r in violators if r.get("domain_country") == "Russia"]
+    # Summary file
+    summary_path = args.output.replace(".jsonl", "_summary.json")
+    violators = {}
+    with open(args.output) as f:
+        for line in f:
+            if line.strip():
+                r = json.loads(line)
+                if r.get("label") == "russia":
+                    c = r.get("domain_country") or "Unknown"
+                    violators[c] = violators.get(c, 0) + 1
 
-    print(f"\n  Russia-framing: {len(violators)} total")
-    print(f"    From Russian domains (noise): {len(ru_violators)}")
-    print(f"    From non-Russian domains (SIGNIFICANT): {len(non_ru_violators)}")
-
-    if non_ru_violators:
-        print(f"\n  NON-RUSSIAN VIOLATORS:")
-        for v in non_ru_violators[:20]:
-            sigs = ", ".join(s["matched"] for s in v["signals"][:3])
-            print(f"    [{v.get('domain_country','?'):12s}] {v['domain']:30s}")
-            print(f"      {v['url']}")
-            print(f"      Signals: {sigs}")
-
-    # By country
-    print(f"\n  Russia-framing by domain country:")
-    by_country = {}
-    for v in violators:
-        c = v.get("domain_country") or "Unknown"
-        by_country[c] = by_country.get(c, 0) + 1
-    for c, n in sorted(by_country.items(), key=lambda x: -x[1]):
-        print(f"    {c:20s}: {n}")
-
-    # Save
-    with open(args.output, "w") as f:
+    with open(summary_path, "w") as f:
         json.dump({
             "scan_date": datetime.now(timezone.utc).isoformat(),
             "input": args.input,
-            "total_articles": len(results),
-            "fetch_ok": stats["ok"],
-            "fetch_errors": stats["errors"],
+            "total": total,
+            "processed": stats["ok"] + stats["errors"],
             "by_label": by_label,
-            "violators_total": len(violators),
-            "violators_non_russian": len(non_ru_violators),
-            "by_country_russia_framing": by_country,
-            "results": results,
-        }, f, ensure_ascii=False)
-    print(f"\nSaved to {args.output}")
+            "russia_framing_by_country": violators,
+        }, f, indent=2)
+    print(f"  Summary: {summary_path}")
 
 
 if __name__ == "__main__":
