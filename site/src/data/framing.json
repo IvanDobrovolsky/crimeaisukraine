@@ -1,0 +1,1746 @@
+{
+  "gdelt": {
+    "total_articles": 153937,
+    "classified": 38663,
+    "ukraine": 33112,
+    "russia": 5194,
+    "disputed": 357,
+    "by_year": {
+      "2015": {
+        "ukraine": 2504,
+        "russia": 2171,
+        "disputed": 27,
+        "no_signal": 3577
+      },
+      "2016": {
+        "ukraine": 3699,
+        "russia": 507,
+        "disputed": 39,
+        "no_signal": 4657
+      },
+      "2017": {
+        "ukraine": 2595,
+        "russia": 294,
+        "disputed": 37,
+        "no_signal": 3097
+      },
+      "2018": {
+        "ukraine": 5140,
+        "russia": 391,
+        "disputed": 106,
+        "no_signal": 5180
+      },
+      "2019": {
+        "ukraine": 3289,
+        "russia": 292,
+        "disputed": 37,
+        "no_signal": 2978
+      },
+      "2020": {
+        "ukraine": 1983,
+        "russia": 101,
+        "disputed": 6,
+        "no_signal": 1612
+      },
+      "2021": {
+        "ukraine": 2609,
+        "russia": 165,
+        "disputed": 6,
+        "no_signal": 2396
+      },
+      "2022": {
+        "ukraine": 2609,
+        "russia": 454,
+        "disputed": 32,
+        "no_signal": 6634
+      },
+      "2023": {
+        "ukraine": 5893,
+        "russia": 467,
+        "disputed": 45,
+        "no_signal": 8864
+      },
+      "2024": {
+        "ukraine": 1649,
+        "russia": 110,
+        "disputed": 6,
+        "no_signal": 3576
+      },
+      "2025": {
+        "ukraine": 1118,
+        "russia": 229,
+        "disputed": 16,
+        "no_signal": 2973
+      },
+      "2026": {
+        "ukraine": 24,
+        "russia": 13,
+        "disputed": 0,
+        "no_signal": 164
+      }
+    },
+    "by_country": {
+      "Ukraine": {
+        "ukraine": 12632,
+        "russia": 179,
+        "total": 12838
+      },
+      "Russia": {
+        "ukraine": 126,
+        "russia": 883,
+        "total": 1011
+      },
+      "Unknown": {
+        "ukraine": 15762,
+        "russia": 3635,
+        "total": 19699
+      },
+      "UK": {
+        "ukraine": 2864,
+        "russia": 301,
+        "total": 3175
+      },
+      "Turkey": {
+        "ukraine": 105,
+        "russia": 5,
+        "total": 110
+      },
+      "Qatar": {
+        "ukraine": 73,
+        "russia": 4,
+        "total": 79
+      },
+      "Germany": {
+        "ukraine": 106,
+        "russia": 19,
+        "total": 127
+      },
+      "US": {
+        "ukraine": 158,
+        "russia": 13,
+        "total": 178
+      },
+      "Australia": {
+        "ukraine": 391,
+        "russia": 44,
+        "total": 437
+      },
+      "Ireland": {
+        "ukraine": 101,
+        "russia": 9,
+        "total": 110
+      },
+      "Canada": {
+        "ukraine": 133,
+        "russia": 5,
+        "total": 139
+      },
+      "India": {
+        "ukraine": 70,
+        "russia": 11,
+        "total": 81
+      },
+      "Italy": {
+        "ukraine": 67,
+        "russia": 59,
+        "total": 126
+      },
+      "Czechia": {
+        "ukraine": 19,
+        "russia": 3,
+        "total": 23
+      },
+      "New Zealand": {
+        "ukraine": 35,
+        "russia": 2,
+        "total": 37
+      },
+      "Jordan": {
+        "ukraine": 430,
+        "russia": 12,
+        "total": 442
+      },
+      "Netherlands": {
+        "ukraine": 9,
+        "russia": 0,
+        "total": 9
+      },
+      "France": {
+        "ukraine": 3,
+        "russia": 1,
+        "total": 4
+      },
+      "Japan": {
+        "ukraine": 10,
+        "russia": 1,
+        "total": 11
+      },
+      "UAE": {
+        "ukraine": 11,
+        "russia": 2,
+        "total": 14
+      },
+      "Belarus": {
+        "ukraine": 2,
+        "russia": 5,
+        "total": 7
+      },
+      "Poland": {
+        "ukraine": 2,
+        "russia": 0,
+        "total": 2
+      },
+      "Spain": {
+        "ukraine": 3,
+        "russia": 1,
+        "total": 4
+      }
+    },
+    "violators": [
+      {
+        "url": "http://www.e-crimea.info/news/moskovskaya-komissiya-pribyla-v-krym-dlya-vozvrashcheniya-skifskogo-zolota",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/dolya-priezzhih-chinovnikov-v-organah-vlasti-kryma-dostigla-80",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/na-fotovystavke-v-simferopole-pokazhut-krymskie-peyzazhi",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/dlya-rekonstrukcii-muzykalnogo-teatra-v-simferopole-budut-iskat-investora",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/feodosiya-podpisala-memorandum-o-druzhbe-s-grecheskim-gorodom",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/provedenie-festivalya-novaya-volna-v-yalte-okazalos-nevozmozhnym",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/dom-kino-v-simferopole-predlozhili-otremontirovat-za-schet-fonda-kultury",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/pereprava-v-kerchi-zarabotala-posle-nochnogo-pereryva-iz-za-nepogody",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/zhitelya-armyanska-oshtrafovali-za-nezakonnyy-obmen-valyut",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/vozle-sevastopolya-molodoy-voditel-vrezalsya-v-derevo-i-pogib",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/sotrudnika-mreo-v-krymu-poymali-na-vzyatke",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/gornichnaya-narkomanka-v-sevastopole-radi-vyplaty-kredita-obvorovala-kvartiru-rabotodatelya",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-krymu-provedut-god-literatury",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/gendirektora-massandry-obvinili-v-zloupotrebleniyah-pri-pokupke-vinomateriala",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/iz-za-remonta-teplotrassy-v-sevastopole-otklyuchili-teplo-v-desyati-domah",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/russkie-organizacii-sozdali-v-krymu-dvizhenie-antimaydan",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/rezhim-raboty-svetoforov-na-perekrestkah-v-evpatorii-popolnyat-peshehodnoy-fazoy",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-sevastopole-otkrylas-fotovystavka-lica-russkoy-vesny",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/bashkortostan-za-god-predostavil-belogorskomu-rayonu-kryma-gumanitarnoy-pomoshchi-na-241-mln",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/krymskuyu-vesnu-teper-predlagayut-pokurit",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/na-angarskom-perevale-ustroyat-sorevnovaniya-turistov-na-snezhno-ledovoy-distancii",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-proshlom-godu-v-krymu-vozbudili-27-ugolovnyh-del-na-neplatelshchikov-alimentov",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-evpatorii-otkryli-pamyatnik-pogibshemu-v-kieve-boycu-berkuta",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/rozhdaemost-v-feodosii-dostigla-sovetskih-pokazateley",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/vlasti-sevastopolya-uznali-o-sbore-podpisey-pod-peticiey-protiv-rukovodstva-goroda",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-sevastopole-ustroyat-parusnuyu-regatu",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/vory-zalezli-za-pozhertvovaniyami-eshche-v-odnu-mechet-v-krymu",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/carskoy-trope-v-yalte-predlozhili-dat-status-pamyatnika",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/byvshego-mera-kerchi-arestovali-na-dva-mesyaca",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/na-mezhdugorodnih-marshrutah-v-krymu-otmenili-besplatnyy-proezd-dlya-lgotnikov",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-sevastopole-otkrylsya-festival-korotkometrazhnogo-kino-est-tolko-mig",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-kerchi-proydet-voleybolnyy-turnir",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-krymu-hotyat-sozdat-126-uchastkov-mirovyh-sudey",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/rozhdaemost-v-krymu-v-yanvare-snizilas",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-21",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-livadiyskom-dvorce-v-chest-veteranov-vysadyat-redkie-derevya",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-21",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/torgovcy-rynkov-sevastopolya-potrebovali-izmenit-tipovoy-dogovor-ispolzovaniya-torgovogo-mesta",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-sevastopole-otkrylas-vystavka-posvyashchennaya-krymskoy-vesne",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-21",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/vse-stroyashchiesya-v-sevastopole-zdaniya-obyazali-podklyuchat-k-telefonnoy-seti",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-21",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/dvuh-uchenikov-internata-v-evpatorii-obvinili-v-grabezhah",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-23",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-balaklave-propala-devushka",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-23",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/sotrudnikov-fms-v-kerchi-poymali-na-moshennichestve",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-23",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/na-pozhare-v-sevastopole-evakuirovali-pyat-chelovek",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-23",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/za-sutki-v-krymu-mashiny-nasmert-sbili-dvuh-lyudey",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-23",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/pod-simferopolem-snesli-stroeniya-na-polyane-protesta",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-23",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-sevastopole-v-stolknovenii-mashiny-so-stolbom-postradali-pyat-chelovek",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-23",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/reyting-aktivnosti-rukovoditeley-gorodov-kryma-v-socialnyh-setyah-vozglavili-predstaviteli",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-23",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.ibtimes.co.uk/lenin-stalin-return-soviet-era-army-holiday-celebrated-russia-crimea-donetsk-1489164",
+        "domain": "ibtimes.co.uk",
+        "country": "UK",
+        "date": "2015-02-23",
+        "signals": [
+          "annexed Crimea",
+          "Republic of Crimea"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.e-crimea.info/news/sevastopol-i-kerch-poluchat-pochetnye-mechi",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-23",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/article/zashchishchayte-sudar",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/bolshe-80-zhiteley-kryma-poluchili-snils",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/dlya-kryma-poprosyat-sdelat-isklyuchenie-v-normativah-gazovogo-otopleniya",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/pod-simferopolem-zaderzhali-dvuh-domushnikov-narkomanov",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/na-slete-morzhey-v-sevastopole-otobrali-uchastnikov-na-chempionat-rossii",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/zavodam-na-severe-kryma-posovetovali-iskat-opresnitelnye-ustanovki",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/dvum-zhitelyam-kryma-dali-tyuremnye-sroki-za-prodazhu-chuzhih-kvartir",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/sovmin-odobril-vyplatu-voznagrazhdeniya-za-sdachu-oruzhiya-v-krymu",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/sovmin-reshil-rasshirit-tri-pogranichnyh-punkta-propuska-na-severe-kryma",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/s-aprelya-na-regulyarnuyu-liniyu-yalta-stambul-poobeshchali-vyvesti-kruiznyy-layner",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/rukovoditelem-massandry-stala-glava-zavoda-novyy-svet",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/na-severe-kryma-predlozhili-razvivat-ovcevodstvo-i-vinogradarstvo",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/krymtelekom-vyplatil-pervye-nalogi-v-byudzhet-kryma",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/premer-poobeshchal-sudit-ukrainskogo-prezidenta-v-krymu",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/na-karantin-v-krymu-zakryli-sem-shkol",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/vlasti-raskryli-shemu-nelegalnoy-dostavki-ukrainskih-produktov-v-rossiyu-cherez-krym",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/na-severnom-vezde-v-krym-reshili-sozdat-edinye-okna-dlya-propuska-gruzovikov",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/zavody-krasnoperekopska-i-armyanska-okazalis-pod-ugrozoy-otklyucheniya-elektroenergii",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-simferopole-ustanovili-kamen-na-meste-zaplanirovannogo-pamyatnika-opolcheniyu",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-evpatorii-otkrylas-fotovystavka-pobediteli",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://news.yahoo.com/kremlin-saw-plan-annex-crimea-yanukovich-fell-newspaper-174643847.html",
+        "domain": "yahoo.com",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "annexation of Crimea",
+          "unification with Russia"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.e-crimea.info/news/na-remont-obektov-kultury-na-severe-kryma-dadut-7-mln-rubley",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://euroradio.fm/en/russia-planned-seize-crimea-and-east-ukraine-when-yanukovich-was-preside",
+        "domain": "euroradio.fm",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "annexation of Crimea",
+          "Republic of Crimea"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.e-crimea.info/news/agrarii-kryma-stolknulis-s-nehvatkoy-semyan",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/deputatam-gorsoveta-alushty-predlozhili-vysadit-alleyu-roz",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.dailymail.co.uk/wires/reuters/article-2968962/Kremlin-saw-plan-annex-Crimea-Yanukovich-fell-newspaper.html",
+        "domain": "dailymail.co.uk",
+        "country": "UK",
+        "date": "2015-02-25",
+        "signals": [
+          "annexation of Crimea",
+          "unification with Russia"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.e-crimea.info/news/polzovatelyam-podzemnyh-vod-v-krymu-budut-vydavat-licenzii",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://en-maktoob.news.yahoo.com/kremlin-saw-plan-annex-crimea-yanukovich-fell-newspaper-174643847.html",
+        "domain": "yahoo.com",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "annexation of Crimea",
+          "unification with Russia"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.e-crimea.info/news/ministerstvo-selskogo-hozyaystva-predupredilo-o-deficite-kombaynov-v-krymu",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/predstavitelya-parlamenta-kryma-predlozhili-vklyuchit-v-sostav-federalnoy-komissii-po",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/prokuratura-zastavila-vyplatit-zarplatu-za-yanvar-uchitelyam-shkol-simferopolya",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/premer-prizval-ustroit-v-krymu-masshtabnye-arheologicheskie-raskopki",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/yarovymi-zernovymi-v-krymu-zaseyut-77-tys-ga",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/vokrug-doma-voloshina-v-koktebele-poprosili-snesti-nedostroennye-doma",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/zaksobranie-sevastopolya-ustanovilo-summu-odnorazovoy-zakupki-dlya-gosuchrezhdeniy",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/zhitelnicu-sevastopolya-arestovali-za-moshennichestvo-pod-vidom-snyatiya-porchi",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/simferopol-primet-chempionat-kryma-po-igre-go",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-25",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://news.usni.org/2015/02/25/nato-commander-breedlove-imported-russian-missiles-have-turned-crimea-into-a-black-sea-power-projection-platform",
+        "domain": "usni.org",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "Crimea, Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.bbc.co.uk/ukrainian/ukraine_in_russian/2015/02/150226_ru_s_chubarov_crimea",
+        "domain": "bbc.co.uk",
+        "country": "UK",
+        "date": "2015-02-26",
+        "signals": [
+          "Оккупация Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.e-crimea.info/news/agrariyam-kryma-poobeshchali-vozmestit-do-80-rashodov-na-posadku-vinogradnikov",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/byvshemu-milicioneru-v-krymu-dali-pyat-let-za-moshennichestvo",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/memorial-na-sapun-gore-v-sevastopole-nametili-otremontirovat-ko-dnyu-pobedy",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/dvuh-zaezzhih-vorov-v-sevastopole-poymali-za-popytku-ukrast-kolesa-s-mashiny",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/ekonomika-sevastopolya-pokazala-spad-po-vsem-otraslyam",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/investoram-predlozhat-kupit-v-krymu-164-zemelnyh-uchastka",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/v-simferopole-proydet-bitva-stilistov",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/na-obespechenie-bezopasnosti-vodohozyaystvennyh-sistem-kryma-poobeshchali-55-mlrd-rubley",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/zhenshchina-ubiyca-v-sele-v-krymu-ustroila-razboynoe-napadenie-na-pensionera",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/za-zavyshenie-cen-v-aptekah-kryma-zaveli-shest-ugolovnyh-del",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/za-napadeniya-s-nozhom-na-semeryh-zhenshchin-zhitel-kryma-sel-na-odinnadcat-let",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.e-crimea.info/news/zapasy-vody-v-krymu-priznali-dostatochnymi-do-nachala-leta",
+        "domain": "e-crimea.info",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://bangordailynews.com/2015/02/25/news/world-news/report-kremlin-saw-plan-to-annex-crimea-before-ukrainian-president-fell/",
+        "domain": "bangordailynews.com",
+        "country": "Unknown",
+        "date": "2015-02-26",
+        "signals": [
+          "annexation of Crimea",
+          "unification with Russia"
+        ],
+        "confidence": 0.6
+      }
+    ],
+    "violators_total": 4132
+  },
+  "academic": {
+    "total_papers": 661,
+    "ukraine": 440,
+    "russia": 218,
+    "by_year": {
+      "2026": {
+        "ukraine": 21,
+        "russia": 27
+      },
+      "2025": {
+        "ukraine": 67,
+        "russia": 90
+      },
+      "2024": {
+        "ukraine": 80,
+        "russia": 47
+      },
+      "2023": {
+        "ukraine": 58,
+        "russia": 7
+      },
+      "2022": {
+        "ukraine": 28,
+        "russia": 2
+      },
+      "2021": {
+        "ukraine": 11,
+        "russia": 13
+      },
+      "2020": {
+        "ukraine": 27,
+        "russia": 5
+      },
+      "2019": {
+        "ukraine": 27,
+        "russia": 3
+      },
+      "2018": {
+        "ukraine": 20,
+        "russia": 5
+      },
+      "2017": {
+        "ukraine": 32,
+        "russia": 5
+      },
+      "2016": {
+        "ukraine": 22,
+        "russia": 7
+      },
+      "2015": {
+        "ukraine": 23,
+        "russia": 4
+      },
+      "2014": {
+        "ukraine": 17,
+        "russia": 3
+      },
+      "2012": {
+        "ukraine": 6,
+        "russia": 0
+      },
+      "2013": {
+        "ukraine": 1,
+        "russia": 0
+      }
+    },
+    "violators": [
+      {
+        "title": "People's diplomacy as a way to mutual understanding during armed confl icts. To the 100th anniversary of people's diplomacy",
+        "doi": "https://doi.org/10.33920/vne-01-2601-04",
+        "journal": "",
+        "year": 2026,
+        "signals": [
+          "reunification of Crimea"
+        ]
+      },
+      {
+        "title": "Участие Краснодарского края в процессах интеграции Республики Крым в экономику России в переходный период (к десятилетию включения Республики Крым в состав Российской Федерации)",
+        "doi": "https://doi.org/10.58224/2658-5685-2024-7-6-94-100",
+        "journal": "Historical bulletin",
+        "year": 2024,
+        "signals": [
+          "Крым в состав Росси"
+        ]
+      },
+      {
+        "title": "Ukraine war: ten years after Putin annexed Crimea, Russia’s grip on the peninsula looks shaky",
+        "doi": "https://doi.org/10.64628/ab.x59979mve",
+        "journal": "",
+        "year": 2024,
+        "signals": [
+          "annexed Crimea",
+          "Crimea, Russia"
+        ]
+      },
+      {
+        "title": "The Government of the Russian Federation",
+        "doi": "https://doi.org/10.4324/9781003280965-5",
+        "journal": "",
+        "year": 2022,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Die Geister, die wir riefen? Eine völkerrechtliche Einordnung: Die Annexion der Krim als Vorzeichen für den bewaffneten Angriff auf die Ukraine",
+        "doi": "https://doi.org/10.35998/huv-2022-0012",
+        "journal": "Humanitäres Völkerrecht",
+        "year": 2022,
+        "signals": [
+          "annexation of Crimea",
+          "Crimea, Russia"
+        ]
+      },
+      {
+        "title": "Do not forget the Crimean crisis: why Russia “Annexed” the Peninsula? A (pro-) Western-European perception",
+        "doi": "https://doi.org/10.1080/23340460.2021.1948800",
+        "journal": "Global Affairs",
+        "year": 2021,
+        "signals": [
+          "Crimea, Russia"
+        ]
+      },
+      {
+        "title": "THE CRIMEAN ANNEXATION CRISIS AND ITS ECONOMIC CONSEQUENCES: EU SANCTIONS, U.S. SANCTIONS AND IMPACTS ON THE RUSSIAN ECONOMY",
+        "doi": "https://doi.org/10.29228/mjes.24",
+        "journal": "Marmara Avrupa araştırmaları dergisi/Marmara Üniversitesi Avrupa Araştırmaları Enstitüsü Avrupa araştırmaları dergisi",
+        "year": 2019,
+        "signals": [
+          "annexation of Crimea",
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Crimea’s Annexation in the Light of International Law. A Critique of Russia’s Legal Argumentation",
+        "doi": "https://doi.org/10.18523/kmlpj88181.2016-2.37-89",
+        "journal": "Kyiv-Mohyla Law and Politics Journal",
+        "year": 2016,
+        "signals": [
+          "Crimea, Russia"
+        ]
+      },
+      {
+        "title": "The Annexation of Crimea and Attempts to Justify It in the Context of International Law",
+        "doi": "https://doi.org/10.1515/lasr-2016-0001",
+        "journal": "Lithuanian Annual Strategic Review",
+        "year": 2016,
+        "signals": [
+          "Annexation of Crimea",
+          "reunification of Crimea"
+        ]
+      },
+      {
+        "title": "Secession and Intervention in the Former Soviet Space: The Crimean Incident and Russian Interference in Its ‘Near Abroad’",
+        "doi": "https://doi.org/10.1007/s10991-016-9187-x",
+        "journal": "Liverpool Law Review",
+        "year": 2016,
+        "signals": [
+          "republic of Crimea"
+        ]
+      },
+      {
+        "title": "Engaging Crimea and Beyond: Perspectives on Conflict, Cooperation and Civil Society Development",
+        "doi": "https://doi.org/10.14282/2198-0403-gd-11",
+        "journal": "Carleton University's Institutional Repository (MacOdrum Library, Carleton University)",
+        "year": 2016,
+        "signals": [
+          "Crimea, Russia"
+        ]
+      },
+      {
+        "title": "The Difference Between Russian & American Media Framing Techniques On The Russian Crimean Annexation",
+        "doi": "",
+        "journal": "Furman University Scholar Exchange (Furman University)",
+        "year": 2016,
+        "signals": [
+          "Russian Crimea"
+        ]
+      },
+      {
+        "title": "Law, Rhetoric, Strategy: Russia and Self-Determination Before and After Crimea",
+        "doi": "",
+        "journal": "eYLS (Yale Law School)",
+        "year": 2015,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "\"Crimean Offence\": myth, its instrumentalization and geopolitical projections",
+        "doi": "https://doi.org/10.21847/1728-9343.2015.2(134).40317",
+        "journal": "Skhid",
+        "year": 2015,
+        "signals": [
+          "Russian Crimea"
+        ]
+      },
+      {
+        "title": "Putin's 'couldn't care less' attitude towards Russia's international commitments. CEPS Commentaries, 5 March 2014",
+        "doi": "",
+        "journal": "Archive of European Integration (AEI) (University of Pittsburgh)",
+        "year": 2014,
+        "signals": [
+          "Crimea, Russia"
+        ]
+      },
+      {
+        "title": "Euonymus nanus (Celastraceae): first record for the Russian Far East",
+        "doi": "https://doi.org/10.17581/bp.2026.15103",
+        "journal": "Botanica Pacifica",
+        "year": 2026,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Dynamics of bronchial asthma morbidity in Crimea",
+        "doi": "https://doi.org/10.36604/1998-5029-2025-98-21-31",
+        "journal": "Bulletin physiology and pathology of respiration",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "НАУЧНОЕ ОБОСНОВАНИЕ СОЗДАНИЯ БОТАНИЧЕСКОГО ЗАКАЗНИКА«ЛИМЕНСКАЯ ДОЛИНА» (РЕСПУБЛИКА КРЫМ)",
+        "doi": "https://doi.org/10.25744/genb.2025.3.41.008",
+        "journal": "Грозненский естественнонаучный бюллетень",
+        "year": 2025,
+        "signals": [
+          "РЕСПУБЛИКА КРЫМ",
+          "Республика Крым"
+        ]
+      },
+      {
+        "title": "First record of Bembecia (Opacosphecia) eversmanni O. Gorbunov, 2024 (Lepidoptera: Sesiidae) from the Crimean Peninsula",
+        "doi": "https://doi.org/10.37828/em.2025.91.7",
+        "journal": "Ecologica Montenegrina",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "To the distribution of Bembecia (Bembecia) ichneumoniformis ([Denis et Schiffermüller], 1775) (Lepidoptera: Sesiidae) on the Crimean Peninsula, Russia",
+        "doi": "https://doi.org/10.37828/em.2025.90.14",
+        "journal": "Ecologica Montenegrina",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "“Masters of Death”: a Note by Junior Sergeant V.N. Nakidnev about the Krasny Concentration Camp",
+        "doi": "https://doi.org/10.23947/2414-1143-2025-11-3-68-72",
+        "journal": "Science almanac of Black sea region countries",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Territorial and Settlement Characteristics of the Dynamics of Population Ageing in the Republic of Crimea (2014‒2021)",
+        "doi": "https://doi.org/10.23947/2414-1143-2025-11-3-14-23",
+        "journal": "Science almanac of Black sea region countries",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "INTERNATIONAL LAW AND LEGISLATION OF THE RUSSIAN FEDERATION AND THE REPUBLIC OF CRIMEA IN THE FIELD OF PROTECTION AND PRESERVATION OF THE HISTORICAL URBAN ENVIRONMENT OF THE CITY OF BAKHCHISARAI",
+        "doi": "https://doi.org/10.29039/2413-1873-2025-37-5-16",
+        "journal": "Construction and industrial safety",
+        "year": 2025,
+        "signals": [
+          "REPUBLIC OF CRIMEA",
+          "Republic of Crimea",
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Marketing factors in promoting eno tourism",
+        "doi": "https://doi.org/10.18572/2686-858x-2025-26-2-37-45",
+        "journal": "The Professors Magazine Recreation and Tourism Series",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "THE STORY «SON OF THE REGIMENT» IN THE REALITIES OF THE CRIMEAN PARTISAN STRUGGLE: THE FATE OF VOLODYA DEGTYAREV BASED ON THE MATERIALS OF THE CRIMEAN ARCHIVE",
+        "doi": "https://doi.org/10.29039/2413-1679-2025-11-2-3-18",
+        "journal": "Scientific Notes of V I Vernadsky Crimean Federal University Philological sciences",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Unknown Vasiliy Makurin: towards the history of the family and the famous house",
+        "doi": "https://doi.org/10.29039/2413-1741-2025-11-2-91-115",
+        "journal": "Scientific Notes of V I Vernadsky Crimean Federal University Historical science",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "To the distribution of Conopia stomoxiformis (Hübner, 1790) (Lepidoptera: Sesiidae) on the Crimean Peninsula (Russia)",
+        "doi": "https://doi.org/10.37828/em.2025.87.5",
+        "journal": "Ecologica Montenegrina",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Information support for the assessment of the state and protection of the «Yalta Mountain-Forest» state nature reserve of the republic of Crimea based on the application of remote sensing methods and GIS technologies",
+        "doi": "https://doi.org/10.33920/sel-04-2505-03",
+        "journal": "Zemleustrojstvo, kadastr i monitoring zemel' (Land management, cadastre and land monitoring)",
+        "year": 2025,
+        "signals": [
+          "republic of Crimea",
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "To the distribution of Microsphecia brosiformis (Hübner, 1813) (Lepidoptera: Sesiidae) on the Crimean Peninsula (Russia)",
+        "doi": "https://doi.org/10.37828/em.2025.86.1",
+        "journal": "Ecologica Montenegrina",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "The Use of Information and Digital Technologies in the Activities of Local Governments of the Republic of Crimea",
+        "doi": "https://doi.org/10.23947/2413-1474-2025-9-1-21-29",
+        "journal": "Economy and ecology of territorial educations",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Agitation and propaganda of the underground members of the Crimea during the Great Patriotic War",
+        "doi": "https://doi.org/10.18384/2949-5164-2025-1-103-119",
+        "journal": "Bulletin of the State University of Education Series History and Political Sciences",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Digression-demutation processes of riparian forests along the Kacha River in the Republic of Crimea",
+        "doi": "https://doi.org/10.12731/2658-6649-2025-17-1-1030",
+        "journal": "Siberian Journal of Life Sciences and Agriculture",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Features of the biomorphological and geographic structure of segetal floras in a number of regions in Russia",
+        "doi": "https://doi.org/10.30901/2227-8834-2024-4-209-220",
+        "journal": "PROCEEDINGS ON APPLIED BOTANY GENETICS AND BREEDING",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Amino acid and fatty acid composition of feed additives based on coriander cake (Coriandrum sativum L.)",
+        "doi": "https://doi.org/10.1051/bioconf/202517901014",
+        "journal": "BIO Web of Conferences",
+        "year": 2025,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "PROBLEMS AND PROSPECTS OF DEVELOPMENT OF THE METALWORKING INDUSTRY IN THE TERRITORY OF THE REPUBLIC OF CRIMEA",
+        "doi": "https://doi.org/10.36871/ek.up.p.r.2025.05.01.014",
+        "journal": "EKONOMIKA I UPRAVLENIE PROBLEMY RESHENIYA",
+        "year": 2025,
+        "signals": [
+          "REPUBLIC OF CRIMEA",
+          "Republic of Crimea",
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Images of “Us” and “Others” as a Factor in the Identification of Citizens in the Context of the Reintegration of the Republic of Crimea and the City of Sevastopol into the Russian Federation",
+        "doi": "https://doi.org/10.22363/2313-1438-2024-26-2-292-305",
+        "journal": "RUDN Journal of Political Science",
+        "year": 2024,
+        "signals": [
+          "Republic of Crimea",
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "SPECIAL MILITARY OPERATION IN UKRAINE AS A CHALLENGE FOR RUSSIAN LITERATURE",
+        "doi": "https://doi.org/10.29039/2413-1679-2024-10-3-37-48",
+        "journal": "Scientific Notes of V I Vernadsky Crimean Federal University Philological sciences",
+        "year": 2024,
+        "signals": [
+          "reunification of Crimea"
+        ]
+      },
+      {
+        "title": "Formation of Civil Identity in the Educational Policy System in the Context of Transformation of the Political Space",
+        "doi": "https://doi.org/10.22394/2073-2929-2024-03-133-143",
+        "journal": "EURASIAN INTEGRATION economics law politics",
+        "year": 2024,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Current Trends in HIV Infection in the Republic of Crimea",
+        "doi": "https://doi.org/10.3390/v16111716",
+        "journal": "Viruses",
+        "year": 2024,
+        "signals": [
+          "Republic of Crimea",
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Экономика знаний в контексте развития Республики Крым",
+        "doi": "https://doi.org/10.47576/2949-1878.2024.10.10.009",
+        "journal": "Journal of Applied Research",
+        "year": 2024,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Promising Directions of Economic Development of Rural Areas: The Case of the Republic of Crimea",
+        "doi": "https://doi.org/10.15507/2413-1407.128.032.202403.523-542",
+        "journal": "REGIONOLOGY",
+        "year": 2024,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "THE IMAGE OF RUSSIA IN THE PRESENT AND FUTURE IN THE PERCEPTIONS OF THE RESIDENTS OF CRIMEA",
+        "doi": "https://doi.org/10.18522/2227-8656.2024.4.11",
+        "journal": "HUMANITIES OF THE SOUTH OF RUSSIA",
+        "year": 2024,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Formation of Russian Identity in the Crimea and Sevastopol City",
+        "doi": "https://doi.org/10.26794/2226-7867-2024-14-2-109-114",
+        "journal": "Humanities and Social Sciences Bulletin of the Financial University",
+        "year": 2024,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Results of Epizootiological Survey of the Territories of the Republic of Crimea andSevastopol in 2015–2022",
+        "doi": "https://doi.org/10.35627/2219-5238/2024-32-7-7-15",
+        "journal": "ЗДОРОВЬЕ НАСЕЛЕНИЯ И СРЕДА ОБИТАНИЯ - ЗНиСО / PUBLIC HEALTH AND LIFE ENVIRONMENT",
+        "year": 2024,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Analysis of Dynamics and Factors of Fertility in the Republic of Crimea",
+        "doi": "https://doi.org/10.19181/demis.2026.6.1.4",
+        "journal": "DEMIS Demographic research",
+        "year": 2026,
+        "signals": [
+          "Republic of Crimea",
+          "Republic of Crimea",
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Developing accessible sports infrastructure in municipal education: a management perspective",
+        "doi": "https://doi.org/10.5930/1994-4683-2026-3-59-66",
+        "journal": "Uchenye zapiski universiteta imeni P F Lesgafta",
+        "year": 2026,
+        "signals": [
+          "Republic of Crimea",
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "Molecular-Genetic Aspects of Familial Mediterranean Fever and the Role of the Ethnic Factor in the Manifestation of This Disease in the Republic of Crimea",
+        "doi": "https://doi.org/10.12775/pps.2026.31.70050",
+        "journal": "Pedagogy and Psychology of Sport",
+        "year": 2026,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "О НЕИЗВЕСТНОЙ РУКОПИСИ Н. П. СУСЛОВОЙ В ФОНДАХ КРЫМСКОГО АРХИВА: ТЕКСТ И КОНТЕКСТ",
+        "doi": "https://doi.org/10.5281/zenodo.19019164",
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "year": 2026,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "О НЕИЗВЕСТНОЙ РУКОПИСИ Н. П. СУСЛОВОЙ В ФОНДАХ КРЫМСКОГО АРХИВА: ТЕКСТ И КОНТЕКСТ",
+        "doi": "https://doi.org/10.5281/zenodo.19019163",
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "year": 2026,
+        "signals": [
+          "Republic of Crimea"
+        ]
+      },
+      {
+        "title": "INFLUENCE OF MULTICULTURAL ENVIRONMENT ON THE PSYCHOEMOTIONAL STATE OF YOUTH IN THE REPUBLIC OF CRIMEA",
+        "doi": "https://doi.org/10.5281/zenodo.18983673",
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "year": 2026,
+        "signals": [
+          "REPUBLIC OF CRIMEA",
+          "Republic of Crimea"
+        ]
+      }
+    ],
+    "violators_total": 218
+  }
+}
