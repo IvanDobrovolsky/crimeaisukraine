@@ -36,7 +36,7 @@ findings.forEach((f: any) => {
 const categoryOrder = [
   'data_visualization', 'open_source', 'map_service', 'tech_infrastructure',
   'weather', 'reference', 'travel', 'ip_geolocation', 'social_media',
-  'gaming', 'search_engine', 'sports'
+  'gaming', 'search_engine', 'sports', 'telecom'
 ];
 
 const statusOrder = { correct: 0, incorrect: 1, ambiguous: 2, blocked: 3, 'n/a': 4 } as Record<string, number>;
@@ -62,6 +62,44 @@ const catStats = categoryOrder.filter(c => categories[c]).map(c => {
     ambiguous: items.filter((f: any) => f.status === 'ambiguous').length,
   };
 });
+
+// IP Geolocation — computed from enriched data
+const ipData = ipResults as any;
+const ipTotalLookups = ipData.total_lookups || 120;
+const ipTotalIPs = ipData.total_ips || 90;
+const ipTotalASNs = ipData.total_asns || 9;
+const ipByCountry = ipData.by_country || { UA: 64, RU: 19, other: 37 };
+const ipByProvider = ipData.by_provider || {};
+const ipByASN = ipData.by_asn || {};
+const ipTotalResults = (ipByCountry.UA || 0) + (ipByCountry.RU || 0) + (ipByCountry.other || 0);
+const ipPctUA = Math.round((ipByCountry.UA || 0) / ipTotalResults * 100);
+const ipPctRU = Math.round((ipByCountry.RU || 0) / ipTotalResults * 100);
+const ipPctOther = Math.round((ipByCountry.other || 0) / ipTotalResults * 100);
+
+// Sort ASNs: Ukrainian first, then mixed, then rerouted
+const asnEntries = Object.entries(ipByASN).map(([id, info]: [string, any]) => ({ id, ...info }));
+const asnSorted = asnEntries.sort((a: any, b: any) => {
+  const order: Record<string, number> = { ukrainian: 0, mixed: 1, mixed_ru: 1, rerouted: 2 };
+  return (order[a.origin] ?? 3) - (order[b.origin] ?? 3);
+});
+
+// Map services — computed from data
+const mapFindings = findings.filter((f: any) => f.category === 'map_service');
+const mCorrect = mapFindings.filter((f: any) => f.status === 'correct');
+const mIncorrect = mapFindings.filter((f: any) => f.status === 'incorrect');
+const mAmbiguous = mapFindings.filter((f: any) => f.status === 'ambiguous');
+const mTotal = mapFindings.length;
+const mPctCorrect = mTotal > 0 ? Math.round(mCorrect.length / mTotal * 100) : 0;
+const mPctIncorrect = mTotal > 0 ? Math.round(mIncorrect.length / mTotal * 100) : 0;
+const mPctAmbiguous = mTotal > 0 ? Math.round(mAmbiguous.length / mTotal * 100) : 0;
+
+// Telecom — computed from data
+const telecomFindings = findings.filter((f: any) => f.category === 'telecom');
+const tcCorrect = telecomFindings.filter((f: any) => f.status === 'correct');
+const tcIncorrect = telecomFindings.filter((f: any) => f.status === 'incorrect');
+const tcBlocked = telecomFindings.filter((f: any) => f.status === 'blocked');
+const tcNA = telecomFindings.filter((f: any) => f.status === 'n/a');
+const tcTotal = telecomFindings.length;
 
 const infraRows = [
   ['IP Geolocation', 'MaxMind, GeoNames (UA)', 'Post-2014 RU ISPs \u2192 RU'],
@@ -278,26 +316,392 @@ const propagation = [
   </div>
 </section>
 
-<!-- IP Geolocation Visual -->
-<section class="max-w-6xl mx-auto px-6 mb-20">
-  <div class="bg-[#111827] rounded-2xl p-6 md:p-8 border border-[#1e293b]">
-    <h2 class="text-lg font-bold mb-6">{lang === 'uk' ? 'IP-геолокація: 90 кримських IP-адрес, 9 автономних систем' : 'IP Geolocation: 90 Crimean IPs Across 9 Autonomous Systems'}</h2>
-    <div class="grid md:grid-cols-3 gap-4">
-      <div class="text-center p-4 rounded-xl bg-[#0057b7]/10 border border-[#0057b7]/30">
-        <div class="text-4xl font-black text-[#0057b7]">53%</div>
-        <div class="text-sm text-[#94a3b8] mt-1">{lang === 'uk' ? 'Визначено як Україна' : 'Resolve to Ukraine'}</div>
-        <div class="text-xs text-[#64748b] mt-1">SevStar, Sim-Telecom, CrimeaTelecom, CrimeaLink</div>
+<!-- Map Services — Expanded Section -->
+<section id="map-services" class="max-w-6xl mx-auto px-6 mb-20">
+  <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.mapTitle}</h2>
+    <p class="text-[#94a3b8] mb-8">{t.mapDesc}</p>
+
+    <!-- Top row: Donut + Stats -->
+    <div class="grid md:grid-cols-[240px_1fr] gap-8 mb-10">
+      <div class="flex flex-col items-center">
+        <div class="relative w-44 h-44">
+          <svg viewBox="0 0 36 36" class="w-full h-full -rotate-90">
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1e293b" stroke-width="3.8" />
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#22c55e" stroke-width="3.8"
+              stroke-dasharray={`${mPctCorrect} ${100 - mPctCorrect}`} stroke-dashoffset="0" />
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#ef4444" stroke-width="3.8"
+              stroke-dasharray={`${mPctIncorrect} ${100 - mPctIncorrect}`} stroke-dashoffset={`${-mPctCorrect}`} />
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f59e0b" stroke-width="3.8"
+              stroke-dasharray={`${mPctAmbiguous} ${100 - mPctAmbiguous}`} stroke-dashoffset={`${-(mPctCorrect + mPctIncorrect)}`} />
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <div class="text-3xl font-black text-white">{mTotal}</div>
+            <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'сервісів' : 'services'}</div>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-4 text-xs text-[#94a3b8] justify-center">
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>{mCorrect.length} {t.mapCorrectLabel}</span>
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>{mIncorrect.length} {t.mapIncorrectLabel}</span>
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>{mAmbiguous.length} {t.mapAmbiguousLabel}</span>
+        </div>
       </div>
-      <div class="text-center p-4 rounded-xl bg-[#ef4444]/10 border border-[#ef4444]/30">
-        <div class="text-4xl font-black text-[#ef4444]">16%</div>
-        <div class="text-sm text-[#94a3b8] mt-1">{lang === 'uk' ? 'Визначено як Росія' : 'Resolve to Russia'}</div>
-        <div class="text-xs text-[#64748b] mt-1">Miranda-Media (post-2014 RU entity)</div>
+
+      <div class="grid grid-cols-3 gap-3">
+        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#22c55e]/30 text-center">
+          <div class="text-3xl font-black text-[#22c55e]">{mCorrect.length}</div>
+          <div class="text-xs text-[#94a3b8] mt-1">{t.mapCorrectLabel}</div>
+          <div class="text-[10px] text-[#64748b] mt-0.5">{mPctCorrect}%</div>
+        </div>
+        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
+          <div class="text-3xl font-black text-[#ef4444]">{mIncorrect.length}</div>
+          <div class="text-xs text-[#94a3b8] mt-1">{t.mapIncorrectLabel}</div>
+          <div class="text-[10px] text-[#64748b] mt-0.5">{mPctIncorrect}%</div>
+        </div>
+        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#f59e0b]/30 text-center">
+          <div class="text-3xl font-black text-[#f59e0b]">{mAmbiguous.length}</div>
+          <div class="text-xs text-[#94a3b8] mt-1">{t.mapAmbiguousLabel}</div>
+          <div class="text-[10px] text-[#64748b] mt-0.5">{mPctAmbiguous}%</div>
+        </div>
       </div>
-      <div class="text-center p-4 rounded-xl bg-[#94a3b8]/10 border border-[#94a3b8]/30">
-        <div class="text-4xl font-black text-[#94a3b8]">31%</div>
-        <div class="text-sm text-[#94a3b8] mt-1">{lang === 'uk' ? 'Перенаправлено в треті країни' : 'Re-routed to Third Countries'}</div>
-        <div class="text-xs text-[#64748b] mt-1">{lang === 'uk' ? 'Угорщина, Франція, Аргентина, Італія' : 'Hungary, France, Argentina, Italy'}</div>
+    </div>
+
+    <!-- Grouped service listings -->
+    <div class="space-y-6">
+      <!-- Correct: Geocoding APIs -->
+      <div>
+        <h3 class="text-sm font-bold text-[#22c55e] uppercase tracking-wider mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>
+          {t.mapGeocodingTitle} ({mCorrect.length})
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+          {mCorrect.sort((a: any, b: any) => a.platform.localeCompare(b.platform)).map((f: any) => (
+            <a href={f.url} target="_blank" rel="noopener" class="group bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm flex items-center gap-2 border border-[#1e293b] hover:border-[#22c55e]/50 transition">
+              <span class="text-[#22c55e] flex-shrink-0 text-xs">&#x2713;</span>
+              <span class="text-[#e2e8f0] truncate text-xs font-medium group-hover:text-white transition">{f.platform}</span>
+            </a>
+          ))}
+        </div>
       </div>
+
+      <!-- Ambiguous: Consumer maps -->
+      <div>
+        <h3 class="text-sm font-bold text-[#f59e0b] uppercase tracking-wider mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>
+          {t.mapConsumerTitle} ({mAmbiguous.length})
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {mAmbiguous.map((f: any) => (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#f59e0b]/20">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-[#f59e0b] flex-shrink-0 text-xs">&#x26A0;</span>
+                <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
+              </div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Incorrect: Russian -->
+      <div>
+        <h3 class="text-sm font-bold text-[#ef4444] uppercase tracking-wider mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>
+          {t.mapRussianTitle} ({mIncorrect.length})
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+          {mIncorrect.map((f: any) => (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#ef4444]/20">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-[#ef4444] flex-shrink-0 text-xs">&#x2717;</span>
+                <span class="text-[#e2e8f0] truncate text-xs font-medium">{f.platform}</span>
+              </div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{lang === 'uk' ? 'Показує як Росію' : 'Shows as Russia'}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Insight -->
+    <div class="mt-8 bg-[#0a0e1a] rounded-xl p-4 border border-[#f59e0b]/30">
+      <p class="text-sm text-[#94a3b8]">
+        <span class="text-[#f59e0b] font-bold">{lang === 'uk' ? 'Висновок' : 'Key insight'}:</span> {t.mapInsight}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- IP Geolocation — Expanded Section -->
+<section id="ip-geolocation" class="max-w-6xl mx-auto px-6 mb-20">
+  <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.ipTitle}</h2>
+    <p class="text-[#94a3b8] mb-8">{t.ipDesc}</p>
+
+    <!-- Top row: Donut + Summary Stats -->
+    <div class="grid md:grid-cols-[240px_1fr] gap-8 mb-10">
+      <!-- Donut Chart -->
+      <div class="flex flex-col items-center">
+        <div class="relative w-44 h-44">
+          <svg viewBox="0 0 36 36" class="w-full h-full -rotate-90">
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1e293b" stroke-width="3.8" />
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#0057b7" stroke-width="3.8"
+              stroke-dasharray={`${ipPctUA} ${100 - ipPctUA}`} stroke-dashoffset="0" />
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#ef4444" stroke-width="3.8"
+              stroke-dasharray={`${ipPctRU} ${100 - ipPctRU}`} stroke-dashoffset={`${-ipPctUA}`} />
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#94a3b8" stroke-width="3.8"
+              stroke-dasharray={`${ipPctOther} ${100 - ipPctOther}`} stroke-dashoffset={`${-(ipPctUA + ipPctRU)}`} />
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <div class="text-3xl font-black text-white">{ipTotalLookups}</div>
+            <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'запитів' : 'lookups'}</div>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-4 text-xs text-[#94a3b8] justify-center">
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#0057b7]"></span>{ipPctUA}% {t.ipResolveUA}</span>
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>{ipPctRU}% {t.ipResolveRU}</span>
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#94a3b8]"></span>{ipPctOther}% {t.ipResolveOther}</span>
+        </div>
+      </div>
+
+      <!-- Stat Cards -->
+      <div class="grid grid-cols-3 gap-3">
+        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30 text-center">
+          <div class="text-3xl font-black text-[#0057b7]">{ipByCountry.UA}</div>
+          <div class="text-xs text-[#94a3b8] mt-1">{t.ipResolveUA}</div>
+          <div class="text-[10px] text-[#64748b] mt-0.5">{ipPctUA}%</div>
+        </div>
+        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
+          <div class="text-3xl font-black text-[#ef4444]">{ipByCountry.RU}</div>
+          <div class="text-xs text-[#94a3b8] mt-1">{t.ipResolveRU}</div>
+          <div class="text-[10px] text-[#64748b] mt-0.5">{ipPctRU}%</div>
+        </div>
+        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#94a3b8]/30 text-center">
+          <div class="text-3xl font-black text-[#94a3b8]">{ipByCountry.other}</div>
+          <div class="text-xs text-[#94a3b8] mt-1">{t.ipResolveOther}</div>
+          <div class="text-[10px] text-[#64748b] mt-0.5">{ipPctOther}%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Per-ISP breakdown — the real story -->
+    <div class="mb-8">
+      <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">{t.ipAsnTitle}</h3>
+      <div class="space-y-2">
+        {asnSorted.map((asn: any) => {
+          const barUA = asn.total > 0 ? (asn.ua / asn.total * 100) : 0;
+          const barRU = asn.total > 0 ? (asn.ru / asn.total * 100) : 0;
+          const barOther = asn.total > 0 ? (asn.other / asn.total * 100) : 0;
+          const originColor = asn.origin === 'ukrainian' ? '#0057b7' : asn.origin === 'rerouted' ? '#94a3b8' : '#ef4444';
+          const originLabel = asn.origin === 'ukrainian' ? t.ipUkrainianISP : asn.origin === 'rerouted' ? t.ipReroutedISP : asn.origin === 'mixed_ru' ? t.ipRussianISP : t.ipMixedISP;
+          return (
+            <div class="bg-[#0a0e1a] rounded-lg p-3 border border-[#1e293b]">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full flex-shrink-0" style={`background: ${originColor}`}></span>
+                  <span class="text-sm font-medium text-white">{asn.name}</span>
+                  <span class="text-[10px] text-[#64748b]">AS{asn.id}</span>
+                </div>
+                <div class="flex items-center gap-3 text-[10px]">
+                  <span class="text-[#64748b]">{originLabel}</span>
+                  <span class="text-[#94a3b8]">{asn.total} {lang === 'uk' ? 'запитів' : 'lookups'}</span>
+                </div>
+              </div>
+              <div class="flex h-3 rounded-full overflow-hidden bg-[#1e293b]">
+                {barUA > 0 && <div class="bg-[#0057b7] h-full" style={`width: ${barUA}%`}></div>}
+                {barRU > 0 && <div class="bg-[#ef4444] h-full" style={`width: ${barRU}%`}></div>}
+                {barOther > 0 && <div class="bg-[#94a3b8] h-full" style={`width: ${barOther}%`}></div>}
+              </div>
+              <div class="flex gap-3 mt-1.5 text-[10px] text-[#64748b]">
+                {asn.ua > 0 && <span>UA: {asn.ua}</span>}
+                {asn.ru > 0 && <span>RU: {asn.ru}</span>}
+                {asn.other > 0 && <span>{lang === 'uk' ? 'Інше' : 'Other'}: {asn.other}</span>}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+
+    <!-- Per-Provider breakdown -->
+    <div class="mb-8">
+      <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">{t.ipProviderTitle}</h3>
+      <div class="grid md:grid-cols-2 gap-3">
+        {Object.entries(ipByProvider).map(([provider, results]: [string, any]) => {
+          const pTotal = (results.UA || 0) + (results.RU || 0) + (results.other || 0);
+          const pUA = pTotal > 0 ? Math.round((results.UA || 0) / pTotal * 100) : 0;
+          const pRU = pTotal > 0 ? Math.round((results.RU || 0) / pTotal * 100) : 0;
+          const pOther = pTotal > 0 ? Math.round((results.other || 0) / pTotal * 100) : 0;
+          return (
+            <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#1e293b]">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-sm font-medium text-white">{provider}</span>
+                <span class="text-xs text-[#64748b]">{pTotal} {lang === 'uk' ? 'запитів' : 'lookups'}</span>
+              </div>
+              <div class="flex h-4 rounded-full overflow-hidden bg-[#1e293b] mb-2">
+                {pUA > 0 && <div class="bg-[#0057b7] h-full" style={`width: ${pUA}%`}></div>}
+                {pRU > 0 && <div class="bg-[#ef4444] h-full" style={`width: ${pRU}%`}></div>}
+                {pOther > 0 && <div class="bg-[#94a3b8] h-full" style={`width: ${pOther}%`}></div>}
+              </div>
+              <div class="flex gap-4 text-xs text-[#94a3b8]">
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#0057b7]"></span>UA {pUA}%</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>RU {pRU}%</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#94a3b8]"></span>{lang === 'uk' ? 'Інше' : 'Other'} {pOther}%</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+
+    <!-- Geolocation Providers tested -->
+    <div class="mb-8">
+      <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-3">
+        {lang === 'uk' ? 'Протестовані сервіси геолокації' : 'Geolocation Services Tested'}
+      </h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+        {findings.filter((f: any) => f.category === 'ip_geolocation').sort((a: any, b: any) => (statusOrder[a.status] ?? 5) - (statusOrder[b.status] ?? 5)).map((f: any) => {
+          const color = f.status === 'correct' ? '#22c55e' : f.status === 'incorrect' ? '#ef4444' : '#f59e0b';
+          const icon = f.status === 'correct' ? '✓' : f.status === 'incorrect' ? '✗' : '⚠';
+          return (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#1e293b]">
+              <div class="flex items-center gap-2">
+                <span class="flex-shrink-0 text-xs" style={`color: ${color}`}>{icon}</span>
+                <span class="text-[#e2e8f0] truncate text-xs font-medium">{f.platform}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+
+    <!-- Insight callout -->
+    <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30">
+      <p class="text-sm text-[#94a3b8]">
+        <span class="text-[#0057b7] font-bold">{lang === 'uk' ? 'Висновок' : 'Key insight'}:</span> {t.ipInsight}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Internet & Telecommunications Section -->
+<section id="telecom" class="max-w-6xl mx-auto px-6 mb-20">
+  <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.telecomTitle}</h2>
+    <p class="text-[#94a3b8] mb-8">{t.telecomDesc}</p>
+
+    <!-- Stat overview -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#64748b]/30 text-center">
+        <div class="text-3xl font-black text-[#64748b]">{tcNA.length}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{t.telecomUaTitle}</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
+        <div class="text-3xl font-black text-[#ef4444]">{tcIncorrect.length}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{t.telecomRuTitle}</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#8b5cf6]/30 text-center">
+        <div class="text-3xl font-black text-[#8b5cf6]">{tcBlocked.length}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{t.telecomBlockedTitle}</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#22c55e]/30 text-center">
+        <div class="text-3xl font-black text-[#22c55e]">{tcCorrect.length}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{t.telecomSurvivingTitle}</div>
+      </div>
+    </div>
+
+    <!-- Grouped listings -->
+    <div class="space-y-6">
+      <!-- Ukrainian operators (withdrawn) -->
+      {tcNA.length > 0 && (
+      <div>
+        <h3 class="text-sm font-bold text-[#64748b] uppercase tracking-wider mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#64748b]"></span>
+          {t.telecomUaTitle} ({tcNA.length})
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+          {tcNA.map((f: any) => (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#64748b]/20">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-[#64748b] flex-shrink-0 text-xs">&#x2796;</span>
+                <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
+              </div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 100 ? f.detail.slice(0, 100) + '...' : f.detail}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      )}
+
+      <!-- Russian infrastructure -->
+      {tcIncorrect.length > 0 && (
+      <div>
+        <h3 class="text-sm font-bold text-[#ef4444] uppercase tracking-wider mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>
+          {t.telecomRuTitle} ({tcIncorrect.length})
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {tcIncorrect.map((f: any) => (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#ef4444]/20">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-[#ef4444] flex-shrink-0 text-xs">&#x2717;</span>
+                <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
+              </div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      )}
+
+      <!-- Sanctions-blocked -->
+      {tcBlocked.length > 0 && (
+      <div>
+        <h3 class="text-sm font-bold text-[#8b5cf6] uppercase tracking-wider mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#8b5cf6]"></span>
+          {t.telecomBlockedTitle} ({tcBlocked.length})
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+          {tcBlocked.map((f: any) => (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#8b5cf6]/20">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-[#8b5cf6] flex-shrink-0 text-xs">&#x1F6AB;</span>
+                <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
+              </div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 100 ? f.detail.slice(0, 100) + '...' : f.detail}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      )}
+
+      <!-- Surviving Ukrainian -->
+      {tcCorrect.length > 0 && (
+      <div>
+        <h3 class="text-sm font-bold text-[#22c55e] uppercase tracking-wider mb-3 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>
+          {t.telecomSurvivingTitle} ({tcCorrect.length})
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {tcCorrect.map((f: any) => (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#22c55e]/30">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-[#22c55e] flex-shrink-0 text-xs">&#x2713;</span>
+                <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
+              </div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      )}
+    </div>
+
+    <!-- Insight -->
+    <div class="mt-8 bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30">
+      <p class="text-sm text-[#94a3b8]">
+        <span class="text-[#ef4444] font-bold">{lang === 'uk' ? 'Висновок' : 'Key insight'}:</span> {t.telecomInsight}
+      </p>
     </div>
   </div>
 </section>
