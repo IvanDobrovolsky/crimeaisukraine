@@ -266,7 +266,12 @@ def check_mapbox_geocoding() -> list[dict]:
     findings = []
     # Mapbox v6 search is free tier
     url = "https://api.mapbox.com/search/geocode/v6/forward"
-    params = {"q": "Simferopol", "access_token": "", "limit": 1}
+    import os
+    token = os.environ.get("MAPBOX_TOKEN", "")
+    if not token:
+        print("  Skipped (set MAPBOX_TOKEN env var)")
+        return findings
+    params = {"q": "Simferopol", "access_token": token, "limit": 1}
     try:
         resp = SESSION.get(url, params=params, timeout=15)
         if resp.status_code == 200:
