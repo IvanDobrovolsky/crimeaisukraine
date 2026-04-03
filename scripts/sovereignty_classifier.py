@@ -82,7 +82,7 @@ ADMIN_UKRAINE = [
     (r'автономна\s+республіка\s+крим', 1.5),
     (r'UA-43', 1.5),  # ISO 3166-2 code for Crimea under Ukraine
     (r'country[_\s]?code["\s:=]+ua\b', 1.5),
-    (r'/ua/|/ukraine/', 1.0),
+    (r'/ukraine/crimea|/ukraine/simferopol', 1.0),  # explicit geo path
 ]
 
 ADMIN_RUSSIA = [
@@ -90,7 +90,7 @@ ADMIN_RUSSIA = [
     (r'республика\s+крым', 1.5),  # Russian Federation admin name
     (r'крымский\s+федеральный\s+округ', 1.5),
     (r'country[_\s]?code["\s:=]+ru\b', 1.5),
-    (r'/ru/|/russia/', 1.0),
+    (r'/russia/crimea|/russia/simferopol', 1.0),  # explicit geo path
 ]
 
 # Framing language (how the text describes the situation)
@@ -115,21 +115,27 @@ RUSSIAN_FRAMING = [
     (r'крым\s+наш', 2.0),  # "Crimea is ours" (Russian slogan)
     (r'воссоединени\w+\s+крым', 1.5),  # "reunification of Crimea"
     (r'крым\s+—?\s+это\s+росси', 2.0),
+    (r'вхождени\w+\s+крым\w*\s+в\s+состав', 1.5),  # "entry of Crimea into (Russia)"
+    (r'присоединени\w+\s+крым', 1.5),  # "accession of Crimea"
+    (r'крым\s+в\s+составе?\s+росси', 2.0),  # "Crimea as part of Russia"
+    (r'субъект\w*\s+(?:российской\s+)?федерации\s*.*крым', 1.5),  # "federal subject...Crimea"
+    (r'crimea\s+as\s+(?:a\s+)?part\s+of\s+russia', 2.0),
+    (r'crimea\s+returned?\s+to\s+russia', 1.5),
 ]
 
-# Structural signals (URL patterns, metadata)
+# Structural signals — ONLY for platform data, NOT for article URLs
+# TLD (.ru/.ua) and language paths (/ru/) are NOT sovereignty signals
+# A Russian news site writing about Crimea ≠ claiming Crimea is Russian
 STRUCTURAL_UKRAINE = [
-    (r'\.ua/', 0.5),
     (r'country=ukraine', 1.0),
-    (r'country_code=ua', 1.0),
-    (r'region=ua', 0.8),
+    (r'country_code["\s:=]+ua\b', 1.0),
+    (r'region["\s:=]+ua\b', 0.8),
 ]
 
 STRUCTURAL_RUSSIA = [
-    (r'\.ru/', 0.3),  # Lower weight — many Russian sites exist
     (r'country=russia', 1.0),
-    (r'country_code=ru', 1.0),
-    (r'region=ru', 0.8),
+    (r'country_code["\s:=]+ru\b', 1.0),
+    (r'region["\s:=]+ru\b', 0.8),
 ]
 
 
