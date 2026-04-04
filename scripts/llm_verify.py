@@ -92,9 +92,9 @@ Then one sentence explaining why."""
             data = json.loads(resp.read().decode())
             response_text = data["content"][0]["text"].strip()
 
-            if response_text.startswith("ENDORSES"):
+            if "ENDORSES" in response_text.upper()[:20]:
                 return {"verdict": "endorses", "explanation": response_text}
-            elif response_text.startswith("REPORTS"):
+            elif "REPORTS" in response_text.upper()[:20]:
                 return {"verdict": "reports", "explanation": response_text}
             else:
                 return {"verdict": "unclear", "explanation": response_text}
@@ -137,9 +137,9 @@ Then one sentence explaining why."""
         with urllib.request.urlopen(req, timeout=30) as resp:
             data = json.loads(resp.read().decode())
             response_text = data["content"][0]["text"].strip()
-            if response_text.startswith("ENDORSES"):
+            if "ENDORSES" in response_text.upper()[:20]:
                 return {"verdict": "endorses", "explanation": response_text}
-            elif response_text.startswith("ANALYZES"):
+            elif "ANALYZ" in response_text.upper()[:20]:
                 return {"verdict": "analyzes", "explanation": response_text}
             else:
                 return {"verdict": "unclear", "explanation": response_text}
