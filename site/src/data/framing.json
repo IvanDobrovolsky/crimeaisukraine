@@ -4637,84 +4637,84 @@
     }
   },
   "academic": {
-    "total_papers": 685,
-    "ukraine": 450,
-    "russia": 232,
+    "total_papers": 986,
+    "ukraine": 543,
+    "russia": 440,
     "by_year": {
       "2026": {
-        "ukraine": 27,
-        "russia": 37,
+        "ukraine": 34,
+        "russia": 42,
         "disputed": 0,
         "neutral": 0
       },
       "2025": {
-        "ukraine": 71,
-        "russia": 94,
+        "ukraine": 91,
+        "russia": 118,
         "disputed": 0,
         "neutral": 0
       },
       "2024": {
-        "ukraine": 80,
-        "russia": 47,
+        "ukraine": 110,
+        "russia": 101,
         "disputed": 0,
         "neutral": 0
       },
       "2023": {
-        "ukraine": 58,
-        "russia": 7,
+        "ukraine": 68,
+        "russia": 39,
         "disputed": 0,
         "neutral": 0
       },
       "2022": {
-        "ukraine": 28,
-        "russia": 2,
+        "ukraine": 36,
+        "russia": 15,
         "disputed": 0,
         "neutral": 0
       },
       "2021": {
-        "ukraine": 11,
-        "russia": 13,
+        "ukraine": 19,
+        "russia": 25,
         "disputed": 1,
         "neutral": 0
       },
       "2020": {
-        "ukraine": 27,
-        "russia": 5,
+        "ukraine": 34,
+        "russia": 12,
         "disputed": 0,
         "neutral": 0
       },
       "2019": {
-        "ukraine": 27,
-        "russia": 3,
+        "ukraine": 28,
+        "russia": 4,
         "disputed": 0,
         "neutral": 0
       },
       "2018": {
-        "ukraine": 20,
-        "russia": 5,
+        "ukraine": 21,
+        "russia": 62,
         "disputed": 0,
         "neutral": 0
       },
       "2017": {
         "ukraine": 32,
-        "russia": 5,
+        "russia": 6,
         "disputed": 0,
         "neutral": 0
       },
       "2016": {
         "ukraine": 22,
-        "russia": 7,
+        "russia": 8,
         "disputed": 0,
         "neutral": 0
       },
       "2015": {
         "ukraine": 23,
-        "russia": 4,
+        "russia": 5,
         "disputed": 2,
         "neutral": 0
       },
       "2014": {
-        "ukraine": 17,
+        "ukraine": 18,
         "russia": 3,
         "disputed": 0,
         "neutral": 0
@@ -6382,6 +6382,6 @@
         ]
       }
     ],
-    "violators_total": 232
+    "violators_total": 440
   }
 }
