@@ -1,0 +1,23 @@
+{
+  "scan_date": "2026-04-04T20:59:18.174550+00:00",
+  "input": "data/crimea_expanded_urls.json",
+  "total": 218147,
+  "processed": 218115,
+  "by_label": {
+    "fetch_failed": 121926,
+    "no_signal": 47778,
+    "ukraine": 14811,
+    "no_crimea_ref": 31117,
+    "russia": 2445,
+    "disputed": 38
+  },
+  "russia_framing_by_country": {
+    "Russia": 2058,
+    "Ukraine": 148,
+    "Unknown": 232,
+    "UK": 2,
+    "Italy": 2,
+    "Australia": 2,
+    "Belarus": 1
+  }
+}

@@ -2,9 +2,9 @@
   "scan_date": "2026-04-03T17:17:42.309647+00:00",
   "period": "2010-present",
   "sources": "openalex+crossref (crimea + city keywords)",
-  "total_papers": 986,
+  "total_papers": 988,
   "by_label": {
-    "ukraine": 543,
+    "ukraine": 545,
     "russia": 440,
     "disputed": 3
   },
@@ -16,7 +16,7 @@
       "neutral": 0
     },
     "2025": {
-      "ukraine": 91,
+      "ukraine": 92,
       "russia": 118,
       "disputed": 0,
       "neutral": 0
@@ -40,7 +40,7 @@
       "neutral": 0
     },
     "2021": {
-      "ukraine": 19,
+      "ukraine": 20,
       "russia": 25,
       "disputed": 1,
       "neutral": 0
@@ -27008,6 +27008,38 @@
       "signals": [
         {
           "matched": "Крым, Украин",
+          "direction": "ukraine"
+        }
+      ]
+    },
+    {
+      "title": "7 The EU’s Changing Strategy towards Russia: The Response to Aggression",
+      "doi": "https://doi.org/10.56687/9781529243642-010",
+      "year": 2025,
+      "journal": "Bristol University Press eBooks",
+      "label": "ukraine",
+      "confidence": 0.95,
+      "signals": [
+        {
+          "matched": "annexation of Crimea",
+          "direction": "ukraine"
+        },
+        {
+          "matched": "annexation of Crimea",
+          "direction": "ukraine"
+        }
+      ]
+    },
+    {
+      "title": "Imagining Crimean Tatar History since 2014: Indigenous Rights, Russian Recolonisation and the New Ukrainian Narrative of Cooperation",
+      "doi": "https://doi.org/10.1080/09668136.2020.1867709",
+      "year": 2021,
+      "journal": "Europe Asia Studies",
+      "label": "ukraine",
+      "confidence": 0.95,
+      "signals": [
+        {
+          "matched": "annexation of Crimea",
           "direction": "ukraine"
         }
       ]
