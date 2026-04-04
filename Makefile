@@ -64,7 +64,10 @@ audit-gdelt-quick: ## Quick GDELT framing scan (last 3 months)
 audit-academic: ## Scan academic papers via OpenAlex + CrossRef (2010-present)
 	$(PYTHON) $(SCRIPTS)/scan_academic.py --start 2010
 
-verify: ## Re-verify all findings and fill evidence fields
+verify-platforms: ## Re-verify all platform findings and fill evidence fields
+
+verify-llm: ## LLM verification of Russia-labeled articles (requires ANTHROPIC_API_KEY)
+	$(PYTHON) $(SCRIPTS)/llm_verify.py --resume
 	$(PYTHON) $(SCRIPTS)/verify_all.py
 
 audit-api: audit-platforms audit-map-services audit-ip audit-media audit-trends ## Run all API-based checks
