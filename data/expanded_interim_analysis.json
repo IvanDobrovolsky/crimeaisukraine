@@ -1,0 +1,3659 @@
+{
+  "expanded_interim": {
+    "total_processed": 61949,
+    "by_label": {
+      "fetch_failed": 32636,
+      "no_signal": 16149,
+      "ukraine": 4159,
+      "no_crimea_ref": 8260,
+      "russia": 729,
+      "disputed": 16
+    },
+    "by_country_russia": {
+      "Russia": 503,
+      "Ukraine": 101,
+      "Unknown": 123,
+      "UK": 1,
+      "Italy": 1
+    }
+  },
+  "new_media_violators": [
+    {
+      "url": "http://www.kianews.com.ua/news/v-simferopole-sostoitsya-ryad-meropriyatiy-posvyashchennyh-godovshchine-krymskoy-vesny",
+      "domain": "kianews.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-03-04",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "воссоединению Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://vchaspik.ua/ukraina/307283novyy-prazdnik-den-vozvrashcheniya-v-rossiyu-poyavilsya-v-sevastopole",
+      "domain": "vchaspik.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-03-07",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "воссоединению Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.kianews.com.ua/news/v-simferopole-sostoyalos-otkrytie-fotovystavki-tvoya-krymskaya-vesna",
+      "domain": "kianews.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-03-12",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 4.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "воссоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "воссоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "воссоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.ua/politics/1056633-u-sevastopoli-namagalisya-pochati-avtoprobig-do-70-richchya-peremogi-ale-viyshov-antiukrajinskiy-miting.html",
+      "domain": "unian.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-03-17",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "возз'єднання Крим",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.net/politics/1056632-v-sevastopole-pyitalis-nachat-avtoprobeg-k-70-letiyu-pobedyi-no-poluchilsya-antiukrainskiy-miting.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2015-03-17",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "воссоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/grecheskiy-parom-ionas-uydet-s-kerchenskoy-perepravyi-116156",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2015-03-21",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://atn.ua/obshchestvo/v-sevastopole-hotyat-ustanovit-pamyatnik-potemkinu-kotoryy-prisoedinyal-krym-k",
+      "domain": "atn.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-03-27",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "присоединении Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.kianews.com.ua/news/v-simferopole-ustanovleny-pamyatniki-yuriyu-gagarinu-i-sergeyu-korolevu",
+      "domain": "kianews.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-04-01",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "воссоединению Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.rbc.ua/rus/news/putin-podaril-sevastopolyu-svetodiodnyy-ekran-1429706929.html",
+      "domain": "rbc.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-04-22",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "присоединении Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://atn.ua/obshchestvo/v-simferopole-otkroyut-ukrainskiy-kulturnyy-centr",
+      "domain": "atn.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-05-05",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "вхождение Крыма в состав",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.kianews.com.ua/news/v-simferopole-nachaty-raboty-po-podgotovke-ploshchadki-i-ustanovke-velotreka",
+      "domain": "kianews.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-05-07",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://ukranews.com/news/172147.V-DNR-i-LNR-nazvali-Krim-i-Sevastopol-chastyu-Ukraini.ru",
+      "domain": "ukranews.com",
+      "domain_country": "",
+      "date": "2015-06-09",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://gordonua.com/news/politics/Terroristy-priznali-Krym-i-Sevastopol-neotemlemoy-chastyu-Ukrainy-84431.html",
+      "domain": "gordonua.com",
+      "domain_country": "Ukraine",
+      "date": "2015-06-09",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/v-kryimu-ogranichat-dvijenie-na-trasse-simferopol-kerch-125990",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2015-07-18",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://24tv.ua/ru/ukraina/foto_dnja_u_sevastopolskogo_lenina__proukrainskie_naklony/n602453",
+      "domain": "24tv.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-08-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 2.0,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Крым наш",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://censor.net.ua/news/347814/v_okkupirovannom_simferopole_sud_prodlil_arest_zamglavy_medjlisa_chiyigoza",
+      "domain": "censor.net.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-08-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 4.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "Крым наш",
+          "direction": "russia",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Крым наш",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/na-kerchenskoy-pereprave-za-vyihodnyie-izyali-chetyire-pistoleta-128529",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2015-08-17",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/v-tamani-budut-delat-beton-i-asfalt-dlya-kerchenskogo-mosta-128551",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2015-08-17",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://ru.delfi.lt/abroad/global/vo-vremya-vizita-putina-v-krym-na-zabastovku-vyshli-kerchenskie-strelochniki.d?id=68781492",
+      "domain": "ru.delfi.lt",
+      "domain_country": "",
+      "date": "2015-08-19",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://rus.postimees.ee/3299339/vo-vremja-vizita-putina-v-krym-na-zabastovku-vyshli-kerchenskie-strelochniki",
+      "domain": "rus.postimees.ee",
+      "domain_country": "",
+      "date": "2015-08-19",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.capital.ua/ru/news/51680-putin-trebuet-sdat-kerchenskiy-most-k-kontsu-2018-goda",
+      "domain": "capital.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-08-20",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "присоединении Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://vchaspik.ua/ukraina/339652vozvrashchenie-v-strashnoe-proshloe-sevastopolcy-stoya-privetstvovali-pesnyu-vernite",
+      "domain": "vchaspik.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-08-29",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "присоединении Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.politnavigator.net/v-sevastopole-gotovy-k-vstreche-s-diversantami.html",
+      "domain": "politnavigator.net",
+      "domain_country": "",
+      "date": "2015-09-11",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 3.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "Крым , Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        },
+        {
+          "matched": "воссоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://gazeta.ua/ru/articles/ukraine-newspaper/_zakazhu-myaso-i-zhdu-nedelyu-potomu-chto-na-kerchenskoj-pereprave-shtorm/647385",
+      "domain": "gazeta.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-09-15",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 2.0,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Крым наш",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://vchaspik.ua/kriminal/344798slobodyan-deputatu-iz-sevastopolya-grozit-15-let-tyurmy",
+      "domain": "vchaspik.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-09-23",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "вхождение Крыма в состав",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "https://inforesist.org/v-yalte-xudozhniku-za-kartinu-sevastopolya-v-flagax-tretego-rejxa-podarili-kvartiru/",
+      "domain": "inforesist.org",
+      "domain_country": "",
+      "date": "2015-09-24",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://wz.lviv.ua/news/142716-u-simferopoli-obstrilialy-stantsiiu-shvydkoi-dopomohy",
+      "domain": "wz.lviv.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-09-26",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "приєднання Криму до росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.politnavigator.net/spasatelnyjj-katamaran-dlya-chernomorskogo-flota-postroen-v-sevastopole.html",
+      "domain": "politnavigator.net",
+      "domain_country": "",
+      "date": "2015-09-29",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 2.0,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Крым , Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://vchaspik.ua/ukraina/347096rezultaty-pokrashchennya-ceny-na-produkty-v-sevastopole-uzhe-vyshe-moskovskih",
+      "domain": "vchaspik.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-10-07",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/v-simferopole-soberut-dengi-na-pamyatnik-v-chest-prisoedineniya-kryima-k-rossii-133678",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2015-10-13",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 4.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://racurs.ua/news/58857-v-simferopole-ustanovyat-pamyatnik-v-chest-prisoedineniya-kryma-k-rf",
+      "domain": "racurs.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-10-13",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 3.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.politnavigator.net/stroitelstvo-kerchenskogo-mosta-so-storony-kryma-ne-vedetsya-iz-za-zaderzhki-finansirovaniya-moskvojj.html",
+      "domain": "politnavigator.net",
+      "domain_country": "",
+      "date": "2015-10-24",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 2.0,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Крым , Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://www.rupor.info/news-obshhestvo/2015/11/12/veterany-sevastopolya-shokirovany-shedrostyu-rossi/",
+      "domain": "rupor.info",
+      "domain_country": "",
+      "date": "2015-11-12",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://rupor.info/news-obshhestvo/2015/11/12/veterany-sevastopolya-shokirovany-shedrostyu-rossi/",
+      "domain": "rupor.info",
+      "domain_country": "",
+      "date": "2015-11-12",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.from-ua.com/news/363552-urozhenec-sevastopolya-blokada-neobhodima-i-obyazatelna.html",
+      "domain": "from-ua.com",
+      "domain_country": "",
+      "date": "2015-11-24",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 4.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "Севастополь-Крым-Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        },
+        {
+          "matched": "Крым-Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://from-ua.com/news/363552-urozhenec-sevastopolya-blokada-neobhodima-i-obyazatelna.html",
+      "domain": "from-ua.com",
+      "domain_country": "",
+      "date": "2015-11-24",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 4.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "Севастополь-Крым-Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        },
+        {
+          "matched": "Крым-Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://obozrevatel.com/politics/90632-urozhenets-sevastopolya-dlya-vozvrascheniya-kryima-ego-blokada-neobhodima-i-obyazatelna.htm",
+      "domain": "obozrevatel.com",
+      "domain_country": "",
+      "date": "2015-11-24",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 4.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "Севастополь-Крым-Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        },
+        {
+          "matched": "Крым-Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/na-kerchenskoy-pereprave-usilili-meryi-bezopasnosti-137455",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2015-11-26",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/baykeryi-iz-nochnogo-volka-budut-patrulirovat-prigorod-sevastopolya-137608",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2015-11-27",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/aksenov-jelayuschih-blokirovat-kerchenskuyu-perepravu-jdet-tribunal-137898",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2015-12-01",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/v-tsentre-sevastopolya-iz-za-rejima-chs-otkryili-polevuyu-kuhnyu-138267",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2015-12-06",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/na-kerchenskoy-pereprave-dobavyat-dva-jeleznodorojnyih-paroma-139414",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2015-12-20",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/mejdu-anapoy-i-sevastopolem-nachnet-kursirovat-katamaran-140502",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2016-01-04",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/aksenov-dlya-kerchenskogo-mosta-v-prioritete-budut-kryimskie-materialyi-140607",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2016-01-10",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://xn--b1ae2adf4f.xn--p1ai/society/social-organizations/31698-kak-v-sevastopole-poluchali-possiyskie-paspopta-otkpoveniya-sotpudnika-ufms.html",
+      "domain": "xn--b1ae2adf4f.xn--p1ai",
+      "domain_country": "",
+      "date": "2016-01-29",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.gazeta.kg/news/important/42944-kerchenskaya-pereprava-segodnya-4-fevralya-ozhidaetsya-shtorm-s-vysotoy-voln-do-35-metrov.html",
+      "domain": "gazeta.kg",
+      "domain_country": "",
+      "date": "2016-02-04",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "воссоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://odessa-daily.com.ua/news/razyasnenie-knesseta-po-povodu-poezdki-margi-v-krym-on-byl-gostem-ravvina-sevastopolya-id83499.html",
+      "domain": "odessa-daily.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-02-11",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "Крым вернулся в Росси",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://censor.net.ua/forum/819566/pochemu_sevastopoltsy_boyatsya_pravdy_o_russkoyi_vesne",
+      "domain": "censor.net.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-02-12",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://wz.lviv.ua/news/163143-v-aneksovanomu-simferopoli-zaboronyly-provodyty-mitynhy-i-kontserty",
+      "domain": "wz.lviv.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-03-09",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "приєднання Криму до росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://kuban24.tv/item/aksenov-kerchenskaya-pereprava-za-god-perevezet-do-6-mln-passajirov-144901",
+      "domain": "kuban24.tv",
+      "domain_country": "",
+      "date": "2016-03-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.95,
+      "ua_score": 0,
+      "ru_score": 1.5,
+      "signal_count": 1,
+      "signals": [
+        {
+          "matched": "воссоединению Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    }
+  ],
+  "ambiguous_for_review": [
+    {
+      "url": "http://obozrevatel.com/abroad/68910-rossijskij-deputat-byil-shokirovan-nastroeniem-sevastopoltsev.htm",
+      "domain": "obozrevatel.com",
+      "domain_country": "",
+      "date": "2015-09-02",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "Аннексия Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "аннексии Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Крым Наш",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://censor.net.ua/photo_news/351384/jiteli_okkupirovannogo_sevastopolya_jaluyutsya_na_rossiyiskiyi_kompleks_radioelektronnoyi_borby_murmansk",
+      "domain": "censor.net.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-09-10",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "Оккупация Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Крым Наш",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://finance.obozrevatel.com/economy/38950-neizvestno-komu-okkupantyi-prodadut-aeroport-simferopol.htm",
+      "domain": "obozrevatel.com",
+      "domain_country": "",
+      "date": "2016-05-20",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "Аннексия Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "аннексии Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Симферополь - Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://finance.obozrevatel.com/business-and-finance/52167-sam-putin-sledit-v-kremle-zaveryayut-chto-kerchenskij-most-budet-postroen.htm",
+      "domain": "obozrevatel.com",
+      "domain_country": "",
+      "date": "2016-06-08",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексированном Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Крым, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://wz.lviv.ua/news/174725-u-simferopoli-zatrymaly-redaktora-krymskoho-vydannia",
+      "domain": "wz.lviv.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-06-14",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 1.5,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "тимчасово окупованому",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://naviny.by/new/20161110/1478761368-fsb-zayavila-o-zaderzhanii-v-sevastopole-ukrainskih-diversantov",
+      "domain": "naviny.by",
+      "domain_country": "Belarus",
+      "date": "2016-11-10",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексии Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "аннексия Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Крым наш",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "https://styler.rbc.ua/rus/zhizn/sevastopole-vydayut-prosrochennye-medali-1521368748.html",
+      "domain": "styler.rbc.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-03-18",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 3.0,
+      "ru_score": 3.0,
+      "signal_count": 5,
+      "signals": [
+        {
+          "matched": "аннексию Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "аннексированном Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "аннексированном Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "субъекта федерации или восстановление Конституции Республики Крым 1992 года. Вопроса о том, хотят ли жители Крыма остаться в составе Украины не было. Международные организации и многие мировые политики осудили действия России и признали оккупацию и аннексию Крыма незаконными. Многие западные страны ввели ряд экономических санкций. Россия отрицает оккупацию полуострова и считает, что это \"восстановление исторической справедливости\". Глава Меджлиса крымскотатарского народа Рефат Чубаров призвал крымчан бойкотировать выборы президента России, а незаконно назначенный глава полуострова Сергей Аксенов угрожал увольнением чиновникам, которые призывают подчиненных не идти голосовать. О непризнании выборов президента России в аннексированном Крыму говорится в декларации Высокого представителя ЕС по иностранным делам и политике безопасности Федерики Могерини.​ Президент Украины Петр Порошенко призвал мировую общественность не признавать результаты выборов президента России в аннексированном Крыму. Кстати, постпред Украины в ООН считает, что нужно усилить санкции. Постпред Украины в ООН выразил уверенность в том, что санкции в отношении Российской Федерации будут только усиливаться и этому будут способствовать \"выборы\" в Крыму. \"Российские \"выборы\" в Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        },
+        {
+          "matched": "вхождение Крыма в состав",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "https://www.obozrevatel.com/crime/minkult-frantsii-vernul-sevastopol-ukraine.htm",
+      "domain": "obozrevatel.com",
+      "domain_country": "",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "Севастополь, Украин",
+          "direction": "ukraine",
+          "type": "ru_location_label"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://www.capital.ua/ru/news/113390-minkult-frantsii-pokazal-kartu-s-rossiyskim-sevastopolem",
+      "domain": "capital.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексию Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "незаконно аннекс",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://24tv.ua/u_minkulti_frantsiyi_vipravili_kartu_na_yakiy_zobrazili_sevastopol_rosiyskim_n967664",
+      "domain": "24tv.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "окупованому Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "окупований Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "Севастополь, Росі",
+          "direction": "russia",
+          "type": "uk_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://24tv.ua/ru/ru/v_minkulte_francii_ispravili_kartu_na_kotoroj_izobrazili_sevastopol_rossijskim_n967666",
+      "domain": "24tv.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "оккупированном Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://telegraf.com.ua/ukraina/politika/4061830-minkult-frantsii-pokazal-kartu-s-rossiyskim-sevastopolem.html",
+      "domain": "telegraf.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "Аннексия Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "незаконно аннекс",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://ipress.ua/news/u_ministerstvi_kultury_frantsii_pokazaly_kartu_z_rosiyskym_sevastopolem_254727.html",
+      "domain": "ipress.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "Анексія Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "окупованого Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "Севастополь, Росі",
+          "direction": "russia",
+          "type": "uk_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://www.unian.net/politics/10116398-minkult-francii-ispravil-kartu-s-rossiyskim-sevastopolem-foto.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "оккупированном Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://ipress.ua/news/minkultury_frantsii_vypravylo_kartu_z_rosiyskym_sevastopolem_254739.html",
+      "domain": "ipress.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "Анексія Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "окупованого Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "Севастополь, Росі",
+          "direction": "russia",
+          "type": "uk_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://www.unian.net/politics/10116113-minkult-francii-opublikoval-kartu-s-okkupirovannym-sevastopolem-v-sostave-rossii-foto.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "disputed",
+      "confidence": 0.5,
+      "ua_score": 2.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "оккупация Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://podrobnosti.ua/2022221-v-simferopole-prazdnujut-godovschinu-anneksii-s-portretami-putina-foto.html",
+      "domain": "podrobnosti.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-03-16",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексии Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "окупованим Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "воссоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://fedpress.ru/news/polit_vlast/news_polit/1426655993-glav-kryma-i-sevastopolya-pozvali-na-soveshchanie-v-kreml",
+      "domain": "fedpress.ru",
+      "domain_country": "Russia",
+      "date": "2015-03-18",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "воссоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://censor.net.ua/news/331234/simferopolskiyi_deputat_pojalovalsya_putinu_chto_v_gorsovete_ne_hotyat_pet_gimn_rossii_dokument",
+      "domain": "censor.net.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-04-03",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "Оккупация Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "воссоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://censor.net.ua/news/331240/rossiya_ofitsialno_prisvoila_sevastopolskiyi_morskoyi_zavod_poroshenko",
+      "domain": "censor.net.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-04-03",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "Оккупация Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Оккупация Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "субъекту федерации, поступления в бюджет от выплаты налогов.. Но адекватная ли это мера «на недружественные шаги украинских бизнесменов» - отъем имущества? И является ли «обострение отношений с хозяйствующими субъектами Украины» уважительной причиной экспроприации в правовом государстве? показать весь комментарий 03.04.2015 15:04 Ответить Мне нравится 0 Ссылка pilot_ZZZ Петя чето тормозит. Ждет пока все заберут сначала русские на подконтрольной им территории, а потом все заберут украинцы в Украине за бездействие. Странный чувак... показать весь комментарий 03.04.2015 15:06 Ответить Мне нравится 1 Ссылка balala Ты что совсем ничего не понял? В Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://www.rzn.info/news/2015/6/19/evrosoyuz-oficial-no-prodlil-sankcii-protiv-kryma-i-sevastopolya.html",
+      "domain": "rzn.info",
+      "domain_country": "",
+      "date": "2015-06-19",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "незаконное присоединени",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://vchaspik.ua/region/334131gubernator-sevastopolya-naznachil-svyashchennika-direktorom-zapovednika",
+      "domain": "vchaspik.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-07-29",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупированном Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "воссоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://wz.lviv.ua/news/136988-u-simferopoli-rozhromyly-redaktsiiu-krymskotatarskoi-hazety",
+      "domain": "wz.lviv.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-08-04",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "анексії Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.ua/society/1113773-u-scorpions-nazvali-sevastopol-sumnivnoyu-teritorieyu-i-vidmovilisya-provoditi-kontsert-dlya-okupantiv.html",
+      "domain": "unian.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-08-20",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "окупованого Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://vchaspik.ua/ukraina/343269krik-dushi-zhiteley-sevastopolya-pri-rossii-zhit-stali-huzhe-i-bednee-chem-pri-ukraine",
+      "domain": "vchaspik.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-09-16",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://tsn.ua/politika/ukrayinski-sankciyi-zagadkovo-ominuli-pidpriyemstvo-iz-slidom-eks-narodnogo-mera-sevastopolya-chalogo-507190.html",
+      "domain": "tsn.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-10-05",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "окупований Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "https://tsn.ua/politika/ukrayinski-sankciyi-zagadkovo-ominuli-pidpriyemstvo-iz-slidom-eks-narodnogo-mera-sevastopolya-chalogo-507190.html",
+      "domain": "tsn.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-10-05",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "окупований Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://ru.tsn.ua/politika/ukrainskie-sankcii-zagadochno-oboshli-predpriyatie-so-sledom-eks-narodnogo-mera-sevastopolya-chalogo-499710.html",
+      "domain": "ru.tsn.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-10-05",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединении Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://osvita.mediasapiens.ua/media_law/world_journalists/na_korespondenta_radio_svoboda_napali_pislya_yogo_poizdki_na_mistse_budivnitstva_kerchenskogo_mostu/",
+      "domain": "osvita.mediasapiens.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-10-08",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "анексії Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "незаконним приєднання",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.ua/society/1237566-zmi-meshkantsi-okupovanogo-sevastopolya-vimagayut-vid-putina-skasuvati-budivnitstvo-budinku-dlya-fsb-foto.html",
+      "domain": "unian.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-01-15",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "анексію Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.ua/society/1237317-zavalili-misto-deshevimi-tsukerkami-pidpriemtsi-okupovanoji-kerchi-skarjatsya-na-stihiynih-torgovtsiv-z-rf.html",
+      "domain": "unian.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-01-15",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "анексію Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.net/society/1237563-smi-jiteli-okkupirovannogo-sevastopolya-trebuyut-ot-putina-otmenit-stroitelstvo-doma-dlya-dlya-fsb-foto.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2016-01-15",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "аннексию Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.net/society/1237314-zavalili-gorod-deshevyimi-konfetami-predprinimateli-okkupirovannoy-kerchi-jaluyutsya-na-stihiynyih-torgovtsev-iz-rf.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2016-01-15",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "аннексию Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://censor.net.ua/news/369606/podacha_elektroenergii_v_okkupirovannoyi_kerchi_vnov_ogranichena",
+      "domain": "censor.net.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-01-18",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексированном Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Оккупация Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://delo.ua/business/samsung-vopreki-sankcijam-uchastvuet-v-rekonstrukcii-simferopols-310995/",
+      "domain": "delo.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-01-25",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексировала Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "аннексией Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "референдум в Крыму и Севастополе и дальнейшее их присоединени",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://delo.ua/business/samsung-vopreki-sankcijam-uchastvuet-v-rekonstrukcii-simferopolsk-310995/",
+      "domain": "delo.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-01-25",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексировала Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "аннексией Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "референдум в Крыму и Севастополе и дальнейшее их присоединени",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://obozrevatel.com/photo/72609-kryim-eto-ukraina-gde-v-sevastopole-mozhno-uvidet-znaki-rodinyi-fotoreportazh.htm",
+      "domain": "obozrevatel.com",
+      "domain_country": "",
+      "date": "2016-02-24",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "Аннексия Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.ua/society/1293809-na-mitingu-u-sevastopoli-okupanti-rozpovili-zavdyaki-chomu-zs-rosiji-zaynyali-krim.html",
+      "domain": "unian.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-03-18",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "анексію Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.net/society/1293806-na-mitinge-v-sevastopole-okkupantyi-rasskazali-blagodarya-chemu-vs-rossii-zanyali-kryim.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2016-03-18",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "аннексию Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.ua/society/1299283-u-tsentri-okupovanogo-simferopolya-obvalivsya-dah-pyatipoverhivki-foto.html",
+      "domain": "unian.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-03-24",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "анексію Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.net/society/1299280-v-tsentre-okkupirovannogo-simferopolya-obrushilas-kryisha-pyatietajki-foto.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2016-03-24",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "аннексию Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.net/war/1315601-rejimnyiy-obyekt-krasnyiy-drakon-shoygu-stroit-honku-v-istoricheskoy-zone-sevastopolya-razvedka.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2016-04-11",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "аннексию Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.ua/war/1315604-rejimniy-obekt-chervoniy-drakon-shoygu-budue-honku-v-istorichniy-zoni-sevastopolya-rozvidka.html",
+      "domain": "unian.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-04-11",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "анексію Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://galinfo.com.ua/news/shoygu_buduie_honku_v_istorychniy_zoni_sevastopolya_225157.html",
+      "domain": "galinfo.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-04-11",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "анексію Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.capital.ua/ru/news/65173-krymskaya-pervaya-strakhovaya-kompaniya-zastrakhovala-kerchenskiy-most",
+      "domain": "capital.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-04-16",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.ua/society/1361166-okupanti-prisvojili-putinu-zvannya-pochesnogo-gromadyanina-sevastopolya.html",
+      "domain": "unian.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-05-31",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "анексію Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.net/society/1372837-v-okkupirovannom-simferopole-otkryili-pamyatnik-vejlivyim-lyudyam-foto.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2016-06-11",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "аннексию Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.ua/society/1372840-v-okupovanomu-simferopoli-vidkrili-pamyatnik-vvichlivim-lyudyam-foto.html",
+      "domain": "unian.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-06-11",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "анексію Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "окупованому Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://wz.lviv.ua/news/174634-do-simferopolia-z-rosii-pryvezly-pamiatnyk-kateryni-ii",
+      "domain": "wz.lviv.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-06-14",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "анексію Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "окупації Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.net/society/1378326-okkupantyi-hotyat-priznat-kerch-samyim-drevnim-gorodom-rf.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2016-06-16",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "аннексию Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.ua/society/1378329-okupanti-hochut-viznati-kerch-naydavnishim-mistom-rf.html",
+      "domain": "unian.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-06-16",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "анексію Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.net/society/1403259-putin-segodnya-nameren-vstretitsya-s-gubernatorom-okkupirovannogo-sevastopolya.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2016-07-06",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексию Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://censor.net.ua/news/399482/putin_dosrochno_uvolil_menyayilo_s_posta_gubernatora_okkupirovannogo_rf_sevastopolya_i_otpravil_ego",
+      "domain": "censor.net.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-07-28",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "Оккупация Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Оккупация Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Крымский федеральный округ",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://korrespondent.net/ukraine/events/3725301-kerchenskyi-most-nachaly-sooruzhat-sudokhodnuui-chast",
+      "domain": "korrespondent.net",
+      "domain_country": "",
+      "date": "2016-08-01",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "аннексия Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Крымский федеральный округ",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://nv.ua/ukraine/events/ukrainets-bezhavshij-iz-kryma-cherez-minnye-polja-rasskazal-o-pytkah-v-simferopolskom-sizo-198120.html",
+      "domain": "nv.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-08-17",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "Оккупация Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупированного Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://delo.ua/world/podrjadchiki-kerchenskogo-mosta-vkljucheny-v-chernyj-spisok-ssha-322043/",
+      "domain": "delo.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-09-01",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупация крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unian.net/politics/1523569-putin-rasskazal-o-hode-stroitelstva-obschenatsionalnogo-proekta-kerchenskogo-mosta.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2016-09-15",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексию Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://censor.net.ua/news/407283/goncharenko_pro_otmenu_osobogo_statusa_sevastopolya_sama_jizn_dokazala_chto_eto_nujno",
+      "domain": "censor.net.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-09-22",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "республика крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "https://www.obozrevatel.com/crime/52867-okkupirovannyij-sevastopol-vzbudorazhil-podozritelnyij-predmet-v-morportu.htm",
+      "domain": "obozrevatel.com",
+      "domain_country": "",
+      "date": "2017-01-29",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "Аннексия Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://kp.ua/politics/571581-v-sevastopole-kompensyruuit-poroshenko-y-kolomoiskomu-natsyonalyzyrovannye-predpryiatyia",
+      "domain": "kp.ua",
+      "domain_country": "Ukraine",
+      "date": "2017-03-30",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "https://telegraf.com.ua/ukraina/politika/3606656-mid-napravil-rossii-notu-iz-za-mestnyih-vyiborov-v-sevastopole.html",
+      "domain": "telegraf.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2017-09-11",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "незаконной оккупац",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "незаконной оккупац",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://33live.ru/novosti/12-09-2017-evrosoyuz-ne-priznaet-vybory-v-krymu-i-sevastopole.html",
+      "domain": "33live.ru",
+      "domain_country": "Russia",
+      "date": "2017-09-12",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "незаконное присоединени",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://expert.org.ua/politika/2017/kiev-nazyvaet-grubym-narusheniem-mezhdunarodnyh-norm-feykovye-vybory-v-sevastopole",
+      "domain": "expert.org.ua",
+      "domain_country": "Ukraine",
+      "date": "2017-09-12",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "незаконной оккупац",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "незаконной оккупац",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "https://klops.ru/news/politika/161823-evrosoyuz-otkazalsya-priznavat-rezultaty-vyborov-v-sevastopole-i-krymu",
+      "domain": "klops.ru",
+      "domain_country": "Russia",
+      "date": "2017-09-12",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексии Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "незаконной аннекс",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "https://telegraf.com.ua/ukraina/mestnyiy/3715147-kryimskaya-prokuratura-vyidvinula-obvineniya-deputatam-sevastopolya.html",
+      "domain": "telegraf.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2017-10-30",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексия Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "субъекта федерации. Климкин объяснил, в чем разница между Крымом и Каталонией Обвиняемым грозит наказание в виде лишения свободы на срок от 12 до 15 лет. Сейчас в районных судах Киева уже находятся на рассмотрении три обвинительных акта в отношении депутатов Севастопольского городского совета, добавили в ГПУ. Теги: #Прокуратура #Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "https://www.unian.net/politics/2267206-esche-troim-deputatam-sevastopolskogo-gorsoveta-grozit-do-15-let-tyurmyi-za-gosizmenu.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2017-11-28",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупированного Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "https://censor.net.ua/news/464608/desyati_eksdeputatam_sevastopolskogo_gorsoveta_grozit_do_15_let_tyurmy_za_gosizmenu_prokuratura",
+      "domain": "censor.net.ua",
+      "domain_country": "Ukraine",
+      "date": "2017-11-30",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "субъекта федерации. Указанным обвиняемым грозит наказание в виде лишения свободы на срок от двенадцати до пятнадцати лет. В общем прокуратурой Автономной Республики Крым за последние 3 месяца текущего года в районные суды города Киева направлены обвинительные акты по 10 депутатам Севастопольского городского совета Автономной Республики Крым. Читайте также: Обвинительный акт в отношении экс-депутата ВР Крыма за государственную измену направлен в суд, - прокуратура депутат (3319) Крым (25844) прокуратура (4973) город Севастополь (1708) государственная измена (1652) Поделиться: Мне нравится 1 Подытожить: Топ комментарии +9 росися вперде #403471 О, еще одно кино выходит в прокат. \"Угроза крымским депутатам\". Жанр-комедия！ показать весь комментарий 30.11.2017 12:31 Ответить Ссылка +5 Алексей Носов #340963 Да ниче им не будет. И все ето знают. Еще и вернутся и будут прокурворами в Киеве у соевых работать. показать весь комментарий 30.11.2017 12:35 Ответить Ссылка +5 Лео Кот а Ахметову, Кернесу, Добкину и другим с Киева не грозит.... показать весь комментарий 30.11.2017 12:38 Ответить Ссылка Комментировать Сортировать: Правила форума Совет форумчан росися вперде #403471 О, еще одно кино выходит в прокат. \"Угроза крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://uainfo.org/blognews/1513071855-kogda-tvoy-sosed-zahvatchik-kerchenskiy-most-pozvolit.html",
+      "domain": "uainfo.org",
+      "domain_country": "",
+      "date": "2017-12-12",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "аннексии Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединения Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unn.com.ua/ru/news/1704213-deputata-sevastopolskoyi-miskradi-suditimut-za-derzhzradu",
+      "domain": "unn.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2017-12-13",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "субъекта федерации. Обвиняемому грозит наказание в виде лишения свободы на срок от 12 до 15 лет. Как сообщал УНН, прокуратура передала в суд более 100 дел в отношении экс-чиновников из Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unn.com.ua/ru/news/1705385-prokuratura-ark-peredala-v-sud-spravu-stosovno-sche-odnogo-deputata-sevastopolya",
+      "domain": "unn.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2017-12-19",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "субъекта федерации. В ведомстве добавили, что обвиняемому грозит наказание в виде лишения свободы на срок от двенадцати до пятнадцати лет. Прокуратурой Автономной Республики Крым направлено в суд 12 обвинительных актов в отношении депутатов Севастопольского городского совета. Как сообщал УНН, прокуратура передала в суд более 100 дел в отношении экс-чиновников из Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unn.com.ua/ru/news/1712282-derzhzrada-spravi-schodo-shesti-eks-deputativ-sevastopolskoyi-miskradi-peredali-do-sudu",
+      "domain": "unn.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-01-29",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "субъекта федерации. По информации прокуратуры АРК, в суды уже направлено обвинительные акты относительно 18 депутатов Севастопольского городского совета. Напомним, в декабре 2017 года прокуратура Автономной Республики Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://www.kv.com.ua/politics/v-sud-obvinitelnye-akty-v-otnoshenii-deputatov-sevastopolskogo-gorodskogo-soveta-147204/",
+      "domain": "kv.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-01-30",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексию Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "субъекта федерации. Так, указанным обвиняемым грозит наказание в виде лишения свободы на срок от 12 до 15 лет. Напомним, ранее сообщалось, что прокуратура Автономной Республики Крым намерена инициировать международный судебный процесс через аннексию Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "https://24tv.ua/yak_vzimku_pered_shtormom_viglyadaye_yalta_vrazhayuchi_foto_n929706",
+      "domain": "24tv.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-02-22",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "незаконного приєднання",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "https://rus.azattyq.org/a/sevastopol-bez-graffiti-s-putinym/29122104.html",
+      "domain": "azattyq.org",
+      "domain_country": "",
+      "date": "2018-03-25",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексии Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "аннексии Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "вхождению Крыма в состав",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "https://kp.ua/politics/606154-chast-ostrova-tuzla-peredaly-pod-stroytelstvo-kerchenskoho-mosta",
+      "domain": "kp.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-04-17",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.571,
+      "ua_score": 2.0,
+      "ru_score": 1.5,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "аннексия крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Республика Крым",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unn.com.ua/uk/news/1730611-minkult-frantsiyi-oprilyudniv-kartu-na-yakiy-sevastopol-poznacheniy-yak-rosiyskiy",
+      "domain": "unn.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.556,
+      "ua_score": 2.5,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "окупованому Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "тимчасово окупованому",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "Севастополь, Росі",
+          "direction": "russia",
+          "type": "uk_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://ru.tsn.ua/politika/krym-chast-ukrainy-a-most-cherez-kerchenskiy-proliv-narushaet-ee-celostnost-nato-1156302.html",
+      "domain": "ru.tsn.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-16",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединение Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "https://tsn.ua/politika/krim-chastina-ukrayini-a-mist-cherez-kerchensku-protoku-porushuye-yiyi-cilisnist-nato-1156302.html",
+      "domain": "tsn.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-16",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 1.0,
+      "ru_score": 1.5,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "окупованого Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "приєднання Криму до Росі",
+          "direction": "russia",
+          "type": "uk_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://censor.net.ua/forum/771460/rossiyiskie_okkupanty_kryma_nachali_stroit_most_cherez_kerchenskiyi_proliv_foto/sortby/tree/order/desc/page/4",
+      "domain": "censor.net.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-05-17",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.6,
+      "ua_score": 3.0,
+      "ru_score": 2.0,
+      "signal_count": 4,
+      "signals": [
+        {
+          "matched": "оккупация крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Оккупация Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупации Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Крым наш",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://vchaspik.ua/region/336806krymskie-patrioty-v-sevastopole-peredali-privet-putinu",
+      "domain": "vchaspik.ua",
+      "domain_country": "Ukraine",
+      "date": "2015-08-15",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупированном Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Крым наш",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://economics.unian.net/energetics/1194309-v-sevastopole-iz-za-peregruzki-sgoreli-dve-transformatornyie-podstantsii-foto.html",
+      "domain": "unian.net",
+      "domain_country": "Ukraine",
+      "date": "2015-11-25",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "аннексированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Крым, росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://atn.ua/politika/v-okkupirovannom-simferopole-otprazdnovali-anneksiyu-s-lyube-i-chicherinoy",
+      "domain": "atn.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-03-19",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Крым, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://ukranews.com/news/206810.V-Kerchi-rossiyskie-siloviki-otrabativali-antiterroristicheskie-priemi-na-prohozhih.uk",
+      "domain": "ukranews.com",
+      "domain_country": "",
+      "date": "2016-04-23",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "окупованому Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "Керч, росі",
+          "direction": "russia",
+          "type": "uk_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://ukranews.com/news/206810.V-Kerchi-rossiyskie-siloviki-otrabativali-antiterroristicheskie-priemi-na-prohozhih.ru",
+      "domain": "ukranews.com",
+      "domain_country": "",
+      "date": "2016-04-23",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупированном Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Керчь, росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://wz.lviv.ua/news/177440-nimetske-vidomstvo-vybachylosia-za-prykru-pomylku-simferopol-krym-rosiia",
+      "domain": "wz.lviv.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-07-08",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.571,
+      "ua_score": 3.0,
+      "ru_score": 4.0,
+      "signal_count": 5,
+      "signals": [
+        {
+          "matched": "анексію Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "окупований Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "незаконну анекс",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "Сімферополь, Крим, Росі",
+          "direction": "russia",
+          "type": "uk_location_label"
+        },
+        {
+          "matched": "Сімферополь, Крим, Росі",
+          "direction": "russia",
+          "type": "uk_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://obozrevatel.com/crime/75843-rossiya-proverit-slova-gubernatora-sevastopolya-o-povtornom-referendume-v-kryimu.htm",
+      "domain": "obozrevatel.com",
+      "domain_country": "",
+      "date": "2016-07-10",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 2.0,
+      "ru_score": 3.0,
+      "signal_count": 4,
+      "signals": [
+        {
+          "matched": "Аннексия Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупация Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "присоединении Крым",
+          "direction": "russia",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "референдума в Крыму о присоединени",
+          "direction": "russia",
+          "type": "ru_framing"
+        }
+      ]
+    },
+    {
+      "url": "http://zn.ua/WORLD/putin-uprazdnil-krymskiy-federalnyy-okrug-i-otpravil-v-sibir-uvolennogo-gubernatora-sevastopolya-220040_.html",
+      "domain": "zn.ua",
+      "domain_country": "Ukraine",
+      "date": "2016-07-28",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.6,
+      "ua_score": 2.0,
+      "ru_score": 3.0,
+      "signal_count": 4,
+      "signals": [
+        {
+          "matched": "аннексии Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "оккупированному Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Крымский федеральный округ",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        },
+        {
+          "matched": "Крымский федеральный округ",
+          "direction": "russia",
+          "type": "ru_admin_name"
+        }
+      ]
+    },
+    {
+      "url": "https://ru.tsn.ua/svit/vo-francii-ministerstvo-kultury-opublikovalo-kartu-muzeev-s-rossiyskim-sevastopolem-1154949.html",
+      "domain": "ru.tsn.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://fakty.ua/268219-minkult-francii-opublikoval-kartu-s-rossijskim-sevastopolem",
+      "domain": "fakty.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "незаконно аннекс",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://www.unn.com.ua/ru/news/1730611-minkult-frantsiyi-oprilyudniv-kartu-na-yakiy-sevastopol-poznacheniy-yak-rosiyskiy",
+      "domain": "unn.com.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "оккупированном Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "http://fakty.ua/268233-minkult-francii-ispravil-kartu-s-rossijskim-sevastopolem",
+      "domain": "fakty.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "незаконно аннекс",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://24tv.ua/ru/ru/vo_francii_obnarodovali_kartu_s_rossijskim_sevastopolem_n967556",
+      "domain": "24tv.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "аннексированный Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://korrespondent.net/ukraine/3970760-vo-frantsyy-opublykovaly-kartu-s-rossyiskym-sevastopolem",
+      "domain": "korrespondent.net",
+      "domain_country": "",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "аннексия Крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://www.unian.ua/politics/10116110-minkult-franciji-opublikuvav-kartu-z-okupovanim-sevastopolem-u-skladi-rosiji-foto.html",
+      "domain": "unian.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "окупований Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "Севастополь, Росі",
+          "direction": "russia",
+          "type": "uk_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://www.unian.ua/politics/10116395-minkult-franciji-vipraviv-kartu-z-rosiyskim-sevastopolem-foto.html",
+      "domain": "unian.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "окупованому Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "Севастополь, Росі",
+          "direction": "russia",
+          "type": "uk_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://kp.ua/politics/608089-mynkultury-frantsyy-yspravylo-kartu-s-rossyiskym-sevastopolem",
+      "domain": "kp.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "ukraine",
+      "confidence": 0.6,
+      "ua_score": 3.0,
+      "ru_score": 2.0,
+      "signal_count": 3,
+      "signals": [
+        {
+          "matched": "Севастополь, Украин",
+          "direction": "ukraine",
+          "type": "ru_location_label"
+        },
+        {
+          "matched": "аннексия крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://kp.ua/politics/608070-mynysterstvo-kultury-frantsyy-opublykovalo-kartu-s-rossyiskym-sevastopolem",
+      "domain": "kp.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "аннексия крым",
+          "direction": "ukraine",
+          "type": "ru_framing"
+        },
+        {
+          "matched": "Севастополь, Росси",
+          "direction": "russia",
+          "type": "ru_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://zaxid.net/minkult_frantsiyi_na_karti_poznachiv_okupovaniy_sevastopol_yak_teritoriyu_rosiyi_n1456594",
+      "domain": "zaxid.net",
+      "domain_country": "",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "незаконно анекс",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "Севастополь, Росі",
+          "direction": "russia",
+          "type": "uk_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://espreso.tv/news/2018/05/14/francuzkyy_minkult_nazvav_muzey_u_sevastopoli_quotrosiyskymquot",
+      "domain": "espreso.tv",
+      "domain_country": "",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "Анексія Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "Севастополь, Росі",
+          "direction": "russia",
+          "type": "uk_location_label"
+        }
+      ]
+    },
+    {
+      "url": "https://tsn.ua/svit/u-franciyi-ministerstvo-kulturi-opublikuvalo-kartu-muzeyiv-z-rosiyskim-sevastopolem-1154949.html",
+      "domain": "tsn.ua",
+      "domain_country": "Ukraine",
+      "date": "2018-05-14",
+      "fetch_status": "ok",
+      "label": "russia",
+      "confidence": 0.667,
+      "ua_score": 1.0,
+      "ru_score": 2.0,
+      "signal_count": 2,
+      "signals": [
+        {
+          "matched": "окупований Крим",
+          "direction": "ukraine",
+          "type": "uk_framing"
+        },
+        {
+          "matched": "Севастополь, Росі",
+          "direction": "russia",
+          "type": "uk_location_label"
+        }
+      ]
+    }
+  ]
+}

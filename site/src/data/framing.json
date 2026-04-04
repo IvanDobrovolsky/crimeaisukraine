@@ -2134,9 +2134,2445 @@
           "Crimea, Russia"
         ],
         "confidence": 0.95
+      },
+      {
+        "url": "http://www.kianews.com.ua/news/v-simferopole-sostoitsya-ryad-meropriyatiy-posvyashchennyh-godovshchine-krymskoy-vesny",
+        "domain": "kianews.com.ua",
+        "country": "Ukraine",
+        "date": "2015-03-04",
+        "signals": [
+          "воссоединению Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://vchaspik.ua/ukraina/307283novyy-prazdnik-den-vozvrashcheniya-v-rossiyu-poyavilsya-v-sevastopole",
+        "domain": "vchaspik.ua",
+        "country": "Ukraine",
+        "date": "2015-03-07",
+        "signals": [
+          "воссоединению Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.kianews.com.ua/news/v-simferopole-sostoyalos-otkrytie-fotovystavki-tvoya-krymskaya-vesna",
+        "domain": "kianews.com.ua",
+        "country": "Ukraine",
+        "date": "2015-03-12",
+        "signals": [
+          "воссоединения Крым",
+          "воссоединение Крым",
+          "воссоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unian.ua/politics/1056633-u-sevastopoli-namagalisya-pochati-avtoprobig-do-70-richchya-peremogi-ale-viyshov-antiukrajinskiy-miting.html",
+        "domain": "unian.ua",
+        "country": "Ukraine",
+        "date": "2015-03-17",
+        "signals": [
+          "возз'єднання Крим"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unian.net/politics/1056632-v-sevastopole-pyitalis-nachat-avtoprobeg-k-70-letiyu-pobedyi-no-poluchilsya-antiukrainskiy-miting.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2015-03-17",
+        "signals": [
+          "воссоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/grecheskiy-parom-ionas-uydet-s-kerchenskoy-perepravyi-116156",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2015-03-21",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://atn.ua/obshchestvo/v-sevastopole-hotyat-ustanovit-pamyatnik-potemkinu-kotoryy-prisoedinyal-krym-k",
+        "domain": "atn.ua",
+        "country": "Ukraine",
+        "date": "2015-03-27",
+        "signals": [
+          "присоединении Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.kianews.com.ua/news/v-simferopole-ustanovleny-pamyatniki-yuriyu-gagarinu-i-sergeyu-korolevu",
+        "domain": "kianews.com.ua",
+        "country": "Ukraine",
+        "date": "2015-04-01",
+        "signals": [
+          "воссоединению Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://censor.net.ua/news/331234/simferopolskiyi_deputat_pojalovalsya_putinu_chto_v_gorsovete_ne_hotyat_pet_gimn_rossii_dokument",
+        "domain": "censor.net.ua",
+        "country": "Ukraine",
+        "date": "2015-04-03",
+        "signals": [
+          "Оккупация Крым",
+          "воссоединения Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.rbc.ua/rus/news/putin-podaril-sevastopolyu-svetodiodnyy-ekran-1429706929.html",
+        "domain": "rbc.ua",
+        "country": "Ukraine",
+        "date": "2015-04-22",
+        "signals": [
+          "присоединении Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://atn.ua/obshchestvo/v-simferopole-otkroyut-ukrainskiy-kulturnyy-centr",
+        "domain": "atn.ua",
+        "country": "Ukraine",
+        "date": "2015-05-05",
+        "signals": [
+          "вхождение Крыма в состав"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.kianews.com.ua/news/v-simferopole-nachaty-raboty-po-podgotovke-ploshchadki-i-ustanovke-velotreka",
+        "domain": "kianews.com.ua",
+        "country": "Ukraine",
+        "date": "2015-05-07",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.dailymail.co.uk/wires/reuters/article-3115717/Russia-refuses-sign-IAEA-annual-report-says-Sevastopol-not-Ukraine.html",
+        "domain": "dailymail.co.uk",
+        "country": "UK",
+        "date": "2015-06-08",
+        "signals": [
+          "annexed Crimea",
+          "reunification of Crimea",
+          "Russian Crimea"
+        ],
+        "confidence": 0.714
+      },
+      {
+        "url": "https://au.news.yahoo.com/thewest/a/28377988/exclusive-russia-refuses-to-sign-iaea-annual-report-says-sevastopol-not-in-ukraine/",
+        "domain": "yahoo.com",
+        "country": "Unknown",
+        "date": "2015-06-08",
+        "signals": [
+          "annexed Crimea",
+          "reunification of Crimea",
+          "Russian Crimea"
+        ],
+        "confidence": 0.714
+      },
+      {
+        "url": "http://news.yahoo.com/russia-refuses-sign-iaea-annual-report-says-sevastopol-173107445.html",
+        "domain": "yahoo.com",
+        "country": "Unknown",
+        "date": "2015-06-08",
+        "signals": [
+          "annexed Crimea",
+          "reunification of Crimea",
+          "Russian Crimea"
+        ],
+        "confidence": 0.714
+      },
+      {
+        "url": "http://ukranews.com/news/172147.V-DNR-i-LNR-nazvali-Krim-i-Sevastopol-chastyu-Ukraini.ru",
+        "domain": "ukranews.com",
+        "country": "Unknown",
+        "date": "2015-06-09",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://gordonua.com/news/politics/Terroristy-priznali-Krym-i-Sevastopol-neotemlemoy-chastyu-Ukrainy-84431.html",
+        "domain": "gordonua.com",
+        "country": "Ukraine",
+        "date": "2015-06-09",
+        "signals": [
+          "республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.rzn.info/news/2015/6/19/evrosoyuz-oficial-no-prodlil-sankcii-protiv-kryma-i-sevastopolya.html",
+        "domain": "rzn.info",
+        "country": "Unknown",
+        "date": "2015-06-19",
+        "signals": [
+          "незаконное присоединени",
+          "присоединение Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://kuban24.tv/item/v-kryimu-ogranichat-dvijenie-na-trasse-simferopol-kerch-125990",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2015-07-18",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://vchaspik.ua/region/334131gubernator-sevastopolya-naznachil-svyashchennika-direktorom-zapovednika",
+        "domain": "vchaspik.ua",
+        "country": "Ukraine",
+        "date": "2015-07-29",
+        "signals": [
+          "оккупированном Крым",
+          "воссоединения Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://wz.lviv.ua/news/136988-u-simferopoli-rozhromyly-redaktsiiu-krymskotatarskoi-hazety",
+        "domain": "wz.lviv.ua",
+        "country": "Ukraine",
+        "date": "2015-08-04",
+        "signals": [
+          "анексії Крим",
+          "приєднання Криму до росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://24tv.ua/ru/ukraina/foto_dnja_u_sevastopolskogo_lenina__proukrainskie_naklony/n602453",
+        "domain": "24tv.ua",
+        "country": "Ukraine",
+        "date": "2015-08-14",
+        "signals": [
+          "Крым наш"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://censor.net.ua/news/347814/v_okkupirovannom_simferopole_sud_prodlil_arest_zamglavy_medjlisa_chiyigoza",
+        "domain": "censor.net.ua",
+        "country": "Ukraine",
+        "date": "2015-08-14",
+        "signals": [
+          "Крым наш",
+          "Крым наш"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://vchaspik.ua/region/336806krymskie-patrioty-v-sevastopole-peredali-privet-putinu",
+        "domain": "vchaspik.ua",
+        "country": "Ukraine",
+        "date": "2015-08-15",
+        "signals": [
+          "оккупированном Крым",
+          "Крым наш"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "http://kuban24.tv/item/na-kerchenskoy-pereprave-za-vyihodnyie-izyali-chetyire-pistoleta-128529",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2015-08-17",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/v-tamani-budut-delat-beton-i-asfalt-dlya-kerchenskogo-mosta-128551",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2015-08-17",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ru.delfi.lt/abroad/global/vo-vremya-vizita-putina-v-krym-na-zabastovku-vyshli-kerchenskie-strelochniki.d?id=68781492",
+        "domain": "ru.delfi.lt",
+        "country": "Unknown",
+        "date": "2015-08-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://rus.postimees.ee/3299339/vo-vremja-vizita-putina-v-krym-na-zabastovku-vyshli-kerchenskie-strelochniki",
+        "domain": "rus.postimees.ee",
+        "country": "Unknown",
+        "date": "2015-08-19",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unian.ua/society/1113773-u-scorpions-nazvali-sevastopol-sumnivnoyu-teritorieyu-i-vidmovilisya-provoditi-kontsert-dlya-okupantiv.html",
+        "domain": "unian.ua",
+        "country": "Ukraine",
+        "date": "2015-08-20",
+        "signals": [
+          "окупованого Крим",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.unian.net/society/1113772-u-scorpions-nazvali-sevastopol-somnitelnoy-territoriey-i-otkazalis-provodit-kontsert-dlya-okkupantov.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2015-08-20",
+        "signals": [
+          "оккупированный Крым",
+          "присоединение Крым",
+          "Крым в составе Росси"
+        ],
+        "confidence": 0.778
+      },
+      {
+        "url": "http://www.capital.ua/ru/news/51680-putin-trebuet-sdat-kerchenskiy-most-k-kontsu-2018-goda",
+        "domain": "capital.ua",
+        "country": "Ukraine",
+        "date": "2015-08-20",
+        "signals": [
+          "присоединении Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://vchaspik.ua/ukraina/339652vozvrashchenie-v-strashnoe-proshloe-sevastopolcy-stoya-privetstvovali-pesnyu-vernite",
+        "domain": "vchaspik.ua",
+        "country": "Ukraine",
+        "date": "2015-08-29",
+        "signals": [
+          "присоединении Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://podrobnosti.ua/2055973-v-sevastopole-prodajut-shlepantsy-krym-nash.html",
+        "domain": "podrobnosti.ua",
+        "country": "Ukraine",
+        "date": "2015-09-02",
+        "signals": [
+          "окупованим Крим",
+          "Крым наш",
+          "Крым наш"
+        ],
+        "confidence": 0.889
+      },
+      {
+        "url": "http://www.politnavigator.net/v-sevastopole-gotovy-k-vstreche-s-diversantami.html",
+        "domain": "politnavigator.net",
+        "country": "Unknown",
+        "date": "2015-09-11",
+        "signals": [
+          "Крым , Росси",
+          "воссоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://gazeta.ua/ru/articles/ukraine-newspaper/_zakazhu-myaso-i-zhdu-nedelyu-potomu-chto-na-kerchenskoj-pereprave-shtorm/647385",
+        "domain": "gazeta.ua",
+        "country": "Ukraine",
+        "date": "2015-09-15",
+        "signals": [
+          "Крым наш"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://vchaspik.ua/ukraina/343269krik-dushi-zhiteley-sevastopolya-pri-rossii-zhit-stali-huzhe-i-bednee-chem-pri-ukraine",
+        "domain": "vchaspik.ua",
+        "country": "Ukraine",
+        "date": "2015-09-16",
+        "signals": [
+          "оккупации Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://vchaspik.ua/kriminal/344798slobodyan-deputatu-iz-sevastopolya-grozit-15-let-tyurmy",
+        "domain": "vchaspik.ua",
+        "country": "Ukraine",
+        "date": "2015-09-23",
+        "signals": [
+          "вхождение Крыма в состав"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://podrobnosti.ua/2060852-deputatu-predatelju-iz-sevastopolja-grozit-15-let-tjurmy.html",
+        "domain": "podrobnosti.ua",
+        "country": "Ukraine",
+        "date": "2015-09-23",
+        "signals": [
+          "окупованим Крим",
+          "вхождение Крыма в состав",
+          "вхождение Крыма в состав"
+        ],
+        "confidence": 0.75
+      },
+      {
+        "url": "https://inforesist.org/v-yalte-xudozhniku-za-kartinu-sevastopolya-v-flagax-tretego-rejxa-podarili-kvartiru/",
+        "domain": "inforesist.org",
+        "country": "Unknown",
+        "date": "2015-09-24",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://wz.lviv.ua/news/142716-u-simferopoli-obstrilialy-stantsiiu-shvydkoi-dopomohy",
+        "domain": "wz.lviv.ua",
+        "country": "Ukraine",
+        "date": "2015-09-26",
+        "signals": [
+          "приєднання Криму до росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.politnavigator.net/spasatelnyjj-katamaran-dlya-chernomorskogo-flota-postroen-v-sevastopole.html",
+        "domain": "politnavigator.net",
+        "country": "Unknown",
+        "date": "2015-09-29",
+        "signals": [
+          "Крым , Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://tsn.ua/politika/ukrayinski-sankciyi-zagadkovo-ominuli-pidpriyemstvo-iz-slidom-eks-narodnogo-mera-sevastopolya-chalogo-507190.html",
+        "domain": "tsn.ua",
+        "country": "Ukraine",
+        "date": "2015-10-05",
+        "signals": [
+          "окупований Крим",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "https://tsn.ua/politika/ukrayinski-sankciyi-zagadkovo-ominuli-pidpriyemstvo-iz-slidom-eks-narodnogo-mera-sevastopolya-chalogo-507190.html",
+        "domain": "tsn.ua",
+        "country": "Ukraine",
+        "date": "2015-10-05",
+        "signals": [
+          "окупований Крим",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://ru.tsn.ua/politika/ukrainskie-sankcii-zagadochno-oboshli-predpriyatie-so-sledom-eks-narodnogo-mera-sevastopolya-chalogo-499710.html",
+        "domain": "ru.tsn.ua",
+        "country": "Ukraine",
+        "date": "2015-10-05",
+        "signals": [
+          "оккупированный Крым",
+          "присоединении Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://vchaspik.ua/ukraina/347096rezultaty-pokrashchennya-ceny-na-produkty-v-sevastopole-uzhe-vyshe-moskovskih",
+        "domain": "vchaspik.ua",
+        "country": "Ukraine",
+        "date": "2015-10-07",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/v-simferopole-soberut-dengi-na-pamyatnik-v-chest-prisoedineniya-kryima-k-rossii-133678",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2015-10-13",
+        "signals": [
+          "присоединения Крым",
+          "присоединения Крым",
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://racurs.ua/news/58857-v-simferopole-ustanovyat-pamyatnik-v-chest-prisoedineniya-kryma-k-rf",
+        "domain": "racurs.ua",
+        "country": "Ukraine",
+        "date": "2015-10-13",
+        "signals": [
+          "присоединения Крым",
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.politnavigator.net/stroitelstvo-kerchenskogo-mosta-so-storony-kryma-ne-vedetsya-iz-za-zaderzhki-finansirovaniya-moskvojj.html",
+        "domain": "politnavigator.net",
+        "country": "Unknown",
+        "date": "2015-10-24",
+        "signals": [
+          "Крым , Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.rupor.info/news-obshhestvo/2015/11/12/veterany-sevastopolya-shokirovany-shedrostyu-rossi/",
+        "domain": "rupor.info",
+        "country": "Unknown",
+        "date": "2015-11-12",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://rupor.info/news-obshhestvo/2015/11/12/veterany-sevastopolya-shokirovany-shedrostyu-rossi/",
+        "domain": "rupor.info",
+        "country": "Unknown",
+        "date": "2015-11-12",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.from-ua.com/news/363552-urozhenec-sevastopolya-blokada-neobhodima-i-obyazatelna.html",
+        "domain": "from-ua.com",
+        "country": "Unknown",
+        "date": "2015-11-24",
+        "signals": [
+          "Севастополь-Крым-Росси",
+          "Крым-Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://from-ua.com/news/363552-urozhenec-sevastopolya-blokada-neobhodima-i-obyazatelna.html",
+        "domain": "from-ua.com",
+        "country": "Unknown",
+        "date": "2015-11-24",
+        "signals": [
+          "Севастополь-Крым-Росси",
+          "Крым-Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://obozrevatel.com/politics/90632-urozhenets-sevastopolya-dlya-vozvrascheniya-kryima-ego-blokada-neobhodima-i-obyazatelna.htm",
+        "domain": "obozrevatel.com",
+        "country": "Unknown",
+        "date": "2015-11-24",
+        "signals": [
+          "Севастополь-Крым-Росси",
+          "Крым-Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://economics.unian.net/energetics/1194309-v-sevastopole-iz-za-peregruzki-sgoreli-dve-transformatornyie-podstantsii-foto.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2015-11-25",
+        "signals": [
+          "аннексированный Крым",
+          "Крым, росси"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "http://kuban24.tv/item/na-kerchenskoy-pereprave-usilili-meryi-bezopasnosti-137455",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2015-11-26",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/baykeryi-iz-nochnogo-volka-budut-patrulirovat-prigorod-sevastopolya-137608",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2015-11-27",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/aksenov-jelayuschih-blokirovat-kerchenskuyu-perepravu-jdet-tribunal-137898",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2015-12-01",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/v-tsentre-sevastopolya-iz-za-rejima-chs-otkryili-polevuyu-kuhnyu-138267",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2015-12-06",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/na-kerchenskoy-pereprave-dobavyat-dva-jeleznodorojnyih-paroma-139414",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2015-12-20",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/mejdu-anapoy-i-sevastopolem-nachnet-kursirovat-katamaran-140502",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2016-01-04",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/aksenov-dlya-kerchenskogo-mosta-v-prioritete-budut-kryimskie-materialyi-140607",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2016-01-10",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unian.ua/society/1237566-zmi-meshkantsi-okupovanogo-sevastopolya-vimagayut-vid-putina-skasuvati-budivnitstvo-budinku-dlya-fsb-foto.html",
+        "domain": "unian.ua",
+        "country": "Ukraine",
+        "date": "2016-01-15",
+        "signals": [
+          "анексію Крим",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.unian.ua/society/1237317-zavalili-misto-deshevimi-tsukerkami-pidpriemtsi-okupovanoji-kerchi-skarjatsya-na-stihiynih-torgovtsiv-z-rf.html",
+        "domain": "unian.ua",
+        "country": "Ukraine",
+        "date": "2016-01-15",
+        "signals": [
+          "анексію Крим",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.unian.net/society/1237563-smi-jiteli-okkupirovannogo-sevastopolya-trebuyut-ot-putina-otmenit-stroitelstvo-doma-dlya-dlya-fsb-foto.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2016-01-15",
+        "signals": [
+          "аннексию Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.unian.net/society/1237314-zavalili-gorod-deshevyimi-konfetami-predprinimateli-okkupirovannoy-kerchi-jaluyutsya-na-stihiynyih-torgovtsev-iz-rf.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2016-01-15",
+        "signals": [
+          "аннексию Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://xn--b1ae2adf4f.xn--p1ai/society/social-organizations/31698-kak-v-sevastopole-poluchali-possiyskie-paspopta-otkpoveniya-sotpudnika-ufms.html",
+        "domain": "xn--b1ae2adf4f.xn--p1ai",
+        "country": "Unknown",
+        "date": "2016-01-29",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.gazeta.kg/news/important/42944-kerchenskaya-pereprava-segodnya-4-fevralya-ozhidaetsya-shtorm-s-vysotoy-voln-do-35-metrov.html",
+        "domain": "gazeta.kg",
+        "country": "Unknown",
+        "date": "2016-02-04",
+        "signals": [
+          "воссоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://odessa-daily.com.ua/news/razyasnenie-knesseta-po-povodu-poezdki-margi-v-krym-on-byl-gostem-ravvina-sevastopolya-id83499.html",
+        "domain": "odessa-daily.com.ua",
+        "country": "Ukraine",
+        "date": "2016-02-11",
+        "signals": [
+          "Крым вернулся в Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://censor.net.ua/forum/819566/pochemu_sevastopoltsy_boyatsya_pravdy_o_russkoyi_vesne",
+        "domain": "censor.net.ua",
+        "country": "Ukraine",
+        "date": "2016-02-12",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://obozrevatel.com/photo/72609-kryim-eto-ukraina-gde-v-sevastopole-mozhno-uvidet-znaki-rodinyi-fotoreportazh.htm",
+        "domain": "obozrevatel.com",
+        "country": "Unknown",
+        "date": "2016-02-24",
+        "signals": [
+          "Аннексия Крым",
+          "присоединения Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://wz.lviv.ua/news/163143-v-aneksovanomu-simferopoli-zaboronyly-provodyty-mitynhy-i-kontserty",
+        "domain": "wz.lviv.ua",
+        "country": "Ukraine",
+        "date": "2016-03-09",
+        "signals": [
+          "приєднання Криму до росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/aksenov-kerchenskaya-pereprava-za-god-perevezet-do-6-mln-passajirov-144901",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2016-03-14",
+        "signals": [
+          "воссоединению Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://atn.ua/politika/putin-lichno-proverit-stroitelstvo-mosta-cherez-kerchenskiy-proliv",
+        "domain": "atn.ua",
+        "country": "Ukraine",
+        "date": "2016-03-17",
+        "signals": [
+          "Крымский федеральный округ"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ren.tv/novosti/2016-03-19/grandioznyy-salyut-ustroili-v-sevastopole-v-chest-godovshchiny-vossoedineniya-s",
+        "domain": "ren.tv",
+        "country": "Unknown",
+        "date": "2016-03-18",
+        "signals": [
+          "воссоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unian.ua/society/1293809-na-mitingu-u-sevastopoli-okupanti-rozpovili-zavdyaki-chomu-zs-rosiji-zaynyali-krim.html",
+        "domain": "unian.ua",
+        "country": "Ukraine",
+        "date": "2016-03-18",
+        "signals": [
+          "анексію Крим",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.unian.net/society/1293806-na-mitinge-v-sevastopole-okkupantyi-rasskazali-blagodarya-chemu-vs-rossii-zanyali-kryim.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2016-03-18",
+        "signals": [
+          "аннексию Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://kuban24.tv/item/putin-potreboval-naznachit-otvetstvennogo-za-trassu-kerch-simferopol-145255",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2016-03-18",
+        "signals": [
+          "субъекты федерации. Должен быть тот, кто лично отвечает за результаты работы и за расходование государственных денег», — обратился Путин к вице-премьеру Дмитрию Козаку и главе Минэкономразвития Алексею Улюкаеву. Козак в своем докладе сообщил, что ответственность за реализацию этого проекта разделена между крымскими властями, Минтрансом и Минэкономразвития. Улюкаев такую схему поддержал. По словам вице-премьера, трасса сейчас находится на стадии проектирования. Сроки выполнения работ ранее сорвал недобросовестный проектировщик. Теперь заключается договор с другим реализатором. Согласно новому проекту, дорога будет состоять из четырех полос. На вопрос президента о том, сколько денег получил предыдущий подрядчик, глава Крыма Сергей Аксенов ответил, что ему не заплатили. Но теперь компания требует 280 млн рублей через суд. «Нужно наладить какую-то внятную, понятную и легко контролируемую работу. То, что вы сейчас сказали: нам не удалось то, нам не удалось это, будем работать с теми или с этими, – это дорога в никуда», — подчеркнул президент. Недоумение президента вызвало и то, что выбор подрядчика для федеральной программы возложен на власти Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://armenpress.am/rus/news/839998/putin-pribiyl-na-ostrov-tuzla-gde-idet-stroitelstvo-kerchenskogo.html",
+        "domain": "armenpress.am",
+        "country": "Unknown",
+        "date": "2016-03-18",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://atn.ua/politika/v-okkupirovannom-simferopole-otprazdnovali-anneksiyu-s-lyube-i-chicherinoy",
+        "domain": "atn.ua",
+        "country": "Ukraine",
+        "date": "2016-03-19",
+        "signals": [
+          "оккупированный Крым",
+          "Крым, Росси"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "http://uainfo.org/blognews/1458469650-most-cherez-kerchenskiy-proliv-krymchanam-pytayutsya-vtyuhat.html",
+        "domain": "uainfo.org",
+        "country": "Unknown",
+        "date": "2016-03-20",
+        "signals": [
+          "присоединением Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.solovei.info/regiony/v-kerchi-na-devushek-napal-ukrainskij-natsionalist.html",
+        "domain": "solovei.info",
+        "country": "Unknown",
+        "date": "2016-03-21",
+        "signals": [
+          "воссоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unian.ua/society/1299283-u-tsentri-okupovanogo-simferopolya-obvalivsya-dah-pyatipoverhivki-foto.html",
+        "domain": "unian.ua",
+        "country": "Ukraine",
+        "date": "2016-03-24",
+        "signals": [
+          "анексію Крим",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.unian.net/society/1299280-v-tsentre-okkupirovannogo-simferopolya-obrushilas-kryisha-pyatietajki-foto.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2016-03-24",
+        "signals": [
+          "аннексию Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://censor.net.ua/forum/829333/okkupanty_privlekut_armiyu_i_spetsslujby_rf_dlya_bezopasnosti_stroitelstva_kerchenskogo_mosta/sortby/tree/order/desc/page/1",
+        "domain": "censor.net.ua",
+        "country": "Ukraine",
+        "date": "2016-03-30",
+        "signals": [
+          "Крым наш"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://censor.net.ua/news/381918/okkupanty_privlekut_armiyu_i_spetsslujby_rf_dlya_bezopasnosti_stroitelstva_kerchenskogo_mosta",
+        "domain": "censor.net.ua",
+        "country": "Ukraine",
+        "date": "2016-03-30",
+        "signals": [
+          "Крым наш"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://new-sebastopol.com/news/novosti_sevastopolya/Svyaz_Sevastopolya_gotova_k_chrezvichaynim_situatsiyam_v_energeticheskom_sektore_zamgubernatora",
+        "domain": "new-sebastopol.com",
+        "country": "Unknown",
+        "date": "2016-04-06",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://new-sebastopol.com/news/novosti_sevastopolya/Operatori_mobilnoy_svyazi_dolgni_gestko_otvechat_za_kachestvo_uslug_v_usloviyah_CHS_zamgubernatora_Sevastopolya",
+        "domain": "new-sebastopol.com",
+        "country": "Unknown",
+        "date": "2016-04-06",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unian.net/war/1315601-rejimnyiy-obyekt-krasnyiy-drakon-shoygu-stroit-honku-v-istoricheskoy-zone-sevastopolya-razvedka.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2016-04-11",
+        "signals": [
+          "аннексию Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.unian.ua/war/1315604-rejimniy-obekt-chervoniy-drakon-shoygu-budue-honku-v-istorichniy-zoni-sevastopolya-rozvidka.html",
+        "domain": "unian.ua",
+        "country": "Ukraine",
+        "date": "2016-04-11",
+        "signals": [
+          "анексію Крим",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://galinfo.com.ua/news/shoygu_buduie_honku_v_istorychniy_zoni_sevastopolya_225157.html",
+        "domain": "galinfo.com.ua",
+        "country": "Ukraine",
+        "date": "2016-04-11",
+        "signals": [
+          "анексію Крим",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.capital.ua/ru/news/65173-krymskaya-pervaya-strakhovaya-kompaniya-zastrakhovala-kerchenskiy-most",
+        "domain": "capital.ua",
+        "country": "Ukraine",
+        "date": "2016-04-16",
+        "signals": [
+          "оккупированный Крым",
+          "Республика Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://kuban24.tv/item/stroitelstvo-mosta-cherez-kerchenskiy-proliv-147472",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2016-04-21",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ukranews.com/news/206810.V-Kerchi-rossiyskie-siloviki-otrabativali-antiterroristicheskie-priemi-na-prohozhih.uk",
+        "domain": "ukranews.com",
+        "country": "Unknown",
+        "date": "2016-04-23",
+        "signals": [
+          "окупованому Крим",
+          "Керч, росі"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "http://ukranews.com/news/206810.V-Kerchi-rossiyskie-siloviki-otrabativali-antiterroristicheskie-priemi-na-prohozhih.ru",
+        "domain": "ukranews.com",
+        "country": "Unknown",
+        "date": "2016-04-23",
+        "signals": [
+          "оккупированном Крым",
+          "Керчь, росси"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "http://wz.lviv.ua/news/169003-u-simferopoli-znovu-zapratsiuiut-vytvereznyky",
+        "domain": "wz.lviv.ua",
+        "country": "Ukraine",
+        "date": "2016-04-26",
+        "signals": [
+          "приєднання Криму до росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://censor.net.ua/news/388873/okkupirovannye_simferopol_i_sevastopol_zanyali_86e_i_91e_mesta_v_rossiyiskom_reyitinge_kachestva_uslug",
+        "domain": "censor.net.ua",
+        "country": "Ukraine",
+        "date": "2016-05-17",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.delfi.lt/projektai/krymas/krymas-sevastopolis-rusiskiausias-pusiasalio-miestas-ka-pakeite-dveji-metai.d?id=71364320",
+        "domain": "delfi.lt",
+        "country": "Unknown",
+        "date": "2016-05-26",
+        "signals": [
+          "КРЫМ НАШ"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.delfi.lt/news/daily/world/krymas-sevastopolis-rusiskiausias-pusiasalio-miestas-ka-pakeite-dveji-metai.d?id=71364320",
+        "domain": "delfi.lt",
+        "country": "Unknown",
+        "date": "2016-05-26",
+        "signals": [
+          "КРЫМ НАШ"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://rus.delfi.lv/news/daily/abroad/reportazh-iz-sevastopolya-samyj-russkij-gorod-kryma-chto-izmenilos-za-dva-goda.d?id=47498483",
+        "domain": "rus.delfi.lv",
+        "country": "Unknown",
+        "date": "2016-05-28",
+        "signals": [
+          "аннексии Крым",
+          "аннексии Крым",
+          "аннексии Крым"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "http://www.delfi.lv/news/arzemes/pati-krieviskaka-krimas-pilseta-sevastopole-kas-mainijies-divu-gadu-laika.d?id=47505271",
+        "domain": "delfi.lv",
+        "country": "Unknown",
+        "date": "2016-05-30",
+        "signals": [
+          "КРЫМ НАШ",
+          "КРЫМ НАШ"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unian.ua/society/1361166-okupanti-prisvojili-putinu-zvannya-pochesnogo-gromadyanina-sevastopolya.html",
+        "domain": "unian.ua",
+        "country": "Ukraine",
+        "date": "2016-05-31",
+        "signals": [
+          "анексію Крим",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.delfi.ee/news/paevauudised/valismaa/delfi-krimmis-sevastopol-koige-venelikum-linn-poolsaarel-mis-on-kahe-aastaga-muutunud?id=74721469",
+        "domain": "delfi.ee",
+        "country": "Unknown",
+        "date": "2016-06-05",
+        "signals": [
+          "КРЫМ НАШ",
+          "КРЫМ НАШ"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ru.delfi.lt/abroad/russia/forbes-stroitelstvo-kerchenskogo-mosta-prekratili-finansirovat.d?id=71492502",
+        "domain": "ru.delfi.lt",
+        "country": "Unknown",
+        "date": "2016-06-08",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unian.net/society/1372837-v-okkupirovannom-simferopole-otkryili-pamyatnik-vejlivyim-lyudyam-foto.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2016-06-11",
+        "signals": [
+          "аннексию Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://kuban24.tv/item/v-simferopole-otkryli-pamyatnik-vezhlivym-lyudyam-151019",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2016-06-11",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://obozrevatel.com/blogs/96834-nelegitimnyij-referendum-razborki-okkupantov-v-sevastopole.htm",
+        "domain": "obozrevatel.com",
+        "country": "Unknown",
+        "date": "2016-06-14",
+        "signals": [
+          "субъекта Российской Федерации\". Теперь возникнет вопрос: \"а каким образом они хотят узаконить предлагаемый референдум об избрании губернатора\", и на каком уровне? Если это на уровне оккупационного правительства \"федерального образования\" Севастополь, как это будет учитываться в законодательном поле РФ, если нормы с подобным действием не существует в законодательстве. Видео дня Если они готовы это пропустить, тогда возникает еще больший вопрос: а считают ли они Севастополь, как они заявляют во всем мире, частью РФ, то есть аннексированной территорией, хотя весь мир факта аннексии не признал. Потому что тогда получается, что оккупированная территория Севастополя не совсем, если так мягко выразиться, находится в правовом поле России, хотя объявлено, что оккупированная территория Крыма полностью адаптирована под законодательное поле России. Или же они должны тогда менять законодательство РФ, то есть, выносить вопрос на уровне изменений федеральных конституционных законов о том, что такая форма общественных измерений, как референдум по указанному вопросу в РФ, допустима. Но тогда уже дело не столько в Севастополе или автономной республике Крым, как в оккупированных территориях. Это вопрос в целом для РФ, потому что может породить парад референдумов по избранию губернаторов и государственно-территориальному самоопределению. Читайте: Россия социальный взрыв в Крыму долго не удержит Как у них это работает: с 1995 по 2005 год губернаторы избирались жителями субъектов Российской Федерации, с 2005 они назначаются законодательным (представительским) органом субъекта Российской Федерации по представлению президента РФ, в данном случае, оккупированного Севастополя. Получается, что, в противоречие с действующим законодательством президент РФ рекомендует рассматривать рекомендованную им кандидатуру населению города или оккупационному законодательному органу? Какое место тогда волеизъявление народа получает на оккупированной территории Севастополя? Не секрет, что на протяжении всего периода оккупации в Севастополе существует конфликт между губернатором, Сергеем Меняйло и экс-спикером заксобрания Севастополя Алексеем Чалым. Возможно, что все эти разговоры пошли уже после этих скандалов с фильмом, который навязывали жителям Севастополя, кто там главный \"герой\", помогавший оккупантам организовывать оккупацию Севастополя, Меняйло или Чалый. Возможно, это попытка каким-то образом \"разрулить\" эту ситуацию с конфликтом между двумя этими группами, которые сегодня образовались в оккупационной власти Севастополя, которые друг другу противостоят, группа Меняйло и группа Чалого, который, в том числе, приводит к росту недовольства населения города, но это не столько по поводу самого конфликта. А вообще-то, это системно нарастающее недовольство той жизнью, которую оккупанты сегодня создали в Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unian.net/society/1378326-okkupantyi-hotyat-priznat-kerch-samyim-drevnim-gorodom-rf.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2016-06-16",
+        "signals": [
+          "аннексию Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.unian.ua/society/1378329-okupanti-hochut-viznati-kerch-naydavnishim-mistom-rf.html",
+        "domain": "unian.ua",
+        "country": "Ukraine",
+        "date": "2016-06-16",
+        "signals": [
+          "анексію Крим",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.cemnet.com/News/story/159482/cirmea-jsc-bakhchysarai-factory-stroyindustriya-to-start-modernisation.html",
+        "domain": "cemnet.com",
+        "country": "Unknown",
+        "date": "2016-06-23",
+        "signals": [
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/na-trasse-v-simferopole-gorel-ehavshij-v-krasnodar-avtobus-s-det-mi-151790",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2016-06-24",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/v-kerchenskom-prolive-planirovali-provesti-diversiyu-151910",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2016-06-27",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.politnavigator.net/menyajjlo-obsudil-s-putinym-stroitelstvo-novogo-rajjona-sevastopolya.html",
+        "domain": "politnavigator.net",
+        "country": "Unknown",
+        "date": "2016-07-06",
+        "signals": [
+          "Крым , Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.5.ua/svit/pomylylysia-nimetske-vidomstvo-ofitsiino-vybachylosia-za-simferopol-krym-rosiia-u-svoikh-dokumentakh-119417.html",
+        "domain": "5.ua",
+        "country": "Ukraine",
+        "date": "2016-07-08",
+        "signals": [
+          "анексію Крим",
+          "окупований Крим",
+          "окупованим Крим"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.unian.ua/politics/1407762-nimetske-vidomstvo-vibachilosya-za-prikru-pomilku-simferopol-krim-rosiya-u-svojih-dokumentah.html",
+        "domain": "unian.ua",
+        "country": "Ukraine",
+        "date": "2016-07-08",
+        "signals": [
+          "анексію Крим",
+          "анексію Крим",
+          "окупований Крим"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.unian.net/politics/1407767-nemetskoe-vedomstvo-izvinilos-za-dosadnuyu-oshibku-simferopol-kryim-rossiya-v-svoih-dokumentah.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2016-07-08",
+        "signals": [
+          "аннексию Крым",
+          "аннексию Крым",
+          "оккупированный Крым"
+        ],
+        "confidence": 0.771
+      },
+      {
+        "url": "http://ukranews.com/news/438152-gubernator-sevastopolya-soglasen-na-povtornyy-referendum-o-statuse-kryma",
+        "domain": "ukranews.com",
+        "country": "Unknown",
+        "date": "2016-07-08",
+        "signals": [
+          "воссоединении Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ukranews.com/ua/news/438153-gubernator-sevastopolya-zgoden-na-povtornyy-referendum-pro-status-krymu",
+        "domain": "ukranews.com",
+        "country": "Unknown",
+        "date": "2016-07-08",
+        "signals": [
+          "возз'єднання Крим"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://wz.lviv.ua/news/177440-nimetske-vidomstvo-vybachylosia-za-prykru-pomylku-simferopol-krym-rosiia",
+        "domain": "wz.lviv.ua",
+        "country": "Ukraine",
+        "date": "2016-07-08",
+        "signals": [
+          "анексію Крим",
+          "окупований Крим",
+          "незаконну анекс"
+        ],
+        "confidence": 0.571
+      },
+      {
+        "url": "http://www.from-ua.com/news/381769-nemci-izvinilis-za-simferopol-krim-rossiya-v-svoih-dokumentah.html",
+        "domain": "from-ua.com",
+        "country": "Unknown",
+        "date": "2016-07-08",
+        "signals": [
+          "аннексию Крым",
+          "оккупированный Крым",
+          "незаконную аннекс"
+        ],
+        "confidence": 0.8
+      },
+      {
+        "url": "http://obozrevatel.com/crime/75843-rossiya-proverit-slova-gubernatora-sevastopolya-o-povtornom-referendume-v-kryimu.htm",
+        "domain": "obozrevatel.com",
+        "country": "Unknown",
+        "date": "2016-07-10",
+        "signals": [
+          "Аннексия Крым",
+          "оккупация Крым",
+          "присоединении Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.politnavigator.net/sorvana-diversiya-ukrainy-protiv-sevastopolya.html",
+        "domain": "politnavigator.net",
+        "country": "Unknown",
+        "date": "2016-07-11",
+        "signals": [
+          "Севастополь-Крым-Росси",
+          "Крым , Росси",
+          "Крым-Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://rupor.info/news-politika/2016/07/11/sevastopol-mozhet-ostatsya-bez-aeroporta/",
+        "domain": "rupor.info",
+        "country": "Unknown",
+        "date": "2016-07-11",
+        "signals": [
+          "Республика Крым",
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.rupor.info/news-politika/2016/07/11/sevastopol-mozhet-ostatsya-bez-aeroporta/",
+        "domain": "rupor.info",
+        "country": "Unknown",
+        "date": "2016-07-11",
+        "signals": [
+          "Республика Крым",
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.politnavigator.net/narodnyjj-front-sevastopol-krym-rossiya-gubernatora-glavnojj-bazy-chernomorskogo-flota-dolzhen-naznachat-putin.html",
+        "domain": "politnavigator.net",
+        "country": "Unknown",
+        "date": "2016-07-23",
+        "signals": [
+          "Севастополь-Крым-Росси",
+          "Севастополь-Крым-Росси",
+          "Севастополь-Крым-Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://glavportal.com/news/aksenov-poobeshal-zavershit-remont-avarijnogo-uchastka-avtodorogi-kerch-feodosiya-do-1-dekabrya/",
+        "domain": "glavportal.com",
+        "country": "Unknown",
+        "date": "2016-07-27",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://zn.ua/WORLD/putin-uprazdnil-krymskiy-federalnyy-okrug-i-otpravil-v-sibir-uvolennogo-gubernatora-sevastopolya-220040_.html",
+        "domain": "zn.ua",
+        "country": "Ukraine",
+        "date": "2016-07-28",
+        "signals": [
+          "аннексии Крым",
+          "оккупированному Крым",
+          "Крымский федеральный округ"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://korrespondent.net/ukraine/3723942-putyn-prynial-otstavku-hubernatora-sevastopolia",
+        "domain": "korrespondent.net",
+        "country": "Unknown",
+        "date": "2016-07-28",
+        "signals": [
+          "Крымский федеральный округ"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://korrespondent.net/ukraine/events/3725301-kerchenskyi-most-nachaly-sooruzhat-sudokhodnuui-chast",
+        "domain": "korrespondent.net",
+        "country": "Unknown",
+        "date": "2016-08-01",
+        "signals": [
+          "аннексия Крым",
+          "Крымский федеральный округ"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://rus.delfi.lv/news/daily/abroad/forbes-sroki-vozvedeniya-kerchenskogo-mosta-sdvigayutsya-iz-za-oshibki-chinovnikov.d?id=47742765",
+        "domain": "rus.delfi.lv",
+        "country": "Unknown",
+        "date": "2016-08-02",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ua.korrespondent.net/ukraine/3734064-u-simferopoli-vidkryly-pamiatnyk-kateryni-ii",
+        "domain": "korrespondent.net",
+        "country": "Unknown",
+        "date": "2016-08-19",
+        "signals": [
+          "возз'єднання Крим"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://glavportal.com/news/glava-kryma-otverg-ideyu-poglosheniya-sevastopolya/",
+        "domain": "glavportal.com",
+        "country": "Unknown",
+        "date": "2016-08-31",
+        "signals": [
+          "Республика Крым",
+          "субъект федерации. Об этом сообщил глава республики Сергей Аксенов, слова которого приводит РИА Новости . «Таких целей и задач нет, никаких подводных течений нет», – сказал Аксенов, отвечая на вопрос журналистов об объединении регионов. Ранее Аксенов выступил с инициативой о межпарламентском и межправительственном соглашении о сотрудничестве Республики Крым и Севастополя. Аксенов отметил, что Крым и Севастополь, хотя и находятся на одной территории – полуострове Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://delo.ua/world/podrjadchiki-kerchenskogo-mosta-vkljucheny-v-chernyj-spisok-ssha-322043/",
+        "domain": "delo.ua",
+        "country": "Ukraine",
+        "date": "2016-09-01",
+        "signals": [
+          "оккупация крым",
+          "присоединения Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "https://glavportal.com/news/putin-ocenil-tempy-stroitelstva-kerchenskogo-mosta/",
+        "domain": "glavportal.com",
+        "country": "Unknown",
+        "date": "2016-09-15",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.solovei.info/vrossii/rosgvardiya-vzyala-v-krymu-pod-okhranu-artek-i-sevastopolskij-issledovatelskij-reaktor.html",
+        "domain": "solovei.info",
+        "country": "Unknown",
+        "date": "2016-09-20",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://censor.net.ua/news/407283/goncharenko_pro_otmenu_osobogo_statusa_sevastopolya_sama_jizn_dokazala_chto_eto_nujno",
+        "domain": "censor.net.ua",
+        "country": "Ukraine",
+        "date": "2016-09-22",
+        "signals": [
+          "оккупации Крым",
+          "республика крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://uawire.org/news/russia-to-produce-film-on-the-construction-of-the-kerch-strait-bridge",
+        "domain": "uawire.org",
+        "country": "Unknown",
+        "date": "2016-10-02",
+        "signals": [
+          "Crimea , Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://glavportal.com/news/kerchenskaya-paromnaya-pereprava-vremenno-zakryta-iz-za-shtorma/",
+        "domain": "glavportal.com",
+        "country": "Unknown",
+        "date": "2016-10-17",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://glavportal.com/news/pervaya-plita-budushej-proezzhej-chasti-ustanovlena-stroitelyami-kerchenskogo-mosta/",
+        "domain": "glavportal.com",
+        "country": "Unknown",
+        "date": "2016-10-24",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/shkol-nica-iz-sevastopolya-sbezhala-ot-roditelej-na-kuban-161456",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2016-11-08",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.newsru.com/russia/11nov2016/sevastopol.html",
+        "domain": "newsru.com",
+        "country": "Unknown",
+        "date": "2016-11-11",
+        "signals": [
+          "присоединения Крым",
+          "вхождения Крыма в состав"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://wz.lviv.ua/news/187143-u-simferopoli-zatrymaly-cherhovoho-ukrainskoho-dytversanta",
+        "domain": "wz.lviv.ua",
+        "country": "Ukraine",
+        "date": "2016-11-16",
+        "signals": [
+          "приєднання Криму до росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://glavportal.com/news/v-simferopole-zaderzhan-podozrevaemyj-v-rabote-na-ukrainskuyu-razvedku/",
+        "domain": "glavportal.com",
+        "country": "Unknown",
+        "date": "2016-11-16",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://glavportal.com/news/deputaty-zaksobraniya-sevastopolya-utverdili-zakon-o-pryamyh-vyborah-gubernatora/",
+        "domain": "glavportal.com",
+        "country": "Unknown",
+        "date": "2016-11-24",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://glavportal.com/news/fsb-byvshij-oficer-chf-zaderzhan-v-sevastopole-za-shpionazh-v-polzu-ukrainy/",
+        "domain": "glavportal.com",
+        "country": "Unknown",
+        "date": "2016-11-24",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/na-kerchenskoj-pereprave-v-2016-godu-passazhiropotok-vyros-na-30-162643",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2016-11-24",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/v-rajone-strojploshadki-kerchenskogo-mosta-nashli-snaryad-vremen-vojny-163399",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2016-12-06",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://glavportal.com/news/krymskie-vlasti-rost-turpotoka-posle-vvoda-zhd-chasti-kerchenskogo-mosta-dostignet-10-mln-chelovek/",
+        "domain": "glavportal.com",
+        "country": "Unknown",
+        "date": "2016-12-14",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.politnavigator.net/v-simferopole-prezentovali-logotip-kryma-za-million-rublejj.html",
+        "domain": "politnavigator.net",
+        "country": "Unknown",
+        "date": "2016-12-19",
+        "signals": [
+          "Крым , Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/uprdor-taman-sankcii-ne-povliyayut-na-vozvedenie-kerchenskogo-mosta-164500",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2016-12-21",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://lb.ua/news/2017/01/10/355484_krim_sevastopol_feodalnie_voyni.html",
+        "domain": "lb.ua",
+        "country": "Ukraine",
+        "date": "2017-01-10",
+        "signals": [
+          "субъектов федерации, россияне передали власть в них двум разным элитным пулам. Результатом стало наметившееся во втором полугодии прошлого года и грозящее достигнуть апогея в новом политическом сезоне противостояние между Симферополем и Севастополем. Фото: http://glava.rk.gov.ru Встреча президента РФ Путина с Аксёновым и Овсянниковым 20 августа, 2016. Два мира – две системы После «возвращения в родную гавань» власть в Крыму оказалась в тех же самых надежных руках, в которых она была с начала нулевых годов. Конечно, в высших эшелонах произошли некоторые кадровые ротации. Но и представители «Русского единства», ради которых пришлось немного потесниться бывшим членам «Партии Регионов» - плоть от плоти политической системы времен Кучмы, Ющенко и Януковича. Как обманулись крымские элиты Наиболее показательна фигура Сергея Цекова , делегированного от Крыма в Совет Федерации РФ. В 1994-1995 годах он был председателем Верховного Совета Крыма, а затем, как человек имевший самый высокий номенклатурный статус, стал главой профессиональным русских полуострова. Другой сенатор – Ольга Ковитиди еще недавно представляла «Команду Куницына», а затем примкнула к «Партии Регионов». Из семи крымских вице-премьеров трое (Виталий Нахлупин, Юрий Гоцанюк и Лариса Опанасюк) – в недавнем прошлом «бело-голубые», один (Дмитрий Полонский) - бывший член «Русского единства». Алла Пашкунова – была управделами Верховной Рады АРК в пору, когда там заправляли «регионалы». Еще два вице-премьера Игорь Михайличенко и Павел Королёв приехали с «российского материка», как нынче говорят крымчане. Аналогичная ситуация и на местах. Главой Ялты является Андрей Ростенко - бывший депутат Симферопольского горсовета от Партии регионов. Симферополь возглавляет Геннадий Бахарев – в недавнем прошлом глава Железнодорожного районного совета от ПР. Руководителем Алушты стал бывший депутат-«регионал» Игорь Сотов. В Феодосии главой города является Станислав Крысин, бывший заместитель начальника Управления ресурсного обеспечения МВД Украины. Евпаторией руководит Андрей Филонов – бывший советник заместителя председателя крымской организации «бело-голубых», а его замом является Александр Челомбитко – высокопоставленный «регионал» из Севастополя. Горсовет Керчи возглавляет Лариса Щербула, сотрудница принадлежащей Константинову компании «Консоль» и бывшая городской депутат от «Партии Регионов». Крымские студенты спели Константинову гимн Украины В списках депутатов местных советов от российских партий мы сплошь и рядом видим бывших членов ПР, СДПУ (о), «Блока Куницына» и другие до боли знакомые лица. Иная ситуация в Севастополе. Алексей Чалый , надев за свои заслуги перед Россией мантию серого кардинала, сформулировал главный тезис своей программы: все «бывшие», объявленные «пятой колонной», должны быть исключены из городской политики. Избранное в сентябре 2014 года по российским законам Законодательное собрание Севастополя состоит главным образом из людей Чалого, среди которых нет отставных «регионалов». Первый российский губернатор Сергей Меняйло привез с собой команду управленцев из Новороссийска, расставив их на ключевые посты в городе. Фото: nsn.fm Сергей Меняйло и Алексей Чалый Правда, позднее, на фоне конфликта Чалого с Меняйло, тот попытался опереться на старые кадры. Бывший министр обороны Павел Лебедев возглавил вместе с адмирал-губернатором попечительский совет фонда «Корсунь», а скандально известный «бело-голубой» парламентарий Вадим Колесниченко стал советником Меняйло по политическим вопросам. Но триумфального возвращения севастопольских «регионалов» во власть не произошло. Владимир Путин в июле 2016 года отправил Меняйло в отставку, а назначенный им исполняющим обязанности губернатора Дмитрий Овсянников заключил союз с Чалым, направленный против «бывших». В сформированном врио Правительстве из 12 членов только один севастополец – директор экономического департамента Элимдар Ахтемов (он занимал аналогичную должность еще при «оранжевом» Сергее Куницыне). Остальные 11 приехали из России. Значительная часть чиновников среднего звена – на уровне начальников и замов начальников управлений, также получили севастопольскую прописку лишь после 2014 года. Как в Севастополе строили «город солнца» В политическом плане в Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://censor.net.ua/news/422652/v_okkupirovannom_sevastopole_v_godovschinu_krymskoyi_vesny_vydadut_pamyatnye_nomernye_znaki",
+        "domain": "censor.net.ua",
+        "country": "Ukraine",
+        "date": "2017-01-10",
+        "signals": [
+          "Оккупация Крым",
+          "Оккупация Крым",
+          "присоединении Крым"
+        ],
+        "confidence": 0.636
+      },
+      {
+        "url": "https://glavportal.com/news/bolee-6-mln-chelovek-vospolzovalis-kerchenskoj-perepravoj-v-2016-godu/",
+        "domain": "glavportal.com",
+        "country": "Unknown",
+        "date": "2017-01-11",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.obozrevatel.com/crime/52867-okkupirovannyij-sevastopol-vzbudorazhil-podozritelnyij-predmet-v-morportu.htm",
+        "domain": "obozrevatel.com",
+        "country": "Unknown",
+        "date": "2017-01-29",
+        "signals": [
+          "Аннексия Крым",
+          "Республика Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://new-sebastopol.com/news/novosti_sevastopolya/Popitka_nomer_pyat_Ovsyannikov_razvorachivaet_malenkuyu_pobedonosnuyu_voynu",
+        "domain": "new-sebastopol.com",
+        "country": "Unknown",
+        "date": "2017-02-04",
+        "signals": [
+          "субъектами федерации. Несмотря на то, что плановая работа по этому вопросу идет уже второй год, отчего-то задача всплывает сейчас в качестве некой «болевой точки». Севастополю неинтересно «затишье» в отношениях субъектов Разногласия по Бельбеку эксперты объяснили реакцией Дмитрия Овсянникова на визит в город главы Крыма Сергей Аксёнова по партийным делам, который переполошил севастопольский истеблишмент. Тогда в СМИ, близких к экс-председателю Законодательного собрания, а ныне простому депутату Алексею Чалому, визит главы республики назвали «скандальным», «оскорбительным» и возмутились: «Севастополю продолжают навязывать идею объединения с Крымом в один субъект Федерации». Неудивительно, что Овсянников решил показать, «кто в доме хозяин». Однако среди своих попыток доминирования временно исполняющий обязанности губернатора может похвастать лишь одним «успехом»: отменой решения предыдущего состава правительства о передаче Крыму акций «Генбанка». Бывший губернатор Сергей Меняйло передал их республике с простым объяснением: «не получилось должным образом обеспечить загрузку банковского учреждения». Однако Овсянников отменил решение предшественника. Глава Крыма, свою очередь, выразил полное непонимание этим шагом. Но, упуская инициативу во всех спорах, Севастополь все же продолжает инициировать новые разбирательства – как в случае с границами между субъектами. Водораздел по «Патриоту» В случае с акциями «Генбанка» уместнее говорить о логике «назло кондуктору», однако Севастополь, похоже, расценивает такие конфликты как «маленькие победоносные войны» для сплочения и улучшения имиджа главы города. И такие усилия направляются не только в окружающее пространство, но используются и в самом городе федерального значения. Так, на недавних общественных слушаниях по проекту минобороны о строительстве филиала парка «Патриот» группа депутатов, дружественная Чалому, шумно высказалась против реализации проекта на горе Гасфорта. В свою очередь Овсянников объявил о том, что минобороны более не рассматривает возможность строительства парка в Севастополе. Случилось это потому, что мнение горожан было «учтено». «Мы не отказывается от парка «Патриот», он городу нужен. Очень важный проект. И в письме минобороны написано, что есть готовность рассматривать альтернативные земельные участки. Сейчас мы предложим другие варианты. Мы хотели бы, чтобы проект парка «Патриот» развивался, но по данному земельному участку работа пока остановлена», – пояснил Дмитрий Овсянников. Напомним, ранее Овсянников появлялся на территории у горы Гасфорта и заявлял, что парк будет здесь. В то же время, несмотря на такое «согласие» с планами минобороны, в правительственном пуле СМИ никакой информации о плюсах проекта не было. Ну а издания Чалого, с которым продолжает активно сотрудничать Овсянников, работали исключительно «против». И теперь и.о. губернатора, демонстрируя якобы единение с горожанами, говорит об отзыве проекта. Вот вам и «победа». Что же до «других земельных участков», то среди севастопольских экспертов есть понимание, что минобороны более не возобновит диалога на эту тему с городом федерального значения – куда проще работать с Крымом, ведь Аксёнов, несомненно, воспользуется шансом на грандиозный проект, привлекающий туристов и развивающий инфраструктуру. Очевидно, Севастополь уже безвозвратно потерял возможность строить «Патриот» у себя – договариваться с таким гордым субъектом военные более не будут. Севастополь готовит еще одну «победу» В местных СМИ недавно запустили «утку» о том, что правительство города планирует на горе Гасфорта размещение горнолыжного курорта, подобного Куршевелю. Впрочем, в каждой «утке» есть лишь доля шутки. Как известно, экс-спикер Заксобрания Алексей Чалый лоббирует развитие курортного комплекса «Балаклава-грин», который планировал строить депутат Верховной рады Украины, миллиардер Вадим Новинский. В то же время Чалый до сих пор лоббирует «Балаклаву Грин»: так, в минувшем году он высказывал опасения насчет строительства электростанции в Балаклаве, которая «поставит крест» на проекте поселка. Несложно заметить, что земли в районе горы Гасфорта включены в проект курорта. В Севастополе обсуждают вполне обоснованную версию о том, что защитив интересы Новинского в Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://racurs.ua/news/83676-miting-krymskih-tatar-26-fevralya-2014-goda-v-simferopole-byl-mirnym-mejdunarodnye-eksperty",
+        "domain": "racurs.ua",
+        "country": "Ukraine",
+        "date": "2017-02-24",
+        "signals": [
+          "присоединении Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://slavyangrad.org/2017/03/20/sevastopol-is-not-ukraine/",
+        "domain": "slavyangrad.org",
+        "country": "Unknown",
+        "date": "2017-03-21",
+        "signals": [
+          "Sevastopol , Ukraine",
+          "Crimea , Russia",
+          "Crimea , Russia"
+        ],
+        "confidence": 0.733
+      },
+      {
+        "url": "http://kp.ua/politics/571581-v-sevastopole-kompensyruuit-poroshenko-y-kolomoiskomu-natsyonalyzyrovannye-predpryiatyia",
+        "domain": "kp.ua",
+        "country": "Ukraine",
+        "date": "2017-03-30",
+        "signals": [
+          "оккупации Крым",
+          "Республика Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "https://glavportal.com/news/vlasti-kryma-zayavili-o-namerenii-prevratit-staryj-aeroport-simferopolya-v-avtobusnyj-hab/",
+        "domain": "glavportal.com",
+        "country": "Unknown",
+        "date": "2017-03-30",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.veronasera.it/cronaca/yalta-bonifico-conto-bloccato-valdegamberi-10-maggio-2017.html",
+        "domain": "veronasera.it",
+        "country": "Italy",
+        "date": "2017-05-10",
+        "signals": [
+          "Yalta, Crimea, Russia",
+          "Crimea, Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/mintrans-kerchenskij-most-soedinit-berega-proliva-do-konca-oseni-174264",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2017-05-12",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://topspb.tv/news/2017/06/4/v-simferopole-otmechayut-233-yu-godovshinu-so-dnya-osnovaniya-goroda-v-prazdnike-prinyali-uchastie-gubernator-peterburga-georgij-poltavchenko-i-spiker-zaksa-severnoj-stodlicy-vyacheslav-makarov/",
+        "domain": "topspb.tv",
+        "country": "Unknown",
+        "date": "2017-06-05",
+        "signals": [
+          "воссоединение Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://topspb.tv/news/2017/06/5/simferopolcev-s-dnem-goroda-pozdravili-peterburgskie-artisty-alena-petrovskaya-i-vyacheslav-butusov/",
+        "domain": "topspb.tv",
+        "country": "Unknown",
+        "date": "2017-06-05",
+        "signals": [
+          "воссоединение Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/voditel-odnogo-iz-stolknuvshihsya-okolo-kerchi-sudov-byl-p-yan-176490",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2017-06-11",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://glavportal.com/news/stroiteli-nachali-ukladku-asfalta-na-kerchenskom-mostu/",
+        "domain": "glavportal.com",
+        "country": "Unknown",
+        "date": "2017-07-10",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://vesti-ua.net/novosti/politika/40804-sevastopol-tyanet-rossiyu-na-dno-krymskiy-pisatel-s-blagodarnostyu-vspomnil-ukrainu.html",
+        "domain": "vesti-ua.net",
+        "country": "Unknown",
+        "date": "2017-07-19",
+        "signals": [
+          "воссоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.obozrevatel.com/society/43956-sevastopol-tyanet-rossiyu-na-dno-kryimskij-pisatel-vzvyil-i-vspomnil-ukrainu.htm",
+        "domain": "obozrevatel.com",
+        "country": "Unknown",
+        "date": "2017-07-19",
+        "signals": [
+          "воссоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://newsone.ua/ru/ukraina-osudila-izbiratelnuyu-kampaniyu-rossii-v-okkupirovannom-sevastopole/",
+        "domain": "newsone.ua",
+        "country": "Ukraine",
+        "date": "2017-08-02",
+        "signals": [
+          "Крым , Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://wz.lviv.ua/news/205070-u-simferopoli-rosiiski-sylovyky-zatrymaly-kilkokh-liudei-pislia-odynochnykh-piketiv",
+        "domain": "wz.lviv.ua",
+        "country": "Ukraine",
+        "date": "2017-08-14",
+        "signals": [
+          "приєднання Криму до росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.newsru.com/russia/14aug2017/simferopol.html",
+        "domain": "newsru.com",
+        "country": "Unknown",
+        "date": "2017-08-14",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://vchaspik.ua/politika/431731-v-mid-ukrainy-otvetili-na-vizit-putina-v-okkupirovannyy-sevastopol",
+        "domain": "vchaspik.ua",
+        "country": "Ukraine",
+        "date": "2017-08-19",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://uawire.org/russia-begins-installation-of-railway-arc-on-kerch-bridge",
+        "domain": "uawire.org",
+        "country": "Unknown",
+        "date": "2017-08-28",
+        "signals": [
+          "Crimea , Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/v-rajone-stroitel-stva-kerchenskogo-mosta-na-tri-dnya-zapretyat-sudohodstvo-184569",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2017-10-10",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.obozrevatel.com/politics/kogda-budem-brat-simferopol.htm",
+        "domain": "obozrevatel.com",
+        "country": "Unknown",
+        "date": "2017-10-11",
+        "signals": [
+          "Крым наш"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://vesti-ua.net/novosti/politika/48951-kogda-budem-brat-simferopol.html",
+        "domain": "vesti-ua.net",
+        "country": "Unknown",
+        "date": "2017-10-12",
+        "signals": [
+          "Крым наш"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/rosavtodor-most-cherez-kerchenskij-proliv-gotov-bolee-chem-na-50-185629",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2017-10-25",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://uawire.org/media-putin-participated-in-opening-of-monument-to-russian-tsar-alexander-iii-in-yalta",
+        "domain": "uawire.org",
+        "country": "Unknown",
+        "date": "2017-11-19",
+        "signals": [
+          "Yalta, Russia",
+          "Crimea , Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://topspb.tv/news/2017/11/21/evrosoyuz-vklyuchil-gubernatora-sevastopolya-v-sankcionnyj-spisok/",
+        "domain": "topspb.tv",
+        "country": "Unknown",
+        "date": "2017-11-21",
+        "signals": [
+          "вхождения Крыма в состав"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://glavcom.ua/ru/news/gubernator-sevastopolya-popal-v-sankcionnyy-spisok-es-453143.html",
+        "domain": "glavcom.ua",
+        "country": "Ukraine",
+        "date": "2017-11-21",
+        "signals": [
+          "вхождения Крыма в состав"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://vesti-ua.net/novosti/politika/52873-ukrainskaya-aviaciya-poluchila-prikaz-udarit-po-simferopolyu.html",
+        "domain": "vesti-ua.net",
+        "country": "Unknown",
+        "date": "2017-11-22",
+        "signals": [
+          "субъекта Российской Федерации?» и «Вы за восстановление действия Конституции Республики Крым 1992 года и за статус Крыма как части Украины?» Популярное сейчас: • В Крыму разбился очередной российский истребитель • &quot;Шпионская столица&quot; Европы работает над усилением борьбы со вражескими агентами — Bloomberg • Минобороны анонсировало новшества в мобилизации после убийства во Львове • Достигли целей 11 ракет: как отработала ПВО во время утренней атаки на Украину Напомним: Оборонная промышленность оказалась не готова: как война на Ближнем Востоке может ударить по украинской ПВО --> [related-news] {related-news} [/related-news] --> Оборонная промышленность оказалась не готова: как война на Ближнем Востоке может ударить по украинской ПВО. Почему вы можете доверять vesti-ua.net → Мы в Google News Подписывайтесь, чтобы не пропускать важные новости Подписаться Добавить комментарий - --> Полезное --> --> Главное 597 Зеленский заявил, что за прошедший месяц россияне понесли самые большие за всю войну потери 597 Российские потери за март 2026 года достигли самого высокого уровня за время войны с Украиной и составляют более 35 тысяч Вчера, 22:43 Достигли целей 11 ракет: как отработала ПВО во время утренней атаки на Украину 588 Пасхальное перемирие: будет ли прекращение огня 491 Миссия Artemis II: люди после 54-летнего перерыва снова отправилась к Луне 644 Стоимость топлива на АЗС: сколько сегодня стоят бензин, дизель и автогаз 835 Выплата 1500 грн: кто получит деньги 1.6т Статьи / Интервью в фокусе 462 Politico назвало сценарии, которыми Трамп может разрушить НАТО 462 На этой неделе президент США Дональд Трамп резко усилил свои угрозы в адрес НАТО из-за отказа союзников присоединиться к войне США против Ирана, заявив, что \"абсолютно\" рассматривает возможность выхода из альянса. Вчера, 11:02 Возможный выход США из НАТО: в Politico узнали, пойдет ли Трамп на решительные шаги 811 Россия и Украина готовятся к новому этапу войны, – Bloomberg 1.1т В окружении Трампа возник &quot;бунт&quot; из-за войны в Иране, - The Telegraph 1.1т Блокировка интернета в РФ: Путин пытается отрезать россиян от мира, - NYT 1.2т Союзники Трампа на Ближнем Востоке требуют продолжения войны против Ирана, - AP 841 Мнения Политолог объяснил, что произойдет, если США все таки выйдут из НАТО 665 Эксперт объяснил, почему Россия стала чаще запускать &quot;Шахеды&quot; днём 2.3т Ситуация с топливом в Украине может стать критической уже в ближайшее время, - эксперт 1.2т Топ-новости 3.1т Минобороны анонсировало новшества в мобилизации после убийства во Львове 3.1т 1.6т Выписка из ЕГРПОУ: как получить данные из Единого государственного реестра 1.6т 1.1т Пулеметы Гатлинга против иранских &quot;Шахедов&quot;: эксперт объяснил, почему оружие промахивается 1.1т О чем вы думаете? --> {vote_title} Когда закончится война? В этом году В течение следующего года В течение следующих 2-3 лет Через 5 лет Не ожидаю окончания войны в ближайшем будущем Сложно сказать / нет уверенности Голосовать Результаты Последние новости 09:09 Путин эвакуирует производство ракет в Сибирь: The Telegraph назвало причину 121 08:58 Названа дата встречи Рютте и Трампа 133 08:36 Вэнс летит к Орбану: СМИ назвали цель 195 08:14 Больше, чем у Китая и США: как украинский резерв переписал рейтинг армий мира 308 22:43 Зеленский заявил, что за прошедший месяц россияне понесли самые большие за всю войну потери 597 22:19 Стоимость дизеля перепрыгнет 100 гривен за литр: прогноз эксперта 443 22:03 Впервые за 50 лет армия США приняла на вооружение новую боевую гранату 551 21:58 В Венгрии появились фейковые плакаты партии &quot;Тиса&quot; на украинском языке 328 21:33 Трамп обещает нефтяной &quot;фонтан&quot; для всего мира 411 21:14 &quot;Газпром&quot; и &quot;Роснефть&quot; участвовали в похищении 2 тысяч украинских детей, - Йельский университет 274 20:56 В Украине фиксируют рост заражения бешенством: есть летальные случаи 429 20:41 Достигли целей 11 ракет: как отработала ПВО во время утренней атаки на Украину 588 20:18 &quot;Шпионская столица&quot; Европы работает над усилением борьбы со вражескими агентами — Bloomberg 402 20:01 Прогнозируются тяжелые времена: ученые - о неизбежных изменениях климата 512 19:48 Во время Нью-Йоркского автосалона назван лучший автомобиль 2026 года 364 19:27 Энергетический кризис из-за войны на Ближнем Востоке: ЕС готовятся к худшим сценариям 382 19:07 Толерантность РФ по отношению к Украине исчерпана: Медведев сделал очередное &quot;устрашающее&quot; заявление 873 18:48 Китай объявил о строительстве крупнейшей в мире 30-этажной морской платформы 499 18:29 Пасхальное перемирие: будет ли прекращение огня 491 18:09 Мэр Ивано-Франковска посоветовал родителям «бить детей» за петарды во время войны 576 17:48 В Крым",
+          "воссоединение Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unn.com.ua/uk/news/1700203-lider-evreyskoyi-gromadi-sevastopolya-u-ssha-otrimav-dokument-dokument-z-viznannyam-mista-rosiyskim",
+        "domain": "unn.com.ua",
+        "country": "Ukraine",
+        "date": "2017-11-23",
+        "signals": [
+          "Севастополь, Росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unn.com.ua/ru/news/1700203-lider-evreyskoyi-gromadi-sevastopolya-u-ssha-otrimav-dokument-dokument-z-viznannyam-mista-rosiyskim",
+        "domain": "unn.com.ua",
+        "country": "Ukraine",
+        "date": "2017-11-23",
+        "signals": [
+          "Севастополь, Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://vesti-ua.net/novosti/politika/53056-vesti-iz-za-porebrika-ponaehavshie-iz-podmoskovya-v-sevastopole-vpali-v-isteriku.html",
+        "domain": "vesti-ua.net",
+        "country": "Unknown",
+        "date": "2017-11-23",
+        "signals": [
+          "Крым наш"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://from-ua.com/news/424646-ukrainskaya-aviaciya-poluchila-prikaz-udarit-po-simferopolyu.html",
+        "domain": "from-ua.com",
+        "country": "Unknown",
+        "date": "2017-11-22",
+        "signals": [
+          "субъекта Российской Федерации?&raquo; и &laquo;Вы за восстановление действия Конституции Республики Крым 1992 года и за статус Крым",
+          "воссоединение Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://from-ua.com/news/424924-vesti-iz-za-porebrika-ponaehavshie-iz-podmoskovya-v-sevastopole-vpali-v-isteriku.html",
+        "domain": "from-ua.com",
+        "country": "Unknown",
+        "date": "2017-11-24",
+        "signals": [
+          "Крым наш"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.unian.net/politics/2267206-esche-troim-deputatam-sevastopolskogo-gorsoveta-grozit-do-15-let-tyurmyi-za-gosizmenu.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2017-11-28",
+        "signals": [
+          "оккупированного Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "https://censor.net.ua/news/464608/desyati_eksdeputatam_sevastopolskogo_gorsoveta_grozit_do_15_let_tyurmy_za_gosizmenu_prokuratura",
+        "domain": "censor.net.ua",
+        "country": "Ukraine",
+        "date": "2017-11-30",
+        "signals": [
+          "оккупации Крым",
+          "субъекта федерации. Указанным обвиняемым грозит наказание в виде лишения свободы на срок от двенадцати до пятнадцати лет. В общем прокуратурой Автономной Республики Крым за последние 3 месяца текущего года в районные суды города Киева направлены обвинительные акты по 10 депутатам Севастопольского городского совета Автономной Республики Крым. Читайте также: Обвинительный акт в отношении экс-депутата ВР Крыма за государственную измену направлен в суд, - прокуратура депутат (3319) Крым (25844) прокуратура (4973) город Севастополь (1708) государственная измена (1652) Поделиться: Мне нравится 1 Подытожить: Топ комментарии +9 росися вперде #403471 О, еще одно кино выходит в прокат. \"Угроза крымским депутатам\". Жанр-комедия！ показать весь комментарий 30.11.2017 12:31 Ответить Ссылка +5 Алексей Носов #340963 Да ниче им не будет. И все ето знают. Еще и вернутся и будут прокурворами в Киеве у соевых работать. показать весь комментарий 30.11.2017 12:35 Ответить Ссылка +5 Лео Кот а Ахметову, Кернесу, Добкину и другим с Киева не грозит.... показать весь комментарий 30.11.2017 12:38 Ответить Ссылка Комментировать Сортировать: Правила форума Совет форумчан росися вперде #403471 О, еще одно кино выходит в прокат. \"Угроза крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://uawire.org/ukraine-conducts-ecological-assessment-of-the-kerch-bridge-built-by-russia",
+        "domain": "uawire.org",
+        "country": "Unknown",
+        "date": "2017-12-13",
+        "signals": [
+          "Crimea , Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unn.com.ua/ru/news/1704213-deputata-sevastopolskoyi-miskradi-suditimut-za-derzhzradu",
+        "domain": "unn.com.ua",
+        "country": "Ukraine",
+        "date": "2017-12-13",
+        "signals": [
+          "оккупации Крым",
+          "субъекта федерации. Обвиняемому грозит наказание в виде лишения свободы на срок от 12 до 15 лет. Как сообщал УНН, прокуратура передала в суд более 100 дел в отношении экс-чиновников из Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://kuban24.tv/item/kot-mostik-pervym-projdet-po-kerchenskomu-mostu-189614",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2017-12-16",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unn.com.ua/ru/news/1705385-prokuratura-ark-peredala-v-sud-spravu-stosovno-sche-odnogo-deputata-sevastopolya",
+        "domain": "unn.com.ua",
+        "country": "Ukraine",
+        "date": "2017-12-19",
+        "signals": [
+          "оккупации Крым",
+          "субъекта федерации. В ведомстве добавили, что обвиняемому грозит наказание в виде лишения свободы на срок от двенадцати до пятнадцати лет. Прокуратурой Автономной Республики Крым направлено в суд 12 обвинительных актов в отношении депутатов Севастопольского городского совета. Как сообщал УНН, прокуратура передала в суд более 100 дел в отношении экс-чиновников из Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.politnavigator.net/s-400-zastupili-na-okhranu-rossijjskikh-vozdushnykh-granic-v-sevastopole.html",
+        "domain": "politnavigator.net",
+        "country": "Unknown",
+        "date": "2018-01-13",
+        "signals": [
+          "Крым , Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.unn.com.ua/ru/news/1712282-derzhzrada-spravi-schodo-shesti-eks-deputativ-sevastopolskoyi-miskradi-peredali-do-sudu",
+        "domain": "unn.com.ua",
+        "country": "Ukraine",
+        "date": "2018-01-29",
+        "signals": [
+          "оккупации Крым",
+          "субъекта федерации. По информации прокуратуры АРК, в суды уже направлено обвинительные акты относительно 18 депутатов Севастопольского городского совета. Напомним, в декабре 2017 года прокуратура Автономной Республики Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://uawire.org/russia-took-possession-of-poroshenko-s-former-property-sevastopol-shipyard",
+        "domain": "uawire.org",
+        "country": "Unknown",
+        "date": "2018-02-04",
+        "signals": [
+          "annexed Crimea",
+          "Crimea , Russia",
+          "Crimean Federal District"
+        ],
+        "confidence": 0.778
+      },
+      {
+        "url": "https://gazeta.ua/articles/history/_ahtiarsku-buhtu-katerina-ii-perejmenuvala-na-sevastopol/821832",
+        "domain": "gazeta.ua",
+        "country": "Ukraine",
+        "date": "2018-02-21",
+        "signals": [
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://24tv.ua/yak_vzimku_pered_shtormom_viglyadaye_yalta_vrazhayuchi_foto_n929706",
+        "domain": "24tv.ua",
+        "country": "Ukraine",
+        "date": "2018-02-22",
+        "signals": [
+          "незаконного приєднання",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://fox11online.com/news/education/threat-investigation-sends-sevastopol-schools-into-lockdown",
+        "domain": "fox11online.com",
+        "country": "Unknown",
+        "date": "2018-02-22",
+        "signals": [
+          "Crimean Federal District"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.unian.net/world/10047041-v-centrizbirkome-rf-zayavlyayut-chto-putin-nabral-v-krymu-i-sevastopole-bolee-90-golosov.html",
+        "domain": "unian.net",
+        "country": "Ukraine",
+        "date": "2018-03-18",
+        "signals": [
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://topspb.tv/news/2018/03/18/na-strelke-vasilevskogo-ostrova-projdet-koncert-rossiya-sevastopol-krym/",
+        "domain": "topspb.tv",
+        "country": "Unknown",
+        "date": "2018-03-18",
+        "signals": [
+          "воссоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/teplovoj-aerostat-rossiya-sovershit-perelet-cherez-kerchenskij-proliv-199809",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2018-05-05",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.obozrevatel.com/abroad/kerchenskij-most-dostroyat-v-etom-net-nikakih-somnenij.htm",
+        "domain": "obozrevatel.com",
+        "country": "Unknown",
+        "date": "2018-05-06",
+        "signals": [
+          "присоединение Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/u-beregov-sevastopolya-nashli-pogibshuyu-v-1909-godu-russkuyu-podlodku-199827",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2018-05-06",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://ru.tsn.ua/svit/vo-francii-ministerstvo-kultury-opublikovalo-kartu-muzeev-s-rossiyskim-sevastopolem-1154949.html",
+        "domain": "ru.tsn.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "оккупированный Крым",
+          "Севастополь, Росси"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://www.obozrevatel.com/crime/priznali-anneksiyu-vo-frantsii-sevastopol-otmetili-na-karte-kak-rossijskij.htm",
+        "domain": "obozrevatel.com",
+        "country": "Unknown",
+        "date": "2018-05-14",
+        "signals": [
+          "Севастополь, Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://fakty.ua/268219-minkult-francii-opublikoval-kartu-s-rossijskim-sevastopolem",
+        "domain": "fakty.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "незаконно аннекс",
+          "Севастополь, Росси"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "http://www.unn.com.ua/ru/news/1730611-minkult-frantsiyi-oprilyudniv-kartu-na-yakiy-sevastopol-poznacheniy-yak-rosiyskiy",
+        "domain": "unn.com.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "оккупированном Крым",
+          "Севастополь, Росси"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "http://fakty.ua/268233-minkult-francii-ispravil-kartu-s-rossijskim-sevastopolem",
+        "domain": "fakty.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "незаконно аннекс",
+          "Севастополь, Росси"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "http://news.liga.net/politics/news/vo-frantsii-ispravili-kartu-s-rossiyskim-sevastopolem",
+        "domain": "liga.net",
+        "country": "Unknown",
+        "date": "2018-05-14",
+        "signals": [
+          "Севастополь, Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://24tv.ua/ru/ru/vo_francii_obnarodovali_kartu_s_rossijskim_sevastopolem_n967556",
+        "domain": "24tv.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "аннексированный Крым",
+          "Севастополь, Росси"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://24tv.ua/u_frantsiyi_oprilyudnili_kartu_iz_rosiyskim_sevastopolem_n967540",
+        "domain": "24tv.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "Севастополь, Росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://glavcom.ua/news/minkult-franciji-opublikuvav-kartu-z-rosiyskim-sevastopolem-497317.html",
+        "domain": "glavcom.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "Севастополь, Росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://glavcom.ua/news/ministerstvo-kulturi-franciji-vipravilo-kartu-z-rosiyskim-sevastopolem-497347.html",
+        "domain": "glavcom.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "Севастополь, Росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://korrespondent.net/ukraine/3970760-vo-frantsyy-opublykovaly-kartu-s-rossyiskym-sevastopolem",
+        "domain": "korrespondent.net",
+        "country": "Unknown",
+        "date": "2018-05-14",
+        "signals": [
+          "аннексия Крым",
+          "Севастополь, Росси"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://ua.korrespondent.net/ukraine/3970760-u-frantsii-opublikuvaly-kartu-z-rosiiskym-sevastopolem",
+        "domain": "korrespondent.net",
+        "country": "Unknown",
+        "date": "2018-05-14",
+        "signals": [
+          "Севастополь, Росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.unian.ua/politics/10116110-minkult-franciji-opublikuvav-kartu-z-okupovanim-sevastopolem-u-skladi-rosiji-foto.html",
+        "domain": "unian.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "окупований Крим",
+          "Севастополь, Росі"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://www.unian.ua/politics/10116395-minkult-franciji-vipraviv-kartu-z-rosiyskim-sevastopolem-foto.html",
+        "domain": "unian.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "окупованому Крим",
+          "Севастополь, Росі"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://galinfo.com.ua/news/u_frantsii_minkult_nazvav_muzey_u_sevastopoli_rosiyskym_287559.html",
+        "domain": "galinfo.com.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "Севастополь, Росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://kp.ua/politics/608070-mynysterstvo-kultury-frantsyy-opublykovalo-kartu-s-rossyiskym-sevastopolem",
+        "domain": "kp.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "аннексия крым",
+          "Севастополь, Росси"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://zaxid.net/minkult_frantsiyi_na_karti_poznachiv_okupovaniy_sevastopol_yak_teritoriyu_rosiyi_n1456594",
+        "domain": "zaxid.net",
+        "country": "Unknown",
+        "date": "2018-05-14",
+        "signals": [
+          "незаконно анекс",
+          "Севастополь, Росі"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://ukranews.com/ua/news/562947-ministerstvo-kultury-francii-vyklalo-kartu-z-rosiyskym-sevastopolem",
+        "domain": "ukranews.com",
+        "country": "Unknown",
+        "date": "2018-05-14",
+        "signals": [
+          "Севастополь, Росі"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://ukranews.com/news/562945-mynysterstvo-kultury-francyy-vylozhylo-kartu-s-rossyyskym-sevastopolem",
+        "domain": "ukranews.com",
+        "country": "Unknown",
+        "date": "2018-05-14",
+        "signals": [
+          "Севастополь, Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://espreso.tv/news/2018/05/14/francuzkyy_minkult_nazvav_muzey_u_sevastopoli_quotrosiyskymquot",
+        "domain": "espreso.tv",
+        "country": "Unknown",
+        "date": "2018-05-14",
+        "signals": [
+          "Анексія Крим",
+          "Севастополь, Росі"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://tsn.ua/svit/u-franciyi-ministerstvo-kulturi-opublikuvalo-kartu-muzeyiv-z-rosiyskim-sevastopolem-1154949.html",
+        "domain": "tsn.ua",
+        "country": "Ukraine",
+        "date": "2018-05-14",
+        "signals": [
+          "окупований Крим",
+          "Севастополь, Росі"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://ru.tsn.ua/politika/krym-chast-ukrainy-a-most-cherez-kerchenskiy-proliv-narushaet-ee-celostnost-nato-1156302.html",
+        "domain": "ru.tsn.ua",
+        "country": "Ukraine",
+        "date": "2018-05-16",
+        "signals": [
+          "оккупированный Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://podrobnosti.ua/2241242-nato-osudilo-otkrytye-kerchenskogo-mosta.html",
+        "domain": "podrobnosti.ua",
+        "country": "Ukraine",
+        "date": "2018-05-16",
+        "signals": [
+          "присоединение Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://tsn.ua/politika/krim-chastina-ukrayini-a-mist-cherez-kerchensku-protoku-porushuye-yiyi-cilisnist-nato-1156302.html",
+        "domain": "tsn.ua",
+        "country": "Ukraine",
+        "date": "2018-05-16",
+        "signals": [
+          "окупованого Крим",
+          "приєднання Криму до Росі"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "https://www.kyivpost.com/russia/112-ua-russias-embassy-responds-us-state-department-claim-kerch-bridge.html",
+        "domain": "kyivpost.com",
+        "country": "Ukraine",
+        "date": "2018-05-16",
+        "signals": [
+          "Crimea is Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://kuban24.tv/item/operator-kerchenskoj-perepravy-sokratit-shtat-v-svyazi-s-otkrytiem-krymskogo-mosta-200849",
+        "domain": "kuban24.tv",
+        "country": "Unknown",
+        "date": "2018-05-17",
+        "signals": [
+          "Республика Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://beztabu.net/belomorkanal-nashego-vremeni-kerchenskij-most--russkij-chemodan-bez-ruchki_n44133",
+        "domain": "beztabu.net",
+        "country": "Unknown",
+        "date": "2018-05-18",
+        "signals": [
+          "Крым наш"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://censor.net.ua/news/3067239/ukraina_dopolnit_svoyi_isk_k_rf_rassmatrivaemyyi_morskim_arbitrajem_v_svyazi_s_otkrytiem_kerchenskogo",
+        "domain": "censor.net.ua",
+        "country": "Ukraine",
+        "date": "2018-05-21",
+        "signals": [
+          "оккупацию Крым",
+          "присоединением Крым"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "https://news.finance.ua/ru/news/-/429042/samsung-otkazalas-ot-razrabotki-proekta-aeroporta-simferopol",
+        "domain": "news.finance.ua",
+        "country": "Ukraine",
+        "date": "2018-06-25",
+        "signals": [
+          "аннексировала Крым",
+          "референдум в Крыму и Севастополе и дальнейшее их присоединени"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "https://www.rupor.info/news/138826/eshche-odin-kerchenskiy-most-postroili-pryamo-v-rossii/",
+        "domain": "rupor.info",
+        "country": "Unknown",
+        "date": "2018-06-28",
+        "signals": [
+          "Крым наш"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://fakty.ua/274115-pravitelstvo-sevastopolya-vystupilo-protiv-lgot-dlya-zhitelej-dnr-i-lnr",
+        "domain": "fakty.ua",
+        "country": "Ukraine",
+        "date": "2018-07-04",
+        "signals": [
+          "субъектах Российской Федерации прошло широкое обсуждение законодательных инициатив, направленных на упрощение миграционных условий для граждан Донецкой и Луганской народных республик&raquo;. По его словам, речь об отмене необходимости получения трудового патента для работы на территории России, а также снятии предельного срока пребывания. Однако есть ряд субъектов, которые не поддерживают эту идею. Козенко назвал Московскую область, Севастополь и республику Марий Эл. ВІДЕО ДНЯ &laquo;Еще четыре года назад севастопольцы сами находились в таком же положении, стремясь получить если не гражданство РФ, то хотя бы возможность жить и работать на территории России и в целом вернуться в границы нашего Отечества. А сегодня без объяснений пытаются лишить этого шанса наших соотечественников из Донбасса&raquo;, &mdash; сокрушается парламентарий, наверняка прекрасно знающий, что жители Донбасса России не нужны. Впрочем, Крым"
+        ],
+        "confidence": 0.95
       }
     ],
-    "violators_total": 179,
+    "violators_total": 411,
     "by_year_classified": {
       "2015": {
         "ukraine": 2504,
