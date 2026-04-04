@@ -168,3 +168,335 @@ Workers: 15
   [82500/218147] 4.0/s ETA=570min | {'fetch_failed': 40281, 'no_signal': 23089, 'ukraine': 6186, 'no_crimea_ref': 11978, 'russia': 947, 'disputed': 19}
   [83000/218147] 4.0/s ETA=565min | {'fetch_failed': 40433, 'no_signal': 23300, 'ukraine': 6220, 'no_crimea_ref': 12073, 'russia': 955, 'disputed': 19}
   [83500/218147] 4.0/s ETA=561min | {'fetch_failed': 40554, 'no_signal': 23534, 'ukraine': 6272, 'no_crimea_ref': 12150, 'russia': 969, 'disputed': 21}
+  [84000/218147] 4.0/s ETA=557min | {'fetch_failed': 40655, 'no_signal': 23793, 'ukraine': 6317, 'no_crimea_ref': 12240, 'russia': 974, 'disputed': 21}
+  [84500/218147] 4.0/s ETA=553min | {'fetch_failed': 40810, 'no_signal': 23956, 'ukraine': 6345, 'no_crimea_ref': 12393, 'russia': 974, 'disputed': 22}
+  [85000/218147] 4.0/s ETA=549min | {'fetch_failed': 40964, 'no_signal': 24078, 'ukraine': 6397, 'no_crimea_ref': 12564, 'russia': 975, 'disputed': 22}
+  [85500/218147] 4.1/s ETA=545min | {'fetch_failed': 41159, 'no_signal': 24204, 'ukraine': 6429, 'no_crimea_ref': 12704, 'russia': 982, 'disputed': 22}
+  [86000/218147] 4.1/s ETA=541min | {'fetch_failed': 41283, 'no_signal': 24451, 'ukraine': 6488, 'no_crimea_ref': 12771, 'russia': 985, 'disputed': 22}
+  [86500/218147] 4.1/s ETA=537min | {'fetch_failed': 41538, 'no_signal': 24583, 'ukraine': 6526, 'no_crimea_ref': 12845, 'russia': 986, 'disputed': 22}
+  [87000/218147] 4.1/s ETA=534min | {'fetch_failed': 41738, 'no_signal': 24745, 'ukraine': 6573, 'no_crimea_ref': 12924, 'russia': 998, 'disputed': 22}
+  [87500/218147] 4.1/s ETA=530min | {'fetch_failed': 41839, 'no_signal': 24991, 'ukraine': 6619, 'no_crimea_ref': 13022, 'russia': 1007, 'disputed': 22}
+  [88000/218147] 4.1/s ETA=526min | {'fetch_failed': 41953, 'no_signal': 25227, 'ukraine': 6669, 'no_crimea_ref': 13108, 'russia': 1021, 'disputed': 22}
+  [88500/218147] 4.1/s ETA=522min | {'fetch_failed': 42039, 'no_signal': 25491, 'ukraine': 6708, 'no_crimea_ref': 13182, 'russia': 1057, 'disputed': 23}
+  [89000/218147] 4.2/s ETA=518min | {'fetch_failed': 42182, 'no_signal': 25734, 'ukraine': 6750, 'no_crimea_ref': 13250, 'russia': 1061, 'disputed': 23}
+  [89500/218147] 4.2/s ETA=514min | {'fetch_failed': 42426, 'no_signal': 25897, 'ukraine': 6777, 'no_crimea_ref': 13315, 'russia': 1062, 'disputed': 23}
+  [90000/218147] 4.2/s ETA=511min | {'fetch_failed': 42675, 'no_signal': 25973, 'ukraine': 6785, 'no_crimea_ref': 13482, 'russia': 1062, 'disputed': 23}
+  [90500/218147] 4.2/s ETA=507min | {'fetch_failed': 42891, 'no_signal': 26000, 'ukraine': 6789, 'no_crimea_ref': 13733, 'russia': 1064, 'disputed': 23}
+  [91000/218147] 4.2/s ETA=504min | {'fetch_failed': 42954, 'no_signal': 26327, 'ukraine': 6814, 'no_crimea_ref': 13814, 'russia': 1068, 'disputed': 23}
+  [91500/218147] 4.2/s ETA=501min | {'fetch_failed': 43048, 'no_signal': 26638, 'ukraine': 6830, 'no_crimea_ref': 13887, 'russia': 1074, 'disputed': 23}
+  [92000/218147] 4.2/s ETA=498min | {'fetch_failed': 43141, 'no_signal': 26924, 'ukraine': 6839, 'no_crimea_ref': 13991, 'russia': 1082, 'disputed': 23}
+  [92500/218147] 4.2/s ETA=494min | {'fetch_failed': 43222, 'no_signal': 27233, 'ukraine': 6871, 'no_crimea_ref': 14059, 'russia': 1092, 'disputed': 23}
+  [93000/218147] 4.3/s ETA=491min | {'fetch_failed': 43385, 'no_signal': 27351, 'ukraine': 6887, 'no_crimea_ref': 14260, 'russia': 1094, 'disputed': 23}
+  [93500/218147] 4.3/s ETA=487min | {'fetch_failed': 43627, 'no_signal': 27515, 'ukraine': 6907, 'no_crimea_ref': 14330, 'russia': 1098, 'disputed': 23}
+  [94000/218147] 4.3/s ETA=484min | {'fetch_failed': 43997, 'no_signal': 27558, 'ukraine': 6917, 'no_crimea_ref': 14401, 'russia': 1104, 'disputed': 23}
+  [94500/218147] 4.3/s ETA=484min | {'fetch_failed': 44333, 'no_signal': 27612, 'ukraine': 6947, 'no_crimea_ref': 14479, 'russia': 1106, 'disputed': 23}
+  [95000/218147] 4.2/s ETA=484min | {'fetch_failed': 44669, 'no_signal': 27671, 'ukraine': 6980, 'no_crimea_ref': 14548, 'russia': 1109, 'disputed': 23}
+  [95500/218147] 4.2/s ETA=484min | {'fetch_failed': 45014, 'no_signal': 27719, 'ukraine': 7009, 'no_crimea_ref': 14624, 'russia': 1111, 'disputed': 23}
+  [96000/218147] 4.2/s ETA=485min | {'fetch_failed': 45397, 'no_signal': 27747, 'ukraine': 7033, 'no_crimea_ref': 14688, 'russia': 1112, 'disputed': 23}
+  [96500/218147] 4.2/s ETA=485min | {'fetch_failed': 45727, 'no_signal': 27797, 'ukraine': 7067, 'no_crimea_ref': 14773, 'russia': 1113, 'disputed': 23}
+  [97000/218147] 4.2/s ETA=485min | {'fetch_failed': 46119, 'no_signal': 27830, 'ukraine': 7086, 'no_crimea_ref': 14826, 'russia': 1116, 'disputed': 23}
+  [97500/218147] 4.1/s ETA=485min | {'fetch_failed': 46484, 'no_signal': 27880, 'ukraine': 7094, 'no_crimea_ref': 14900, 'russia': 1119, 'disputed': 23}
+  [98000/218147] 4.1/s ETA=485min | {'fetch_failed': 46814, 'no_signal': 27976, 'ukraine': 7123, 'no_crimea_ref': 14943, 'russia': 1121, 'disputed': 23}
+  [98500/218147] 4.1/s ETA=482min | {'fetch_failed': 46911, 'no_signal': 28291, 'ukraine': 7137, 'no_crimea_ref': 15012, 'russia': 1126, 'disputed': 23}
+  [99000/218147] 4.2/s ETA=478min | {'fetch_failed': 47214, 'no_signal': 28380, 'ukraine': 7163, 'no_crimea_ref': 15090, 'russia': 1130, 'disputed': 23}
+  [99500/218147] 4.2/s ETA=474min | {'fetch_failed': 47515, 'no_signal': 28482, 'ukraine': 7184, 'no_crimea_ref': 15163, 'russia': 1133, 'disputed': 23}
+  [100000/218147] 4.2/s ETA=473min | {'fetch_failed': 47849, 'no_signal': 28535, 'ukraine': 7215, 'no_crimea_ref': 15240, 'russia': 1138, 'disputed': 23}
+  [100500/218147] 4.2/s ETA=472min | {'fetch_failed': 48109, 'no_signal': 28615, 'ukraine': 7267, 'no_crimea_ref': 15339, 'russia': 1147, 'disputed': 23}
+  [101000/218147] 4.1/s ETA=471min | {'fetch_failed': 48416, 'no_signal': 28706, 'ukraine': 7315, 'no_crimea_ref': 15390, 'russia': 1150, 'disputed': 23}
+  [101500/218147] 4.1/s ETA=471min | {'fetch_failed': 48786, 'no_signal': 28749, 'ukraine': 7350, 'no_crimea_ref': 15440, 'russia': 1152, 'disputed': 23}
+  [102000/218147] 4.1/s ETA=470min | {'fetch_failed': 49090, 'no_signal': 28853, 'ukraine': 7368, 'no_crimea_ref': 15510, 'russia': 1156, 'disputed': 23}
+  [102500/218147] 4.1/s ETA=469min | {'fetch_failed': 49409, 'no_signal': 28916, 'ukraine': 7386, 'no_crimea_ref': 15607, 'russia': 1159, 'disputed': 23}
+  [103000/218147] 4.1/s ETA=469min | {'fetch_failed': 49769, 'no_signal': 28972, 'ukraine': 7409, 'no_crimea_ref': 15667, 'russia': 1160, 'disputed': 23}
+  [103500/218147] 4.1/s ETA=468min | {'fetch_failed': 50176, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [104000/218147] 4.1/s ETA=464min | {'fetch_failed': 50676, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [104500/218147] 4.1/s ETA=460min | {'fetch_failed': 51176, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [105000/218147] 4.1/s ETA=456min | {'fetch_failed': 51676, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [105500/218147] 4.2/s ETA=452min | {'fetch_failed': 52176, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [106000/218147] 4.2/s ETA=447min | {'fetch_failed': 52676, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [106500/218147] 4.2/s ETA=443min | {'fetch_failed': 53176, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [107000/218147] 4.2/s ETA=439min | {'fetch_failed': 53676, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [107500/218147] 4.2/s ETA=435min | {'fetch_failed': 54176, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [108000/218147] 4.3/s ETA=431min | {'fetch_failed': 54676, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [108500/218147] 4.3/s ETA=427min | {'fetch_failed': 55176, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [109000/218147] 4.3/s ETA=423min | {'fetch_failed': 55676, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [109500/218147] 4.3/s ETA=420min | {'fetch_failed': 56176, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [110000/218147] 4.3/s ETA=416min | {'fetch_failed': 56676, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [110500/218147] 4.4/s ETA=412min | {'fetch_failed': 57176, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [111000/218147] 4.4/s ETA=408min | {'fetch_failed': 57676, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [111500/218147] 4.4/s ETA=405min | {'fetch_failed': 58176, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [112000/218147] 4.4/s ETA=401min | {'fetch_failed': 58676, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [112500/218147] 4.4/s ETA=397min | {'fetch_failed': 59176, 'no_signal': 29008, 'ukraine': 7422, 'no_crimea_ref': 15708, 'russia': 1163, 'disputed': 23}
+  [113000/218147] 4.4/s ETA=395min | {'fetch_failed': 59621, 'no_signal': 29031, 'ukraine': 7428, 'no_crimea_ref': 15734, 'russia': 1163, 'disputed': 23}
+  [113500/218147] 4.4/s ETA=395min | {'fetch_failed': 59900, 'no_signal': 29196, 'ukraine': 7437, 'no_crimea_ref': 15771, 'russia': 1173, 'disputed': 23}
+  [114000/218147] 4.4/s ETA=392min | {'fetch_failed': 60000, 'no_signal': 29529, 'ukraine': 7451, 'no_crimea_ref': 15805, 'russia': 1191, 'disputed': 24}
+  [114500/218147] 4.4/s ETA=389min | {'fetch_failed': 60418, 'no_signal': 29552, 'ukraine': 7464, 'no_crimea_ref': 15849, 'russia': 1193, 'disputed': 24}
+  [115000/218147] 4.4/s ETA=389min | {'fetch_failed': 60806, 'no_signal': 29599, 'ukraine': 7491, 'no_crimea_ref': 15884, 'russia': 1196, 'disputed': 24}
+  [115500/218147] 4.4/s ETA=390min | {'fetch_failed': 61235, 'no_signal': 29630, 'ukraine': 7500, 'no_crimea_ref': 15914, 'russia': 1197, 'disputed': 24}
+  [116000/218147] 4.4/s ETA=391min | {'fetch_failed': 61645, 'no_signal': 29662, 'ukraine': 7506, 'no_crimea_ref': 15965, 'russia': 1198, 'disputed': 24}
+  [116500/218147] 4.3/s ETA=392min | {'fetch_failed': 62072, 'no_signal': 29689, 'ukraine': 7508, 'no_crimea_ref': 16009, 'russia': 1198, 'disputed': 24}
+  [117000/218147] 4.3/s ETA=393min | {'fetch_failed': 62486, 'no_signal': 29730, 'ukraine': 7520, 'no_crimea_ref': 16038, 'russia': 1202, 'disputed': 24}
+  [117500/218147] 4.3/s ETA=393min | {'fetch_failed': 62929, 'no_signal': 29741, 'ukraine': 7525, 'no_crimea_ref': 16078, 'russia': 1203, 'disputed': 24}
+  [118000/218147] 4.3/s ETA=391min | {'fetch_failed': 63005, 'no_signal': 30088, 'ukraine': 7546, 'no_crimea_ref': 16123, 'russia': 1214, 'disputed': 24}
+  [118500/218147] 4.3/s ETA=388min | {'fetch_failed': 63196, 'no_signal': 30343, 'ukraine': 7562, 'no_crimea_ref': 16142, 'russia': 1233, 'disputed': 24}
+  [119000/218147] 4.3/s ETA=385min | {'fetch_failed': 63582, 'no_signal': 30380, 'ukraine': 7585, 'no_crimea_ref': 16193, 'russia': 1236, 'disputed': 24}
+  [119500/218147] 4.3/s ETA=385min | {'fetch_failed': 63999, 'no_signal': 30416, 'ukraine': 7590, 'no_crimea_ref': 16234, 'russia': 1237, 'disputed': 24}
+  [120000/218147] 4.2/s ETA=386min | {'fetch_failed': 64405, 'no_signal': 30462, 'ukraine': 7594, 'no_crimea_ref': 16275, 'russia': 1240, 'disputed': 24}
+  [120500/218147] 4.2/s ETA=386min | {'fetch_failed': 64828, 'no_signal': 30486, 'ukraine': 7602, 'no_crimea_ref': 16317, 'russia': 1243, 'disputed': 24}
+  [121000/218147] 4.2/s ETA=386min | {'fetch_failed': 65213, 'no_signal': 30536, 'ukraine': 7625, 'no_crimea_ref': 16358, 'russia': 1244, 'disputed': 24}
+  [121500/218147] 4.2/s ETA=387min | {'fetch_failed': 65628, 'no_signal': 30565, 'ukraine': 7640, 'no_crimea_ref': 16397, 'russia': 1246, 'disputed': 24}
+  [122000/218147] 4.1/s ETA=386min | {'fetch_failed': 66011, 'no_signal': 30608, 'ukraine': 7670, 'no_crimea_ref': 16440, 'russia': 1247, 'disputed': 24}
+  [122500/218147] 4.1/s ETA=385min | {'fetch_failed': 66225, 'no_signal': 30825, 'ukraine': 7686, 'no_crimea_ref': 16485, 'russia': 1255, 'disputed': 24}
+  [123000/218147] 4.2/s ETA=381min | {'fetch_failed': 66533, 'no_signal': 30972, 'ukraine': 7695, 'no_crimea_ref': 16516, 'russia': 1260, 'disputed': 24}
+  [123500/218147] 4.2/s ETA=380min | {'fetch_failed': 66938, 'no_signal': 31004, 'ukraine': 7705, 'no_crimea_ref': 16569, 'russia': 1260, 'disputed': 24}
+  [124000/218147] 4.1/s ETA=380min | {'fetch_failed': 67358, 'no_signal': 31024, 'ukraine': 7717, 'no_crimea_ref': 16612, 'russia': 1265, 'disputed': 24}
+  [124500/218147] 4.1/s ETA=380min | {'fetch_failed': 67727, 'no_signal': 31082, 'ukraine': 7734, 'no_crimea_ref': 16665, 'russia': 1268, 'disputed': 24}
+  [125000/218147] 4.1/s ETA=379min | {'fetch_failed': 68087, 'no_signal': 31148, 'ukraine': 7749, 'no_crimea_ref': 16722, 'russia': 1270, 'disputed': 24}
+  [125500/218147] 4.1/s ETA=379min | {'fetch_failed': 68510, 'no_signal': 31179, 'ukraine': 7750, 'no_crimea_ref': 16766, 'russia': 1271, 'disputed': 24}
+  [126000/218147] 4.1/s ETA=378min | {'fetch_failed': 68877, 'no_signal': 31196, 'ukraine': 7757, 'no_crimea_ref': 16875, 'russia': 1271, 'disputed': 24}
+  [126500/218147] 4.0/s ETA=378min | {'fetch_failed': 69260, 'no_signal': 31242, 'ukraine': 7769, 'no_crimea_ref': 16930, 'russia': 1275, 'disputed': 24}
+  [127000/218147] 4.0/s ETA=376min | {'fetch_failed': 69449, 'no_signal': 31468, 'ukraine': 7775, 'no_crimea_ref': 17004, 'russia': 1280, 'disputed': 24}
+  [127500/218147] 4.1/s ETA=373min | {'fetch_failed': 69689, 'no_signal': 31672, 'ukraine': 7781, 'no_crimea_ref': 17051, 'russia': 1283, 'disputed': 24}
+  [128000/218147] 4.1/s ETA=371min | {'fetch_failed': 70111, 'no_signal': 31696, 'ukraine': 7794, 'no_crimea_ref': 17092, 'russia': 1283, 'disputed': 24}
+  [128500/218147] 4.0/s ETA=371min | {'fetch_failed': 70562, 'no_signal': 31709, 'ukraine': 7796, 'no_crimea_ref': 17125, 'russia': 1284, 'disputed': 24}
+  [129000/218147] 4.0/s ETA=371min | {'fetch_failed': 71014, 'no_signal': 31718, 'ukraine': 7798, 'no_crimea_ref': 17162, 'russia': 1284, 'disputed': 24}
+  [129500/218147] 4.0/s ETA=371min | {'fetch_failed': 71445, 'no_signal': 31734, 'ukraine': 7806, 'no_crimea_ref': 17206, 'russia': 1285, 'disputed': 24}
+  [130000/218147] 4.0/s ETA=371min | {'fetch_failed': 71875, 'no_signal': 31752, 'ukraine': 7807, 'no_crimea_ref': 17256, 'russia': 1286, 'disputed': 24}
+  [130500/218147] 3.9/s ETA=370min | {'fetch_failed': 72300, 'no_signal': 31765, 'ukraine': 7812, 'no_crimea_ref': 17311, 'russia': 1288, 'disputed': 24}
+  [131000/218147] 3.9/s ETA=370min | {'fetch_failed': 72659, 'no_signal': 31855, 'ukraine': 7818, 'no_crimea_ref': 17348, 'russia': 1296, 'disputed': 24}
+  [131500/218147] 3.9/s ETA=367min | {'fetch_failed': 72788, 'no_signal': 32175, 'ukraine': 7818, 'no_crimea_ref': 17395, 'russia': 1300, 'disputed': 24}
+  [132000/218147] 3.9/s ETA=364min | {'fetch_failed': 73171, 'no_signal': 32214, 'ukraine': 7823, 'no_crimea_ref': 17467, 'russia': 1301, 'disputed': 24}
+  [132500/218147] 3.9/s ETA=363min | {'fetch_failed': 73591, 'no_signal': 32242, 'ukraine': 7834, 'no_crimea_ref': 17507, 'russia': 1302, 'disputed': 24}
+  [133000/218147] 3.9/s ETA=362min | {'fetch_failed': 74001, 'no_signal': 32277, 'ukraine': 7838, 'no_crimea_ref': 17557, 'russia': 1303, 'disputed': 24}
+  [133500/218147] 3.9/s ETA=362min | {'fetch_failed': 74418, 'no_signal': 32299, 'ukraine': 7859, 'no_crimea_ref': 17597, 'russia': 1303, 'disputed': 24}
+  [134000/218147] 3.9/s ETA=361min | {'fetch_failed': 74814, 'no_signal': 32338, 'ukraine': 7883, 'no_crimea_ref': 17637, 'russia': 1304, 'disputed': 24}
+  [134500/218147] 3.9/s ETA=361min | {'fetch_failed': 75196, 'no_signal': 32375, 'ukraine': 7897, 'no_crimea_ref': 17703, 'russia': 1305, 'disputed': 24}
+  [135000/218147] 3.9/s ETA=360min | {'fetch_failed': 75596, 'no_signal': 32406, 'ukraine': 7920, 'no_crimea_ref': 17747, 'russia': 1307, 'disputed': 24}
+  [135500/218147] 3.8/s ETA=359min | {'fetch_failed': 75881, 'no_signal': 32547, 'ukraine': 7947, 'no_crimea_ref': 17791, 'russia': 1310, 'disputed': 24}
+  [136000/218147] 3.9/s ETA=355min | {'fetch_failed': 76139, 'no_signal': 32711, 'ukraine': 7969, 'no_crimea_ref': 17845, 'russia': 1312, 'disputed': 24}
+  [136500/218147] 3.9/s ETA=353min | {'fetch_failed': 76535, 'no_signal': 32734, 'ukraine': 7985, 'no_crimea_ref': 17910, 'russia': 1312, 'disputed': 24}
+  [137000/218147] 3.8/s ETA=352min | {'fetch_failed': 76807, 'no_signal': 32818, 'ukraine': 8036, 'no_crimea_ref': 18002, 'russia': 1313, 'disputed': 24}
+  [137500/218147] 3.8/s ETA=351min | {'fetch_failed': 77186, 'no_signal': 32854, 'ukraine': 8064, 'no_crimea_ref': 18057, 'russia': 1315, 'disputed': 24}
+  [138000/218147] 3.8/s ETA=349min | {'fetch_failed': 77396, 'no_signal': 32930, 'ukraine': 8231, 'no_crimea_ref': 18100, 'russia': 1319, 'disputed': 24}
+  [138500/218147] 3.8/s ETA=348min | {'fetch_failed': 77690, 'no_signal': 33008, 'ukraine': 8291, 'no_crimea_ref': 18168, 'russia': 1319, 'disputed': 24}
+  [139000/218147] 3.8/s ETA=347min | {'fetch_failed': 78079, 'no_signal': 33038, 'ukraine': 8322, 'no_crimea_ref': 18218, 'russia': 1319, 'disputed': 24}
+  [139500/218147] 3.8/s ETA=347min | {'fetch_failed': 78501, 'no_signal': 33054, 'ukraine': 8334, 'no_crimea_ref': 18268, 'russia': 1319, 'disputed': 24}
+  [140000/218147] 3.8/s ETA=346min | {'fetch_failed': 78876, 'no_signal': 33093, 'ukraine': 8361, 'no_crimea_ref': 18327, 'russia': 1319, 'disputed': 24}
+  [140500/218147] 3.8/s ETA=343min | {'fetch_failed': 79039, 'no_signal': 33348, 'ukraine': 8381, 'no_crimea_ref': 18378, 'russia': 1330, 'disputed': 24}
+  [141000/218147] 3.8/s ETA=340min | {'fetch_failed': 79262, 'no_signal': 33515, 'ukraine': 8428, 'no_crimea_ref': 18433, 'russia': 1331, 'disputed': 31}
+  [141500/218147] 3.8/s ETA=337min | {'fetch_failed': 79612, 'no_signal': 33598, 'ukraine': 8455, 'no_crimea_ref': 18470, 'russia': 1332, 'disputed': 33}
+  [142000/218147] 3.8/s ETA=336min | {'fetch_failed': 79995, 'no_signal': 33648, 'ukraine': 8479, 'no_crimea_ref': 18512, 'russia': 1333, 'disputed': 33}
+  [142500/218147] 3.8/s ETA=334min | {'fetch_failed': 80190, 'no_signal': 33772, 'ukraine': 8532, 'no_crimea_ref': 18639, 'russia': 1334, 'disputed': 33}
+  [143000/218147] 3.8/s ETA=332min | {'fetch_failed': 80380, 'no_signal': 33859, 'ukraine': 8572, 'no_crimea_ref': 18822, 'russia': 1334, 'disputed': 33}
+  [143500/218147] 3.8/s ETA=331min | {'fetch_failed': 80692, 'no_signal': 33907, 'ukraine': 8589, 'no_crimea_ref': 18944, 'russia': 1335, 'disputed': 33}
+  [144000/218147] 3.8/s ETA=329min | {'fetch_failed': 81045, 'no_signal': 33954, 'ukraine': 8621, 'no_crimea_ref': 19011, 'russia': 1336, 'disputed': 33}
+  [144500/218147] 3.7/s ETA=329min | {'fetch_failed': 81436, 'no_signal': 33993, 'ukraine': 8642, 'no_crimea_ref': 19060, 'russia': 1336, 'disputed': 33}
+  [145000/218147] 3.7/s ETA=327min | {'fetch_failed': 81829, 'no_signal': 34030, 'ukraine': 8652, 'no_crimea_ref': 19119, 'russia': 1337, 'disputed': 33}
+  [145500/218147] 3.7/s ETA=325min | {'fetch_failed': 82040, 'no_signal': 34254, 'ukraine': 8674, 'no_crimea_ref': 19158, 'russia': 1341, 'disputed': 33}
+  [146000/218147] 3.7/s ETA=322min | {'fetch_failed': 82376, 'no_signal': 34363, 'ukraine': 8682, 'no_crimea_ref': 19204, 'russia': 1342, 'disputed': 33}
+  [146500/218147] 3.7/s ETA=320min | {'fetch_failed': 82669, 'no_signal': 34424, 'ukraine': 8739, 'no_crimea_ref': 19293, 'russia': 1342, 'disputed': 33}
+  [147000/218147] 3.7/s ETA=319min | {'fetch_failed': 82996, 'no_signal': 34507, 'ukraine': 8772, 'no_crimea_ref': 19350, 'russia': 1342, 'disputed': 33}
+  [147500/218147] 3.7/s ETA=317min | {'fetch_failed': 83371, 'no_signal': 34561, 'ukraine': 8791, 'no_crimea_ref': 19402, 'russia': 1342, 'disputed': 33}
+  [148000/218147] 3.7/s ETA=316min | {'fetch_failed': 83726, 'no_signal': 34643, 'ukraine': 8805, 'no_crimea_ref': 19450, 'russia': 1343, 'disputed': 33}
+  [148500/218147] 3.7/s ETA=315min | {'fetch_failed': 84141, 'no_signal': 34683, 'ukraine': 8817, 'no_crimea_ref': 19481, 'russia': 1345, 'disputed': 33}
+  [149000/218147] 3.7/s ETA=314min | {'fetch_failed': 84479, 'no_signal': 34766, 'ukraine': 8842, 'no_crimea_ref': 19532, 'russia': 1348, 'disputed': 33}
+  [149500/218147] 3.7/s ETA=312min | {'fetch_failed': 84863, 'no_signal': 34809, 'ukraine': 8869, 'no_crimea_ref': 19577, 'russia': 1349, 'disputed': 33}
+  [150000/218147] 3.7/s ETA=311min | {'fetch_failed': 85110, 'no_signal': 34998, 'ukraine': 8888, 'no_crimea_ref': 19614, 'russia': 1357, 'disputed': 33}
+  [150500/218147] 3.7/s ETA=308min | {'fetch_failed': 85148, 'no_signal': 35328, 'ukraine': 8931, 'no_crimea_ref': 19673, 'russia': 1387, 'disputed': 33}
+  [151000/218147] 3.7/s ETA=305min | {'fetch_failed': 85260, 'no_signal': 35583, 'ukraine': 8954, 'no_crimea_ref': 19772, 'russia': 1398, 'disputed': 33}
+  [151500/218147] 3.7/s ETA=302min | {'fetch_failed': 85617, 'no_signal': 35654, 'ukraine': 8968, 'no_crimea_ref': 19829, 'russia': 1399, 'disputed': 33}
+  [152000/218147] 3.7/s ETA=300min | {'fetch_failed': 85939, 'no_signal': 35729, 'ukraine': 8995, 'no_crimea_ref': 19902, 'russia': 1402, 'disputed': 33}
+  [152500/218147] 3.7/s ETA=298min | {'fetch_failed': 86276, 'no_signal': 35796, 'ukraine': 9019, 'no_crimea_ref': 19974, 'russia': 1402, 'disputed': 33}
+  [153000/218147] 3.7/s ETA=296min | {'fetch_failed': 86479, 'no_signal': 35884, 'ukraine': 9137, 'no_crimea_ref': 20061, 'russia': 1406, 'disputed': 33}
+  [153500/218147] 3.7/s ETA=294min | {'fetch_failed': 86684, 'no_signal': 35975, 'ukraine': 9233, 'no_crimea_ref': 20168, 'russia': 1407, 'disputed': 33}
+  [154000/218147] 3.7/s ETA=291min | {'fetch_failed': 86787, 'no_signal': 36121, 'ukraine': 9394, 'no_crimea_ref': 20256, 'russia': 1409, 'disputed': 33}
+  [154500/218147] 3.7/s ETA=289min | {'fetch_failed': 87080, 'no_signal': 36194, 'ukraine': 9450, 'no_crimea_ref': 20332, 'russia': 1411, 'disputed': 33}
+  [155000/218147] 3.7/s ETA=288min | {'fetch_failed': 87417, 'no_signal': 36250, 'ukraine': 9471, 'no_crimea_ref': 20418, 'russia': 1411, 'disputed': 33}
+  [155500/218147] 3.6/s ETA=286min | {'fetch_failed': 87709, 'no_signal': 36337, 'ukraine': 9520, 'no_crimea_ref': 20485, 'russia': 1416, 'disputed': 33}
+  [156000/218147] 3.6/s ETA=284min | {'fetch_failed': 88031, 'no_signal': 36396, 'ukraine': 9558, 'no_crimea_ref': 20564, 'russia': 1418, 'disputed': 33}
+  [156500/218147] 3.6/s ETA=282min | {'fetch_failed': 88296, 'no_signal': 36525, 'ukraine': 9581, 'no_crimea_ref': 20645, 'russia': 1420, 'disputed': 33}
+  [157000/218147] 3.6/s ETA=279min | {'fetch_failed': 88471, 'no_signal': 36712, 'ukraine': 9632, 'no_crimea_ref': 20728, 'russia': 1424, 'disputed': 33}
+  [157500/218147] 3.7/s ETA=276min | {'fetch_failed': 88808, 'no_signal': 36766, 'ukraine': 9649, 'no_crimea_ref': 20817, 'russia': 1427, 'disputed': 33}
+  [158000/218147] 3.7/s ETA=275min | {'fetch_failed': 89145, 'no_signal': 36808, 'ukraine': 9679, 'no_crimea_ref': 20907, 'russia': 1428, 'disputed': 33}
+  [158500/218147] 3.6/s ETA=273min | {'fetch_failed': 89439, 'no_signal': 36878, 'ukraine': 9719, 'no_crimea_ref': 20998, 'russia': 1433, 'disputed': 33}
+  [159000/218147] 3.6/s ETA=270min | {'fetch_failed': 89631, 'no_signal': 37031, 'ukraine': 9773, 'no_crimea_ref': 21094, 'russia': 1438, 'disputed': 33}
+  [159500/218147] 3.6/s ETA=268min | {'fetch_failed': 89916, 'no_signal': 37117, 'ukraine': 9839, 'no_crimea_ref': 21154, 'russia': 1441, 'disputed': 33}
+  [160000/218147] 3.6/s ETA=266min | {'fetch_failed': 90184, 'no_signal': 37189, 'ukraine': 9896, 'no_crimea_ref': 21257, 'russia': 1441, 'disputed': 33}
+  [160500/218147] 3.6/s ETA=264min | {'fetch_failed': 90409, 'no_signal': 37318, 'ukraine': 9939, 'no_crimea_ref': 21358, 'russia': 1443, 'disputed': 33}
+  [161000/218147] 3.6/s ETA=262min | {'fetch_failed': 90675, 'no_signal': 37407, 'ukraine': 9995, 'no_crimea_ref': 21446, 'russia': 1444, 'disputed': 33}
+  [161500/218147] 3.6/s ETA=260min | {'fetch_failed': 91029, 'no_signal': 37435, 'ukraine': 10054, 'no_crimea_ref': 21504, 'russia': 1445, 'disputed': 33}
+  [162000/218147] 3.6/s ETA=259min | {'fetch_failed': 91370, 'no_signal': 37474, 'ukraine': 10115, 'no_crimea_ref': 21562, 'russia': 1446, 'disputed': 33}
+  [162500/218147] 3.6/s ETA=256min | {'fetch_failed': 91565, 'no_signal': 37657, 'ukraine': 10159, 'no_crimea_ref': 21639, 'russia': 1447, 'disputed': 33}
+  [163000/218147] 3.6/s ETA=254min | {'fetch_failed': 91688, 'no_signal': 37823, 'ukraine': 10261, 'no_crimea_ref': 21747, 'russia': 1448, 'disputed': 33}
+  [163500/218147] 3.6/s ETA=251min | {'fetch_failed': 91800, 'no_signal': 37980, 'ukraine': 10374, 'no_crimea_ref': 21865, 'russia': 1448, 'disputed': 33}
+  [164000/218147] 3.6/s ETA=248min | {'fetch_failed': 91944, 'no_signal': 38133, 'ukraine': 10489, 'no_crimea_ref': 21951, 'russia': 1449, 'disputed': 34}
+  [164500/218147] 3.6/s ETA=245min | {'fetch_failed': 92047, 'no_signal': 38310, 'ukraine': 10613, 'no_crimea_ref': 22043, 'russia': 1453, 'disputed': 34}
+  [165000/218147] 3.7/s ETA=242min | {'fetch_failed': 92094, 'no_signal': 38532, 'ukraine': 10730, 'no_crimea_ref': 22155, 'russia': 1455, 'disputed': 34}
+  [165500/218147] 3.7/s ETA=240min | {'fetch_failed': 92126, 'no_signal': 38756, 'ukraine': 10863, 'no_crimea_ref': 22262, 'russia': 1459, 'disputed': 34}
+  [166000/218147] 3.7/s ETA=237min | {'fetch_failed': 92160, 'no_signal': 39084, 'ukraine': 10909, 'no_crimea_ref': 22354, 'russia': 1459, 'disputed': 34}
+  [166500/218147] 3.7/s ETA=234min | {'fetch_failed': 92382, 'no_signal': 39210, 'ukraine': 10995, 'no_crimea_ref': 22418, 'russia': 1461, 'disputed': 34}
+  [167000/218147] 3.7/s ETA=231min | {'fetch_failed': 92669, 'no_signal': 39275, 'ukraine': 11047, 'no_crimea_ref': 22513, 'russia': 1462, 'disputed': 34}
+  [167500/218147] 3.7/s ETA=229min | {'fetch_failed': 92931, 'no_signal': 39342, 'ukraine': 11130, 'no_crimea_ref': 22598, 'russia': 1465, 'disputed': 34}
+  [168000/218147] 3.7/s ETA=227min | {'fetch_failed': 93154, 'no_signal': 39442, 'ukraine': 11224, 'no_crimea_ref': 22680, 'russia': 1466, 'disputed': 34}
+  [168500/218147] 3.7/s ETA=225min | {'fetch_failed': 93371, 'no_signal': 39520, 'ukraine': 11321, 'no_crimea_ref': 22785, 'russia': 1468, 'disputed': 35}
+  [169000/218147] 3.7/s ETA=222min | {'fetch_failed': 93546, 'no_signal': 39611, 'ukraine': 11457, 'no_crimea_ref': 22882, 'russia': 1469, 'disputed': 35}
+  [169500/218147] 3.7/s ETA=220min | {'fetch_failed': 93788, 'no_signal': 39684, 'ukraine': 11588, 'no_crimea_ref': 22935, 'russia': 1470, 'disputed': 35}
+  [170000/218147] 3.7/s ETA=218min | {'fetch_failed': 94137, 'no_signal': 39722, 'ukraine': 11628, 'no_crimea_ref': 23007, 'russia': 1471, 'disputed': 35}
+  [170500/218147] 3.7/s ETA=216min | {'fetch_failed': 94441, 'no_signal': 39802, 'ukraine': 11659, 'no_crimea_ref': 23083, 'russia': 1480, 'disputed': 35}
+  [171000/218147] 3.7/s ETA=214min | {'fetch_failed': 94725, 'no_signal': 39862, 'ukraine': 11725, 'no_crimea_ref': 23171, 'russia': 1482, 'disputed': 35}
+  [171500/218147] 3.7/s ETA=212min | {'fetch_failed': 95054, 'no_signal': 39910, 'ukraine': 11773, 'no_crimea_ref': 23244, 'russia': 1484, 'disputed': 35}
+  [172000/218147] 3.7/s ETA=211min | {'fetch_failed': 95421, 'no_signal': 39957, 'ukraine': 11813, 'no_crimea_ref': 23289, 'russia': 1485, 'disputed': 35}
+  [172500/218147] 3.7/s ETA=208min | {'fetch_failed': 95460, 'no_signal': 40283, 'ukraine': 11868, 'no_crimea_ref': 23364, 'russia': 1490, 'disputed': 35}
+  [173000/218147] 3.7/s ETA=205min | {'fetch_failed': 95594, 'no_signal': 40464, 'ukraine': 11942, 'no_crimea_ref': 23472, 'russia': 1493, 'disputed': 35}
+  [173500/218147] 3.7/s ETA=203min | {'fetch_failed': 95857, 'no_signal': 40603, 'ukraine': 11977, 'no_crimea_ref': 23533, 'russia': 1495, 'disputed': 35}
+  [174000/218147] 3.7/s ETA=200min | {'fetch_failed': 96116, 'no_signal': 40676, 'ukraine': 12059, 'no_crimea_ref': 23612, 'russia': 1501, 'disputed': 36}
+  [174500/218147] 3.7/s ETA=198min | {'fetch_failed': 96430, 'no_signal': 40731, 'ukraine': 12106, 'no_crimea_ref': 23694, 'russia': 1503, 'disputed': 36}
+  [175000/218147] 3.7/s ETA=196min | {'fetch_failed': 96779, 'no_signal': 40776, 'ukraine': 12136, 'no_crimea_ref': 23767, 'russia': 1506, 'disputed': 36}
+  [175500/218147] 3.7/s ETA=194min | {'fetch_failed': 97148, 'no_signal': 40805, 'ukraine': 12152, 'no_crimea_ref': 23852, 'russia': 1507, 'disputed': 36}
+  [176000/218147] 3.6/s ETA=193min | {'fetch_failed': 97506, 'no_signal': 40849, 'ukraine': 12185, 'no_crimea_ref': 23914, 'russia': 1510, 'disputed': 36}
+  [176500/218147] 3.6/s ETA=191min | {'fetch_failed': 97836, 'no_signal': 40900, 'ukraine': 12237, 'no_crimea_ref': 23977, 'russia': 1514, 'disputed': 36}
+  [177000/218147] 3.6/s ETA=189min | {'fetch_failed': 98192, 'no_signal': 40933, 'ukraine': 12260, 'no_crimea_ref': 24045, 'russia': 1534, 'disputed': 36}
+  [177500/218147] 3.6/s ETA=187min | {'fetch_failed': 98450, 'no_signal': 41005, 'ukraine': 12323, 'no_crimea_ref': 24134, 'russia': 1552, 'disputed': 36}
+  [178000/218147] 3.6/s ETA=184min | {'fetch_failed': 98656, 'no_signal': 41089, 'ukraine': 12445, 'no_crimea_ref': 24221, 'russia': 1553, 'disputed': 36}
+  [178500/218147] 3.6/s ETA=182min | {'fetch_failed': 98779, 'no_signal': 41358, 'ukraine': 12500, 'no_crimea_ref': 24271, 'russia': 1556, 'disputed': 36}
+  [179000/218147] 3.6/s ETA=179min | {'fetch_failed': 99076, 'no_signal': 41412, 'ukraine': 12560, 'no_crimea_ref': 24358, 'russia': 1558, 'disputed': 36}
+  [179500/218147] 3.6/s ETA=177min | {'fetch_failed': 99351, 'no_signal': 41491, 'ukraine': 12623, 'no_crimea_ref': 24441, 'russia': 1558, 'disputed': 36}
+  [180000/218147] 3.6/s ETA=175min | {'fetch_failed': 99685, 'no_signal': 41539, 'ukraine': 12683, 'no_crimea_ref': 24496, 'russia': 1561, 'disputed': 36}
+  [180500/218147] 3.6/s ETA=173min | {'fetch_failed': 100041, 'no_signal': 41588, 'ukraine': 12719, 'no_crimea_ref': 24552, 'russia': 1564, 'disputed': 36}
+  [181000/218147] 3.6/s ETA=170min | {'fetch_failed': 100278, 'no_signal': 41680, 'ukraine': 12793, 'no_crimea_ref': 24649, 'russia': 1564, 'disputed': 36}
+  [181500/218147] 3.6/s ETA=168min | {'fetch_failed': 100620, 'no_signal': 41725, 'ukraine': 12845, 'no_crimea_ref': 24709, 'russia': 1565, 'disputed': 36}
+  [182000/218147] 3.6/s ETA=166min | {'fetch_failed': 100893, 'no_signal': 41788, 'ukraine': 12943, 'no_crimea_ref': 24774, 'russia': 1566, 'disputed': 36}
+  [182500/218147] 3.6/s ETA=164min | {'fetch_failed': 101145, 'no_signal': 41820, 'ukraine': 12967, 'no_crimea_ref': 24966, 'russia': 1566, 'disputed': 36}
+  [183000/218147] 3.6/s ETA=162min | {'fetch_failed': 101468, 'no_signal': 41854, 'ukraine': 13003, 'no_crimea_ref': 25054, 'russia': 1585, 'disputed': 36}
+  [183500/218147] 3.6/s ETA=160min | {'fetch_failed': 101694, 'no_signal': 41939, 'ukraine': 13029, 'no_crimea_ref': 25198, 'russia': 1604, 'disputed': 36}
+  [184000/218147] 3.6/s ETA=157min | {'fetch_failed': 101805, 'no_signal': 42080, 'ukraine': 13071, 'no_crimea_ref': 25396, 'russia': 1612, 'disputed': 36}
+  [184500/218147] 3.6/s ETA=155min | {'fetch_failed': 101895, 'no_signal': 42271, 'ukraine': 13110, 'no_crimea_ref': 25558, 'russia': 1630, 'disputed': 36}
+  [185000/218147] 3.6/s ETA=152min | {'fetch_failed': 101940, 'no_signal': 42525, 'ukraine': 13151, 'no_crimea_ref': 25705, 'russia': 1643, 'disputed': 36}
+  [185500/218147] 3.6/s ETA=150min | {'fetch_failed': 102000, 'no_signal': 42780, 'ukraine': 13207, 'no_crimea_ref': 25822, 'russia': 1655, 'disputed': 36}
+  [186000/218147] 3.6/s ETA=147min | {'fetch_failed': 102257, 'no_signal': 42900, 'ukraine': 13232, 'no_crimea_ref': 25895, 'russia': 1680, 'disputed': 36}
+  [186500/218147] 3.7/s ETA=144min | {'fetch_failed': 102553, 'no_signal': 42968, 'ukraine': 13279, 'no_crimea_ref': 25969, 'russia': 1695, 'disputed': 36}
+  [187000/218147] 3.6/s ETA=142min | {'fetch_failed': 102878, 'no_signal': 43023, 'ukraine': 13312, 'no_crimea_ref': 26034, 'russia': 1717, 'disputed': 36}
+  [187500/218147] 3.6/s ETA=140min | {'fetch_failed': 103126, 'no_signal': 43090, 'ukraine': 13369, 'no_crimea_ref': 26149, 'russia': 1730, 'disputed': 36}
+  [188000/218147] 3.6/s ETA=138min | {'fetch_failed': 103468, 'no_signal': 43120, 'ukraine': 13405, 'no_crimea_ref': 26214, 'russia': 1757, 'disputed': 36}
+  [188500/218147] 3.6/s ETA=136min | {'fetch_failed': 103785, 'no_signal': 43163, 'ukraine': 13463, 'no_crimea_ref': 26282, 'russia': 1771, 'disputed': 36}
+  [189000/218147] 3.6/s ETA=134min | {'fetch_failed': 104137, 'no_signal': 43203, 'ukraine': 13490, 'no_crimea_ref': 26354, 'russia': 1780, 'disputed': 36}
+  [189500/218147] 3.6/s ETA=132min | {'fetch_failed': 104497, 'no_signal': 43240, 'ukraine': 13523, 'no_crimea_ref': 26413, 'russia': 1791, 'disputed': 36}
+  [190000/218147] 3.6/s ETA=130min | {'fetch_failed': 104870, 'no_signal': 43280, 'ukraine': 13543, 'no_crimea_ref': 26479, 'russia': 1792, 'disputed': 36}
+  [190500/218147] 3.6/s ETA=128min | {'fetch_failed': 105151, 'no_signal': 43405, 'ukraine': 13566, 'no_crimea_ref': 26541, 'russia': 1801, 'disputed': 36}
+  [191000/218147] 3.6/s ETA=125min | {'fetch_failed': 105373, 'no_signal': 43595, 'ukraine': 13589, 'no_crimea_ref': 26600, 'russia': 1807, 'disputed': 36}
+  [191500/218147] 3.6/s ETA=123min | {'fetch_failed': 105717, 'no_signal': 43645, 'ukraine': 13612, 'no_crimea_ref': 26677, 'russia': 1813, 'disputed': 36}
+  [192000/218147] 3.6/s ETA=121min | {'fetch_failed': 106095, 'no_signal': 43674, 'ukraine': 13630, 'no_crimea_ref': 26738, 'russia': 1827, 'disputed': 36}
+  [192500/218147] 3.6/s ETA=119min | {'fetch_failed': 106446, 'no_signal': 43706, 'ukraine': 13647, 'no_crimea_ref': 26820, 'russia': 1845, 'disputed': 36}
+  [193000/218147] 3.6/s ETA=116min | {'fetch_failed': 106726, 'no_signal': 43765, 'ukraine': 13688, 'no_crimea_ref': 26929, 'russia': 1856, 'disputed': 36}
+  [193500/218147] 3.6/s ETA=114min | {'fetch_failed': 107053, 'no_signal': 43838, 'ukraine': 13713, 'no_crimea_ref': 26993, 'russia': 1867, 'disputed': 36}
+  [194000/218147] 3.6/s ETA=112min | {'fetch_failed': 107386, 'no_signal': 43883, 'ukraine': 13738, 'no_crimea_ref': 27068, 'russia': 1889, 'disputed': 36}
+  [194500/218147] 3.6/s ETA=110min | {'fetch_failed': 107741, 'no_signal': 43937, 'ukraine': 13770, 'no_crimea_ref': 27115, 'russia': 1901, 'disputed': 36}
+  [195000/218147] 3.6/s ETA=108min | {'fetch_failed': 107980, 'no_signal': 44026, 'ukraine': 13820, 'no_crimea_ref': 27229, 'russia': 1908, 'disputed': 37}
+  [195500/218147] 3.6/s ETA=105min | {'fetch_failed': 108183, 'no_signal': 44144, 'ukraine': 13859, 'no_crimea_ref': 27364, 'russia': 1913, 'disputed': 37}
+  [196000/218147] 3.6/s ETA=103min | {'fetch_failed': 108400, 'no_signal': 44286, 'ukraine': 13875, 'no_crimea_ref': 27479, 'russia': 1923, 'disputed': 37}
+  [196500/218147] 3.6/s ETA=101min | {'fetch_failed': 108489, 'no_signal': 44537, 'ukraine': 13931, 'no_crimea_ref': 27567, 'russia': 1938, 'disputed': 38}
+  [197000/218147] 3.6/s ETA=98min | {'fetch_failed': 108713, 'no_signal': 44620, 'ukraine': 14016, 'no_crimea_ref': 27668, 'russia': 1945, 'disputed': 38}
+  [197500/218147] 3.6/s ETA=96min | {'fetch_failed': 108956, 'no_signal': 44701, 'ukraine': 14094, 'no_crimea_ref': 27757, 'russia': 1954, 'disputed': 38}
+  [198000/218147] 3.6/s ETA=93min | {'fetch_failed': 109252, 'no_signal': 44742, 'ukraine': 14107, 'no_crimea_ref': 27898, 'russia': 1963, 'disputed': 38}
+  [198500/218147] 3.6/s ETA=91min | {'fetch_failed': 109592, 'no_signal': 44785, 'ukraine': 14112, 'no_crimea_ref': 27999, 'russia': 1974, 'disputed': 38}
+  [199000/218147] 3.6/s ETA=89min | {'fetch_failed': 109955, 'no_signal': 44830, 'ukraine': 14120, 'no_crimea_ref': 28073, 'russia': 1984, 'disputed': 38}
+  [199500/218147] 3.6/s ETA=87min | {'fetch_failed': 110306, 'no_signal': 44865, 'ukraine': 14122, 'no_crimea_ref': 28177, 'russia': 1992, 'disputed': 38}
+  [200000/218147] 3.5/s ETA=86min | {'fetch_failed': 110526, 'no_signal': 45057, 'ukraine': 14132, 'no_crimea_ref': 28236, 'russia': 2011, 'disputed': 38}
+  [200500/218147] 3.5/s ETA=84min | {'fetch_failed': 110700, 'no_signal': 45313, 'ukraine': 14141, 'no_crimea_ref': 28285, 'russia': 2023, 'disputed': 38}
+  [201000/218147] 3.5/s ETA=81min | {'fetch_failed': 111059, 'no_signal': 45350, 'ukraine': 14148, 'no_crimea_ref': 28353, 'russia': 2052, 'disputed': 38}
+  [201500/218147] 3.5/s ETA=79min | {'fetch_failed': 111436, 'no_signal': 45371, 'ukraine': 14157, 'no_crimea_ref': 28433, 'russia': 2065, 'disputed': 38}
+  [202000/218147] 3.4/s ETA=79min | {'fetch_failed': 111592, 'no_signal': 45607, 'ukraine': 14176, 'no_crimea_ref': 28501, 'russia': 2086, 'disputed': 38}
+  [202500/218147] 3.4/s ETA=76min | {'fetch_failed': 111892, 'no_signal': 45735, 'ukraine': 14180, 'no_crimea_ref': 28559, 'russia': 2096, 'disputed': 38}
+  [203000/218147] 3.4/s ETA=74min | {'fetch_failed': 112276, 'no_signal': 45769, 'ukraine': 14194, 'no_crimea_ref': 28618, 'russia': 2105, 'disputed': 38}
+  [203500/218147] 3.3/s ETA=73min | {'fetch_failed': 112559, 'no_signal': 45873, 'ukraine': 14219, 'no_crimea_ref': 28698, 'russia': 2113, 'disputed': 38}
+  [204000/218147] 3.3/s ETA=70min | {'fetch_failed': 112765, 'no_signal': 46080, 'ukraine': 14236, 'no_crimea_ref': 28764, 'russia': 2117, 'disputed': 38}
+  [204500/218147] 3.3/s ETA=68min | {'fetch_failed': 113149, 'no_signal': 46105, 'ukraine': 14261, 'no_crimea_ref': 28823, 'russia': 2124, 'disputed': 38}
+  [205000/218147] 3.3/s ETA=66min | {'fetch_failed': 113557, 'no_signal': 46126, 'ukraine': 14268, 'no_crimea_ref': 28878, 'russia': 2133, 'disputed': 38}
+  [205500/218147] 3.3/s ETA=63min | {'fetch_failed': 113904, 'no_signal': 46179, 'ukraine': 14309, 'no_crimea_ref': 28931, 'russia': 2139, 'disputed': 38}
+  [206000/218147] 3.3/s ETA=61min | {'fetch_failed': 114264, 'no_signal': 46219, 'ukraine': 14333, 'no_crimea_ref': 28998, 'russia': 2148, 'disputed': 38}
+  [206500/218147] 3.3/s ETA=59min | {'fetch_failed': 114640, 'no_signal': 46244, 'ukraine': 14344, 'no_crimea_ref': 29077, 'russia': 2157, 'disputed': 38}
+  [207000/218147] 3.3/s ETA=56min | {'fetch_failed': 115019, 'no_signal': 46272, 'ukraine': 14362, 'no_crimea_ref': 29134, 'russia': 2175, 'disputed': 38}
+  [207500/218147] 3.3/s ETA=54min | {'fetch_failed': 115367, 'no_signal': 46314, 'ukraine': 14382, 'no_crimea_ref': 29210, 'russia': 2189, 'disputed': 38}
+  [208000/218147] 3.3/s ETA=51min | {'fetch_failed': 115499, 'no_signal': 46576, 'ukraine': 14393, 'no_crimea_ref': 29285, 'russia': 2209, 'disputed': 38}
+  [208500/218147] 3.3/s ETA=48min | {'fetch_failed': 115775, 'no_signal': 46649, 'ukraine': 14434, 'no_crimea_ref': 29389, 'russia': 2215, 'disputed': 38}
+  [209000/218147] 3.3/s ETA=46min | {'fetch_failed': 116081, 'no_signal': 46688, 'ukraine': 14458, 'no_crimea_ref': 29511, 'russia': 2224, 'disputed': 38}
+  [209500/218147] 3.3/s ETA=43min | {'fetch_failed': 116430, 'no_signal': 46720, 'ukraine': 14486, 'no_crimea_ref': 29592, 'russia': 2234, 'disputed': 38}
+  [210000/218147] 3.3/s ETA=41min | {'fetch_failed': 116766, 'no_signal': 46764, 'ukraine': 14512, 'no_crimea_ref': 29675, 'russia': 2245, 'disputed': 38}
+  [210500/218147] 3.3/s ETA=39min | {'fetch_failed': 117126, 'no_signal': 46805, 'ukraine': 14529, 'no_crimea_ref': 29749, 'russia': 2253, 'disputed': 38}
+  [211000/218147] 3.3/s ETA=36min | {'fetch_failed': 117494, 'no_signal': 46834, 'ukraine': 14562, 'no_crimea_ref': 29815, 'russia': 2257, 'disputed': 38}
+  [211500/218147] 3.3/s ETA=34min | {'fetch_failed': 117852, 'no_signal': 46873, 'ukraine': 14582, 'no_crimea_ref': 29882, 'russia': 2273, 'disputed': 38}
+  [212000/218147] 3.3/s ETA=31min | {'fetch_failed': 118190, 'no_signal': 46899, 'ukraine': 14618, 'no_crimea_ref': 29976, 'russia': 2279, 'disputed': 38}
+  [212500/218147] 3.3/s ETA=29min | {'fetch_failed': 118578, 'no_signal': 46914, 'ukraine': 14621, 'no_crimea_ref': 30060, 'russia': 2289, 'disputed': 38}
+  [213000/218147] 3.3/s ETA=26min | {'fetch_failed': 118753, 'no_signal': 47119, 'ukraine': 14640, 'no_crimea_ref': 30154, 'russia': 2296, 'disputed': 38}
+  [213500/218147] 3.3/s ETA=23min | {'fetch_failed': 118995, 'no_signal': 47276, 'ukraine': 14662, 'no_crimea_ref': 30223, 'russia': 2306, 'disputed': 38}
+  [214000/218147] 3.3/s ETA=21min | {'fetch_failed': 119334, 'no_signal': 47321, 'ukraine': 14681, 'no_crimea_ref': 30297, 'russia': 2329, 'disputed': 38}
+  [214500/218147] 3.3/s ETA=18min | {'fetch_failed': 119725, 'no_signal': 47346, 'ukraine': 14689, 'no_crimea_ref': 30364, 'russia': 2338, 'disputed': 38}
+  [215000/218147] 3.3/s ETA=16min | {'fetch_failed': 120088, 'no_signal': 47382, 'ukraine': 14694, 'no_crimea_ref': 30453, 'russia': 2345, 'disputed': 38}
+  [215500/218147] 3.3/s ETA=13min | {'fetch_failed': 120469, 'no_signal': 47395, 'ukraine': 14701, 'no_crimea_ref': 30541, 'russia': 2356, 'disputed': 38}
+  [216000/218147] 3.3/s ETA=11min | {'fetch_failed': 120839, 'no_signal': 47424, 'ukraine': 14708, 'no_crimea_ref': 30624, 'russia': 2367, 'disputed': 38}
+  [216500/218147] 3.3/s ETA=8min | {'fetch_failed': 121166, 'no_signal': 47469, 'ukraine': 14730, 'no_crimea_ref': 30716, 'russia': 2381, 'disputed': 38}
+  [217000/218147] 3.3/s ETA=6min | {'fetch_failed': 121507, 'no_signal': 47500, 'ukraine': 14756, 'no_crimea_ref': 30808, 'russia': 2391, 'disputed': 38}
+  [217500/218147] 3.3/s ETA=3min | {'fetch_failed': 121806, 'no_signal': 47542, 'ukraine': 14787, 'no_crimea_ref': 30902, 'russia': 2425, 'disputed': 38}
+  [218000/218147] 3.3/s ETA=1min | {'fetch_failed': 121915, 'no_signal': 47705, 'ukraine': 14807, 'no_crimea_ref': 31096, 'russia': 2439, 'disputed': 38}
+
+DONE in 1110.0 minutes
+  Fetched: 97133 ok, 120982 errors, 0 skipped
+  By label: {'fetch_failed': 121926, 'no_signal': 47778, 'ukraine': 14811, 'no_crimea_ref': 31117, 'russia': 2445, 'disputed': 38}
+  Summary: data/crimea_expanded_summary.json
+Sat Apr  4 13:59:18 PDT 2026: Expanded GDELT done
+Sat Apr  4 13:59:18 PDT 2026: Starting expanded OpenAlex search...
+Existing DOIs: 866
+OpenAlex: Simferopol
+  U (2026) Participation of soviet women in the underground anti–nazis 
+  R (2025) Modern approaches to improve efficacy of in vitro fertilisat
+  U (2025) Geopolitical conflict and author affiliation : Designation o
+OpenAlex: Sevastopol
+  U (2026) Правовий статус Представника Президента України в Автономній
+  U (2025) Правове регулювання взаємодії Представника Президента Україн
+  U (2025) Institutional capacity of the civil service management syste
+  U (2025) Geopolitical conflict and author affiliation : Designation o
+  R (2025) Appeasement : The Road to the Russo–Ukrainian War
+  U (2024) Kaliningrad Oblast 2024: Russia's vessel of havoc on the Bal
+  U (2024) Політологічна оцінка початкового етапу збройної агресії РФ п
+  U (2024) Кримська інформаційно-медійна парадигма в контексті окупації
+OpenAlex: Yalta
+  U (2026) Poland’s securitization of Russian threat: a case study from
+  U (2024) Kaliningrad Oblast 2024: Russia's vessel of havoc on the Bal
+OpenAlex: Kerch
+  U (2025) 7 The EU’s Changing Strategy towards Russia: The Response to
+  U (2025) Geopolitical conflict and author affiliation : Designation o
+  U (2021) РОЛЬ ДЕРЖАВНОЇ ПРИКОРДОННОЇ СЛУЖБИ УКРАЇНИ В СИСТЕМІ ВОЄННОЇ
+  U (2021) Imagining Crimean Tatar History since 2014: Indigenous Right
+OpenAlex: Симферополь
+  R (2020) Доступность массовых открытых онлайн-курсов по математике дл
+  R (2016) ИССЛЕДОВАНИЕ ПРОЦЕССОВ СЕДИМЕНТАЦИИ ПРИМЕНИТЕЛЬНО К КАНАЛИЗА
+  R (2013) Синдромно-патогенетический подход к применению лечебно-профи
+OpenAlex: Севастополь
+  R (2022) Features of the Development of the Extractive Industry in Th
+  U (2020) Блог як форма інтеграції обласних бібліотек для дітей Україн
+  U (2018) Міжнародно-правові акти про принципи громадянства та їх дія 
+  U (2016) Крим як Храмова гора
+  R (2016) Оценка Экономического Состояния Субъектов Рф На Основе Индек
+  U (2014) Соціальні аспекти окупації Криму
+  R (2014) Особое племя. Bз учебного пособия «Gотомству в пример» (Cева
+  R (2014) Политический кризис на Украине: уроки и выводы для России Ре
+OpenAlex: Ялта
+  R (2020) Отопление и вентиляция многоквартирного жилого дома со встро
+  R (2018) Сообщение о проведении международной научно-практической кон
+  R (2017) Резолюция IV Международной научно-практичес-кой конференции 
+  R (2017) Сообщение о проведении международной научно-практической кон
+  R (2014) СПЕЦИФИКА ИЗОБРАЖЕНИЯ ЖЕНСКИХ ОБРАЗОВ В РОМАНЕ П.Д. БОБОРЫКИ
+  U (2011) Positioning of Health and Recreation Institutions of the Aut
+  U (2011) Позиционирование лечебно-оздоровительных учреждений Автономн
+OpenAlex: Керч
+OpenAlex: Сімферополь
+
+Expanded OpenAlex: 35 new papers
+Sat Apr  4 14:02:22 PDT 2026: Expanded OpenAlex done
+Sat Apr  4 14:02:22 PDT 2026: Merging all expanded results...
+Expanded GDELT: {'fetch_failed': 121926, 'no_signal': 47778, 'ukraine': 14811, 'no_crimea_ref': 31117, 'russia': 2445, 'disputed': 38}
+Added 2 expanded academic papers. Total: 988
+Sat Apr  4 14:02:23 PDT 2026: ALL EXPANDED DONE
+[main f7b67f7] Expanded scan: city-name keywords (Sevastopol, Simferopol, Yalta, Kerch)
+ 4 files changed, 131594 insertions(+), 5049 deletions(-)
+ create mode 100644 data/crimea_expanded_summary.json
+Sat Apr  4 14:02:27 PDT 2026: COMMITTED AND PUSHED

@@ -1,45 +1,54 @@
-# 🇺🇦 Crimea Is Ukraine
+# Crimea Is Ukraine
 
-**How do maps, data libraries, streaming platforms, travel services, and internet infrastructure classify Crimea?**
+Automated digital sovereignty audit. 113 platforms, 372K media articles, 986 academic papers.
 
-We audited **200 digital platforms, publications, and services** across 12 categories — from npm packages to school atlases, from IP geolocation databases to travel guides.
-
-Crimea is internationally recognized as Ukrainian territory (UN GA Resolution 68/262, 100-11 vote), illegally occupied by Russia since 2014.
-
-**[crimeaisukraine.org](https://crimeaisukraine.org)**
+**[crimeaisukraine.org](https://crimeaisukraine.org)** | **[Architecture](docs/ARCHITECTURE.md)**
 
 ---
 
-| Metric | Value |
-|--------|-------|
-| Platforms audited | **200** |
-| Correct (Ukraine) | **73** |
-| Incorrect (Russia) | **25** |
-| Ambiguous / disputed | **83** |
-| Blocked (sanctions) | **11** |
-| npm downloads affected | **30.4M weekly** |
-| Crimean IPs tested | **90 across 9 ASNs** |
-| Natural Earth open issues | **33** |
-| GDELT articles analyzed | **2,485** |
+| | |
+|---|---|
+| Platforms audited | **113** across 10 categories |
+| Correct (Ukraine) | **39** (35%) |
+| Incorrect (Russia) | **26** (23%) |
+| Ambiguous | **34** (30%) |
+| GDELT articles | **372K** classified (2015–2026) |
+| Academic papers | **986** with DOIs (2010–2026) |
+| Academic RU framing | **10%** (2019) → **57%** (2025) |
+| npm downloads affected | **30.4M** weekly |
+| Sovereignty signals | **81** in 3 languages |
+| Classifier precision | **98%** (academic), **86%** (media pre-LLM) |
 
 ## Key Findings
 
-**1.** Natural Earth assigns `SOVEREIGNT=Russia` to Crimea. This single dataset cascades to **30.4M weekly npm downloads** across D3, Plotly, Leaflet, ECharts. Only Highcharts deliberately overrides it. 33 GitHub issues demanding the change — all ignored.
+**1.** Natural Earth assigns `SOVEREIGNT=Russia` to Crimea → propagates to 30M weekly npm downloads (D3, Plotly, Leaflet, ECharts). 33 GitHub issues ignored. Only Highcharts overrides it.
 
-**2.** After the 2022 full-scale invasion, consumer platforms changed (Apple Maps, Netflix, Spotify, Booking.com, Visa/Mastercard). Developer infrastructure did not (Natural Earth, Plotly, IANA tzdata, D3). The internet users see improved. The tools developers build with didn't.
+**2.** Russian framing in academia is **accelerating** — from 10% in 2019 to 57% in 2025 (χ²=32.9, p<0.001). Russian journals flood DOI-indexed papers with "Republic of Crimea" in mundane science (medicine, agriculture, ecology). No peer review catches it.
 
-**3.** Legal/registration services classify Crimea as Ukraine (MaxMind, Cloudflare UA-43, GeoNames, OSM Nominatim, ICAO). Operational services classify it as Russia (phone routing +7-978, timezones, postal codes, SWIFT). Occupied territory has a split digital identity.
+**3.** Media improved after 2022 invasion (46% → 5% Russian framing). Academia went the opposite direction.
 
-**4.** Weather services: **12/12 correct**. If every weather app can get it right, so can everyone else.
+**4.** Weather services: near-perfect via GeoNames/ISO 3166. Map services: hedge with "worldviews" (Google, Bing, Mapbox show different borders by location).
 
-**5.** 90% of German educational map products show Crimea incorrectly (Stop Mapaganda audit). MairDumont Group (Marco Polo, Falk, ADAC) produces over 50% of German school atlases — all incorrect.
+## Run
 
-**6.** 31% of Crimean ISP IP addresses resolve to third countries (Hungary, France, Argentina, Italy) — a "digital diaspora" where ISPs avoid both Russian and Ukrainian internet paths.
+```bash
+make all          # full audit pipeline
+make verify-llm   # LLM verification (needs ANTHROPIC_API_KEY)
+make site         # build site
+make status       # show current counts
+```
 
-**7.** Reuters, AP, BBC use "annexed" consistently. GDELT analysis of 2,485 articles: pro-Russia framing is 73.5% Russian state media.
+## Architecture
+
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — pipeline diagrams for all 10 categories.
+
+## Related
+
+- [SovereignMap](https://github.com/IvanDobrovolsky/sovereignmap) — visual map detection tool (C++/OpenCV + CNN)
+- [Holubei (2023)](https://www.ukrinform.net/rubric-society/3708065-maps-of-ukraine-without-crimea-origin.html) — prior manual investigation
+- [Heiss (2025)](https://doi.org/10.59350/28kp0-nbq92) — R workflow for fixing Natural Earth
+- [Lepetiuk et al. (2024)](https://doi.org/10.3138/cart-2024-0023) — "Mapaganda" in Cartographica
 
 ---
 
-**Author:** Ivan Dobrovolskyi — Software and Machine Learning Engineer and Researcher
-
-**Website:** [crimeaisukraine.org](https://crimeaisukraine.org)
+**Author:** Ivan Dobrovolskyi | **License:** MIT
