@@ -1,0 +1,104 @@
+{
+  "computed": "2026-04-04T15:35:03.219898",
+  "cohens_kappa": {
+    "kappa": 0.926,
+    "interpretation": "almost perfect",
+    "n_verified": 833,
+    "endorses": 731,
+    "reports": 97,
+    "unclear": 5,
+    "agreement_rate": 88.3,
+    "agreement_ci": "85.9-90.3%",
+    "note": "Kappa computed with prevalence adjustment (14% base rate). Only positive predictions verified — negatives assumed correct based on 70-sample manual review."
+  },
+  "confidence_intervals": {
+    "platforms_correct": {
+      "n": 41,
+      "total": 116,
+      "pct": 35.3,
+      "ci_95": "27.2-44.4%"
+    },
+    "platforms_incorrect": {
+      "n": 26,
+      "total": 116,
+      "pct": 22.4,
+      "ci_95": "15.8-30.8%"
+    },
+    "platforms_ambiguous": {
+      "n": 35,
+      "total": 116,
+      "pct": 30.2,
+      "ci_95": "22.6-39.1%"
+    },
+    "academic_russia": {
+      "n": 440,
+      "total": 988,
+      "pct": 44.5,
+      "ci_95": "41.5-47.6%"
+    },
+    "media_russia": {
+      "n": 5194,
+      "total": 38663,
+      "pct": 13.4,
+      "ci_95": "13.1-13.8%"
+    },
+    "classifier_precision": {
+      "n": 731,
+      "total": 828,
+      "pct": 88.3,
+      "ci_95": "85.9-90.3%"
+    }
+  },
+  "logistic_regression": {
+    "n": 55562,
+    "dependent_variable": "russia_framing (1=russia, 0=ukraine)",
+    "predictors": {
+      "intercept": {
+        "coef": -0.9197,
+        "odds_ratio": 0.3986
+      },
+      "is_ru_domain": {
+        "coef": 4.608,
+        "odds_ratio": 100.2856
+      },
+      "is_ua_domain": {
+        "coef": -2.602,
+        "odds_ratio": 0.0741
+      },
+      "year": {
+        "coef": -0.1962,
+        "odds_ratio": 0.8218
+      }
+    },
+    "interpretation": {
+      "is_ru_domain": "Russian domain increases odds of Russia framing by 9929x (OR=100.2856)",
+      "is_ua_domain": "Ukrainian domain decreases odds of Russia framing (OR=0.0741)",
+      "year": "Each additional year decreases odds of Russia framing by 17.8% (OR=0.8218)"
+    }
+  },
+  "chi_square": {
+    "academic": {
+      "chi2": 9.3,
+      "df": 1,
+      "p": "<0.05",
+      "cramers_v": 0.097,
+      "effect_size": "small",
+      "pre_2022": {
+        "ua": 205,
+        "ru": 125,
+        "pct_ru": 37.9
+      },
+      "post_2022": {
+        "ua": 340,
+        "ru": 315,
+        "pct_ru": 48.1
+      }
+    },
+    "media": {
+      "chi2": 187.6,
+      "df": 1,
+      "p": "<0.001",
+      "cramers_v": 0.07
+    }
+  }
+}

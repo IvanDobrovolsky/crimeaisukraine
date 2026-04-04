@@ -103,6 +103,9 @@ export: ## Export findings to CSV and sync to site JSON
 findings-doc: ## Regenerate docs/FINDINGS.md from platforms.json
 	$(PYTHON) $(SCRIPTS)/generate_findings_doc.py
 
+statistics: ## Compute publication statistics (Kappa, CI, regression)
+	$(PYTHON) $(SCRIPTS)/compute_statistics.py
+
 manifest: ## Regenerate manifest.json (single source of truth for all site numbers)
 	$(PYTHON) $(SCRIPTS)/generate_manifest.py
 
