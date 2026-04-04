@@ -370,7 +370,7 @@ const propagation = [
 <!-- Academic Framing (OpenAlex) -->
 <section id="academic-framing" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingAcademicTitle} — {academic.total_papers} {lang === 'uk' ? 'робіт' : 'Papers'}</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingAcademicTitle} — 685 {lang === 'uk' ? 'робіт' : 'Papers'}</h2>
     <p class="text-[#94a3b8] mb-6">{lang === 'uk' ? 'OpenAlex, 2010-2026. Усі з DOI — постійно індексовані в глобальному академічному реєстрі.' : 'OpenAlex, 2010–2026. All with DOIs — permanently indexed in the global academic record.'}</p>
 
     <!-- Stats row -->
@@ -1209,7 +1209,7 @@ const propagation = [
         {lang === 'uk' ? 'Відомі обмеження' : 'Known Limitations'}
       </h3>
       <ul class="space-y-1.5 text-xs text-[#94a3b8]">
-        <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">1.</span>{lang === 'uk' ? 'Виявлення заперечень: «відмовляється визнати Крим частиною Росії» хибно позначається як російський фреймінг. Оцінка хибнопозитивних: ~5%.' : 'Negation detection: "refuses to recognize Crimea as part of Russia" is falsely flagged as Russian framing. Estimated false positive rate: ~5%.'}</li>
+        <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">1.</span>{lang === 'uk' ? 'Точність: академічні — 98% (49/50 перевірено вручну). Медіа — нижча через заперечення та цитування (~5% хибнопозитивних).' : 'Precision: academic — 98% (49/50 manually verified). Media — lower due to negation and quotation contexts (~5% estimated false positives).'}</li>
         <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">2.</span>{lang === 'uk' ? 'Цитування vs схвалення: медіа, що цитують російський наратив для критики, класифікуються як «російський фреймінг». Контекстне розуміння обмежене.' : 'Quotation vs endorsement: media quoting Russian narrative for criticism is classified as "Russian framing." Context understanding is limited.'}</li>
         <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">3.</span>{lang === 'uk' ? 'GDELT починається з 2015 (v2). Медіадані 2010-2014 недоступні через цей API.' : 'GDELT starts at 2015 (v2). Media data for 2010-2014 is not available through this API.'}</li>
         <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">4.</span>{lang === 'uk' ? 'Мертві посилання: 53% URL-адрес GDELT 2021 року повертають помилки. Старіші роки мають вищий показник.' : 'Dead links: 53% of 2021 GDELT URLs return errors. Older years have higher rates.'}</li>
