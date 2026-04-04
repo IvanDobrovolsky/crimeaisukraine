@@ -4634,7 +4634,13 @@
         "russia": 13,
         "disputed": 0
       }
-    }
+    },
+    "expanded_classified": 65072,
+    "expanded_ukraine": 14811,
+    "expanded_russia": 2445,
+    "combined_classified": 103735,
+    "combined_ukraine": 47923,
+    "combined_russia": 7639
   },
   "academic": {
     "total_papers": 986,

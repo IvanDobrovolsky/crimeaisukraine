@@ -1,6 +1,6 @@
 # Crimea Is Ukraine
 
-Automated digital sovereignty audit. 113 platforms, 372K media articles, 986 academic papers.
+Automated digital sovereignty audit. 116 platforms, 372K media articles, 986 academic papers.
 
 **[crimeaisukraine.org](https://crimeaisukraine.org)** | **[Architecture](docs/ARCHITECTURE.md)**
 
@@ -8,10 +8,10 @@ Automated digital sovereignty audit. 113 platforms, 372K media articles, 986 aca
 
 | | |
 |---|---|
-| Platforms audited | **113** across 10 categories |
-| Correct (Ukraine) | **39** (35%) |
+| Platforms audited | **116** across 10 categories |
+| Correct (Ukraine) | **41** (35%) |
 | Incorrect (Russia) | **26** (23%) |
-| Ambiguous | **34** (30%) |
+| Ambiguous | **35** (30%) |
 | GDELT articles | **372K** classified (2015–2026) |
 | Academic papers | **986** with DOIs (2010–2026) |
 | Academic RU framing | **10%** (2019) → **57%** (2025) |
