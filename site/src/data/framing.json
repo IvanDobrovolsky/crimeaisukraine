@@ -102,8 +102,8 @@
       },
       "Turkey": {
         "ukraine": 105,
-        "russia": 5,
-        "total": 110
+        "russia": 12,
+        "total": 117
       },
       "Qatar": {
         "ukraine": 73,
@@ -117,8 +117,8 @@
       },
       "US": {
         "ukraine": 158,
-        "russia": 13,
-        "total": 178
+        "russia": 21,
+        "total": 186
       },
       "Australia": {
         "ukraine": 391,
@@ -137,8 +137,8 @@
       },
       "India": {
         "ukraine": 70,
-        "russia": 11,
-        "total": 81
+        "russia": 18,
+        "total": 88
       },
       "Italy": {
         "ukraine": 67,
@@ -167,8 +167,8 @@
       },
       "France": {
         "ukraine": 3,
-        "russia": 1,
-        "total": 4
+        "russia": 26,
+        "total": 29
       },
       "Japan": {
         "ukraine": 10,
@@ -177,8 +177,8 @@
       },
       "UAE": {
         "ukraine": 11,
-        "russia": 2,
-        "total": 14
+        "russia": 3,
+        "total": 15
       },
       "Belarus": {
         "ukraine": 2,
@@ -194,6 +194,66 @@
         "ukraine": 3,
         "russia": 1,
         "total": 4
+      },
+      "Latvia": {
+        "ukraine": 0,
+        "russia": 1,
+        "total": 1
+      },
+      "Estonia": {
+        "ukraine": 0,
+        "russia": 4,
+        "total": 4
+      },
+      "Belgium": {
+        "ukraine": 0,
+        "russia": 6,
+        "total": 6
+      },
+      "Lithuania": {
+        "ukraine": 0,
+        "russia": 5,
+        "total": 5
+      },
+      "Bosnia": {
+        "ukraine": 0,
+        "russia": 2,
+        "total": 2
+      },
+      "Switzerland": {
+        "ukraine": 0,
+        "russia": 1,
+        "total": 1
+      },
+      "Hong Kong": {
+        "ukraine": 0,
+        "russia": 1,
+        "total": 1
+      },
+      "Pakistan": {
+        "ukraine": 0,
+        "russia": 1,
+        "total": 1
+      },
+      "Azerbaijan": {
+        "ukraine": 0,
+        "russia": 7,
+        "total": 7
+      },
+      "Israel": {
+        "ukraine": 0,
+        "russia": 1,
+        "total": 1
+      },
+      "Georgia": {
+        "ukraine": 0,
+        "russia": 1,
+        "total": 1
+      },
+      "South Africa": {
+        "ukraine": 0,
+        "russia": 1,
+        "total": 1
       }
     },
     "violators": [
@@ -1203,9 +1263,880 @@
           "unification with Russia"
         ],
         "confidence": 0.6
+      },
+      {
+        "url": "http://ru.euronews.com/2015/03/09/annexation-of-crimea-one-year-one/",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2015-03-09",
+        "signals": [
+          "присоединение Крым",
+          "присоединение Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ru.euronews.com/2015/03/09/putin-s-secret-plan-to-seize-crimea/",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2015-03-09",
+        "signals": [
+          "присоединение Крым",
+          "присоединение Крым",
+          "вхождении Крыма в состав"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ru.euronews.com/2015/03/17/crimea-s-tatars-yearn-for-homeland-one-year-after-russian-annexation/",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2015-03-18",
+        "signals": [
+          "аннексии Крым",
+          "присоединения Крым",
+          "Крым стал частью Росси"
+        ],
+        "confidence": 0.778
+      },
+      {
+        "url": "http://www.lsm.lv/en/article/politics/company-offering-tours-in-crimea-searched-by-security-police.a135152/",
+        "domain": "lsm.lv",
+        "country": "Latvia",
+        "date": "2015-06-25",
+        "signals": [
+          "Crimea as a part of Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://news.postimees.ee/3283035/crimean-holidays-have-consequences",
+        "domain": "news.postimees.ee",
+        "country": "Estonia",
+        "date": "2015-08-04",
+        "signals": [
+          "illegally annex",
+          "unification of Crimea"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.euronews.com/2015/09/28/from-a-russian-peninsula-crimean-voices/",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2015-09-28",
+        "signals": [
+          "reunification with Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.hurriyetdailynews.com/turkey-to-build-crimeas-largest-mosque-.aspx?pageID=238&nID=89129&NewsCatID=353",
+        "domain": "hurriyetdailynews.com",
+        "country": "Turkey",
+        "date": "2015-09-29",
+        "signals": [
+          "Crimea joined Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.euronews.com/2015/11/22/state-of-emergency-declared-in-crimea-after-pyolons-carrying-electricity-from/",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2015-11-22",
+        "signals": [
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.euronews.com/2015/11/22/state-of-emergency-declared-in-crimea-after-pyolons-carrying-electricity-from",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2015-11-22",
+        "signals": [
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.thehindu.com/news/national/kerala/crimean-deal-for-capital-zoo-in-limbo/article7998695.ece",
+        "domain": "thehindu.com",
+        "country": "India",
+        "date": "2015-12-17",
+        "signals": [
+          "Yalta, Crimea, Russia",
+          "Crimea, Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.politico.eu/article/coca-cola-map-mix-up-angers-russia-ukraine-crimea-advert-annexation/",
+        "domain": "politico.eu",
+        "country": "Belgium",
+        "date": "2016-01-06",
+        "signals": [
+          "Crimea as part of Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://news.postimees.ee/3585429/palts-fights-for-crimea-dream-resort",
+        "domain": "news.postimees.ee",
+        "country": "Estonia",
+        "date": "2016-02-16",
+        "signals": [
+          "Crimea as part of Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.euronews.com/2016/03/17/crimea-annexationi-want-history-to-teach-people/",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2016-03-17",
+        "signals": [
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ru.euronews.com/2016/03/18/crimea-ceremonies-mark-two-years-since-russian-annexation/",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2016-03-18",
+        "signals": [
+          "вхождения Крыма в состав",
+          "вхождение Крыма в состав"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://news.postimees.ee/3679231/who-will-care-for-crimean-estonians",
+        "domain": "news.postimees.ee",
+        "country": "Estonia",
+        "date": "2016-05-03",
+        "signals": [
+          "Crimea as part of Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ru.euronews.com/2016/05/19/crimean-tatars-look-for-eurovision-boost-on-day-of-national-tragedy/",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2016-05-19",
+        "signals": [
+          "аннексии Крым",
+          "присоединения Крым",
+          "вхождения Крыма в состав"
+        ],
+        "confidence": 0.75
+      },
+      {
+        "url": "http://en.delfi.lt/central-eastern-europe/italian-region-votes-to-recognise-crimea-and-scrap-russian-sanctions.d?id=71309434",
+        "domain": "en.delfi.lt",
+        "country": "Lithuania",
+        "date": "2016-05-19",
+        "signals": [
+          "Crimea as a part of Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ru.euronews.com/2016/08/11/crimea-the-disputed-region-fueling-tensions-between-moscow-and-kyiv",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2016-08-11",
+        "signals": [
+          "субъектами Российской Федерации. РЕКЛАМА РЕКЛАМА Впервые Крымский полуостров вошёл в состав Российской Империи в 1783 г., в том же году был основан Севастополь, который стал военно-морской базой российского Черноморского флота. В 1954 г. по инициативе Первого секретаря ЦК КПСС Никиты Хрущёва и по случаю 300-летия воссоединения Украины с Россией Верховный Совет СССР передал Крым из состава РСФСР в состав Украинской ССР. В мае 1992 г. Верховный Совет Крыма принял конституцию Республики Крым и акт о её самостоятельности. Конституция была отменена в 1995 г. решением Киева. Россия сохранила за собой военно-морскую базу в Севастополе, которая оставалась главным местом базирования Черноморского флота. Сам город получил особый статус и не входил в состав Республики Крым. На 2013 г. в севастопольском порту базировались 60 военных кораблей российского ВМФ и служили 11 тыс российских военных. Свержение президента Украины Виктора Януковича в феврале 2014 г. вызвало массовые протесты жителей Крыма и Севастополя. В ночь с 26 на 27 февраля при активном участии российского спецназа произошла смена региональной исполнительной власти. 1 марта новое руководство Крыма обратилось к России с официальной просьбой «об оказании содействия в обеспечении мира и спокойствия на территории Автономной Республики Крым». Тогда же было принято решение о проведении референдума о статусе полуострова. Декларации о независимости Автономной Республики Крым и города Севастополя были приняты местными законодательными органами 11 марта. Пять дней спустя прошёл референдум, на котором было принято решение о присоединении к России. Российские военные и крымская самооборона заблокировали военные объекты украинских вооружённых сил, которые не оказали сопротивления и в конце концов были эвакуированы с территории полуострова. Участие российских военных в крымских событиях было признано Россией только после официального присоединения Крыма. Украина объявила Крым «временно оккупированной территорией» и начала поэтапно вводить меры его экономической блокады. В октябре 2015 г. неизвестные подорвали на территории Херсонской области опоры ЛЭП, временно обесточив Крым, а активисты крымскотатарского «Меджлиса» и украинские националисты ввели «гражданскую блокаду» полуострова. В апреле 2016 г. президент Украины Пётр Порошенко заявил о невозможности возвращения Крыма военным путём, но в августе военная активность у границы резко возросла. Перейти к комбинациям клавиш для доступности Поделиться Комментарии Также по теме Россия продолжает атаковать Украину, несмотря на идущие переговоры В обращении накануне Рождества Зеленский отметил желание всех украинцев - смерть Путина Украинские дроны нанесли мощный удар по российским системам ПВО на военном аэродроме в Крыму Крым",
+          "присоединения Крым",
+          "присоединения Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.hindustantimes.com/india-news/we-welcome-guests-crimean-pm-assures-safety-to-indian-tourists/story-BwsfNiAqSEfz6AaKIrcgIM.html",
+        "domain": "hindustantimes.com",
+        "country": "India",
+        "date": "2016-09-04",
+        "signals": [
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ru.euronews.com/2016/09/18/crimea-votes-in-russian-parliamentary-elections-amid-protests-from-ukraine",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2016-09-18",
+        "signals": [
+          "субъектах Российской Федерации, в том числе – впервые – в присоединённом к России Крыму. Всеобщие выборы в Государственную думу проходят в 85 субъектах Российской Федерации, в том числе – впервые – в присоединённом к России Крыму. На территории республики Крым образовано 1207 избирательных участков. По заявлению властей полуострова, обстановка на выборах спокойная, нарушений при открытии участковых комиссий не было. РЕКЛАМА РЕКЛАМА Голосование в Крыму вызывает неоднозначную реакцию на Западе. Украина и большинство других представленных в ООН стран не признают присоединение Крыма к России, называя его “аннексией”. Вот что говорят о выборах крымчане, пришедшие проголосовать на участки в Севастополе: “Я жду от выборов положительных изменений, справедливости и того, что каждый человек своим голосом может повлиять на будущее страны.” “Мы выбираем лучшее для себя, и для страны, ну, и для будущего поколения, конечно.” В Крыму на выборах голосуют около 1,8 млн граждан. Ещё около двух миллионов избирателей зарегистрированы для голосования за пределами России, в том числе в странах ближнего зарубежья. Непростая обстановка сложилась у российских представительств на Украине. Так, в Одессе националисты из “Правого сектора” попытались заблокировать вход в здание консульства РФ, где проходит голосование. В Киеве произошли столкновения у посольства России, вход в которое также пытались преградить местные националисты. Перейти к комбинациям клавиш для доступности Поделиться Комментарии Также по теме Путин: россияне проголосовали за стабильность Российский самолет Ан-26 разбился над Крымом: погибли 29 человек Что за закон SAVE America, с помощью которого Трамп хочет изменить правила голосования в США Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.dailysabah.com/europe/2016/12/01/ukraine-to-hold-missile-exercises-near-crimea-russia-puts-air-defense-troops-on-high-alert",
+        "domain": "dailysabah.com",
+        "country": "Turkey",
+        "date": "2016-12-01",
+        "signals": [
+          "annexed Crimea",
+          "illegally annex",
+          "Crimea, Russia"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "http://ru.euronews.com/2016/12/14/crimean-treasures-should-return-to-ukraine-says-dutch-court",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2016-12-15",
+        "signals": [
+          "Крым стал частью Росси"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.thehindu.com/news/international/Ukraine-lauds-India-for-support-over-Crimea/article17098891.ece",
+        "domain": "thehindu.com",
+        "country": "India",
+        "date": "2017-01-26",
+        "signals": [
+          "annexation of Crimea",
+          "Crimea, Russia"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "http://www.thehindu.com/todays-paper/tp-national/Ukraine-lauds-India-for-support-over-Crimea/article17099912.ece",
+        "domain": "thehindu.com",
+        "country": "India",
+        "date": "2017-01-27",
+        "signals": [
+          "annexation of Crimea",
+          "Crimea, Russia"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "http://ru.euronews.com/2017/02/26/kiev-march-marks-third-anniversary-of-russian-annexation-of-crimea",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2017-02-27",
+        "signals": [
+          "аннексии Крым",
+          "субъектов Российской Федерации. Украина объявила Крым “временно оккупированной территорией”. Киев называет референдум нелегитимным и считает, что он проводился под давлением. Перейти к комбинациям клавиш для доступности Поделиться Комментарии Также по теме Украинские дроны нанесли мощный удар по российским системам ПВО на военном аэродроме в Крыму Украина представила модернизированный морской дрон &quot;Sea Baby&quot;, который может наносить удары &quot;в любой точке Черного моря&quot; Лидер Меджлиса: Союзники просили Киев &quot;не провоцировать Россию&quot; во время аннексии Крыма Крым",
+          "присоединение Крым"
+        ],
+        "confidence": 0.75
+      },
+      {
+        "url": "https://www.eureporter.co/frontpage/2017/03/15/crimeantatars-demand-human-rights-protection-from-un/",
+        "domain": "eureporter.co",
+        "country": "Belgium",
+        "date": "2017-03-15",
+        "signals": [
+          "Republic of Crimea",
+          "Crimea as a part of Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://jamestown.org/program/russian-turkish-relations-undermined-status-crimea/",
+        "domain": "jamestown.org",
+        "country": "US",
+        "date": "2017-04-11",
+        "signals": [
+          "annexed Crimea",
+          "illegally annex",
+          "Crimea is Russia"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://jamestown.org/program/russian-turkish-relations-undermined-status-crimea/",
+        "domain": "jamestown.org",
+        "country": "US",
+        "date": "2017-04-11",
+        "signals": [
+          "annexed Crimea",
+          "illegally annex",
+          "Crimea is Russia"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://www.dailysabah.com/politics/2017/05/18/turkey-commemorates-anniversary-of-crimean-tatar-circassian-exile",
+        "domain": "dailysabah.com",
+        "country": "Turkey",
+        "date": "2017-05-18",
+        "signals": [
+          "Ukraine's Crimea",
+          "Republic of Crimea"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://www.balkaninsight.com/en/article/emir-kusturica-face-lawsuit-over-crimea-statements-07-25-2017",
+        "domain": "balkaninsight.com",
+        "country": "Bosnia",
+        "date": "2017-07-25",
+        "signals": [
+          "annexed Crimea",
+          "unification of Crimea"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "http://ru.euronews.com/2017/10/12/russia-banknotes-crimea",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2017-10-12",
+        "signals": [
+          "присоединение Крым"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://ru.euronews.com/2018/06/06/merkel-russia-g8-crimea-split",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2018-06-06",
+        "signals": [
+          "Аннексия Крым",
+          "Присоединение Крым",
+          "присоединения Крым"
+        ],
+        "confidence": 0.75
+      },
+      {
+        "url": "https://www.tio.ch/estero/cronaca/1310036/crimea---russia--spunta-la--lista-nera--dei-vip-contrari-all-annessione",
+        "domain": "tio.ch",
+        "country": "Switzerland",
+        "date": "2018-07-19",
+        "signals": [
+          "Crimea - Russia",
+          "Crimea - Russia",
+          "Crimea - Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.balkaninsight.com/en/article/serbian-filmmaker-to-visit-crimea-despite-warnings-08-21-2018",
+        "domain": "balkaninsight.com",
+        "country": "Bosnia",
+        "date": "2018-08-21",
+        "signals": [
+          "annexed Crimea",
+          "unification of Crimea"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "https://ru.euronews.com/2019/03/16/thecube-crimean-five-years-crisis",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2019-03-16",
+        "signals": [
+          "аннексию Крым",
+          "субъектов федерации принесло России пользу. Столько же полагают, что пользы и вреды было поровну. По другую сторону баррикад говорят о международных обязательствах России, о нарушении территориальной целостности соседнего государства, о международном праве и агрессии. А как вы видите крымский кризис спустя пять лет? Что это было: аннексия или воссоединение? И были ли это нужно России? Россия отмечает 5 лет референдума о статусе Крыма. Как вы считаете, присоединение полуострова принесло России больше пользы или вреда? #куб Publiée par Euronews на русском sur Vendredi 15 mars 2019 of your page --> Как вы расцениваете присоединение Крыма к России? #Куб https://bit.ly/2TF7i0J Publiée par Euronews на русском sur Samedi 16 mars 2019 Перейти к комбинациям клавиш для доступности Поделиться Комментарии Также по теме Удальцов, Стрелков и Чаплин против Путина Украинских детей под дулами автоматов захватывали российские войска в Херсоне, свидетельствуют документы Россия атаковала Киевскую область ракетами и дронами Крым",
+          "присоединения Крым"
+        ],
+        "confidence": 0.857
+      },
+      {
+        "url": "https://ru.euronews.com/2019/03/18/putin-in-crimea",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2019-03-18",
+        "signals": [
+          "аннексию Крым",
+          "субъектом Российской Федерации. На территории полуострова 18 марта является официальным праздником. РЕКЛАМА РЕКЛАМА По этому случаю в Крым приехал президент РФ Владимир Путин. В Севастополе он посетил Малахов Курган и расположенный там мемориальный комплекс. Также российский лидер принял участие в торжественной церемонии ввода в эксплуатацию на полную мощность Балаклавской и Таврической ТЭС. \"Эти станции с октября прошлого года уже работают, поставляют энергию, сегодня вводится еще два новых блока, по одному там и там. Их общая мощность удвоится, будет увеличена до 940 МВт. Это ровно столько, сколько в прежние годы Крым получал из соседней страны. Это 90% текущего энергопотребления всего Крыма\", - сообщил Путин. Прошло уже пять лет, как Крым де факто является российским, однако Украина с потерей не смирилась и делать этого не собирается. Да и для стран Запада полуостров был присоединен Россией незаконно. Вот, что заявила в связи с годовщиной глава европейской дипломатии Федерика Могерини. \"Мы полностью солидарны с Украиной, поддерживаем ее суверенитет и территориальную целостность. Это единая позиция государств Европы. Мы не будем признавать аннексию Крыма\", - подчеркнула Могерини. Это касается и референдума, состоявшегося в 2014 году после высадки так называемых \"вежливых людей\" без опозновательных знаков, но в принадлежности которых ни у кого сомнений не возникало. По итогам голосования, на вопрос, поддерживаете ли вы воссоединение с Россией, утвердительно ответило 96% крымчан, принимавших участие в референдуме. Позже Генассамблея ООН приняла резолюцию, в которой заявила, что референдум законной силы не имеет. Но для российских властей вопрос с Крымом уже был решен. Теперь вы можете следить за новостями Euronews на нашем канале в Telegram , в сетях \"Одноклассники\" и Instagram . Перейти к комбинациям клавиш для доступности Поделиться Комментарии Также по теме Крымские соледобытчики бьют тревогу Крымская пятилетка | #Куб Россия разворачивает С-400 в Крыму. Украина просит НАТО о помощи Крым",
+          "Крым в состав Росси"
+        ],
+        "confidence": 0.778
+      },
+      {
+        "url": "https://www.euronews.com/2019/03/18/putin-arrives-in-crimea-to-mark-fifth-anniversary-of-annexation",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2019-03-18",
+        "signals": [
+          "Reunification with Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.politico.eu/article/putin-rap-and-night-wolves-russia-marks-5-years-in-crimea/",
+        "domain": "politico.eu",
+        "country": "Belgium",
+        "date": "2019-03-18",
+        "signals": [
+          "annexation of Crimea",
+          "Crimea, Russia"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://www.euronews.com/2019/03/18/has-life-improved-for-people-in-crimea-since-its-annexation",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2019-03-18",
+        "signals": [
+          "Russian Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://jamestown.org/program/moscow-is-trying-to-weaken-crimean-tatar-resistance-with-the-help-of-tatarstan/",
+        "domain": "jamestown.org",
+        "country": "US",
+        "date": "2019-03-27",
+        "signals": [
+          "reunification of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://jamestown.org/program/moscow-is-trying-to-weaken-crimean-tatar-resistance-with-the-help-of-tatarstan/",
+        "domain": "jamestown.org",
+        "country": "US",
+        "date": "2019-03-27",
+        "signals": [
+          "reunification of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.dailysabah.com/op-ed/2019/05/20/building-a-new-crimea",
+        "domain": "dailysabah.com",
+        "country": "Turkey",
+        "date": "2019-05-20",
+        "signals": [
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://jamestown.org/program/russia-considering-renaming-crimea-as-taurida/",
+        "domain": "jamestown.org",
+        "country": "US",
+        "date": "2019-10-09",
+        "signals": [
+          "Republic of Crimea",
+          "Republic of Crimea",
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://jamestown.org/program/russia-considering-renaming-crimea-as-taurida/",
+        "domain": "jamestown.org",
+        "country": "US",
+        "date": "2019-10-09",
+        "signals": [
+          "Republic of Crimea",
+          "Republic of Crimea",
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.euronews.com/2019/11/27/apple-maps-shows-annexed-crimea-as-russian-for-russian-users",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2019-11-27",
+        "signals": [
+          "annexed Crimea",
+          "annexed Crimea",
+          "annexed Crimea"
+        ],
+        "confidence": 0.571
+      },
+      {
+        "url": "https://www.scmp.com/news/world/europe/article/3039639/apple-bows-moscows-pressure-agreeing-show-annexed-crimea-part",
+        "domain": "scmp.com",
+        "country": "Hong Kong",
+        "date": "2019-11-27",
+        "signals": [
+          "annexed Crimea",
+          "annexed Crimea",
+          "annexed Crimea"
+        ],
+        "confidence": 0.571
+      },
+      {
+        "url": "https://en.delfi.lt/business/linkevicius-lithuanian-disappointed-with-apple-showing-crimea-as-part-of-russia.d?id=82911149",
+        "domain": "en.delfi.lt",
+        "country": "Lithuania",
+        "date": "2019-11-28",
+        "signals": [
+          "annexed Crimea",
+          "Crimea as part of Russia",
+          "Crimea as part of Russia"
+        ],
+        "confidence": 0.833
+      },
+      {
+        "url": "https://www.euronews.com/2019/11/30/apple-maps-shows-annexed-crimea-as-russian-for-russian-users",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2019-11-30",
+        "signals": [
+          "annexed Crimea",
+          "annexed Crimea",
+          "annexed Crimea"
+        ],
+        "confidence": 0.571
+      },
+      {
+        "url": "https://www.euronews.com/2019/11/30/apple-taking-a-deeper-look-at-map-policies-after-calling-crimea-part-of-russia",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2019-11-30",
+        "signals": [
+          "annexed Crimea",
+          "Simferopol, Crimea, Russia",
+          "Crimea, Russia"
+        ],
+        "confidence": 0.8
+      },
+      {
+        "url": "https://www.dawn.com/news/1519794/apple-says-taking-a-deeper-look-at-crimea-map-controversy",
+        "domain": "dawn.com",
+        "country": "Pakistan",
+        "date": "2019-12-01",
+        "signals": [
+          "annexed Crimea",
+          "annexed Crimea",
+          "Simferopol, Crimea, Russia"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://www.dailysabah.com/opinion/op-ed/russias-alleged-reunification-with-crimea-is-illegal-occupation",
+        "domain": "dailysabah.com",
+        "country": "Turkey",
+        "date": "2020-03-03",
+        "signals": [
+          "reunification with Crimea",
+          "reunification with Crimea",
+          "Reunification with Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://news.err.ee/1080480/schools-books-showing-crimea-as-part-of-russia-will-be-recalled",
+        "domain": "news.err.ee",
+        "country": "Estonia",
+        "date": "2020-04-21",
+        "signals": [
+          "Crimea as part of Russia",
+          "Crimea as part of Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.eureporter.co/frontpage/2021/01/01/will-there-be-water-in-crimea/",
+        "domain": "eureporter.co",
+        "country": "Belgium",
+        "date": "2021-01-01",
+        "signals": [
+          "unification of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://eurasiantimes.com/turkey-gives-a-shocker-to-moscow-refuses-to-recognize-crimea-as-part-of-russia/",
+        "domain": "eurasiantimes.com",
+        "country": "India",
+        "date": "2021-01-02",
+        "signals": [
+          "annexed Crimea",
+          "Crimea As Part Of Russia"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://jamestown.org/program/russian-authorities-redouble-pressure-to-preserve-crimeans-loyalty/",
+        "domain": "jamestown.org",
+        "country": "US",
+        "date": "2021-02-09",
+        "signals": [
+          "illegally annex",
+          "Crimea, Russia",
+          "Republic of Crimea"
+        ],
+        "confidence": 0.778
+      },
+      {
+        "url": "https://ru.euronews.com/2021/02/27/western-leaders-discuss-crimea",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2021-02-27",
+        "signals": [
+          "аннексию Крым",
+          "референдума в Крыму. С прошлого года по указу президента Украины 26 февраля отмечается День сопротивления оккупации Автономной Республики Крым и города Севастополя. Активисты провели автопробег и шествие у контрольно-пропускного пункта \"Чонгар\". РЕКЛАМА РЕКЛАМА Накануне американский президент Джо Байден заявил, что США никогда не признают Крым частью России. По его словам, \"семь лет назад Россия нарушила международное право и нормы, по которым современные страны взаимодействуют друг с другом. В пятницу в Париже состоялась встреча министров иностранных дел Украины и Франции. Они обсудили инициативу украинского президента Владимира Зеленского о создании \"Крымской платформы\" для координации усилий на международном уровне. Первый саммит запланирован на конец августа. Дмитрий Кулеба также выразил уверенность в необходимости проведения новой встречи в формате \"нормандской четверки\" для дальнейшего прогресса в урегулировании конфликта на востоке Украины. Жан-Ив Ле Дриан заявил: \"Франция не признаёт и не признает аннексию Крыма, мы поддерживаем суверенитет и территориальную целостность Украины в рамках международно признанных границ. На днях президент России Владимир Путин потребовал совершенствовать пограничную инфраструктуру страны и заявил, что против российского государства ведется целенаправленная информационная кампания. В Кремле произошедшее в Крыму рассматривают как воссоединени"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "https://jamestown.org/program/are-chechens-being-purposefully-pitted-against-crimean-tatars/",
+        "domain": "jamestown.org",
+        "country": "US",
+        "date": "2021-09-28",
+        "signals": [
+          "annexed Crimea",
+          "Republic of Crimea",
+          "Republic of Crimea"
+        ],
+        "confidence": 0.75
+      },
+      {
+        "url": "https://www.eureporter.co/world/bulgaria/2021/11/22/ukraine-queries-bulgarian-presidents-crimea-is-russian-remark/",
+        "domain": "eureporter.co",
+        "country": "Belgium",
+        "date": "2021-11-25",
+        "signals": [
+          "Crimea is Russia",
+          "Crimea is Russia",
+          "Crimea is Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.politico.eu/article/amid-broken-ties-and-families-crimean-views-toward-russia-start-to-shift/",
+        "domain": "politico.eu",
+        "country": "Belgium",
+        "date": "2022-05-02",
+        "signals": [
+          "Sevastopol, Russia",
+          "unification with Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://report.az/en/other-countries/zelenskyy-says-ukraine-ready-to-put-crimean-issue-on-ice/",
+        "domain": "report.az",
+        "country": "Azerbaijan",
+        "date": "2022-05-13",
+        "signals": [
+          "Crimea as part of Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.lrt.lt/en/news-in-english/19/1697563/we-must-talk-about-repressions-of-crimean-tatars-says-ukrainian-expert-in-vilnius",
+        "domain": "lrt.lt",
+        "country": "Lithuania",
+        "date": "2022-05-18",
+        "signals": [
+          "Crimea is Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "http://www.euronews.com/2022/11/23/kremlin-on-alert-after-crimea-hit-by-drone-attack",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2022-11-23",
+        "signals": [
+          "annexed Crimea",
+          "illegally annex",
+          "Republic of Crimea"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "https://www.thenationalnews.com/world/europe/2023/05/25/russia-seizes-crimean-home-of-ukrainian-first-lady-olena-zelenska/",
+        "domain": "thenationalnews.com",
+        "country": "UAE",
+        "date": "2023-05-26",
+        "signals": [
+          "annexation of Crimea",
+          "Crimea, Russia",
+          "Crimea as part of Russia"
+        ],
+        "confidence": 0.8
+      },
+      {
+        "url": "https://www.hindustantimes.com/world-news/russia-claims-to-thwart-ukrainian-plot-to-kill-top-official-in-crimea-101688378063668.html",
+        "domain": "hindustantimes.com",
+        "country": "India",
+        "date": "2023-07-03",
+        "signals": [
+          "Republic of Crimea",
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.hindustantimes.com/world-news/crimea-bridge-traffic-halted-russia-latest-news-today-russia-ukraine-war-latest-news-101689562769979.html",
+        "domain": "hindustantimes.com",
+        "country": "India",
+        "date": "2023-07-17",
+        "signals": [
+          "annexed Crimea",
+          "Crimea-Russia",
+          "Crimea-Russia"
+        ],
+        "confidence": 0.857
+      },
+      {
+        "url": "https://www.timesofisrael.com/traffic-halted-on-key-crimea-russia-bridge-in-emergency-amid-explosion-reports/",
+        "domain": "timesofisrael.com",
+        "country": "Israel",
+        "date": "2023-07-17",
+        "signals": [
+          "Crimea-Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.lrt.lt/en/news-in-english/19/2045234/ukrainian-woman-allowed-to-stay-in-lithuania-after-saying-that-crimea-belongs-to-russia",
+        "domain": "lrt.lt",
+        "country": "Lithuania",
+        "date": "2023-07-27",
+        "signals": [
+          "Crimea belongs to Russia",
+          "Crimea belongs to Russia",
+          "Crimea belongs to Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.dailysabah.com/world/europe/russia-reports-shooting-down-42-ukrainian-drones-over-crimea",
+        "domain": "dailysabah.com",
+        "country": "Turkey",
+        "date": "2023-08-25",
+        "signals": [
+          "Crimea, Russia",
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.euronews.com/2023/08/25/ukraine-war-russia-claims-it-brought-down-42-drones-over-crimea-as-us-pledges-f-16-trainin",
+        "domain": "euronews.com",
+        "country": "France",
+        "date": "2023-08-25",
+        "signals": [
+          "illegally annex",
+          "Republic of Crimea"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "url": "https://en.apa.az/europe/russian-air-defense-destroy-17-ukrainian-drones-over-black-sea-crimea-ministry-415749",
+        "domain": "en.apa.az",
+        "country": "Azerbaijan",
+        "date": "2023-11-07",
+        "signals": [
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://en.apa.az/cis-countries/russias-fsb-thwarts-terrorist-attack-against-crimean-official-425685",
+        "domain": "en.apa.az",
+        "country": "Azerbaijan",
+        "date": "2024-02-05",
+        "signals": [
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://en.apa.az/cis-countries/russia-shot-down-8-ukrainian-drones-over-black-sea-and-crimea-458643",
+        "domain": "en.apa.az",
+        "country": "Azerbaijan",
+        "date": "2025-01-22",
+        "signals": [
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://georgiatoday.ge/trump-administration-considers-recognizing-crimea-as-russian-territory-in-potential-deal-to-end-war/",
+        "domain": "georgiatoday.ge",
+        "country": "Georgia",
+        "date": "2025-03-18",
+        "signals": [
+          "Crimea as part of Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://www.dailysabah.com/world/europe/trump-weighs-recognizing-crimea-as-part-of-russia-reports",
+        "domain": "dailysabah.com",
+        "country": "Turkey",
+        "date": "2025-03-18",
+        "signals": [
+          "annexation of Crimea",
+          "Crimea as part of Russia",
+          "Crimea as part of Russia"
+        ],
+        "confidence": 0.8
+      },
+      {
+        "url": "https://www.timeslive.co.za/news/world/2025-03-18-trump-considering-recognising-ukraines-crimea-as-part-of-russia-semafor-reports/",
+        "domain": "timeslive.co.za",
+        "country": "South Africa",
+        "date": "2025-03-18",
+        "signals": [
+          "Ukraine's Crimea",
+          "Crimea as part of Russia",
+          "Crimea as part of Russia"
+        ],
+        "confidence": 0.8
+      },
+      {
+        "url": "https://news.az/news/trump-criticizes-zelensky-for-inflammatory-position-on-crimea",
+        "domain": "news.az",
+        "country": "Azerbaijan",
+        "date": "2025-04-23",
+        "signals": [
+          "annexed Crimea",
+          "Crimea as part of Russia"
+        ],
+        "confidence": 0.667
+      },
+      {
+        "url": "https://www.lrt.lt/en/news-in-english/19/2547940/time-bomb-threat-to-world-order-lithuanian-leaders-bemoan-us-moves-over-crimea",
+        "domain": "lrt.lt",
+        "country": "Lithuania",
+        "date": "2025-04-28",
+        "signals": [
+          "Crimea as part of Russia"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://news.az/news/russia-claims-ukrainian-special-services-tried-to-sabotage-crimean-bridge",
+        "domain": "news.az",
+        "country": "Azerbaijan",
+        "date": "2025-08-18",
+        "signals": [
+          "Republic of Crimea"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "url": "https://en.apa.az/cis-countries/crimea-man-shoots-and-injures-four-police-officers-during-armed-standoff-497234",
+        "domain": "en.apa.az",
+        "country": "Azerbaijan",
+        "date": "2026-03-17",
+        "signals": [
+          "Crimea, Russia"
+        ],
+        "confidence": 0.95
       }
     ],
-    "violators_total": 4132,
+    "violators_total": 179,
     "by_year_classified": {
       "2015": {
         "ukraine": 2504,
@@ -1270,539 +2201,1751 @@
     }
   },
   "academic": {
-    "total_papers": 661,
-    "ukraine": 440,
-    "russia": 218,
+    "total_papers": 685,
+    "ukraine": 450,
+    "russia": 232,
     "by_year": {
       "2026": {
-        "ukraine": 21,
-        "russia": 27
+        "ukraine": 27,
+        "russia": 37,
+        "disputed": 0,
+        "neutral": 0
       },
       "2025": {
-        "ukraine": 67,
-        "russia": 90
+        "ukraine": 71,
+        "russia": 94,
+        "disputed": 0,
+        "neutral": 0
       },
       "2024": {
         "ukraine": 80,
-        "russia": 47
+        "russia": 47,
+        "disputed": 0,
+        "neutral": 0
       },
       "2023": {
         "ukraine": 58,
-        "russia": 7
+        "russia": 7,
+        "disputed": 0,
+        "neutral": 0
       },
       "2022": {
         "ukraine": 28,
-        "russia": 2
+        "russia": 2,
+        "disputed": 0,
+        "neutral": 0
       },
       "2021": {
         "ukraine": 11,
-        "russia": 13
+        "russia": 13,
+        "disputed": 1,
+        "neutral": 0
       },
       "2020": {
         "ukraine": 27,
-        "russia": 5
+        "russia": 5,
+        "disputed": 0,
+        "neutral": 0
       },
       "2019": {
         "ukraine": 27,
-        "russia": 3
+        "russia": 3,
+        "disputed": 0,
+        "neutral": 0
       },
       "2018": {
         "ukraine": 20,
-        "russia": 5
+        "russia": 5,
+        "disputed": 0,
+        "neutral": 0
       },
       "2017": {
         "ukraine": 32,
-        "russia": 5
+        "russia": 5,
+        "disputed": 0,
+        "neutral": 0
       },
       "2016": {
         "ukraine": 22,
-        "russia": 7
+        "russia": 7,
+        "disputed": 0,
+        "neutral": 0
       },
       "2015": {
         "ukraine": 23,
-        "russia": 4
+        "russia": 4,
+        "disputed": 2,
+        "neutral": 0
       },
       "2014": {
         "ukraine": 17,
-        "russia": 3
+        "russia": 3,
+        "disputed": 0,
+        "neutral": 0
       },
       "2012": {
         "ukraine": 6,
-        "russia": 0
+        "russia": 0,
+        "disputed": 0,
+        "neutral": 0
       },
       "2013": {
         "ukraine": 1,
-        "russia": 0
+        "russia": 0,
+        "disputed": 0,
+        "neutral": 0
       }
     },
     "violators": [
       {
         "title": "People's diplomacy as a way to mutual understanding during armed confl icts. To the 100th anniversary of people's diplomacy",
+        "url": "https://doi.org/10.33920/vne-01-2601-04",
         "doi": "https://doi.org/10.33920/vne-01-2601-04",
-        "journal": "",
         "year": 2026,
+        "journal": "",
+        "abstract": "Following the reunification of Crimea with Russia in March 2014 and subsequently the start of a special military operation in Ukraine in February 2022, which became a forced step by the Russian Federation to protect its territorial integrity, preserve sovereignty and border security, the countries of the Collective West, possessing modern and powerful information resources, have tried with all their might to shape Russia into an image of an aggressor, rather than a state that defends its own sec",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "reunification of Crimea"
+          {
+            "matched": "reunification of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Участие Краснодарского края в процессах интеграции Республики Крым в экономику России в переходный период (к десятилетию включения Республики Крым в состав Российской Федерации)",
+        "url": "https://doi.org/10.58224/2658-5685-2024-7-6-94-100",
         "doi": "https://doi.org/10.58224/2658-5685-2024-7-6-94-100",
-        "journal": "Historical bulletin",
         "year": 2024,
+        "journal": "Historical bulletin",
+        "abstract": "статья раскрывает механизм оказания органами исполнительной власти Краснодарского края методической и материальной помощи Ленинскому району республики Крым в переходный период. В научной среде эта тема ранее не освещалась, хотя её практическая значимость сегодня, в условиях интеграции новых западных регионов, неоспорима. На основе нормативно-правовых актов, отчётов и публикаций на официальных сайтах министерств и ведомств реконструируется процесс создания структурными подразделениями краевой адм",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 2.0,
         "signals": [
-          "Крым в состав Росси"
+          {
+            "matched": "Крым в состав Росси",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Ukraine war: ten years after Putin annexed Crimea, Russia’s grip on the peninsula looks shaky",
+        "url": "https://doi.org/10.64628/ab.x59979mve",
         "doi": "https://doi.org/10.64628/ab.x59979mve",
-        "journal": "",
         "year": 2024,
+        "journal": "",
+        "abstract": "",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.667,
+        "ua_score": 1.0,
+        "ru_score": 2.0,
         "signals": [
-          "annexed Crimea",
-          "Crimea, Russia"
+          {
+            "matched": "annexed Crimea",
+            "label": "ukraine"
+          },
+          {
+            "matched": "Crimea, Russia",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "The Government of the Russian Federation",
+        "url": "https://doi.org/10.4324/9781003280965-5",
         "doi": "https://doi.org/10.4324/9781003280965-5",
-        "journal": "",
         "year": 2022,
+        "journal": "",
+        "abstract": "According to its Constitution, the Russian Federation is a democratic, federative, multi-ethnic state. The President is elected for a term of six years by universal direct suffrage, for no more than two consecutive terms. In March 2014 Russia annexed two territories internationally recognized as constituting parts of Ukraine—the Republic of Crimea and Sevastopol City—bringing the de facto membership of the Federation to 85 territories. President Yeltsin strongly advocated decentralization within",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Die Geister, die wir riefen? Eine völkerrechtliche Einordnung: Die Annexion der Krim als Vorzeichen für den bewaffneten Angriff auf die Ukraine",
+        "url": "https://doi.org/10.35998/huv-2022-0012",
         "doi": "https://doi.org/10.35998/huv-2022-0012",
-        "journal": "Humanitäres Völkerrecht",
         "year": 2022,
+        "journal": "Humanitäres Völkerrecht",
+        "abstract": "By annexing Crimea, Russia has already violated the rules of international law, especially the prohibition on the use of force. Today’s dramatic events in Ukraine must be seen in light of this ongoing attempt to soften and reinterpret principles and standards of international law. Against the backdrop of the annexation of Crimea, the 2022 invasion of Ukraine is assessed and the parallels as well as the differences regarding international law and the relevant facts are examined. This is done from",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.667,
+        "ua_score": 1.0,
+        "ru_score": 2.0,
         "signals": [
-          "annexation of Crimea",
-          "Crimea, Russia"
+          {
+            "matched": "annexation of Crimea",
+            "label": "ukraine"
+          },
+          {
+            "matched": "Crimea, Russia",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Do not forget the Crimean crisis: why Russia “Annexed” the Peninsula? A (pro-) Western-European perception",
+        "url": "https://doi.org/10.1080/23340460.2021.1948800",
         "doi": "https://doi.org/10.1080/23340460.2021.1948800",
-        "journal": "Global Affairs",
         "year": 2021,
+        "journal": "Global Affairs",
+        "abstract": "The 2014 Crimean referendum was not free and was orchestrated by Moscow. Whose inclusion of the peninsula was a geopolitical move to gain more power in the region, strengthen the Russian identity and prevent further European enlargement to the East. By invading Crimea, Russia affirmed its nationalistic credo to get influence in Europe. Putin wanted to weaken the EU and while accusing the EU’s expansionism, he never complained when some former Warsaw Pact’s countries entered the EU or NATO in the",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 2.0,
         "signals": [
-          "Crimea, Russia"
+          {
+            "matched": "Crimea, Russia",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "THE CRIMEAN ANNEXATION CRISIS AND ITS ECONOMIC CONSEQUENCES: EU SANCTIONS, U.S. SANCTIONS AND IMPACTS ON THE RUSSIAN ECONOMY",
+        "url": "https://doi.org/10.29228/mjes.24",
         "doi": "https://doi.org/10.29228/mjes.24",
-        "journal": "Marmara Avrupa araştırmaları dergisi/Marmara Üniversitesi Avrupa Araştırmaları Enstitüsü Avrupa araştırmaları dergisi",
         "year": 2019,
+        "journal": "Marmara Avrupa araştırmaları dergisi/Marmara Üniversitesi Avrupa Araştırmaları Enstitüsü Avrupa araştırmaları dergisi",
+        "abstract": "In March 2014 the Crimean Peninsula -namely the Republic of Crimea and Sevastopol- was annexed from Ukraine, thereby becoming two federal subjects of the Russian Federation. While the Western powers consider the annexation to be illegal, as it breaches the international law and violates territorial sovereignty of Ukraine, the Russian Federation claims that the referendum in which the Crimean population chose to be part of Russia is completely legitimate. Following the annexation of Crimea, the W",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.6,
+        "ua_score": 1.0,
+        "ru_score": 1.5,
         "signals": [
-          "annexation of Crimea",
-          "Republic of Crimea"
+          {
+            "matched": "annexation of Crimea",
+            "label": "ukraine"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Crimea’s Annexation in the Light of International Law. A Critique of Russia’s Legal Argumentation",
+        "url": "https://doi.org/10.18523/kmlpj88181.2016-2.37-89",
         "doi": "https://doi.org/10.18523/kmlpj88181.2016-2.37-89",
-        "journal": "Kyiv-Mohyla Law and Politics Journal",
         "year": 2016,
+        "journal": "Kyiv-Mohyla Law and Politics Journal",
+        "abstract": "Crimea’s annexation by Russia violated a whole range of the fundamental principles of international law and international treaties guaranteeing Ukraine’s territorial integrity, the inviolability of its borders, and security. By annexing Crimea, Russia also violated the estoppel principle of law and international morality. In light of the principles of contemporary international law, as well as in light of the Russian doctrine of international law, the arguments put forward by Russia’s President ",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 2.0,
         "signals": [
-          "Crimea, Russia"
+          {
+            "matched": "Crimea, Russia",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "The Annexation of Crimea and Attempts to Justify It in the Context of International Law",
+        "url": "https://doi.org/10.1515/lasr-2016-0001",
         "doi": "https://doi.org/10.1515/lasr-2016-0001",
-        "journal": "Lithuanian Annual Strategic Review",
         "year": 2016,
+        "journal": "Lithuanian Annual Strategic Review",
+        "abstract": "The article carries out an assessment of the “reunification of Crimea with Russia” from the point of view of contemporary international law and examines the arguments of Russian legal scholars who try to deny the annexation, i.e. the acquisition of territory by force. The assessment reveals recent changes in the interpretation of the principle of the self-determination of peoples in the Russian official position and legal doctrine, compared to the interpretation of this principle prevalent befor",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.6,
+        "ua_score": 1.0,
+        "ru_score": 1.5,
         "signals": [
-          "Annexation of Crimea",
-          "reunification of Crimea"
+          {
+            "matched": "Annexation of Crimea",
+            "label": "ukraine"
+          },
+          {
+            "matched": "reunification of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Secession and Intervention in the Former Soviet Space: The Crimean Incident and Russian Interference in Its ‘Near Abroad’",
+        "url": "https://doi.org/10.1007/s10991-016-9187-x",
         "doi": "https://doi.org/10.1007/s10991-016-9187-x",
-        "journal": "Liverpool Law Review",
         "year": 2016,
+        "journal": "Liverpool Law Review",
+        "abstract": "Following Russian intervention and a referendum held on 16th March 2014, the Ukrainian republic of Crimea became incorporated within Russia. The Crimean episode marked just the latest in a series of situations arising in former Soviet states in which secessionist movements within disaffected territorial units were able to advance their causes aided by Russian external intervention. These situations raise significant international legal issues pertaining to secession by component parts of existin",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "republic of Crimea"
+          {
+            "matched": "republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Engaging Crimea and Beyond: Perspectives on Conflict, Cooperation and Civil Society Development",
+        "url": "https://doi.org/10.14282/2198-0403-gd-11",
         "doi": "https://doi.org/10.14282/2198-0403-gd-11",
-        "journal": "Carleton University's Institutional Repository (MacOdrum Library, Carleton University)",
         "year": 2016,
+        "journal": "Carleton University's Institutional Repository (MacOdrum Library, Carleton University)",
+        "abstract": "This issue of Global Dialogues draws on a two-day event organized by the Centre for Global Cooperation Research in the spring of 2015. Bringing together academics and policymakers from Crimea, Russia, Ukraine, Canada, and Germany, the meeting explored the current situation in Crimea, day-today life in the region, relations – present and future – between Ukraine and Russia, and the role of the West in finding a cooperative solution to the conflict.",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 2.0,
         "signals": [
-          "Crimea, Russia"
+          {
+            "matched": "Crimea, Russia",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "The Difference Between Russian & American Media Framing Techniques On The Russian Crimean Annexation",
+        "url": "https://openalex.org/W2611295662",
         "doi": "",
-        "journal": "Furman University Scholar Exchange (Furman University)",
         "year": 2016,
+        "journal": "Furman University Scholar Exchange (Furman University)",
+        "abstract": "/ This paper explores the effect of media framing on national media reports toward the 2014 Russian annexation of the Crimea, a region that previously belonged to the Ukraine. 23 Russian news articles and 23 American news articles were coded to develop measures that captured different framing techniques between the two country samples. Each article was coded for two types of issue-specific frames: 1) the extent to which an article discussed the role of history in explaining why Russia annexed th",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.0,
         "signals": [
-          "Russian Crimea"
+          {
+            "matched": "Russian Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Law, Rhetoric, Strategy: Russia and Self-Determination Before and After Crimea",
+        "url": "https://openalex.org/W791627754",
         "doi": "",
-        "journal": "eYLS (Yale Law School)",
         "year": 2015,
+        "journal": "eYLS (Yale Law School)",
+        "abstract": "(Excerpt) On March 16, 2014 the residents of Crimea woke up in Ukraine, as they had every morning since the dissolution of the USSR at the end of 1991. That evening they went to sleep in what claimed to be the independent Republic of Crimea. They lived in that putative country for the next day. On March 18, the leaders of Crimea signed a treaty merging their day-old country into Russia. Much had taken place before these three days in March 2014. There were arguments about Ukraine associating wit",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "\"Crimean Offence\": myth, its instrumentalization and geopolitical projections",
+        "url": "https://doi.org/10.21847/1728-9343.2015.2(134).40317",
         "doi": "https://doi.org/10.21847/1728-9343.2015.2(134).40317",
-        "journal": "Skhid",
         "year": 2015,
+        "journal": "Skhid",
+        "abstract": "The influence of the historical memory of the \"Russian Crimea\" on ideological and propaganda support of the second annexation of the Crimea in 2014. Analyzed the nature and impact of the concept of \"historical grievance\" in the formation of modern Russian social and political discourse about the Crimea.Although historically (national) grievance - a legacy of the past, it is important to understand exactly what is the past in each case. There are ancient grievances arising from specific historica",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.0,
         "signals": [
-          "Russian Crimea"
+          {
+            "matched": "Russian Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Putin's 'couldn't care less' attitude towards Russia's international commitments. CEPS Commentaries, 5 March 2014",
+        "url": "https://openalex.org/W161732376",
         "doi": "",
-        "journal": "Archive of European Integration (AEI) (University of Pittsburgh)",
         "year": 2014,
+        "journal": "Archive of European Integration (AEI) (University of Pittsburgh)",
+        "abstract": "By militarily invading and annexing Crimea, Russia has acted in breach of its obligations under the 1994 Budapest Memorandum. Yet the Kremlin seems unfazed that it is violating general principles of international law. This seems emblematic for the ‘can’t care less’ attitude of Putin’s Russia. Moscow allows itself to be inconsistent with its own commitments and is reneging on its own words. This has all the trappings of a panicking dictatorship, which crushes dissent at home and portrays confiden",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 2.0,
         "signals": [
-          "Crimea, Russia"
+          {
+            "matched": "Crimea, Russia",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Euonymus nanus (Celastraceae): first record for the Russian Far East",
+        "url": "https://doi.org/10.17581/bp.2026.15103",
         "doi": "https://doi.org/10.17581/bp.2026.15103",
-        "journal": "Botanica Pacifica",
         "year": 2026,
+        "journal": "Botanica Pacifica",
+        "abstract": "Two small populations of Euonymus nanus were identified in the Russian Far East, near the city of Svobodny, Amur Region. The geographic coordinates are provided, and the total number of plants was estimated. Measurements of leaf blade dimensions and shoot height from these wild Russian populations (Amur Region and the Republic of Crimea) are presented and compared with published data for populations from China. Vegetative shoots were counted within randomly selected one-square-meter plots, and t",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Dynamics of bronchial asthma morbidity in Crimea",
+        "url": "https://doi.org/10.36604/1998-5029-2025-98-21-31",
         "doi": "https://doi.org/10.36604/1998-5029-2025-98-21-31",
-        "journal": "Bulletin physiology and pathology of respiration",
         "year": 2025,
+        "journal": "Bulletin physiology and pathology of respiration",
+        "abstract": "Aim . To assess the dynamics and age-specific patterns of bronchial asthma (BA) morbidity in the Republic of Crimea from 2017 to 2024. Materials and methods . Data from the official statistical reporting form No. 12 (\"Information on the Number of Diseases Registered Among Patients Residing in the Service Area of a Medical Organization\") for the years 2017–2024 were analyzed. Regression analysis was used to quantitatively evaluate trends in BA morbidity. Results . Overall BA morbidity increased f",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "НАУЧНОЕ ОБОСНОВАНИЕ СОЗДАНИЯ БОТАНИЧЕСКОГО ЗАКАЗНИКА«ЛИМЕНСКАЯ ДОЛИНА» (РЕСПУБЛИКА КРЫМ)",
+        "url": "https://doi.org/10.25744/genb.2025.3.41.008",
         "doi": "https://doi.org/10.25744/genb.2025.3.41.008",
-        "journal": "Грозненский естественнонаучный бюллетень",
         "year": 2025,
+        "journal": "Грозненский естественнонаучный бюллетень",
+        "abstract": "Представлены результаты научного обоснования создания ботанического заказника регионального значения «Лименская долина». Планируемый заказник расположен в муниципальном округе города Ялты (Республика Крым). При выполнении полевых работ использовали флористические, фаунистические и ландшафтные методы исследования. Установлено, что исследуемая территория отличается биологическим и ландшафтным разнообразием. В видовом составе зафиксировано 138 видов растений, из которых 9 видов охраняется в Красной",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
         "signals": [
-          "РЕСПУБЛИКА КРЫМ",
-          "Республика Крым"
+          {
+            "matched": "РЕСПУБЛИКА КРЫМ",
+            "label": "russia"
+          },
+          {
+            "matched": "Республика Крым",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "First record of Bembecia (Opacosphecia) eversmanni O. Gorbunov, 2024 (Lepidoptera: Sesiidae) from the Crimean Peninsula",
+        "url": "https://doi.org/10.37828/em.2025.91.7",
         "doi": "https://doi.org/10.37828/em.2025.91.7",
-        "journal": "Ecologica Montenegrina",
         "year": 2025,
+        "journal": "Ecologica Montenegrina",
+        "abstract": "Bembecia (Opacosphecia) eversmanni O. Gorbunov, 2024, is recorded and illustrated for the first time for the Republic of Crimea and the Crimean Peninsula as a whole. The studied specimens were collected using artificial sex attractants. The positive role of artificial sex attractants for the practice of clarifying the details of the distribution of individual species has been confirmed once again.",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "To the distribution of Bembecia (Bembecia) ichneumoniformis ([Denis et Schiffermüller], 1775) (Lepidoptera: Sesiidae) on the Crimean Peninsula, Russia",
+        "url": "https://doi.org/10.37828/em.2025.90.14",
         "doi": "https://doi.org/10.37828/em.2025.90.14",
-        "journal": "Ecologica Montenegrina",
         "year": 2025,
+        "journal": "Ecologica Montenegrina",
+        "abstract": "The distribution of Bembecia (Bembecia) ichneumoniformis ([Denis et Schiffermüller], 1775) on the Crimean Peninsula is described and illustrated. Most of the specimens were collected using artificial sex attractants. This species is found in two administrative-territorial units of the Crimean Peninsula, namely the Republic of Crimea and the Federal City of Sevastopol’. B. ichneumoniformis was found in 32 localities, including those noted in literature and Internet resources. This species is reco",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "“Masters of Death”: a Note by Junior Sergeant V.N. Nakidnev about the Krasny Concentration Camp",
+        "url": "https://doi.org/10.23947/2414-1143-2025-11-3-68-72",
         "doi": "https://doi.org/10.23947/2414-1143-2025-11-3-68-72",
-        "journal": "Science almanac of Black sea region countries",
         "year": 2025,
+        "journal": "Science almanac of Black sea region countries",
+        "abstract": "Introduction . This research introduces an unknown and previously unpublished document, a note by junior sergeant V.N. Nakidnev “Masters of Death”, which was stored in the State Archives of the Republic of Crimea. It was extracted from the materials of the Crimean Commission on the History of the Great Patriotic War, included in fund P-156 and file number 34. V.N. Nakidnev’s note chronologically falls outside the voluminous file of 208 sheets, begun in 1941 and completed in 1944, since it bears ",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Territorial and Settlement Characteristics of the Dynamics of Population Ageing in the Republic of Crimea (2014‒2021)",
+        "url": "https://doi.org/10.23947/2414-1143-2025-11-3-14-23",
         "doi": "https://doi.org/10.23947/2414-1143-2025-11-3-14-23",
-        "journal": "Science almanac of Black sea region countries",
         "year": 2025,
+        "journal": "Science almanac of Black sea region countries",
+        "abstract": "Introduction . The relevance of the study is mainly due to the fact that the analysis of the dynamics of the population aging process, as well as its territorial characteristics, plays an important role in the process of determining various complex plans for the development of territories, from individual settlements to macroregions and entire states. The purpose of the study is to determine the spatial features of dynamics of population ageing of the Crimean Peninsula in the last intercensus pe",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "INTERNATIONAL LAW AND LEGISLATION OF THE RUSSIAN FEDERATION AND THE REPUBLIC OF CRIMEA IN THE FIELD OF PROTECTION AND PRESERVATION OF THE HISTORICAL URBAN ENVIRONMENT OF THE CITY OF BAKHCHISARAI",
+        "url": "https://doi.org/10.29039/2413-1873-2025-37-5-16",
         "doi": "https://doi.org/10.29039/2413-1873-2025-37-5-16",
-        "journal": "Construction and industrial safety",
         "year": 2025,
+        "journal": "Construction and industrial safety",
+        "abstract": "This article examines the issues of international law and legislation of the Russian Federation and the Republic of Crimea in the context of the protection and preservation of the historical urban environment of Bakhchisarai. The authors analyzed international treaties, regulations at the level of the Russian Federation, the Republic of Crimea and the municipality of Bakhchisarai concerning the protection of cultural heritage, and considered their application in practice in this context. Subject",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 4.5,
         "signals": [
-          "REPUBLIC OF CRIMEA",
-          "Republic of Crimea",
-          "Republic of Crimea"
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Marketing factors in promoting eno tourism",
+        "url": "https://doi.org/10.18572/2686-858x-2025-26-2-37-45",
         "doi": "https://doi.org/10.18572/2686-858x-2025-26-2-37-45",
-        "journal": "The Professors Magazine Recreation and Tourism Series",
         "year": 2025,
+        "journal": "The Professors Magazine Recreation and Tourism Series",
+        "abstract": "The article is devoted to the study of the marketing development factors in the tourism industry in Russia. The author substantiates that \"wine tourism\", or enotourism, has become an urgent trend in the development of niche domestic tourism in Russia, supported at the state level. The popularity of enotourism is growing not only in traditional wine-growing regions (Krasnodar Territory, Republic of Crimea), but also in areas that are not quite typical for this (Volgograd region, Astrakhan region,",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "THE STORY «SON OF THE REGIMENT» IN THE REALITIES OF THE CRIMEAN PARTISAN STRUGGLE: THE FATE OF VOLODYA DEGTYAREV BASED ON THE MATERIALS OF THE CRIMEAN ARCHIVE",
+        "url": "https://doi.org/10.29039/2413-1679-2025-11-2-3-18",
         "doi": "https://doi.org/10.29039/2413-1679-2025-11-2-3-18",
-        "journal": "Scientific Notes of V I Vernadsky Crimean Federal University Philological sciences",
         "year": 2025,
+        "journal": "Scientific Notes of V I Vernadsky Crimean Federal University Philological sciences",
+        "abstract": "The article presents for the first time the original documents of the State Archive of the Republic of Crimea related to the fate of the «pupil» of the 1st partisan detachment of the 4th brigade of the Southern formation Volodya Degtyarev: the boy’s letters to the Crimean headquarters of the partisan movement, award sheets and other documents that allow us to imagine his partisan fate. It tells about the post-war life of V. F. Degtyarev (1930-2018). The presented materials are intended to confir",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Unknown Vasiliy Makurin: towards the history of the family and the famous house",
+        "url": "https://doi.org/10.29039/2413-1741-2025-11-2-91-115",
         "doi": "https://doi.org/10.29039/2413-1741-2025-11-2-91-115",
-        "journal": "Scientific Notes of V I Vernadsky Crimean Federal University Historical science",
         "year": 2025,
+        "journal": "Scientific Notes of V I Vernadsky Crimean Federal University Historical science",
+        "abstract": "Based on a vast set of archival materials from the funds of the State Archives of the Republic of Crimea, which are being introduced into scientific circulation for the first time, the history of an architectural and urban planning monument, one of the most architecturally expressive private mansions of pre-revolutionary Simferopol – the residential building of a mathematics teacher, accountant of the city administration and member of the city council Vasily Mikhailovich Makurin – has been recon",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "To the distribution of Conopia stomoxiformis (Hübner, 1790) (Lepidoptera: Sesiidae) on the Crimean Peninsula (Russia)",
+        "url": "https://doi.org/10.37828/em.2025.87.5",
         "doi": "https://doi.org/10.37828/em.2025.87.5",
-        "journal": "Ecologica Montenegrina",
         "year": 2025,
+        "journal": "Ecologica Montenegrina",
+        "abstract": "The morphology and distribution of Conopia stomoxiformis (Hübner, 1790) on the Crimean Peninsula are described and illustrated. All collected specimens were bred from larvae or pupae. The use of artificial sex pheromones did not yield positive results. This species is found in two administrative-territorial units of the Crimean Peninsula, namely the Republic of Crimea and the Federal City of Sevastopol’. C. stomoxiformis was found in 14 localities, including those noted in literature and Interne",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Information support for the assessment of the state and protection of the «Yalta Mountain-Forest» state nature reserve of the republic of Crimea based on the application of remote sensing methods and GIS technologies",
+        "url": "https://doi.org/10.33920/sel-04-2505-03",
         "doi": "https://doi.org/10.33920/sel-04-2505-03",
-        "journal": "Zemleustrojstvo, kadastr i monitoring zemel' (Land management, cadastre and land monitoring)",
         "year": 2025,
+        "journal": "Zemleustrojstvo, kadastr i monitoring zemel' (Land management, cadastre and land monitoring)",
+        "abstract": "This work investigates the problems of creating an information base of a specially protected area for the operational management of the territory, its protection and spatial development. By example of the “Yalta Mountain-Forest” State Nature Reserve of the Republic of Crimea in the Russian Federation, the natural resources of the Reserve, its landscapes and soils, as well as the current use of the Reserve’s territory were studied in this work. The investigation widely used materials received fro",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
         "signals": [
-          "republic of Crimea",
-          "Republic of Crimea"
+          {
+            "matched": "republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "To the distribution of Microsphecia brosiformis (Hübner, 1813) (Lepidoptera: Sesiidae) on the Crimean Peninsula (Russia)",
+        "url": "https://doi.org/10.37828/em.2025.86.1",
         "doi": "https://doi.org/10.37828/em.2025.86.1",
-        "journal": "Ecologica Montenegrina",
         "year": 2025,
+        "journal": "Ecologica Montenegrina",
+        "abstract": "The morphology and distribution of Microsphecia brosiformis (Hübner, 1813) on the Crimean Peninsula are described and illustrated. Most of the collected specimens were obtained by using synthetic sex pheromones. This species is found in all three administrative-territorial units of the Crimean Peninsula, namely the Republic of Crimea, the city of Sevastopol’ and the Genichesk District of the Kherson Region. M. brosiformis was found in 55 localities, including those noted in literature and Intern",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "The Use of Information and Digital Technologies in the Activities of Local Governments of the Republic of Crimea",
+        "url": "https://doi.org/10.23947/2413-1474-2025-9-1-21-29",
         "doi": "https://doi.org/10.23947/2413-1474-2025-9-1-21-29",
-        "journal": "Economy and ecology of territorial educations",
         "year": 2025,
+        "journal": "Economy and ecology of territorial educations",
+        "abstract": "The 21st century is a time of digitalization, when technologies penetrate into all spheres of society, including the state management, its subjects, etc. To ensure the most effective exercise of regional leadership, local governments are adopting information and digital technologies in economic, social and cultural spheres. The availability of information services to the public, as well as the possibility of rapid remote inter-action with local governments, not only facilitates the chain of inte",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Agitation and propaganda of the underground members of the Crimea during the Great Patriotic War",
+        "url": "https://doi.org/10.18384/2949-5164-2025-1-103-119",
         "doi": "https://doi.org/10.18384/2949-5164-2025-1-103-119",
-        "journal": "Bulletin of the State University of Education Series History and Political Sciences",
         "year": 2025,
+        "journal": "Bulletin of the State University of Education Series History and Political Sciences",
+        "abstract": "Aim. Analysis of oral and printed propaganda activities of the Crimean underground during the Great Patriotic War. Methodology. The source base of the research was materials introduced into scientific circulation for the first time from: funds of the State Archive of the Republic of Crimea, the municipal archive of the city of Saki, funds of the Museum of Military Glory of the «Center for the Development of Children's and Youth Creativity» of the city of Yalta, as well as the newspaper fund of t",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Digression-demutation processes of riparian forests along the Kacha River in the Republic of Crimea",
+        "url": "https://doi.org/10.12731/2658-6649-2025-17-1-1030",
         "doi": "https://doi.org/10.12731/2658-6649-2025-17-1-1030",
-        "journal": "Siberian Journal of Life Sciences and Agriculture",
         "year": 2025,
+        "journal": "Siberian Journal of Life Sciences and Agriculture",
+        "abstract": "The materials of the study on the current state of the riparian forests and soils of the Kacha River in Crimea are presented. The aim of the work was to investigate the digression-demutation processes of vegetation and soils in the riparian forests, taking into account anthropogenic impacts on them. Materials and methods. Eight sample plots were established in the riparian forests from the source to the lower reaches of the river. Their species composition and structure, as well as the physicoch",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Features of the biomorphological and geographic structure of segetal floras in a number of regions in Russia",
+        "url": "https://doi.org/10.30901/2227-8834-2024-4-209-220",
         "doi": "https://doi.org/10.30901/2227-8834-2024-4-209-220",
-        "journal": "PROCEEDINGS ON APPLIED BOTANY GENETICS AND BREEDING",
         "year": 2025,
+        "journal": "PROCEEDINGS ON APPLIED BOTANY GENETICS AND BREEDING",
+        "abstract": "Background . Biomorphological and geographic analyses conducted on long geographic gradients are relevant for identifying botanical and geographic features of segetal floras. Materials and methods . A comparative analysis was used to study biomorphological and geographic elements of segetal floras in nine regions of Russia: Vologda, Leningrad, Novgorod, Sverdlovsk and Rostov Provinces, the Republic of Bashkortostan, the Republic of Crimea, the Udmurt Republic, and Altai Territory. Results. Biomo",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Amino acid and fatty acid composition of feed additives based on coriander cake (Coriandrum sativum L.)",
+        "url": "https://doi.org/10.1051/bioconf/202517901014",
         "doi": "https://doi.org/10.1051/bioconf/202517901014",
-        "journal": "BIO Web of Conferences",
         "year": 2025,
+        "journal": "BIO Web of Conferences",
+        "abstract": "The article presents a chemical analysis of by-products of coriander seed processing (Coriandrum sativum L.), to assess its potential use as a feed additive. Samples provided by 2 manufacturers from Russia have been studied: SPA Alekseevskoye LLC (Belgorod region) and Alushta Essential Oil State Farm-Plant JSC (Republic of Crimea). The main attention is paid to the content of nutrients, amino acids and fatty acids, which makes it possible to evaluate the cake as a promising source of energy and ",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "PROBLEMS AND PROSPECTS OF DEVELOPMENT OF THE METALWORKING INDUSTRY IN THE TERRITORY OF THE REPUBLIC OF CRIMEA",
+        "url": "https://doi.org/10.36871/ek.up.p.r.2025.05.01.014",
         "doi": "https://doi.org/10.36871/ek.up.p.r.2025.05.01.014",
-        "journal": "EKONOMIKA I UPRAVLENIE PROBLEMY RESHENIYA",
         "year": 2025,
+        "journal": "EKONOMIKA I UPRAVLENIE PROBLEMY RESHENIYA",
+        "abstract": "This article is devoted to the analysis of problems and assessment of prospects for the development of the metalworking industry in the territory of the Republic of Crimea. The relevance of the topic is due to the raw material potential of the Republic of Crimea, as well as the increased demand for the final metalworking product in the domestic market. The article uses methods of literary analysis and statistical data, which were used to obtain information about large enterprises of the metalwor",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 4.5,
         "signals": [
-          "REPUBLIC OF CRIMEA",
-          "Republic of Crimea",
-          "Republic of Crimea"
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Images of “Us” and “Others” as a Factor in the Identification of Citizens in the Context of the Reintegration of the Republic of Crimea and the City of Sevastopol into the Russian Federation",
+        "url": "https://doi.org/10.22363/2313-1438-2024-26-2-292-305",
         "doi": "https://doi.org/10.22363/2313-1438-2024-26-2-292-305",
-        "journal": "RUDN Journal of Political Science",
         "year": 2024,
+        "journal": "RUDN Journal of Political Science",
+        "abstract": "The question of scientific understanding of the features of the Republic of Crimea and the city of Sevastopol reintegration into the sociocultural and identification space of the Russian Federation is relevant from the point of view of using this experience in the integration processes taking place today in new Russian territories. The theoretical approaches of modern Russian and Western authors devoted to the identification side of integration using the example of the formation of the European ",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
         "signals": [
-          "Republic of Crimea",
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "SPECIAL MILITARY OPERATION IN UKRAINE AS A CHALLENGE FOR RUSSIAN LITERATURE",
+        "url": "https://doi.org/10.29039/2413-1679-2024-10-3-37-48",
         "doi": "https://doi.org/10.29039/2413-1679-2024-10-3-37-48",
-        "journal": "Scientific Notes of V I Vernadsky Crimean Federal University Philological sciences",
         "year": 2024,
+        "journal": "Scientific Notes of V I Vernadsky Crimean Federal University Philological sciences",
+        "abstract": "The special military operation in Ukraine became another existential challenge for Russian literature, a test of its preservation of historical traditions and the status of greatness. The same challenges were for our literature in their time: the Patriotic War of 1812, the Eastern (Crimean) War, the First World War and the Civil War, the Great Patriotic War. The special military operation deepened the split that appeared in Russian literature after the reunification of Crimea with Russia. Some w",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "reunification of Crimea"
+          {
+            "matched": "reunification of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Formation of Civil Identity in the Educational Policy System in the Context of Transformation of the Political Space",
+        "url": "https://doi.org/10.22394/2073-2929-2024-03-133-143",
         "doi": "https://doi.org/10.22394/2073-2929-2024-03-133-143",
-        "journal": "EURASIAN INTEGRATION economics law politics",
         "year": 2024,
+        "journal": "EURASIAN INTEGRATION economics law politics",
+        "abstract": "The relevance lies in the institutionalization of education in the new subjects of the Russian Federation (DPR, LPR, Zaporizhia, Kherson regions, the Republic of Crimea, the federal city of Sevastopol), as well as the processes of re-socialization, adaptation to the socio-cultural, political, value-ideological realities of Russian society, which affects the construction of the civic identity of school youth. Understanding the processes of formation of civic identity in the educational policy sys",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Current Trends in HIV Infection in the Republic of Crimea",
+        "url": "https://doi.org/10.3390/v16111716",
         "doi": "https://doi.org/10.3390/v16111716",
-        "journal": "Viruses",
         "year": 2024,
+        "journal": "Viruses",
+        "abstract": "The aim of this study was to analyse the trends in HIV infection, including diagnostic ones, in the Republic of Crimea in the period of 2014-2023. The source of data for this study was various statistical forms and reports. The findings revealed a significant downward trend in HIV incidence and a significant upward trend in HIV prevalence. The mortality rate was stable. The coverage of HIV testing and antiretroviral therapy increased over time. The number of patients with a suppressed viral load",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
         "signals": [
-          "Republic of Crimea",
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Экономика знаний в контексте развития Республики Крым",
+        "url": "https://doi.org/10.47576/2949-1878.2024.10.10.009",
         "doi": "https://doi.org/10.47576/2949-1878.2024.10.10.009",
-        "journal": "Journal of Applied Research",
         "year": 2024,
+        "journal": "Journal of Applied Research",
+        "abstract": "В статье обосновано значение экономики знаний в развитии отдельных регионов России и Республики Крым. Определено, что выбор направлений зависит от существующего потенциала территории, имеющихся трудовых ресурсов и уровня развития творческих индустрий. The article substantiates the importance of the knowledge economy in the development of certain regions of Russia and the Republic of Crimea. It is determined that the choice of directions depends on the existing potential of the territory, the ava",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Promising Directions of Economic Development of Rural Areas: The Case of the Republic of Crimea",
+        "url": "https://doi.org/10.15507/2413-1407.128.032.202403.523-542",
         "doi": "https://doi.org/10.15507/2413-1407.128.032.202403.523-542",
-        "journal": "REGIONOLOGY",
         "year": 2024,
+        "journal": "REGIONOLOGY",
+        "abstract": "Introduction. Rural areas represent significant strategic potential for the socio-economic development of the country. In recent years, the role of the state in planning territorial development has increased significantly. This is due to successful experience in designing territorial and sectoral development in difficult periods of macroeconomic and geopolitical crises, financing and monitoring infrastructure projects that are important for the economy and society. The subject of the study are r",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "THE IMAGE OF RUSSIA IN THE PRESENT AND FUTURE IN THE PERCEPTIONS OF THE RESIDENTS OF CRIMEA",
+        "url": "https://doi.org/10.18522/2227-8656.2024.4.11",
         "doi": "https://doi.org/10.18522/2227-8656.2024.4.11",
-        "journal": "HUMANITIES OF THE SOUTH OF RUSSIA",
         "year": 2024,
+        "journal": "HUMANITIES OF THE SOUTH OF RUSSIA",
+        "abstract": "Objective of the study is to sociological analyze of the ideas of Crimean residents about the present and future of Russia in the context of the social situation that determines the need for the integration of Russian citizens into a single whole in the context of new territoriality. The methodological basis of the research is based on the results of a focus group study conducted in October 2023 in the Republic of Crimea. The participants in the focus groups were residents of Crimea from differe",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Formation of Russian Identity in the Crimea and Sevastopol City",
+        "url": "https://doi.org/10.26794/2226-7867-2024-14-2-109-114",
         "doi": "https://doi.org/10.26794/2226-7867-2024-14-2-109-114",
-        "journal": "Humanities and Social Sciences Bulletin of the Financial University",
         "year": 2024,
+        "journal": "Humanities and Social Sciences Bulletin of the Financial University",
+        "abstract": "The Republic of Crimea and the city of Sevastopol have not yet completed the process of reintegration today. In this context, it is necessary to pay attention to its political and psychological component — the problem of creating the Russian national-state identity. The political-psychological approach involves analyzing not only the rational aspects of this process but also the place of unconscious factors in it, including the symbolic space of identity. The study involved researchers from Seva",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Results of Epizootiological Survey of the Territories of the Republic of Crimea andSevastopol in 2015–2022",
+        "url": "https://doi.org/10.35627/2219-5238/2024-32-7-7-15",
         "doi": "https://doi.org/10.35627/2219-5238/2024-32-7-7-15",
-        "journal": "ЗДОРОВЬЕ НАСЕЛЕНИЯ И СРЕДА ОБИТАНИЯ - ЗНиСО / PUBLIC HEALTH AND LIFE ENVIRONMENT",
         "year": 2024,
+        "journal": "ЗДОРОВЬЕ НАСЕЛЕНИЯ И СРЕДА ОБИТАНИЯ - ЗНиСО / PUBLIC HEALTH AND LIFE ENVIRONMENT",
+        "abstract": "Introduction: Systematic studies of endemic zoonotic diseases on the Crimean Peninsula resumed in 2015 after a long break. Objective: To specify boundaries and determine epizootiological activity of the natural foci of infectious diseases in the Crimea and to update the list of possible reservoir hosts and vectors based on the results of field studies conducted in 2015–2022. Materials and methods: Counting and trapping of small mammals, ixodid ticks and mosquitoes, collecting of pellets of birds",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Analysis of Dynamics and Factors of Fertility in the Republic of Crimea",
+        "url": "https://doi.org/10.19181/demis.2026.6.1.4",
         "doi": "https://doi.org/10.19181/demis.2026.6.1.4",
-        "journal": "DEMIS Demographic research",
         "year": 2026,
+        "journal": "DEMIS Demographic research",
+        "abstract": "This article examines the dynamics and factors affecting the birth rate in the Republic of Crimea. The study is based on an analysis of official statistics from Rosstat and regional data from Krymstat for the period 2014–2024. The article presents data showing that the total fertility rate in the Republic of Crimea as of the end of 2023 was 1.419, which is slightly higher than the national average (1.41). However, this positive difference does not offset the overall downward trend in the birth r",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 4.5,
         "signals": [
-          "Republic of Crimea",
-          "Republic of Crimea",
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Developing accessible sports infrastructure in municipal education: a management perspective",
+        "url": "https://doi.org/10.5930/1994-4683-2026-3-59-66",
         "doi": "https://doi.org/10.5930/1994-4683-2026-3-59-66",
-        "journal": "Uchenye zapiski universiteta imeni P F Lesgafta",
         "year": 2026,
+        "journal": "Uchenye zapiski universiteta imeni P F Lesgafta",
+        "abstract": "The purpose of the study is to assess the attitudes of the population in the Leninsky District of the Republic of Crimea toward existing conditions for physical activity and sports participation. Research methods and organization. The empirical basis was provided by data from a survey conducted in 2024–2025 among the population of the Leninsky District of the Republic of Crimea, which included information on satisfaction with and attitudes toward the conditions created for physical culture and s",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
         "signals": [
-          "Republic of Crimea",
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "Molecular-Genetic Aspects of Familial Mediterranean Fever and the Role of the Ethnic Factor in the Manifestation of This Disease in the Republic of Crimea",
+        "url": "https://doi.org/10.12775/pps.2026.31.70050",
         "doi": "https://doi.org/10.12775/pps.2026.31.70050",
+        "year": 2026,
         "journal": "Pedagogy and Psychology of Sport",
-        "year": 2026,
+        "abstract": "The study and diagnosis of monogenic diseases is based on population analysis of the frequency of pathological genes. One of the rarest hereditary pathologies in the Russian Federation is Familial Mediterranean Fever (FMF). This monogenic disease is prevalent among Sephardic Jews, Turks, Arabs, Armenians, Italians, and peoples of the North Caucasus. It is characterized by recurrent short episodes of fever and serositis, resulting in abdominal pain, chest pain on inspiration, joint pain, muscle p",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "О НЕИЗВЕСТНОЙ РУКОПИСИ Н. П. СУСЛОВОЙ В ФОНДАХ КРЫМСКОГО АРХИВА: ТЕКСТ И КОНТЕКСТ",
+        "url": "https://doi.org/10.5281/zenodo.19019164",
         "doi": "https://doi.org/10.5281/zenodo.19019164",
-        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
         "year": 2026,
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "abstract": "This article presents the first analysis of a manuscript preserved in the State Archives of the Republic of Crimea by N. P. Suslova, the first Russian female doctor of medicine. She lived for almost 40 years near Alushta on the Kastel-Primorsky estate. Suslova's manuscript, \"Dreams and Reality, or Dead Life,\" is examined in its textual and contextual context with her short story, \"From the Recent Past,\" also written in Crimea and published in 1900 in Vestnik Evropy, as well as with her earlier w",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "О НЕИЗВЕСТНОЙ РУКОПИСИ Н. П. СУСЛОВОЙ В ФОНДАХ КРЫМСКОГО АРХИВА: ТЕКСТ И КОНТЕКСТ",
+        "url": "https://doi.org/10.5281/zenodo.19019163",
         "doi": "https://doi.org/10.5281/zenodo.19019163",
-        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
         "year": 2026,
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "abstract": "This article presents the first analysis of a manuscript preserved in the State Archives of the Republic of Crimea by N. P. Suslova, the first Russian female doctor of medicine. She lived for almost 40 years near Alushta on the Kastel-Primorsky estate. Suslova's manuscript, \"Dreams and Reality, or Dead Life,\" is examined in its textual and contextual context with her short story, \"From the Recent Past,\" also written in Crimea and published in 1900 in Vestnik Evropy, as well as with her earlier w",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
         "signals": [
-          "Republic of Crimea"
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       },
       {
         "title": "INFLUENCE OF MULTICULTURAL ENVIRONMENT ON THE PSYCHOEMOTIONAL STATE OF YOUTH IN THE REPUBLIC OF CRIMEA",
+        "url": "https://doi.org/10.5281/zenodo.18983673",
         "doi": "https://doi.org/10.5281/zenodo.18983673",
-        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
         "year": 2026,
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "abstract": "The article presents an extensive review of the influence of a multicultural environment on the psycho-emotional state of young people in the Republic of Crimea, based on the analysis of domestic and foreign scientific research of recent years. The author examines the key factors that contribute to the formation of aggressive reactions and increased anxiety in representatives of the younger generation in a multinational and multi-confessional space. Among such factors are: the level of tolerance",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
         "signals": [
-          "REPUBLIC OF CRIMEA",
-          "Republic of Crimea"
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "INFLUENCE OF MULTICULTURAL ENVIRONMENT ON THE PSYCHOEMOTIONAL STATE OF YOUTH IN THE REPUBLIC OF CRIMEA",
+        "url": "https://doi.org/10.5281/zenodo.18983672",
+        "doi": "https://doi.org/10.5281/zenodo.18983672",
+        "year": 2026,
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "abstract": "The article presents an extensive review of the influence of a multicultural environment on the psycho-emotional state of young people in the Republic of Crimea, based on the analysis of domestic and foreign scientific research of recent years. The author examines the key factors that contribute to the formation of aggressive reactions and increased anxiety in representatives of the younger generation in a multinational and multi-confessional space. Among such factors are: the level of tolerance",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "STATE PUBLIC PAGES AS A DIALOGUE FORMAT BETWEEN GOVERNMENT AUTHORITIES AND CITIZENS",
+        "url": "https://doi.org/10.5281/zenodo.18962911",
+        "doi": "https://doi.org/10.5281/zenodo.18962911",
+        "year": 2026,
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "abstract": "Work organization of the Republic of Crimea’s state public pages on “VKontakte” social network is examined in the article for the first time. The features of the new interactive media formats use are described in order to increase efficiency indicators in the implementation of relevant media communication strategies. The public pages of the Republic of Crimea’s government bodies, designed for the interaction with citizens, meet the prevailing trends in the modern media market for the presentatio",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "STATE PUBLIC PAGES AS A DIALOGUE FORMAT BETWEEN GOVERNMENT AUTHORITIES AND CITIZENS",
+        "url": "https://doi.org/10.5281/zenodo.18962910",
+        "doi": "https://doi.org/10.5281/zenodo.18962910",
+        "year": 2026,
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "abstract": "Work organization of the Republic of Crimea’s state public pages on “VKontakte” social network is examined in the article for the first time. The features of the new interactive media formats use are described in order to increase efficiency indicators in the implementation of relevant media communication strategies. The public pages of the Republic of Crimea’s government bodies, designed for the interaction with citizens, meet the prevailing trends in the modern media market for the presentatio",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "DEVELOPMENT OF FAMILY TOURISM IN THE REPUBLIC OF CRIMEA. PROBLEMS AND PROSPECTS",
+        "url": "https://doi.org/10.22412/2413-693x-2026-20-1-84-94",
+        "doi": "https://doi.org/10.22412/2413-693x-2026-20-1-84-94",
+        "year": 2026,
+        "journal": "Servis plus",
+        "abstract": "This work is devoted to the current problems and prospects of family tourism development in the Russian Federation, in particular, in the «young» Republic of Crimea. The development of domestic tourism is one of the strategic objectives of the Russian state. Tourism is a universal tool for the social and economic development of society. According to most theorists and practitioners in the field of tourism, family travel, both domestic and international, is the most popular type of travel in the ",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "HINDU COMMUNITIES OF THE REPUBLIC OF CRIMEA AND THE CITY OF SEVASTOPOL IN INTERRELIGIOUS DIALOGUE",
+        "url": "https://doi.org/10.5281/zenodo.18834081",
+        "doi": "https://doi.org/10.5281/zenodo.18834081",
+        "year": 2026,
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "abstract": "The article examines issues related to the functioning of Hinduism in Crimea. The authors set themselves the task of determining the features of the religious life of students from India studying at universities in Simferopol and Sevastopol, as well as identifying the features of the life of Hindu communities in Crimea, their participation in the formation of interreligious dialogue in the multi-confessional environment of Crimea. The article notes the low level of study of the religious life of",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "HINDU COMMUNITIES OF THE REPUBLIC OF CRIMEA AND THE CITY OF SEVASTOPOL IN INTERRELIGIOUS DIALOGUE",
+        "url": "https://doi.org/10.5281/zenodo.18834082",
+        "doi": "https://doi.org/10.5281/zenodo.18834082",
+        "year": 2026,
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "abstract": "The article examines issues related to the functioning of Hinduism in Crimea. The authors set themselves the task of determining the features of the religious life of students from India studying at universities in Simferopol and Sevastopol, as well as identifying the features of the life of Hindu communities in Crimea, their participation in the formation of interreligious dialogue in the multi-confessional environment of Crimea. The article notes the low level of study of the religious life of",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Communicative Potential of National-Cultural Autonomies of the Republic of Crimea in the Context of Public Diplomacy",
+        "url": "https://doi.org/10.5281/zenodo.18801313",
+        "doi": "https://doi.org/10.5281/zenodo.18801313",
+        "year": 2026,
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "abstract": "The article emphasizes the importance of national-cultural autonomies as channels of public diplomacy, whose activities significantly expand the communication capabilities of non-state actors in the context of forming a positive image of the state abroad. Cultural ties are becoming one of the most humanistic and therefore most effective instruments in the mechanism of foreign policy activity. They contribute to the creation of conditions for peaceful dialogue and cooperation of various groups be",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Communicative Potential of National-Cultural Autonomies of the Republic of Crimea in the Context of Public Diplomacy",
+        "url": "https://doi.org/10.5281/zenodo.18801314",
+        "doi": "https://doi.org/10.5281/zenodo.18801314",
+        "year": 2026,
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "abstract": "The article emphasizes the importance of national-cultural autonomies as channels of public diplomacy, whose activities significantly expand the communication capabilities of non-state actors in the context of forming a positive image of the state abroad. Cultural ties are becoming one of the most humanistic and therefore most effective instruments in the mechanism of foreign policy activity. They contribute to the creation of conditions for peaceful dialogue and cooperation of various groups be",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Status and forecast of changes in areas under vegetable crops and drip irrigation in the Republic of Crimea",
+        "url": "https://doi.org/10.22363/2312-797x-2025-20-4-531-544",
+        "doi": "https://doi.org/10.22363/2312-797x-2025-20-4-531-544",
+        "year": 2026,
+        "journal": "RUDN Journal of Agronomy and Animal Industries",
+        "abstract": "The purpose of the research was to assess the current state of vegetable growing in the Republic of Crimea to determine vegetable demand and to calculate the prospects for the development of vegetable growing considering the current economic conditions and changes in the area irrigated by drip systems in order to increase vegetable production, reduce its production cost through efficient use of water resources, preserve and improve fertility of reclaimed lands. Statistical data on the area and p",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Chest pain as a reason for calling an ambulance: an epidemiological and dispatch triage assessment",
+        "url": "https://doi.org/10.15829/1560-4071-2026-6423",
+        "doi": "https://doi.org/10.15829/1560-4071-2026-6423",
+        "year": 2026,
+        "journal": "Russian Journal of Cardiology",
+        "abstract": "Aim. To analyze ambulance calls related to chest pain and acute coronary syndrome (ACS) at the regional level. Material and methods. Descriptive, inferential, and comparative statistical methods were used to analyze depersonalized data on ambulance calls in the Republic of Crimea from November 2023 to October 2024, including patient demographic characteristics, temporal parameters, reasons for calling an ambulance, and diagnoses made by ambulance teams. Results. Of 541817 emergency medical servi",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Visceral leishmaniasis in Crimea: key features for 2025",
+        "url": "https://doi.org/10.5281/zenodo.18678269",
+        "doi": "https://doi.org/10.5281/zenodo.18678269",
+        "year": 2026,
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "abstract": "The article analyzes three clinical cases of visceral leishmaniasis (VL) recorded in the Republic of Crimea and Sevastopol in 2025. All three patients have not leaved Crimea, and the identified cases of VL are local infection. The described cases had typical but non-specific manifestations of the infectious process, which led to difficulties of clinical diagnosis. Self-medication and late seeking of medical care also contributed to the delay in diagnosis. After development of the first symptoms,",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Visceral leishmaniasis in Crimea: key features for 2025",
+        "url": "https://doi.org/10.5281/zenodo.18678268",
+        "doi": "https://doi.org/10.5281/zenodo.18678268",
+        "year": 2026,
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "abstract": "The article analyzes three clinical cases of visceral leishmaniasis (VL) recorded in the Republic of Crimea and Sevastopol in 2025. All three patients have not leaved Crimea, and the identified cases of VL are local infection. The described cases had typical but non-specific manifestations of the infectious process, which led to difficulties of clinical diagnosis. Self-medication and late seeking of medical care also contributed to the delay in diagnosis. After development of the first symptoms,",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Optimization of the placement of persimmon varieties in the Crimea, depending on their frost resistance and climatic conditions of the growing area",
+        "url": "https://doi.org/10.30679/2219-5335-2026-1-97-64-77",
+        "doi": "https://doi.org/10.30679/2219-5335-2026-1-97-64-77",
+        "year": 2026,
+        "journal": "Fruit growing and viticulture of South Russia",
+        "abstract": "Abstract. Persimmon is one of the most popular subtropical deciduous crops growing in the Republic of Crimea. The article presents the results of research on optimizing the placement of three main types of persimmon according to the degree of frost resistance: Caucasian, Virginian and Oriental. It has been established that the Virgin persimmon is the most adapted to the climatic conditions of the Crimea and is considered one of the most frost-resistant persimmon species. To obtain a more resista",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Analysis of primary and overall childhood disabilities in the Republic of Crimea from 2019 to 2023",
+        "url": "https://doi.org/10.29234/2308-9113-2026-14-1-99-109",
+        "doi": "https://doi.org/10.29234/2308-9113-2026-14-1-99-109",
+        "year": 2026,
+        "journal": "Medicina",
+        "abstract": "This article presents an analysis of key aspects related to childhood disabilities in Crimea, focusing on the incidence and prevalence of childhood disability, the nosological structure of childhood disability, as well as the reasons for changes in these indicators. The method of dynamic series analysis was employed. Data obtained from the Federal State Institution «Main Bureau of Medical and Social Expertise for the Republic of Crimea» of the Ministry of Labor of Russia, specifically the «Infor",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "THE IMPACT OF MIGRATION PROCESSES ON THE FORMATION OF THE LABOR MARKET IN THE REPUBLIC OF CRIMEA",
+        "url": "https://doi.org/10.36871/ek.up.p.r.2026.01.04.018",
+        "doi": "https://doi.org/10.36871/ek.up.p.r.2026.01.04.018",
+        "year": 2026,
+        "journal": "EKONOMIKA I UPRAVLENIE PROBLEMY RESHENIYA",
+        "abstract": "This article examines the impact of migration processes and migration policy on the quantitative and qualitative indicators of the labor market in the Republic of Crimea. The dynamics of the region’s key labor market indicators for 2020-2025 are assessed. The study identifies persistent structural imbalances between employer demand and labor supply in the regional labor market. The evolution of migration policy in the region is analyzed. The current labor needs of the regional economy are also i",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "THE SEVERITY OF DEPRESSION AMONG MEDICAL WORKERS IN THE REPUBLIC OF CRIMEA DURING THE COVID-19 PANDEMIC",
+        "url": "https://doi.org/10.31549/2541-8289-2026-10-1-14-19",
+        "doi": "https://doi.org/10.31549/2541-8289-2026-10-1-14-19",
+        "year": 2026,
+        "journal": "Sibirskij medicinskij vestnik",
+        "abstract": "Introduction. The COVID-19 pandemic has exposed vulnerabilities of health systems, particularly in smaller regions, where limited resources and staffing shortages have exacerbated the mental health problems of health workers. Aim of the research. To analyze the symptoms of depression and their severity among healthcare workers during the COVID-19 pandemic. Materials and methods. The study was performed in the Republic of Crimea and involved 180 nurses and physicians, divided into two groups: Gro",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Comprehensive experimental studies of the dynamics of wind wave development at the sea surface",
+        "url": "https://doi.org/10.21046/2070-7401-2026-23-1-286-295",
+        "doi": "https://doi.org/10.21046/2070-7401-2026-23-1-286-295",
+        "year": 2026,
+        "journal": "Sovremennye problemy distantsionnogo zondirovaniya Zemli iz kosmosa",
+        "abstract": "The paper describes a comprehensive field experiment conducted from a stationary hydrophysical platform in the Black Sea near the town of Katsiveli, Republic of Crimea, at the Marine Research and Technology Shared Use Center of Marine Hydrophysical Institute RAS.The equipment used in the experiment included a radiometric system consisting of two 8-mm-band radiometer-polarimeters.The radiometers were mounted on a Traverse-2 rotating scanning platform.Laser wave recorders were used in the experime",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "INITIAL ASSESSMENT OF THE PROSPECTS FOR USING AGROHYDROLOGICAL MODELING TO ANALYZE THE DYNAMICS OF MOISTURE AND ELECTRICAL CONDUCTIVITY OF WATER EXTRACT OF DARK CHESTNUT SOIL",
+        "url": "https://doi.org/10.31774/2712-9357-2026-16-1-36-60",
+        "doi": "https://doi.org/10.31774/2712-9357-2026-16-1-36-60",
+        "year": 2026,
+        "journal": "Land Reclamation and Hydraulic Engineering",
+        "abstract": "Purpose: to conduct a primary assessment of the prospects for using the HYDRUS-1D software product or analyzing the dynamics of the electrical conductivity of water extract and moisture content of dark chestnut soil. Materials and methods. The study was conducted in 2023–2024 in the Republic of Crimea and included the following: determination of moisture content, particle size distribution, and electrical conductivity of soil water extract; calculation of soil water flow indicators using the Ros",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "SOCIAL TOURISM IN THE REPUBLIC OF CRIMEA: ORGANIZATION, PROBLEMS, REGULATION",
+        "url": "https://doi.org/10.36871/ek.up.p.r.2026.02.10.015",
+        "doi": "https://doi.org/10.36871/ek.up.p.r.2026.02.10.015",
+        "year": 2026,
+        "journal": "EKONOMIKA I UPRAVLENIE PROBLEMY RESHENIYA",
+        "abstract": "This paper examines social tourism in the Republic of Crimea, which is a key indicator of the effective implementation of social policy in the region. The article identifies current issues hindering the functioning and development of social tourism. It examines the theoretical approaches of scholars to the definition of “social tourism.” The concept of “social tourism” is clarified. The paper highlights the specifics of social tourism regulation in Crimea. The authors highlight popular types of ",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Elemental status as a factor in individualization of cerebral metabolism",
+        "url": "https://doi.org/10.19163/1994-9480-2025-22-4-122-128",
+        "doi": "https://doi.org/10.19163/1994-9480-2025-22-4-122-128",
+        "year": 2025,
+        "journal": "Journal of Volgograd State Medical University",
+        "abstract": "The aim of the study was to identify associations between the levels of biologically significant micro- and macroelements in the human body and the expression of standard fNIRS indicators. Research methodology: The study involved students from state universities, native residents of three regions of the European part of Russia: Arkhangelsk and Volgograd Oblasts, and the Republic of Crimea, aged 18–25 years (49 men and 51 women). The elemental status of the subjects was assessed based on the cont",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "The obscure Ethem Feizi: life and journalism in the light of little-known Crimean Tatar sources",
+        "url": "https://doi.org/10.30853/phil20250735",
+        "doi": "https://doi.org/10.30853/phil20250735",
+        "year": 2025,
+        "journal": "Philology Theory & Practice",
+        "abstract": "The aim of the study is to identify the distinctive features of Ethem Feizi’s authorial discourse in the sphere of economic modernization and the reform of Crimean Tatar social structures in 1917-1920, drawing on Crimean Tatar sources introduced into scholarly circulation for the first time. The scientific novelty lies in the incorporation of a large body of previously unexamined materials from the funds of the State Archive of the Republic of Crimea (GARK), the Russian National Library (RNB), a",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Trends and prospects for the development of small and medium-sized social entrepreneurship in the service sector of the Republic of Crimea",
+        "url": "https://doi.org/10.24923/2222-243x.2025-57.7",
+        "doi": "https://doi.org/10.24923/2222-243x.2025-57.7",
+        "year": 2025,
+        "journal": "KANT",
+        "abstract": "The purpose of the study is to determine the features and prospects for the development of small and medium-sized social entrepreneurship in the service sector of the Republic of Crimea. The article examines the theoretical foundations of social entrepreneurship in the service sector, analyzes the dynamics of sector development in the region for the period 2023-2025, and investigates the sectoral structure of social enterprises. Attention is focused on the absolute dominance of the service secto",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Prospects for Regional Production of Canned Fruit (Exemplified by the Republic of Crimea)",
+        "url": "https://doi.org/10.15688/re.volsu.2025.4.21",
+        "doi": "https://doi.org/10.15688/re.volsu.2025.4.21",
+        "year": 2025,
+        "journal": "Regionalnaya ekonomika Yug Rossii",
+        "abstract": "A study of the resource potential of the Republic of Crimea and the state of the material and technical base for the production of canned fruit is presented. The purpose of the conducted research is to determine possible directions and substantiate the prospects for the development of the production of canned fruit and berries in the region. It was concluded that a well-developed and constantly increasing raw material base in the republic was developed. The proximity of processing facilities to ",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "Export Potential of the Republic of Crimea in the Direction of Production and Sales of Essential Oils",
+        "url": "https://doi.org/10.21686/2410-7395-2025-4-133-144",
+        "doi": "https://doi.org/10.21686/2410-7395-2025-4-133-144",
+        "year": 2025,
+        "journal": "International Trade and Trade Policy",
+        "abstract": "This article examines the resource base of the Russian Federation and the Republic of Crimea for essential oils and assesses the infrastructure of the regional perfume and cosmetics market, including essential oils and resinoids. Regional producers that form the supply chain for the essential oils market are identified. Statistical information reflecting the state of the crop production industry in terms of increasing the area allocated for growing perennial and annual essential oils is analyzed",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "ACTIVITIES OF CULTURAL INSTITUTIONS OF THE CRIMEAN REGION FOR THE PROTECTION OF MONUMENTS OF THE GREAT PATRIOTIC WAR (1944–1991)",
+        "url": "https://doi.org/10.29039/2413-1741-2025-11-4-47-62",
+        "doi": "https://doi.org/10.29039/2413-1741-2025-11-4-47-62",
+        "year": 2025,
+        "journal": "Scientific Notes of V I Vernadsky Crimean Federal University Historical science",
+        "abstract": "the article, based on a set of documents from the funds of the State Archive of the Republic of Crimea and taking into account the current historiography of the issue, considers the activities of cultural institutions of the Crimean region in the post-war period, aimed at monumental commemoration of the events of the Great Patriotic War of 1941–1945. Special attention is paid to the activities of the Department of Culture of the Crimean Regional Council of Workers’ Deputies created in 1953 and t",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "«DUVAN’S HOUSE» IN SIMFEROPOL: VERSIONS AND DOCUMENTARY FACTS",
+        "url": "https://doi.org/10.29039/2413-1741-2025-11-4-73-102",
+        "doi": "https://doi.org/10.29039/2413-1741-2025-11-4-73-102",
+        "year": 2025,
+        "journal": "Scientific Notes of V I Vernadsky Crimean Federal University Historical science",
+        "abstract": "based on an extensive set of archival materials from the State Archives of the Republic of Crimea (Simferopol), the State Archives of the Russian Federation (Moscow), and the Central State Historical Archives of St. Petersburg, most of which have been introduced into scientific circulation for the first time, the history of the architectural and urban planning monument, which has been one of the main academic buildings of the M. V. Frunze Crimean State Pedagogical Institute since 1948, has been ",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 1.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "FEATURES OF FOREST IMPROVEMENT OF AGRICULTURAL TERRITORIES OF THE REPUBLIC OF CRIMEA",
+        "url": "https://doi.org/10.58168/iarrp2025_13-17",
+        "doi": "https://doi.org/10.58168/iarrp2025_13-17",
+        "year": 2025,
+        "journal": "",
+        "abstract": "Protective forest belts in the conditions of the Republic of Crimea are mainly represented in the species composition with the participation of Gleditsia triacanthus, Elm squat. When creating, a row method was used with the placement of plants 2.5 - 4.5 x 1.5 -2.0 m. At the age of 50-55 years, the survival rate was 16.0 -82.6%, the windproof height was 12.7 - 16.0 m. Plantations need silvicultural care.",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "DYNAMICS OF CHANGES IN THE NUTRITION OF SCHOOLCHILDREN AND STUDENTS OF THE REPUBLIC OF CRIMEA AND ITS INFLUENCE ON BODY WEIGHT",
+        "url": "https://doi.org/10.29039/2070-8092-2025-28-2-40-46",
+        "doi": "https://doi.org/10.29039/2070-8092-2025-28-2-40-46",
+        "year": 2025,
+        "journal": "Tavricheskiy Mediko-Biologicheskiy Vestnik",
+        "abstract": "Nutrition is an important component of the harmonious development of schoolchildren and students. Unhealthy diet is a risk factor for underweight, overweight and obesity. Objective. To identify changes in the diet of schoolchildren and students in the Republic of Crimea and its impact on body weight in dynamics for 2020 2024. Material and methods. The study involved 600 respondents divided into 2 groups: schoolchildren (n = 300) and students (n = 300). Variation statistics methods were used to a",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "INFORMATION SUPPORT FOR CIVIC PARTICIPATION PROGRAMS IN SOCIAL MEDIA (ON THE EXAMPLE OF PARTICIPATORY BUDGETING PROGRAMM IN THE REPUBLIC OF CRIMEA)",
+        "url": "https://doi.org/10.29039/2413-1679-2025-11-4-193-201",
+        "doi": "https://doi.org/10.29039/2413-1679-2025-11-4-193-201",
+        "year": 2025,
+        "journal": "Scientific Notes of V I Vernadsky Crimean Federal University Philological sciences",
+        "abstract": "Modern society is undergoing a transformation in the forms of communication between citizens and public authorities, driven by the development of digital technologies and the proliferation of social media. Social media platforms have become not only channels for disseminating information but also tools for fostering civic engagement. This article explores the use of social media for informational support and promotion of the participatory budgeting program in the Republic of Crimea. The analysis",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
+      },
+      {
+        "title": "HYBRID FINANCING MODELS FOR AGROTOURISM IN RUSSIA: EVALUATING THE EFFECTIVENESS OF GOVERNMENT PROGRAMS AND PRIVATE INVESTMENTS (CASE STUDIES OF KRASNODAR KRAI AND THE REPUBLIC OF CRIMEA)",
+        "url": "https://doi.org/10.33305/2512-56",
+        "doi": "https://doi.org/10.33305/2512-56",
+        "year": 2025,
+        "journal": "AIC economics management",
+        "abstract": "This article presents a comprehensive analysis of hybrid financing models for agrotourism in Russia, focusing on Krasnodar Krai and the Republic of Crimea, to evaluate the effectiveness of government programs and private investments. The study is based on empirical data from 2020–2023, including key indicators such as profitability, payback periods, job creation, and tourist flow dynamics. The methodological framework incorporates multivariate regression analysis, expert interviews, and a review",
+        "source_api": "openalex",
+        "label": "russia",
+        "confidence": 0.95,
+        "ua_score": 0,
+        "ru_score": 3.0,
+        "signals": [
+          {
+            "matched": "REPUBLIC OF CRIMEA",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
         ]
       }
     ],
-    "violators_total": 218
+    "violators_total": 232
   }
 }
