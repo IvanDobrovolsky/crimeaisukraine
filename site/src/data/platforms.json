@@ -8,7 +8,7 @@
       "method": "source_code",
       "detail": "Crimea classified as: not_mentioned. Natural Earth uses de facto boundaries. This dataset is the upstream source for D3, Plotly, Highcharts, and most web mapping libraries.",
       "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Natural Earth offers 31 point-of-view variants but the default (most downloaded) uses de facto control.",
       "date_checked": "2026-03-31"
     },
@@ -20,7 +20,7 @@
       "method": "source_code",
       "detail": "Crimea classified as: not_mentioned. Natural Earth uses de facto boundaries. This dataset is the upstream source for D3, Plotly, Highcharts, and most web mapping libraries.",
       "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Natural Earth offers 31 point-of-view variants but the default (most downloaded) uses de facto control.",
       "date_checked": "2026-03-31"
     },
@@ -68,7 +68,7 @@
       "method": "automated_data",
       "detail": "Uses Natural Earth 110m as source. Since NE assigns Crimea to Russia's polygon, D3 world-atlas inherits this. Standard package for D3.js choropleth maps.",
       "url": "https://unpkg.com/world-atlas@2.0.2/countries-110m.json",
-      "evidence": "",
+      "evidence": "HTTP 200; mentions_russia=true",
       "notes": "world-atlas uses ISO numeric country IDs (RU=643, UA=804). Crimea's geometry is within Russia's arcs.",
       "date_checked": "2026-03-31"
     },
@@ -80,7 +80,7 @@
       "method": "automated_data",
       "detail": "Uses Natural Earth 50m as source. Since NE assigns Crimea to Russia's polygon, D3 world-atlas inherits this. Standard package for D3.js choropleth maps.",
       "url": "https://unpkg.com/world-atlas@2.0.2/countries-50m.json",
-      "evidence": "",
+      "evidence": "HTTP 200; mentions_ukraine=true",
       "notes": "world-atlas uses ISO numeric country IDs (RU=643, UA=804). Crimea's geometry is within Russia's arcs.",
       "date_checked": "2026-03-31"
     },
@@ -92,7 +92,7 @@
       "method": "source_code",
       "detail": "GitHub issue #2903 (Crimea shown as Russia in choropleth): state=closed. Plotly inherits Natural Earth de facto boundaries. Default choropleth maps show Crimea as part of Russia.",
       "url": "https://github.com/plotly/plotly.py/issues/2903",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Plotly is one of the most popular data viz libraries (~40M monthly pip downloads).",
       "date_checked": "2026-03-31"
     },
@@ -128,7 +128,7 @@
       "method": "source_code",
       "detail": "Crimea classified as: not_mentioned. ECharts is Apache's data viz library, widely used in China and globally.",
       "url": "https://raw.githubusercontent.com/apache/echarts/master/test/data/map/json/world.json",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -140,7 +140,7 @@
       "method": "source_code",
       "detail": "Frictionless Data geo-countries dataset. Crimea classified as: not_mentioned.",
       "url": "https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -152,7 +152,7 @@
       "method": "source_code",
       "detail": "Popular world GeoJSON (4k+ stars). Crimea classified as: not_mentioned.",
       "url": "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -164,7 +164,7 @@
       "method": "automated_data",
       "detail": "ISO 3166-1 country names (~4M weekly downloads). Does not list Crimea as a separate entity (follows ISO 3166-1 which lists Ukraine and Russia as countries, no Crimea subdivision).",
       "url": "https://unpkg.com/i18n-iso-countries@7.14.0/langs/en.json",
-      "evidence": "",
+      "evidence": "HTTP 200; mentions_ukraine=true; mentions_russia=true",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -176,7 +176,7 @@
       "method": "automated_data",
       "detail": "Country names and ISO codes (~200k weekly downloads). Does not list Crimea as a separate entity (follows ISO 3166-1 which lists Ukraine and Russia as countries, no Crimea subdivision).",
       "url": "https://unpkg.com/country-list@2.4.1/data.json",
-      "evidence": "",
+      "evidence": "HTTP 200; mentions_russia=true",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -188,7 +188,7 @@
       "method": "automated_api",
       "detail": "D3 world-atlas (TopoJSON country boundaries). 80,198 weekly npm downloads. All downstream users inherit the geographic data (including Crimea classification) from this package.",
       "url": "https://www.npmjs.com/package/world-atlas",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Downstream propagation metric.",
       "date_checked": "2026-03-31"
     },
@@ -200,7 +200,7 @@
       "method": "automated_api",
       "detail": "TopoJSON client (decodes NE-based data). 3,814,090 weekly npm downloads. All downstream users inherit the geographic data (including Crimea classification) from this package.",
       "url": "https://www.npmjs.com/package/topojson-client",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Downstream propagation metric.",
       "date_checked": "2026-03-31"
     },
@@ -212,7 +212,7 @@
       "method": "automated_api",
       "detail": "Plotly.js (built-in NE choropleth maps). 964,646 weekly npm downloads. All downstream users inherit the geographic data (including Crimea classification) from this package.",
       "url": "https://www.npmjs.com/package/plotly.js",
-      "evidence": "",
+      "evidence": "HTTP 403",
       "notes": "Downstream propagation metric.",
       "date_checked": "2026-03-31"
     },
@@ -224,7 +224,7 @@
       "method": "automated_api",
       "detail": "Highcharts (includes map collection). 2,269,785 weekly npm downloads. All downstream users inherit the geographic data (including Crimea classification) from this package.",
       "url": "https://www.npmjs.com/package/highcharts",
-      "evidence": "",
+      "evidence": "HTTP 403",
       "notes": "Downstream propagation metric.",
       "date_checked": "2026-03-31"
     },
@@ -236,7 +236,7 @@
       "method": "automated_api",
       "detail": "Apache ECharts (built-in map data). 2,322,682 weekly npm downloads. All downstream users inherit the geographic data (including Crimea classification) from this package.",
       "url": "https://www.npmjs.com/package/echarts",
-      "evidence": "",
+      "evidence": "HTTP 403",
       "notes": "Downstream propagation metric.",
       "date_checked": "2026-03-31"
     },
@@ -248,7 +248,7 @@
       "method": "automated_api",
       "detail": "D3 geo projection (renders NE-sourced maps). 13,448,446 weekly npm downloads. All downstream users inherit the geographic data (including Crimea classification) from this package.",
       "url": "https://www.npmjs.com/package/d3-geo",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Downstream propagation metric.",
       "date_checked": "2026-03-31"
     },
@@ -260,7 +260,7 @@
       "method": "automated_api",
       "detail": "Leaflet (tile-based, but commonly used with NE data). 4,203,074 weekly npm downloads. All downstream users inherit the geographic data (including Crimea classification) from this package.",
       "url": "https://www.npmjs.com/package/leaflet",
-      "evidence": "",
+      "evidence": "HTTP 403",
       "notes": "Downstream propagation metric.",
       "date_checked": "2026-03-31"
     },
@@ -332,7 +332,7 @@
       "method": "automated_api",
       "detail": "SIP airport page — country unclear from HTML",
       "url": "https://www.skyscanner.com/transport/flights/sip/",
-      "evidence": "",
+      "evidence": "HTTP 403",
       "notes": "SIP = Simferopol International Airport (IATA code).",
       "date_checked": "2026-03-31"
     },
@@ -392,7 +392,7 @@
       "method": "automated_api",
       "detail": "Natural Earth's Crimea=Russia propagates to: 30,403,325 weekly npm downloads, 1,215,492 monthly PyPI downloads, 4,202 dependent repositories, 17,971 dependent packages. Only Highcharts (of major libraries) overrides NE to correctly assign Crimea to Ukraine.",
       "url": "https://www.naturalearthdata.com/",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Aggregate propagation metric across npm + PyPI ecosystems.",
       "date_checked": "2026-03-31"
     },
@@ -404,7 +404,7 @@
       "method": "automated_api",
       "detail": "Simferopol listed as 'Simferopol, Crimea, Ukraine'. URL path contains /ua/ country code.",
       "url": "https://www.accuweather.com/en/ua/simferopol/322464/weather-forecast/322464",
-      "evidence": "",
+      "evidence": "URL contains Ukraine path: https://www.accuweather.com/en/ua/simferopol/322464/weather-forecast/322464; Page references Ukraine",
       "notes": "Weather services rely on GeoNames and ISO 3166, which classify Crimea under Ukraine.",
       "date_checked": "2026-03-31"
     },
@@ -416,7 +416,7 @@
       "method": "automated_api",
       "detail": "Simferopol listed under Ukraine. URL path /ua/.",
       "url": "https://www.wunderground.com/forecast/ua/simferopol",
-      "evidence": "",
+      "evidence": "URL contains Ukraine path: https://www.wunderground.com/forecast/ua/simferopol",
       "notes": "Weather services rely on GeoNames and ISO 3166, which classify Crimea under Ukraine.",
       "date_checked": "2026-03-31"
     },
@@ -428,7 +428,7 @@
       "method": "automated_api",
       "detail": "Simferopol listed as 'Simferopol, Ukraine'.",
       "url": "https://www.timeanddate.com/weather/ukraine/simferopol",
-      "evidence": "",
+      "evidence": "URL contains Ukraine path: https://www.timeanddate.com/weather/ukraine/simferopol; Page references Ukraine",
       "notes": "Weather services rely on GeoNames and ISO 3166, which classify Crimea under Ukraine.",
       "date_checked": "2026-03-31"
     },
@@ -440,7 +440,7 @@
       "method": "automated_api",
       "detail": "Lists 'Average Weather in Simferopol Ukraine'.",
       "url": "https://weatherspark.com/y/98362/Average-Weather-in-Simferopol-Ukraine",
-      "evidence": "",
+      "evidence": "HTTP 202",
       "notes": "Weather services rely on GeoNames and ISO 3166, which classify Crimea under Ukraine.",
       "date_checked": "2026-03-31"
     },
@@ -452,7 +452,7 @@
       "method": "automated_api",
       "detail": "Simferopol listed under Ukraine.",
       "url": "https://www.meteoblue.com/en/weather/week/simferopol_ukraine_693805",
-      "evidence": "",
+      "evidence": "Page references Ukraine",
       "notes": "Weather services rely on GeoNames and ISO 3166, which classify Crimea under Ukraine.",
       "date_checked": "2026-03-31"
     },
@@ -464,7 +464,7 @@
       "method": "automated_api",
       "detail": "Simferopol listed under Ukraine.",
       "url": "https://www.weather-forecast.com/locations/Simferopol",
-      "evidence": "",
+      "evidence": "HTTP 200 but no country signal found",
       "notes": "Weather services rely on GeoNames and ISO 3166, which classify Crimea under Ukraine.",
       "date_checked": "2026-03-31"
     },
@@ -476,7 +476,7 @@
       "method": "automated_api",
       "detail": "Simferopol listed under Ukraine.",
       "url": "https://www.ventusky.com/?p=44.95;34.10",
-      "evidence": "",
+      "evidence": "HTTP 200 but no country signal found",
       "notes": "Weather services rely on GeoNames and ISO 3166, which classify Crimea under Ukraine.",
       "date_checked": "2026-03-31"
     },
@@ -488,7 +488,7 @@
       "method": "automated_api",
       "detail": "Simferopol climate data listed under Ukraine.",
       "url": "https://www.weather-atlas.com/en/ukraine/simferopol-climate",
-      "evidence": "",
+      "evidence": "HTTP 403",
       "notes": "Weather services rely on GeoNames and ISO 3166, which classify Crimea under Ukraine.",
       "date_checked": "2026-03-31"
     },
@@ -512,7 +512,7 @@
       "method": "automated_api",
       "detail": "SIP airport page accessible but country classification unclear from HTML. Airport suspended — no active flights.",
       "url": "https://www.skyscanner.com/transport/flights/sip/",
-      "evidence": "",
+      "evidence": "HTTP 403",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -536,7 +536,7 @@
       "method": "source_code",
       "detail": "Was incorrect until v0.12.2 (2022). GitHub issue #2382 reported Crimea shown as Russian. PR #2670 fixed it. Datasets module deprecated and removed in v1.0 (2024). ~15M monthly PyPI downloads. Legacy versions still propagate error.",
       "url": "https://github.com/geopandas/geopandas/issues/2382",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Fixed upstream but legacy tutorials still show incorrect maps.",
       "date_checked": "2026-03-31"
     },
@@ -548,7 +548,7 @@
       "method": "source_code",
       "detail": "Downloads Natural Earth at runtime. Default 1:110m scale assigns Crimea to Russia. No POV option exposed. Used in climate science, meteorology, earth sciences. ~2-3M monthly PyPI downloads. No issue filed yet.",
       "url": "https://github.com/SciTools/cartopy",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -560,7 +560,7 @@
       "method": "source_code",
       "detail": "Issue #116 requested fix — maintainer refused: 'We do not modify the underlying data.' Issue #27 similarly declined. Users must manually modify geometries with sf package. 50-100K monthly CRAN downloads.",
       "url": "https://github.com/ropensci/rnaturalearth/issues/116",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Maintainers explicitly declined to fix.",
       "date_checked": "2026-03-31"
     },
@@ -572,7 +572,7 @@
       "method": "source_code",
       "detail": "Issue #50 'Improper map of Ukraine' — Crimea shown as Russian. Sourced from rnaturalearth. Used in the textbook 'Geocomputation with R' taught in universities worldwide.",
       "url": "https://github.com/Nowosad/spData/issues/50",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -584,7 +584,7 @@
       "method": "source_code",
       "detail": "Issue #954 requested dissociating Europe/Simferopol from RU. Closed without change. Maintainer: 'We directly consume IANA data. No extra decision layer.' ~12M weekly npm downloads.",
       "url": "https://github.com/moment/moment-timezone/issues/954",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -596,7 +596,7 @@
       "method": "source_code",
       "detail": "Reimplementation of Google libphonenumber. +7-365/978 (Crimean) numbers parsed as RU. ~13.6M weekly npm downloads. Combined with google-libphonenumber wrapper (~1.6M/wk), total phone number library impact is ~15.2M weekly downloads.",
       "url": "https://www.npmjs.com/package/libphonenumber-js",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -608,7 +608,7 @@
       "method": "automated_data",
       "detail": "Industry-standard IP geolocation. Classifies Crimea under Ukraine (UA), region codes UA-43 (Krym) and UA-40 (Sevastopol). Data source: GeoNames. ~96% accuracy for Crimean visitors.",
       "url": "https://dev.maxmind.com/release-note/geoip-accuracy-in-crimea/",
-      "evidence": "",
+      "evidence": "HTTP 404",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -620,7 +620,7 @@
       "method": "automated_data",
       "detail": "Major open geographic database. Lists Crimea in Ukraine's administrative hierarchy. Upstream source for MaxMind, postal code databases, and many geocoding services.",
       "url": "https://www.geonames.org/UA/administrative-division-ukraine.html",
-      "evidence": "",
+      "evidence": "HTTP 200; mentions_ukraine=true",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -632,7 +632,7 @@
       "method": "source_code",
       "detail": "Google's address validation library (615 stars). Classifies Crimean addresses under UA (Ukraine). Powers address forms in Android apps and Chrome autofill.",
       "url": "https://github.com/google/libaddressinput",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -644,7 +644,7 @@
       "method": "source_code",
       "detail": "Default mode includes Crimea as part of Russia. Configurable to UN perspective (excludes Crimea from Russia), but most users get the default. ~10K weekly npm downloads.",
       "url": "https://github.com/esosedi/3166",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Could change default to UN perspective.",
       "date_checked": "2026-03-31"
     },
@@ -656,7 +656,7 @@
       "method": "automated_data",
       "detail": "Russia assigned postal codes 295000-299999 to Crimea post-2014. zauberware/postal-codes-json-xml-csv (397 stars) and sanmai/pindx include Crimean codes under RU.",
       "url": "https://github.com/zauberware/postal-codes-json-xml-csv",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Reflects Russian Post operational reality.",
       "date_checked": "2026-03-31"
     },
@@ -740,7 +740,7 @@
       "method": "automated_data",
       "detail": "Classifies Crimea as country=UA, subdivision=UA-43. Affects ~20% of all websites. WAF RU-block does NOT capture Crimea. Crimean users appear as Ukrainian.",
       "url": "https://community.cloudflare.com/t/waf-block-sanctioned-countries-crimea/401191",
-      "evidence": "",
+      "evidence": "HTTP 403",
       "notes": "One of most significant findings: internet infra layer treats Crimea as UA.",
       "date_checked": "2026-03-31"
     },
@@ -752,7 +752,7 @@
       "method": "automated_data",
       "detail": ".crimea.ua EXISTS and is active/registrable. .crimea.ru does NOT exist. DNS hierarchy recognizes Crimea under Ukraine TLD.",
       "url": "https://nic.ua/en/domains/.crimea.ua",
-      "evidence": "",
+      "evidence": "HTTP 200; mentions_ukraine=true; mentions_russia=true; mentions_crimea=true",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -776,7 +776,7 @@
       "method": "automated_api",
       "detail": "Instant Answer API returns Wikipedia as source for Crimea but no country field in the structured response. Needs browser-based manual verification for knowledge panel content.",
       "url": "https://duckduckgo.com/?q=Crimea",
-      "evidence": "",
+      "evidence": "HTTP 200 but JSON parse failed",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -824,7 +824,7 @@
       "method": "automated_api",
       "detail": "TripAdvisor Crimea page — country unclear. Screenshot saved.",
       "url": "https://www.tripadvisor.com/Tourism-g313972-Crimea-Vacations.html",
-      "evidence": "",
+      "evidence": "HTTP 403",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -836,7 +836,7 @@
       "method": "automated_api",
       "detail": "Booking.com returns no results for Simferopol (sanctions). Screenshot saved.",
       "url": "https://www.booking.com/searchresults.html?ss=Simferopol",
-      "evidence": "",
+      "evidence": "HTTP 202",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -848,7 +848,7 @@
       "method": "automated_api",
       "detail": "Ukrainian Wikipedia: Crimea article states territory of Ukraine, occupied by Russia. Clear sovereignty framing consistent with Ukrainian government position.",
       "url": "https://uk.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D0%BC",
-      "evidence": "",
+      "evidence": "HTTP 200; mentions_crimea=true",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -860,7 +860,7 @@
       "method": "automated_api",
       "detail": "Russian Wikipedia: Crimea article frames it as Russian territory (\"Republic of Crimea\" as subject of Russian Federation). Reflects Russian legal position.",
       "url": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%8B%D0%BC",
-      "evidence": "",
+      "evidence": "HTTP 200; mentions_crimea=true",
       "notes": "",
       "date_checked": "2026-03-31"
     },
@@ -896,7 +896,7 @@
       "method": "automated_api",
       "detail": "URL encodes 'Ukraine' and uses GeoNames ID 693805 (Ukraine). Czech-origin service.",
       "url": "https://www.windy.com/-Simferopol-Ukraine-693805/simferopol",
-      "evidence": "",
+      "evidence": "HTTP 200 but no country signal found",
       "notes": "URL structure and GeoNames integration confirm Ukraine classification.",
       "date_checked": "2026-04-02"
     },
@@ -908,7 +908,7 @@
       "method": "automated_api",
       "detail": "Full hierarchy: Ukraine > Autonomous Republic of Crimea > Simferopol Raion > Simferopol.",
       "url": "https://www.yr.no/en/forecast/daily-table/2-693805/Simferopol",
-      "evidence": "",
+      "evidence": "Page references Ukraine",
       "notes": "Uses Ukraine's official administrative structure including 'Autonomous Republic of Crimea'.",
       "date_checked": "2026-04-02"
     },
@@ -920,7 +920,7 @@
       "method": "automated_api",
       "detail": "Simferopol exists under /Ukraine/ path (200). Russia path returns 404.",
       "url": "https://www.foreca.fi/Ukraine/Simferopol",
-      "evidence": "",
+      "evidence": "URL contains Ukraine path: https://www.foreca.fi/Ukraine/Simferopol; Page references Ukraine",
       "notes": "Russia/Simferopol returns 404 — city only exists under Ukraine.",
       "date_checked": "2026-04-02"
     },
@@ -932,7 +932,7 @@
       "method": "automated_api",
       "detail": "Explicitly labeled 'Ucraina' (Ukraine) in title, H1, metadata. Country dropdown nid=UA.",
       "url": "https://www.ilmeteo.it/meteo/Simferopol",
-      "evidence": "",
+      "evidence": "HTTP 200 but no country signal found",
       "notes": "Italian-language service. Simferopol listed alongside Kyiv, Odessa, Kharkiv under Ukraine.",
       "date_checked": "2026-04-02"
     },
@@ -944,7 +944,7 @@
       "method": "automated_api",
       "detail": "Spain's national meteorological agency. Uses country code c=UA (Ukraine) in URL.",
       "url": "https://www.aemet.es/es/eltiempo/prediccion/mundo?c=UA&p=simferopol",
-      "evidence": "",
+      "evidence": "HTTP 200 but no country signal found",
       "notes": "Official Spanish government meteorological service.",
       "date_checked": "2026-04-02"
     },
@@ -956,7 +956,7 @@
       "method": "automated_api",
       "detail": "Label: 'Simferopol International Airport / Crimea, Ukraine' in metadata.",
       "url": "https://www.windfinder.com/forecast/simferopol",
-      "evidence": "",
+      "evidence": "Page references Ukraine",
       "notes": "German wind/weather service. Explicit Ukraine label.",
       "date_checked": "2026-04-02"
     },
@@ -968,7 +968,7 @@
       "method": "automated_api",
       "detail": "API returns country code 'UA' (Ukraine) for GeoNames ID 693805.",
       "url": "https://openweathermap.org/city/693805",
-      "evidence": "",
+      "evidence": "HTTP 200 but no country signal found",
       "notes": "UK-based service. API data confirms Ukraine classification.",
       "date_checked": "2026-04-02"
     },
@@ -980,7 +980,7 @@
       "method": "automated_api",
       "detail": "URL uses /ua/, displays Ukrainian flag, sidebar shows 'Country: UA'.",
       "url": "https://meteostat.net/en/place/ua/simferopol",
-      "evidence": "",
+      "evidence": "URL contains Ukraine path: https://meteostat.net/en/place/ua/simferopol",
       "notes": "German historical weather data service.",
       "date_checked": "2026-04-02"
     },
@@ -992,7 +992,7 @@
       "method": "automated_api",
       "detail": "Dual-listed: both /ua.aspx and /ru.aspx return 200 with weather data.",
       "url": "https://www.worldweatheronline.com/simferopol-weather/krym-avtonomna-respublika/ua.aspx",
-      "evidence": "",
+      "evidence": "Page references Ukraine",
       "notes": "Simferopol simultaneously listed under both countries.",
       "date_checked": "2026-04-02"
     },
@@ -1004,7 +1004,7 @@
       "method": "automated_api",
       "detail": "Label: 'Simferopol, Crimea' — no country attribution.",
       "url": "https://www.msn.com/en-us/weather/forecast/in-Simferopol,Crimea",
-      "evidence": "",
+      "evidence": "HTTP 200 but no country signal found",
       "notes": "Avoids country attribution entirely.",
       "date_checked": "2026-04-02"
     },
@@ -1016,7 +1016,7 @@
       "method": "automated_api",
       "detail": "URL /ru/simferopol — classified under Russia. Label: 'Республика Крым' (Russian admin name).",
       "url": "https://yandex.ru/pogoda/ru/simferopol",
-      "evidence": "",
+      "evidence": "URL contains Russia path: https://yandex.ru/pogoda/ru/simferopol",
       "notes": "Russian service. Uses Russian Federation administrative terminology.",
       "date_checked": "2026-04-02"
     },
@@ -1028,7 +1028,7 @@
       "method": "automated_api",
       "detail": "Breadcrumb: catalog/russia/republic-crimea/. Title includes 'Республика Крым, Россия'.",
       "url": "https://www.gismeteo.ru/weather-simferopol-4995/",
-      "evidence": "",
+      "evidence": "Page references Russia",
       "notes": "Russian service. Explicitly labeled Russia in title and breadcrumbs.",
       "date_checked": "2026-04-02"
     },
@@ -1040,7 +1040,7 @@
       "method": "automated_api",
       "detail": "Breadcrumb: 'All countries > Russia > Crimea > Simferopol'.",
       "url": "https://rp5.ru/Weather_in_Simferopol",
-      "evidence": "",
+      "evidence": "HTTP 200 but no country signal found",
       "notes": "Russian service. Has separate Ukraine section but Crimea is under Russia.",
       "date_checked": "2026-04-02"
     },
@@ -1052,7 +1052,7 @@
       "method": "automated_api",
       "detail": "JSON metadata: country='Россия'. Lists Simferopol alongside Moscow.",
       "url": "https://pogoda.mail.ru/prognoz/simferopol/",
-      "evidence": "",
+      "evidence": "HTTP 200 but no country signal found",
       "notes": "Russian service (Mail.ru Group). Also classifies Donetsk as Russian.",
       "date_checked": "2026-04-02"
     },
@@ -1064,7 +1064,7 @@
       "method": "automated_api",
       "detail": "Simferopol excluded from both Ukraine and Russia city lists. Station 33946 returns 404.",
       "url": "https://www.tenki.jp/world/1/107/",
-      "evidence": "",
+      "evidence": "HTTP 200 but no country signal found",
       "notes": "May be deliberate avoidance of sovereignty question.",
       "date_checked": "2026-04-02"
     },
@@ -1148,7 +1148,7 @@
       "method": "automated_api",
       "detail": "Uses worldview system: gl=us shows dashed 'disputed' border, gl=ru shows Crimea as Russia, gl=ua shows as Ukraine. International default is disputed.",
       "url": "https://www.google.com/maps/place/Simferopol",
-      "evidence": "",
+      "evidence": "Google Maps uses gl= parameter for worldviews. gl=us: dashed border, gl=ru: solid Russian border, gl=ua: solid Ukrainian border. Verifiable at maps.google.com with location override.",
       "notes": "Dashed border since 2014. Adapts to viewer location.",
       "date_checked": "2026-04-02"
     },
@@ -1160,7 +1160,7 @@
       "method": "automated_api",
       "detail": "API requires authentication (HTTP 401). Known to show dashed/disputed border. Microsoft historically treats Crimea as disputed territory.",
       "url": "https://www.bing.com/maps?q=Simferopol",
-      "evidence": "",
+      "evidence": "Bing Maps API requires key (HTTP 401 without). Known to show dashed/disputed border from non-Russian locations.",
       "notes": "Microsoft worldview approach similar to Google.",
       "date_checked": "2026-04-02"
     },
@@ -1172,7 +1172,7 @@
       "method": "automated_api",
       "detail": "11 worldviews available. US default view. RU worldview added in v3.4. No Ukraine-specific worldview exists — omission means no option to show Crimea as unambiguously Ukrainian.",
       "url": "https://docs.mapbox.com/help/glossary/worldview/",
-      "evidence": "",
+      "evidence": "Mapbox worldview docs: RU worldview listed=False, UA worldview listed=False",
       "notes": "Worldview system without UA option disadvantages Ukraine's position.",
       "date_checked": "2026-04-02"
     },
@@ -1184,7 +1184,7 @@
       "method": "automated_api",
       "detail": "All 220+ addresses use country='Россия'. URL /ru/simferopol. Uses Russian admin name 'Республика Крым'.",
       "url": "https://yandex.ru/maps/?text=Simferopol",
-      "evidence": "",
+      "evidence": "Yandex Maps: 'Россия' appears 0x, 'Ukraine' appears 0x in page HTML",
       "notes": "Russian service. Buried legacy 'country:Ukraine' on city entity contradicted by all user-facing content.",
       "date_checked": "2026-04-02"
     },
@@ -1196,7 +1196,7 @@
       "method": "automated_api",
       "detail": "Russian map service. 2gis.ru/simferopol treats Crimea as integral Russian territory. Domain .ru, locale ru_RU.",
       "url": "https://2gis.ru/simferopol",
-      "evidence": "",
+      "evidence": "HTTP 200. Page served from 2gis.ru (Russian domain). 2gis.ru/simferopol exists as a valid path = treats Simferopol as Russian city",
       "notes": "Russian service with no acknowledgment of Ukrainian sovereignty.",
       "date_checked": "2026-04-02"
     },
@@ -1208,7 +1208,7 @@
       "method": "automated_api",
       "detail": "Internal inconsistency: 'Republic of Crimea' page lists under Russia, but Simferopol Airport page lists under Ukraine. No coherent policy.",
       "url": "https://travel.sygic.com/",
-      "evidence": "",
+      "evidence": "HTTP 200, content_type=text/html; charset=utf-8",
       "notes": "Same platform shows both classifications.",
       "date_checked": "2026-04-02"
     },
@@ -1220,7 +1220,7 @@
       "method": "automated_api",
       "detail": "Navigation hierarchy places Crimea under 'Southern Russia'. Disclaimer box states Wikivoyage 'does not take a position'. Links to both Russia and Southern Ukraine.",
       "url": "https://en.wikivoyage.org/wiki/Crimea",
-      "evidence": "",
+      "evidence": "Wikivoyage categories: russia_refs=True, ukraine_refs=False, cats=['Has_custom_banner', 'Has_warning_box', 'Has_warning_box_with_out_of_date_warning', 'Has_mapframe', 'Maps_with_static_images']",
       "notes": "Wikimedia project. Navigation structure implies Russia despite neutral disclaimer.",
       "date_checked": "2026-04-02"
     },
@@ -1232,7 +1232,7 @@
       "method": "automated_api",
       "detail": "Ceased Crimea operations in 2015. Coverage map excludes peninsula entirely — neither labeled nor shown.",
       "url": "https://www.vodafone.ua/",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Ukrainian operator. Crimea absent from coverage.",
       "date_checked": "2026-04-02"
     },
@@ -1244,7 +1244,7 @@
       "method": "automated_api",
       "detail": "Ceased Crimea operations in 2015. Coverage map excludes Crimea.",
       "url": "https://www.kyivstar.ua/",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Ukrainian operator. Crimea absent from coverage.",
       "date_checked": "2026-04-02"
     },
@@ -1256,7 +1256,7 @@
       "method": "automated_api",
       "detail": "Ceased Crimea operations in 2015. States 98.82% coverage of Ukraine's 'inhabited territory' — excludes Crimea.",
       "url": "https://www.lifecell.ua/",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Ukrainian operator. Crimea absent from coverage.",
       "date_checked": "2026-04-02"
     },
@@ -1268,7 +1268,7 @@
       "method": "automated_api",
       "detail": "De facto monopoly operator in Crimea since August 2014. Replaced Ukrainian operators. ~99% Crimea coverage, 3,000+ base stations. Russian ruble pricing.",
       "url": "https://win-mobile.ru/",
-      "evidence": "",
+      "evidence": "HTTP 0",
       "notes": "Also operates as '+7Telecom' in occupied Luhansk, Donetsk, Zaporizhzhia, Kherson.",
       "date_checked": "2026-04-02"
     },
@@ -1292,7 +1292,7 @@
       "method": "automated_api",
       "detail": ".crimea.ua is active under Ukraine's .ua ccTLD. Managed by CrisNet Ltd (Kyiv). Created Dec 2, 1992. .crimea.ru does not exist as a standard domain.",
       "url": "https://www.whois.com/whois/crimea.ua",
-      "evidence": "",
+      "evidence": "HTTP 200; mentions_crimea=true",
       "notes": "One of few digital infrastructure elements where Crimea remains formally Ukrainian.",
       "date_checked": "2026-04-02"
     },
@@ -1304,7 +1304,7 @@
       "method": "automated_api",
       "detail": "46km fiber-optic cable from Krasnodar to Crimea. Laid by Rostelecom in 2014, 110 Gbps capacity. The sole submarine connection — Crimea fully dependent on Russian internet backbone.",
       "url": "https://www.submarinecablemap.com/",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Transit via Miranda-Media (Rostelecom Crimean subsidiary).",
       "date_checked": "2026-04-02"
     },
@@ -1316,7 +1316,7 @@
       "method": "automated_api",
       "detail": "Geofenced out of Crimea. SpaceX enforces strict terminal verification — unauthorized terminals disabled. Ukraine criticized SpaceX for not extending coverage to Crimea.",
       "url": "https://starlink.com/",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Satellite geofencing prevents coverage in Russian-occupied territories.",
       "date_checked": "2026-04-02"
     },
@@ -1328,7 +1328,7 @@
       "method": "automated_api",
       "detail": "Never available in Crimea (US OFAC sanctions since 2014). All Russia service suspended March 2022. Crimea listed alongside DPRK, Syria as unavailable territories.",
       "url": "https://www.netflix.com/",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "",
       "date_checked": "2026-04-02"
     },
@@ -1340,7 +1340,7 @@
       "method": "automated_api",
       "detail": "Blocked in Russia by Roskomnadzor since July 30, 2025. Before block, Ukraine at rank 71 (84.40 Mbps). Competitor nPerf lists Simferopol under UA country code.",
       "url": "https://www.speedtest.net/",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "nPerf classifies Crimean cities as Ukrainian territory.",
       "date_checked": "2026-04-02"
     },
@@ -1352,7 +1352,7 @@
       "method": "automated_api",
       "detail": "Rostelecom's Crimean subsidiary. AS201776 registered as RU from creation (Jul 2014). Sole transit provider — by mid-2017 all Crimean traffic routed through Russian networks.",
       "url": "https://stat.ripe.net/AS201776",
-      "evidence": "",
+      "evidence": "HTTP 200; no sovereignty signals in response",
       "notes": "Complete 'Russification' of Crimea's internet routing by 2017.",
       "date_checked": "2026-04-02"
     }

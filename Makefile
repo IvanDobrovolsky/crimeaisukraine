@@ -64,6 +64,9 @@ audit-gdelt-quick: ## Quick GDELT framing scan (last 3 months)
 audit-academic: ## Scan academic papers via OpenAlex + CrossRef (2010-present)
 	$(PYTHON) $(SCRIPTS)/scan_academic.py --start 2010
 
+verify: ## Re-verify all findings and fill evidence fields
+	$(PYTHON) $(SCRIPTS)/verify_all.py
+
 audit-api: audit-platforms audit-map-services audit-ip audit-media audit-trends ## Run all API-based checks
 
 audit-framing: audit-gdelt-framing audit-academic ## Run all sovereignty framing scans
