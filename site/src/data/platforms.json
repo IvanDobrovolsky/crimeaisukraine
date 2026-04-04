@@ -1355,6 +1355,42 @@
       "evidence": "AS201776 registered as RU from creation Jul 2014. By mid-2017 all Crimean traffic routed via Russian networks. https://stat.ripe.net/AS201776",
       "notes": "Complete 'Russification' of Crimea's internet routing by 2017.",
       "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "GADM v4.1",
+      "category": "open_source",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_data",
+      "detail": "Crimea listed under Ukraine (UKR) ADM1. Regions found: Crimea, Sevastopol'. Total 28 admin regions.",
+      "url": "https://gadm.org/maps/UKR/crimea.html",
+      "evidence": "Downloaded gadm41_UKR_1.json.zip. Crimea=True, Sevastopol=True. Regions: ['Crimea', \"Sevastopol'\"]",
+      "notes": "De jure boundaries. Alternative to Natural Earth that gets Crimea right.",
+      "date_checked": "2026-04-04"
+    },
+    {
+      "platform": "geoBoundaries",
+      "category": "open_source",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_data",
+      "detail": "Ukraine ADM1 includes Crimea. 27 regions. API-accessible at geoboundaries.org.",
+      "url": "https://www.geoboundaries.org/",
+      "evidence": "API: gbOpen/UKR/ADM1. Crimea=True. Regions: ['Autonomous Republic of Crimea', 'Sevastopol']",
+      "notes": "Open source alternative to Natural Earth. Uses de jure boundaries.",
+      "date_checked": "2026-04-04"
+    },
+    {
+      "platform": "Geofabrik (OSM extracts)",
+      "category": "open_source",
+      "status": "ambiguous",
+      "status_icon": "⚠️",
+      "method": "automated_data",
+      "detail": "Crimea included in BOTH Ukraine and Russia extracts. Geofabrik states 'inclusion does not constitute a political statement.' C++ routing engines (OSRM, Valhalla) inherit whichever extract they build from.",
+      "url": "https://download.geofabrik.de/europe/ukraine.html",
+      "evidence": "Ukraine extract mentions Crimea: True. Russia extract mentions Crimea: True (as 'Crimean Federal District').",
+      "notes": "Dual distribution means the sovereignty classification depends on which extract a developer downloads.",
+      "date_checked": "2026-04-04"
     }
   ],
   "summary": {
