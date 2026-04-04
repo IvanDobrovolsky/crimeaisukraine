@@ -100,6 +100,9 @@ all: audit-core audit-api export site ## Run full audit pipeline and build site
 export: ## Export findings to CSV and sync to site JSON
 	$(PYTHON) $(SCRIPTS)/export_findings.py
 
+findings-doc: ## Regenerate docs/FINDINGS.md from platforms.json
+	$(PYTHON) $(SCRIPTS)/generate_findings_doc.py
+
 manifest: ## Regenerate manifest.json (single source of truth for all site numbers)
 	$(PYTHON) $(SCRIPTS)/generate_manifest.py
 
