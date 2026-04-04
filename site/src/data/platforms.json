@@ -781,18 +781,6 @@
       "date_checked": "2026-03-31"
     },
     {
-      "platform": "Transfermarkt",
-      "category": "sports",
-      "status": "correct",
-      "status_icon": "✅",
-      "method": "automated_api",
-      "detail": "Simferopol-based clubs listed under Ukrainian football hierarchy. Crimean player searches return Ukraine references.",
-      "url": "https://www.transfermarkt.com/",
-      "evidence": "",
-      "notes": "",
-      "date_checked": "2026-03-31"
-    },
-    {
       "platform": "Bing Search (knowledge panel)",
       "category": "search_engine",
       "status": "ambiguous",
