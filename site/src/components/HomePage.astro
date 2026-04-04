@@ -1279,7 +1279,7 @@ function drawChart(id, data, events) {
   (events||[]).forEach(function(ey){var idx=-1;pts.forEach(function(pt,i){if(pt.y===ey)idx=i;});if(idx>=0){var x=p.l+(idx/n)*cw;ctx.strokeStyle='#ffd700';ctx.lineWidth=0.8;ctx.setLineDash([4,3]);ctx.beginPath();ctx.moveTo(x,p.t);ctx.lineTo(x,p.t+ch);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#ffd700';ctx.font='8px sans-serif';ctx.fillText(ey,x+2,p.t+10);}});
   // draw line
   function line(key,color,fill){ctx.beginPath();pts.forEach(function(pt,i){var x=p.l+(i/n)*cw;var y=p.t+ch*(1-pt[key]/mx);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});var lx=p.l+cw;ctx.lineTo(lx,p.t+ch);ctx.lineTo(p.l,p.t+ch);ctx.closePath();ctx.fillStyle=fill;ctx.fill();ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=2;pts.forEach(function(pt,i){var x=p.l+(i/n)*cw;var y=p.t+ch*(1-pt[key]/mx);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.stroke();pts.forEach(function(pt,i){var x=p.l+(i/n)*cw;var y=p.t+ch*(1-pt[key]/mx);ctx.beginPath();ctx.arc(x,y,2.5,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();});}
-  line('ua','#0057b7','rgba(0,87,183,0.08)');
+  line('ua','#22c55e','rgba(34,197,94,0.08)');
   line('ru','#ef4444','rgba(239,68,68,0.08)');
 }
 setTimeout(function(){drawChart('media-chart',gdeltByYear,['2022']);drawChart('academic-chart',academic.by_year,['2014','2022']);},100);
