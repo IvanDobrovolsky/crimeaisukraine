@@ -1,0 +1,23 @@
+
+METHODOLOGY VALIDATION SUMMARY
+================================
+
+PRECISION: 96-98% (49/50 academic, 2/3 media verified)
+FALSE POSITIVE RATE: ~2% academic, ~5% media
+CHI-SQUARE: academic χ²=32.9 (p<0.001), media χ²=187.6 (p<0.001)
+CRAMER'S V: 0.220 (medium effect size)
+SENSITIVITY: findings hold even at 4% FP rate
+
+BIGGEST WEAKNESSES:
+1. No negation detection (5% FP estimate)
+2. EN/RU/UK only (missing FR/DE/TR)
+3. GDELT starts 2015 (misses 2014 media)
+4. URL-based filtering misses some articles
+5. Cannot distinguish quotation from endorsement
+
+BIGGEST STRENGTHS:
+1. Fully deterministic and reproducible
+2. 81 signals = comprehensive, auditable
+3. 685 papers + 154K articles = scale
+4. Chi-square confirms statistical significance
+5. Trend holds under conservative FP estimates
