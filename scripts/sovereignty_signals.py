@@ -33,8 +33,8 @@ EN_UKRAINE = [
     (r'UA-43', 1.5, 'en_admin_code'),
 
     # Framing language — correct international framing
-    (r'annex(?:ed|ation)\s+(?:of\s+)?crimea', 1.0, 'en_framing'),
-    (r'illegal(?:ly)?\s+annex', 1.0, 'en_framing'),
+    (r'annex(?:ed|ation)\s+(?:of\s+)?crimea', 2.0, 'en_framing'),
+    (r'illegal(?:ly)?\s+annex', 2.0, 'en_framing'),
     (r'occupied?\s+crimea', 1.0, 'en_framing'),
     (r'illegal(?:ly)?\s+occupi', 1.0, 'en_framing'),
     (r'crimea\s+(?:is|belongs?\s+to)\s+ukraine', 2.0, 'en_framing'),
@@ -85,8 +85,8 @@ RU_UKRAINE = [
     (r'автономна\s+республ[іи]ка?\s+крим', 1.5, 'ru_admin_name'),
 
     # Framing
-    (r'аннекс[ия]\w*\s+крым', 1.0, 'ru_framing'),
-    (r'оккупац[ия]\w*\s+крым', 1.0, 'ru_framing'),
+    (r'аннекс[ия]\w*\s+крым', 2.0, 'ru_framing'),
+    (r'оккупац[ия]\w*\s+крым', 1.5, 'ru_framing'),
     (r'оккупированн\w+\s+крым', 1.0, 'ru_framing'),
     (r'незаконн\w+\s+(?:аннекс|оккупац|присоединени)', 1.0, 'ru_framing'),
     (r'крым\s+—?\s+(?:это|е)\s+украин', 2.0, 'ru_framing'),
@@ -127,8 +127,8 @@ UK_UKRAINE = [
     (r'автономна\s+республіка\s+крим', 1.5, 'uk_admin_name'),
 
     # Framing
-    (r'анекс[ія]\w*\s+крим', 1.0, 'uk_framing'),
-    (r'окупац[ія]\w*\s+крим', 1.0, 'uk_framing'),
+    (r'анекс[ія]\w*\s+крим', 2.0, 'uk_framing'),
+    (r'окупац[ія]\w*\s+крим', 1.5, 'uk_framing'),
     (r'окупован\w+\s+крим', 1.0, 'uk_framing'),
     (r'тимчасово\s+окупован\w+', 1.5, 'uk_framing'),
     (r'незаконн\w+\s+(?:анекс|окупац|приєднання)', 1.0, 'uk_framing'),

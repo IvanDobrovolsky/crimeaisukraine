@@ -1,13 +1,13 @@
 {
-  "date": "2026-04-04T21:22:17.211097+00:00",
-  "total_queue": 10,
-  "total_verified": 10,
+  "date": "2026-04-05T07:31:40.629041+00:00",
+  "total_queue": 8474,
+  "total_verified": 4725,
   "stats": {
-    "endorses": 8,
-    "reports": 1,
-    "unclear": 1,
-    "error": 0,
-    "fetch_failed": 0
+    "endorses": 2859,
+    "reports": 1759,
+    "unclear": 107,
+    "error": 3,
+    "fetch_failed": 342
   },
-  "precision_estimate": 80.0
+  "precision_estimate": 60.5
 }
