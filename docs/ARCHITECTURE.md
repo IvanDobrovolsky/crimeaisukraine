@@ -7,9 +7,10 @@
 graph TB
     subgraph Collection["1. Collection"]
         BQ["BigQuery<br/>GDELT 372K URLs"]
-        OA["OpenAlex API<br/>986 papers"]
+        OA["OpenAlex API<br/>988 papers"]
         CR["CrossRef API<br/>dedup"]
-        PA["Platform APIs<br/>113 services"]
+        PA["Platform APIs<br/>116 services"]
+        WK["Wikipedia/Wikidata<br/>30 langs + 261 people"]
     end
 
     subgraph Processing["2. Processing"]
@@ -183,6 +184,42 @@ graph LR
 ```
 
 **Key finding:** "Republic of Crimea" in DOI-indexed papers accelerating: 10% (2019) → 57% (2025)
+
+---
+
+### Wikipedia & Wikidata (17 terms × 30 languages + 261 people)
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+graph LR
+    A["17 Crimean<br/>terms"] --> B["Wikipedia REST API<br/>30 languages"]
+    B --> C["Extract<br/>description field"]
+    C --> D{"Country in<br/>description?"}
+    D -->|"Ukraine/Україна/etc"| E["✅ Ukraine"]
+    D -->|"Republic of Crimea"| F["❌ Russia"]
+    D -->|"city in Crimea"| G["⚠️ Erasure"]
+
+    H["Wikidata<br/>SPARQL"] --> I["P17 country<br/>property"]
+    I --> J{"UA / RU / both<br/>/ missing?"}
+
+    H --> K["P19 birthplace<br/>+ P27 citizenship"]
+    K --> L["261 Crimean-born<br/>people"]
+    L --> M["69% Russian<br/>31% Ukrainian"]
+```
+
+**Three checks per term:**
+1. **Wikipedia description** — what Google shows as search preview. Classified by country mention and admin name usage.
+2. **Wikidata P17** — structured country property. Unambiguous, machine-readable.
+3. **Wikidata people** — citizenship (P27) of people born in Crimea (P19).
+
+**Script:** `scripts/check_wikipedia.py`
+
+**Key findings:**
+- English Wikipedia: 11/14 cities say "city in Crimea" — no country (**erasure by omission**)
+- German Wikipedia: 6/6 say "Ukraine" (**correct**)
+- Chinese Wikipedia: "Republic of Crimea" (**Russian admin name**)
+- Wikidata: 11/17 entities have NO country property (**structural gap**)
+- Wikidata people: 69% Russian citizenship, 31% Ukrainian (N=261)
 
 ---
 

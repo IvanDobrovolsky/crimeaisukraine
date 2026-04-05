@@ -6389,5 +6389,93 @@
       }
     ],
     "violators_total": 440
+  },
+  "wikipedia": {
+    "total_entries": 91,
+    "by_language": {
+      "English": {
+        "ukraine": 3,
+        "russia": 0,
+        "ambiguous": 11,
+        "disputed": 0
+      },
+      "German": {
+        "ukraine": 6,
+        "russia": 0,
+        "ambiguous": 0,
+        "disputed": 0
+      },
+      "Italian": {
+        "ukraine": 1,
+        "russia": 0,
+        "ambiguous": 7,
+        "disputed": 0
+      },
+      "Spanish": {
+        "ukraine": 2,
+        "russia": 0,
+        "ambiguous": 10,
+        "disputed": 0
+      },
+      "French": {
+        "ukraine": 1,
+        "russia": 0,
+        "ambiguous": 0,
+        "disputed": 0
+      },
+      "Serbian": {
+        "ukraine": 0,
+        "russia": 0,
+        "ambiguous": 2,
+        "disputed": 0
+      },
+      "Indonesian": {
+        "ukraine": 5,
+        "russia": 0,
+        "ambiguous": 0,
+        "disputed": 0
+      },
+      "Romanian": {
+        "ukraine": 1,
+        "russia": 0,
+        "ambiguous": 0,
+        "disputed": 0
+      },
+      "Chinese": {
+        "ukraine": 0,
+        "russia": 1,
+        "ambiguous": 0,
+        "disputed": 0
+      },
+      "Persian (Iran)": {
+        "ukraine": 1,
+        "russia": 0,
+        "ambiguous": 0,
+        "disputed": 0
+      }
+    },
+    "russia_framing": [
+      {
+        "term": "Simferopol",
+        "language": "zh",
+        "language_name": "Chinese",
+        "description": "克里米亚共和国的首都",
+        "description_english": "Capital of the Republic of Crimea (Russian admin name)",
+        "label": "russia",
+        "signal": "uses Republic of Crimea (Russian admin name, no Autonomous)",
+        "url": "https://zh.wikipedia.org/wiki/辛菲罗波尔"
+      }
+    ],
+    "ukraine_count": 20,
+    "russia_count": 1,
+    "ambiguous_count": 30
+  },
+  "wikidata_people": {
+    "total": 261,
+    "ua_only": 44,
+    "ru_only": 96,
+    "both": 13,
+    "neither": 108,
+    "pct_ru": 69
   }
 }
