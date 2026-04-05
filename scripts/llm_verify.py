@@ -102,22 +102,26 @@ Then one sentence explaining why."""
         return {"verdict": "error", "explanation": str(e)}
 
 
-def verify_academic_with_llm(title: str, signals: list, journal: str, api_key: str) -> dict:
-    """Verify academic paper — no need to fetch, use title + signals."""
+def verify_academic_with_llm(title: str, signals: list, journal: str, api_key: str, abstract: str = "") -> dict:
+    """Verify academic paper using title + abstract + signals."""
     signals_str = ", ".join(signals[:3])
+
+    abstract_section = ""
+    if abstract:
+        abstract_section = f"\nAbstract (excerpt): {abstract[:800]}\n"
 
     prompt = f"""Analyze this academic paper for Crimea sovereignty framing.
 
 Title: {title}
 Journal: {journal}
 Detected signals: {signals_str}
-
-Question: Does this paper ENDORSE or NORMALIZE Crimea as Russian territory (e.g., uses "Republic of Crimea" as a normal location label, lists institution in "Russia, Crimea"), or is it ANALYZING / CRITICIZING Russian claims?
+{abstract_section}
+Question: Does this paper ENDORSE or NORMALIZE Crimea as Russian territory (e.g., uses "Republic of Crimea" as a normal location label, describes research conducted "in the Republic of Crimea, Russia", lists institution in "Russia, Crimea"), or is it ANALYZING / CRITICIZING Russian claims about Crimea?
 
 Respond with EXACTLY one of:
-- ENDORSES: Uses Russian administrative terminology as default location label without qualification.
-- ANALYZES: Discusses annexation/occupation critically or academically.
-- UNCLEAR: Cannot determine from title alone.
+- ENDORSES: Uses Russian administrative terminology as default location label or treats Crimea as Russian territory without qualification.
+- ANALYZES: Discusses annexation/occupation critically or academically. Uses "Republic of Crimea" only when quoting or analyzing Russian claims.
+- UNCLEAR: Cannot determine.
 
 Then one sentence explaining why."""
 
@@ -151,7 +155,7 @@ def load_done(output_path: str) -> set:
     done = set()
     p = Path(output_path)
     if p.exists():
-        with open(p) as f:
+        with open(p, encoding="utf-8", errors="replace") as f:
             for line in f:
                 if line.strip():
                     try:
@@ -215,7 +219,8 @@ def main():
                 article.get('title', ''),
                 article.get('signals', []),
                 article.get('domain', ''),
-                api_key
+                api_key,
+                article.get('abstract', '')
             )
         else:
             # Fetch article text
