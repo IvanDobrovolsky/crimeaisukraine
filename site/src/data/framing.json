@@ -4640,7 +4640,71 @@
     "expanded_russia": 2445,
     "combined_classified": 103735,
     "combined_ukraine": 47923,
-    "combined_russia": 7639
+    "combined_russia": 7639,
+    "by_year_corrected": {
+      "2015": {
+        "ukraine": 2504,
+        "russia": 1199,
+        "disputed": 27
+      },
+      "2016": {
+        "ukraine": 3699,
+        "russia": 280,
+        "disputed": 39
+      },
+      "2017": {
+        "ukraine": 2595,
+        "russia": 162,
+        "disputed": 37
+      },
+      "2018": {
+        "ukraine": 5140,
+        "russia": 216,
+        "disputed": 106
+      },
+      "2019": {
+        "ukraine": 3289,
+        "russia": 161,
+        "disputed": 37
+      },
+      "2020": {
+        "ukraine": 1983,
+        "russia": 56,
+        "disputed": 6
+      },
+      "2021": {
+        "ukraine": 2609,
+        "russia": 91,
+        "disputed": 6
+      },
+      "2022": {
+        "ukraine": 2609,
+        "russia": 251,
+        "disputed": 32
+      },
+      "2023": {
+        "ukraine": 5893,
+        "russia": 258,
+        "disputed": 45
+      },
+      "2024": {
+        "ukraine": 1649,
+        "russia": 61,
+        "disputed": 6
+      },
+      "2025": {
+        "ukraine": 1118,
+        "russia": 126,
+        "disputed": 16
+      },
+      "2026": {
+        "ukraine": 24,
+        "russia": 7,
+        "disputed": 0
+      }
+    },
+    "llm_correction_factor": 0.552,
+    "corrected_russia": 2867
   },
   "academic": {
     "total_papers": 988,
