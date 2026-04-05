@@ -373,7 +373,7 @@ const propagation = [
     <!-- Line chart -->
     <div class="mb-6">
       <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? 'Україна vs Росія vs Спірне (кількість статей, LLM-скориговано)' : 'Ukraine vs Russia vs Disputed framing (article count, LLM-corrected)'}</div>
-      <div class="relative" style="height: 200px;">
+      <div class="relative" style="height: 320px;">
         <canvas id="media-chart" class="w-full h-full"></canvas>
       </div>
       <div class="flex gap-4 mt-2 text-xs text-[#94a3b8]">
@@ -399,24 +399,31 @@ const propagation = [
 <section id="academic-framing" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingAcademicTitle} — {(academic.total_papers || 988).toLocaleString()} {lang === 'uk' ? 'робіт' : 'Papers'}</h2>
-    <p class="text-[#94a3b8] mb-6">{lang === 'uk' ? 'OpenAlex, 2010-2026. Усі з DOI — постійно індексовані в глобальному академічному реєстрі.' : 'OpenAlex, 2010–2026. All with DOIs — permanently indexed in the global academic record.'}</p>
+    <p class="text-[#94a3b8] mb-6">{lang === 'uk'
+      ? 'OpenAlex, 2010-2026. 5,151 робіт з сигналами суверенітету, верифіковані LLM.'
+      : 'OpenAlex, 2010–2026. 5,151 papers with sovereignty signals, LLM-verified.'
+    }</p>
 
     <!-- Stats row -->
     <div class="flex gap-3 mb-6">
       <div class="flex-1 text-center p-3 rounded-lg bg-[#22c55e]/10 border border-[#22c55e]/20">
-        <div class="text-2xl font-bold text-[#22c55e]">{academic.ukraine}</div>
-        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Україна' : 'Ukraine'}</div>
+        <div class="text-2xl font-bold text-[#22c55e]">{(academic.ukraine_llm || academic.ukraine || 0).toLocaleString()}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Україна (LLM)' : 'Ukraine (LLM)'}</div>
       </div>
       <div class="flex-1 text-center p-3 rounded-lg bg-[#ef4444]/10 border border-[#ef4444]/20">
-        <div class="text-2xl font-bold text-[#ef4444]">{academic.russia}</div>
-        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Росія' : 'Russia'}</div>
+        <div class="text-2xl font-bold text-[#ef4444]">{(academic.russia_llm || academic.russia || 0).toLocaleString()}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Росія (LLM)' : 'Russia (LLM)'}</div>
+      </div>
+      <div class="flex-1 text-center p-3 rounded-lg bg-[#64748b]/10 border border-[#64748b]/20">
+        <div class="text-2xl font-bold text-[#94a3b8]">{(academic.analyzes || 0) + (academic.unclear || 0)}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Аналізує / Неясно' : 'Analyzes / Unclear'}</div>
       </div>
     </div>
 
     <!-- Line chart -->
     <div class="mb-6">
-      <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? 'Україна vs Росія (кількість робіт)' : 'Ukraine vs Russia framing (paper count)'}</div>
-      <div class="relative" style="height: 200px;">
+      <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? 'Україна vs Росія (LLM-підтверджені роботи)' : 'Ukraine vs Russia framing (LLM-confirmed papers)'}</div>
+      <div class="relative" style="height: 320px;">
         <canvas id="academic-chart" class="w-full h-full"></canvas>
       </div>
       <div class="flex gap-4 mt-2 text-xs text-[#94a3b8]">
@@ -436,7 +443,7 @@ const propagation = [
     <!-- Violator papers with DOIs -->
     <div>
       <h3 class="text-xs font-bold text-[#64748b] uppercase tracking-wider mb-2">
-        {t.framingAcadViolatorsTitle} ({academic.violators_total})
+        {t.framingAcadViolatorsTitle} ({(academic.russia_llm || academic.violators_total || 0).toLocaleString()} {lang === 'uk' ? 'підтверджено' : 'LLM-confirmed'})
       </h3>
       <div class="space-y-1 max-h-64 overflow-y-auto">
         {acadViolators.slice(0, 50).map((v: any) => (
@@ -1430,6 +1437,7 @@ setTimeout(function() {
   renderViolators('international');
 }, 50);
 
-setTimeout(function(){drawChart('media-chart',mediaFilters.international,['2022']);drawChart('academic-chart',academic.by_year,['2014','2022']);},100);
-window.addEventListener('resize',function(){drawChart('media-chart',mediaFilters[currentFilter],['2022']);drawChart('academic-chart',academic.by_year,['2014','2022']);});
+var acadData = academic.by_year_llm || academic.by_year;
+setTimeout(function(){drawChart('media-chart',mediaFilters.international,['2022']);drawChart('academic-chart',acadData,['2014','2022']);},100);
+window.addEventListener('resize',function(){drawChart('media-chart',mediaFilters[currentFilter],['2022']);drawChart('academic-chart',acadData,['2014','2022']);});
 </script>

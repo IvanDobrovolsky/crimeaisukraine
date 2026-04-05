@@ -5230,112 +5230,186 @@
     }
   },
   "academic": {
-    "total_papers": 78668,
-    "with_sovereignty_signals": 5148,
-    "ukraine": 3258,
-    "russia": 1872,
+    "total_papers": 91670,
+    "with_sovereignty_signals": 5151,
+    "ukraine_regex": 3260,
+    "russia_regex": 1873,
+    "ukraine_llm": 2131,
+    "russia_llm": 1581,
+    "analyzes": 250,
+    "unclear": 1109,
     "by_year": {
-      "2010": {
-        "ukraine": 17,
-        "russia": 1,
-        "disputed": 0,
-        "neutral": 0
-      },
-      "2011": {
-        "ukraine": 35,
-        "russia": 0,
-        "disputed": 0,
-        "neutral": 0
-      },
-      "2012": {
-        "ukraine": 31,
-        "russia": 3,
-        "disputed": 0,
-        "neutral": 0
-      },
-      "2013": {
-        "ukraine": 39,
-        "russia": 3,
-        "disputed": 0,
-        "neutral": 0
-      },
-      "2014": {
-        "ukraine": 143,
-        "russia": 39,
-        "disputed": 3,
-        "neutral": 0
-      },
-      "2015": {
-        "ukraine": 226,
-        "russia": 132,
-        "disputed": 4,
-        "neutral": 0
+      "2017": {
+        "ukraine": 227,
+        "russia": 93,
+        "disputed": 3
       },
       "2016": {
         "ukraine": 230,
         "russia": 96,
-        "disputed": 1,
-        "neutral": 0
+        "disputed": 1
       },
-      "2017": {
-        "ukraine": 227,
-        "russia": 93,
-        "disputed": 3,
-        "neutral": 0
+      "2014": {
+        "ukraine": 144,
+        "russia": 39,
+        "disputed": 3
       },
-      "2018": {
-        "ukraine": 244,
-        "russia": 128,
-        "disputed": 1,
-        "neutral": 0
-      },
-      "2019": {
-        "ukraine": 273,
-        "russia": 155,
-        "disputed": 1,
-        "neutral": 0
+      "2015": {
+        "ukraine": 226,
+        "russia": 132,
+        "disputed": 4
       },
       "2020": {
         "ukraine": 260,
         "russia": 220,
-        "disputed": 3,
-        "neutral": 0
+        "disputed": 3
+      },
+      "2010": {
+        "ukraine": 17,
+        "russia": 1,
+        "disputed": 0
+      },
+      "2019": {
+        "ukraine": 273,
+        "russia": 155,
+        "disputed": 1
       },
       "2021": {
         "ukraine": 230,
-        "russia": 238,
-        "disputed": 2,
-        "neutral": 0
+        "russia": 239,
+        "disputed": 2
       },
-      "2022": {
-        "ukraine": 295,
-        "russia": 191,
-        "disputed": 0,
-        "neutral": 0
+      "2018": {
+        "ukraine": 244,
+        "russia": 128,
+        "disputed": 1
       },
       "2023": {
         "ukraine": 312,
         "russia": 185,
-        "disputed": 0,
-        "neutral": 0
+        "disputed": 0
+      },
+      "2013": {
+        "ukraine": 39,
+        "russia": 3,
+        "disputed": 0
+      },
+      "2012": {
+        "ukraine": 31,
+        "russia": 3,
+        "disputed": 0
+      },
+      "2022": {
+        "ukraine": 295,
+        "russia": 191,
+        "disputed": 0
       },
       "2024": {
-        "ukraine": 308,
+        "ukraine": 309,
         "russia": 179,
-        "disputed": 0,
-        "neutral": 0
+        "disputed": 0
+      },
+      "2011": {
+        "ukraine": 35,
+        "russia": 0,
+        "disputed": 0
       },
       "2025": {
         "ukraine": 314,
         "russia": 173,
-        "disputed": 0,
-        "neutral": 0
+        "disputed": 0
       },
       "2026": {
         "ukraine": 74,
         "russia": 36,
-        "disputed": 0,
-        "neutral": 0
+        "disputed": 0
+      }
+    },
+    "by_year_llm": {
+      "2017": {
+        "ukraine": 150,
+        "russia": 78,
+        "disputed": 0
+      },
+      "2016": {
+        "ukraine": 152,
+        "russia": 82,
+        "disputed": 0
+      },
+      "2014": {
+        "ukraine": 103,
+        "russia": 36,
+        "disputed": 0
+      },
+      "2015": {
+        "ukraine": 159,
+        "russia": 101,
+        "disputed": 0
+      },
+      "2020": {
+        "ukraine": 151,
+        "russia": 188,
+        "disputed": 0
+      },
+      "2010": {
+        "ukraine": 15,
+        "russia": 1,
+        "disputed": 0
+      },
+      "2021": {
+        "ukraine": 154,
+        "russia": 213,
+        "disputed": 0
+      },
+      "2019": {
+        "ukraine": 174,
+        "russia": 137,
+        "disputed": 0
+      },
+      "2018": {
+        "ukraine": 161,
+        "russia": 114,
+        "disputed": 0
+      },
+      "2023": {
+        "ukraine": 218,
+        "russia": 162,
+        "disputed": 0
+      },
+      "2013": {
+        "ukraine": 36,
+        "russia": 0,
+        "disputed": 0
+      },
+      "2012": {
+        "ukraine": 27,
+        "russia": 1,
+        "disputed": 0
+      },
+      "2022": {
+        "ukraine": 185,
+        "russia": 162,
+        "disputed": 0
+      },
+      "2024": {
+        "ukraine": 219,
+        "russia": 158,
+        "disputed": 0
+      },
+      "2011": {
+        "ukraine": 31,
+        "russia": 0,
+        "disputed": 0
+      },
+      "2025": {
+        "ukraine": 194,
+        "russia": 141,
+        "disputed": 0
+      },
+      "2026": {
+        "ukraine": 47,
+        "russia": 37,
+        "disputed": 0
       }
     },
     "violators": [
@@ -5348,7 +5422,6 @@
         "abstract": "Significance. Monitoring the number of elderly people at the national and regional levels is important for demographic aging forecasting. Purpose of the study is to analyze the dynamics and characteristics of aging in the Republic of Crimea and the Russian Federation in 2016-2022. Materials and methods. The official population statistics of Russian Federation and Republic of Crimea for the period 2016-2022 were used. The indicators were analyzed using the methods of V.M. Medkov. Statistical anal",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 27.0,
         "signals": [
@@ -5375,7 +5448,6 @@
         "abstract": "374 Treaties — Ratification — Application — Treaty between Russia and Republic of Crimea on the Accession of the Republic of Crimea to Russia and on Forming New Constituent Entities within the Russian Federation, 2014 — Treaty not yet in force — Constitutional review of treaty as a prerequisite for ratification — Ratification necessary before international treaty can enter into force — Signature of Treaty by Russian President — Date of entry into force — Whether Treaty can be applied before entr",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 19.5,
         "signals": [
@@ -5402,7 +5474,6 @@
         "abstract": "Background. Given the special importance that passenger rail transport has for the economy of the Republic of Crimea, it is advisable to conduct research on the population's demand for rail travel to the Republic of Crimea, both retrospectively for the period of 2022–2024 and prospectively until 2030, taking into account the commissioning of a new railway section along the coast of the Sea of Azov. To determine the role and place of railway transport in the economy of the Republic of Crimea, whi",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 18.0,
         "signals": [
@@ -5429,7 +5500,6 @@
         "abstract": "The article defines the essence of the sanctions of the European Union, the United States of America and Ukraine that have been applied to Russia, compiles the list of sanctions against the Republic of Crimea, and determines their impact on energy security of the Republic of Crimea. The authors discuss the features of sanctions as economic constraints: their goals, objectives, and ef- fects, which allows talking about efficiency; the relationship with the political course. The article characteri",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 15.0,
         "signals": [
@@ -5456,7 +5526,6 @@
         "abstract": "The study aims – study of regional characteristics of the age of mothers living in the Republic of Crimea and the main anthropometric indicators of newborn children of the Republic of Crimea (body weight, body length) depending on the age of the woman. Material and methods. The study was conducted on the basis of GBUZ RK «Simferopol Clinical Maternity Hospital No. 1». A retrospective analysis of medical documentation was carried out: 1300 Childbirth histories (form N 096/y) of women living in th",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 13.5,
         "signals": [
@@ -5483,7 +5552,6 @@
         "abstract": "The relevance of the study is due to the development of the economy of the Crimean region in view of historical traditions and natural resource potential in the tourist and recreational sphere. In the current conditions, the effective development of tourism in the Republic of Crimea involves the definition of a new vector of strategic development of the tourist and recreational complex in the context of the Russian Federation. The basis for the functioning of tourist destinations is the formatio",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 13.5,
         "signals": [
@@ -5510,7 +5578,6 @@
         "abstract": "The Ministry of Finance of the Republic of Crimea is the body that ensures the implementation of a unified financial and budgetary policy on the territory of the Republic of Crimea, coordinates the activities in this area of other executive bodies of the Republic of Crimea state power, performs the function of regulatory regulation, control and supervision in finance and budget.In particular, the Accounting and Reporting Department for the republican budget execution is a structural subdivision ",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 12.0,
         "signals": [
@@ -5537,7 +5604,6 @@
         "abstract": "The topic of the study of the article contains a modern scientific task of the development of information entrepreneurship in the Republic of Crimea. The article outlines the importance of developing business activities in the information economy. The main areas of strategic planning and forecasting of information business activities in the Republic of Crimea are justified, including in the period of uncertainty of the spread of coronavirus infection and its duration, taking into account the con",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 12.0,
         "signals": [
@@ -5564,7 +5630,6 @@
         "abstract": "Relevance. Responses to natural emergencies of long-term action entail stringent requirements to emergency rescue operational management. The objective is to disseminate the joint experience of emergency response and disaster medicine units of the Regional Disaster Medicine Center of the Republic of Crimea, obtained operations to eliminate medical and sanitary consequences of natural disaster (dangerous meteorology events – squally wind, heavy icy precipitation, strong sea waves in coastal areas",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 10.5,
         "signals": [
@@ -5591,7 +5656,6 @@
         "abstract": "The article considers the implementation of investment process in the fuel and energy complex of the Republic of Crimea. Also, the article states that the fuel and energy complex of the Republic of Crimea is one of the most attractive areas for investment and has huge investment potential. The structure of the investment potential of fuel and energy complex is the complex system, in which elements can be influenced not only separately but also in their interaction. Furthermore, the overall inves",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 10.5,
         "signals": [
@@ -5618,7 +5682,6 @@
         "abstract": "Abstract The paper analyzes the modern water management balance of the Republic of Crimea in the context of administrative and territorial units. The possibility of using the ArcGIS 10.4 software package for visualization of spatial statistical data that characterize the water balance is shown. The forecast values of the water balance of the Republic of Crimea for 2030 are given. Maps of the current water management balance for the administrative-territorial units of the Republic of Crimea for t",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 10.5,
         "signals": [
@@ -5645,7 +5708,6 @@
         "abstract": "The article discusses the issues related to problems in the investigation of criminal cases from experienced investigators of the Investigative Committee established in the territory of the Republic of Crimea on March 18, 2017. The contract about acceptance of the Republic of Crimea to the Russian Federation was signed by the representatives of the Republic of Crimea (including Sevastopol) and the Russian Federation on March, 2014 and contained provisions on admitting the Republic of Crimea and ",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 10.5,
         "signals": [
@@ -5672,7 +5734,6 @@
         "abstract": "The subject matter of the research is the laws and mechanisms of development of employment in various sectors of the labor market of the Republic of Crimea. The article investigates the regional staffing structure in the development of economic activities of the Republic of Crimea, in particular, the health resort institution to identify priorities for the implementation of employment policies in the region. The main hypothesis of the study: a mismatch of basic parameters of transformation of th",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -5699,7 +5760,6 @@
         "abstract": "In conditions of instability and inconsistency of socio-economic processes of territorial development, the main task of scientific research and practical actions is to form the financial security of regions. Each territory must adapt to the complex conditions of political and socio-economic instability and solve complex problems that pose threats to their development. Indicators of socio-economic development of each region are characterized by the quality of life of the population, the level of ",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -5726,7 +5786,6 @@
         "abstract": "Introduction. Rural areas represent significant strategic potential for the socio-economic development of the country. In recent years, the role of the state in planning territorial development has increased significantly. This is due to successful experience in designing territorial and sectoral development in difficult periods of macroeconomic and geopolitical crises, financing and monitoring infrastructure projects that are important for the economy and society. The subject of the study are r",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -5753,7 +5812,6 @@
         "abstract": "The tactics of activities of the specialized anti-epidemic team (SAET) of the Rospotrebnadzor on the territory of the Republic of Crimea has been determined by the conditions of emergency situation of sanitary-epidemiological and natural character. The aim of the work was to analyze the features and effectiveness of the functional response of the Rospotrebnadzor SAET to the dynamics of epidemiological risks caused by emergency of combined nature in the Republic of Crimea in 2020–2021. Materials ",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -5780,7 +5838,6 @@
         "abstract": "Introduction. Currently, diabetes mellitus is one of the commonest socially important diseases in the Republic of Crimea. In 2019 the incidence of diabetes mellitus in the population of the Republic amounted to 354.6 per 100 000 people, having outnumbered the figures of the previous year by more than 50%. Aim. Price analysis of monocomponent oral hypoglycemic drug (OHGD) range offered on the pharmaceutical market of the Republic of Crimea. Materials and methods. The object of research conducted ",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -5807,7 +5864,6 @@
         "abstract": "Purpose: the aim of the article is the role and influence of tourism on the development of the economy at all levels of the economic system (example: Republic of Crimea). The article considers the methodology for analyzing the indices of social and economic growth in the branch of the Republic of Crimea. The role and influence of tourism on the economy is considered. Tasks of the article: analysis of the works of foreign and domestic scientists on the role and influence of tourism on the develop",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -5834,7 +5890,6 @@
         "abstract": "Introduction: Increased life expectancy and related population ageing, growing rates of cancer and chronic diseases have led to a greater demand for palliative care and its adequate organization. Objective: To analyze organization of palliative care for the population of the Republic of Crimea. Materials and methods: The materials of the study included laws and regulations of the Russian Federation and the Republic of Crimea, analytical reports of the Chief Specialist of the Ministry of Health o",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -5861,7 +5916,6 @@
         "abstract": "The article examines certain aspects of the formation of statehood in the Republic of Crimea after joining the Russian Federation. The author analyzes the historical aspects of the formation of the system of executive authorities of the constituent entity of the Russian Federation, establishes the historical relationships and continuity of the executive authorities of the Republic of Crimea during the stay of Crimea as part of Ukraine and after the events of the «Crimean spring». A systematic ap",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -5888,7 +5942,6 @@
         "abstract": "The study of the system of relations between participants in agricultural relations that ensures active quality reproduction processes and profitability of activities, reduces internal and external risks and threats to business and guarantees food security of the municipality, the region and the country as a whole. Goal. To analyze the agro-industrial complex of the Republic of Crimea as a component of the region's industrial safety. The hypo-thesis of the study. Agricultural producers are gradu",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -5915,7 +5968,6 @@
         "abstract": "Aim. To assess the epidemiological situation on tuberculosis (TB) in the Republic of Crimea in 2014­2021 based on the study of morbidity, prevalence and mortality. Materials and methods. The analysis was conducted based on official data presented by the Crimean Republican Clinical Center of Phthisiology and Pulmonology. Results. During the study period in the Republic of Crimea the TB incidence decreased in 2.1 times. The downward tendency of both the incidence of all forms of TB (the growth rat",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -5942,7 +5994,6 @@
         "abstract": "The article gives a legal evaluation of the mechanism of realization of the constitutional principle of equal rights and self-determination of the peoples in the newly adopted constituent entities of the Russian Federation - the Republic of Crimea and Sevastopol - the city of Federal Significance. The principle of equal rights and self-determination of peoples is understood in two ways: as political and cultural self-determination. The content of political self-determination amounts to the right",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -5969,7 +6020,6 @@
         "abstract": "State support for the agro-industrial complex is both a priority area for economic development and a foundation for the food security of the Russian Federation and its regions. This article analyzes and evaluates the impact of financial support measures for agriculture on the formation of sustainable food security in the Republic of Crimea. The primary focus is on assessing the effectiveness of the State Program for Agricultural Development and Regulation of Agricultural Product, Raw Material, a",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -5996,7 +6046,6 @@
         "abstract": "Introduction: The study of the prevalence of narcological disorders is an integral part of the monitoring of the drug situation allowing identification of the main trends in the situation with the use of narcotic drugs. Objective: To analyze the level and structure of non-medical use of prescription drugs among the population of the Republic of Crimea and to assess their dynamics in 2020–2021. Materials and methods: The subject of the study was quantitative indicators characterizing the spread o",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -6023,34 +6072,6 @@
         "abstract": "The work is devoted to the problem of ensuring food and social security in the Republic of Crimea, which is due to the fact that food security is a factor that has a major impact on the welfare and standard of living of the population. The criteria for ensuring food security are determined, a system of indicators characterizing the criteria for an integral indicator of the food security of the region is presented. The assessment of the state of food and social security of the Republic of Crimea ",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
-        "ua_score": 0,
-        "ru_score": 9.0,
-        "signals": [
-          {
-            "matched": "Republic of Crimea",
-            "label": "russia"
-          },
-          {
-            "matched": "Republic of Crimea",
-            "label": "russia"
-          },
-          {
-            "matched": "Republic of Crimea",
-            "label": "russia"
-          }
-        ]
-      },
-      {
-        "title": "PRODUCTIVITY AND QUALITY OF MILK OF RED-SPOTTED COWS IN THE SOUTHERN FEDERAL DISTRICT",
-        "url": "https://doi.org/10.7868/s3034519725060142",
-        "doi": "https://doi.org/10.7868/s3034519725060142",
-        "year": 2025,
-        "journal": "Вестник российской сельскохозяйственной науки / Vestnik of the Russian Agricultural Science",
-        "abstract": "The red-motiled breed is one of the promising domestic breeds of dairy cattle that meet modern technological requirements and have a high genetic potential for milk production. It is bred in the Central, Southern, Volga, Ural, Siberian, and Far Eastern Federal Districts, which is a testament to its viability in certain natural and climatic conditions. The productivity and quality of milk from red-motiled cows have been studied in various regions of the Southern Federal District. The results of t",
-        "source_api": "openalex",
-        "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -6077,7 +6098,6 @@
         "abstract": "Регулирование инвестиционных процессов со стороны государства в значительной степени способствует формированию и развитию системы эффективного управления инвестиционной деятельностью. В статье рассмотрены государственные нормативно-правовым актам, регулирующим инвестиционную деятельность. Указывается на то что зарубежные и отечественные инвесторы воспринимают наличие регионального инвестиционного законодательства как признак зрелости регионального правового режима. Выявлено, что в основе оптимиз",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 9.0,
         "signals": [
@@ -6104,7 +6124,6 @@
         "abstract": "Abstract This paper evaluates the ecological and geochemical status of soils in the Opuksky Sanctuary, Republic of Crimea, Russia. The Sanctuary has been a nature reserve since the mid- 20th century. It is located on the Black Sea coast of the Kerch Peninsula, the Republic of Crimea. This is an integrated sanctuary established to preserve the unique steppe ecosystems associated with the limestone massif of Mount Opuk and Lake Koyashskoye, a salt lake which has a number of one-of-a-kind nature si",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 8.0,
         "signals": [
@@ -6131,7 +6150,6 @@
         "abstract": "Ибрагимова Эвелина Энверовна, кандидат биологических наук, доцент, заведующий кафедрой биологии, экологии и безопасности жизнедеятельности, Крымский инженерно- педагогический университет имени Февзи Якубова, Симферополь, Россия. Меситский Велор Серверович, мастер спорта СССР по регби, заслуженный работник Автономной Республики Крым по физической культуре и спорту, старший преподаватель кафедры физической культуры, Крымский инженерно-педагогический университет имени Февзи Якубова, Симферополь, Ро",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 1.5,
         "ru_score": 8.0,
         "signals": [
@@ -6158,7 +6176,6 @@
         "abstract": "Пономаренко Ирина Николаевна, доктор филологических наук, профессор кафедры современного русского языка, Кубанский государственный университет, Краснодар, Россия, irnik20@mail.ru; ORCID: 0000-0002-7330-7383. Сегал Наталья Александровна, доктор филологических наук, доцент кафедры русского, славянского и общего языкознания, Крымский федеральный университет им. В.И. Вернадского, Симферополь, Россия, natasha-segal@mail.ru; ORCID: 0000-0002-8213-5050. Мищенко Анна Николаевна, кандидат филологических ",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 8.0,
         "signals": [
@@ -6185,7 +6202,6 @@
         "abstract": "Free economic zones have become an essential part of the world economy in recent history. The voluntary entry of the Peninsula of Crimea into the Russian Federation as one of its constituent regions, lead to the adoption of the social and economic development commitments of this region by our state. For this reason, one of the most important goals for authorities of the Russian Federation is to develop the social, economic, and other spheres of the society. The establishment of the free economic",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6212,7 +6228,6 @@
         "abstract": "Background: The article presents the results of a control and epidemiological study conducted in September 2020 by specialists of the Federal State Budgetary Institution «NMIC of Endocrinology» of the Ministry of Health of Russia, aimed at assessing the current state of iodine provision in the population of the Republic of Crimea. The study in Crimea is part of a number of activities and work carried out on behalf of the Ministry of Health of the Russian Federation within the framework of state ",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6239,7 +6254,6 @@
         "abstract": "The factors influencing the energy system of the Republic of Crimea were studied. Analysis of generating capacity to ensure reliable power supply to consumers and sustainability of the power system in different periods of the year was carried out. Research of the renewable energy role in the power system management was conducted, including the improvement of methods of management and optimization of solar power plants capacity. A study of the data necessary to build an optimal model of power sys",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6266,7 +6280,6 @@
         "abstract": "The aim of this work is to study the state of the tourism industry of the Republic of Crimea and determine its prospects. The tourism industry in the Republic of Crimea acts as a catalyst for the sustainable functioning and development of the regional socio-economic system, and allows us to search for factors and conditions that ensure the achievement of progressive socio-economic development indicators. The positive and negative impact of tourism on the economy of the region, regional tourism s",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6293,7 +6306,6 @@
         "abstract": "In the article the author makes an attempt to analyze the investment potential of tourism and recreation industry of Crimea taking into account modern geopolitical and socio-economic realities. Main resultsand tendencies of investment activity on the territory of the Republic of Crimea in 2013-2014 are described, and also its further prospects are marked. It is shown, that because of the negative socio-political and socio-economic processes in Ukraine and Crimea during previous years in the regi",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6320,7 +6332,6 @@
         "abstract": "Objective . At the present stage of medicine development, the use of X-ray contrast agents tends to grow constantly and more than 60 million doses of radiopaque compounds (ROCs) are annually used.The objective of the study was to investigate adverse reactions (ARs) arising from the use of ROCs in patients living in the Republic of Crimea. Material and methods . The objects of the study performed were 69 notification cards on ARs to ROCs, which were registered in the regional database (registry) ",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6347,7 +6358,6 @@
         "abstract": "The purpose of the study was to conduct a retrospective analysis of the epizootiologic and epidemiologic situation of anthrax in the Republic of Crimea and to improve surveillance of this infection using geographic information systems (GIS technologies). Material and methods: In the process of considering specific features of manifestations of infection in different areas of the Crimean Peninsula and outbreaks of anthrax in animals and humans in 1922–2019, we analyzed and summarized data of repo",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6374,7 +6384,6 @@
         "abstract": "In the article, the author calculated the value of the investment attractiveness index for the subjects of the Russian Federation that are part of the southern Federal district. A SWOT analysis of the investment attractiveness of the Republic of Crimea is conducted. Measures aimed at implementing the investment development of the Republic of Crimea are proposed. The analysis of the structure of the gross regional product by type of economic activity is carried out. It is revealed that the larges",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6401,7 +6410,6 @@
         "abstract": "The paper examines the issue of the lawmaking development in the Republic of Crimea as a subsystem of lawmaking in the Russian Federation in modern conditions. The author analyzes historical stages of development of the Crimea legislation from the 1991 Referendum to the adoption of the new Constitution of the Republic of Crimea in 2014 and the factors contributing to the effectiveness of lawmaking technologies. Using the methods of synthesis and comparison, as well as the formal legal method, th",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6428,7 +6436,6 @@
         "abstract": "The article defines the determinants of the development of the tourism and recreation complex of the Republic of Crimea. The current trends in the development of the tourism and recreation complex of the Republic of Crimea, the dynamics of the tourist flow are analyzed; the problems of the development of the tourism and recreation complex, and its competitive advantages are identified. The contribution of the tourism and recreation complex to the GDP of various countries, as well as to the devel",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6455,7 +6462,6 @@
         "abstract": "The Republic of Crimea is a unique and strategically important region of the Russian Federation in the Azov-Black Sea region. The unique historical path of development of the territory, the multinational and multiconfessional composition of the population, and cultural diversity determined the special place of the Republic of Crimea in the cultural space of Russia. At the present stage of development, state national policy aimed at harmonizing interethnic relations and resolving interethnic conf",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6482,7 +6488,6 @@
         "abstract": "In connection with the inclusion of the Republic of Crimea with the Russian Federation urgency address the issues and assess the state of development of tourism in the new subject of Russia is not in doubt. Current world trends speak about globality of scales of development of tourism. Tourism is one of priority factors of development of mutual understanding between ethnoses and the people today, and also makes an essential contribution to prosperity of many countries of the world. In this regar",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6509,7 +6514,6 @@
         "abstract": "Relevance . In current realities, various models of disaster management and response have been implemented in disaster medicine across regions. In natural emergency scenarios, management and response efforts would hardly ever see functional unity of all the emergency response units of disaster medicine and civil defense with an integral management hierarchy and 24h duty. The study objective is to assess the efficiency of a new organizational model of disaster medicine service deployed in the Rep",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6536,7 +6540,6 @@
         "abstract": "Purpose: to determine elements of irrigation technology for young vineyard plantations using the drip irrigation method on various types of soil in the Republic of Crimea and test them under the conditions of this region. Materials and methods. The research was carried out in the village of Pavlovka, Belogorsky district of the Republic of Crimea. The establishment of field experiments and observations were carried out using generally accepted methods for setting up and conducting field experimen",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6563,7 +6566,6 @@
         "abstract": "Introduction. The Crimean resort industry has a storied history. The analysis of the current state of resorts in the Republic of Crimea and on-site inspections of health facilities along the Crimean coast have proven that the requirements applicable to health resorts changed, while depreciation of their fixed assets reached 50 % in the process of their operation. According to Resolution “On Approval of the Federal Target Program “Social and Economic Development of the Republic of Crimea and Seva",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6590,7 +6592,6 @@
         "abstract": "An analytical estimate is given to the transformation of the water-management and amelioration complex of Crimea under the conditions of deficiency of water resources based on the system and information-analytical approaches with the use of methods of logical and comparative analysis, and qualitative and quantitative analysis of statistical data. An abrupt change in the structure of freshwater intake was revealed. In 2014–2022, the leaks and losses in the water distribution system in the Republi",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6617,7 +6618,6 @@
         "abstract": "Abstract The results of processing of dynamics of potato production in the territory of the Republic of Crimea for the period from 2015 to 2019 are presented in the article using the geographic information system ArcGIS 10.4, which allows to carry out the prompt collection and processing of large amounts of information in the information environment in order to solve the problems of monitoring and assessment of the state of land. It has been established that potato production is distributed extr",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6644,7 +6644,6 @@
         "abstract": "The article deals with the essence of socio-cultural boundaries in a multiethnic region. Socio-cultural boundaries are presented by the authors as a marker of the mental unique character of the territory for those who live within it, and a likely source of interethnic tensions. In the conditions of the multiethnic region of Crimea, the probability of the existence of socio-cultural boundaries coincides with the nature of its administrative-territorial structure that arose after 2014. On the terr",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 1.5,
         "ru_score": 7.5,
         "signals": [
@@ -6671,7 +6670,6 @@
         "abstract": "The article discusses the state of ethnopolitical processes in the Republic of Crimea after 2014. The key factors and subjects of the ethnopolitical process of the Republic of Crimea are identified. It is noted that after 2014, the main factor in the ethnopolitical process of the Republic of Crimea is the Crimean Tatar factor. The article also reveals the specifics of the Crimean Tatar factor in the system of ethnopolitical processes of the Republic of Crimea.",
         "source_api": "openalex",
         "label": "russia",
-        "confidence": 0.95,
         "ua_score": 0,
         "ru_score": 7.5,
         "signals": [
@@ -6688,8 +6686,38 @@
             "label": "russia"
           }
         ]
+      },
+      {
+        "title": "On Threats to the Economic Security of the Republic of Crimea",
+        "url": "https://doi.org/10.35854/1998-1627-2019-9-23-33",
+        "doi": "https://doi.org/10.35854/1998-1627-2019-9-23-33",
+        "year": 2019,
+        "journal": "Economics and Management",
+        "abstract": "The presented study analyzes threats to regional economic security and searches for ways to improve economic security. Aim . The study aims to identify and analyze potential threats to regional economic security (through the example of the Republic of Crimea). Tasks . The authors conduct a theoretical analysis of the concept of a threat economic security, identify regional features that affect the level of economic security, and list the major threats to the economic security of the Republic of ",
+        "source_api": "openalex",
+        "label": "russia",
+        "ua_score": 0,
+        "ru_score": 7.5,
+        "signals": [
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          },
+          {
+            "matched": "Republic of Crimea",
+            "label": "russia"
+          }
+        ]
       }
-    ]
+    ],
+    "llm_precision": {
+      "ukraine": 0.654,
+      "russia": 0.844
+    }
   },
   "wikipedia": {
     "total_entries": 91,
