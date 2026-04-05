@@ -523,7 +523,11 @@ const propagation = [
 <section id="map-services" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.mapTitle}</h2>
-    <p class="text-[#94a3b8] mb-8">{t.mapDesc}</p>
+    <p class="text-[#94a3b8] mb-4">{t.mapDesc}</p>
+    <p class="text-xs text-[#64748b] mb-8">{lang === 'uk'
+      ? 'Методологія: автоматичні API-запити «Simferopol» → перевірка поля country_code у відповіді (UA/RU/порожнє). JS-рендерені карти перевірені через документацію worldview.'
+      : 'Methodology: automated API queries for "Simferopol" → checking country_code field in response (UA/RU/empty). JS-rendered maps verified via worldview documentation.'
+    }</p>
 
     <!-- Top row: Donut + Stats -->
     <div class="grid md:grid-cols-[240px_1fr] gap-8 mb-10">
@@ -571,23 +575,26 @@ const propagation = [
 
     <!-- Grouped service listings -->
     <div class="space-y-6">
-      <!-- Correct: Geocoding APIs -->
+      <!-- Correct: Shows Ukraine -->
       <div>
         <h3 class="text-sm font-bold text-[#22c55e] uppercase tracking-wider mb-3 flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>
           {t.mapGeocodingTitle} ({mCorrect.length})
         </h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {mCorrect.sort((a: any, b: any) => a.platform.localeCompare(b.platform)).map((f: any) => (
-            <a href={f.url} target="_blank" rel="noopener" class="group bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm flex items-center gap-2 border border-[#1e293b] hover:border-[#22c55e]/50 transition">
-              <span class="text-[#22c55e] flex-shrink-0 text-xs">&#x2713;</span>
-              <span class="text-[#e2e8f0] truncate text-xs font-medium group-hover:text-white transition">{f.platform}</span>
+            <a href={f.url} target="_blank" rel="noopener" class="group bg-[#0a0e1a] rounded-lg px-3 py-2.5 border border-[#1e293b] hover:border-[#22c55e]/50 transition">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-[#22c55e] flex-shrink-0 text-xs">&#x2713;</span>
+                <span class="text-[#e2e8f0] text-xs font-medium group-hover:text-white transition">{f.platform}</span>
+              </div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 120 ? f.detail.slice(0, 120) + '...' : f.detail}</div>
             </a>
           ))}
         </div>
       </div>
 
-      <!-- Ambiguous: Consumer maps -->
+      <!-- Ambiguous: Worldview systems / disputed -->
       <div>
         <h3 class="text-sm font-bold text-[#f59e0b] uppercase tracking-wider mb-3 flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>
@@ -595,7 +602,7 @@ const propagation = [
         </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {mAmbiguous.map((f: any) => (
-            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#f59e0b]/20">
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 border border-[#f59e0b]/20">
               <div class="flex items-center gap-2 mb-1">
                 <span class="text-[#f59e0b] flex-shrink-0 text-xs">&#x26A0;</span>
                 <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
@@ -606,20 +613,20 @@ const propagation = [
         </div>
       </div>
 
-      <!-- Incorrect: Russian -->
+      <!-- Incorrect: Shows Russia -->
       <div>
         <h3 class="text-sm font-bold text-[#ef4444] uppercase tracking-wider mb-3 flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>
           {t.mapRussianTitle} ({mIncorrect.length})
         </h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {mIncorrect.map((f: any) => (
-            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#ef4444]/20">
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 border border-[#ef4444]/20">
               <div class="flex items-center gap-2 mb-1">
                 <span class="text-[#ef4444] flex-shrink-0 text-xs">&#x2717;</span>
-                <span class="text-[#e2e8f0] truncate text-xs font-medium">{f.platform}</span>
+                <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
               </div>
-              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{lang === 'uk' ? 'Показує як Росію' : 'Shows as Russia'}</div>
+              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail.length > 150 ? f.detail.slice(0, 150) + '...' : f.detail}</div>
             </div>
           ))}
         </div>
