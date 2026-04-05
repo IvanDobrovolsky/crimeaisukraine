@@ -739,153 +739,81 @@ const propagation = [
   </div>
 </section>
 
-<!-- IP Geolocation — Expanded Section -->
+<!-- IP Geolocation -->
 <section id="ip-geolocation" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.ipTitle}</h2>
-    <p class="text-[#94a3b8] mb-8">{t.ipDesc}</p>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'IP-геолокація: де інтернет думає Крим?' : 'IP geolocation: where does the internet think Crimea is?'}</h2>
+    <p class="text-[#94a3b8] mb-6">{lang === 'uk' ? 'Ми перевірили 90 реальних кримських IP-адрес від 9 провайдерів через 2 сервіси геолокації. Результат залежить не від географії, а від того, коли провайдер був зареєстрований.' : 'We tested 90 real Crimean IP addresses from 9 ISPs via 2 geolocation services. The result depends not on geography but on when the ISP was registered.'}</p>
 
-    <!-- Top row: Donut + Summary Stats -->
-    <div class="grid md:grid-cols-[240px_1fr] gap-8 mb-10">
-      <!-- Donut Chart -->
-      <div class="flex flex-col items-center">
-        <div class="relative w-44 h-44">
-          <svg viewBox="0 0 36 36" class="w-full h-full -rotate-90">
-            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1e293b" stroke-width="3.8" />
-            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#0057b7" stroke-width="3.8"
-              stroke-dasharray={`${ipPctUA} ${100 - ipPctUA}`} stroke-dashoffset="0" />
-            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#ef4444" stroke-width="3.8"
-              stroke-dasharray={`${ipPctRU} ${100 - ipPctRU}`} stroke-dashoffset={`${-ipPctUA}`} />
-            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#94a3b8" stroke-width="3.8"
-              stroke-dasharray={`${ipPctOther} ${100 - ipPctOther}`} stroke-dashoffset={`${-(ipPctUA + ipPctRU)}`} />
-          </svg>
-          <div class="absolute inset-0 flex flex-col items-center justify-center">
-            <div class="text-3xl font-black text-white">{ipTotalLookups}</div>
-            <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'запитів' : 'lookups'}</div>
+    <!-- The story in three rows -->
+    <div class="space-y-4 mb-8">
+      <!-- Ukrainian ISPs -->
+      <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#0057b7]/30">
+        <div class="flex items-center justify-between mb-2">
+          <div>
+            <span class="text-sm font-bold text-[#0057b7]">{lang === 'uk' ? 'Довоєнні українські провайдери' : 'Pre-2014 Ukrainian ISPs'}</span>
+            <span class="text-[10px] text-[#64748b] ml-2">SevStar, Sim-Telecom, CrimeaTelecom, CrimeaLink</span>
           </div>
+          <span class="text-sm font-bold text-[#0057b7]">100% Ukraine</span>
         </div>
-        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-4 text-xs text-[#94a3b8] justify-center">
-          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#0057b7]"></span>{ipPctUA}% {t.ipResolveUA}</span>
-          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>{ipPctRU}% {t.ipResolveRU}</span>
-          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#94a3b8]"></span>{ipPctOther}% {t.ipResolveOther}</span>
+        <div class="flex h-4 rounded-full overflow-hidden bg-[#1e293b]">
+          <div class="bg-[#0057b7] h-full w-full"></div>
         </div>
+        <div class="text-[10px] text-[#64748b] mt-1">{lang === 'uk' ? 'Оригінальна реєстрація RIPE — UA. Ніколи не змінювалась. Геолокація визначає країну реєстрації, а не фізичне розташування.' : 'Original RIPE registration was UA. Never changed. Geolocation resolves registration country, not physical location.'}</div>
       </div>
 
-      <!-- Stat Cards -->
-      <div class="grid grid-cols-3 gap-3">
-        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30 text-center">
-          <div class="text-3xl font-black text-[#0057b7]">{ipByCountry.UA}</div>
-          <div class="text-xs text-[#94a3b8] mt-1">{t.ipResolveUA}</div>
-          <div class="text-[10px] text-[#64748b] mt-0.5">{ipPctUA}%</div>
+      <!-- Russian entity -->
+      <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#ef4444]/30">
+        <div class="flex items-center justify-between mb-2">
+          <div>
+            <span class="text-sm font-bold text-[#ef4444]">{lang === 'uk' ? 'Пост-2014 російський субʼєкт' : 'Post-2014 Russian entity'}</span>
+            <span class="text-[10px] text-[#64748b] ml-2">Miranda-Media (Rostelecom)</span>
+          </div>
+          <span class="text-sm font-bold text-[#ef4444]">74% Russia</span>
         </div>
-        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
-          <div class="text-3xl font-black text-[#ef4444]">{ipByCountry.RU}</div>
-          <div class="text-xs text-[#94a3b8] mt-1">{t.ipResolveRU}</div>
-          <div class="text-[10px] text-[#64748b] mt-0.5">{ipPctRU}%</div>
+        <div class="flex h-4 rounded-full overflow-hidden bg-[#1e293b]">
+          <div class="bg-[#ef4444] h-full" style="width: 74%"></div>
+          <div class="bg-[#0057b7] h-full" style="width: 26%"></div>
         </div>
-        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#94a3b8]/30 text-center">
-          <div class="text-3xl font-black text-[#94a3b8]">{ipByCountry.other}</div>
-          <div class="text-xs text-[#94a3b8] mt-1">{t.ipResolveOther}</div>
-          <div class="text-[10px] text-[#64748b] mt-0.5">{ipPctOther}%</div>
-        </div>
+        <div class="text-[10px] text-[#64748b] mt-1">{lang === 'uk' ? 'AS201776 зареєстрована як RU з моменту створення у липні 2014. Дочірня компанія Ростелекому, єдине підключення через Керченський кабель.' : 'AS201776 registered as RU from creation in July 2014. Rostelecom subsidiary, sole connection via Kerch Strait Cable.'}</div>
       </div>
-    </div>
 
-    <!-- Per-ISP breakdown — the real story -->
-    <div class="mb-8">
-      <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">{t.ipAsnTitle}</h3>
-      <div class="space-y-2">
-        {asnSorted.map((asn: any) => {
-          const barUA = asn.total > 0 ? (asn.ua / asn.total * 100) : 0;
-          const barRU = asn.total > 0 ? (asn.ru / asn.total * 100) : 0;
-          const barOther = asn.total > 0 ? (asn.other / asn.total * 100) : 0;
-          const originColor = asn.origin === 'ukrainian' ? '#0057b7' : asn.origin === 'rerouted' ? '#94a3b8' : '#ef4444';
-          const originLabel = asn.origin === 'ukrainian' ? t.ipUkrainianISP : asn.origin === 'rerouted' ? t.ipReroutedISP : asn.origin === 'mixed_ru' ? t.ipRussianISP : t.ipMixedISP;
-          return (
-            <div class="bg-[#0a0e1a] rounded-lg p-3 border border-[#1e293b]">
-              <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full flex-shrink-0" style={`background: ${originColor}`}></span>
-                  <span class="text-sm font-medium text-white">{asn.name}</span>
-                  <span class="text-[10px] text-[#64748b]">AS{asn.id}</span>
-                </div>
-                <div class="flex items-center gap-3 text-[10px]">
-                  <span class="text-[#64748b]">{originLabel}</span>
-                  <span class="text-[#94a3b8]">{asn.total} {lang === 'uk' ? 'запитів' : 'lookups'}</span>
-                </div>
-              </div>
-              <div class="flex h-3 rounded-full overflow-hidden bg-[#1e293b]">
-                {barUA > 0 && <div class="bg-[#0057b7] h-full" style={`width: ${barUA}%`}></div>}
-                {barRU > 0 && <div class="bg-[#ef4444] h-full" style={`width: ${barRU}%`}></div>}
-                {barOther > 0 && <div class="bg-[#94a3b8] h-full" style={`width: ${barOther}%`}></div>}
-              </div>
-              <div class="flex gap-3 mt-1.5 text-[10px] text-[#64748b]">
-                {asn.ua > 0 && <span>UA: {asn.ua}</span>}
-                {asn.ru > 0 && <span>RU: {asn.ru}</span>}
-                {asn.other > 0 && <span>{lang === 'uk' ? 'Інше' : 'Other'}: {asn.other}</span>}
-              </div>
-            </div>
-          );
-        })}
+      <!-- Re-routed -->
+      <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#94a3b8]/30">
+        <div class="flex items-center justify-between mb-2">
+          <div>
+            <span class="text-sm font-bold text-[#94a3b8]">{lang === 'uk' ? 'Перенаправлені через треті країни' : 'Re-routed via third countries'}</span>
+            <span class="text-[10px] text-[#64748b] ml-2">CrimeaCom, KNET, Sevastopolnet, Crimean Telecom</span>
+          </div>
+          <span class="text-sm font-bold text-[#94a3b8]">100% {lang === 'uk' ? 'треті країни' : 'third countries'}</span>
+        </div>
+        <div class="flex h-4 rounded-full overflow-hidden bg-[#1e293b]">
+          <div class="bg-[#94a3b8] h-full w-full"></div>
+        </div>
+        <div class="text-[10px] text-[#64748b] mt-1">{lang === 'uk' ? 'Трафік перенаправляється через Угорщину, Бельгію, Францію — провайдери уникають як російську, так і українську інфраструктуру. Цифрова діаспора.' : 'Traffic routed through Hungary, Belgium, France — ISPs avoid both Russian and Ukrainian infrastructure. A digital diaspora.'}</div>
       </div>
     </div>
 
-    <!-- Per-Provider breakdown -->
-    <div class="mb-8">
-      <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">{t.ipProviderTitle}</h3>
-      <div class="grid md:grid-cols-2 gap-3">
-        {Object.entries(ipByProvider).map(([provider, results]: [string, any]) => {
-          const pTotal = (results.UA || 0) + (results.RU || 0) + (results.other || 0);
-          const pUA = pTotal > 0 ? Math.round((results.UA || 0) / pTotal * 100) : 0;
-          const pRU = pTotal > 0 ? Math.round((results.RU || 0) / pTotal * 100) : 0;
-          const pOther = pTotal > 0 ? Math.round((results.other || 0) / pTotal * 100) : 0;
-          return (
-            <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#1e293b]">
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-sm font-medium text-white">{provider}</span>
-                <span class="text-xs text-[#64748b]">{pTotal} {lang === 'uk' ? 'запитів' : 'lookups'}</span>
-              </div>
-              <div class="flex h-4 rounded-full overflow-hidden bg-[#1e293b] mb-2">
-                {pUA > 0 && <div class="bg-[#0057b7] h-full" style={`width: ${pUA}%`}></div>}
-                {pRU > 0 && <div class="bg-[#ef4444] h-full" style={`width: ${pRU}%`}></div>}
-                {pOther > 0 && <div class="bg-[#94a3b8] h-full" style={`width: ${pOther}%`}></div>}
-              </div>
-              <div class="flex gap-4 text-xs text-[#94a3b8]">
-                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#0057b7]"></span>UA {pUA}%</span>
-                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>RU {pRU}%</span>
-                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#94a3b8]"></span>{lang === 'uk' ? 'Інше' : 'Other'} {pOther}%</span>
-              </div>
-            </div>
-          );
-        })}
+    <!-- Method + stats -->
+    <div class="grid md:grid-cols-3 gap-3 mb-6">
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#1e293b] text-center">
+        <div class="text-2xl font-bold text-white">90</div>
+        <div class="text-xs text-[#94a3b8]">{lang === 'uk' ? 'IP-адрес перевірено' : 'IPs tested'}</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#1e293b] text-center">
+        <div class="text-2xl font-bold text-white">9</div>
+        <div class="text-xs text-[#94a3b8]">{lang === 'uk' ? 'провайдерів (ASN)' : 'ISPs (ASNs)'}</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#1e293b] text-center">
+        <div class="text-2xl font-bold text-white">2</div>
+        <div class="text-xs text-[#94a3b8]">{lang === 'uk' ? 'сервіси геолокації' : 'geolocation services'}</div>
       </div>
     </div>
 
-    <!-- Geolocation Providers tested -->
-    <div class="mb-8">
-      <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-3">
-        {lang === 'uk' ? 'Протестовані сервіси геолокації' : 'Geolocation Services Tested'}
-      </h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
-        {findings.filter((f: any) => f.category === 'ip_geolocation').sort((a: any, b: any) => (statusOrder[a.status] ?? 5) - (statusOrder[b.status] ?? 5)).map((f: any) => {
-          const color = f.status === 'correct' ? '#22c55e' : f.status === 'incorrect' ? '#ef4444' : '#f59e0b';
-          const icon = f.status === 'correct' ? '✓' : f.status === 'incorrect' ? '✗' : '⚠';
-          return (
-            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#1e293b]">
-              <div class="flex items-center gap-2">
-                <span class="flex-shrink-0 text-xs" style={`color: ${color}`}>{icon}</span>
-                <span class="text-[#e2e8f0] truncate text-xs font-medium">{f.platform}</span>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-
-    <!-- Insight callout -->
+    <!-- Insight -->
     <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30">
       <p class="text-sm text-[#94a3b8]">
-        <span class="text-[#0057b7] font-bold">{lang === 'uk' ? 'Висновок' : 'Key insight'}:</span> {t.ipInsight}
+        <span class="text-[#0057b7] font-bold">{lang === 'uk' ? 'Висновок' : 'Key insight'}:</span> {lang === 'uk' ? 'IP-геолокація визначає країну реєстрації провайдера, не фізичне розташування. Довоєнні українські провайдери — Україна. Пост-2014 російські — Росія. Деякі обирають третій шлях — перенаправлення через Європу, уникаючи обох.' : 'IP geolocation resolves the ISP registration country, not physical location. Pre-2014 Ukrainian ISPs resolve as Ukraine. Post-2014 Russian entities resolve as Russia. Some choose a third path — re-routing through Europe, avoiding both.'}
       </p>
     </div>
   </div>
