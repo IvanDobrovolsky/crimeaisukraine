@@ -1,5 +1,5 @@
 {
-  "total_entries": 81,
+  "total_entries": 91,
   "by_language": {
     "English": {
       "ukraine": 3,
@@ -270,7 +270,18 @@
       "countries": []
     }
   },
-  "russia_framing": [],
+  "russia_framing": [
+    {
+      "term": "Simferopol",
+      "language": "zh",
+      "language_name": "Chinese",
+      "description": "克里米亚共和国的首都",
+      "description_english": "Capital of the Republic of Crimea (Russian admin name)",
+      "label": "russia",
+      "signal": "Uses '克里米亚共和国' (Republic of Crimea = Russian Federation admin name, not 'Autonomous Republic')",
+      "url": "https://zh.wikipedia.org/wiki/辛菲罗波尔"
+    }
+  ],
   "results": [
     {
       "term": "Simferopol",
@@ -1622,6 +1633,115 @@
       "cat_label": "disputed",
       "categories_ukraine": true,
       "categories_russia": true
+    },
+    {
+      "term": "Simferopol",
+      "language": "sr",
+      "language_name": "Serbian",
+      "description": "град на полуострву Крим",
+      "label": "ambiguous",
+      "signal": "mentions Crimea but no country",
+      "url": "https://sr.wikipedia.org/wiki/Simferopol"
+    },
+    {
+      "term": "Simferopol",
+      "language": "id",
+      "language_name": "Indonesian",
+      "description": "kota di Ukraina",
+      "label": "ukraine",
+      "signal": "description mentions Ukraine",
+      "url": "https://id.wikipedia.org/wiki/Simferopol"
+    },
+    {
+      "term": "Sevastopol",
+      "language": "sr",
+      "language_name": "Serbian",
+      "description": "највећи град на полуострву Крим",
+      "label": "ambiguous",
+      "signal": "mentions Crimea but no country",
+      "url": "https://sr.wikipedia.org/wiki/Sevastopol"
+    },
+    {
+      "term": "Sevastopol",
+      "language": "ro",
+      "language_name": "Romanian",
+      "description": "oraș din Crimeea, teritoriu revendicat atât de Ucraina, cât și de Rusia",
+      "label": "ukraine",
+      "signal": "description mentions Ukraine",
+      "url": "https://ro.wikipedia.org/wiki/Sevastopol"
+    },
+    {
+      "term": "Sevastopol",
+      "language": "id",
+      "language_name": "Indonesian",
+      "description": "kota pelabuhan di Ukraina",
+      "label": "ukraine",
+      "signal": "description mentions Ukraine",
+      "url": "https://id.wikipedia.org/wiki/Sevastopol"
+    },
+    {
+      "term": "Yalta",
+      "language": "id",
+      "language_name": "Indonesian",
+      "description": "kota di Ukraina",
+      "label": "ukraine",
+      "signal": "description mentions Ukraine",
+      "url": "https://id.wikipedia.org/wiki/Yalta"
+    },
+    {
+      "term": "Kerch",
+      "language": "id",
+      "language_name": "Indonesian",
+      "description": "kota di Ukraina",
+      "label": "ukraine",
+      "signal": "description mentions Ukraine",
+      "url": "https://id.wikipedia.org/wiki/Kerch"
+    },
+    {
+      "term": "Crimea",
+      "language": "id",
+      "language_name": "Indonesian",
+      "description": "semenanjung di Eropa Timur, di tepi Laut Hitam dan Laut Azov, diperebutkan oleh Ukraina (de jure) dan Rusia (de facto)",
+      "label": "ukraine",
+      "signal": "description mentions Ukraine",
+      "url": "https://id.wikipedia.org/wiki/Crimea"
+    },
+    {
+      "term": "Simferopol",
+      "language": "zh",
+      "language_name": "Chinese",
+      "description": "克里米亚共和国的首都",
+      "description_english": "Capital of the Republic of Crimea (Russian admin name)",
+      "label": "russia",
+      "signal": "Uses '克里米亚共和国' (Republic of Crimea = Russian Federation admin name, not 'Autonomous Republic')",
+      "url": "https://zh.wikipedia.org/wiki/辛菲罗波尔"
+    },
+    {
+      "term": "Simferopol",
+      "language": "fa",
+      "language_name": "Persian (Iran)",
+      "description": "پایتخت جمهوری خودمختار کریمه",
+      "description_english": "Capital of the Autonomous Republic of Crimea (Ukrainian admin name)",
+      "label": "ukraine",
+      "signal": "Uses 'Autonomous Republic' — Ukrainian constitutional designation",
+      "url": "https://fa.wikipedia.org/wiki/سیمفروپل"
     }
-  ]
+  ],
+  "extended_languages": {
+    "Serbian": {
+      "ukraine": 0,
+      "russia": 0,
+      "ambiguous": 2
+    },
+    "Indonesian": {
+      "ukraine": 5,
+      "russia": 0,
+      "ambiguous": 0
+    },
+    "Romanian": {
+      "ukraine": 1,
+      "russia": 0,
+      "ambiguous": 0
+    }
+  }
 }
