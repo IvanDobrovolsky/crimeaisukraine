@@ -13,7 +13,7 @@ Automated digital sovereignty audit. 116 platforms, 372K media articles, 986 aca
 | Incorrect (Russia) | **26** (23%) |
 | Ambiguous | **35** (30%) |
 | GDELT articles | **372K** classified (2015–2026) |
-| Academic papers | **986** with DOIs (2010–2026) |
+| Academic papers | **988** with DOIs (2010–2026) |
 | Academic RU framing | **10%** (2019) → **57%** (2025) |
 | npm downloads affected | **30.4M** weekly |
 | Sovereignty signals | **81** in 3 languages |

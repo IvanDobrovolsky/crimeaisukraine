@@ -370,7 +370,7 @@ const propagation = [
 <!-- Academic Framing (OpenAlex) -->
 <section id="academic-framing" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingAcademicTitle} — 685 {lang === 'uk' ? 'робіт' : 'Papers'}</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingAcademicTitle} — 988 {lang === 'uk' ? 'робіт' : 'Papers'}</h2>
     <p class="text-[#94a3b8] mb-6">{lang === 'uk' ? 'OpenAlex, 2010-2026. Усі з DOI — постійно індексовані в глобальному академічному реєстрі.' : 'OpenAlex, 2010–2026. All with DOIs — permanently indexed in the global academic record.'}</p>
 
     <!-- Stats row -->
@@ -1107,23 +1107,23 @@ const propagation = [
 
 <!-- SovereignMap Tool -->
 <section id="tool" class="max-w-6xl mx-auto px-6 mb-12">
-  <div class="bg-gradient-to-r from-[#0057b7]/10 to-[#111827] border border-[#0057b7]/30 rounded-2xl p-8 md:p-10">
+  <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.toolTitle}</h2>
-    <p class="text-[#94a3b8] mb-6">{t.toolDesc}</p>
+    <p class="text-[#94a3b8] mb-8">{t.toolDesc}</p>
 
-    <!-- Demo images grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+    <!-- Demo: 4 rows, full width -->
+    <div class="space-y-3 mb-8">
       <div class="rounded-lg overflow-hidden border border-[#22c55e]/30">
-        <img src="/card_ukraine.png" alt="UKRAINE classification 93%" class="w-full" loading="lazy" />
+        <img src="/card_ukraine.png" alt="UKRAINE — Crimea same color as Ukraine, 93% confidence" class="w-full" loading="lazy" />
       </div>
       <div class="rounded-lg overflow-hidden border border-[#ef4444]/30">
-        <img src="/card_russia.png" alt="RUSSIA classification 85%" class="w-full" loading="lazy" />
+        <img src="/card_russia.png" alt="RUSSIA — Crimea same color as Russia, 85% confidence" class="w-full" loading="lazy" />
       </div>
       <div class="rounded-lg overflow-hidden border border-[#f59e0b]/30">
-        <img src="/card_disputed.png" alt="DISPUTED classification 65%" class="w-full" loading="lazy" />
+        <img src="/card_disputed.png" alt="DISPUTED — dashed border or hatching, 65% confidence" class="w-full" loading="lazy" />
       </div>
       <div class="rounded-lg overflow-hidden border border-[#64748b]/30">
-        <img src="/card_unknown.png" alt="UNKNOWN classification 40%" class="w-full" loading="lazy" />
+        <img src="/card_unknown.png" alt="UNKNOWN — no political coloring, 40% confidence" class="w-full" loading="lazy" />
       </div>
     </div>
 

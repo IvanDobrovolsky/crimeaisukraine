@@ -4643,8 +4643,8 @@
     "combined_russia": 7639
   },
   "academic": {
-    "total_papers": 986,
-    "ukraine": 543,
+    "total_papers": 988,
+    "ukraine": 545,
     "russia": 440,
     "by_year": {
       "2026": {
@@ -4654,7 +4654,7 @@
         "neutral": 0
       },
       "2025": {
-        "ukraine": 91,
+        "ukraine": 92,
         "russia": 118,
         "disputed": 0,
         "neutral": 0
@@ -4678,7 +4678,7 @@
         "neutral": 0
       },
       "2021": {
-        "ukraine": 19,
+        "ukraine": 20,
         "russia": 25,
         "disputed": 1,
         "neutral": 0
