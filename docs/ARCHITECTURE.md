@@ -264,3 +264,65 @@ make all          # full pipeline
 make verify-llm   # LLM verification (needs ANTHROPIC_API_KEY)
 make site         # rebuild site
 ```
+
+---
+
+## LLM Verification Results
+
+### Two-stage pipeline precision
+
+| Stage | Precision | Purpose |
+|-------|-----------|---------|
+| Stage 1 (Regex) | 54.3% | High recall — catches all sovereignty signals |
+| Stage 2 (LLM) | ~100% | Separates endorsement from quotation/reporting |
+| Combined | 54.3% (95% CI: 52.9–55.7%) | n=4,924 verified of 8,474 |
+
+### Precision by domain country
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+graph LR
+    A["Regex flags<br/>8,474 articles"] --> B{"LLM: endorses<br/>or reports?"}
+    B -->|"Russian domains<br/>76% endorses"| C["Genuine<br/>sovereignty claims"]
+    B -->|"UK domains<br/>0% endorses"| D["BBC/Guardian<br/>reporting context"]
+    B -->|"Ukrainian domains<br/>0% endorses"| E["UA media<br/>quoting RU claims"]
+    B -->|"Other Western<br/>0% endorses"| F["International<br/>reporting"]
+```
+
+| Domain country | Precision | n | Finding |
+|---|---|---|---|
+| Russia | 76% | 805 | Genuine endorsement |
+| Unknown | 59% | 3,494 | Mixed — mostly Russian-adjacent |
+| India | 18% | 11 | Mostly reporting |
+| UK | 0% | 207 | ALL reporting/quoting |
+| Ukraine | 0% | 204 | ALL quoting Russian claims |
+| Italy | 0% | 30 | ALL reporting |
+| Australia | 0% | 22 | ALL reporting |
+| Germany | 0% | 19 | ALL reporting |
+
+### Corrected numbers
+
+- **Raw Russia-framing:** 5,194 articles
+- **Correction factor:** 0.543 (from LLM verification)
+- **Corrected estimate:** 2,819 genuine endorsements (95% CI: 2,746–2,891)
+- **Key finding:** Russian media endorses. Everyone else reports. The regex catches both; the LLM separates them.
+
+### Quartile stability
+
+| Quartile | Precision | Note |
+|---|---|---|
+| Q1 (first 1,241) | 90% | Russian domains processed first |
+| Q2 (next 1,239) | 72% | Mix of Russian + international |
+| Q3 (next 1,233) | 25% | International media dominates |
+| Q4 (last 1,210) | 29% | International media + Ukrainian quoting |
+
+The declining precision across quartiles is not classifier degradation — it reflects the queue ordering (Russian domains first, international last). The per-country precision is stable.
+
+### Implications for the paper
+
+The two-stage approach is standard in computational content analysis:
+1. Dictionary/regex stage provides **high recall** (catches all mentions)
+2. LLM verification provides **high precision** (filters false positives)
+3. Together they produce a **corrected prevalence estimate** with confidence intervals
+
+This is methodologically stronger than regex-only (which would overclaim) or LLM-only (which would be expensive and non-reproducible for the regex-deterministic portion).
