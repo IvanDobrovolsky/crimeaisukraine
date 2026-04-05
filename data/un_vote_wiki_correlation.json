@@ -1,0 +1,151 @@
+{
+  "voted_for_count": 103,
+  "voted_against_count": 11,
+  "abstained_count": 52,
+  "results": [
+    {
+      "country": "Bolivia",
+      "language": "es",
+      "term": "Simferopol",
+      "un_vote": "against",
+      "wiki_label": "ambiguous",
+      "description": "ciudad de Crimea"
+    },
+    {
+      "country": "Bolivia",
+      "language": "es",
+      "term": "Crimea",
+      "un_vote": "against",
+      "wiki_label": "ukraine",
+      "description": "península europea del mar Negro y mar de Azov, disputada por Rusia y Ucrania"
+    },
+    {
+      "country": "Cuba",
+      "language": "es",
+      "term": "Simferopol",
+      "un_vote": "against",
+      "wiki_label": "ambiguous",
+      "description": "ciudad de Crimea"
+    },
+    {
+      "country": "Cuba",
+      "language": "es",
+      "term": "Crimea",
+      "un_vote": "against",
+      "wiki_label": "ukraine",
+      "description": "península europea del mar Negro y mar de Azov, disputada por Rusia y Ucrania"
+    },
+    {
+      "country": "Nicaragua",
+      "language": "es",
+      "term": "Simferopol",
+      "un_vote": "against",
+      "wiki_label": "ambiguous",
+      "description": "ciudad de Crimea"
+    },
+    {
+      "country": "Nicaragua",
+      "language": "es",
+      "term": "Crimea",
+      "un_vote": "against",
+      "wiki_label": "ukraine",
+      "description": "península europea del mar Negro y mar de Azov, disputada por Rusia y Ucrania"
+    },
+    {
+      "country": "Russia",
+      "language": "ru",
+      "term": "Crimea",
+      "un_vote": "against",
+      "wiki_label": "ambiguous",
+      "description": "полуостров в бассейне Чёрного и Азовского морей"
+    },
+    {
+      "country": "Venezuela",
+      "language": "es",
+      "term": "Simferopol",
+      "un_vote": "against",
+      "wiki_label": "ambiguous",
+      "description": "ciudad de Crimea"
+    },
+    {
+      "country": "Venezuela",
+      "language": "es",
+      "term": "Crimea",
+      "un_vote": "against",
+      "wiki_label": "ukraine",
+      "description": "península europea del mar Negro y mar de Azov, disputada por Rusia y Ucrania"
+    },
+    {
+      "country": "Argentina",
+      "language": "es",
+      "term": "Simferopol",
+      "un_vote": "abstained",
+      "wiki_label": "ambiguous",
+      "description": "ciudad de Crimea"
+    },
+    {
+      "country": "Argentina",
+      "language": "es",
+      "term": "Crimea",
+      "un_vote": "abstained",
+      "wiki_label": "ukraine",
+      "description": "península europea del mar Negro y mar de Azov, disputada por Rusia y Ucrania"
+    },
+    {
+      "country": "Brazil",
+      "language": "pt",
+      "term": "Simferopol",
+      "un_vote": "abstained",
+      "wiki_label": "ambiguous",
+      "description": "cidade na Crimeia"
+    },
+    {
+      "country": "China",
+      "language": "zh",
+      "term": "Crimea",
+      "un_vote": "abstained",
+      "wiki_label": "ambiguous",
+      "description": "在黑海的半島"
+    },
+    {
+      "country": "Vietnam",
+      "language": "vi",
+      "term": "Crimea",
+      "un_vote": "abstained",
+      "wiki_label": "ambiguous",
+      "description": "bán đảo tại Biển Đen"
+    },
+    {
+      "country": "Australia",
+      "language": "en",
+      "term": "Simferopol",
+      "un_vote": "for",
+      "wiki_label": "ambiguous",
+      "description": "Second-largest city on the Crimean Peninsula"
+    },
+    {
+      "country": "Australia",
+      "language": "en",
+      "term": "Crimea",
+      "un_vote": "for",
+      "wiki_label": "ambiguous",
+      "description": "Peninsula in Europe"
+    },
+    {
+      "country": "Czech Republic",
+      "language": "cs",
+      "term": "Simferopol",
+      "un_vote": "for",
+      "wiki_label": "ambiguous",
+      "description": "sídlo v Autonomní republice Krym na Ukrajině"
+    },
+    {
+      "country": "Finland",
+      "language": "fi",
+      "term": "Simferopol",
+      "un_vote": "for",
+      "wiki_label": "ukraine",
+      "description": "kaupunki Krimin niemimaalla Ukrainassa"
+    }
+  ]
+}
