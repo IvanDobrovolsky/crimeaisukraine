@@ -4,32 +4,62 @@
     "English": {
       "ukraine": 3,
       "russia": 0,
-      "disputed": 0,
-      "ambiguous": 11
+      "ambiguous": 11,
+      "disputed": 0
     },
     "German": {
       "ukraine": 6,
       "russia": 0,
-      "disputed": 0,
-      "ambiguous": 0
+      "ambiguous": 0,
+      "disputed": 0
     },
     "Italian": {
-      "ukraine": 0,
+      "ukraine": 1,
       "russia": 0,
-      "disputed": 0,
-      "ambiguous": 8
+      "ambiguous": 7,
+      "disputed": 0
     },
     "Spanish": {
-      "ukraine": 0,
+      "ukraine": 2,
       "russia": 0,
-      "disputed": 0,
-      "ambiguous": 11
+      "ambiguous": 10,
+      "disputed": 0
     },
     "French": {
       "ukraine": 1,
       "russia": 0,
-      "disputed": 0,
-      "ambiguous": 0
+      "ambiguous": 0,
+      "disputed": 0
+    },
+    "Serbian": {
+      "ukraine": 0,
+      "russia": 0,
+      "ambiguous": 2,
+      "disputed": 0
+    },
+    "Indonesian": {
+      "ukraine": 5,
+      "russia": 0,
+      "ambiguous": 0,
+      "disputed": 0
+    },
+    "Romanian": {
+      "ukraine": 1,
+      "russia": 0,
+      "ambiguous": 0,
+      "disputed": 0
+    },
+    "Chinese": {
+      "ukraine": 0,
+      "russia": 1,
+      "ambiguous": 0,
+      "disputed": 0
+    },
+    "Persian (Iran)": {
+      "ukraine": 1,
+      "russia": 0,
+      "ambiguous": 0,
+      "disputed": 0
     }
   },
   "wikidata": {
@@ -278,7 +308,7 @@
       "description": "克里米亚共和国的首都",
       "description_english": "Capital of the Republic of Crimea (Russian admin name)",
       "label": "russia",
-      "signal": "Uses '克里米亚共和国' (Republic of Crimea = Russian Federation admin name, not 'Autonomous Republic')",
+      "signal": "uses Republic of Crimea (Russian admin name, no Autonomous)",
       "url": "https://zh.wikipedia.org/wiki/辛菲罗波尔"
     }
   ],
@@ -587,8 +617,8 @@
       "wikidata_countries": [],
       "description": "città della Crimea, Ucraina",
       "extract": "Jalta è una città della Crimea di circa 74 652 abitanti.",
-      "label": "ambiguous",
-      "signal": "description mentions Crimea but no country",
+      "label": "ukraine",
+      "signal": "description mentions Ucraina (Italian for Ukraine)",
       "url": "https://it.wikipedia.org/wiki/Yalta",
       "cat_label": "no_signal",
       "categories_ukraine": false,
@@ -602,8 +632,8 @@
       "wikidata_countries": [],
       "description": "pueblo en Crimea, Ucrania",
       "extract": "Yalta es una ciudad de la Crimea a orillas de la costa septentrional del mar Negro, en el sur de península. Es un importante puerto comercial y de pasajeros. La ciudad está ubicada en el sitio de la antigua colonia griega de Yalita, nombre que conservó hasta el siglo XV.",
-      "label": "ambiguous",
-      "signal": "description mentions Crimea but no country",
+      "label": "ukraine",
+      "signal": "description mentions Ucrania (Spanish for Ukraine)",
       "url": "https://es.wikipedia.org/wiki/Yalta",
       "cat_label": "no_signal",
       "categories_ukraine": false,
@@ -1532,8 +1562,8 @@
       ],
       "description": "península europea del mar Negro y mar de Azov, disputada por Rusia y Ucrania",
       "extract": "Crimea es una península ubicada en la costa septentrional del mar Negro, en Europa Oriental. En la actualidad es un territorio disputado entre Rusia y Ucrania, controlado por el primero pero reconocido por la comunidad internacional como parte del segundo.",
-      "label": "no_signal",
-      "signal": "",
+      "label": "ukraine",
+      "signal": "description mentions Ucrania (Spanish for Ukraine)",
       "url": "https://es.wikipedia.org/wiki/Crimea",
       "cat_label": "no_signal",
       "categories_ukraine": false,
@@ -1649,7 +1679,7 @@
       "language_name": "Indonesian",
       "description": "kota di Ukraina",
       "label": "ukraine",
-      "signal": "description mentions Ukraine",
+      "signal": "description mentions Ukraina",
       "url": "https://id.wikipedia.org/wiki/Simferopol"
     },
     {
@@ -1667,7 +1697,7 @@
       "language_name": "Romanian",
       "description": "oraș din Crimeea, teritoriu revendicat atât de Ucraina, cât și de Rusia",
       "label": "ukraine",
-      "signal": "description mentions Ukraine",
+      "signal": "description mentions Ucraina (Italian for Ukraine)",
       "url": "https://ro.wikipedia.org/wiki/Sevastopol"
     },
     {
@@ -1676,7 +1706,7 @@
       "language_name": "Indonesian",
       "description": "kota pelabuhan di Ukraina",
       "label": "ukraine",
-      "signal": "description mentions Ukraine",
+      "signal": "description mentions Ukraina",
       "url": "https://id.wikipedia.org/wiki/Sevastopol"
     },
     {
@@ -1685,7 +1715,7 @@
       "language_name": "Indonesian",
       "description": "kota di Ukraina",
       "label": "ukraine",
-      "signal": "description mentions Ukraine",
+      "signal": "description mentions Ukraina",
       "url": "https://id.wikipedia.org/wiki/Yalta"
     },
     {
@@ -1694,7 +1724,7 @@
       "language_name": "Indonesian",
       "description": "kota di Ukraina",
       "label": "ukraine",
-      "signal": "description mentions Ukraine",
+      "signal": "description mentions Ukraina",
       "url": "https://id.wikipedia.org/wiki/Kerch"
     },
     {
@@ -1703,7 +1733,7 @@
       "language_name": "Indonesian",
       "description": "semenanjung di Eropa Timur, di tepi Laut Hitam dan Laut Azov, diperebutkan oleh Ukraina (de jure) dan Rusia (de facto)",
       "label": "ukraine",
-      "signal": "description mentions Ukraine",
+      "signal": "description mentions Ukraina",
       "url": "https://id.wikipedia.org/wiki/Crimea"
     },
     {
@@ -1713,7 +1743,7 @@
       "description": "克里米亚共和国的首都",
       "description_english": "Capital of the Republic of Crimea (Russian admin name)",
       "label": "russia",
-      "signal": "Uses '克里米亚共和国' (Republic of Crimea = Russian Federation admin name, not 'Autonomous Republic')",
+      "signal": "uses Republic of Crimea (Russian admin name, no Autonomous)",
       "url": "https://zh.wikipedia.org/wiki/辛菲罗波尔"
     },
     {
@@ -1723,7 +1753,7 @@
       "description": "پایتخت جمهوری خودمختار کریمه",
       "description_english": "Capital of the Autonomous Republic of Crimea (Ukrainian admin name)",
       "label": "ukraine",
-      "signal": "Uses 'Autonomous Republic' — Ukrainian constitutional designation",
+      "signal": "uses Autonomous Republic (Ukrainian admin name)",
       "url": "https://fa.wikipedia.org/wiki/سیمفروپل"
     }
   ],
