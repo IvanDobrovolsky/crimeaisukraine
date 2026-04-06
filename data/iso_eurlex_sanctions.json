@@ -2,38 +2,25 @@
   "source": "ISO 3166 + EUR-Lex + OFAC",
   "date": "2026-04-06",
   "iso_3166": {
+    "finding": "ISO 3166-2 does NOT contain dual listings. Crimea is listed EXCLUSIVELY under Ukraine: UA-43 (Autonomous Republic of Crimea) and UA-40 (Sevastopol). Russia's ISO 3166-2:RU has 83 subdivisions — no RU-CR, no RU-SEV. The ISO 3166 Maintenance Agency has never added Russian codes for any occupied Ukrainian territory. CLDR (used by every browser and OS) confirms: 83 Russian subdivisions, zero Crimea. In 2014, ISO actually reinforced Ukrainian framing by renaming the entry from 'Respublika Krym' to 'Avtonomna Respublika Krym'.",
     "ukraine_codes": {
-      "UA-43": {
-        "name": "Avtonomna Respublika Krym",
-        "name_en": "Autonomous Republic of Crimea",
-        "parent": "UA (Ukraine)",
-        "status": "Active in ISO 3166-2:UA",
-        "note": "Listed since Ukraine's independence (1991). Never removed."
-      },
-      "UA-40": {
-        "name": "Sevastopol",
-        "name_en": "City of Sevastopol",
-        "parent": "UA (Ukraine)",
-        "status": "Active in ISO 3166-2:UA"
-      }
+      "UA-43": "Avtonomna Respublika Krym (Autonomous Republic of Crimea) — active",
+      "UA-40": "Sevastopol — active"
     },
     "russia_codes": {
-      "RU-CR": {
-        "name": "Respublika Krym",
-        "name_en": "Republic of Crimea",
-        "parent": "RU (Russia)",
-        "status": "Added to ISO 3166-2:RU",
-        "note": "Self-reported by Russia after 2014 annexation. ISO 3166/MA has not formally endorsed."
-      },
-      "RU-SEV": {
-        "name": "Sevastopol",
-        "name_en": "City of Sevastopol",
-        "parent": "RU (Russia)",
-        "status": "Added to ISO 3166-2:RU"
-      }
+      "RU-CR": "DOES NOT EXIST in ISO 3166-2:RU",
+      "RU-SEV": "DOES NOT EXIST in ISO 3166-2:RU"
     },
-    "finding": "ISO 3166-2 contains simultaneous entries for Crimea under both Ukraine (UA-43) and Russia (RU-CR). This dual listing is the technical root cause of platform inconsistency: systems that consume ISO data inherit the ambiguity. The ISO 3166 Maintenance Agency has not removed either entry.",
-    "source_url": "https://www.iso.org/obp/ui/#iso:code:3166:UA"
+    "russia_subdivision_count": 83,
+    "note": "Russia domestically claims 89 federal subjects (including Crimea + 4 oblasts). ISO recognizes only 83.",
+    "cldr_verified": true,
+    "cldr_source": "https://github.com/unicode-org/cldr/blob/main/common/supplemental/subdivisions.xml",
+    "sap_reference": "SAP KB Article 2518366 confirms no ISO codes for Russian-administered Crimea",
+    "sources": [
+      "https://en.wikipedia.org/wiki/ISO_3166-2:RU",
+      "https://en.wikipedia.org/wiki/ISO_3166-2:UA",
+      "https://github.com/unicode-org/cldr/blob/main/common/subdivisions/en.xml"
+    ]
   },
   "eurlex": {
     "key_legislation": [
@@ -82,9 +69,13 @@
     "key_finding": "The US sanctions program title itself says 'Crimea Region of Ukraine'"
   },
   "regulation_gap": {
-    "legal_position": "Unambiguous — Crimea is Ukrainian territory under Russian occupation (UN GA 68/262, EU Reg 692/2014, OFAC EO13685, ECHR Grand Chamber 2021)",
-    "technical_standard": "Ambiguous — ISO 3166-2 has dual listings (UA-43 AND RU-CR)",
-    "platform_behavior": "Inconsistent — Google/Bing show 'disputed', Yandex/2GIS show Russia, Nominatim shows Ukraine",
-    "gap": "No mechanism exists to enforce legal position in technical standards or platform geodata"
+    "legal_position": "Unambiguous — Crimea is Ukrainian territory (UN GA 68/262, EU Reg 692/2014, OFAC EO13685, ECHR 2021)",
+    "technical_standards": "Correct — ISO 3166-2 lists Crimea only under Ukraine (UA-43). CLDR confirms. GENC follows US policy (Ukraine).",
+    "library_systems": "Correct — LoC uses 'Crimea (Ukraine)' as canonical form",
+    "institution_registries": "Mostly correct — ROR codes 13/14 Crimean institutions as UA",
+    "geodata_supply_chain": "INCORRECT — Natural Earth assigns SOVEREIGNT=Russia, overriding ISO 3166",
+    "downstream_platforms": "Inconsistent — inherit Natural Earth's classification (D3, Leaflet, Plotly = Russia; Nominatim = Ukraine)",
+    "academic_metadata": "INCORRECT — papers use 'Republic of Crimea, Russia' despite institution registries saying Ukraine",
+    "gap": "The gap is NOT in international standards (ISO is correct). The gap is in GEODATA bypassing standards: Natural Earth ignores ISO 3166 and assigns Crimea to Russia based on 'de facto control'. This single dataset then propagates to 30M+ npm downloads/week. No regulatory mechanism requires geodata projects to follow ISO or international law."
   }
 }
