@@ -333,7 +333,30 @@ const propagation = [
 <section id="media-framing" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingMediaTitle} — 154K {lang === 'uk' ? 'статей' : 'Articles'}</h2>
-    <p class="text-[#94a3b8] mb-4">{lang === 'uk' ? 'GDELT, 2015-2026. Класифіковано 81 сигналом суверенітету на 3 мовах, верифіковано LLM.' : 'GDELT, 2015–2026. Classified with 81 sovereignty signals in 3 languages, LLM-verified.'}</p>
+    <p class="text-[#94a3b8] mb-6">{lang === 'uk'
+      ? 'GDELT, 2015-2026. 154K статей проскановано, 8,472 верифіковано LLM. Виключаючи російські ЗМІ — жодне велике міжнародне видання не підтримує російську позицію.'
+      : 'GDELT, 2015–2026. 154K articles scanned, 8,472 LLM-verified. Excluding Russian media — zero major international outlets endorse Russian sovereignty framing.'
+    }</p>
+
+    <!-- Pipeline infographic -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+      <div class="text-center p-3 rounded-lg bg-[#0a0e1a] border border-[#1e293b]">
+        <div class="text-2xl font-black text-white">154K</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'статей проскановано' : 'articles scanned'}</div>
+      </div>
+      <div class="text-center p-3 rounded-lg bg-[#0a0e1a] border border-[#1e293b]">
+        <div class="text-2xl font-black text-white">8,472</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'верифіковано LLM' : 'LLM-verified'}</div>
+      </div>
+      <div class="text-center p-3 rounded-lg bg-[#0a0e1a] border border-[#22c55e]/30">
+        <div class="text-2xl font-black text-[#22c55e]">99.5%</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'міжнар. ЗМІ — коректно' : 'intl media — correct'}</div>
+      </div>
+      <div class="text-center p-3 rounded-lg bg-[#0a0e1a] border border-[#ef4444]/30">
+        <div class="text-2xl font-black text-[#ef4444]">0.5%</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'справжні порушення' : 'genuine violations'}</div>
+      </div>
+    </div>
 
     <!-- Filter toggle -->
     <div class="flex flex-wrap items-center gap-1.5 mb-5">
@@ -362,34 +385,102 @@ const propagation = [
       </div>
       <div class="flex-1 text-center p-3 rounded-lg bg-[#ef4444]/10 border border-[#ef4444]/20">
         <div class="text-2xl font-bold text-[#ef4444] transition-all" id="media-stat-ru">{mediaTotals.international.russia.toLocaleString()}</div>
-        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Росія (LLM)' : 'Russia (LLM-confirmed)'}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Росія (LLM)' : 'Russia (LLM)'}</div>
       </div>
       <div class="flex-1 text-center p-3 rounded-lg bg-[#f59e0b]/10 border border-[#f59e0b]/20">
         <div class="text-2xl font-bold text-[#f59e0b] transition-all" id="media-stat-disp">{mediaTotals.international.disputed.toLocaleString()}</div>
-        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Спірно' : 'Disputed'}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Цитують обидві сторони' : 'Citing both sides'}</div>
       </div>
     </div>
 
     <!-- Line chart -->
     <div class="mb-6">
-      <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? 'Україна vs Росія vs Спірне (кількість статей, LLM-скориговано)' : 'Ukraine vs Russia vs Disputed framing (article count, LLM-corrected)'}</div>
+      <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? 'Фреймінг суверенітету у міжнародних ЗМІ (LLM-скориговано)' : 'Sovereignty framing in international media (LLM-corrected)'}</div>
       <div class="relative" style="height: 320px;">
         <canvas id="media-chart" class="w-full h-full"></canvas>
       </div>
       <div class="flex gap-4 mt-2 text-xs text-[#94a3b8]">
         <span class="flex items-center gap-1"><span class="w-3 h-0.5 bg-[#22c55e] inline-block"></span>{lang === 'uk' ? 'Україна' : 'Ukraine'}</span>
         <span class="flex items-center gap-1"><span class="w-3 h-0.5 bg-[#ef4444] inline-block"></span>{lang === 'uk' ? 'Росія' : 'Russia'}</span>
-        <span class="flex items-center gap-1"><span class="w-3 h-0.5 bg-[#f59e0b] inline-block"></span>{lang === 'uk' ? 'Спірне' : 'Disputed'}</span>
+        <span class="flex items-center gap-1"><span class="w-3 h-0.5 bg-[#f59e0b] inline-block"></span>{lang === 'uk' ? 'Цитування' : 'Citing both'}</span>
       </div>
     </div>
 
-    <!-- Sample LLM-confirmed violations -->
+    <!-- Key finding -->
+    <div class="bg-[#0a0e1a] rounded-xl p-5 border border-[#22c55e]/30 mb-6">
+      <p class="text-sm text-[#94a3b8]">
+        <span class="text-[#22c55e] font-bold">{lang === 'uk' ? 'Висновок' : 'Key finding'}:</span>
+        {lang === 'uk'
+          ? ' Жодне велике міжнародне видання (BBC, Reuters, CNN, NYT, Al Jazeera, DW) систематично не підтримує російський фреймінг Криму. Рівень справжнього схвалення у міжнародних ЗМІ — 0.5%, стабільний з 2015 року. Коли помилки трапляються (Coca-Cola 2016, Apple 2019, Олімпіада 2021, FIFA 2024), тиск МЗС України та громадськості призводить до швидких виправлень.'
+          : ' No major international outlet (BBC, Reuters, CNN, NYT, Al Jazeera, DW) systematically endorses Russian Crimea framing. Genuine endorsement rate in international media is 0.5%, stable since 2015. When mistakes occur (Coca-Cola 2016, Apple 2019, Olympics 2021, FIFA 2024), MFA and public pressure leads to swift corrections.'
+        }
+      </p>
+    </div>
+
+    <!-- Advocacy timeline -->
+    <div class="mb-6">
+      <h3 class="text-xs font-bold text-[#64748b] uppercase tracking-wider mb-3">{lang === 'uk' ? 'Хронологія виправлень' : 'Correction Timeline'}</h3>
+      <div class="space-y-2">
+        <div class="flex items-center gap-3 text-xs">
+          <span class="text-[#64748b] w-10 flex-shrink-0 font-mono">2016</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e] flex-shrink-0"></span>
+          <span class="text-[#e2e8f0]">Coca-Cola {lang === 'uk' ? 'виправила карту після бойкоту та вибачень' : 'corrected map after boycott + formal apology'}</span>
+        </div>
+        <div class="flex items-center gap-3 text-xs">
+          <span class="text-[#64748b] w-10 flex-shrink-0 font-mono">2018</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-[#0057b7] flex-shrink-0"></span>
+          <span class="text-[#e2e8f0]">#KyivNotKiev {lang === 'uk' ? '— BBC, AP, NYT, WaPo змінили написання' : '— BBC, AP, NYT, WaPo all switched spelling'}</span>
+        </div>
+        <div class="flex items-center gap-3 text-xs">
+          <span class="text-[#64748b] w-10 flex-shrink-0 font-mono">2019</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-[#f59e0b] flex-shrink-0"></span>
+          <span class="text-[#e2e8f0]">Apple Maps {lang === 'uk' ? '— показала Крим як РФ, 15 євродепутатів написали лист' : '— showed Crimea as Russia, 15 MEPs wrote letters'}</span>
+        </div>
+        <div class="flex items-center gap-3 text-xs">
+          <span class="text-[#64748b] w-10 flex-shrink-0 font-mono">2021</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e] flex-shrink-0"></span>
+          <span class="text-[#e2e8f0]">{lang === 'uk' ? 'Кримська платформа (46 країн) + Олімпіада виправила карту' : 'Crimea Platform (46 countries) + Tokyo Olympics corrected map'}</span>
+        </div>
+        <div class="flex items-center gap-3 text-xs">
+          <span class="text-[#64748b] w-10 flex-shrink-0 font-mono">2022</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e] flex-shrink-0"></span>
+          <span class="text-[#e2e8f0]">{lang === 'uk' ? 'Повномасштабне вторгнення — Apple виправила, Yandex прибрав кордони' : 'Full-scale invasion — Apple corrected, Yandex removed all borders'}</span>
+        </div>
+        <div class="flex items-center gap-3 text-xs">
+          <span class="text-[#64748b] w-10 flex-shrink-0 font-mono">2023</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e] flex-shrink-0"></span>
+          <span class="text-[#e2e8f0]">{lang === 'uk' ? 'Угорщина виправила відео після демаршу МЗС' : 'Hungary corrected video after MFA demarche'}</span>
+        </div>
+        <div class="flex items-center gap-3 text-xs">
+          <span class="text-[#64748b] w-10 flex-shrink-0 font-mono">2024</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e] flex-shrink-0"></span>
+          <span class="text-[#e2e8f0]">FIFA {lang === 'uk' ? 'виправила карту ЧС-2026 після протесту МЗС' : 'corrected World Cup 2026 map after MFA protest'}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Violator breakdown -->
     <div>
-      <h3 class="text-xs font-bold text-[#64748b] uppercase tracking-wider mb-2" id="media-violators-title">
-        {lang === 'uk' ? 'LLM-підтверджені порушення' : 'LLM-confirmed violations'}
-        <span class="text-[#ef4444] ml-1" id="media-violators-count"></span>
+      <h3 class="text-xs font-bold text-[#64748b] uppercase tracking-wider mb-2">
+        {lang === 'uk' ? 'Хто ці 239 порушників?' : 'Who are the 239 non-Russian violators?'}
       </h3>
-      <div class="space-y-1 max-h-64 overflow-y-auto" id="media-violators-list">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+        <div class="bg-[#0a0e1a] rounded-lg p-3 border border-[#1e293b]">
+          <div class="text-lg font-bold text-[#ef4444]">53</div>
+          <div class="text-[9px] text-[#64748b]">{lang === 'uk' ? 'Проросійський фрінж' : 'Pro-Russian fringe'}</div>
+        </div>
+        <div class="bg-[#0a0e1a] rounded-lg p-3 border border-[#1e293b]">
+          <div class="text-lg font-bold text-[#f59e0b]">47</div>
+          <div class="text-[9px] text-[#64748b]">{lang === 'uk' ? 'Агрегатори контенту' : 'Content aggregators'}</div>
+        </div>
+        <div class="bg-[#0a0e1a] rounded-lg p-3 border border-[#1e293b]">
+          <div class="text-lg font-bold text-[#64748b]">12</div>
+          <div class="text-[9px] text-[#64748b]">{lang === 'uk' ? 'Державні ЗМІ (Іран, Білорусь)' : 'State media (Iran, Belarus)'}</div>
+        </div>
+        <div class="bg-[#0a0e1a] rounded-lg p-3 border border-[#22c55e]/30">
+          <div class="text-lg font-bold text-[#22c55e]">0</div>
+          <div class="text-[9px] text-[#64748b]">{lang === 'uk' ? 'Великі міжнародні ЗМІ' : 'Major international media'}</div>
+        </div>
       </div>
     </div>
   </div>

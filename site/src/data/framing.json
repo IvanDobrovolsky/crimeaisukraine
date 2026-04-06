@@ -5227,6 +5227,138 @@
           "precision": 0.935
         }
       }
+    },
+    "advocacy_timeline": {
+      "years": [
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "total_articles": [
+        22547,
+        26515,
+        16047,
+        32443,
+        19149,
+        7198,
+        13039,
+        16946,
+        30414,
+        14370,
+        8910
+      ],
+      "ukraine_framing": [
+        3468,
+        5139,
+        3629,
+        7620,
+        4253,
+        2053,
+        2860,
+        3405,
+        8941,
+        3671,
+        1880
+      ],
+      "russia_corrected": [
+        18,
+        29,
+        10,
+        23,
+        16,
+        8,
+        16,
+        17,
+        49,
+        17,
+        13
+      ],
+      "russia_raw_pct": [
+        6.5,
+        5.8,
+        4.3,
+        4.2,
+        5.4,
+        2.3,
+        2.8,
+        8.6,
+        3.7,
+        2.7,
+        9.8
+      ],
+      "russia_llm_pct": [
+        0.5,
+        0.5,
+        0.3,
+        0.3,
+        0.4,
+        0.4,
+        0.5,
+        0.5,
+        0.5,
+        0.4,
+        0.6
+      ],
+      "events": [
+        {
+          "year": "2016",
+          "label": "Coca-Cola corrected",
+          "type": "correction"
+        },
+        {
+          "year": "2018",
+          "label": "#KyivNotKiev",
+          "type": "campaign"
+        },
+        {
+          "year": "2019",
+          "label": "Apple Maps backlash",
+          "type": "backlash"
+        },
+        {
+          "year": "2021",
+          "label": "Crimea Platform + Olympics fix",
+          "type": "correction"
+        },
+        {
+          "year": "2022",
+          "label": "Invasion — Apple corrects",
+          "type": "correction"
+        },
+        {
+          "year": "2023",
+          "label": "Hungary video fixed",
+          "type": "correction"
+        },
+        {
+          "year": "2024",
+          "label": "FIFA map fixed",
+          "type": "correction"
+        }
+      ],
+      "summary": {
+        "total_articles_scanned": 154000,
+        "total_nonru_with_signals": 47657,
+        "total_nonru_endorses": 239,
+        "endorsement_rate": 0.005,
+        "breakdown": {
+          "pro_russian_fringe": 53,
+          "content_aggregators": 47,
+          "non_western_state_media": 12,
+          "other_marginal": 127,
+          "major_media": 0
+        },
+        "disputed_are_reporting": 347,
+        "disputed_total": 368
+      }
     }
   },
   "academic": {
