@@ -1,0 +1,90 @@
+{
+  "source": "ISO 3166 + EUR-Lex + OFAC",
+  "date": "2026-04-06",
+  "iso_3166": {
+    "ukraine_codes": {
+      "UA-43": {
+        "name": "Avtonomna Respublika Krym",
+        "name_en": "Autonomous Republic of Crimea",
+        "parent": "UA (Ukraine)",
+        "status": "Active in ISO 3166-2:UA",
+        "note": "Listed since Ukraine's independence (1991). Never removed."
+      },
+      "UA-40": {
+        "name": "Sevastopol",
+        "name_en": "City of Sevastopol",
+        "parent": "UA (Ukraine)",
+        "status": "Active in ISO 3166-2:UA"
+      }
+    },
+    "russia_codes": {
+      "RU-CR": {
+        "name": "Respublika Krym",
+        "name_en": "Republic of Crimea",
+        "parent": "RU (Russia)",
+        "status": "Added to ISO 3166-2:RU",
+        "note": "Self-reported by Russia after 2014 annexation. ISO 3166/MA has not formally endorsed."
+      },
+      "RU-SEV": {
+        "name": "Sevastopol",
+        "name_en": "City of Sevastopol",
+        "parent": "RU (Russia)",
+        "status": "Added to ISO 3166-2:RU"
+      }
+    },
+    "finding": "ISO 3166-2 contains simultaneous entries for Crimea under both Ukraine (UA-43) and Russia (RU-CR). This dual listing is the technical root cause of platform inconsistency: systems that consume ISO data inherit the ambiguity. The ISO 3166 Maintenance Agency has not removed either entry.",
+    "source_url": "https://www.iso.org/obp/ui/#iso:code:3166:UA"
+  },
+  "eurlex": {
+    "key_legislation": [
+      {
+        "celex": "32014R0692",
+        "title": "Council Regulation (EU) No 692/2014 concerning restrictions on the import of goods originating in Crimea or Sevastopol",
+        "date": "2014-06-23",
+        "type": "Regulation",
+        "crimea_classification": "Illegally annexed Ukrainian territory",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692"
+      },
+      {
+        "celex": "32014D0386",
+        "title": "Council Decision 2014/386/CFSP concerning restrictions on goods originating in Crimea or Sevastopol",
+        "date": "2014-06-23",
+        "type": "Decision",
+        "crimea_classification": "Illegally annexed Ukrainian territory",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014D0386"
+      },
+      {
+        "celex": "32014D0145",
+        "title": "Council Decision 2014/145/CFSP concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "date": "2014-03-17",
+        "type": "Decision",
+        "crimea_classification": "Ukrainian territory",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014D0145"
+      },
+      {
+        "celex": "32022R2065",
+        "title": "Regulation (EU) 2022/2065 — Digital Services Act",
+        "date": "2022-10-19",
+        "type": "Regulation",
+        "crimea_classification": "Art 34: VLOPs must assess systemic risks including threats to civic discourse",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2065",
+        "relevance": "Maps showing Crimea as Russia = potential systemic risk under Art 34"
+      }
+    ],
+    "annual_renewals": 12,
+    "finding": "The EU has adopted 50+ legal acts since 2014 that explicitly classify Crimea as illegally annexed Ukrainian territory. Council Regulation 692/2014 prohibits import of goods 'originating in Crimea or Sevastopol.' Yet platforms operating under EU jurisdiction (Google, Apple, Mapbox) show Crimea as 'disputed' or 'Russian' depending on worldview settings."
+  },
+  "ofac": {
+    "program": "UKRAINE-EO13685",
+    "description": "Executive Order 13685 — Blocking Property of Certain Persons and Prohibiting Certain Transactions With Respect to the Crimea Region of Ukraine",
+    "note": "OFAC explicitly calls it 'the Crimea Region of UKRAINE' in the program name",
+    "url": "https://ofac.treasury.gov/sanctions-programs-and-country-information/ukraine-russia-related-sanctions",
+    "key_finding": "The US sanctions program title itself says 'Crimea Region of Ukraine'"
+  },
+  "regulation_gap": {
+    "legal_position": "Unambiguous — Crimea is Ukrainian territory under Russian occupation (UN GA 68/262, EU Reg 692/2014, OFAC EO13685, ECHR Grand Chamber 2021)",
+    "technical_standard": "Ambiguous — ISO 3166-2 has dual listings (UA-43 AND RU-CR)",
+    "platform_behavior": "Inconsistent — Google/Bing show 'disputed', Yandex/2GIS show Russia, Nominatim shows Ukraine",
+    "gap": "No mechanism exists to enforce legal position in technical standards or platform geodata"
+  }
+}

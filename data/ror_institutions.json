@@ -1,0 +1,104 @@
+{
+  "source": "ROR + OpenAlex",
+  "date": "2026-04-06",
+  "ror": {
+    "total": 5,
+    "ua": 4,
+    "ru": 1,
+    "institutions": [
+      {
+        "name": "Research Institute of Agriculture of Crimea",
+        "ror_id": "https://ror.org/00dqsh274",
+        "country": "Russia",
+        "country_code": "RU",
+        "city": "Kiyevskoye",
+        "status": "active"
+      },
+      {
+        "name": "Crimea University of Culture Art and Tourism",
+        "ror_id": "https://ror.org/02qst3a08",
+        "country": "Ukraine",
+        "country_code": "UA",
+        "city": "Simferopol",
+        "status": "active"
+      },
+      {
+        "name": "Crimea State Medical University named after S. I. Georgievsky",
+        "ror_id": "https://ror.org/04qfewz28",
+        "country": "Ukraine",
+        "country_code": "UA",
+        "city": "Simferopol",
+        "status": "active"
+      },
+      {
+        "name": "Sevastopol National Technical University",
+        "ror_id": "https://ror.org/053mxw461",
+        "country": "Ukraine",
+        "country_code": "UA",
+        "city": "Sebastopol",
+        "status": "active"
+      },
+      {
+        "name": "Sevastopol National University of Nuclear Energy and Industry",
+        "ror_id": "https://ror.org/01rd41j61",
+        "country": "Ukraine",
+        "country_code": "UA",
+        "city": "Sebastopol",
+        "status": "active"
+      }
+    ]
+  },
+  "openalex": {
+    "total": 5,
+    "ua": 4,
+    "ru": 1,
+    "institutions": [
+      {
+        "name": "Research Institute of Agriculture of Crimea",
+        "openalex_id": "https://openalex.org/I4210092324",
+        "ror": "https://ror.org/00dqsh274",
+        "country_code": "RU",
+        "city": "Kiyevskoye",
+        "works_count": 3472,
+        "cited_by_count": 32500
+      },
+      {
+        "name": "Crimea State Medical University named after S. I. Georgievsky",
+        "openalex_id": "https://openalex.org/I4210151130",
+        "ror": "https://ror.org/04qfewz28",
+        "country_code": "UA",
+        "city": "Simferopol",
+        "works_count": 365,
+        "cited_by_count": 1775
+      },
+      {
+        "name": "Crimea University of Culture Art and Tourism",
+        "openalex_id": "https://openalex.org/I4210110628",
+        "ror": "https://ror.org/02qst3a08",
+        "country_code": "UA",
+        "city": "Simferopol",
+        "works_count": 87,
+        "cited_by_count": 78
+      },
+      {
+        "name": "Sevastopol National Technical University",
+        "openalex_id": "https://openalex.org/I74776132",
+        "ror": "https://ror.org/053mxw461",
+        "country_code": "UA",
+        "city": "Sebastopol",
+        "works_count": 2359,
+        "cited_by_count": 14696
+      },
+      {
+        "name": "Sevastopol National University of Nuclear Energy and Industry",
+        "openalex_id": "https://openalex.org/I227854842",
+        "ror": "https://ror.org/01rd41j61",
+        "country_code": "UA",
+        "city": "Sebastopol",
+        "works_count": 55,
+        "cited_by_count": 264
+      }
+    ]
+  },
+  "finding": "ROR classifies 4/5 Crimean institutions as Ukraine. But papers from these UA-registered institutions use 'Republic of Crimea, Russia' in metadata."
+}

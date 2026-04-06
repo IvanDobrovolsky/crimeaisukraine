@@ -1,0 +1,2917 @@
+{
+  "source": "Library of Congress",
+  "date": "2026-04-06",
+  "subject_headings": {
+    "total": 47,
+    "ukraine_mentions": 4,
+    "russia_only_mentions": 4,
+    "key_headings": [
+      "Crimean Mountains (Ukraine)",
+      "Krymsʹka atomna elektrostant︠s︡ii︠a︡ (Ukraine)",
+      "Crimean War, 1853-1856--Campaigns--Ukraine",
+      "Crimean War, 1853-1856--Campaigns--Ukraine--Congresses"
+    ],
+    "all_headings": [
+      {
+        "label": "Caucasian fir",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2003008399",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Krimchaks",
+        "uri": "http://id.loc.gov/authorities/subjects/sh00009850",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Khanate--Kings and rulers",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2023001016",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Mountains (Ukraine)",
+        "uri": "http://id.loc.gov/authorities/subjects/sh93006442",
+        "ukraine": true,
+        "russia": false
+      },
+      {
+        "label": "Krymsʹka atomna elektrostant︠s︡ii︠a︡ (Ukraine)",
+        "uri": "http://id.loc.gov/authorities/subjects/sh94002587",
+        "ukraine": true,
+        "russia": false
+      },
+      {
+        "label": "Anonyms and pseudonyms, Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2007008943",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Architecture, Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh99001200",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Artists, Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2001001495",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Authors, Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2007008942",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Calligraphy, Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2003008435",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Cooking, Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh97004922",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Tatar fiction",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2003004265",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Folk literature, Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh97006965",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Tatar language",
+        "uri": "http://id.loc.gov/authorities/subjects/sh85034019",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Tatar language--Conversation and phrase books",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2021009188",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Tatar language--Conversation and phrase books--Russian",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2021010053",
+        "ukraine": false,
+        "russia": true
+      },
+      {
+        "label": "Crimean Tatar language--Conversation and phrase books--Ukrainian",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2021010054",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Tatar language--Influence on Russian",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2022003578",
+        "ukraine": false,
+        "russia": true
+      },
+      {
+        "label": "Krimchak language",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2005003817",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Names, Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2001004347",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Tatar literature",
+        "uri": "http://id.loc.gov/authorities/subjects/sh91000559",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Tatar newspapers",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2011004319",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Names, Personal--Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2020008444",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Tatar poetry",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2008009940",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Poets, Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2006001299",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Proverbs, Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2007002446",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Riddles, Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2016000044",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Tatars",
+        "uri": "http://id.loc.gov/authorities/subjects/sh87003883",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Tatars--History",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2009122358",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Short stories, Crimean Tatar",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2003004267",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean Tatar wit and humor",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2007002445",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856",
+        "uri": "http://id.loc.gov/authorities/subjects/sh85034020",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Campaigns",
+        "uri": "http://id.loc.gov/authorities/subjects/sh95008590",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Campaigns--Romania",
+        "uri": "http://id.loc.gov/authorities/subjects/sh95008593",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Campaigns--Russia",
+        "uri": "http://id.loc.gov/authorities/subjects/sh95008594",
+        "ukraine": false,
+        "russia": true
+      },
+      {
+        "label": "Crimean War, 1853-1856--Campaigns--Russia, Northern",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2010007053",
+        "ukraine": false,
+        "russia": true
+      },
+      {
+        "label": "Crimean War, 1853-1856--Campaigns--Sources",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2010007054",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Campaigns--Turkey",
+        "uri": "http://id.loc.gov/authorities/subjects/sh95008595",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Campaigns--Ukraine",
+        "uri": "http://id.loc.gov/authorities/subjects/sh95008598",
+        "ukraine": true,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Campaigns--Ukraine--Congresses",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2010007055",
+        "ukraine": true,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Causes",
+        "uri": "http://id.loc.gov/authorities/subjects/sh85034021",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Diplomatic history",
+        "uri": "http://id.loc.gov/authorities/subjects/sh85034022",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Fiction",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2009118751",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Maps",
+        "uri": "http://id.loc.gov/authorities/subjects/sh85034023",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Monuments",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2023002034",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Monuments--England",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2023002033",
+        "ukraine": false,
+        "russia": false
+      },
+      {
+        "label": "Crimean War, 1853-1856--Religious aspects",
+        "uri": "http://id.loc.gov/authorities/subjects/sh2020002172",
+        "ukraine": false,
+        "russia": false
+      }
+    ]
+  },
+  "geographic_authority": [
+    {
+      "query": "Crimea (Ukraine)",
+      "type": "subject",
+      "label": "Crimea (Ukraine)--Antiquities",
+      "uri": "http://id.loc.gov/authorities/subjects/sh2008114773"
+    },
+    {
+      "query": "Crimea (Ukraine)",
+      "type": "subject",
+      "label": "Crimea (Ukraine)--Description and travel",
+      "uri": "http://id.loc.gov/authorities/subjects/sh2008114774"
+    },
+    {
+      "query": "Crimea (Ukraine)",
+      "type": "subject",
+      "label": "Crimea (Ukraine)--Guidebooks",
+      "uri": "http://id.loc.gov/authorities/subjects/sh2008114775"
+    },
+    {
+      "query": "Crimea (Ukraine)",
+      "type": "subject",
+      "label": "Crimea (Ukraine)--History",
+      "uri": "http://id.loc.gov/authorities/subjects/sh2009122359"
+    },
+    {
+      "query": "Crimea (Ukraine)",
+      "type": "subject",
+      "label": "Crimea (Ukraine)--History--Russian occupation, 2014-",
+      "uri": "http://id.loc.gov/authorities/subjects/sh2015000162"
+    },
+    {
+      "query": "Crimea (Ukraine)",
+      "type": "name",
+      "label": "Crimea (Ukraine)",
+      "uri": "http://id.loc.gov/authorities/names/n93047026"
+    },
+    {
+      "query": "Crimea (Ukraine)",
+      "type": "name",
+      "label": "Crimea (Ukraine). Rada Ministriv",
+      "uri": "http://id.loc.gov/authorities/names/no95059838"
+    },
+    {
+      "query": "Crimea (Ukraine)",
+      "type": "name",
+      "label": "Crimea (Ukraine). Verkhovna Rada",
+      "uri": "http://id.loc.gov/authorities/names/n94010753"
+    },
+    {
+      "query": "Crimea (Ukraine)",
+      "type": "name",
+      "label": "Crimea (Ukraine). Medzhlis krymskotatarskogo naroda",
+      "uri": "http://id.loc.gov/authorities/names/no97008262"
+    },
+    {
+      "query": "Crimea (Ukraine)",
+      "type": "name",
+      "label": "Crimea (Ukraine). Ministerstvo kulʹtury",
+      "uri": "http://id.loc.gov/authorities/names/n97002510"
+    },
+    {
+      "query": "Simferopol",
+      "type": "name",
+      "label": "Simferopolʹsʹkyĭ derz︠h︡avnyĭ universytet im. M.V. Frunze",
+      "uri": "http://id.loc.gov/authorities/names/n83186342"
+    },
+    {
+      "query": "Simferopol",
+      "type": "name",
+      "label": "Simferopolʹsʹkyĭ derz︠h︡avnyĭ universytet im. M.V. Frunze. Mezhvuzovskiĭ t︠s︡entr \"Krym\"",
+      "uri": "http://id.loc.gov/authorities/names/no99023908"
+    },
+    {
+      "query": "Simferopol",
+      "type": "name",
+      "label": "Simferopolʹsʹkyĭ derz︠h︡avnyĭ universytet im. M.V. Frunze. Naukova biblioteka",
+      "uri": "http://id.loc.gov/authorities/names/n99039157"
+    },
+    {
+      "query": "Simferopol",
+      "type": "name",
+      "label": "Simferopolʹsʹkyĭ elektromashynobudivnyĭ zavod",
+      "uri": "http://id.loc.gov/authorities/names/n81002420"
+    },
+    {
+      "query": "Simferopol",
+      "type": "name",
+      "label": "Simferopolʹsʹkyĭ khudoz︠h︡niĭ muzeĭ",
+      "uri": "http://id.loc.gov/authorities/names/n79024019"
+    },
+    {
+      "query": "Sevastopol",
+      "type": "subject",
+      "label": "Sevastopolʹsʹka fortet︠s︡i︠a︡ (Sevastopolʹ, Ukraine)",
+      "uri": "http://id.loc.gov/authorities/subjects/sh99002213"
+    },
+    {
+      "query": "Sevastopol",
+      "type": "subject",
+      "label": "Sevastopol, Battle of, Sevastopolʹ, Ukraine, 1944",
+      "uri": "http://id.loc.gov/authorities/subjects/sh85120409"
+    },
+    {
+      "query": "Sevastopol",
+      "type": "subject",
+      "label": "Sevastopolʹ (Ukraine)--History",
+      "uri": "http://id.loc.gov/authorities/subjects/sh95001951"
+    },
+    {
+      "query": "Sevastopol",
+      "type": "name",
+      "label": "Sevastopolʹ (Battleship)",
+      "uri": "http://id.loc.gov/authorities/names/n2008004250"
+    },
+    {
+      "query": "Sevastopol",
+      "type": "name",
+      "label": "Sevastopolʹ (Ukraine)",
+      "uri": "http://id.loc.gov/authorities/names/n80145689"
+    },
+    {
+      "query": "Sevastopol",
+      "type": "name",
+      "label": "Sevastopolʹskoe muzeĭnoe obʺedinenie (Ukraine)",
+      "uri": "http://id.loc.gov/authorities/names/n2018020618"
+    },
+    {
+      "query": "Sevastopol",
+      "type": "name",
+      "label": "Sevastopolʹsʹke tovarystvo \"Prosvita\" imeni Tarasa Shevchenka",
+      "uri": "http://id.loc.gov/authorities/names/no00036971"
+    },
+    {
+      "query": "Sevastopol",
+      "type": "name",
+      "label": "Sevastopolʹsʹkyĭ instytut i︠u︡rydychnykh doslidz︠h︡enʹ",
+      "uri": "http://id.loc.gov/authorities/names/n2006066627"
+    },
+    {
+      "query": "Yalta",
+      "type": "subject",
+      "label": "I︠A︡ltynsʹkyĭ hirsʹko-lisovyĭ pryrodnyĭ zapovidnyk (Ukraine)",
+      "uri": "http://id.loc.gov/authorities/subjects/sh2016002880"
+    },
+    {
+      "query": "Yalta",
+      "type": "name",
+      "label": "I︠A︡lta-45 : Krymskai︠a︡ konferent︠s︡ii︠a︡ 1945 g. v kontekste \"ostrykh\" voprosov okonchanii︠a︡ Vtoroĭ mirovoĭ voĭny i nachala voĭny \"kholodnoĭ\" (Conference) (2015 : Simferopol, Ukraine)",
+      "uri": "http://id.loc.gov/authorities/names/n2019048934"
+    },
+    {
+      "query": "Yalta",
+      "type": "name",
+      "label": "Yalta, Bahtiyar, 1925-2016",
+      "uri": "http://id.loc.gov/authorities/names/n2007028908"
+    },
+    {
+      "query": "Yalta",
+      "type": "name",
+      "label": "Yalta Conference (1945 : I︠A︡lta, Ukraine)",
+      "uri": "http://id.loc.gov/authorities/names/n81079448"
+    },
+    {
+      "query": "Yalta",
+      "type": "name",
+      "label": "Yalta Film (Firm)",
+      "uri": "http://id.loc.gov/authorities/names/no2004022362"
+    },
+    {
+      "query": "Yalta",
+      "type": "name",
+      "label": "Yalta, K. T.",
+      "uri": "http://id.loc.gov/authorities/names/nb2013018251"
+    },
+    {
+      "query": "Kerch",
+      "type": "subject",
+      "label": "Kerchal family",
+      "uri": "http://id.loc.gov/authorities/subjects/sh85072044"
+    },
+    {
+      "query": "Kerch",
+      "type": "subject",
+      "label": "Kerch Strait (Ukraine and Russia)",
+      "uri": "http://id.loc.gov/authorities/subjects/sh85072043"
+    },
+    {
+      "query": "Kerch",
+      "type": "subject",
+      "label": "Kerch Peninsula (Ukraine)",
+      "uri": "http://id.loc.gov/authorities/subjects/sh99013220"
+    },
+    {
+      "query": "Kerch",
+      "type": "subject",
+      "label": "Karch family",
+      "uri": "http://id.loc.gov/authorities/subjects/sh96005083"
+    },
+    {
+      "query": "Kerch",
+      "type": "subject",
+      "label": "Kercheval family",
+      "uri": "http://id.loc.gov/authorities/subjects/sh2005001680"
+    },
+    {
+      "query": "Kerch",
+      "type": "name",
+      "label": "Kerchache, Anne",
+      "uri": "http://id.loc.gov/authorities/names/no2010105492"
+    },
+    {
+      "query": "Kerch",
+      "type": "name",
+      "label": "Kerchache, Jacques",
+      "uri": "http://id.loc.gov/authorities/names/n86829797"
+    },
+    {
+      "query": "Kerch",
+      "type": "name",
+      "label": "Kerchache, Jacques. Art africain. English",
+      "uri": "http://id.loc.gov/authorities/names/n92070834"
+    },
+    {
+      "query": "Kerch",
+      "type": "name",
+      "label": "Kerchaert, Robert B.",
+      "uri": "http://id.loc.gov/authorities/names/no2014075794"
+    },
+    {
+      "query": "Kerch",
+      "type": "name",
+      "label": "Kercsa, Igor",
+      "uri": "http://id.loc.gov/authorities/names/n2009079533"
+    }
+  ],
+  "catalog": {
+    "total_books": 150,
+    "by_label": {
+      "ukraine": 106,
+      "both": 16,
+      "neither": 25,
+      "russia": 3
+    },
+    "books": [
+      {
+        "title": "Krym. Gurzuf. [Crimea]",
+        "date": "1900",
+        "subjects": [
+          "postcards",
+          "hurzuf",
+          "waterfronts",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "hurzuf",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "The Crimea",
+        "date": "1855-01-01",
+        "subjects": [
+          "harbors",
+          "fortification",
+          "ukraine",
+          "crimea (ukraine)",
+          "maps",
+          "sevastopolʹ region",
+          "crimea"
+        ],
+        "locations": [
+          "sevastopolʹ region",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym--aneksovana vlasnistʹ = Annexed property in Crimea",
+        "date": "2016",
+        "subjects": [
+          "forfeiture",
+          "right of property",
+          "protection",
+          "annexation to russia (federation)",
+          "law and legislation",
+          "land, nationalization of",
+          "war",
+          "cultural property",
+          "ukraine",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "Stolen peninsula : truth about Ukrainian Crimea",
+        "date": "2016",
+        "subjects": [
+          "annexation to russia (federation)",
+          "history",
+          "russian occupation",
+          "crimea (ukraine)",
+          "politics and government"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "Krym. Artek [Crimea. Artek]",
+        "date": "1955",
+        "subjects": [
+          "postcards",
+          "coastlines",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. Priboi [Crimea. Surf]",
+        "date": "1955",
+        "subjects": [
+          "postcards",
+          "beaches",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Human rights abuses in Russian-occupied Crimea",
+        "date": "2015",
+        "subjects": [
+          "human rights",
+          "history",
+          "ukraine",
+          "russian occupation",
+          "crimea (ukraine)",
+          "crimea"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "Krym. Livadiia [Crimea. Livadia Palace]",
+        "date": "1955",
+        "subjects": [
+          "livadiia",
+          "postcards",
+          "castles & palaces",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "livadiia",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "The Crimea Conference",
+        "date": "1945-01-01",
+        "subjects": [
+          "(",
+          "i︠a︡lta, ukraine)",
+          "peace",
+          "world war",
+          "people",
+          "photographic prints",
+          "yalta conference"
+        ],
+        "locations": [
+          "i︠a︡lta",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "The Crimea : Europe's next flashpoint?",
+        "date": "2010",
+        "subjects": [
+          "strategic aspects",
+          "relations",
+          "autonomy and independence movements",
+          "international status",
+          "history",
+          "ukraine",
+          "russia (federation)",
+          "crimea (ukraine)",
+          "sevastopolʹ (ukraine)"
+        ],
+        "locations": [
+          "russian federation",
+          "sevastopol",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "Krym. Santorii Rosiia [Crimea. Russian sanatorium]",
+        "date": "1959",
+        "subjects": [
+          "postcards",
+          "crimea",
+          "ukraine",
+          "health resorts"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. Skala Diva [Crimea. Diva Rock]",
+        "date": "1955",
+        "subjects": [
+          "simeiz",
+          "postcards",
+          "beaches",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "simeiz",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Inkermanskii Monastyr. Krym. [Inkerman Monastery, Crimea]",
+        "date": "1900",
+        "subjects": [
+          "monasteries",
+          "postcards",
+          "inkerman",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "inkerman",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. Ai-Petri [Crimea. Ai-Petri]",
+        "date": "1955",
+        "subjects": [
+          "postcards",
+          "crimea",
+          "ukraine",
+          "mountains",
+          "ai-petri"
+        ],
+        "locations": [
+          "ai",
+          "petri",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. Sanatorii Kyrpaty [Crimea. Kurpaty Sanatorium]",
+        "date": "1955",
+        "subjects": [
+          "health resorts",
+          "postcards",
+          "kurpaty",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "ukraine",
+          "kurpaty",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. Santorii Mechta [Crimea. \"Dream\" Sanatorium]",
+        "date": "1955",
+        "subjects": [
+          "health resorts",
+          "simeiz",
+          "postcards",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "simeiz",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Ukraine, Crimea Elections 1994",
+        "date": "",
+        "subjects": [],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Statistical publications from Crimea",
+        "date": "",
+        "subjects": [],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Krym. V Gorakh [Crimea. In the mountains]",
+        "date": "1955",
+        "subjects": [
+          "landscapes (representations)",
+          "postcards",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Human rights on occupied territory : case of Crimea",
+        "date": "2015",
+        "subjects": [
+          "human rights",
+          "history",
+          "ukraine",
+          "russian occupation",
+          "crimea (ukraine)",
+          "crimea"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "Kyrort Suuk-Su. Krym. [Suuk-Su Baths, Crimea]",
+        "date": "1900",
+        "subjects": [
+          "postcards",
+          "ukraine",
+          "buildings",
+          "crimea"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Krym. Skala \"Ivan-Razboinik\" Crimea. Rock Ivan-Razboinik]",
+        "date": "1955",
+        "subjects": [
+          "postcards",
+          "coastlines",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. Sanatorii Zolotoi Pliazh [Crimea Golden Beach Sanatorium]",
+        "date": "1955",
+        "subjects": [
+          "postcards",
+          "crimea",
+          "ukraine",
+          "health resorts"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. V Alupkiiskom parke [Crimea. In Alupki park]",
+        "date": "1955",
+        "subjects": [
+          "alupka",
+          "postcards",
+          "ukraine",
+          "parks",
+          "crimea"
+        ],
+        "locations": [
+          "alupka",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. Alushta. Cheriye Kamni [Crimea. Alushta. Black Rocks]",
+        "date": "1955",
+        "subjects": [
+          "postcards",
+          "beaches",
+          "ukraine",
+          "alushta",
+          "crimea"
+        ],
+        "locations": [
+          "alushta",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. V Livadiiskom parke [Crimea. In Livadia Park]",
+        "date": "1955",
+        "subjects": [
+          "livadiia",
+          "postcards",
+          "ukraine",
+          "parks",
+          "crimea"
+        ],
+        "locations": [
+          "livadiia",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. Bakhisaraiskii Dvorets-muzei [Crimea. Bakchysarai Palace-Museum]",
+        "date": "1955",
+        "subjects": [
+          "postcards",
+          "castles & palaces",
+          "crimea",
+          "ukraine",
+          "bakhchysarai"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine",
+          "bakhchysarai"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. Lastochkino Ghezdo [Crimea. The \"Swallow Nest,\" Gaspra]",
+        "date": "1955",
+        "subjects": [
+          "postcards",
+          "castles & palaces",
+          "haspra",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "haspra",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. Evpatoriia, Sanatorii Ularnik [Crimea. Yevpatoria. Ularnik Sanatorium]",
+        "date": "1955",
+        "subjects": [
+          "health resorts",
+          "yevpatoria",
+          "postcards",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "yevpatoria",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Human rights protection guide for the residents of Crimea",
+        "date": "2015",
+        "subjects": [
+          "human rights",
+          "constitutional law",
+          "human rights advocacy",
+          "history",
+          "ukraine",
+          "russian occupation",
+          "crimea (ukraine)",
+          "crimea"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "Donbas and Crimea : return at what price? : monograph",
+        "date": "2016",
+        "subjects": [
+          "armed forces",
+          "russia (federation)",
+          "history",
+          "world politics",
+          "21st century",
+          "ukraine",
+          "russian occupation",
+          "crimea (ukraine)",
+          "russo-ukrainian war",
+          "social aspects"
+        ],
+        "locations": [
+          "donbas",
+          "region",
+          "ukraine",
+          "russian federation",
+          "crimea"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "The port of Yalta, Crimea, Russia",
+        "date": "1860-01-01",
+        "subjects": [
+          "stereographs",
+          "photographic prints",
+          "russia"
+        ],
+        "locations": [
+          "russia"
+        ],
+        "label": "russia"
+      },
+      {
+        "title": "The port of Yalta, Crimea, Russia",
+        "date": "1860-01-01",
+        "subjects": [
+          "stereographs",
+          "photographic prints",
+          "russia"
+        ],
+        "locations": [
+          "russia"
+        ],
+        "label": "russia"
+      },
+      {
+        "title": "Prince Woronzoff's palace - near Yalta on the south coast of the Crimea",
+        "date": "1855-01-01",
+        "subjects": [
+          "alupka (ukraine)",
+          "voront︠s︡ov, mikhail semenovich",
+          "crimean war",
+          "kni︠a︡z",
+          "castles & palaces",
+          "marine prints",
+          "color",
+          "lithographs",
+          "warships",
+          "homes & haunts"
+        ],
+        "locations": [
+          "alupka",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[U.S. Military Commission to Crimea]",
+        "date": "1855-01-01",
+        "subjects": [
+          "(george brinton)",
+          "mordecai, alfred",
+          "military personnel",
+          "mcclellan, george b.",
+          "delafield, richard",
+          "daguerreotypes",
+          "group portraits"
+        ],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Krym. Doroga na Ai-Petri [Crimea. Road to Ai-Petri]",
+        "date": "1955",
+        "subjects": [
+          "mountain roads",
+          "postcards",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym. Vid na gorod Bakhisarai [Crimea. View of the city of Bakchysarai]",
+        "date": "1955",
+        "subjects": [
+          "cityscapes",
+          "postcards",
+          "crimea",
+          "ukraine",
+          "bakhchysarai"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine",
+          "bakhchysarai"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Russian refugee Priest, carrying sacks with his belongings, Crimea]",
+        "date": "1920-01-01",
+        "subjects": [],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "[The church, Baidar, the Crimea, Russia, (i.e., Ukraine)]",
+        "date": "1890-01-01",
+        "subjects": [
+          "color",
+          "photochrom prints"
+        ],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Franklin D. Roosevelt and Winston Churchill at palace, Yalta, Crimea",
+        "date": "1945",
+        "subjects": [],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Donbas i Krym : t︠s︡ina povernenni︠a︡ = Donbass i Krym : t︠s︡ena vozvrashchenii︠a︡ = Donbass and the Crimea : the value of return",
+        "date": "2015",
+        "subjects": [
+          "armed forces",
+          "russia (federation)",
+          "history",
+          "world politics",
+          "21st century",
+          "ukraine",
+          "russian occupation",
+          "crimea (ukraine)",
+          "russo-ukrainian war",
+          "social aspects"
+        ],
+        "locations": [
+          "donbas",
+          "region",
+          "ukraine",
+          "russian federation",
+          "crimea"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "[From the tunnel, Baidar, the Crimea, Russia, (i.e., Ukraine)]",
+        "date": "1890-01-01",
+        "subjects": [
+          "color",
+          "photochrom prints"
+        ],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "[Gursuff, (i.e., Gurzuf), the Crimea, Russia, (i.e., Ukraine)]",
+        "date": "1890-01-01",
+        "subjects": [
+          "color",
+          "photochrom prints"
+        ],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Shepherd on a Jewish collective farm in th Crimea, USSR (Union of Soviet Socialist Republics)",
+        "date": "1930-01-01",
+        "subjects": [
+          "soviet union",
+          "safety film negatives",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "soviet union",
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Handbook for travellers in Russia, Poland, and Finland : including the Crimea, Caucasus, Siberia, and Central Asia",
+        "date": "1888",
+        "subjects": [
+          "caucasus",
+          "crimea (ukraine)",
+          "guidebooks",
+          "russia",
+          "poland",
+          "john murray (firm)",
+          "asia, central",
+          "finland"
+        ],
+        "locations": [
+          "caucasus",
+          "central asia",
+          "ukraine",
+          "russia",
+          "poland"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "[The gulf, Jalta, (i.e., Yalta), the Crimea, Russia, (i.e., Ukraine)]",
+        "date": "1890-01-01",
+        "subjects": [
+          "color",
+          "photochrom prints"
+        ],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "[The Imperial Castle, Alupku, (i.e., Alupka) the Crimea, Russia, (i.e., Ukraine)]",
+        "date": "1890-01-01",
+        "subjects": [
+          "color",
+          "photochrom prints"
+        ],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "[Gursuff, (i.e., Gurzuf), from the Park, the Crimea, Russia, (i.e., Ukraine)]",
+        "date": "1890-01-01",
+        "subjects": [
+          "color",
+          "photochrom prints"
+        ],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "[From the boulevard, Jalta, (i.e., Yalta), the Crimea, Russia, (i.e., Ukraine)]",
+        "date": "1890-01-01",
+        "subjects": [
+          "color",
+          "photochrom prints"
+        ],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Major General Estcourt, Adj.-Gen. to the British forces in the Crimea",
+        "date": "1855-01-01",
+        "subjects": [
+          "crimean war",
+          "british",
+          "military personnel",
+          "portrait photographs",
+          "salted paper prints",
+          "ukraine",
+          "estcourt, james bucknall",
+          "generals",
+          "military service",
+          "crimea"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Rev. H.P. Wright, principal chaplain to the forces in the Crimea & Reverend Messieurs Wallace, Sykes, Parson, H.A. Taylor, Boudier, Parker, Preston & Crozier",
+        "date": "1855-01-01",
+        "subjects": [
+          "military service",
+          "wright, henry press",
+          "portrait photographs",
+          "chaplains",
+          "crimea",
+          "religious aspects",
+          "british",
+          "ukraine",
+          "crimean war",
+          "salted paper prints"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Letter from Caroline Baldwin, Crimea, Virginia, to Brigadier General John H. Winder, Richmond, Virginia].",
+        "date": "1863",
+        "subjects": [
+          "manuscripts",
+          "civil war",
+          "correspondence",
+          "united states",
+          "history",
+          "social aspects"
+        ],
+        "locations": [
+          "united states"
+        ],
+        "label": "neither"
+      },
+      {
+        "title": "Krymsʹkyĭ politychnyĭ dialoh 2010",
+        "date": "2011",
+        "subjects": [
+          "politics and government",
+          "crimea",
+          "ethnic relations",
+          "congresses",
+          "ukraine",
+          "crimea (ukraine)",
+          "language policy"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "The last great battles and victories in the Crimea, conflagration of the city of Sebastopol,...",
+        "date": "1886-01-01",
+        "subjects": [],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Bakhchisai. Obshchii na Khiskii Dvorets. Krym. Bakhtchi-Sarai. Vue generale vers le palais du Khan. [General view of Hansaray or Khan's Palace. Crimea]",
+        "date": "1900",
+        "subjects": [
+          "postcards",
+          "crimea",
+          "cityscapes",
+          "ukraine",
+          "bakhchysarai"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea",
+          "bakhchysarai"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Beatrice and Benedick; a romance of the Crimea,",
+        "date": "1891",
+        "subjects": [
+          "crimean war",
+          "fiction"
+        ],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Krym pisli︠a︡ aneksiï : derz︠h︡avna polityka, vyklyky, rishenni︠a︡ ta diï : bila knyha",
+        "date": "2016",
+        "subjects": [
+          "crimea (ukraine",
+          "21st century",
+          "russian occupation",
+          "social conditions",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "[Gursuff, (i.e., Gurzuf), from the Jalta, (i.e., Yalta) Road, the Crimea, Russia, (i.e., Ukraine)]",
+        "date": "1890-01-01",
+        "subjects": [
+          "photochrom prints",
+          "color"
+        ],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "[From the Gursuff (i.e., Gurzuf), Road, Jalta, (i.e., Yalta), the Crimea, Russia, (i.e., Ukraine)]",
+        "date": "1890-01-01",
+        "subjects": [
+          "photochrom prints",
+          "color"
+        ],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Shipment of wooden barracks, on board THE WHITE FALCON, at Southampton [dock], for the French Army in Crimea",
+        "date": "1855-01-01",
+        "subjects": [],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "[Russian refugees debarking from the US Sangamon in the Crimea after Red Cross evacuation from Black sea ports]",
+        "date": "1919-01-01",
+        "subjects": [],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "[Volume 1, 2015] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 2, 2015] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 1, 2014] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 2, 2014] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 1, 2016] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 1, 2017] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 3, 2015] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 2, 2016] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 1, 2019] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 1, 2018] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 2, 2017] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 2, 2018] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 2, 2020] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 1, 2020] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 2, 2019] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 1, 2021] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 2, 2022] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 1, 2022] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 1, 2023] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 2, 2021] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 2, 2023] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 2, 2024] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 1, 2024] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 1, 2025] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Volume 2, 2025] Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krymskoe istoricheskoe obozrenie",
+        "date": "2014",
+        "subjects": [
+          "crimea",
+          "crimean tatars",
+          "periodicals",
+          "ukraine",
+          "history",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "A.V. Suvorov i prisoedinenie Kryma k Rossii : istorii︠a︡ zabytykh kreposteĭ",
+        "date": "2016",
+        "subjects": [
+          "history, military",
+          "fortification",
+          "crimea (ukraine)",
+          "crimea",
+          "ukraine",
+          "military leadership",
+          "18th century",
+          "history",
+          "kni︠a︡zʹ italiĭski",
+          "suvorov, aleksandr vasilʹevich"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krymʺ : putevoditelʹ",
+        "date": "1914",
+        "subjects": [
+          "crimea (ukraine)",
+          "guidebooks",
+          "ukraine",
+          "crimea"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "The Crimean Nexus : Putin's War and the Clash of Civilizations",
+        "date": "2017",
+        "subjects": [
+          "foreign relations",
+          "western countries",
+          "political science / international relations",
+          "history / europe / russia & the former soviet union",
+          "ukraine",
+          "russia (federation)",
+          "history / modern / 21st century",
+          "crimea (ukraine)",
+          "annexation to russia (federation)",
+          "political science / world / european"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea",
+          "western countries",
+          "russian federation"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "Novi︠e︡ĭshīĭ putevoditelʹ po Krymu na 1912 godʺ : neobkhodimyi︠a︡ svi︠e︡di︠e︡nīi︠a︡ dli︠a︡ turistovʺ i prīi︠e︡zzhikhʺ bolʹnykhʺ : spravochnikʺ lechebnykhʺ zavedenīĭ, dachʺ, gostinnit︠s︡ʺ, torgo",
+        "date": "1912",
+        "subjects": [
+          "recreation",
+          "guidebooks",
+          "crimea",
+          "balneology",
+          "ukraine",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Group sitting on outdoor bench in Crimea: Mr. & Mrs. Walter Ulbricht, Nikita Khrushchev, Mr. & Mrs. Paul Robeson, and Dr. Johannes Dieckmann]",
+        "date": "",
+        "subjects": [],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Krym : istorychnyĭ narys",
+        "date": "1954",
+        "subjects": [
+          "crimea (ukraine)",
+          "history"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Between decks of the American vessel \"White Falcon\" - receiving on board the wooden barracks for the French Army in the Crimea]",
+        "date": "1855-01-01",
+        "subjects": [],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Rossii︠a︡ i Krym : 1000 let vmeste sbornik stateĭ pami︠a︡ti akademika B.D. Grekova",
+        "date": "2015",
+        "subjects": [
+          "relations",
+          "crimea",
+          "ukraine",
+          "russia (federation)",
+          "history",
+          "crimea (ukraine)",
+          "russia"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea",
+          "russian federation",
+          "russia"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "Circular to the trade. Now ready, the battles of the Crimea ... Published by G. S. Wells, 140 Nassau Street. N. Y. [n. d.].",
+        "date": "1855",
+        "subjects": [
+          "new york",
+          "united states",
+          "broadsides"
+        ],
+        "locations": [
+          "new york",
+          "united states"
+        ],
+        "label": "neither"
+      },
+      {
+        "title": "Sveti︠a︡shchiesi︠a︡ vorota : publit︠s︡istika, 18+",
+        "date": "2016",
+        "subjects": [
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Zavoevanie Kryma Rossiĭskoĭ imperieĭ glazami karaimskikh khronistov",
+        "date": "2015",
+        "subjects": [
+          "crimea",
+          "ukraine",
+          "18th century",
+          "russia",
+          "history",
+          "crimea (ukraine)",
+          "karaites",
+          "territorial expansion"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea",
+          "russia"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "Nikitskii botanicheskii and imeni V.M. Molotova",
+        "date": "1955",
+        "subjects": [],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "Istoricheskie, kulʹturnye, mezhnat︠s︡ionalʹnye, religioznye i politicheskie svi︠a︡zi Kryma so Sredizemnomorskim regionom i stranami Vostoka : IV mezhdunarodnai︠a︡ nauchnai︠a︡ konferent︠s︡ii︠a︡ (Sevast",
+        "date": "2020",
+        "subjects": [
+          "relations",
+          "crimea",
+          "congresses",
+          "ukraine",
+          "mediterranean region",
+          "antiquities",
+          "history",
+          "crimea (ukraine)",
+          "civilization"
+        ],
+        "locations": [
+          "ukraine",
+          "crimea",
+          "mediterranean region"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Uvarovskiĭ Tavricheskiĭ sbornik \"Drevnosti I︠U︡ga Rossii\"",
+        "date": "2020",
+        "subjects": [
+          "crimea",
+          "uvarov family",
+          "archaeology",
+          "congresses",
+          "archaeological collections",
+          "ukraine",
+          "antiquities",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Sto velikikh zagadok Kryma",
+        "date": "2023",
+        "subjects": [
+          "history",
+          "crimea",
+          "curiosities and wonders",
+          "miscellanea",
+          "ukraine",
+          "description and travel",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "I︠U︡zhnyĭ beregʺ Kryma i Rivʹera",
+        "date": "1902",
+        "subjects": [
+          "crimea",
+          "nice",
+          "ukraine",
+          "riviera (france)",
+          "resorts",
+          "description and travel",
+          "crimea (ukraine)",
+          "france"
+        ],
+        "locations": [
+          "crimea",
+          "nice",
+          "ukraine",
+          "riviera",
+          "france"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym kak predchuvstvie",
+        "date": "2015",
+        "subjects": [
+          "fiction",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "I︠A︡lta-2015 : literaturnai︠a︡ konferent︠s︡ii︠a︡ : sbornik dokladov",
+        "date": "2016",
+        "subjects": [
+          "congresses",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Putevoditelʹ po Krymu",
+        "date": "1904",
+        "subjects": [
+          "guidebooks",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Illi︠u︡strirovannyĭ prakticheskīĭ putevoditelʹ po I︠U︡zhnomu beregu Kryma",
+        "date": "1901",
+        "subjects": [
+          "guidebooks",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Putevoditelʹ po Krymu",
+        "date": "1902",
+        "subjects": [
+          "guidebooks",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Putevoditelʹ po Krymu",
+        "date": "1901",
+        "subjects": [
+          "guidebooks",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Illi︠u︡strirovannyĭ prakticheskīĭ putevoditelʹ po Krymu : sʺ prilozhenīemʺ: alfavita, russko-tatarskago slovari︠a︡ (krymskoe nari︠e︡chīe), dvi︠e︡nadt︠s︡ati kartʺ, shesti planovʺ, rospisanīi︠a︡ r",
+        "date": "1904",
+        "subjects": [
+          "guidebooks",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Illi︠u︡strirovannyĭ prakticheskīĭ putevoditelʹ po Krymu : sʺ prilozhenīemʺ: alfavita, russko-tatarskago slovari︠a︡ (Krymskoe nari︠e︡chīe), 8 kartʺ, 7 planovʺ, 44 illi︠u︡strat︠s︡īi, rospisanīi︠a",
+        "date": "1912",
+        "subjects": [
+          "guidebooks",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Reabilitirovannye istorieĭ : Avtonomnai︠a︡ Respublika Krym",
+        "date": "2004",
+        "subjects": [
+          "history",
+          "crimea",
+          "biography",
+          "sources",
+          "ukraine",
+          "political rehabilitation",
+          "20th century",
+          "political persecution",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Zapretnye stranit︠s︡y istorii Kryma, 1917-1991 : ot krasnogo terrora do \"perestroĭki\"",
+        "date": "2024",
+        "subjects": [
+          "history",
+          "crimea",
+          "politics and government",
+          "ukraine",
+          "20th century",
+          "political persecution",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "The war in the Crimea, by General Sir Edward Hamley, K. C. B.",
+        "date": "1891",
+        "subjects": [
+          "crimean war"
+        ],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "View from the heights above Balaklava, looking towards Sebastopol, shewing the ground of the battles of the 25th Octr. and of the 5th Novr. 1854 and the line of our defences since the 25th Octr.",
+        "date": "1855-01-01",
+        "subjects": [
+          "crimea",
+          "panoramic views",
+          "crimean war",
+          "color",
+          "ukraine",
+          "lithographs",
+          "british",
+          "forts & fortifications",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "[Irene Knigevitch, daughter of the head of the Russian Red Cross, full-length portrait, standing with hands in coat pockets, dressed for her work as interpreter with the American Red Cross in the Crim",
+        "date": "1920-01-01",
+        "subjects": [
+          "photographic prints",
+          "knigevitch, irene",
+          "american red cross",
+          "portrait photographs",
+          "people",
+          "crimea (ukraine)"
+        ],
+        "locations": [],
+        "label": "ukraine"
+      },
+      {
+        "title": "Drevnīi︠a︡ mogily Gurzufa i Gugusha (na I︠U︡zhnom beregu Kryma.)",
+        "date": "1890",
+        "subjects": [
+          "exhumation",
+          "crimea",
+          "excavations (archaeology)",
+          "ukraine"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Sot︠s︡ialisticheskai︠a︡ rekonstrukt︠s︡ii︠a︡ i︠u︡zhnogo berega Kryma : materialy raĭonnoĭ planirovki I︠U︡BK",
+        "date": "1935",
+        "subjects": [
+          "coastal zone management",
+          "crimea",
+          "history",
+          "statistics",
+          "ukraine",
+          "economic conditions",
+          "20th century",
+          "coasts",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Putevoditelʹ po Krymu",
+        "date": "1925",
+        "subjects": [
+          "history",
+          "guidebooks",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Uchebnoe sudno \"Tobarish\" V Chernom more [Training vessel \"Tobarish\" in the Black Sea]",
+        "date": "1955",
+        "subjects": [
+          "postcards",
+          "ships",
+          "crimea",
+          "ukraine"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Crimean Conference--President Franklin D. Roosevelt, Prime Minister Winston Churchill and Marshal Joseph Stalin are shown with others around the conference table at Yalta, Crimea, Russia",
+        "date": "1945",
+        "subjects": [
+          "franklin delano)",
+          "photographic prints",
+          "roosevelt, franklin d.",
+          "meetings",
+          "russia",
+          "i︠a︡lta, ukraine)",
+          "people",
+          "yalta",
+          "yalta conference"
+        ],
+        "locations": [
+          "yalta",
+          "russia",
+          "i︠a︡lta",
+          "ukraine"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "Bitva za Krym : oborona Sevastopoli︠a︡",
+        "date": "2024",
+        "subjects": [
+          "history",
+          "crimea",
+          "sevastopolʹ (ukraine)",
+          "siege",
+          "ukraine",
+          "world war",
+          "campaigns",
+          "20th century",
+          "history, military",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "sevastopol",
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Guarding a stronghold. Supplies of any kind have to be closely guarded in the Crimea where thousands of refugees without homes, food or clothing are crowding daily. All the supplies of the small distr",
+        "date": "1920",
+        "subjects": [
+          "glass negatives",
+          "crimea",
+          "russia",
+          "american red cross"
+        ],
+        "locations": [
+          "crimea",
+          "russia"
+        ],
+        "label": "russia"
+      },
+      {
+        "title": "Pushkin--Tavrida--Kimmerii︠a︡",
+        "date": "2000",
+        "subjects": [
+          "crimea",
+          "in literature",
+          "criticism and interpretation",
+          "ukraine",
+          "pushkin, aleksandr sergeevich",
+          "travel",
+          "crimea (ukraine)",
+          "bobrov, semen sergeevich"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Come to the Ukraine",
+        "date": "1962",
+        "subjects": [],
+        "locations": [],
+        "label": "neither"
+      },
+      {
+        "title": "I︠A︡lta, Krym",
+        "date": "1900",
+        "subjects": [
+          "bird's-eye views",
+          "photographic postcards",
+          "castles & palaces",
+          "photographic prints",
+          "emir of bukhoro",
+          "olimkhon",
+          "ukraine",
+          "cities & towns",
+          "homes & haunts",
+          "i︠a︡lta (ukraine)"
+        ],
+        "locations": [
+          "i︠a︡lta",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Mecheti Kryma na starykh fotografii︠a︡kh : iz fondov Bakhchisaraĭskogo istoriko-kulʹturnogo i arkheologicheskogo muzei︠a︡-zapovednika : k 750-letii︠u︡ obrazovanii︠a︡ Zolotoĭ Ordy",
+        "date": "2016",
+        "subjects": [
+          "pictorial works",
+          "crimea",
+          "mosques",
+          "ukraine"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krymsko-gotskiĭ i︠a︡zyk",
+        "date": "2011",
+        "subjects": [
+          "gothic language",
+          "crimea",
+          "dialects",
+          "ukraine"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Sevastopol. Ulutsa Lenina [Sevastopol. Lenin Street]",
+        "date": "1955",
+        "subjects": [
+          "postcards",
+          "crimea",
+          "ukraine",
+          "streets",
+          "sevastopol"
+        ],
+        "locations": [
+          "sevastopol",
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Islam v Krymu : ėnt︠s︡iklopedicheskiĭ slovarʹ",
+        "date": "2024",
+        "subjects": [
+          "crimea",
+          "muslims",
+          "islam",
+          "ukraine",
+          "encyclopedias"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Rossiĭskiĭ Krym : obzor bolʹshoĭ istorii",
+        "date": "2023",
+        "subjects": [
+          "history",
+          "history, military",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "I︠U︡zhnyĭ bereg russkoĭ aristokratii : iz istorii osvoenii︠a︡ krymskogo I︠U︡zhnoberezhʹi︠a︡ 1820-1830 gg. v neopublikovannykh pisʹmakh kni︠a︡gini A.S. Golit︠s︡ynoĭ Aleksandru I, M.S. Voront︠s︡ovu i",
+        "date": "2016",
+        "subjects": [
+          "history",
+          "crimea",
+          "sources",
+          "anna sergeevna)",
+          "economic development",
+          "ukraine",
+          "correspondence",
+          "kni︠a︡gini︠a",
+          "golit︠s︡yna, a. s.",
+          "19th century"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Po Krymu : kratkie svedenii︠a︡ dli︠a︡ priezzhai︠u︡shchikh",
+        "date": "1938",
+        "subjects": [
+          "guidebooks",
+          "description and travel",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "I︠U︡zhnyĭ beregʺ Kryma : ocherkʺ : sʺ prilozhenīemʺ kratkago putevoditeli︠a︡ po Krymu",
+        "date": "1909",
+        "subjects": [
+          "guidebooks",
+          "description and travel",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Krym : putevoditelʹ",
+        "date": "1928",
+        "subjects": [
+          "guidebooks",
+          "description and travel",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Pami︠a︡ti pavshikh za sovetskiĭ Krym, 1918-1920 : sbornik stateĭ i vospominaniĭ",
+        "date": "1940",
+        "subjects": [
+          "history",
+          "crimea",
+          "biography",
+          "ukraine",
+          "revolutionaries",
+          "revolution"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Simferopol. Vokzal [Simferopol. Railway station]",
+        "date": "1955",
+        "subjects": [
+          "simferopol",
+          "postcards",
+          "crimea",
+          "railroad stations",
+          "ukraine"
+        ],
+        "locations": [
+          "simferopol",
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Alupka. Kiparis Potemkina. Krym. Aloupka. Les cypres du Potemkin. [Ptemkin cypruses]",
+        "date": "1900",
+        "subjects": [
+          "postcards",
+          "crimea",
+          "landscapes (representations)",
+          "ukraine",
+          "alupka"
+        ],
+        "locations": [
+          "alupka",
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Feodosiia. Santorii VTsSPC  [Feodosia. Voshkhod Sanatorium]",
+        "date": "1955",
+        "subjects": [
+          "postcards",
+          "crimea",
+          "health resorts",
+          "feodosiia",
+          "ukraine"
+        ],
+        "locations": [
+          "crimea",
+          "feodosiia",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Sebastopol. L'entre de la baie. Crimee",
+        "date": "1900",
+        "subjects": [
+          "postcards",
+          "crimea",
+          "coastlines",
+          "cityscapes",
+          "ukraine",
+          "sevastopol"
+        ],
+        "locations": [
+          "sevastopol",
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Sabastopol. Baie meridionale. Crime",
+        "date": "1900",
+        "subjects": [
+          "marine terminals",
+          "crimea",
+          "postcards",
+          "ukraine",
+          "sevastopol"
+        ],
+        "locations": [
+          "sevastopol",
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Sebastopol. Le Monument de Kornilov a la colline de Malakhov. Crimee",
+        "date": "1900",
+        "subjects": [
+          "postcards",
+          "crimea",
+          "monuments & memorials",
+          "ukraine",
+          "sevastopol"
+        ],
+        "locations": [
+          "sevastopol",
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Nekropolʹ Khersonesa Tavricheskogo V-I vekov do n.ė. : po materialam raskopok Imperatorskoĭ Arkheologicheskoĭ komissii (1891-1914)",
+        "date": "2024",
+        "subjects": [
+          "crimea",
+          "funeral rites and ceremonies",
+          "imperatorskai︠a︡ arkheologicheskai︠a︡ kommissīi︠a",
+          "ukraine",
+          "chersonese (extinct city)",
+          "excavations (archaeology)",
+          "russia",
+          "tombs",
+          "antiquities",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "extinct city",
+          "crimea",
+          "chersonese",
+          "ukraine"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "Khazary : mif i istorii︠a︡",
+        "date": "2010",
+        "subjects": [
+          "history",
+          "crimea (ukraine)",
+          "khazars",
+          "antiquities",
+          "russia, southern"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine",
+          "southern russia"
+        ],
+        "label": "both"
+      },
+      {
+        "title": "Krymʺ i krymskīe tatary : ocherkʺ, sʺ risunkami",
+        "date": "1911",
+        "subjects": [
+          "description and travel",
+          "crimean tatars",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Vodolaz Ego Velichestva",
+        "date": "2024",
+        "subjects": [
+          "crimea",
+          "divers",
+          "fiction",
+          "male friendship",
+          "novels",
+          "ukraine"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Vʺ Krymu",
+        "date": "1902",
+        "subjects": [
+          "description and travel",
+          "i︠a︡lta (ukraine)",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "i︠a︡lta",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Vsi︠a︡ Ukraina i Krym",
+        "date": "1924",
+        "subjects": [
+          "ukraine",
+          "industries",
+          "economic conditions",
+          "directories",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Vue general. Sebastopol. Crimee",
+        "date": "1900",
+        "subjects": [
+          "marine terminals",
+          "crimea",
+          "postcards",
+          "cityscapes",
+          "ukraine",
+          "sevastopol"
+        ],
+        "locations": [
+          "sevastopol",
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      },
+      {
+        "title": "Revoli︠u︡t︠s︡ii︠a︡ i grazhdanskai︠a︡ voĭna v Krymu, 1917-1920 gg",
+        "date": "1927",
+        "subjects": [
+          "history",
+          "ukraine",
+          "20th century",
+          "revolution",
+          "crimea (ukraine)"
+        ],
+        "locations": [
+          "crimea",
+          "ukraine"
+        ],
+        "label": "ukraine"
+      }
+    ]
+  },
+  "findings": {
+    "canonical_form": "Crimea (Ukraine)",
+    "occupation_heading": "Crimea (Ukraine)--History--Russian occupation, 2014-",
+    "sevastopol_form": "Sevastopolʹ (Ukraine)",
+    "catalog_ukraine_pct": 70.7
+  }
+}

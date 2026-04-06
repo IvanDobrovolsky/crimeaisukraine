@@ -64,6 +64,21 @@ audit-gdelt-quick: ## Quick GDELT framing scan (last 3 months)
 audit-academic: ## Scan academic papers via OpenAlex + CrossRef (2010-present)
 	$(PYTHON) $(SCRIPTS)/scan_academic.py --start 2010
 
+audit-academic-full: ## Full OpenAlex scan (91K papers, cursor pagination)
+	$(PYTHON) $(SCRIPTS)/scan_academic_full.py
+
+audit-wikipedia: ## Wikipedia & Wikidata sovereignty audit (17 terms × 12 langs)
+	$(PYTHON) $(SCRIPTS)/check_wikipedia.py
+
+audit-loc: ## Library of Congress subject headings + catalog audit
+	$(PYTHON) $(SCRIPTS)/check_loc.py
+
+audit-ror: ## ROR + OpenAlex institutional classification audit
+	$(PYTHON) $(SCRIPTS)/check_ror.py
+
+audit-iso-eurlex: ## ISO 3166 dual listing + EUR-Lex + OFAC sanctions audit
+	$(PYTHON) $(SCRIPTS)/check_iso_eurlex.py
+
 verify-platforms: ## Re-verify all platform findings and fill evidence fields
 
 verify-llm: ## LLM verification of Russia-labeled articles (requires ANTHROPIC_API_KEY)
