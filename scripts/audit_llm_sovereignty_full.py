@@ -31,13 +31,13 @@ MODELS = [
 
 # Open-source models via Ollama (vast.ai GPU, tunnel on localhost:11434)
 OLLAMA_MODELS = [
-    {"id": "gemma3", "name": "gemma3-4b", "provider": "ollama"},
-    {"id": "qwen2.5:7b", "name": "qwen2.5-7b", "provider": "ollama"},
-    {"id": "llama3.1:8b", "name": "llama3.1-8b", "provider": "ollama"},
-    {"id": "mistral:7b", "name": "mistral-7b", "provider": "ollama"},
-    {"id": "gemma4", "name": "gemma4", "provider": "ollama"},
-    {"id": "deepseek-r1:8b", "name": "deepseek-r1-8b", "provider": "ollama"},
+    # Latest only — open-source models from major labs
     {"id": "llama4", "name": "llama4", "provider": "ollama"},
+    {"id": "gemma4", "name": "gemma4", "provider": "ollama"},
+    {"id": "qwen3", "name": "qwen3", "provider": "ollama"},
+    {"id": "mistral-small", "name": "mistral-small", "provider": "ollama"},
+    # Open training data — directly auditable
+    {"id": "olmo2", "name": "olmo2", "provider": "ollama"},  # AI2, Dolma corpus
 ]
 OLLAMA_BASE_URL = "http://localhost:11434/v1"
 
