@@ -29,11 +29,28 @@ MODELS = [
     {"id": "claude-opus-4-6", "name": "opus-4.6", "provider": "anthropic"},
 ]
 
-# Open-source models served via vLLM (vast.ai GPU, SSH tunnel on localhost:8000)
-VLLM_MODELS = [
-    {"id": "Qwen/Qwen2.5-7B-Instruct", "name": "qwen2.5-7b", "provider": "vllm"},
+# Open-source models via Ollama (vast.ai GPU, tunnel on localhost:11434)
+OLLAMA_MODELS = [
+    {"id": "llama3.2:1b", "name": "llama3.2-1b", "provider": "ollama"},
+    {"id": "llama3.2:3b", "name": "llama3.2-3b", "provider": "ollama"},
+    {"id": "qwen2.5:3b", "name": "qwen2.5-3b", "provider": "ollama"},
+    {"id": "gemma2:2b", "name": "gemma2-2b", "provider": "ollama"},
+    {"id": "phi3:mini", "name": "phi3-mini", "provider": "ollama"},
+    {"id": "qwen2.5:7b", "name": "qwen2.5-7b", "provider": "ollama"},
+    {"id": "llama3.1:8b", "name": "llama3.1-8b", "provider": "ollama"},
+    {"id": "mistral:7b", "name": "mistral-7b", "provider": "ollama"},
+    {"id": "gemma2:9b", "name": "gemma2-9b", "provider": "ollama"},
+    {"id": "phi4", "name": "phi4", "provider": "ollama"},
+    {"id": "deepseek-r1:8b", "name": "deepseek-r1-8b", "provider": "ollama"},
+    {"id": "qwen2.5:14b", "name": "qwen2.5-14b", "provider": "ollama"},
+    {"id": "gemma2:27b", "name": "gemma2-27b", "provider": "ollama"},
+    {"id": "qwen2.5:32b", "name": "qwen2.5-32b", "provider": "ollama"},
+    {"id": "yi:34b", "name": "yi-34b", "provider": "ollama"},
+    {"id": "llama3.3:70b", "name": "llama3.3-70b", "provider": "ollama"},
+    {"id": "qwen2.5:72b", "name": "qwen2.5-72b", "provider": "ollama"},
+    {"id": "llama3.1:70b", "name": "llama3.1-70b", "provider": "ollama"},
 ]
-VLLM_BASE_URL = "http://localhost:8000/v1"
+OLLAMA_BASE_URL = "http://localhost:11434/v1"
 
 # Crimean cities (occupied 2014) + Donbas/Southern cities (claimed by Russia 2022)
 # The contrast between Crimea (2014 occupation) and Donetsk/Luhansk (2022 claim)
@@ -329,8 +346,8 @@ def query_claude(prompt, api_key, model_id):
     return data["content"][0]["text"].strip()
 
 
-def query_vllm(prompt, model_id, base_url=VLLM_BASE_URL):
-    """Query an OpenAI-compatible vLLM server."""
+def query_ollama(prompt, model_id, base_url=OLLAMA_BASE_URL):
+    """Query an Ollama OpenAI-compatible endpoint."""
     body = json.dumps({
         "model": model_id,
         "max_tokens": 10,
@@ -339,7 +356,7 @@ def query_vllm(prompt, model_id, base_url=VLLM_BASE_URL):
     req = urllib.request.Request(f"{base_url}/chat/completions", data=body, headers={
         "Content-Type": "application/json",
     })
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    with urllib.request.urlopen(req, timeout=60) as resp:
         data = json.loads(resp.read().decode())
     return data["choices"][0]["message"]["content"].strip()
 
@@ -402,14 +419,14 @@ def main():
                 prompt_template = translations[q_id].get(lang_code, q_data["en"])
                 prompt = prompt_template.replace("{city}", city) if city else prompt_template
 
-                for model in MODELS + VLLM_MODELS:
+                for model in MODELS + OLLAMA_MODELS:
                     key = (model["name"], q_id, city, lang_code)
                     if key in done:
                         continue
 
                     try:
-                        if model.get("provider") == "vllm":
-                            raw = query_vllm(prompt, model["id"])
+                        if model.get("provider") == "ollama":
+                            raw = query_ollama(prompt, model["id"])
                         else:
                             raw = query_claude(prompt, api_key, model["id"])
                         classified = classify(raw, lang_code, q_type)
