@@ -1,0 +1,6 @@
+[project]
+name = "crimeaisukraine-geodata"
+version = "1.0.0"
+description = "Open-source geodata, map services, and visualization libraries"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31.0", "shapely>=2.0.0"]

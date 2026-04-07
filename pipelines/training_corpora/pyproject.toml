@@ -1,0 +1,6 @@
+[project]
+name = "crimeaisukraine-training-corpora"
+version = "1.0.0"
+description = "Open-source LLM training corpora audit"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31.0", "datasets>=4.0.0"]

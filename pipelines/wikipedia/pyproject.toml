@@ -1,0 +1,6 @@
+[project]
+name = "crimeaisukraine-wikipedia"
+version = "1.0.0"
+description = "Wikipedia and Wikidata Crimea audit"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31.0"]

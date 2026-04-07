@@ -1,0 +1,6 @@
+[project]
+name = "crimeaisukraine-institutions"
+version = "1.0.0"
+description = "Institutional registries and legislation Crimea audit"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31.0"]

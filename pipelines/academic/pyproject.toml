@@ -1,0 +1,6 @@
+[project]
+name = "crimeaisukraine-academic"
+version = "1.0.0"
+description = "Academic framing audit (OpenAlex + LLM verification)"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31.0"]

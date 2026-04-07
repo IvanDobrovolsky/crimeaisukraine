@@ -1,0 +1,6 @@
+[project]
+name = "crimeaisukraine-telecom"
+version = "1.0.0"
+description = "Telecom operators and registries audit"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31.0"]

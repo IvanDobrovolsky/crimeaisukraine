@@ -1,16 +1,59 @@
 # CrimeaIsUkraine — Digital Sovereignty Audit
 # Run `make` to see all available targets.
 # Run `make all` to execute the full automated pipeline.
+# Run `make pipeline-NAME` to execute one pipeline (e.g. `make pipeline-ip`).
 
 PYTHON := python3
 SCRIPTS := scripts
+PIPELINES := pipelines
 
 # Data outputs
 DATA := data
 SITE_DATA := site/src/data
 
+PIPELINE_NAMES := ip telecom tech_infrastructure geodata weather media \
+                  academic wikipedia institutions llm training_corpora
+
 .PHONY: help all install audit audit-core audit-extended audit-ip \
-        export site clean
+        export site clean \
+        $(addprefix pipeline-,$(PIPELINE_NAMES))
+
+# ─── Per-pipeline targets ───────────────────────────────
+
+pipeline-ip: ## Run IP geolocation pipeline (90 IPs across 9 ASNs)
+	cd $(PIPELINES)/ip && uv sync && uv run scan.py
+
+pipeline-telecom: ## Run telecom operators pipeline
+	cd $(PIPELINES)/telecom && uv sync && uv run scan.py
+
+pipeline-tech_infrastructure: ## Run tech infrastructure pipeline (IANA tz, libphonenumber, ISO)
+	cd $(PIPELINES)/tech_infrastructure && uv sync && uv run scan.py
+
+pipeline-geodata: ## Run geodata pipeline (Natural Earth + maps + viz libs)
+	cd $(PIPELINES)/geodata && uv sync && uv run scan.py
+
+pipeline-weather: ## Run weather services pipeline (23 services)
+	cd $(PIPELINES)/weather && uv sync && uv run scan.py
+
+pipeline-media: ## Run media framing pipeline (GDELT 154K + LLM verification)
+	cd $(PIPELINES)/media && uv sync && uv run scan.py
+
+pipeline-academic: ## Run academic framing pipeline (OpenAlex 91K + LLM verification)
+	cd $(PIPELINES)/academic && uv sync && uv run scan.py
+
+pipeline-wikipedia: ## Run Wikipedia + Wikidata pipeline
+	cd $(PIPELINES)/wikipedia && uv sync && uv run scan.py
+
+pipeline-institutions: ## Run institutional registries pipeline (LoC, ROR, OFAC, EU, ICAO, ITU, ISO)
+	cd $(PIPELINES)/institutions && uv sync && uv run scan.py
+
+pipeline-llm: ## Run LLM sovereignty audit (20+ models × 50 langs × 12 cities)
+	cd $(PIPELINES)/llm && uv sync && uv run scan.py
+
+pipeline-training_corpora: ## Run training corpora scan (C4, Dolma, Pile, FineWeb)
+	cd $(PIPELINES)/training_corpora && uv sync && uv run scan.py
+
+pipelines-all: $(addprefix pipeline-,$(PIPELINE_NAMES)) ## Run all pipelines sequentially
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*##' $(MAKEFILE_LIST) | \

@@ -1,0 +1,6 @@
+[project]
+name = "crimeaisukraine-tech-infrastructure"
+version = "1.0.0"
+description = "Tech infrastructure standards and library audit"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31.0"]
