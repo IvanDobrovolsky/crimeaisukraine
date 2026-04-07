@@ -24,12 +24,28 @@ DATA = PROJECT / "data"
 # MODELS
 # =====================================================================
 MODELS = [
-    {"id": "claude-haiku-4-5-20251001", "name": "haiku-4.5"},
-    {"id": "claude-sonnet-4-6", "name": "sonnet-4.6"},
-    {"id": "claude-opus-4-6", "name": "opus-4.6"},
+    {"id": "claude-haiku-4-5-20251001", "name": "haiku-4.5", "provider": "anthropic"},
+    {"id": "claude-sonnet-4-6", "name": "sonnet-4.6", "provider": "anthropic"},
+    {"id": "claude-opus-4-6", "name": "opus-4.6", "provider": "anthropic"},
 ]
 
-CITIES = ["Simferopol", "Sevastopol", "Yalta", "Kerch", "Feodosia", "Evpatoria"]
+# Open-source models served via vLLM (vast.ai GPU, SSH tunnel on localhost:8000)
+VLLM_MODELS = [
+    {"id": "Qwen/Qwen2.5-7B-Instruct", "name": "qwen2.5-7b", "provider": "vllm"},
+]
+VLLM_BASE_URL = "http://localhost:8000/v1"
+
+# Crimean cities (occupied 2014) + Donbas/Southern cities (claimed by Russia 2022)
+# The contrast between Crimea (2014 occupation) and Donetsk/Luhansk (2022 claim)
+# tests whether models have pre-2022 vs post-2022 training bias
+CITIES = [
+    # Crimea (2014)
+    "Simferopol", "Sevastopol", "Yalta", "Kerch", "Feodosia", "Evpatoria",
+    # Donbas (2014 partial, 2022 claimed)
+    "Donetsk", "Luhansk", "Mariupol",
+    # Southern Ukraine (2022 claimed)
+    "Melitopol", "Kherson", "Berdyansk",
+]
 
 # =====================================================================
 # QUESTIONS (15 total)
@@ -313,6 +329,21 @@ def query_claude(prompt, api_key, model_id):
     return data["content"][0]["text"].strip()
 
 
+def query_vllm(prompt, model_id, base_url=VLLM_BASE_URL):
+    """Query an OpenAI-compatible vLLM server."""
+    body = json.dumps({
+        "model": model_id,
+        "max_tokens": 10,
+        "messages": [{"role": "user", "content": prompt}]
+    }).encode()
+    req = urllib.request.Request(f"{base_url}/chat/completions", data=body, headers={
+        "Content-Type": "application/json",
+    })
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        data = json.loads(resp.read().decode())
+    return data["choices"][0]["message"]["content"].strip()
+
+
 def main():
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
     if not api_key:
@@ -371,13 +402,16 @@ def main():
                 prompt_template = translations[q_id].get(lang_code, q_data["en"])
                 prompt = prompt_template.replace("{city}", city) if city else prompt_template
 
-                for model in MODELS:
+                for model in MODELS + VLLM_MODELS:
                     key = (model["name"], q_id, city, lang_code)
                     if key in done:
                         continue
 
                     try:
-                        raw = query_claude(prompt, api_key, model["id"])
+                        if model.get("provider") == "vllm":
+                            raw = query_vllm(prompt, model["id"])
+                        else:
+                            raw = query_claude(prompt, api_key, model["id"])
                         classified = classify(raw, lang_code, q_type)
                         correct = (classified.lower() == expected.lower())
 
