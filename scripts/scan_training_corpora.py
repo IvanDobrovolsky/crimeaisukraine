@@ -139,6 +139,18 @@ def scan_corpus(corpus_def, classifier, max_crimea_docs=3000, max_total_docs=5_0
     print(f"\n--- {name} ({hf_name}{':'+config if config else ''}) ---")
     print(f"  Models using this corpus: {', '.join(corpus_def['models'])}")
 
+    # Force reset any HF HTTP session state from previous corpus
+    try:
+        import huggingface_hub
+        # Reset session to avoid "client closed" errors between corpora
+        if hasattr(huggingface_hub, "_client"):
+            huggingface_hub._client = None
+        # Also clear any fsspec filesystem cache
+        import fsspec
+        fsspec.filesystem("hf").clear_instance_cache() if hasattr(fsspec.filesystem("hf"), "clear_instance_cache") else None
+    except Exception:
+        pass
+
     try:
         if config:
             ds = load_dataset(hf_name, config, split=split, streaming=corpus_def.get("streaming", True))
