@@ -206,3 +206,9 @@ cats={}; \
 [cats.__setitem__(x['category'], cats.get(x['category'],0)+1) for x in f]; \
 print(f'Total: {len(f)} findings across {len(cats)} categories'); \
 [print(f'  {c}: {n}') for c,n in sorted(cats.items())]"
+
+# ─── Master manifest ──────────────────────────────────────
+
+master-manifest: ## Build master manifest aggregating all pipeline outputs
+	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
+
