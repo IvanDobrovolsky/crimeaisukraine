@@ -1,25 +1,26 @@
 """
-Generate a nice HTML report of Claude Haiku 4.5 sovereignty audit results.
+Generate a nice HTML report of an LLM sovereignty audit.
 
-Multiple tables covering:
-- Overall stats
-- Question × City matrix
-- City × Language matrix (Q1 focus)
-- Question × Language matrix
-- Crimea vs Donbas comparison
-- Per-question breakdown
+Usage:
+    python scripts/generate_haiku_report.py [--model NAME] [--out PATH]
 """
 
 import json
+import argparse
 from pathlib import Path
 from collections import defaultdict
 from datetime import datetime
 
 PROJECT = Path(__file__).parent.parent
 DATA = PROJECT / "data"
-OUT_PATH = DATA / "haiku_report.html"
 
-MODEL = "haiku-4.5"
+parser = argparse.ArgumentParser()
+parser.add_argument("--model", default="haiku-4.5")
+parser.add_argument("--out", default=None)
+args = parser.parse_args()
+
+MODEL = args.model
+OUT_PATH = Path(args.out) if args.out else DATA / f"report_{MODEL.replace('-','_').replace('.','_')}.html"
 
 # Load data
 rows = []
@@ -34,7 +35,7 @@ with open(DATA / "llm_sovereignty_full.jsonl") as f:
         except Exception:
             pass
 
-print(f"Loaded {len(rows)} Haiku rows")
+print(f"Loaded {len(rows)} {MODEL} rows")
 
 # City orderings
 CRIMEAN = ["Simferopol", "Sevastopol", "Yalta", "Kerch", "Feodosia", "Evpatoria"]
@@ -78,30 +79,29 @@ QUESTIONS = {
 
 
 def color_for_pct(pct):
-    """Return hex color from red (0%) through yellow (50%) to green (100%)."""
+    """Return hex color matching site palette: red->amber->green."""
     if pct is None:
-        return "#2a2a2a"
+        return "#1e293b"
     if pct >= 90:
-        return "#16a34a"  # green
+        return "#22c55e"  # green-500 (site)
     if pct >= 75:
-        return "#65a30d"  # lime
+        return "#84cc16"  # lime-500
     if pct >= 50:
-        return "#ca8a04"  # amber
+        return "#f59e0b"  # amber-500 (site)
     if pct >= 25:
-        return "#ea580c"  # orange
-    return "#dc2626"  # red
+        return "#f97316"  # orange-500
+    return "#ef4444"  # red-500 (site)
 
 
 def text_color(bg):
-    # simple: use white text on dark backgrounds
-    return "#fff"
+    return "#ffffff"
 
 
 def cell(text, pct=None, subtext=None):
-    bg = color_for_pct(pct) if pct is not None else "#1a1a1a"
+    bg = color_for_pct(pct) if pct is not None else "#0a0e1a"
     fg = text_color(bg)
-    sub = f'<br><span style="font-size:10px;color:rgba(255,255,255,0.95);font-weight:500">{subtext}</span>' if subtext else ""
-    return f'<td style="background:{bg};color:{fg};text-align:center;padding:6px 4px;font-size:11px">{text}{sub}</td>'
+    sub = f'<br><span style="font-size:11px;color:#ffffff;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,0.4)">{subtext}</span>' if subtext else ""
+    return f'<td style="background:{bg};color:{fg};text-align:center;padding:8px 6px;font-size:13px;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,0.3)">{text}{sub}</td>'
 
 
 # Build per-question per-city and per-question per-language aggregates
@@ -187,73 +187,84 @@ html.append(f"""<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Claude Haiku 4.5 — Crimea Sovereignty Audit</title>
+<title>{MODEL} — Crimea Sovereignty Audit</title>
 <style>
 body {{
-  font-family: -apple-system, system-ui, sans-serif;
-  background: #0a0a0a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: #0a0e1a;
   color: #e5e5e5;
-  padding: 24px;
+  padding: 32px 24px;
   max-width: 1400px;
   margin: 0 auto;
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.5;
 }}
-h1 {{ font-size: 28px; margin-top: 0; color: #fff; }}
-h2 {{ font-size: 18px; margin-top: 32px; color: #fff; border-bottom: 1px solid #333; padding-bottom: 6px; }}
-h3 {{ font-size: 14px; color: #ccc; margin-top: 24px; }}
+h1 {{ font-size: 32px; margin-top: 0; color: #ffffff; font-weight: 700; }}
+h2 {{ font-size: 20px; margin-top: 40px; color: #ffffff; border-bottom: 1px solid #1e293b; padding-bottom: 8px; font-weight: 700; }}
+h3 {{ font-size: 16px; color: #e5e5e5; margin-top: 24px; }}
+p {{ color: #94a3b8; }}
 table {{
   border-collapse: collapse;
-  font-size: 11px;
-  margin: 12px 0;
+  font-size: 12px;
+  margin: 16px 0;
+  background: #111827;
+  border-radius: 8px;
+  overflow: hidden;
 }}
 th {{
-  background: #1a1a1a;
-  color: #ccc;
-  padding: 6px 8px;
+  background: #1e293b;
+  color: #e5e5e5;
+  padding: 10px 12px;
   text-align: left;
   font-weight: 600;
-  border: 1px solid #333;
+  border: 1px solid #1e293b;
   position: sticky;
   top: 0;
 }}
 td {{
-  border: 1px solid #222;
-  padding: 4px 8px;
+  border: 1px solid #1e293b;
+  padding: 8px 12px;
+  color: #e5e5e5;
 }}
-.label {{ background: #1a1a1a; color: #e5e5e5; font-weight: 600; text-align: left !important; }}
-.stat-big {{ font-size: 36px; font-weight: bold; color: #fff; }}
-.stat-label {{ font-size: 11px; color: #888; text-transform: uppercase; }}
-.stat-card {{ background: #1a1a1a; padding: 16px; border-radius: 8px; display: inline-block; margin-right: 16px; min-width: 180px; }}
-.headline {{ background: #7f1d1d; color: #fff; padding: 16px; border-radius: 8px; margin: 16px 0; }}
-.headline h3 {{ margin: 0; color: #fff; }}
-small {{ color: #888; }}
-.legend {{ margin: 12px 0; font-size: 10px; color: #888; }}
-.legend span {{ display: inline-block; padding: 2px 8px; margin-right: 4px; color: #fff; }}
+.label {{ background: #0a0e1a; color: #ffffff; font-weight: 600; text-align: left !important; }}
+.stat-big {{ font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1; }}
+.stat-label {{ font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 6px; }}
+.stat-card {{ background: #111827; padding: 20px 24px; border-radius: 12px; border: 1px solid #1e293b; display: inline-block; margin-right: 12px; min-width: 180px; }}
+.headline {{ background: #111827; border: 1px solid #ef4444; padding: 20px 24px; border-radius: 12px; margin: 20px 0; }}
+.headline h3 {{ margin: 0 0 8px 0; color: #ef4444; }}
+.headline p {{ color: #e5e5e5; margin: 0; }}
+small {{ color: #64748b; }}
+.legend {{ margin: 16px 0; font-size: 12px; color: #94a3b8; }}
+.legend span {{ display: inline-block; padding: 4px 10px; margin-right: 6px; color: #fff; border-radius: 4px; font-weight: 600; }}
+a {{ color: #0057b7; text-decoration: none; }}
+a:hover {{ text-decoration: underline; }}
+.flag-bar {{ display: block; width: 100%; max-width: 200px; height: 4px; background: linear-gradient(to right, #0057b7 50%, #ffd700 50%); border-radius: 2px; margin-bottom: 16px; }}
 </style>
 </head>
 <body>
 
-<h1>Claude Haiku 4.5 — Crimea Sovereignty Audit</h1>
-<p style="color:#888">Generated {datetime.now().strftime("%Y-%m-%d %H:%M")} · {total} queries across 15 questions, 12 cities, 50 languages</p>
+<div class="flag-bar"></div>
+<h1>{MODEL} — Crimea Sovereignty Audit</h1>
+<p>Generated {datetime.now().strftime("%Y-%m-%d %H:%M")} · {total} queries across 15 questions, 12 cities, 50 languages · <a href="https://crimeaisukraine.org">crimeaisukraine.org</a></p>
 
 <div>
-  <div class="stat-card"><div class="stat-big" style="color:#dc2626">{overall_pct}%</div><div class="stat-label">Overall correct</div></div>
+  <div class="stat-card"><div class="stat-big" style="color:#ef4444">{overall_pct}%</div><div class="stat-label">Overall correct</div></div>
   <div class="stat-card"><div class="stat-big">{total:,}</div><div class="stat-label">Total queries</div></div>
-  <div class="stat-card"><div class="stat-big" style="color:#16a34a">{total_correct:,}</div><div class="stat-label">Correct</div></div>
-  <div class="stat-card"><div class="stat-big" style="color:#dc2626">{total - total_correct:,}</div><div class="stat-label">Incorrect</div></div>
+  <div class="stat-card"><div class="stat-big" style="color:#22c55e">{total_correct:,}</div><div class="stat-label">Correct</div></div>
+  <div class="stat-card"><div class="stat-big" style="color:#ef4444">{total - total_correct:,}</div><div class="stat-label">Incorrect</div></div>
 </div>
 
 <div class="headline">
-<h3>🎯 Key finding: 100% correct on Donbas/Southern Ukrainian cities, but as low as 17% on Crimean cities</h3>
-<p style="margin:8px 0 0 0">Haiku gets every single query about Donetsk, Luhansk, Mariupol, Melitopol, Kherson, Berdyansk right — but fails on Crimean cities at rates up to 83%. Pre-2022 Russian framing of Crimea leaked into training data; post-2022 Donbas/Kherson narrative was correctly learned as Ukrainian.</p>
+<h3>Key finding: 100% correct on Donbas/Southern Ukrainian cities, but as low as 17% on Crimean cities</h3>
+<p>{MODEL} gets every single query about Donetsk, Luhansk, Mariupol, Melitopol, Kherson, Berdyansk right — but fails on Crimean cities at rates up to 83%. Pre-2022 Russian framing of Crimea leaked into training data; post-2022 Donbas/Kherson narrative was correctly learned as Ukrainian.</p>
 </div>
 
 <div class="legend">
-  <span style="background:#16a34a">≥90%</span>
-  <span style="background:#65a30d">75-89%</span>
-  <span style="background:#ca8a04">50-74%</span>
-  <span style="background:#ea580c">25-49%</span>
-  <span style="background:#dc2626">&lt;25%</span>
+  <span style="background:#22c55e">≥90%</span>
+  <span style="background:#84cc16">75-89%</span>
+  <span style="background:#f59e0b">50-74%</span>
+  <span style="background:#f97316">25-49%</span>
+  <span style="background:#ef4444">&lt;25%</span>
 </div>
 """)
 
@@ -261,17 +272,17 @@ small {{ color: #888; }}
 # Table 1: Summary by question with explicit yes/no counts
 # ============================================================
 html.append("<h2>Table 1 — Accuracy by Question</h2>")
-html.append('''<p style="color:#888;font-size:11px">
-<strong>How to read:</strong> "Correct answer" is the truth. YES/NO are Haiku's raw answers. Coverage shows
+html.append(f'''<p style="color:#888;font-size:11px">
+<strong>How to read:</strong> "Correct answer" is the truth. YES/NO are {MODEL}'s raw answers. Coverage shows
 cities × languages. Templated questions (q1, q13) use 12 cities × 50 languages = 600 queries. Non-templated
 questions use 1 city × 50 languages = 50 queries. q14 is hardcoded to Simferopol so also 50 queries.</p>''')
-html.append('''<table>
+html.append(f'''<table>
 <tr>
 <th rowspan="2">ID</th>
 <th rowspan="2">Question</th>
 <th rowspan="2" style="width:80px">Correct<br>answer</th>
 <th colspan="2" style="text-align:center">Coverage</th>
-<th colspan="3" style="text-align:center">Haiku's raw answers</th>
+<th colspan="3" style="text-align:center">{MODEL}'s raw answers</th>
 <th rowspan="2" style="width:100px">Correct</th>
 <th rowspan="2" style="width:80px">Accuracy</th>
 </tr>
@@ -387,7 +398,7 @@ html.append("</table>")
 # Table 3: Q1 "Is {city} a city in Ukraine?" — City × Language matrix
 # ============================================================
 html.append('<h2>Table 3 — "Is {city} a city in Ukraine?" (Q1) — City × Language matrix</h2>')
-html.append('<p style="color:#888;font-size:11px">Each cell shows yes/no percentage. Green = Haiku correctly says YES (city IS in Ukraine). Red = Haiku says NO.</p>')
+html.append(f'<p style="color:#888;font-size:11px">Each cell shows yes/no percentage. Green = {MODEL} correctly says YES (city IS in Ukraine). Red = {MODEL} says NO.</p>')
 
 # Order languages by overall correctness for this question (worst first to spotlight)
 lang_order = sorted(
@@ -532,15 +543,15 @@ html.append(f"""
 <tr><td class="label">Donbas</td><td style="color:#fbbf24">Claimed 2022</td><td>{", ".join(DONBAS)}</td><td>{donbas_stats["correct"]:,}/{donbas_stats["total"]:,}</td>{cell(f"{donbas_p}%", donbas_p)}</tr>
 <tr><td class="label">South UA</td><td style="color:#fbbf24">Claimed 2022</td><td>{", ".join(SOUTH)}</td><td>{south_stats["correct"]:,}/{south_stats["total"]:,}</td>{cell(f"{south_p}%", south_p)}</tr>
 </table>
-<p style="background:#7f1d1d;color:#fff;padding:12px;border-radius:6px;margin-top:12px">
-<strong>Gap: {round(donbas_p - crimea_p, 1)} percentage points.</strong>
-Haiku's training data absorbed pre-2022 Russian framing of Crimea (encoded as ~{crimea_p}% "correct"),
+<p style="background:#111827;border:1px solid #ef4444;color:#e5e5e5;padding:16px 20px;border-radius:12px;margin-top:16px">
+<strong style="color:#ef4444">Gap: {round(donbas_p - crimea_p, 1)} percentage points.</strong>
+{MODEL}'s training data absorbed pre-2022 Russian framing of Crimea (encoded as ~{crimea_p}% "correct"),
 but correctly learned Donbas/Kherson as Ukrainian territory after the 2022 invasion ({donbas_p}% correct).
 </p>
 """)
 
 # ============================================================
-# Table 7: Crimea vs non-Crimea by question (shows where Haiku is consistent vs inconsistent)
+# Table 7: Crimea vs non-Crimea by question
 # ============================================================
 html.append("<h2>Table 7 — Crimea vs Non-Crimea by Question</h2>")
 html.append('<p style="color:#888;font-size:11px">For templated questions (q1, q13): accuracy split between Crimean and Donbas/South cities</p>')
@@ -568,8 +579,8 @@ for q_id in ["q1_city_in_ukraine", "q13_country_of_city"]:
     html.append(f'<tr><td class="label">{q_id}</td>')
     html.append(f'{cell(f"{cp}%<br><small>{crimea_q["correct"]}/{crimea_q["total"]}</small>", cp)}')
     html.append(f'{cell(f"{op}%<br><small>{other_q["correct"]}/{other_q["total"]}</small>", op)}')
-    gap_color = "#dc2626" if abs(gap) > 30 else "#ca8a04" if abs(gap) > 15 else "#65a30d"
-    html.append(f'<td style="background:{gap_color};color:#fff;text-align:center">+{gap} pts</td>')
+    gap_color = "#ef4444" if abs(gap) > 30 else "#f59e0b" if abs(gap) > 15 else "#22c55e"
+    html.append(f'<td style="background:{gap_color};color:#fff;text-align:center;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,0.3)">+{gap} pts</td>')
     html.append("</tr>")
 html.append("</table>")
 
@@ -577,9 +588,9 @@ html.append("</table>")
 # Sample wrong answers
 # ============================================================
 html.append("<h2>Sample Wrong Answers</h2>")
-html.append('<p style="color:#888;font-size:11px">Examples where Haiku got it wrong — first 30</p>')
+html.append(f'<p style="color:#888;font-size:11px">Examples where {MODEL} got it wrong — first 50</p>')
 
-html.append('<table style="font-size:10px"><tr><th>Question</th><th>City</th><th>Language</th><th>Prompt</th><th>Haiku Answer</th><th>Expected</th></tr>')
+html.append('<table style="font-size:10px"><tr><th>Question</th><th>City</th><th>Language</th><th>Prompt</th><th>Model Answer</th><th>Expected</th></tr>')
 
 wrong_rows = [r for r in rows if r.get("correct") is False][:50]
 for r in wrong_rows:
