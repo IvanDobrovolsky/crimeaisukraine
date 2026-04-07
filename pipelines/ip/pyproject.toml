@@ -1,0 +1,14 @@
+[project]
+name = "crimeaisukraine-ip"
+version = "1.0.0"
+description = "IP geolocation Crimea sovereignty audit"
+authors = [{ name = "Ivan Dobrovolskyi", email = "dobrovolsky94@gmail.com" }]
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31.0",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.0.0",
+]
