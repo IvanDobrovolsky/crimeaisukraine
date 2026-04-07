@@ -100,7 +100,7 @@ def text_color(bg):
 def cell(text, pct=None, subtext=None):
     bg = color_for_pct(pct) if pct is not None else "#1a1a1a"
     fg = text_color(bg)
-    sub = f'<br><small style="opacity:0.8;font-size:9px">{subtext}</small>' if subtext else ""
+    sub = f'<br><span style="font-size:10px;color:rgba(255,255,255,0.95);font-weight:500">{subtext}</span>' if subtext else ""
     return f'<td style="background:{bg};color:{fg};text-align:center;padding:6px 4px;font-size:11px">{text}{sub}</td>'
 
 
@@ -322,6 +322,25 @@ for city in DONBAS + SOUTH:
 html.append("</table>")
 
 # ============================================================
+# Table 2b: Accuracy by Language (full names, sorted worst-first)
+# ============================================================
+html.append("<h2>Table 2b — Accuracy by Language</h2>")
+html.append('<p style="color:#888;font-size:11px">All 15 questions combined, sorted worst to best. Worst-performing languages reveal training data bias.</p>')
+html.append('<table><tr><th>Language</th><th>Code</th><th style="width:100px">Correct</th><th style="width:80px">%</th></tr>')
+
+lang_sorted = sorted(
+    [l for l in LANGS.keys() if by_l.get(l, {"total": 0})["total"] > 0],
+    key=lambda l: pct(by_l[l]) or 0
+)
+
+for l in lang_sorted:
+    d = by_l[l]
+    p = pct(d)
+    lang_name = LANGS.get(l, l)
+    html.append(f'<tr><td class="label">{lang_name}</td><td style="color:#888;font-family:monospace">{l}</td><td>{d["correct"]}/{d["total"]}</td>{cell(f"{p}%", p)}</tr>')
+html.append("</table>")
+
+# ============================================================
 # Table 3: Q1 "Is {city} a city in Ukraine?" — City × Language matrix
 # ============================================================
 html.append('<h2>Table 3 — "Is {city} a city in Ukraine?" (Q1) — City × Language matrix</h2>')
@@ -340,7 +359,7 @@ for city in ALL_CITIES:
 html.append("<th>Avg</th></tr>")
 
 for lang in lang_order:
-    html.append(f'<tr><td class="label">{lang} · {LANGS.get(lang, lang)}</td>')
+    html.append(f'<tr><td class="label">{LANGS.get(lang, lang)}</td>')
     lang_sum = {"correct": 0, "total": 0}
     for city in ALL_CITIES:
         d = by_cl.get((city, lang), {"correct": 0, "total": 0})
@@ -373,14 +392,14 @@ lang_overall = sorted(
 )
 
 html.append('<table style="font-size:10px"><tr><th>Question</th>')
-for l in lang_overall[:20]:  # top 20 languages
-    html.append(f'<th style="writing-mode:vertical-lr;height:100px">{l}</th>')
+for l in lang_overall[:25]:  # top 25 languages
+    html.append(f'<th style="writing-mode:vertical-lr;height:140px;padding:4px">{LANGS.get(l, l)}</th>')
 html.append("</tr>")
 
 for q_id in QUESTIONS.keys():
     html.append(f'<tr><td class="label" style="font-size:10px">{q_id}</td>')
-    for l in lang_overall[:20]:
-        d = by_ql.get((q_id, l), {"correct": 0, "total": 0})
+    for l in lang_overall[:25]:
+        d = by_ql.get((q_id, l), new_agg())
         if d["total"] == 0:
             html.append('<td style="background:#1a1a1a;text-align:center;padding:4px">—</td>')
             continue
@@ -392,14 +411,14 @@ html.append("</table>")
 
 # Lower half of languages
 html.append('<table style="font-size:10px"><tr><th>Question</th>')
-for l in lang_overall[20:]:
-    html.append(f'<th style="writing-mode:vertical-lr;height:100px">{l}</th>')
+for l in lang_overall[25:]:
+    html.append(f'<th style="writing-mode:vertical-lr;height:140px;padding:4px">{LANGS.get(l, l)}</th>')
 html.append("</tr>")
 
 for q_id in QUESTIONS.keys():
     html.append(f'<tr><td class="label" style="font-size:10px">{q_id}</td>')
-    for l in lang_overall[20:]:
-        d = by_ql.get((q_id, l), {"correct": 0, "total": 0})
+    for l in lang_overall[25:]:
+        d = by_ql.get((q_id, l), new_agg())
         if d["total"] == 0:
             html.append('<td style="background:#1a1a1a;text-align:center;padding:4px">—</td>')
             continue
@@ -430,7 +449,7 @@ for q_id in ["q1_city_in_ukraine", "q13_country_of_city"]:
             html.append(f'<td style="background:#1a1a1a;padding:4px{border}">—</td>')
             continue
         p = pct(d)
-        html.append(f'<td style="background:{color_for_pct(p)};color:#fff;text-align:center;padding:4px{border}">{p}%<br><small>{d["correct"]}/{d["total"]}</small></td>')
+        html.append(f'<td style="background:{color_for_pct(p)};color:#fff;text-align:center;padding:4px{border}">{p}%<br><span style="font-size:10px;color:rgba(255,255,255,0.95)">{d["correct"]}/{d["total"]}</span></td>')
     html.append("</tr>")
 html.append("</table>")
 
@@ -517,13 +536,15 @@ html.append("</table>")
 html.append("<h2>Sample Wrong Answers</h2>")
 html.append('<p style="color:#888;font-size:11px">Examples where Haiku got it wrong — first 30</p>')
 
-html.append('<table style="font-size:10px"><tr><th>Q</th><th>City</th><th>Lang</th><th>Prompt</th><th>Answer</th><th>Expected</th></tr>')
+html.append('<table style="font-size:10px"><tr><th>Question</th><th>City</th><th>Language</th><th>Prompt</th><th>Haiku Answer</th><th>Expected</th></tr>')
 
-wrong_rows = [r for r in rows if r.get("correct") is False][:30]
+wrong_rows = [r for r in rows if r.get("correct") is False][:50]
 for r in wrong_rows:
-    prompt = r.get("prompt", "")[:80]
+    prompt = r.get("prompt", "")[:90]
     answer = r.get("raw_answer", "")[:60]
-    html.append(f'<tr><td>{r.get("question_id","")[:25]}</td><td>{r.get("city","")}</td><td>{r.get("language","")}</td><td style="color:#aaa">{prompt}</td><td style="background:#7f1d1d;color:#fff">{answer}</td><td>{r.get("expected","")}</td></tr>')
+    lang_code = r.get("language", "")
+    lang_name = LANGS.get(lang_code, lang_code)
+    html.append(f'<tr><td>{r.get("question_id","")[:25]}</td><td>{r.get("city","")}</td><td>{lang_name}</td><td style="color:#aaa">{prompt}</td><td style="background:#7f1d1d;color:#fff">{answer}</td><td style="color:#16a34a">{r.get("expected","")}</td></tr>')
 html.append("</table>")
 
 html.append(f"""
