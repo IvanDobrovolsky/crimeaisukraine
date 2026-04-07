@@ -1,0 +1,2041 @@
+{
+  "generated": "2026-04-06T20:36:37",
+  "audit_summary": {
+    "haiku-4.5": {
+      "total": 239,
+      "correct": 129,
+      "incorrect": 110,
+      "disputed": 0,
+      "correct_pct": 54.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 129,
+          "total": 239
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 12,
+          "total": 50
+        },
+        "Sevastopol": {
+          "correct": 22,
+          "total": 50
+        },
+        "Yalta": {
+          "correct": 41,
+          "total": 50
+        },
+        "Kerch": {
+          "correct": 40,
+          "total": 50
+        },
+        "Feodosia": {
+          "correct": 14,
+          "total": 39
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 3,
+          "total": 5
+        },
+        "uk": {
+          "correct": 1,
+          "total": 5
+        },
+        "ru": {
+          "correct": 2,
+          "total": 5
+        },
+        "crh": {
+          "correct": 1,
+          "total": 5
+        },
+        "be": {
+          "correct": 0,
+          "total": 5
+        },
+        "pl": {
+          "correct": 3,
+          "total": 5
+        },
+        "de": {
+          "correct": 3,
+          "total": 5
+        },
+        "fr": {
+          "correct": 4,
+          "total": 5
+        },
+        "es": {
+          "correct": 3,
+          "total": 5
+        },
+        "it": {
+          "correct": 3,
+          "total": 5
+        },
+        "pt": {
+          "correct": 3,
+          "total": 5
+        },
+        "nl": {
+          "correct": 3,
+          "total": 5
+        },
+        "sv": {
+          "correct": 2,
+          "total": 5
+        },
+        "no": {
+          "correct": 4,
+          "total": 5
+        },
+        "da": {
+          "correct": 5,
+          "total": 5
+        },
+        "fi": {
+          "correct": 1,
+          "total": 5
+        },
+        "is": {
+          "correct": 3,
+          "total": 5
+        },
+        "cs": {
+          "correct": 3,
+          "total": 5
+        },
+        "sk": {
+          "correct": 3,
+          "total": 5
+        },
+        "sl": {
+          "correct": 5,
+          "total": 5
+        },
+        "hu": {
+          "correct": 2,
+          "total": 5
+        },
+        "ro": {
+          "correct": 3,
+          "total": 5
+        },
+        "bg": {
+          "correct": 5,
+          "total": 5
+        },
+        "el": {
+          "correct": 4,
+          "total": 5
+        },
+        "hr": {
+          "correct": 5,
+          "total": 5
+        },
+        "sr": {
+          "correct": 3,
+          "total": 5
+        },
+        "mk": {
+          "correct": 5,
+          "total": 5
+        },
+        "sq": {
+          "correct": 3,
+          "total": 5
+        },
+        "lt": {
+          "correct": 3,
+          "total": 5
+        },
+        "lv": {
+          "correct": 3,
+          "total": 5
+        },
+        "et": {
+          "correct": 3,
+          "total": 5
+        },
+        "tr": {
+          "correct": 4,
+          "total": 5
+        },
+        "ka": {
+          "correct": 0,
+          "total": 5
+        },
+        "hy": {
+          "correct": 1,
+          "total": 5
+        },
+        "az": {
+          "correct": 2,
+          "total": 5
+        },
+        "kk": {
+          "correct": 0,
+          "total": 5
+        },
+        "ar": {
+          "correct": 2,
+          "total": 5
+        },
+        "he": {
+          "correct": 4,
+          "total": 5
+        },
+        "fa": {
+          "correct": 2,
+          "total": 5
+        },
+        "hi": {
+          "correct": 1,
+          "total": 4
+        },
+        "ur": {
+          "correct": 1,
+          "total": 4
+        },
+        "bn": {
+          "correct": 2,
+          "total": 4
+        },
+        "zh": {
+          "correct": 1,
+          "total": 4
+        },
+        "ja": {
+          "correct": 2,
+          "total": 4
+        },
+        "ko": {
+          "correct": 2,
+          "total": 4
+        },
+        "vi": {
+          "correct": 2,
+          "total": 4
+        },
+        "id": {
+          "correct": 3,
+          "total": 4
+        },
+        "th": {
+          "correct": 3,
+          "total": 4
+        },
+        "sw": {
+          "correct": 1,
+          "total": 4
+        },
+        "af": {
+          "correct": 2,
+          "total": 4
+        }
+      }
+    },
+    "sonnet-4.6": {
+      "total": 239,
+      "correct": 167,
+      "incorrect": 72,
+      "disputed": 0,
+      "correct_pct": 69.9,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 167,
+          "total": 239
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 22,
+          "total": 50
+        },
+        "Sevastopol": {
+          "correct": 33,
+          "total": 50
+        },
+        "Yalta": {
+          "correct": 48,
+          "total": 50
+        },
+        "Kerch": {
+          "correct": 27,
+          "total": 50
+        },
+        "Feodosia": {
+          "correct": 37,
+          "total": 39
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 5,
+          "total": 5
+        },
+        "uk": {
+          "correct": 5,
+          "total": 5
+        },
+        "ru": {
+          "correct": 4,
+          "total": 5
+        },
+        "crh": {
+          "correct": 1,
+          "total": 5
+        },
+        "be": {
+          "correct": 2,
+          "total": 5
+        },
+        "pl": {
+          "correct": 5,
+          "total": 5
+        },
+        "de": {
+          "correct": 5,
+          "total": 5
+        },
+        "fr": {
+          "correct": 2,
+          "total": 5
+        },
+        "es": {
+          "correct": 4,
+          "total": 5
+        },
+        "it": {
+          "correct": 2,
+          "total": 5
+        },
+        "pt": {
+          "correct": 2,
+          "total": 5
+        },
+        "nl": {
+          "correct": 4,
+          "total": 5
+        },
+        "sv": {
+          "correct": 2,
+          "total": 5
+        },
+        "no": {
+          "correct": 3,
+          "total": 5
+        },
+        "da": {
+          "correct": 3,
+          "total": 5
+        },
+        "fi": {
+          "correct": 5,
+          "total": 5
+        },
+        "is": {
+          "correct": 0,
+          "total": 5
+        },
+        "cs": {
+          "correct": 3,
+          "total": 5
+        },
+        "sk": {
+          "correct": 4,
+          "total": 5
+        },
+        "sl": {
+          "correct": 5,
+          "total": 5
+        },
+        "hu": {
+          "correct": 2,
+          "total": 5
+        },
+        "ro": {
+          "correct": 3,
+          "total": 5
+        },
+        "bg": {
+          "correct": 4,
+          "total": 5
+        },
+        "el": {
+          "correct": 5,
+          "total": 5
+        },
+        "hr": {
+          "correct": 5,
+          "total": 5
+        },
+        "sr": {
+          "correct": 5,
+          "total": 5
+        },
+        "mk": {
+          "correct": 5,
+          "total": 5
+        },
+        "sq": {
+          "correct": 5,
+          "total": 5
+        },
+        "lt": {
+          "correct": 5,
+          "total": 5
+        },
+        "lv": {
+          "correct": 3,
+          "total": 5
+        },
+        "et": {
+          "correct": 5,
+          "total": 5
+        },
+        "tr": {
+          "correct": 3,
+          "total": 5
+        },
+        "ka": {
+          "correct": 3,
+          "total": 5
+        },
+        "hy": {
+          "correct": 2,
+          "total": 5
+        },
+        "az": {
+          "correct": 2,
+          "total": 5
+        },
+        "kk": {
+          "correct": 2,
+          "total": 5
+        },
+        "ar": {
+          "correct": 5,
+          "total": 5
+        },
+        "he": {
+          "correct": 5,
+          "total": 5
+        },
+        "fa": {
+          "correct": 3,
+          "total": 5
+        },
+        "hi": {
+          "correct": 2,
+          "total": 4
+        },
+        "ur": {
+          "correct": 3,
+          "total": 4
+        },
+        "bn": {
+          "correct": 3,
+          "total": 4
+        },
+        "zh": {
+          "correct": 1,
+          "total": 4
+        },
+        "ja": {
+          "correct": 4,
+          "total": 4
+        },
+        "ko": {
+          "correct": 4,
+          "total": 4
+        },
+        "vi": {
+          "correct": 2,
+          "total": 4
+        },
+        "id": {
+          "correct": 3,
+          "total": 4
+        },
+        "th": {
+          "correct": 1,
+          "total": 4
+        },
+        "sw": {
+          "correct": 3,
+          "total": 4
+        },
+        "af": {
+          "correct": 3,
+          "total": 4
+        }
+      }
+    },
+    "opus-4.6": {
+      "total": 239,
+      "correct": 229,
+      "incorrect": 10,
+      "disputed": 0,
+      "correct_pct": 95.8,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 229,
+          "total": 239
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 48,
+          "total": 50
+        },
+        "Sevastopol": {
+          "correct": 48,
+          "total": 50
+        },
+        "Yalta": {
+          "correct": 47,
+          "total": 50
+        },
+        "Kerch": {
+          "correct": 48,
+          "total": 50
+        },
+        "Feodosia": {
+          "correct": 38,
+          "total": 39
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 5,
+          "total": 5
+        },
+        "uk": {
+          "correct": 5,
+          "total": 5
+        },
+        "ru": {
+          "correct": 5,
+          "total": 5
+        },
+        "crh": {
+          "correct": 4,
+          "total": 5
+        },
+        "be": {
+          "correct": 5,
+          "total": 5
+        },
+        "pl": {
+          "correct": 5,
+          "total": 5
+        },
+        "de": {
+          "correct": 5,
+          "total": 5
+        },
+        "fr": {
+          "correct": 5,
+          "total": 5
+        },
+        "es": {
+          "correct": 5,
+          "total": 5
+        },
+        "it": {
+          "correct": 5,
+          "total": 5
+        },
+        "pt": {
+          "correct": 5,
+          "total": 5
+        },
+        "nl": {
+          "correct": 5,
+          "total": 5
+        },
+        "sv": {
+          "correct": 5,
+          "total": 5
+        },
+        "no": {
+          "correct": 5,
+          "total": 5
+        },
+        "da": {
+          "correct": 5,
+          "total": 5
+        },
+        "fi": {
+          "correct": 5,
+          "total": 5
+        },
+        "is": {
+          "correct": 5,
+          "total": 5
+        },
+        "cs": {
+          "correct": 5,
+          "total": 5
+        },
+        "sk": {
+          "correct": 5,
+          "total": 5
+        },
+        "sl": {
+          "correct": 5,
+          "total": 5
+        },
+        "hu": {
+          "correct": 1,
+          "total": 5
+        },
+        "ro": {
+          "correct": 5,
+          "total": 5
+        },
+        "bg": {
+          "correct": 5,
+          "total": 5
+        },
+        "el": {
+          "correct": 5,
+          "total": 5
+        },
+        "hr": {
+          "correct": 5,
+          "total": 5
+        },
+        "sr": {
+          "correct": 5,
+          "total": 5
+        },
+        "mk": {
+          "correct": 5,
+          "total": 5
+        },
+        "sq": {
+          "correct": 5,
+          "total": 5
+        },
+        "lt": {
+          "correct": 5,
+          "total": 5
+        },
+        "lv": {
+          "correct": 5,
+          "total": 5
+        },
+        "et": {
+          "correct": 5,
+          "total": 5
+        },
+        "tr": {
+          "correct": 5,
+          "total": 5
+        },
+        "ka": {
+          "correct": 5,
+          "total": 5
+        },
+        "hy": {
+          "correct": 5,
+          "total": 5
+        },
+        "az": {
+          "correct": 2,
+          "total": 5
+        },
+        "kk": {
+          "correct": 4,
+          "total": 5
+        },
+        "ar": {
+          "correct": 5,
+          "total": 5
+        },
+        "he": {
+          "correct": 5,
+          "total": 5
+        },
+        "fa": {
+          "correct": 5,
+          "total": 5
+        },
+        "hi": {
+          "correct": 3,
+          "total": 4
+        },
+        "ur": {
+          "correct": 4,
+          "total": 4
+        },
+        "bn": {
+          "correct": 4,
+          "total": 4
+        },
+        "zh": {
+          "correct": 4,
+          "total": 4
+        },
+        "ja": {
+          "correct": 4,
+          "total": 4
+        },
+        "ko": {
+          "correct": 4,
+          "total": 4
+        },
+        "vi": {
+          "correct": 4,
+          "total": 4
+        },
+        "id": {
+          "correct": 4,
+          "total": 4
+        },
+        "th": {
+          "correct": 4,
+          "total": 4
+        },
+        "sw": {
+          "correct": 4,
+          "total": 4
+        },
+        "af": {
+          "correct": 4,
+          "total": 4
+        }
+      }
+    },
+    "qwen2.5-7b": {
+      "total": 317,
+      "correct": 231,
+      "incorrect": 86,
+      "disputed": 0,
+      "correct_pct": 72.9,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 231,
+          "total": 317
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 26,
+          "total": 50
+        },
+        "Sevastopol": {
+          "correct": 36,
+          "total": 50
+        },
+        "Yalta": {
+          "correct": 50,
+          "total": 57
+        },
+        "Kerch": {
+          "correct": 74,
+          "total": 99
+        },
+        "Feodosia": {
+          "correct": 35,
+          "total": 50
+        },
+        "Evpatoria": {
+          "correct": 10,
+          "total": 11
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 6,
+          "total": 7
+        },
+        "uk": {
+          "correct": 7,
+          "total": 7
+        },
+        "ru": {
+          "correct": 5,
+          "total": 7
+        },
+        "crh": {
+          "correct": 4,
+          "total": 7
+        },
+        "be": {
+          "correct": 7,
+          "total": 7
+        },
+        "pl": {
+          "correct": 7,
+          "total": 7
+        },
+        "de": {
+          "correct": 4,
+          "total": 7
+        },
+        "fr": {
+          "correct": 6,
+          "total": 7
+        },
+        "es": {
+          "correct": 7,
+          "total": 7
+        },
+        "it": {
+          "correct": 7,
+          "total": 7
+        },
+        "pt": {
+          "correct": 6,
+          "total": 7
+        },
+        "nl": {
+          "correct": 5,
+          "total": 6
+        },
+        "sv": {
+          "correct": 5,
+          "total": 6
+        },
+        "no": {
+          "correct": 0,
+          "total": 6
+        },
+        "da": {
+          "correct": 0,
+          "total": 6
+        },
+        "fi": {
+          "correct": 4,
+          "total": 6
+        },
+        "is": {
+          "correct": 1,
+          "total": 6
+        },
+        "cs": {
+          "correct": 1,
+          "total": 6
+        },
+        "sk": {
+          "correct": 2,
+          "total": 6
+        },
+        "sl": {
+          "correct": 6,
+          "total": 6
+        },
+        "hu": {
+          "correct": 6,
+          "total": 6
+        },
+        "ro": {
+          "correct": 3,
+          "total": 6
+        },
+        "bg": {
+          "correct": 6,
+          "total": 6
+        },
+        "el": {
+          "correct": 4,
+          "total": 6
+        },
+        "hr": {
+          "correct": 6,
+          "total": 6
+        },
+        "sr": {
+          "correct": 5,
+          "total": 6
+        },
+        "mk": {
+          "correct": 1,
+          "total": 6
+        },
+        "sq": {
+          "correct": 6,
+          "total": 6
+        },
+        "lt": {
+          "correct": 4,
+          "total": 6
+        },
+        "lv": {
+          "correct": 4,
+          "total": 6
+        },
+        "et": {
+          "correct": 6,
+          "total": 6
+        },
+        "tr": {
+          "correct": 6,
+          "total": 6
+        },
+        "ka": {
+          "correct": 5,
+          "total": 6
+        },
+        "hy": {
+          "correct": 1,
+          "total": 6
+        },
+        "az": {
+          "correct": 5,
+          "total": 6
+        },
+        "kk": {
+          "correct": 0,
+          "total": 6
+        },
+        "ar": {
+          "correct": 6,
+          "total": 6
+        },
+        "he": {
+          "correct": 6,
+          "total": 6
+        },
+        "fa": {
+          "correct": 6,
+          "total": 6
+        },
+        "hi": {
+          "correct": 6,
+          "total": 6
+        },
+        "ur": {
+          "correct": 6,
+          "total": 6
+        },
+        "bn": {
+          "correct": 4,
+          "total": 6
+        },
+        "zh": {
+          "correct": 3,
+          "total": 6
+        },
+        "ja": {
+          "correct": 4,
+          "total": 7
+        },
+        "ko": {
+          "correct": 6,
+          "total": 7
+        },
+        "vi": {
+          "correct": 7,
+          "total": 7
+        },
+        "id": {
+          "correct": 7,
+          "total": 7
+        },
+        "th": {
+          "correct": 7,
+          "total": 7
+        },
+        "sw": {
+          "correct": 0,
+          "total": 7
+        },
+        "af": {
+          "correct": 5,
+          "total": 6
+        }
+      }
+    },
+    "llama3.2-1b": {
+      "total": 5,
+      "correct": 0,
+      "incorrect": 5,
+      "disputed": 0,
+      "correct_pct": 0.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 0,
+          "total": 5
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 0,
+          "total": 5
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 0,
+          "total": 1
+        },
+        "uk": {
+          "correct": 0,
+          "total": 1
+        },
+        "ru": {
+          "correct": 0,
+          "total": 1
+        },
+        "crh": {
+          "correct": 0,
+          "total": 1
+        },
+        "be": {
+          "correct": 0,
+          "total": 1
+        }
+      }
+    },
+    "llama3.2-3b": {
+      "total": 5,
+      "correct": 1,
+      "incorrect": 4,
+      "disputed": 0,
+      "correct_pct": 20.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 1,
+          "total": 5
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 1,
+          "total": 5
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 0,
+          "total": 1
+        },
+        "uk": {
+          "correct": 0,
+          "total": 1
+        },
+        "ru": {
+          "correct": 0,
+          "total": 1
+        },
+        "crh": {
+          "correct": 0,
+          "total": 1
+        },
+        "be": {
+          "correct": 1,
+          "total": 1
+        }
+      }
+    },
+    "qwen2.5-3b": {
+      "total": 5,
+      "correct": 0,
+      "incorrect": 5,
+      "disputed": 0,
+      "correct_pct": 0.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 0,
+          "total": 5
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 0,
+          "total": 5
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 0,
+          "total": 1
+        },
+        "uk": {
+          "correct": 0,
+          "total": 1
+        },
+        "ru": {
+          "correct": 0,
+          "total": 1
+        },
+        "crh": {
+          "correct": 0,
+          "total": 1
+        },
+        "be": {
+          "correct": 0,
+          "total": 1
+        }
+      }
+    },
+    "gemma2-2b": {
+      "total": 5,
+      "correct": 5,
+      "incorrect": 0,
+      "disputed": 0,
+      "correct_pct": 100.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 5,
+          "total": 5
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 5,
+          "total": 5
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 1,
+          "total": 1
+        },
+        "uk": {
+          "correct": 1,
+          "total": 1
+        },
+        "ru": {
+          "correct": 1,
+          "total": 1
+        },
+        "crh": {
+          "correct": 1,
+          "total": 1
+        },
+        "be": {
+          "correct": 1,
+          "total": 1
+        }
+      }
+    },
+    "phi3-mini": {
+      "total": 5,
+      "correct": 1,
+      "incorrect": 4,
+      "disputed": 0,
+      "correct_pct": 20.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 1,
+          "total": 5
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 1,
+          "total": 5
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 1,
+          "total": 1
+        },
+        "uk": {
+          "correct": 0,
+          "total": 1
+        },
+        "ru": {
+          "correct": 0,
+          "total": 1
+        },
+        "crh": {
+          "correct": 0,
+          "total": 1
+        },
+        "be": {
+          "correct": 0,
+          "total": 1
+        }
+      }
+    },
+    "qwen2.5-14b": {
+      "total": 5,
+      "correct": 3,
+      "incorrect": 2,
+      "disputed": 0,
+      "correct_pct": 60.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 3,
+          "total": 5
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 3,
+          "total": 5
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 1,
+          "total": 1
+        },
+        "uk": {
+          "correct": 0,
+          "total": 1
+        },
+        "ru": {
+          "correct": 0,
+          "total": 1
+        },
+        "crh": {
+          "correct": 1,
+          "total": 1
+        },
+        "be": {
+          "correct": 1,
+          "total": 1
+        }
+      }
+    },
+    "gemma2-27b": {
+      "total": 1,
+      "correct": 1,
+      "incorrect": 0,
+      "disputed": 0,
+      "correct_pct": 100.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 1,
+          "total": 1
+        }
+      }
+    },
+    "qwen2.5-32b": {
+      "total": 5,
+      "correct": 2,
+      "incorrect": 3,
+      "disputed": 0,
+      "correct_pct": 40.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 2,
+          "total": 5
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 2,
+          "total": 5
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 0,
+          "total": 1
+        },
+        "uk": {
+          "correct": 0,
+          "total": 1
+        },
+        "ru": {
+          "correct": 0,
+          "total": 1
+        },
+        "crh": {
+          "correct": 1,
+          "total": 1
+        },
+        "be": {
+          "correct": 1,
+          "total": 1
+        }
+      }
+    },
+    "llama3.3-70b": {
+      "total": 4,
+      "correct": 1,
+      "incorrect": 3,
+      "disputed": 0,
+      "correct_pct": 25.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 1,
+          "total": 4
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 1,
+          "total": 4
+        }
+      },
+      "by_language": {
+        "uk": {
+          "correct": 0,
+          "total": 1
+        },
+        "ru": {
+          "correct": 1,
+          "total": 1
+        },
+        "crh": {
+          "correct": 0,
+          "total": 1
+        },
+        "be": {
+          "correct": 0,
+          "total": 1
+        }
+      }
+    },
+    "qwen2.5-72b": {
+      "total": 2,
+      "correct": 1,
+      "incorrect": 1,
+      "disputed": 0,
+      "correct_pct": 50.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 1,
+          "total": 2
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 1,
+          "total": 2
+        }
+      },
+      "by_language": {
+        "ru": {
+          "correct": 1,
+          "total": 1
+        },
+        "crh": {
+          "correct": 0,
+          "total": 1
+        }
+      }
+    },
+    "gemma3-4b": {
+      "total": 1,
+      "correct": 1,
+      "incorrect": 0,
+      "disputed": 0,
+      "correct_pct": 100.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 1,
+          "total": 1
+        }
+      }
+    },
+    "gemma4": {
+      "total": 1,
+      "correct": 1,
+      "incorrect": 0,
+      "disputed": 0,
+      "correct_pct": 100.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 1,
+          "total": 1
+        }
+      }
+    },
+    "llama3.1-8b": {
+      "total": 1,
+      "correct": 0,
+      "incorrect": 1,
+      "disputed": 0,
+      "correct_pct": 0.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 0,
+          "total": 1
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 0,
+          "total": 1
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 0,
+          "total": 1
+        }
+      }
+    },
+    "mistral-7b": {
+      "total": 1,
+      "correct": 0,
+      "incorrect": 1,
+      "disputed": 0,
+      "correct_pct": 0.0,
+      "by_question": {
+        "q1_city_in_ukraine": {
+          "correct": 0,
+          "total": 1
+        }
+      },
+      "by_city": {
+        "Simferopol": {
+          "correct": 0,
+          "total": 1
+        }
+      },
+      "by_language": {
+        "en": {
+          "correct": 0,
+          "total": 1
+        }
+      }
+    }
+  },
+  "corpus_summary": {
+    "results": [
+      {
+        "corpus": "c4_en",
+        "ukraine_frame": 97,
+        "russia_frame": 13,
+        "disputed": 0,
+        "no_signal": 849,
+        "crimea_mentions": 959
+      }
+    ]
+  },
+  "crimea_donbas_discrepancy": {
+    "haiku-4.5": {
+      "crimea": {
+        "correct": 129,
+        "total": 239,
+        "pct": 54.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -54.0
+    },
+    "sonnet-4.6": {
+      "crimea": {
+        "correct": 167,
+        "total": 239,
+        "pct": 69.9
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -69.9
+    },
+    "opus-4.6": {
+      "crimea": {
+        "correct": 229,
+        "total": 239,
+        "pct": 95.8
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -95.8
+    },
+    "qwen2.5-7b": {
+      "crimea": {
+        "correct": 231,
+        "total": 317,
+        "pct": 72.9
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -72.9
+    },
+    "llama3.2-1b": {
+      "crimea": {
+        "correct": 0,
+        "total": 5,
+        "pct": 0.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": 0.0
+    },
+    "llama3.2-3b": {
+      "crimea": {
+        "correct": 1,
+        "total": 5,
+        "pct": 20.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -20.0
+    },
+    "qwen2.5-3b": {
+      "crimea": {
+        "correct": 0,
+        "total": 5,
+        "pct": 0.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": 0.0
+    },
+    "gemma2-2b": {
+      "crimea": {
+        "correct": 5,
+        "total": 5,
+        "pct": 100.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -100.0
+    },
+    "phi3-mini": {
+      "crimea": {
+        "correct": 1,
+        "total": 5,
+        "pct": 20.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -20.0
+    },
+    "qwen2.5-14b": {
+      "crimea": {
+        "correct": 3,
+        "total": 5,
+        "pct": 60.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -60.0
+    },
+    "gemma2-27b": {
+      "crimea": {
+        "correct": 1,
+        "total": 1,
+        "pct": 100.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -100.0
+    },
+    "qwen2.5-32b": {
+      "crimea": {
+        "correct": 2,
+        "total": 5,
+        "pct": 40.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -40.0
+    },
+    "llama3.3-70b": {
+      "crimea": {
+        "correct": 1,
+        "total": 4,
+        "pct": 25.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -25.0
+    },
+    "qwen2.5-72b": {
+      "crimea": {
+        "correct": 1,
+        "total": 2,
+        "pct": 50.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -50.0
+    },
+    "gemma3-4b": {
+      "crimea": {
+        "correct": 1,
+        "total": 1,
+        "pct": 100.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -100.0
+    },
+    "gemma4": {
+      "crimea": {
+        "correct": 1,
+        "total": 1,
+        "pct": 100.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": -100.0
+    },
+    "llama3.1-8b": {
+      "crimea": {
+        "correct": 0,
+        "total": 1,
+        "pct": 0.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": 0.0
+    },
+    "mistral-7b": {
+      "crimea": {
+        "correct": 0,
+        "total": 1,
+        "pct": 0.0
+      },
+      "donbas": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "south": {
+        "correct": 0,
+        "total": 0,
+        "pct": 0.0
+      },
+      "crimea_donbas_gap": 0.0
+    }
+  },
+  "model_training_data": {
+    "llama3.2-1b": {
+      "family": "Llama",
+      "org": "Meta",
+      "params": "1.2B",
+      "release": "2024-09",
+      "training_data": [
+        "undisclosed (CC-derived, >15T tokens)"
+      ],
+      "likely_corpora": [
+        "fineweb_edu",
+        "c4_en",
+        "dolma"
+      ]
+    },
+    "llama3.2-3b": {
+      "family": "Llama",
+      "org": "Meta",
+      "params": "3.2B",
+      "release": "2024-09",
+      "training_data": [
+        "undisclosed (CC-derived, >15T tokens)"
+      ],
+      "likely_corpora": [
+        "fineweb_edu",
+        "c4_en",
+        "dolma"
+      ]
+    },
+    "llama3.1-8b": {
+      "family": "Llama",
+      "org": "Meta",
+      "params": "8B",
+      "release": "2024-07",
+      "training_data": [
+        "undisclosed (CC-derived, 15T tokens)"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "dolma",
+        "fineweb_edu"
+      ]
+    },
+    "llama3.3-70b": {
+      "family": "Llama",
+      "org": "Meta",
+      "params": "70B",
+      "release": "2024-12",
+      "training_data": [
+        "undisclosed (CC-derived)"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "fineweb_edu"
+      ]
+    },
+    "qwen2.5-3b": {
+      "family": "Qwen",
+      "org": "Alibaba",
+      "params": "3B",
+      "release": "2024-09",
+      "training_data": [
+        "undisclosed (18T tokens, 29 languages)"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "c4_ru",
+        "oscar_ru",
+        "multilingual_web"
+      ]
+    },
+    "qwen2.5-7b": {
+      "family": "Qwen",
+      "org": "Alibaba",
+      "params": "7B",
+      "release": "2024-09",
+      "training_data": [
+        "undisclosed (18T tokens, 29 languages)"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "c4_ru",
+        "oscar_ru"
+      ]
+    },
+    "qwen2.5-14b": {
+      "family": "Qwen",
+      "org": "Alibaba",
+      "params": "14B",
+      "release": "2024-09",
+      "training_data": [
+        "undisclosed (18T tokens, 29 languages)"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "c4_ru",
+        "oscar_ru"
+      ]
+    },
+    "qwen2.5-32b": {
+      "family": "Qwen",
+      "org": "Alibaba",
+      "params": "32B",
+      "release": "2024-09",
+      "training_data": [
+        "undisclosed (18T tokens, 29 languages)"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "c4_ru",
+        "oscar_ru"
+      ]
+    },
+    "mistral-7b": {
+      "family": "Mistral",
+      "org": "Mistral AI",
+      "params": "7B",
+      "release": "2023-09",
+      "training_data": [
+        "undisclosed web data"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "redpajama_1t_sample"
+      ]
+    },
+    "gemma2-2b": {
+      "family": "Gemma",
+      "org": "Google",
+      "params": "2B",
+      "release": "2024-06",
+      "training_data": [
+        "undisclosed (2T tokens, filtered web)"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "fineweb_edu"
+      ]
+    },
+    "gemma2-9b": {
+      "family": "Gemma",
+      "org": "Google",
+      "params": "9B",
+      "release": "2024-06",
+      "training_data": [
+        "undisclosed (8T tokens)"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "fineweb_edu"
+      ]
+    },
+    "gemma3-4b": {
+      "family": "Gemma",
+      "org": "Google",
+      "params": "4B",
+      "release": "2025-03",
+      "training_data": [
+        "undisclosed (multilingual, 140 languages)"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "c4_ru",
+        "c4_uk"
+      ]
+    },
+    "gemma3-27b": {
+      "family": "Gemma",
+      "org": "Google",
+      "params": "27B",
+      "release": "2025-03",
+      "training_data": [
+        "undisclosed (multilingual, 140 languages, 14T tokens)"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "c4_ru",
+        "c4_uk"
+      ]
+    },
+    "gemma4": {
+      "family": "Gemma",
+      "org": "Google",
+      "params": "~9B",
+      "release": "2026-04",
+      "training_data": [
+        "undisclosed (reasoning model)"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "c4_ru"
+      ],
+      "note": "Reasoning/thinking model — returns internal reasoning + final answer"
+    },
+    "phi3-mini": {
+      "family": "Phi",
+      "org": "Microsoft",
+      "params": "3.8B",
+      "release": "2024-04",
+      "training_data": [
+        "synthetic + filtered web"
+      ],
+      "likely_corpora": [
+        "c4_en"
+      ]
+    },
+    "phi4": {
+      "family": "Phi",
+      "org": "Microsoft",
+      "params": "14B",
+      "release": "2024-12",
+      "training_data": [
+        "synthetic + curated web (9.8T tokens)"
+      ],
+      "likely_corpora": [
+        "c4_en"
+      ]
+    },
+    "deepseek-r1-8b": {
+      "family": "DeepSeek",
+      "org": "DeepSeek AI",
+      "params": "8B (distilled from Llama)",
+      "release": "2025-01",
+      "training_data": [
+        "Llama 3 base + DeepSeek R1 reasoning distillation"
+      ],
+      "likely_corpora": [
+        "c4_en",
+        "fineweb_edu"
+      ]
+    },
+    "haiku-4.5": {
+      "family": "Claude",
+      "org": "Anthropic",
+      "params": "unknown",
+      "release": "2025-10",
+      "training_data": [
+        "undisclosed"
+      ],
+      "likely_corpora": [],
+      "note": "Training data is proprietary"
+    },
+    "sonnet-4.6": {
+      "family": "Claude",
+      "org": "Anthropic",
+      "params": "unknown",
+      "release": "2025-11",
+      "training_data": [
+        "undisclosed"
+      ],
+      "likely_corpora": []
+    },
+    "opus-4.6": {
+      "family": "Claude",
+      "org": "Anthropic",
+      "params": "unknown",
+      "release": "2025-11",
+      "training_data": [
+        "undisclosed"
+      ],
+      "likely_corpora": []
+    }
+  },
+  "findings": [
+    "Most models show significant discrepancy between legal questions (illegal annexation, Russian rights) and practical geography questions (Is Simferopol in Ukraine?). They 'know' the legal answer but default to de facto control for geographic queries.",
+    "Training data (C4 etc.) shows 80%+ Ukraine framing where signals exist — the models encode a different conclusion than their input data.",
+    "Discrepancy between Crimea classification (often wrong) and Donbas/Kherson classification (often right) reveals training cutoff bias: pre-2022 Russian normalization of Crimea leaked in, while 2022+ Donbas narrative did not."
+  ]
+}
