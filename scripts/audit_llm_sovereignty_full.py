@@ -36,16 +36,12 @@ OLLAMA_MODELS = [
     {"id": "qwen2.5:3b", "name": "qwen2.5-3b", "provider": "ollama"},
     {"id": "gemma2:2b", "name": "gemma2-2b", "provider": "ollama"},
     {"id": "gemma3", "name": "gemma3-4b", "provider": "ollama"},
-    {"id": "gemma4", "name": "gemma4", "provider": "ollama"},
     {"id": "phi3:mini", "name": "phi3-mini", "provider": "ollama"},
     {"id": "qwen2.5:7b", "name": "qwen2.5-7b", "provider": "ollama"},
     {"id": "llama3.1:8b", "name": "llama3.1-8b", "provider": "ollama"},
     {"id": "mistral:7b", "name": "mistral-7b", "provider": "ollama"},
-    {"id": "gemma2:9b", "name": "gemma2-9b", "provider": "ollama"},
-    {"id": "phi4", "name": "phi4", "provider": "ollama"},
+    {"id": "gemma4", "name": "gemma4", "provider": "ollama"},
     {"id": "deepseek-r1:8b", "name": "deepseek-r1-8b", "provider": "ollama"},
-    {"id": "gemma3:27b", "name": "gemma3-27b", "provider": "ollama"},
-    {"id": "llama3.3:70b", "name": "llama3.3-70b", "provider": "ollama"},
 ]
 OLLAMA_BASE_URL = "http://localhost:11434/v1"
 
