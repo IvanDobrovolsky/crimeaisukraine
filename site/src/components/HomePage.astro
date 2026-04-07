@@ -6,6 +6,8 @@ import manifest from '../data/manifest.json';
 import framingData from '../data/framing.json';
 import mediaViolators from '../data/media_violators.json';
 import findingsUk from '../data/findings_uk.json';
+import auditData from '../data/llm_audit_results.json';
+import modelsData from '../data/llm_models.json';
 
 interface Props {
   lang: Lang;
@@ -546,6 +548,91 @@ const propagation = [
         ))}
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- LLM Sovereignty Audit -->
+<section id="llm-audit" class="max-w-6xl mx-auto px-6 mb-12">
+  <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Аудит LLM: суверенітет Криму' : 'LLM Audit: Crimea Sovereignty'}</h2>
+    <p class="text-[#94a3b8] mb-2">
+      {lang === 'uk'
+        ? 'Стандартизований аудит фронтирних моделей: 15 запитань, 50 мов, 12 міст. Тестуємо чи називає LLM Кримські міста українськими.'
+        : 'Standardized audit of frontier models: 15 questions × 50 languages × 12 cities. Tests whether LLMs call Crimean cities Ukrainian.'}
+    </p>
+    <p class="text-xs text-[#64748b] mb-6">
+      {lang === 'uk'
+        ? 'Ключове відкриття: усі моделі правильно відповідають про Донбас та південь України (100%) але провалюються на Криму (17–96%). Це доводить, що проросійський фреймінг Криму до 2022 року просочився у тренувальні дані, тоді як фреймінг 2022+ був вивчений правильно.'
+        : 'Key finding: all models answer correctly about Donbas/South Ukraine (~100%) but fail on Crimea (17–96%). Proves pre-2022 Russian framing leaked into training data while 2022+ narrative was learned correctly.'}
+    </p>
+
+    <!-- Models table -->
+    <div class="overflow-x-auto rounded-xl border border-[#1e293b]">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-[#1e293b]">
+            <th class="p-3 text-left text-[#e5e5e5] font-semibold">Model</th>
+            <th class="p-3 text-left text-[#e5e5e5] font-semibold">Org</th>
+            <th class="p-3 text-left text-[#e5e5e5] font-semibold">Params</th>
+            <th class="p-3 text-left text-[#e5e5e5] font-semibold">Released</th>
+            <th class="p-3 text-center text-[#e5e5e5] font-semibold">Queries</th>
+            <th class="p-3 text-center text-[#e5e5e5] font-semibold">Overall</th>
+            <th class="p-3 text-center text-[#e5e5e5] font-semibold">Crimea</th>
+            <th class="p-3 text-center text-[#e5e5e5] font-semibold">Donbas</th>
+            <th class="p-3 text-center text-[#e5e5e5] font-semibold">Gap</th>
+          </tr>
+        </thead>
+        <tbody>
+          {(modelsData as any).models.map((m: any) => {
+            const audit = (auditData as any).models[m.id];
+            if (!audit || audit.total === 0) {
+              return (
+                <tr class="border-t border-[#1e293b] opacity-50">
+                  <td class="p-3 text-white font-medium">{m.display_name}</td>
+                  <td class="p-3 text-[#94a3b8]">{m.org}</td>
+                  <td class="p-3 text-[#94a3b8]">{m.params}</td>
+                  <td class="p-3 text-[#94a3b8]">{m.release}</td>
+                  <td class="p-3 text-center text-[#64748b]">—</td>
+                  <td class="p-3 text-center text-[#64748b]" colspan="4">no data</td>
+                </tr>
+              );
+            }
+            const cp = audit.correct_pct;
+            const crimeaP = audit.crimea_vs_donbas.crimea.pct;
+            const donbasP = audit.crimea_vs_donbas.donbas.pct;
+            const gap = audit.crimea_vs_donbas.gap;
+            const cpColor = cp >= 90 ? '#22c55e' : cp >= 75 ? '#84cc16' : cp >= 50 ? '#f59e0b' : cp >= 25 ? '#f97316' : '#ef4444';
+            const crimeaColor = crimeaP >= 90 ? '#22c55e' : crimeaP >= 75 ? '#84cc16' : crimeaP >= 50 ? '#f59e0b' : crimeaP >= 25 ? '#f97316' : '#ef4444';
+            const donbasColor = donbasP >= 90 ? '#22c55e' : donbasP >= 75 ? '#84cc16' : donbasP >= 50 ? '#f59e0b' : donbasP >= 25 ? '#f97316' : '#ef4444';
+            const gapColor = Math.abs(gap) > 30 ? '#ef4444' : Math.abs(gap) > 15 ? '#f59e0b' : '#22c55e';
+            const isPartial = audit.total < 1800;
+            return (
+              <tr class="border-t border-[#1e293b] hover:bg-[#0a0e1a]/50 transition">
+                <td class="p-3">
+                  <a href={`/llm-audit/${m.id}`} class="text-[#0057b7] hover:text-[#3b82f6] hover:underline font-medium">
+                    {m.display_name}
+                  </a>
+                  {isPartial && <span class="ml-2 text-[10px] text-[#f59e0b]">partial</span>}
+                </td>
+                <td class="p-3 text-[#94a3b8]">{m.org}</td>
+                <td class="p-3 text-[#94a3b8]">{m.params}</td>
+                <td class="p-3 text-[#94a3b8]">{m.release}</td>
+                <td class="p-3 text-center text-[#e5e5e5]">{audit.total.toLocaleString()}</td>
+                <td class="p-3 text-center font-bold text-white" style={`background:${cpColor}`}>{cp}%</td>
+                <td class="p-3 text-center font-bold text-white" style={`background:${crimeaColor}`}>{crimeaP}%</td>
+                <td class="p-3 text-center font-bold text-white" style={`background:${donbasColor}`}>{donbasP}%</td>
+                <td class="p-3 text-center font-bold text-white" style={`background:${gapColor}`}>{gap > 0 ? '+' : ''}{gap}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-xs text-[#64748b] mt-3">
+      {lang === 'uk' ? 'Натисніть на назву моделі для детальної таблиці результатів.' : 'Click any model name for detailed results table.'}
+    </p>
   </div>
 </section>
 

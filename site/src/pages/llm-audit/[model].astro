@@ -1,0 +1,213 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import auditData from '../../data/llm_audit_results.json';
+import modelsData from '../../data/llm_models.json';
+
+export async function getStaticPaths() {
+  const audit = auditData as any;
+  const models = (modelsData as any).models;
+  return models.map((m: any) => ({
+    params: { model: m.id },
+    props: { model: m, audit: audit.models[m.id] || null, meta: audit },
+  }));
+}
+
+const { model, audit, meta } = Astro.props as any;
+const cities = meta.cities;
+const langs = meta.languages;
+const questions = meta.questions;
+
+function colorForPct(pct: number | null): string {
+  if (pct === null || pct === undefined) return '#1e293b';
+  if (pct >= 90) return '#22c55e';
+  if (pct >= 75) return '#84cc16';
+  if (pct >= 50) return '#f59e0b';
+  if (pct >= 25) return '#f97316';
+  return '#ef4444';
+}
+
+const hasData = audit && audit.total > 0;
+---
+
+<Layout title={`${model.display_name} — Crimea Sovereignty Audit`} lang="en">
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <div class="mb-2"><a href="/" class="text-[#0057b7] hover:underline text-sm">← Back to home</a></div>
+
+    <h1 class="text-3xl font-bold text-white mb-1">{model.display_name}</h1>
+    <p class="text-[#94a3b8] mb-6">{model.org} · {model.params} · Released {model.release} · {model.type}</p>
+
+    {!hasData ? (
+      <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-12 text-center">
+        <div class="text-2xl text-[#94a3b8]">No audit data yet</div>
+        <p class="text-[#64748b] mt-2">Audit is still running for this model.</p>
+      </div>
+    ) : (
+      <div>
+        <!-- Stats cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+          <div class="bg-[#111827] border border-[#1e293b] rounded-xl p-5">
+            <div class="text-3xl font-bold" style={`color: ${colorForPct(audit.correct_pct)}`}>{audit.correct_pct}%</div>
+            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mt-1">Overall correct</div>
+          </div>
+          <div class="bg-[#111827] border border-[#1e293b] rounded-xl p-5">
+            <div class="text-3xl font-bold text-white">{audit.total.toLocaleString()}</div>
+            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mt-1">Total queries</div>
+          </div>
+          <div class="bg-[#111827] border border-[#22c55e]/30 rounded-xl p-5">
+            <div class="text-3xl font-bold text-[#22c55e]">{audit.correct.toLocaleString()}</div>
+            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mt-1">Correct</div>
+          </div>
+          <div class="bg-[#111827] border border-[#ef4444]/30 rounded-xl p-5">
+            <div class="text-3xl font-bold text-[#ef4444]">{(audit.total - audit.correct).toLocaleString()}</div>
+            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mt-1">Incorrect</div>
+          </div>
+        </div>
+
+        <!-- Crimea vs Donbas headline -->
+        <div class="bg-[#111827] border border-[#ef4444] rounded-xl p-6 mb-8">
+          <h3 class="text-[#ef4444] font-bold text-lg mb-2">Crimea vs Donbas/South Ukraine gap: <span class="text-white">{audit.crimea_vs_donbas.gap > 0 ? '+' : ''}{audit.crimea_vs_donbas.gap} pts</span></h3>
+          <p class="text-[#e5e5e5] text-sm">
+            {model.display_name} answers {audit.crimea_vs_donbas.crimea.pct}% correctly on Crimean cities (occupied 2014)
+            but {audit.crimea_vs_donbas.donbas.pct}% on Donbas cities (claimed 2022).
+            {audit.crimea_vs_donbas.gap > 30 && ' Strong evidence of pre-2022 Russian framing baked into training data.'}
+            {audit.crimea_vs_donbas.gap > 0 && audit.crimea_vs_donbas.gap <= 30 && ' Moderate Crimea-specific bias.'}
+            {audit.crimea_vs_donbas.gap <= 0 && ' No Crimea-specific bias detected.'}
+          </p>
+        </div>
+
+        <!-- Table 1: Accuracy by Question -->
+        <h2 class="text-xl font-bold text-white mt-8 mb-2">Accuracy by Question</h2>
+        <p class="text-xs text-[#64748b] mb-3">Each question has Coverage (cities × languages). Templated q1/q13 = 12 × 50 = 600.</p>
+        <div class="bg-[#111827] border border-[#1e293b] rounded-xl overflow-x-auto">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="bg-[#1e293b]">
+                <th class="p-2 text-left text-[#e5e5e5]">ID</th>
+                <th class="p-2 text-left text-[#e5e5e5]">Question</th>
+                <th class="p-2 text-center text-[#e5e5e5]">Correct<br/>answer</th>
+                <th class="p-2 text-center text-[#e5e5e5]">YES</th>
+                <th class="p-2 text-center text-[#e5e5e5]">NO</th>
+                <th class="p-2 text-center text-[#e5e5e5]">Other</th>
+                <th class="p-2 text-center text-[#e5e5e5]">Correct</th>
+                <th class="p-2 text-center text-[#e5e5e5]">%</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(audit.by_question).map(([q_id, qd]: [string, any]) => {
+                const isCountry = q_id === 'q13_country_of_city';
+                const yesCount = isCountry ? qd.ukraine : qd.yes;
+                const noCount = isCountry ? qd.russia : qd.no;
+                const yesLabel = isCountry ? 'Ukraine' : 'YES';
+                const noLabel = isCountry ? 'Russia' : 'NO';
+                const expectedYes = qd.expected === 'yes' || qd.expected === 'ukraine';
+                const otherCount = qd.total - yesCount - noCount - (qd.disputed || 0);
+                return (
+                  <tr class="border-t border-[#1e293b]">
+                    <td class="p-2 text-[#94a3b8] font-mono">{q_id}</td>
+                    <td class="p-2 text-[#e5e5e5]">{qd.prompt}</td>
+                    <td class="p-2 text-center text-[#22c55e] font-bold">{qd.expected.toUpperCase()}</td>
+                    <td class="p-2 text-center" style={expectedYes ? 'background:#22c55e;color:#fff;font-weight:600' : 'color:#94a3b8'}>{yesLabel}: {yesCount}</td>
+                    <td class="p-2 text-center" style={!expectedYes ? 'background:#22c55e;color:#fff;font-weight:600' : 'color:#94a3b8'}>{noLabel}: {noCount}</td>
+                    <td class="p-2 text-center text-[#64748b]">{otherCount + (qd.disputed || 0)}</td>
+                    <td class="p-2 text-center text-[#e5e5e5]">{qd.correct}/{qd.total}</td>
+                    <td class="p-2 text-center font-bold" style={`background:${colorForPct(qd.pct)};color:#fff`}>{qd.pct}%</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Table 2: Accuracy by City -->
+        <h2 class="text-xl font-bold text-white mt-8 mb-2">Accuracy by City</h2>
+        <p class="text-xs text-[#64748b] mb-3">Crimean cities (occupied 2014) vs Donbas/South cities (claimed 2022).</p>
+        <div class="bg-[#111827] border border-[#1e293b] rounded-xl overflow-x-auto">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="bg-[#1e293b]">
+                <th class="p-2 text-left text-[#e5e5e5]">City</th>
+                <th class="p-2 text-left text-[#e5e5e5]">Region</th>
+                <th class="p-2 text-center text-[#e5e5e5]">Correct</th>
+                <th class="p-2 text-center text-[#e5e5e5]">%</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cities.all.map((c: string) => {
+                const cd = audit.by_city[c];
+                if (!cd) return null;
+                const isCrimea = cities.crimea.includes(c);
+                return (
+                  <tr class="border-t border-[#1e293b]">
+                    <td class="p-2 text-white font-medium">{c}</td>
+                    <td class="p-2" style={isCrimea ? 'color:#f87171' : 'color:#fbbf24'}>{isCrimea ? '2014 Crimea' : '2022 claimed'}</td>
+                    <td class="p-2 text-center text-[#e5e5e5]">{cd.correct}/{cd.total}</td>
+                    <td class="p-2 text-center font-bold" style={`background:${colorForPct(cd.pct)};color:#fff`}>{cd.pct}%</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Table 3: Accuracy by Language -->
+        <h2 class="text-xl font-bold text-white mt-8 mb-2">Accuracy by Language</h2>
+        <p class="text-xs text-[#64748b] mb-3">Sorted worst-first to highlight bias.</p>
+        <div class="bg-[#111827] border border-[#1e293b] rounded-xl overflow-x-auto">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="bg-[#1e293b]">
+                <th class="p-2 text-left text-[#e5e5e5]">Language</th>
+                <th class="p-2 text-left text-[#e5e5e5]">Code</th>
+                <th class="p-2 text-center text-[#e5e5e5]">Correct</th>
+                <th class="p-2 text-center text-[#e5e5e5]">%</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(audit.by_language).sort((a: any, b: any) => (a[1].pct || 0) - (b[1].pct || 0)).map(([code, ld]: [string, any]) => (
+                <tr class="border-t border-[#1e293b]">
+                  <td class="p-2 text-white font-medium">{ld.name}</td>
+                  <td class="p-2 text-[#64748b] font-mono">{code}</td>
+                  <td class="p-2 text-center text-[#e5e5e5]">{ld.correct}/{ld.total}</td>
+                  <td class="p-2 text-center font-bold" style={`background:${colorForPct(ld.pct)};color:#fff`}>{ld.pct}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Sample wrong answers -->
+        {audit.wrong_samples.length > 0 && (
+          <div>
+            <h2 class="text-xl font-bold text-white mt-8 mb-2">Sample Wrong Answers</h2>
+            <div class="bg-[#111827] border border-[#1e293b] rounded-xl overflow-x-auto">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="bg-[#1e293b]">
+                    <th class="p-2 text-left text-[#e5e5e5]">Question</th>
+                    <th class="p-2 text-left text-[#e5e5e5]">City</th>
+                    <th class="p-2 text-left text-[#e5e5e5]">Language</th>
+                    <th class="p-2 text-left text-[#e5e5e5]">Prompt</th>
+                    <th class="p-2 text-left text-[#e5e5e5]">Model Answer</th>
+                    <th class="p-2 text-left text-[#e5e5e5]">Expected</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {audit.wrong_samples.slice(0, 30).map((s: any) => (
+                    <tr class="border-t border-[#1e293b]">
+                      <td class="p-2 text-[#94a3b8] font-mono text-[10px]">{s.question_id}</td>
+                      <td class="p-2 text-[#e5e5e5]">{s.city}</td>
+                      <td class="p-2 text-[#e5e5e5]">{s.language_name}</td>
+                      <td class="p-2 text-[#94a3b8] text-[10px]">{s.prompt}</td>
+                      <td class="p-2" style="background:#7f1d1d;color:#fff">{s.answer}</td>
+                      <td class="p-2 text-[#22c55e]">{s.expected}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </div>
+    )}
+  </main>
+</Layout>
