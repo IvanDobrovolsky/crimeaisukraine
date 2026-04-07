@@ -76,8 +76,11 @@ audit-loc: ## Library of Congress subject headings + catalog audit
 audit-ror: ## ROR + OpenAlex institutional classification audit
 	$(PYTHON) $(SCRIPTS)/check_ror.py
 
-audit-iso-eurlex: ## ISO 3166 dual listing + EUR-Lex + OFAC sanctions audit
+audit-iso-eurlex: ## ISO 3166 + EUR-Lex + OFAC sanctions audit
 	$(PYTHON) $(SCRIPTS)/check_iso_eurlex.py
+
+audit-legislation: ## Full legislative audit (OFAC, UK, EU, ICAO, ITU, ISO)
+	$(PYTHON) $(SCRIPTS)/check_legislation.py
 
 verify-platforms: ## Re-verify all platform findings and fill evidence fields
 
