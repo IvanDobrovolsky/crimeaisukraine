@@ -35,6 +35,8 @@ OLLAMA_MODELS = [
     {"id": "llama3.2:3b", "name": "llama3.2-3b", "provider": "ollama"},
     {"id": "qwen2.5:3b", "name": "qwen2.5-3b", "provider": "ollama"},
     {"id": "gemma2:2b", "name": "gemma2-2b", "provider": "ollama"},
+    {"id": "gemma3", "name": "gemma3-4b", "provider": "ollama"},
+    {"id": "gemma4", "name": "gemma4", "provider": "ollama"},
     {"id": "phi3:mini", "name": "phi3-mini", "provider": "ollama"},
     {"id": "qwen2.5:7b", "name": "qwen2.5-7b", "provider": "ollama"},
     {"id": "llama3.1:8b", "name": "llama3.1-8b", "provider": "ollama"},
@@ -42,13 +44,8 @@ OLLAMA_MODELS = [
     {"id": "gemma2:9b", "name": "gemma2-9b", "provider": "ollama"},
     {"id": "phi4", "name": "phi4", "provider": "ollama"},
     {"id": "deepseek-r1:8b", "name": "deepseek-r1-8b", "provider": "ollama"},
-    {"id": "qwen2.5:14b", "name": "qwen2.5-14b", "provider": "ollama"},
-    {"id": "gemma2:27b", "name": "gemma2-27b", "provider": "ollama"},
-    {"id": "qwen2.5:32b", "name": "qwen2.5-32b", "provider": "ollama"},
-    {"id": "yi:34b", "name": "yi-34b", "provider": "ollama"},
+    {"id": "gemma3:27b", "name": "gemma3-27b", "provider": "ollama"},
     {"id": "llama3.3:70b", "name": "llama3.3-70b", "provider": "ollama"},
-    {"id": "qwen2.5:72b", "name": "qwen2.5-72b", "provider": "ollama"},
-    {"id": "llama3.1:70b", "name": "llama3.1-70b", "provider": "ollama"},
 ]
 OLLAMA_BASE_URL = "http://localhost:11434/v1"
 
@@ -347,18 +344,27 @@ def query_claude(prompt, api_key, model_id):
 
 
 def query_ollama(prompt, model_id, base_url=OLLAMA_BASE_URL):
-    """Query an Ollama OpenAI-compatible endpoint."""
+    """Query an Ollama OpenAI-compatible endpoint.
+
+    Returns (content, reasoning) tuple. Reasoning models like gemma4
+    return their internal thinking in the 'reasoning' field.
+    Max tokens is 500 to accommodate reasoning, but we only care about
+    the final content which should be 1-5 tokens.
+    """
     body = json.dumps({
         "model": model_id,
-        "max_tokens": 10,
+        "max_tokens": 500,  # Higher for reasoning models
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
     req = urllib.request.Request(f"{base_url}/chat/completions", data=body, headers={
         "Content-Type": "application/json",
     })
-    with urllib.request.urlopen(req, timeout=60) as resp:
+    with urllib.request.urlopen(req, timeout=180) as resp:
         data = json.loads(resp.read().decode())
-    return data["choices"][0]["message"]["content"].strip()
+    msg = data["choices"][0]["message"]
+    content = msg.get("content", "").strip()
+    reasoning = msg.get("reasoning", "")
+    return content, reasoning
 
 
 def main():
@@ -425,8 +431,9 @@ def main():
                         continue
 
                     try:
+                        reasoning = ""
                         if model.get("provider") == "ollama":
-                            raw = query_ollama(prompt, model["id"])
+                            raw, reasoning = query_ollama(prompt, model["id"])
                         else:
                             raw = query_claude(prompt, api_key, model["id"])
                         classified = classify(raw, lang_code, q_type)
@@ -441,6 +448,7 @@ def main():
                             "language_name": LANGS[lang_code],
                             "prompt": prompt,
                             "raw_answer": raw,
+                            "reasoning": reasoning[:2000] if reasoning else "",
                             "classified": classified,
                             "expected": expected,
                             "correct": correct,
