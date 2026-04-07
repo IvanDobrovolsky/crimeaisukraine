@@ -1,0 +1,23 @@
+{
+  "date": "2026-04-06T23:23:22",
+  "results": [
+    {
+      "corpus": "pile_sample",
+      "hf_dataset": "NeelNanda/pile-10k",
+      "config": null,
+      "models_using": [
+        "GPT-J",
+        "GPT-NeoX",
+        "Pythia"
+      ],
+      "total_scanned": 10000,
+      "crimea_mentions": 13,
+      "ukraine_frame": 4,
+      "russia_frame": 1,
+      "disputed": 0,
+      "no_signal": 8,
+      "russia_pct": 7.7,
+      "ukraine_pct": 30.8
+    }
+  ]
+}
