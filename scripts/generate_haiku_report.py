@@ -261,8 +261,40 @@ small {{ color: #888; }}
 # Table 1: Summary by question with explicit yes/no counts
 # ============================================================
 html.append("<h2>Table 1 — Accuracy by Question</h2>")
-html.append('<p style="color:#888;font-size:11px">"Correct" = answers matching the Expected column. YES/NO counts are the raw answers Haiku gave, regardless of whether they are correct.</p>')
-html.append('<table><tr><th>ID</th><th>Question</th><th style="width:70px">Expected</th><th style="width:60px">YES</th><th style="width:60px">NO</th><th style="width:70px">Disputed/Other</th><th style="width:100px">Correct</th><th style="width:80px">%</th></tr>')
+html.append('''<p style="color:#888;font-size:11px">
+<strong>How to read:</strong> "Correct answer" is the truth. YES/NO are Haiku's raw answers. Coverage shows
+cities × languages. Templated questions (q1, q13) use 12 cities × 50 languages = 600 queries. Non-templated
+questions use 1 city × 50 languages = 50 queries. q14 is hardcoded to Simferopol so also 50 queries.</p>''')
+html.append('''<table>
+<tr>
+<th rowspan="2">ID</th>
+<th rowspan="2">Question</th>
+<th rowspan="2" style="width:80px">Correct<br>answer</th>
+<th colspan="2" style="text-align:center">Coverage</th>
+<th colspan="3" style="text-align:center">Haiku's raw answers</th>
+<th rowspan="2" style="width:100px">Correct</th>
+<th rowspan="2" style="width:80px">Accuracy</th>
+</tr>
+<tr>
+<th style="width:50px">Cities</th>
+<th style="width:60px">Langs</th>
+<th style="width:85px">YES</th>
+<th style="width:85px">NO</th>
+<th style="width:70px">Other</th>
+</tr>''')
+
+# Count cities and languages per question
+from collections import defaultdict as dd
+q_city_count = dd(set)
+q_lang_count = dd(set)
+for r in rows:
+    q = r.get("question_id", "")
+    c = r.get("city", "")
+    l = r.get("language", "")
+    if c:
+        q_city_count[q].add(c)
+    if l:
+        q_lang_count[q].add(l)
 
 for q_id, (q_prompt, expected) in QUESTIONS.items():
     d = by_q.get(q_id, new_agg())
@@ -286,15 +318,26 @@ for q_id, (q_prompt, expected) in QUESTIONS.items():
     other_total = other_count + d.get("disputed", 0)
 
     # Highlight the "correct" column
-    yes_style = 'background:#16a34a;color:#fff' if expected in ('yes', 'ukraine') else 'background:#1a1a1a;color:#e5e5e5'
-    no_style = 'background:#16a34a;color:#fff' if expected in ('no', 'russia') else 'background:#1a1a1a;color:#e5e5e5'
+    yes_style = 'background:#16a34a;color:#fff' if expected in ('yes', 'ukraine') else 'background:#1a1a1a;color:#ccc'
+    no_style = 'background:#16a34a;color:#fff' if expected in ('no', 'russia') else 'background:#1a1a1a;color:#ccc'
+
+    n_cities = len(q_city_count.get(q_id, set()))
+    n_langs = len(q_lang_count.get(q_id, set()))
+    # Handle no-city questions
+    cities_label = n_cities if n_cities > 0 else "—"
+
+    # Percentages for yes/no
+    yes_pct = round(100 * yes_count / d["total"], 0) if d["total"] else 0
+    no_pct = round(100 * no_count / d["total"], 0) if d["total"] else 0
 
     html.append(f'''<tr>
 <td class="label">{q_id}</td>
-<td style="color:#aaa;font-size:11px">{q_prompt}</td>
+<td style="color:#ccc;font-size:11px">{q_prompt}</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">{expected.upper()}</td>
-<td style="{yes_style};text-align:center">{yes_label}: {yes_count}</td>
-<td style="{no_style};text-align:center">{no_label}: {no_count}</td>
+<td style="text-align:center;color:#888">{cities_label}</td>
+<td style="text-align:center;color:#888">{n_langs}</td>
+<td style="{yes_style};text-align:center">{yes_label}<br><span style="font-size:11px;font-weight:600">{yes_count} <span style="opacity:0.85">({int(yes_pct)}%)</span></span></td>
+<td style="{no_style};text-align:center">{no_label}<br><span style="font-size:11px;font-weight:600">{no_count} <span style="opacity:0.85">({int(no_pct)}%)</span></span></td>
 <td style="text-align:center;color:#888">{other_total}</td>
 <td style="text-align:center">{d["correct"]}/{d["total"]}</td>
 {cell(f"{p}%", p)}

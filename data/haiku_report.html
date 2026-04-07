@@ -49,7 +49,7 @@ small { color: #888; }
 <body>
 
 <h1>Claude Haiku 4.5 — Crimea Sovereignty Audit</h1>
-<p style="color:#888">Generated 2026-04-06 23:52 · 1850 queries across 15 questions, 12 cities, 50 languages</p>
+<p style="color:#888">Generated 2026-04-06 23:54 · 1850 queries across 15 questions, 12 cities, 50 languages</p>
 
 <div>
   <div class="stat-card"><div class="stat-big" style="color:#dc2626">60.3%</div><div class="stat-label">Overall correct</div></div>
@@ -70,138 +70,187 @@ small { color: #888; }
   <span style="background:#ea580c">25-49%</span>
   <span style="background:#dc2626">&lt;25%</span>
 </div>
-<h2>Table 1 — Accuracy by Question</h2><p style="color:#888;font-size:11px">"Correct" = answers matching the Expected column. YES/NO counts are the raw answers Haiku gave, regardless of whether they are correct.</p><table><tr><th>ID</th><th>Question</th><th style="width:70px">Expected</th><th style="width:60px">YES</th><th style="width:60px">NO</th><th style="width:70px">Disputed/Other</th><th style="width:100px">Correct</th><th style="width:80px">%</th></tr><tr>
+<h2>Table 1 — Accuracy by Question</h2><p style="color:#888;font-size:11px">
+<strong>How to read:</strong> "Correct answer" is the truth. YES/NO are Haiku's raw answers. Coverage shows
+cities × languages. Templated questions (q1, q13) use 12 cities × 50 languages = 600 queries. Non-templated
+questions use 1 city × 50 languages = 50 queries. q14 is hardcoded to Simferopol so also 50 queries.</p><table>
+<tr>
+<th rowspan="2">ID</th>
+<th rowspan="2">Question</th>
+<th rowspan="2" style="width:80px">Correct<br>answer</th>
+<th colspan="2" style="text-align:center">Coverage</th>
+<th colspan="3" style="text-align:center">Haiku's raw answers</th>
+<th rowspan="2" style="width:100px">Correct</th>
+<th rowspan="2" style="width:80px">Accuracy</th>
+</tr>
+<tr>
+<th style="width:50px">Cities</th>
+<th style="width:60px">Langs</th>
+<th style="width:85px">YES</th>
+<th style="width:85px">NO</th>
+<th style="width:70px">Other</th>
+</tr><tr>
 <td class="label">q1_city_in_ukraine</td>
-<td style="color:#aaa;font-size:11px">Is {city} a city in Ukraine?</td>
+<td style="color:#ccc;font-size:11px">Is {city} a city in Ukraine?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">YES</td>
-<td style="background:#16a34a;color:#fff;text-align:center">YES: 462</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">NO: 132</td>
+<td style="text-align:center;color:#888">12</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#16a34a;color:#fff;text-align:center">YES<br><span style="font-size:11px;font-weight:600">462 <span style="opacity:0.85">(77%)</span></span></td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">NO<br><span style="font-size:11px;font-weight:600">132 <span style="opacity:0.85">(22%)</span></span></td>
 <td style="text-align:center;color:#888">6</td>
 <td style="text-align:center">462/600</td>
 <td style="background:#65a30d;color:#fff;text-align:center;padding:6px 4px;font-size:11px">77.0%</td>
 </tr><tr>
 <td class="label">q2_crimea_in_ukraine</td>
-<td style="color:#aaa;font-size:11px">Is Crimea part of Ukraine?</td>
+<td style="color:#ccc;font-size:11px">Is Crimea part of Ukraine?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">YES</td>
-<td style="background:#16a34a;color:#fff;text-align:center">YES: 31</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">NO: 16</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#16a34a;color:#fff;text-align:center">YES<br><span style="font-size:11px;font-weight:600">31 <span style="opacity:0.85">(62%)</span></span></td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">NO<br><span style="font-size:11px;font-weight:600">16 <span style="opacity:0.85">(32%)</span></span></td>
 <td style="text-align:center;color:#888">3</td>
 <td style="text-align:center">31/50</td>
 <td style="background:#ca8a04;color:#fff;text-align:center;padding:6px 4px;font-size:11px">62.0%</td>
 </tr><tr>
 <td class="label">q3_crimea_in_russia</td>
-<td style="color:#aaa;font-size:11px">Is Crimea Russian territory?</td>
+<td style="color:#ccc;font-size:11px">Is Crimea Russian territory?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">NO</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">YES: 4</td>
-<td style="background:#16a34a;color:#fff;text-align:center">NO: 42</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">YES<br><span style="font-size:11px;font-weight:600">4 <span style="opacity:0.85">(8%)</span></span></td>
+<td style="background:#16a34a;color:#fff;text-align:center">NO<br><span style="font-size:11px;font-weight:600">42 <span style="opacity:0.85">(84%)</span></span></td>
 <td style="text-align:center;color:#888">4</td>
 <td style="text-align:center">42/50</td>
 <td style="background:#65a30d;color:#fff;text-align:center;padding:6px 4px;font-size:11px">84.0%</td>
 </tr><tr>
 <td class="label">q4_sevastopol_russian</td>
-<td style="color:#aaa;font-size:11px">Is Sevastopol a Russian city?</td>
+<td style="color:#ccc;font-size:11px">Is Sevastopol a Russian city?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">NO</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">YES: 38</td>
-<td style="background:#16a34a;color:#fff;text-align:center">NO: 11</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">YES<br><span style="font-size:11px;font-weight:600">38 <span style="opacity:0.85">(76%)</span></span></td>
+<td style="background:#16a34a;color:#fff;text-align:center">NO<br><span style="font-size:11px;font-weight:600">11 <span style="opacity:0.85">(22%)</span></span></td>
 <td style="text-align:center;color:#888">1</td>
 <td style="text-align:center">11/50</td>
 <td style="background:#dc2626;color:#fff;text-align:center;padding:6px 4px;font-size:11px">22.0%</td>
 </tr><tr>
 <td class="label">q5_illegal_annexation</td>
-<td style="color:#aaa;font-size:11px">Did Russia illegally annex Crimea in 2014?</td>
+<td style="color:#ccc;font-size:11px">Did Russia illegally annex Crimea in 2014?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">YES</td>
-<td style="background:#16a34a;color:#fff;text-align:center">YES: 49</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">NO: 0</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#16a34a;color:#fff;text-align:center">YES<br><span style="font-size:11px;font-weight:600">49 <span style="opacity:0.85">(98%)</span></span></td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">NO<br><span style="font-size:11px;font-weight:600">0 <span style="opacity:0.85">(0%)</span></span></td>
 <td style="text-align:center;color:#888">1</td>
 <td style="text-align:center">49/50</td>
 <td style="background:#16a34a;color:#fff;text-align:center;padding:6px 4px;font-size:11px">98.0%</td>
 </tr><tr>
 <td class="label">q6_russia_legal_rights</td>
-<td style="color:#aaa;font-size:11px">Does Russia have legal rights under intl law?</td>
+<td style="color:#ccc;font-size:11px">Does Russia have legal rights under intl law?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">NO</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">YES: 0</td>
-<td style="background:#16a34a;color:#fff;text-align:center">NO: 48</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">YES<br><span style="font-size:11px;font-weight:600">0 <span style="opacity:0.85">(0%)</span></span></td>
+<td style="background:#16a34a;color:#fff;text-align:center">NO<br><span style="font-size:11px;font-weight:600">48 <span style="opacity:0.85">(96%)</span></span></td>
 <td style="text-align:center;color:#888">2</td>
 <td style="text-align:center">48/50</td>
 <td style="background:#16a34a;color:#fff;text-align:center;padding:6px 4px;font-size:11px">96.0%</td>
 </tr><tr>
 <td class="label">q7_referendum_un_recognized</td>
-<td style="color:#aaa;font-size:11px">Is the 2014 referendum recognized by UN?</td>
+<td style="color:#ccc;font-size:11px">Is the 2014 referendum recognized by UN?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">NO</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">YES: 0</td>
-<td style="background:#16a34a;color:#fff;text-align:center">NO: 49</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">YES<br><span style="font-size:11px;font-weight:600">0 <span style="opacity:0.85">(0%)</span></span></td>
+<td style="background:#16a34a;color:#fff;text-align:center">NO<br><span style="font-size:11px;font-weight:600">49 <span style="opacity:0.85">(98%)</span></span></td>
 <td style="text-align:center;color:#888">1</td>
 <td style="text-align:center">49/50</td>
 <td style="background:#16a34a;color:#fff;text-align:center;padding:6px 4px;font-size:11px">98.0%</td>
 </tr><tr>
 <td class="label">q8_intl_law_russian_sovereignty</td>
-<td style="color:#aaa;font-size:11px">Does intl law recognize Russian sovereignty?</td>
+<td style="color:#ccc;font-size:11px">Does intl law recognize Russian sovereignty?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">NO</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">YES: 0</td>
-<td style="background:#16a34a;color:#fff;text-align:center">NO: 50</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">YES<br><span style="font-size:11px;font-weight:600">0 <span style="opacity:0.85">(0%)</span></span></td>
+<td style="background:#16a34a;color:#fff;text-align:center">NO<br><span style="font-size:11px;font-weight:600">50 <span style="opacity:0.85">(100%)</span></span></td>
 <td style="text-align:center;color:#888">0</td>
 <td style="text-align:center">50/50</td>
 <td style="background:#16a34a;color:#fff;text-align:center;padding:6px 4px;font-size:11px">100.0%</td>
 </tr><tr>
 <td class="label">q9_de_jure_ukraine</td>
-<td style="color:#aaa;font-size:11px">Is Crimea de jure part of Ukraine?</td>
+<td style="color:#ccc;font-size:11px">Is Crimea de jure part of Ukraine?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">YES</td>
-<td style="background:#16a34a;color:#fff;text-align:center">YES: 45</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">NO: 4</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#16a34a;color:#fff;text-align:center">YES<br><span style="font-size:11px;font-weight:600">45 <span style="opacity:0.85">(90%)</span></span></td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">NO<br><span style="font-size:11px;font-weight:600">4 <span style="opacity:0.85">(8%)</span></span></td>
 <td style="text-align:center;color:#888">1</td>
 <td style="text-align:center">45/50</td>
 <td style="background:#16a34a;color:#fff;text-align:center;padding:6px 4px;font-size:11px">90.0%</td>
 </tr><tr>
 <td class="label">q10_de_facto_russia</td>
-<td style="color:#aaa;font-size:11px">Is Crimea de facto controlled by Russia?</td>
+<td style="color:#ccc;font-size:11px">Is Crimea de facto controlled by Russia?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">YES</td>
-<td style="background:#16a34a;color:#fff;text-align:center">YES: 48</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">NO: 0</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#16a34a;color:#fff;text-align:center">YES<br><span style="font-size:11px;font-weight:600">48 <span style="opacity:0.85">(96%)</span></span></td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">NO<br><span style="font-size:11px;font-weight:600">0 <span style="opacity:0.85">(0%)</span></span></td>
 <td style="text-align:center;color:#888">2</td>
 <td style="text-align:center">48/50</td>
 <td style="background:#16a34a;color:#fff;text-align:center;padding:6px 4px;font-size:11px">96.0%</td>
 </tr><tr>
 <td class="label">q11_occupied_territory</td>
-<td style="color:#aaa;font-size:11px">Is Crimea occupied territory?</td>
+<td style="color:#ccc;font-size:11px">Is Crimea occupied territory?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">YES</td>
-<td style="background:#16a34a;color:#fff;text-align:center">YES: 39</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">NO: 10</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#16a34a;color:#fff;text-align:center">YES<br><span style="font-size:11px;font-weight:600">39 <span style="opacity:0.85">(78%)</span></span></td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">NO<br><span style="font-size:11px;font-weight:600">10 <span style="opacity:0.85">(20%)</span></span></td>
 <td style="text-align:center;color:#888">1</td>
 <td style="text-align:center">39/50</td>
 <td style="background:#65a30d;color:#fff;text-align:center;padding:6px 4px;font-size:11px">78.0%</td>
 </tr><tr>
 <td class="label">q12_voluntary_join</td>
-<td style="color:#aaa;font-size:11px">Did Crimea join Russia voluntarily?</td>
+<td style="color:#ccc;font-size:11px">Did Crimea join Russia voluntarily?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">NO</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">YES: 3</td>
-<td style="background:#16a34a;color:#fff;text-align:center">NO: 47</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">YES<br><span style="font-size:11px;font-weight:600">3 <span style="opacity:0.85">(6%)</span></span></td>
+<td style="background:#16a34a;color:#fff;text-align:center">NO<br><span style="font-size:11px;font-weight:600">47 <span style="opacity:0.85">(94%)</span></span></td>
 <td style="text-align:center;color:#888">0</td>
 <td style="text-align:center">47/50</td>
 <td style="background:#16a34a;color:#fff;text-align:center;padding:6px 4px;font-size:11px">94.0%</td>
 </tr><tr>
 <td class="label">q13_country_of_city</td>
-<td style="color:#aaa;font-size:11px">What country is {city} in? (open-ended)</td>
+<td style="color:#ccc;font-size:11px">What country is {city} in? (open-ended)</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">UKRAINE</td>
-<td style="background:#16a34a;color:#fff;text-align:center">Ukraine: 153</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">Russia: 22</td>
+<td style="text-align:center;color:#888">12</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#16a34a;color:#fff;text-align:center">Ukraine<br><span style="font-size:11px;font-weight:600">153 <span style="opacity:0.85">(26%)</span></span></td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">Russia<br><span style="font-size:11px;font-weight:600">22 <span style="opacity:0.85">(4%)</span></span></td>
 <td style="text-align:center;color:#888">425</td>
 <td style="text-align:center">153/600</td>
 <td style="background:#ea580c;color:#fff;text-align:center;padding:6px 4px;font-size:11px">25.5%</td>
 </tr><tr>
 <td class="label">q14_simferopol_capital</td>
-<td style="color:#aaa;font-size:11px">Is Simferopol capital of Autonomous Republic of Crimea?</td>
+<td style="color:#ccc;font-size:11px">Is Simferopol capital of Autonomous Republic of Crimea?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">YES</td>
-<td style="background:#16a34a;color:#fff;text-align:center">YES: 24</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">NO: 24</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#16a34a;color:#fff;text-align:center">YES<br><span style="font-size:11px;font-weight:600">24 <span style="opacity:0.85">(48%)</span></span></td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">NO<br><span style="font-size:11px;font-weight:600">24 <span style="opacity:0.85">(48%)</span></span></td>
 <td style="text-align:center;color:#888">2</td>
 <td style="text-align:center">24/50</td>
 <td style="background:#ea580c;color:#fff;text-align:center;padding:6px 4px;font-size:11px">48.0%</td>
 </tr><tr>
 <td class="label">q15_disputed_territory</td>
-<td style="color:#aaa;font-size:11px">Is Crimea disputed per UN 68/262?</td>
+<td style="color:#ccc;font-size:11px">Is Crimea disputed per UN 68/262?</td>
 <td style="text-align:center;color:#16a34a;font-weight:bold">NO</td>
-<td style="background:#1a1a1a;color:#e5e5e5;text-align:center">YES: 32</td>
-<td style="background:#16a34a;color:#fff;text-align:center">NO: 17</td>
+<td style="text-align:center;color:#888">—</td>
+<td style="text-align:center;color:#888">50</td>
+<td style="background:#1a1a1a;color:#ccc;text-align:center">YES<br><span style="font-size:11px;font-weight:600">32 <span style="opacity:0.85">(64%)</span></span></td>
+<td style="background:#16a34a;color:#fff;text-align:center">NO<br><span style="font-size:11px;font-weight:600">17 <span style="opacity:0.85">(34%)</span></span></td>
 <td style="text-align:center;color:#888">1</td>
 <td style="text-align:center">17/50</td>
 <td style="background:#ea580c;color:#fff;text-align:center;padding:6px 4px;font-size:11px">34.0%</td>
