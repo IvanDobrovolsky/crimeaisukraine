@@ -1,22 +1,22 @@
 # Pipelines
 
-Each subdirectory is an **independent, self-contained pipeline** for one aspect of the Crimea sovereignty audit. A reviewer can clone just one pipeline, install its `uv` deps, and reproduce its results without touching the rest of the project.
+Each subdirectory is an **independent pipeline** that audits one aspect of how digital systems classify Crimea's sovereignty. Each pipeline is a self-contained briefing: a journalist or researcher can read just one README and understand what was tested, why it matters, how the measurement was done, and what was found — with full citations to standards, regulations, and data sources.
 
 ## Pipeline list
 
-| Pipeline | What it audits | Method | Status |
-|---|---|---|---|
-| [ip](ip/) | IP geolocation databases for Crimean ASNs | API | ✓ stable |
-| [telecom](telecom/) | Mobile operators, RIPE NCC | API + WHOIS | ✓ stable |
-| [tech_infrastructure](tech_infrastructure/) | IANA tz, libphonenumber, ICAO, postal | Source code | ✓ stable |
-| [geodata](geodata/) | Natural Earth, D3, Leaflet, map services | Source + API | ✓ stable |
-| [weather](weather/) | Weather APIs (AccuWeather, Yandex, etc.) | API | ✓ stable |
-| [media](media/) | GDELT 154K articles + LLM verification | BigQuery + LLM | ✓ stable |
-| [academic](academic/) | OpenAlex 91K papers + LLM verification | API + LLM | ✓ stable |
-| [wikipedia](wikipedia/) | 17 terms × 30 langs + Wikidata | REST API + SPARQL | ✓ stable |
-| [institutions](institutions/) | LoC, ROR, OFAC, EU sanctions, ICAO, ITU, ISO | API + docs | ✓ stable |
-| [llm](llm/) | 20+ LLMs × 50 languages × 12 cities × 15 questions | API + Ollama | 🔄 running |
-| [training_corpora](training_corpora/) | C4, Dolma, Pile, FineWeb, OSCAR | HF datasets | 🔄 running |
+| Pipeline | What it audits | Status |
+|---|---|---|
+| [**ip**](ip/README.md) | IP geolocation databases for Crimean ASNs · BGP, RIPE NCC, MaxMind, Cloudflare | ✓ stable |
+| [**telecom**](telecom/README.md) | Mobile operators, RIPE NCC ASN reassignment, ITU E.164 numbering | ✓ stable |
+| [**tech_infrastructure**](tech_infrastructure/README.md) | IANA tz, libphonenumber, ISO 3166, CLDR · 189M weekly downloads affected | ✓ stable |
+| [**geodata**](geodata/README.md) | Natural Earth + D3 + Leaflet + map services · the 30M downloads/week pipeline | ✓ stable |
+| [**weather**](weather/README.md) | 23 weather services · the counterpoint, 70% correct via GeoNames | ✓ stable |
+| [**media**](media/README.md) | GDELT 154K articles + LLM verification · 0.5% non-Russian endorsement | ✓ stable |
+| [**academic**](academic/README.md) | OpenAlex 91K papers + LLM verification · 1,581 confirmed Russia-framing papers | ✓ stable |
+| [**wikipedia**](wikipedia/README.md) | 17 entities × 30 language editions + Wikidata · erasure by omission | ✓ stable |
+| [**institutions**](institutions/README.md) | LoC, ROR, OFAC, EUR-Lex, ICAO, ITU, ISO · 6/6 unanimous | ✓ stable |
+| [**llm**](llm/README.md) | 20+ LLMs × 50 languages × 12 cities × 15 questions · cognitive dissonance + training cutoff bias | 🔄 running |
+| [**training_corpora**](training_corpora/README.md) | C4, Dolma, Pile, FineWeb, OSCAR · C4 Russian is 58.7% Russia-framed | 🔄 running |
 
 ## Standard layout per pipeline
 
