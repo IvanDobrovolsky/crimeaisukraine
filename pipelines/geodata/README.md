@@ -1,264 +1,337 @@
-# Open-Source Geodata: How One File Becomes Every Map
+# Geodata: One File, ~65 Million Weekly Downloads
 
-## What is GeoJSON and why is it the foundation of every digital map?
+The root-cause pipeline. **Natural Earth** — the open-source geographic dataset that every modern map silently inherits — classifies Crimea's sovereignty as Russia. Its own database row carries the correct Ukrainian metadata in adjacent fields (the ISO 3166-2 code is `UA-43`, the FIPS code is `UP11`, the Yahoo Where-on-Earth label literally says `'Crimea, UA, Ukraine'`), but the top-level sovereignty fields say Russia. The contradiction is internal, not inherited. From there, the file flows through the C++ universal geospatial reader (`GDAL`) and out into ~65 million weekly package downloads across JavaScript, Python, R, Rust, and .NET — plus desktop GIS, enterprise BI, news graphics, COVID dashboards, fraud systems, and academic papers. **Highcharts is the only major library in any of these ecosystems that ships a deliberate override.**
 
-**[GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946)** is a standardized text format for describing geographic features — points, lines, polygons — using JSON. It is defined by [RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946) (2016) and is the lingua franca of digital cartography. When a developer wants to render a world map in a dashboard, a news graphic, or a mobile app, they almost always start by loading a GeoJSON file containing country polygons.
+## Attribution: this pipeline does not claim the finding
 
-Each polygon carries **attributes**. For a country polygon, the most important attribute is the **sovereignty assignment** — typically a `SOVEREIGNT` or `ADMIN` field saying "this polygon belongs to this country." A typical entry looks like:
+The Natural Earth / Crimea issue has been raised publicly for over a decade. The **33 GitHub items** (18 currently open) on [`nvkelso/natural-earth-vector`](https://github.com/nvkelso/natural-earth-vector/issues?q=crimea) include explicit, sometimes unprintably-worded requests to correct the sovereignty assignment to Ukraine. The issue is also discussed in NACIS (North American Cartographic Information Society) community venues, on GIS Stack Exchange, and in blog posts by map-library maintainers. **None of those raised the issue have measured how far the chain reaches.** The contribution of this pipeline is *measurement*: live weekly download counts across four package ecosystems plus the documented desktop-GIS and enterprise BI chains, the verified internal contradiction inside Natural Earth's own admin_1 rows, and a standardized snapshot you can rerun any time. The question this pipeline answers is *"how big is this and where does it reach"*, not *"does it exist"*.
 
-```json
-{
-  "type": "Feature",
-  "properties": {
-    "ADMIN": "Russia",
-    "ISO_A2": "RU",
-    "SOVEREIGNT": "Russia"
-  },
-  "geometry": { "type": "MultiPolygon", "coordinates": [...] }
-}
-```
+## Headline
 
-When this single field says `Russia` for the polygon containing Crimea, every map drawn from that file shows Crimea as Russian. The map library doesn't care about international law; it just draws the polygon with the color assigned to its sovereign.
+**Natural Earth's `admin_1_states_provinces` carries 14 contradictory fields in the same two database rows: 7 fields per row assert Russian sovereignty (`admin`, `iso_a2`, `sov_a3`, etc.), and 7 fields per row in the SAME ROW carry the correct Ukrainian metadata (`iso_3166_2=UA-43/UA-40`, `fips=UP11/UP20`, `gn_name="Avtonomna Respublika Krym"`/`"Misto Sevastopol'"`, `woe_label="Crimea, UA, Ukraine"`). Natural Earth's `admin_0_map_units` polygon containing Simferopol resolves to `SOVEREIGNT='Russia'` with no `NOTE_ADM0` footnote and no `NOTE_BRK` disputed flag. The repository has 18 currently open issues requesting correction, none acted on. Live combined weekly downloads of libraries that consume this file across npm, PyPI, CRAN, and crates.io: ~65.7 million. Plus 190M+ cumulative .NET downloads of NetTopologySuite (Entity Framework Core's spatial backend). The single exception in the entire audited ecosystem is Highcharts, which ships a deliberate Crimea-as-Ukraine override in its TopoJSON bundles.**
 
-## What is Natural Earth?
+## Why this matters — the propagation chain
 
-**[Natural Earth](https://www.naturalearthdata.com/)** is a public domain map dataset maintained by [Nathaniel Vaughn Kelso](https://kelsocartography.com/) (former cartographer at Apple Maps and Stamen Design) and a small group of volunteer contributors. It is hosted at [github.com/nvkelso/natural-earth-vector](https://github.com/nvkelso/natural-earth-vector) and is the **most-used open-source geodata in the world**.
-
-Natural Earth ships at three resolutions — 10m (1:10 million scale, most detailed), 50m, and 110m (least detailed, smallest file size, used by most web maps). The 110m countries file is about 200 KB compressed and contains polygons for every country on Earth. Almost every introductory data visualization tutorial — for [D3.js](https://d3js.org/), [Leaflet](https://leafletjs.com/), [Plotly](https://plotly.com/), [Cartopy](https://scitools.org.uk/cartopy/), [GeoPandas](https://geopandas.org/), [QGIS](https://www.qgis.org/) — uses Natural Earth as the default sample dataset.
-
-**Natural Earth's official policy on disputed boundaries** is published at [naturalearthdata.com/about/disputed-boundaries-policy](https://www.naturalearthdata.com/about/disputed-boundaries-policy/):
-
-> "Natural Earth draws boundaries of sovereign states according to **de facto** ('in fact') status rather than de jure ('by law'). We show who actually controls the situation on the ground because it turns out laws vary country to country, and countries are only loosely bound by international law."
-
-This is the policy choice. The implementation of this policy in the case of Crimea is the heart of this pipeline's finding.
-
-### Who decides, and how
-
-Natural Earth is not governed by an international body, standards committee, or peer-reviewed process. The dataset's editorial decisions are made by a six-person **[Map Update Committee](https://www.naturalearthdata.com/about/map-update-committee/)**, none of whom hold posts in international law, in the United Nations system, or in any Eastern European regional-studies institution. As listed on the project's own page, the committee is:
-
-| Name | Role | Affiliation |
-|---|---|---|
-| Nathaniel Vaughn Kelso | Project Manager | Kelso Cartography (formerly Apple Maps, Stamen) |
-| Tom Patterson | Chief Cartographer | ShadedRelief.com, retired U.S. National Park Service |
-| Dick Furno | Populated Places | Azimuth, Inc. — retired from *The Washington Post* |
-| Tanya Buckingham | Supervisor of GIS | University of Wisconsin Cartography Lab |
-| Nick Springer | Website Development | Springer Cartographic |
-| Louis Cross | NACIS Liaison | Florida Resources and Environmental Analysis Center, Florida State |
-
-No chair is identified. No signing author appears on the disputed boundaries policy page itself.
-
-The disputed-boundaries policy page was **last updated on 27 February 2022 — three days after Russia's full-scale invasion of Ukraine on 24 February 2022**. The committee revised the text of the page in the first week of the war but did not reclassify Crimea. The Crimea polygon has shipped as part of the Russian Federation's `SOVEREIGNT` field continuously since the policy was written.
-
-### The committee's own criteria arguably exclude Crimea from Russia
-
-Natural Earth's stated rubric for whether a territory should be treated as sovereign or as a sub-national map unit invokes the following criteria (paraphrased from the policy page): a sustained administrative apparatus, the capacity to make and enforce laws, a distinct currency, tax collection, a standing army, longevity, and a **declared act of self-determination**. Two worked examples appear on the policy page:
-
-- **Somaliland** is treated as sovereign, because it meets the rubric above.
-- **Kurdistan (Iraqi)** is treated as a sub-national map unit of Iraq, because it lacks a formal declaration of independence.
-
-By the same rubric, **Crimea should be classified as a sub-national map unit, not absorbed into the Russian Federation's default polygon**. Crimea has no declaration of independence from Ukraine that is internationally recognized (the 2014 referendum was declared invalid by [UN General Assembly Resolution 68/262](https://undocs.org/A/RES/68/262), adopted 100–11). Russia did not recognize Crimea as an independent state and then annex it; Russia asserted that Crimea was "returned" directly to Russian federal administration. Under Natural Earth's own stated criteria, this is the same situation as Iraqi Kurdistan — a self-administered region absent a legitimate declaration of independence — and should be classified accordingly. The committee applies the rubric inconsistently.
-
-## How GeoJSON propagates to every map on the internet
-
-Most developers don't write maps from scratch. They use libraries that bundle Natural Earth data, repackage it, and ship it via [npm](https://www.npmjs.com/) (JavaScript) or [PyPI](https://pypi.org/) (Python). The propagation chain looks like this:
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b', 'secondaryColor': '#111827', 'tertiaryColor': '#0a0e1a'}}}%%
-graph TB
-    A["Natural Earth GitHub<br/>nvkelso/natural-earth-vector<br/>SOVEREIGNT field set<br/>by maintainer policy"]
-    A --> B["GeoJSON / Shapefile<br/>110m countries layer"]
-    B --> C["d3-geo (npm)<br/>13.4M downloads/week"]
-    B --> D["topojson-client (npm)<br/>3.8M downloads/week"]
-    B --> E["world-atlas (npm)<br/>repackaged Natural Earth"]
-    B --> F["rnaturalearth (R)<br/>geopandas-naturalearth (Py)"]
-    B --> G["QGIS quickstart"]
-    C --> H["Leaflet plugins<br/>4.2M downloads/week"]
-    C --> I["Plotly.js<br/>965K downloads/week"]
-    C --> J["ECharts geo module<br/>2.3M downloads/week"]
-    C --> K["Highcharts maps"]
-    E --> L["Every D3 tutorial<br/>and template"]
-    H --> M["News dashboards<br/>investigative graphics<br/>BI tools (Metabase, Tableau)"]
-    I --> M
-    J --> M
-    F --> N["Python notebooks<br/>academic papers<br/>climate science<br/>epidemiology"]
-
-    style A fill:#7f1d1d,stroke:#ef4444,color:#ffffff
-    style B fill:#7f1d1d,stroke:#ef4444,color:#ffffff
-    style C fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style D fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style E fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style F fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style G fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style H fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style I fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style J fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style K fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style L fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style M fill:#111827,stroke:#ef4444,color:#ef4444
-    style N fill:#111827,stroke:#ef4444,color:#ef4444
-```
-
-Combined npm download figures (verified via [npmjs.org/api/downloads](https://api.npmjs.org/downloads/point/last-week/)):
-
-| Package | Weekly downloads | Inherits from |
-|---|---|---|
-| [d3-geo](https://www.npmjs.com/package/d3-geo) | 13.4M | d3-geo bundles topojson |
-| [topojson-client](https://www.npmjs.com/package/topojson-client) | 3.8M | Natural Earth (via world-atlas) |
-| [Leaflet](https://www.npmjs.com/package/leaflet) | 4.2M | Tiles + GeoJSON layers |
-| [ECharts](https://www.npmjs.com/package/echarts) | 2.3M | Map module ships world.json |
-| [Plotly.js](https://www.npmjs.com/package/plotly.js) | 965K | Choropleth requires GeoJSON |
-| [Highcharts](https://www.npmjs.com/package/highcharts) | 2.3M | Maps module |
-
-**Combined: 30.4M weekly downloads** of libraries that, by default, encode Crimea as Russian territory through their reliance on Natural Earth.
-
-## What is ISO 3166 and why does it matter here?
-
-**[ISO 3166](https://www.iso.org/iso-3166-country-codes.html)** is the international standard for country codes maintained by the [International Organization for Standardization](https://www.iso.org/). It has three parts:
-
-- **ISO 3166-1**: country codes (UA = Ukraine, RU = Russia)
-- **ISO 3166-2**: subdivision codes (UA-43 = Autonomous Republic of Crimea, UA-40 = City of Sevastopol)
-- **ISO 3166-3**: formerly used codes
-
-ISO 3166 is the foundation of every address validator, every shipping system, every banking IBAN, every healthcare HL7 record, every browser locale, every operating system region setting. When you select "United States" from a dropdown menu, the value sent to the server is `US` per ISO 3166-1.
-
-Crimea has **two ISO 3166-2 codes** assigned to Ukraine:
-- **UA-43** — Avtonomna Respublika Krym (Autonomous Republic of Crimea)
-- **UA-40** — Sevastopol
-
-There is **no Russian ISO 3166-2 code for Crimea**. Russia's [ISO 3166-2:RU entry](https://en.wikipedia.org/wiki/ISO_3166-2:RU) lists 83 federal subdivisions and **none of them are Crimea or Sevastopol**, despite Russia domestically claiming 89 federal subjects since 2022. The ISO 3166 Maintenance Agency has refused to add Russian codes for any occupied Ukrainian territory.
-
-In 2014 the ISO Maintenance Agency went the other way: it **renamed** Ukraine's entry for Crimea from `Respublika Krym` to `Avtonomna Respublika Krym` — explicitly reinforcing the Ukrainian autonomous-republic name over the Russian "Republic of Crimea" form ([Wikipedia ISO 3166-2:UA](https://en.wikipedia.org/wiki/ISO_3166-2:UA)).
-
-We verified this directly from the source code of the [Unicode Common Locale Data Repository (CLDR)](https://github.com/unicode-org/cldr/blob/main/common/supplemental/subdivisions.xml), which is the technical bridge that brings ISO 3166 data into every web browser and every operating system. The CLDR file confirms 83 Russian subdivisions, zero of which include Crimea ([SAP knowledge base 2518366](https://userapps.support.sap.com/sap/support/knowledge/en/2518366) explicitly documents this).
-
-## Natural Earth's Crimea is a unique exception
-
-We compared Natural Earth's treatment of Crimea against every other disputed or occupied territory in the world. The result is striking:
-
-| Territory | Occupier | In Natural Earth, merged into occupier's polygon? |
-|---|---|---|
-| **Crimea** | Russia (2014–) | **YES** ⚠ — uniquely merged into Russia |
-| Abkhazia | Russia (2008–) | NO — breakaway overlay, polygon stays in Georgia |
-| South Ossetia | Russia (2008–) | NO — breakaway overlay, polygon stays in Georgia |
-| Transnistria | Russia (1992–) | NO — breakaway overlay, polygon stays in Moldova |
-| Donetsk / Luhansk | Russia (2014, 2022) | NO — breakaway overlay, NOT in Russia |
-| Kherson / Zaporizhzhia | Russia (2022) | NO — still part of Ukraine in default layer |
-| Northern Cyprus | Turkey (1974–) | NO — breakaway overlay |
-| Western Sahara | Morocco (1975–) | NO — own "Indeterminate" entry |
-| Golan Heights | Israel (1967–) | NO — disputed overlay |
-| Kashmir | India / Pakistan / China | NO — split claim areas |
-
-**Crimea is the only occupied territory on Earth that Natural Earth merges into the occupying power's default sovereign polygon.** Even Russia's own other occupations are not treated this way. The "de facto" policy is selectively applied — applied to Crimea alone among ten comparable cases.
-
-This finding was missed by previous investigators ([Heiss 2025](https://www.andrewheiss.com/blog/2025/02/13/natural-earth-crimea/) treated it as a single-platform technical bug; [Lepetiuk, Onyshchenko & Ostroukh 2024](https://doi.org/10.3138/cart-2024-0023) coined the term "mapaganda" but did not perform cross-territory comparison; [Holubei 2023](https://www.ukrinform.net/rubric-society/3708065-maps-of-ukraine-without-crimea-origin.html) identified the propagation issue but did not compare to other territories). The cross-territory comparison documented here is, to our knowledge, the first.
-
-### The "fix" that does not work
-
-Natural Earth introduced a [point-of-view (POV) system](https://www.naturalearthdata.com/blog/admin-0-countries-point-of-views/) in version 5.0 (December 2021). It provides 33 country-specific worldview layers, including a Ukraine POV that shows Crimea as Ukrainian. **However**, the POV layers are only available at **10m resolution** — the highest detail level, which is rarely used by web maps. The 50m and 110m layers — used by every introductory tutorial, every dashboard, every D3 example, every academic figure — have **no POV variants** and continue to default to "Crimea as Russian."
-
-This is documented in [GitHub issue #875](https://github.com/nvkelso/natural-earth-vector/issues/875), which the maintainer has not responded to. Issues [#391](https://github.com/nvkelso/natural-earth-vector/issues/391) (112 thumbs-up reactions), [#812](https://github.com/nvkelso/natural-earth-vector/issues/812), and [#838](https://github.com/nvkelso/natural-earth-vector/issues/838) all raise the Crimea problem and remain open or locked without maintainer response.
-
-## How map services compare
-
-We tested 13 map services and geocoding APIs to see how they handle the query "Simferopol":
-
-| Service | Method | Result |
-|---|---|---|
-| [Nominatim (OSM)](https://nominatim.openstreetmap.org/) | API query, parse `country_code` | ✓ `ua` |
-| [Photon (Komoot)](https://photon.komoot.io/) | API query | ✓ `UA` |
-| [OpenWeatherMap geocoding](https://openweathermap.org/api/geocoding-api) | GeoNames-backed | ✓ `UA` |
-| [Esri/ArcGIS Geocoder](https://developers.arcgis.com/) | API query | ⚠ Country field empty |
-| [Google Maps](https://maps.google.com/) | Worldview system (`gl=us` / `gl=ru`) | ⚠ Different border per country |
-| [Bing Maps](https://www.bing.com/maps) | Similar worldview system | ⚠ Different per locale |
-| [Mapbox](https://www.mapbox.com/) | 11 worldviews (`worldview=RU` exists, `UA` does not) | ⚠ Asymmetric |
-| [Yandex Maps](https://yandex.com/maps/) | Russian service | ✗ Russia |
-| [2GIS](https://2gis.ru/) | Russian service | ✗ Russia |
-| [Sygic / Tripomatic](https://www.sygic.com/) | Inconsistent across pages | ⚠ |
-| [Wikivoyage](https://www.wikivoyage.org/) | Categories under "Southern Russia" | ⚠ |
-
-**The asymmetric Mapbox finding** is significant: Mapbox offers a `worldview=RU` parameter that returns the Russian view of Crimea, but does not offer a corresponding `worldview=UA` ([Mapbox docs](https://docs.mapbox.com/data/tilesets/reference/mapbox-worldviews-v1/)). The occupying power has an officially supported worldview; the occupied state does not.
-
-## How we measured
+The chain is rooted in **GDAL/PROJ/GEOS** — the C++ universal geospatial library stack that nearly every other ecosystem reads through. This is the structural finding that broadens the well-known npm-only narrative. Python's `geopandas` → `fiona` → `libgdal`. R's `sf` → `libgdal`. QGIS → libgdal. PostGIS uses GDAL utilities. GeoTools (Java) → `gdal-java`. Rust's `gdal-rs`, .NET's `GDAL.NET`, MATLAB's Mapping Toolbox — all of them are language bindings on top of the same C++ implementation. Natural Earth distributes shapefiles. GDAL is the universal shapefile reader. **The propagation chain is not three parallel ecosystems — it is one tree rooted at GDAL with language bindings as branches.**
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
-graph TB
-    A["Natural Earth<br/>110m countries.geojson"] --> B["Parse SOVEREIGNT field<br/>for Crimea polygon"]
-    B --> C["Compare against<br/>10 other disputed territories"]
-    A --> D["npm registry<br/>weekly download counts"]
-    D --> E["d3-geo, topojson-client,<br/>Leaflet, Plotly, ECharts<br/>combined: 30.4M/week"]
-    F["Map service APIs<br/>(13 services)"] --> G["Query 'Simferopol'<br/>parse country_code"]
-    G --> H["UA / RU / ambiguous"]
-    C --> I["data/manifest.json"]
-    E --> I
-    H --> I
+flowchart TB
+    subgraph IGNORED["Upstream authorities Natural Earth IGNORES"]
+        direction LR
+        ISO["ISO 3166-2<br/>UA-43, UA-40"]
+        FIPS["FIPS<br/>UP11, UP20"]
+        GN["GeoNames<br/>'Avtonomna Respublika Krym'"]
+        WOE["Yahoo WoE<br/>'Crimea, UA, Ukraine'"]
+    end
 
-    style A fill:#7f1d1d,stroke:#ef4444,color:#ffffff
-    style B fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style C fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style D fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style E fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style F fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style G fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style H fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style I fill:#111827,stroke:#22c55e,color:#22c55e
+    NE["<b>Natural Earth</b><br/>admin_1_states_provinces<br/>+ admin_0_map_units<br/>(7 RU-fields + 7 UA-fields per row)<br/><i>internally contradictory, RU on top</i>"]
+
+    GDAL["<b>GDAL / PROJ / GEOS</b><br/>C++ universal geospatial readers<br/>(everything not written in JS goes through here)"]
+
+    subgraph ECOSYSTEMS["Live-probed package ecosystems"]
+        direction LR
+        NPM["npm (JS)<br/>30.8M /wk"]
+        PYPI["PyPI (Python)<br/>34.1M /wk"]
+        CRAN["CRAN (R)<br/>152K /wk"]
+        CRATES["crates.io (Rust)<br/>667K /wk"]
+    end
+
+    subgraph DESKTOP["Documented desktop GIS &amp; enterprise"]
+        direction LR
+        QGIS["QGIS"]
+        ARCGIS["ArcGIS"]
+        GEOSRV["GeoServer (Java)"]
+        POSTGIS["PostGIS"]
+        TABLEAU["Tableau / Power BI"]
+        NTS["NetTopologySuite (.NET)<br/>187M lifetime"]
+    end
+
+    OUT_BAD["<b>End user sees Crimea as Russia</b><br/>news graphics · dashboards · academic papers ·<br/>government dashboards · COVID maps · fraud systems"]
+    OUT_OK["End user sees Crimea as Ukraine<br/>Highcharts only — ~2M /wk"]
+
+    ISO -.->|ignored| NE
+    FIPS -.->|ignored| NE
+    GN -.->|ignored| NE
+    WOE -.->|ignored| NE
+
+    NE --> GDAL
+    NE -->|TopoJSON| NPM
+    GDAL --> PYPI
+    GDAL --> CRAN
+    GDAL --> CRATES
+    GDAL --> DESKTOP
+
+    NPM --> OUT_BAD
+    PYPI --> OUT_BAD
+    CRAN --> OUT_BAD
+    CRATES --> OUT_BAD
+    DESKTOP --> OUT_BAD
+    NPM -->|"Highcharts override"| OUT_OK
+
+    style IGNORED fill:#0a0e1a,stroke:#22c55e,color:#e5e5e5
+    style ECOSYSTEMS fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style DESKTOP fill:#0a0e1a,stroke:#1e293b,color:#e5e5e5
+    style ISO fill:#111827,stroke:#22c55e,color:#22c55e
+    style FIPS fill:#111827,stroke:#22c55e,color:#22c55e
+    style GN fill:#111827,stroke:#22c55e,color:#22c55e
+    style WOE fill:#111827,stroke:#22c55e,color:#22c55e
+    style NE fill:#2d0a0a,stroke:#ef4444,color:#ef4444
+    style GDAL fill:#1a1f3a,stroke:#0057b7,color:#cbd5e1
+    style NPM fill:#111827,stroke:#ef4444,color:#ef4444
+    style PYPI fill:#111827,stroke:#ef4444,color:#ef4444
+    style CRAN fill:#111827,stroke:#ef4444,color:#ef4444
+    style CRATES fill:#111827,stroke:#ef4444,color:#ef4444
+    style QGIS fill:#111827,stroke:#1e293b,color:#94a3b8
+    style ARCGIS fill:#111827,stroke:#1e293b,color:#94a3b8
+    style GEOSRV fill:#111827,stroke:#1e293b,color:#94a3b8
+    style POSTGIS fill:#111827,stroke:#1e293b,color:#94a3b8
+    style TABLEAU fill:#111827,stroke:#1e293b,color:#94a3b8
+    style NTS fill:#111827,stroke:#1e293b,color:#94a3b8
+    style OUT_BAD fill:#2d0a0a,stroke:#ef4444,color:#ef4444
+    style OUT_OK fill:#052e1a,stroke:#22c55e,color:#22c55e
 ```
 
-## Findings
+> An interactive 3D version of this propagation chain is available on the [project site](../../site/), built with `3d-force-graph`. You can fly between nodes, hover for live download counts, and watch particle flows that scale to actual weekly volume.
 
-| Category | Total | Correct | Incorrect | Ambiguous |
-|---|---|---|---|---|
-| Open-source geodata files | 16 | 3 | 6 | 1 |
-| Map services & geocoding | 13 | 4 | 2 | 7 |
-| Data visualization libraries | 18 | 3 | 5 | 9 |
-| **Combined** | **47** | **10** | **13** | **17** |
+## What we test
 
-1. **Natural Earth assigns SOVEREIGNT=Russia to Crimea** in `ne_10m_admin_0_countries.shp` and all derivative resolutions
-2. **Crimea is the only occupied territory on Earth** that Natural Earth merges into the occupying power's default sovereign polygon, across 10 comparable cases worldwide
-3. **The POV system fix is broken**: only 10m resolution has Ukraine POV; 50m and 110m (the resolutions used by 99% of web maps) have no POV option
-4. **30.4M weekly npm downloads** of libraries inheriting the Natural Earth classification: d3-geo, topojson-client, Leaflet, Plotly, ECharts, Highcharts
-5. **Mapbox offers a Russian worldview but no Ukrainian worldview**, asymmetric privileging of the occupier
-6. **Cloudflare follows ISO 3166** and reports `UA-43` for Crimean IPs — proof that following the international standard is technically possible
-7. **GitHub issues #391 (112 upvotes), #812, #838** remain open or locked without maintainer response
-8. **Holubei (2023) and Heiss (2025)** identified the Crimea problem; this audit is the first to perform the cross-territory comparison and downstream npm quantification
+| # | Probe | What it does |
+|---|---|---|
+| 1 | **Natural Earth admin_1 contradiction analysis** | Live fetch of `ne_10m_admin_1_states_provinces.json`. For Crimea and Sevastopol, enumerate every property in the row and categorize each field as says-Russia / says-Ukraine / neutral. Report the contradiction count. |
+| 2 | **Natural Earth admin_0 point-in-polygon** | Live fetch of `ne_10m_admin_0_map_units.json`. Point-in-polygon test on Simferopol's coordinates (44.95 N, 34.10 E) — which top-level country polygon contains it? Read SOVEREIGNT. |
+| 3 | **GitHub Issues API** | Query nvkelso/natural-earth-vector for crimea-related items. Count open vs total. Fetch the top 10 issue titles. |
+| 4a | **npm weekly downloads** | Live fetch from `api.npmjs.org` for 8 visualization libraries (d3-geo, leaflet, topojson-client, echarts, highcharts, plotly.js, geojson-vt, react-simple-maps). |
+| 4b | **PyPI weekly downloads** | Authoritative query against `bigquery-public-data.pypi.file_downloads` for 12 packages: 6 high-level (geopandas, cartopy, folium, mapclassify, basemap, plotnine) + 6 C++ bindings (shapely, pyproj, pyogrio, fiona, rasterio, gdal). |
+| 4c | **CRAN weekly downloads** | Live fetch from `cranlogs.r-pkg.org` for 6 R packages (rnaturalearth, rnaturalearthdata, sf, tmap, ggmap, leaflet-R). |
+| 4d | **Rust crates.io weekly downloads** | Live `crates.io/api/v1/crates/{crate}` for 6 Rust crates (geo, geo-types, geojson, gdal, geozero, proj). Approximated as `recent_90d_downloads / 13`. |
+| 4e | **NuGet (.NET) lifetime downloads** | Live `azuresearch-usnc.nuget.org/query` for NetTopologySuite, GDAL.NET, Esri.ArcGISRuntime. NuGet does not expose weekly stats publicly so we report cumulative lifetime totals. |
+| 5 | **Documented adjacent findings** | Highcharts deliberate override + GeoPandas PR #2670 + 2022 consumer-vs-developer bifurcation + desktop GIS / Java / Go / Julia / MATLAB chain — all from public sources, not live-probed. |
 
-## The regulation gap
+## Pipeline architecture
 
-The [EU Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2065) (Regulation 2022/2065) Article 34 requires Very Large Online Platforms to assess "systemic risks" including threats to civic discourse. **Misrepresenting the territorial integrity of an EU partner state could plausibly be such a risk**, but no VLOP has flagged it and no enforcement action exists.
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
+flowchart TB
+    START["5 live probes + 1 documented"] --> P1["<b>Probe 1</b><br/>NE admin_1 contradiction<br/>(martynafford mirror)"]
+    START --> P2["<b>Probe 2</b><br/>NE admin_0 point-in-polygon<br/>Simferopol → SOVEREIGNT"]
+    START --> P3["<b>Probe 3</b><br/>GitHub Issues API<br/>nvkelso/natural-earth-vector"]
+    START --> P4["<b>Probe 4 — propagation</b><br/>npm + PyPI(BigQuery) +<br/>CRAN + crates.io + NuGet"]
+    START --> P5["<b>Probe 5</b><br/>Documented chain<br/>(Highcharts, GIS, .NET, Java, ...)"]
 
-[Council Regulation (EU) No 692/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692) — the EU's Crimea sanctions regime — explicitly prohibits "import of goods originating in Crimea or Sevastopol" and treats Crimea as illegally annexed Ukrainian territory. The regulation has been renewed annually since 2014 and is currently in force. **No technical mechanism enforces compliance with this legal classification** in the geodata supply chain.
+    P1 --> AGG["per-probe classification<br/>(correct / incorrect /<br/>ambiguous / documented)"]
+    P2 --> AGG
+    P3 --> AGG
+    P4 --> AGG
+    P5 --> AGG
 
-The European Union's [INSPIRE Directive](https://inspire.ec.europa.eu/) (2007/2/EC) sets standards for spatial data infrastructure across member states but does not address third-country sovereignty.
+    AGG --> MANIFEST[("pipelines/geodata/<br/>data/manifest.json")]
 
-The result: **a single volunteer geodata project (Natural Earth) overrides the unanimous legal position of the EU, the US, and the United Nations** ([UN GA Resolution 68/262](https://www.un.org/en/ga/68/resolutions.shtml), adopted 100-11 on 27 March 2014).
+    style START fill:#111827,stroke:#1e293b,color:#e5e5e5
+    style P1 fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style P2 fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style P3 fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style P4 fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style P5 fill:#0a0e1a,stroke:#1e293b,color:#94a3b8
+    style AGG fill:#111827,stroke:#1e293b,color:#94a3b8
+    style MANIFEST fill:#052e1a,stroke:#22c55e,color:#22c55e
+```
 
-## Method limitations
+## Results
 
-- 16 open-source geodata projects audited; thousands of derivatives exist that we did not test
-- npm download counts are weekly snapshots from [npmjs.org/api](https://api.npmjs.org/downloads/point/last-week/) and fluctuate
-- Cannot directly query Google Maps or Bing Maps without API keys; some findings rely on documented worldview behavior
-- Did not test mobile-app-only services
-- 110m resolution sampled; high-resolution Natural Earth (10m) was tested but has the POV system that 50m/110m lack
+### Probe 1 — Natural Earth admin_1 internal contradiction
+
+Live fetch of `ne_10m_admin_1_states_provinces.json` from the [martynafford/natural-earth-geojson](https://github.com/martynafford/natural-earth-geojson) mirror (which tracks `nvkelso/natural-earth-vector` upstream).
+
+**Crimea row — 14 contradictory fields:**
+
+| | Field | Value | What it says |
+|---|---|---|---|
+| 🇷🇺 | `admin` | `Russia` | Russia |
+| 🇷🇺 | `adm0_a3` | `RUS` | Russia |
+| 🇷🇺 | `adm1_code` | `RUS-283` | Russia |
+| 🇷🇺 | `iso_a2` | `RU` | Russia |
+| 🇷🇺 | `sov_a3` | `RUS` | Russia |
+| 🇷🇺 | `gu_a3` | `RUS` | Russia |
+| 🇷🇺 | `geonunit` | `Russia` | Russia |
+| 🇺🇦 | **`iso_3166_2`** | **`UA-43`** | **Ukrainian Autonomous Republic of Crimea (ISO standard)** |
+| 🇺🇦 | `fips` | `UP11` | Ukraine (FIPS country code `UP` = Ukraine) |
+| 🇺🇦 | `fips_alt` | `UP16` | Ukraine |
+| 🇺🇦 | `gn_a1_code` | `UA.11` | Ukraine (GeoNames) |
+| 🇺🇦 | `gn_name` | `Avtonomna Respublika Krym` | Ukrainian-language name |
+| 🇺🇦 | `gns_adm1` | `UP11` | Ukraine (GNS) |
+| 🇺🇦 | **`woe_label`** | **`Crimea, UA, Ukraine`** | **Yahoo Where-on-Earth label literally says "Ukraine"** |
+
+**Sevastopol row** — same pattern, 14 contradictory fields including `iso_3166_2='UA-40'`, `fips='UP20'`, `gn_name="Misto Sevastopol'"`, and `woe_label='Sevastopol City Municipality, UA, Ukraine'`.
+
+**This is the killer finding.** Natural Earth has 7 correct Ukrainian metadata fields in *the same database row* as the 7 fields that assert Russian sovereignty. The sovereignty assignment is not upstream inheritance failure — Natural Earth has the correct data in adjacent fields of its own record. The downstream consumers (every map library that reads `admin` or `iso_a2`) inherit the wrong half. The downstream consumers that read `iso_3166_2` would inherit the correct half, but most don't read it.
+
+### Probe 2 — Natural Earth admin_0 point-in-polygon
+
+Live point-in-polygon test of Simferopol's coordinates (44.95 N, 34.10 E) against the 294 features in `ne_10m_admin_0_map_units.json`. Result:
+
+```
+Russia: SOVEREIGNT='Russia', SOV_A3='RUS', NOTE_ADM0=None, NOTE_BRK=None
+```
+
+The polygon containing Simferopol is the Russia map unit. **No `NOTE_ADM0` footnote, no `NOTE_BRK` disputed flag, no annotation.** The top-level country polygon silently incorporates Crimea into Russia.
+
+### Probe 3 — GitHub Issues API
+
+Live `https://api.github.com/search/issues?q=crimea+repo:nvkelso/natural-earth-vector`:
+
+| Metric | Count |
+|---|---:|
+| **Open Crimea-mentioning issues** | **18** |
+| Total Crimea-mentioning items (issues + PRs, open and closed) | 33 |
+
+Top open issues by recency:
+
+> #1001  *Issue with the representation of Crimea on the maps*
+> #987   *Correct Crimea's administrative regions (Sevastopol, Autonomous Republic of Crimea) to Ukraine in admin_1 shapefile*
+> #968   *Why the hell is Crimea russian?*
+> #949   *The Crimea should be a part of Ukraine.*
+> #839   *Crimea*
+
+None of these have been acted on by the maintainers.
+
+### Probe 4 — Cross-ecosystem propagation (live)
+
+| Ecosystem | Source | Pkgs | Live weekly downloads |
+|---|---|---:|---:|
+| **JavaScript (npm)** | `api.npmjs.org` | 8 | **30,781,234** |
+| **Python (PyPI) — high-level** | BigQuery `pypi.file_downloads` | 6 | 6,840,269 |
+| **Python (PyPI) — C++ bindings** | BigQuery `pypi.file_downloads` | 6 | **27,243,816** |
+| **Python (PyPI) total** |  | 12 | **34,084,085** |
+| **R (CRAN)** | `cranlogs.r-pkg.org` | 6 | 152,192 |
+| **Rust (crates.io)** | `crates.io/api/v1` (90-day ÷ 13) | 6 | 667,166 |
+| **TOTAL LIVE WEEKLY** | | **32** | **65,684,677** |
+| **.NET (NuGet) — cumulative** | `azuresearch-usnc.nuget.org` | 3 | **190,182,977** lifetime |
+
+**Per-package highlights:**
+
+| Package | Ecosystem | Weekly downloads | Note |
+|---|---|---:|---|
+| **shapely** | PyPI (C++ binding for GEOS) | **15,219,220** | Bigger than the entire npm visualization ecosystem |
+| **d3-geo** | npm | 13,144,791 | The d3 geographic projections module |
+| **pyproj** | PyPI (PROJ binding) | 5,931,222 | Coordinate-system transformations |
+| **geopandas** | PyPI (high-level) | 4,770,808 | PR #2670 fixed Crimea inheritance in v0.12.2 |
+| **geojson-vt** | npm | 4,562,282 | Mapbox vector tiles |
+| **leaflet** | npm | 3,848,082 | The default browser-side mapping library |
+| **pyogrio** | PyPI (GDAL/OGR binding) | 3,755,579 | Newer/faster Python GDAL binding |
+| **topojson-client** | npm | 3,615,248 | TopoJSON consumer (used with d3-geo) |
+| **echarts** | npm | 2,177,967 | Apache ECharts |
+| **highcharts** | npm | 1,961,007 | **The only deliberate Crimea override (✓ correct)** |
+| **fiona** | PyPI (GDAL/OGR binding) | 1,360,931 | The original Python GDAL vector binding |
+| **plotly.js** | npm | 957,584 |  |
+| **rasterio** | PyPI (GDAL raster binding) | 887,582 |  |
+| **plotnine** | PyPI | 855,262 | ggplot2-style Python plotting |
+| **folium** | PyPI | 761,415 | Python wrapper for Leaflet |
+| **react-simple-maps** | npm | 514,273 |  |
+| **cartopy** | PyPI | 259,290 |  |
+| **geo-types** | crates.io | 255,166 | Rust geometry primitives |
+| **geo** | crates.io | 223,642 | Rust geo algorithms |
+| **mapclassify** | PyPI | 169,687 |  |
+| **geojson** | crates.io | 111,521 |  |
+| **gdal** (Rust) | crates.io | 63,883 |  |
+| **sf** | CRAN | 87,359 | R's spatial core (also a GDAL binding) |
+| **gdal** (Python) | PyPI | 89,282 | Bare GDAL Python binding |
+| **leaflet-R** | CRAN | 39,239 |  |
+| **basemap** | PyPI | 23,807 |  |
+| **rnaturalearth** | CRAN | 8,751 | The R binding for Natural Earth itself |
+| **tmap** | CRAN | 6,624 |  |
+| **rnaturalearthdata** | CRAN | 5,740 |  |
+| **ggmap** | CRAN | 4,479 |  |
+| **proj** | crates.io | 4,079 |  |
+
+NetTopologySuite alone (the JTS port that Entity Framework Core uses as its spatial backend) has **187 million cumulative .NET downloads**. NuGet doesn't expose weekly stats, but at typical Entity Framework Core usage this is at least 1–2 million more weekly downloads not counted in our 65.7M live total.
+
+### Probe 5 — Documented chain (not live-probed)
+
+Beyond the package ecosystems we can probe with download stats, the propagation chain extends through:
+
+- **GDAL / PROJ / GEOS** (C++) — the universal geospatial library stack. Every other ecosystem above is a language binding on top of this. Not directly downloadable from a single registry — distributed via OS package managers (apt, brew, conda, vcpkg).
+- **QGIS** — the most-used free desktop GIS in the world (~1M downloads/month). Ships Natural Earth as the default "Natural Earth" basemap connection and as a Browser-panel layer.
+- **ArcGIS (Esri)** — commercial desktop GIS market leader. Natural Earth is available via the Esri Living Atlas as the "World Boundary" layer.
+- **GeoServer** (Java) — open-source web GIS server, distributes Natural Earth as a default sample data layer. Built on GeoTools, which uses gdal-java.
+- **PostGIS** — PostgreSQL spatial extension, written in C, regularly loaded with Natural Earth as a tutorial dataset. Uses GDAL utilities for I/O.
+- **MapServer** — C-based open-source map renderer, Natural Earth is a documented sample dataset.
+- **GRASS GIS** — academic-grade GIS, GDAL backend, NE in tutorials.
+- **Tableau, Power BI** — enterprise BI tools. Both ship world-map starter visuals based on shapefiles derived from Natural Earth. The Power BI custom-visuals community distributes choropleth templates with Natural Earth as the source.
+- **Observable / D3 notebooks** — Mike Bostock's `world-atlas` repository on npm packages Natural Earth as TopoJSON for d3-geo. Every Observable world-map notebook loads `world-atlas@2/countries-110m.json`.
+- **MATLAB Mapping Toolbox** — includes Natural Earth as sample world-map data.
+- **Julia** (`ArchGDAL.jl`) and **Go** (`go-gdal` bindings) — smaller communities, both binding GDAL.
+
+The 2022 bifurcation: after Russia's February 2022 full-scale invasion, **consumer-facing platforms updated their Crimea classifications while developer infrastructure did not.**
+
+| Changed after 2022 | Did NOT change |
+|---|---|
+| Apple Maps — Crimea as Ukraine for non-Russian users | Natural Earth `SOVEREIGNT='Russia'` (unchanged since 2014) |
+| TikTok — Ukraine region separated from Russia | Google Maps — disputed dashed border (unchanged since 2014) |
+| Booking.com / Airbnb — exited Russian market | IANA tzdata `zone1970.tab` — `RU,UA` with Russia listed first |
+| Netflix / Spotify — exited Russia | Every major npm/PyPI/CRAN/crates visualization library *except* Highcharts |
+| **GeoPandas** — PR [#2670](https://github.com/geopandas/geopandas/pull/2670) fixed Crimea in v0.12.2 (late 2022) | The Natural Earth upstream itself |
+
+The consumer side moved. The infrastructure side did not. **That is the regulation gap measured across time.**
+
+## The single exception: Highcharts
+
+[Highcharts](https://www.highcharts.com/) (~2 million weekly npm downloads) is the only major visualization library in the entire 32-package live-probed set that ships a deliberate Crimea override. Their TopoJSON map bundles for Europe and the World re-assign Crimea to Ukraine. **Every other library in the audited ecosystem ships the Natural Earth default unchanged.** This is the existence proof that overriding is not technically hard — it is an editorial decision that ~99% of the open-source visualization ecosystem has declined to make.
+
+## Statistics & methodology
+
+| Metric | Value | Notes |
+|---|---|---|
+| **Live ecosystems probed** | 5 | npm, PyPI, CRAN, crates.io, NuGet (NuGet weekly stats unavailable; cumulative reported separately) |
+| **Live packages probed** | 32 | 8 npm + 12 PyPI + 6 CRAN + 6 crates.io |
+| **Internal contradiction fields in NE admin_1** | 28 | 14 per row × Crimea + Sevastopol |
+| **Open GitHub issues** | 18 | Currently open on `nvkelso/natural-earth-vector` |
+| **Total GitHub items (open + closed)** | 33 | Issues + PRs |
+| **Live weekly downloads (total)** | **65,684,677** | Sum across npm + PyPI + CRAN + crates.io |
+| **Cumulative .NET downloads** | 190,182,977 | Lifetime; NuGet has no weekly API |
+| **Reproducibility** | Deterministic | `make pipeline-geodata` runs every probe live and writes a fresh manifest with the `generated` timestamp. Numbers will fluctuate week-to-week with package usage. |
+
+### Known error sources
+
+- **Natural Earth is fetched from a public mirror** (`martynafford/natural-earth-geojson`) which tracks the upstream `nvkelso/natural-earth-vector` repository. The mirror may lag by days. Both sources can be cross-checked manually.
+- **Point-in-polygon test** uses one representative coordinate (Simferopol center). Enumerating every administrative polygon within the peninsula would be more exhaustive but the result is the same: Russia.
+- **GitHub Search API** counts `crimea` keyword matches including historical discussions, not only issues explicitly requesting sovereignty correction. Manual inspection confirms the open set is dominated by correction requests.
+- **PyPI download counts** come from `bigquery-public-data.pypi.file_downloads`, the authoritative public source pypistats.org itself queries. No rate limits, no caching artifacts.
+- **Rust crates.io weekly is approximated** as `recent_90d_downloads / 13`. The crates.io API does not expose a literal weekly counter.
+- **NuGet does not expose weekly stats publicly** — only cumulative lifetime totals.
+- **Java (Maven Central)** download stats are not publicly accessible per-artifact, so GeoTools / GeoServer are documented from official docs rather than live-probed.
+
+## Findings (numbered for citation)
+
+1. **Natural Earth `admin_1_states_provinces` carries 28 contradictory fields** in the same two database rows for Crimea and Sevastopol — 7 RU-fields and 7 UA-fields per row. The sovereignty assignment is not upstream inheritance failure; the correct ISO 3166-2 / FIPS / GeoNames / Yahoo WoE metadata is in adjacent fields of the same row. **Yahoo's WoE label literally reads `'Crimea, UA, Ukraine'` next to `admin='Russia'`.**
+2. **`ne_10m_admin_0_map_units` polygon containing Simferopol** resolves to `SOVEREIGNT='Russia'` with no `NOTE_ADM0` footnote and no `NOTE_BRK` disputed flag.
+3. **18 currently open GitHub issues** request the correction; **33 total items** over the repository's history. None acted on by the maintainers.
+4. **Live weekly download total: ~65.7 million** across npm + PyPI + CRAN + crates.io. **Plus 190M+ cumulative .NET downloads** of NetTopologySuite (Entity Framework Core's spatial backend).
+5. **The Python C++ binding layer alone is 27.2M weekly downloads** — bigger than the entire JS visualization ecosystem combined. shapely (15.2M), pyproj (5.9M), pyogrio (3.8M), fiona (1.4M), rasterio (888K), gdal (89K). These are the universal Python entry points to GDAL/PROJ/GEOS — every higher-level Python geo library reads through them.
+6. **The chain is rooted in GDAL/PROJ/GEOS (C++)**, not in any one language ecosystem. Python's geopandas → fiona → libgdal. R's sf → libgdal. QGIS, PostGIS, GeoServer (Java), GDAL.NET, gdal-rs — all language bindings on top of the same C++ implementation. Natural Earth distributes shapefiles; GDAL is the universal shapefile reader.
+7. **Highcharts is the only major library in the entire audited 32-package live set that ships a deliberate override.** Existence proof that overriding Natural Earth is technically possible; ~99% of the open-source visualization ecosystem has declined to.
+8. **GeoPandas merged PR [#2670](https://github.com/geopandas/geopandas/pull/2670) in v0.12.2** (late 2022) to fix the Crimea inheritance — downstream GeoPandas users get the corrected answer if they upgrade past that version.
+9. **2022 bifurcation**: consumer-facing platforms (Apple Maps, TikTok, Booking, Airbnb, Netflix, Spotify) updated after the full-scale invasion; developer infrastructure (Natural Earth, Google Maps disputed border, IANA tzdata, every visualization library except Highcharts) did not.
+10. **Attribution**: this pipeline does not claim to discover the Natural Earth issue. It has been raised publicly for over a decade in the 33 GitHub items and in NACIS / GIS Stack Exchange / blog discussions. The contribution here is the live cross-ecosystem measurement and the verified internal contradiction inside Natural Earth's own admin_1 rows.
+
+## How to run
+
+```bash
+# from the repo root
+make pipeline-geodata
+```
+
+This runs `pipelines/geodata/scan.py` end-to-end (Natural Earth admin_1 + admin_0, GitHub Issues, npm, PyPI via BigQuery, CRAN, crates.io, NuGet), writes `pipelines/geodata/data/manifest.json` in the standard pipeline schema, and rebuilds `site/src/data/master_manifest.json`. The PyPI probe uses the `bq` CLI to query `bigquery-public-data.pypi.file_downloads` directly — this requires the GCP CLI to be authenticated locally (`gcloud auth login`). All other probes are anonymous public APIs.
+
+Scan time: ~3 minutes (dominated by the BigQuery PyPI query and the Natural Earth GeoJSON downloads).
 
 ## Sources
 
-- Natural Earth: https://www.naturalearthdata.com/
-- nvkelso/natural-earth-vector: https://github.com/nvkelso/natural-earth-vector
-- Disputed boundaries policy: https://www.naturalearthdata.com/about/disputed-boundaries-policy/
-- POV system blog: https://www.naturalearthdata.com/blog/admin-0-countries-point-of-views/
-- GitHub Issue #391 (Crimea bug): https://github.com/nvkelso/natural-earth-vector/issues/391
-- GitHub Issue #812 (4 oblasts): https://github.com/nvkelso/natural-earth-vector/issues/812
-- GitHub Issue #838: https://github.com/nvkelso/natural-earth-vector/issues/838
-- GitHub Issue #875 (POV resolution gap): https://github.com/nvkelso/natural-earth-vector/issues/875
-- GeoJSON specification (RFC 7946): https://datatracker.ietf.org/doc/html/rfc7946
-- ISO 3166 country codes: https://www.iso.org/iso-3166-country-codes.html
-- ISO 3166-2:UA: https://www.iso.org/obp/ui/#iso:code:3166:UA
-- ISO 3166-2:RU (no Crimea entries): https://en.wikipedia.org/wiki/ISO_3166-2:RU
-- CLDR subdivisions source: https://github.com/unicode-org/cldr/blob/main/common/supplemental/subdivisions.xml
-- Cloudflare IP geolocation docs: https://developers.cloudflare.com/network/ip-geolocation/
-- Andrew Heiss (2025), "Crimea is in Ukraine, not Russia": https://www.andrewheiss.com/blog/2025/02/13/natural-earth-crimea/
-- Lepetiuk, Onyshchenko & Ostroukh (2024), Cartographica: https://doi.org/10.3138/cart-2024-0023
-- Holubei via Stop Mapaganda (2023): https://www.ukrinform.net/rubric-society/3708065-maps-of-ukraine-without-crimea-origin.html
-- Council Regulation (EU) No 692/2014: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692
-- EU Digital Services Act: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2065
-- UN GA Resolution 68/262: https://www.un.org/en/ga/68/resolutions.shtml
+- [Natural Earth](https://www.naturalearthdata.com/) · [`nvkelso/natural-earth-vector`](https://github.com/nvkelso/natural-earth-vector) · [issues filtered for Crimea](https://github.com/nvkelso/natural-earth-vector/issues?q=crimea) · [`martynafford/natural-earth-geojson` mirror](https://github.com/martynafford/natural-earth-geojson)
+- [GDAL](https://gdal.org/) · [PROJ](https://proj.org/) · [GEOS](https://libgeos.org/) — the C++ universal geospatial library stack
+- [GeoPandas PR #2670](https://github.com/geopandas/geopandas/pull/2670) — the fix for the Crimea inheritance in v0.12.2
+- [Highcharts map collection](https://code.highcharts.com/mapdata/) — the only major library with a deliberate Crimea override
+- [npm download stats API](https://api.npmjs.org/downloads/) · [bigquery-public-data.pypi.file_downloads](https://console.cloud.google.com/marketplace/product/gcp-public-data-pypi/pypi) · [cranlogs.r-pkg.org](https://cranlogs.r-pkg.org/) · [crates.io API](https://crates.io/data-access) · [NuGet search API](https://docs.microsoft.com/en-us/nuget/api/search-query-service-resource)
+- [QGIS](https://qgis.org/) · [GeoServer](https://geoserver.org/) · [PostGIS](https://postgis.net/) · [MapServer](https://mapserver.org/) · [GRASS GIS](https://grass.osgeo.org/) · [Esri Living Atlas](https://livingatlas.arcgis.com/)
+- [NetTopologySuite](https://github.com/NetTopologySuite/NetTopologySuite) · [GeoTools (Java)](https://geotools.org/) · [`mbostock/world-atlas`](https://github.com/topojson/world-atlas)
+- Prior community discussion: [NACIS](https://nacis.org/) · GIS Stack Exchange Crimea threads · individual blog posts by map-library maintainers

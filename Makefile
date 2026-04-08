@@ -32,8 +32,9 @@ pipeline-tech_infrastructure: ## Run tech infrastructure pipeline (IANA tz, libp
 	cd $(PIPELINES)/tech_infrastructure && uv sync && uv run scan.py
 	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
 
-pipeline-geodata: ## Run geodata pipeline (Natural Earth + maps + viz libs)
+pipeline-geodata: ## Run geodata pipeline (Natural Earth + 5-ecosystem propagation; rebuilds master manifest)
 	cd $(PIPELINES)/geodata && uv sync && uv run scan.py
+	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
 
 pipeline-weather: ## Run weather services pipeline (25 services, 4-signal probe; rebuilds master manifest)
 	cd $(PIPELINES)/weather && uv sync && uv run scan.py
@@ -74,23 +75,17 @@ install: ## Install Python dependencies
 
 # ─── Core audit (no browser, no API keys needed) ───────
 
-audit-open-source: ## Check open source geographic datasets (Natural Earth, D3, etc)
-	$(PYTHON) $(SCRIPTS)/check_open_source.py
-
+audit-open-source: pipeline-geodata ## Deprecated alias for pipeline-geodata
 audit-infrastructure: pipeline-tech_infrastructure ## Deprecated alias for pipeline-tech_infrastructure
+audit-propagation: pipeline-geodata ## Deprecated alias for pipeline-geodata
+audit-map-services: pipeline-geodata ## Deprecated alias for pipeline-geodata
 
-audit-propagation: ## Analyze npm/PyPI dependency propagation
-	$(PYTHON) $(SCRIPTS)/check_propagation.py
-
-audit-core: audit-open-source audit-infrastructure audit-propagation ## Run core checks (no network APIs)
+audit-core: pipeline-geodata pipeline-tech_infrastructure ## Run core checks (no network APIs)
 
 # ─── API-based audit (needs internet) ──────────────────
 
 audit-platforms: ## Check web platforms (weather, travel, search, reference)
 	$(PYTHON) $(SCRIPTS)/check_platforms.py
-
-audit-map-services: ## Check map services and geocoding APIs
-	$(PYTHON) $(SCRIPTS)/check_map_services.py
 
 audit-ip: pipeline-ip ## Deprecated alias for pipeline-ip
 

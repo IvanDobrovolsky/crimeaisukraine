@@ -1,5 +1,5 @@
 {
-  "_generated": "2026-04-07T22:45:20",
+  "_generated": "2026-04-07T23:33:04",
   "_description": "Master manifest aggregating all pipeline outputs. Single source of truth for the site.",
   "pipelines": {
     "ip": {
@@ -705,8 +705,699 @@
     "geodata": {
       "name": "geodata",
       "readme": "pipelines/geodata/README.md",
-      "manifest": null,
-      "available": false
+      "manifest": {
+        "pipeline": "geodata",
+        "version": "2.0",
+        "generated": "2026-04-08T06:29:07+00:00",
+        "method": "live_natural_earth + github_issues_api + npm_downloads + documented_bifurcation",
+        "summary": {
+          "total_probes": 9,
+          "incorrect": 8,
+          "correct": 0,
+          "ambiguous": 0,
+          "documented": 1,
+          "natural_earth_crimea_russia_fields": 7,
+          "natural_earth_crimea_ukraine_fields": 7,
+          "natural_earth_sevastopol_russia_fields": 7,
+          "natural_earth_sevastopol_ukraine_fields": 7,
+          "natural_earth_total_contradiction_fields": 28,
+          "natural_earth_admin_0_sovereignt": "Russia",
+          "github_open_crimea_issues": 18,
+          "github_total_crimea_items": 33,
+          "npm_total_weekly_downloads": 30781234,
+          "npm_packages_probed": 8,
+          "pypi_total_weekly_downloads": 34084085,
+          "pypi_high_level_total": 6840269,
+          "pypi_cpp_bindings_total": 27243816,
+          "pypi_packages_probed": 12,
+          "cran_total_weekly_downloads": 152192,
+          "cran_packages_probed": 6,
+          "crates_total_weekly_downloads": 667166,
+          "crates_probed": 6,
+          "nuget_lifetime_downloads_total": 190182977,
+          "nuget_packages_probed": 3,
+          "cross_ecosystem_total_weekly_downloads": 65684677
+        },
+        "findings": [
+          {
+            "name": "Natural Earth ne_10m_admin_1_states_provinces",
+            "category": "upstream_data",
+            "source_url": "https://raw.githubusercontent.com/martynafford/natural-earth-geojson/master/10m/cultural/ne_10m_admin_1_states_provinces.json",
+            "status": "incorrect",
+            "detail": "Natural Earth's admin_1 file carries contradictory metadata for Crimea and Sevastopol. For Crimea, 7 fields assert Russian sovereignty (admin, adm0_a3, adm1_code, iso_a2, sov_a3, gu_a3, geonunit) while 7 fields in the SAME ROW carry correct Ukrainian metadata (iso_3166_2=UA-43, FIPS=UP11, GeoNames name='Avtonomna Respublika Krym', Yahoo WoE label='Crimea, UA, Ukraine'). The sovereignty assignment is not upstream inheritance failure — Natural Earth has the correct information in adjacent fields of its own record.",
+            "entities": [
+              {
+                "entity": "Crimea",
+                "russia_field_count": 7,
+                "ukraine_field_count": 7,
+                "says_russia_fields": [
+                  {
+                    "field": "adm1_code",
+                    "value": "RUS-283"
+                  },
+                  {
+                    "field": "iso_a2",
+                    "value": "RU"
+                  },
+                  {
+                    "field": "sov_a3",
+                    "value": "RUS"
+                  },
+                  {
+                    "field": "adm0_a3",
+                    "value": "RUS"
+                  },
+                  {
+                    "field": "admin",
+                    "value": "Russia"
+                  },
+                  {
+                    "field": "geonunit",
+                    "value": "Russia"
+                  },
+                  {
+                    "field": "gu_a3",
+                    "value": "RUS"
+                  }
+                ],
+                "says_ukraine_fields": [
+                  {
+                    "field": "iso_3166_2",
+                    "value": "UA-43"
+                  },
+                  {
+                    "field": "fips",
+                    "value": "UP11"
+                  },
+                  {
+                    "field": "fips_alt",
+                    "value": "UP16"
+                  },
+                  {
+                    "field": "woe_label",
+                    "value": "Crimea, UA, Ukraine"
+                  },
+                  {
+                    "field": "gn_name",
+                    "value": "Avtonomna Respublika Krym"
+                  },
+                  {
+                    "field": "gn_a1_code",
+                    "value": "UA.11"
+                  },
+                  {
+                    "field": "gns_adm1",
+                    "value": "UP11"
+                  }
+                ],
+                "all_properties": {
+                  "adm1_code": "RUS-283",
+                  "diss_me": 283,
+                  "iso_3166_2": "UA-43",
+                  "wikipedia": null,
+                  "iso_a2": "RU",
+                  "adm0_sr": 1,
+                  "name": "Crimea",
+                  "name_alt": "Crimée|Criméia|Krim|Krymskaya Respublika|Respublika Krym",
+                  "name_local": null,
+                  "type": "Oblast",
+                  "type_en": "Autonomous Republic",
+                  "code_local": null,
+                  "code_hasc": "UA.KR",
+                  "note": null,
+                  "hasc_maybe": "UA.MY|UKR-KRN",
+                  "region": "Volga",
+                  "region_cod": null,
+                  "provnum_ne": 3,
+                  "gadm_level": 1,
+                  "check_me": 20,
+                  "scalerank": 5,
+                  "datarank": 5,
+                  "abbrev": null,
+                  "postal": "KR",
+                  "area_sqkm": 0.0,
+                  "sameascity": -99,
+                  "labelrank": 6,
+                  "featurecla": "Admin-1 scale rank",
+                  "name_len": 6,
+                  "mapcolor9": 6,
+                  "mapcolor13": 3,
+                  "fips": "UP11",
+                  "fips_alt": "UP16",
+                  "woe_id": 2347544,
+                  "woe_label": "Crimea, UA, Ukraine",
+                  "woe_name": "Crimea",
+                  "latitude": 45.3115,
+                  "longitude": 34.2784,
+                  "sov_a3": "RUS",
+                  "adm0_a3": "RUS",
+                  "adm0_label": 2,
+                  "admin": "Russia",
+                  "geonunit": "Russia",
+                  "gu_a3": "RUS",
+                  "gn_id": 703883,
+                  "gn_name": "Avtonomna Respublika Krym",
+                  "gns_id": -1043929,
+                  "gns_name": "Krym, Avtonomna Respublika",
+                  "gn_level": 1,
+                  "gn_region": null,
+                  "gn_a1_code": "UA.11",
+                  "region_sub": "North Caucasus",
+                  "sub_code": null,
+                  "gns_level": 1,
+                  "gns_lang": "rus",
+                  "gns_adm1": "UP11",
+                  "gns_region": null,
+                  "min_label": 5.0,
+                  "max_label": 11.0,
+                  "min_zoom": 4.7
+                }
+              },
+              {
+                "entity": "Sevastopol",
+                "russia_field_count": 7,
+                "ukraine_field_count": 7,
+                "says_russia_fields": [
+                  {
+                    "field": "adm1_code",
+                    "value": "RUS-5482"
+                  },
+                  {
+                    "field": "iso_a2",
+                    "value": "RU"
+                  },
+                  {
+                    "field": "sov_a3",
+                    "value": "RUS"
+                  },
+                  {
+                    "field": "adm0_a3",
+                    "value": "RUS"
+                  },
+                  {
+                    "field": "admin",
+                    "value": "Russia"
+                  },
+                  {
+                    "field": "geonunit",
+                    "value": "Russia"
+                  },
+                  {
+                    "field": "gu_a3",
+                    "value": "RUS"
+                  }
+                ],
+                "says_ukraine_fields": [
+                  {
+                    "field": "iso_3166_2",
+                    "value": "UA-40"
+                  },
+                  {
+                    "field": "fips",
+                    "value": "UP20"
+                  },
+                  {
+                    "field": "fips_alt",
+                    "value": "UP16"
+                  },
+                  {
+                    "field": "woe_label",
+                    "value": "Sevastopol City Municipality, UA, Ukraine"
+                  },
+                  {
+                    "field": "gn_name",
+                    "value": "Misto Sevastopol'"
+                  },
+                  {
+                    "field": "gn_a1_code",
+                    "value": "UA.20"
+                  },
+                  {
+                    "field": "gns_adm1",
+                    "value": "UP20"
+                  }
+                ],
+                "all_properties": {
+                  "adm1_code": "RUS-5482",
+                  "diss_me": 5482,
+                  "iso_3166_2": "UA-40",
+                  "wikipedia": "http://en.wikipedia.org/wiki/Sevastopol",
+                  "iso_a2": "RU",
+                  "adm0_sr": 1,
+                  "name": "Sevastopol",
+                  "name_alt": null,
+                  "name_local": null,
+                  "type": "Oblast",
+                  "type_en": null,
+                  "code_local": null,
+                  "code_hasc": "UA.SC",
+                  "note": null,
+                  "hasc_maybe": null,
+                  "region": "Volga",
+                  "region_cod": null,
+                  "provnum_ne": 3,
+                  "gadm_level": 1,
+                  "check_me": 20,
+                  "scalerank": 5,
+                  "datarank": 5,
+                  "abbrev": null,
+                  "postal": "SC",
+                  "area_sqkm": 0.0,
+                  "sameascity": -99,
+                  "labelrank": 6,
+                  "featurecla": "Admin-1 scale rank",
+                  "name_len": 10,
+                  "mapcolor9": 6,
+                  "mapcolor13": 3,
+                  "fips": "UP20",
+                  "fips_alt": "UP16",
+                  "woe_id": 20070189,
+                  "woe_label": "Sevastopol City Municipality, UA, Ukraine",
+                  "woe_name": "Sevastopol City Municipality",
+                  "latitude": 44.5182,
+                  "longitude": 33.6396,
+                  "sov_a3": "RUS",
+                  "adm0_a3": "RUS",
+                  "adm0_label": 2,
+                  "admin": "Russia",
+                  "geonunit": "Russia",
+                  "gu_a3": "RUS",
+                  "gn_id": 694422,
+                  "gn_name": "Misto Sevastopol'",
+                  "gns_id": -1053420,
+                  "gns_name": "Sevastopol', Misto",
+                  "gn_level": 1,
+                  "gn_region": null,
+                  "gn_a1_code": "UA.20",
+                  "region_sub": "North Caucasus",
+                  "sub_code": null,
+                  "gns_level": 1,
+                  "gns_lang": "rus",
+                  "gns_adm1": "UP20",
+                  "gns_region": null,
+                  "min_label": 5.0,
+                  "max_label": 11.0,
+                  "min_zoom": 4.7
+                }
+              }
+            ],
+            "total_contradiction_fields": 14
+          },
+          {
+            "name": "Natural Earth ne_10m_admin_0_map_units",
+            "category": "upstream_data",
+            "source_url": "https://raw.githubusercontent.com/martynafford/natural-earth-geojson/master/10m/cultural/ne_10m_admin_0_map_units.json",
+            "status": "incorrect",
+            "detail": "Point-in-polygon test for Simferopol (44.95 N, 34.10 E) resolves to 1 map unit(s). SOVEREIGNT='Russia' (NOTE_ADM0=None). No footnote, no disputed flag, no annotation — the polygon is silently classified as Russian territory at the country level.",
+            "test_point": {
+              "lon": 34.1,
+              "lat": 44.95
+            },
+            "hits": [
+              {
+                "NAME": "Russia",
+                "SOVEREIGNT": "Russia",
+                "SOV_A3": "RUS",
+                "ADM0_A3": "RUS",
+                "TYPE": "Sovereign country",
+                "NOTE_ADM0": null,
+                "NOTE_BRK": null
+              }
+            ]
+          },
+          {
+            "name": "nvkelso/natural-earth-vector GitHub issues",
+            "category": "governance",
+            "source_url": "https://github.com/nvkelso/natural-earth-vector/issues?q=crimea",
+            "status": "incorrect",
+            "detail": "The Natural Earth GitHub repository has 18 currently open issues mentioning Crimea, and 33 total items (issues + PRs, open + closed) over the repository's history. The open issues include multiple explicit requests to correct the sovereignty assignment to Ukraine — some quite strongly worded. None have been acted on by the maintainers.",
+            "open_issues_count": 18,
+            "total_items_count": 33,
+            "top_open_issues": [
+              {
+                "number": 1001,
+                "title": "Issue with the representation of Crimea on the maps",
+                "state": "open",
+                "url": "https://github.com/nvkelso/natural-earth-vector/issues/1001"
+              },
+              {
+                "number": 839,
+                "title": "Crimea",
+                "state": "open",
+                "url": "https://github.com/nvkelso/natural-earth-vector/issues/839"
+              },
+              {
+                "number": 987,
+                "title": "Correct Crimea’s administrative regions (Sevastopol, Autonomous Republic of Crimea) to Ukraine in admin_1 shapefile",
+                "state": "open",
+                "url": "https://github.com/nvkelso/natural-earth-vector/issues/987"
+              },
+              {
+                "number": 968,
+                "title": "Why the hell is Crimea russian?",
+                "state": "open",
+                "url": "https://github.com/nvkelso/natural-earth-vector/issues/968"
+              },
+              {
+                "number": 949,
+                "title": "The Crimea should be a part of Ukraine.",
+                "state": "open",
+                "url": "https://github.com/nvkelso/natural-earth-vector/issues/949"
+              },
+              {
+                "number": 838,
+                "title": "Crimea is reported as the Russian territory",
+                "state": "open",
+                "url": "https://github.com/nvkelso/natural-earth-vector/issues/838"
+              },
+              {
+                "number": 844,
+                "title": "Crimea is part of Ukraine, not Russia!",
+                "state": "open",
+                "url": "https://github.com/nvkelso/natural-earth-vector/issues/844"
+              },
+              {
+                "number": 791,
+                "title": "Consistency of ISO worldview (e.g. Crimea)",
+                "state": "open",
+                "url": "https://github.com/nvkelso/natural-earth-vector/issues/791"
+              },
+              {
+                "number": 986,
+                "title": "Correct Crimea’s sovereignty to Ukraine in admin_0 shapefile",
+                "state": "open",
+                "url": "https://github.com/nvkelso/natural-earth-vector/issues/986"
+              },
+              {
+                "number": 967,
+                "title": "CRIMEA shouldnt be part of Russia - please change it",
+                "state": "open",
+                "url": "https://github.com/nvkelso/natural-earth-vector/issues/967"
+              }
+            ]
+          },
+          {
+            "name": "npm — JavaScript visualization ecosystem",
+            "category": "propagation",
+            "ecosystem": "javascript_npm",
+            "source_url": "https://api.npmjs.org/downloads/point/last-week/",
+            "status": "incorrect",
+            "detail": "Combined weekly npm downloads of JavaScript visualization libraries that consume Natural Earth as their country-borders source: 30,781,234. Every one of these inherits Natural Earth's Crimea-as-Russia classification by default. Highcharts is the single exception: it ships a deliberate override correcting Crimea to Ukraine in its TopoJSON bundles.",
+            "packages": [
+              {
+                "package": "d3-geo",
+                "description": "D3 geographic projections",
+                "weekly_downloads": 13144791
+              },
+              {
+                "package": "leaflet",
+                "description": "Leaflet interactive maps",
+                "weekly_downloads": 3848082
+              },
+              {
+                "package": "topojson-client",
+                "description": "TopoJSON client (d3)",
+                "weekly_downloads": 3615248
+              },
+              {
+                "package": "echarts",
+                "description": "Apache ECharts",
+                "weekly_downloads": 2177967
+              },
+              {
+                "package": "highcharts",
+                "description": "Highcharts — the only major library with a deliberate Crimea override",
+                "weekly_downloads": 1961007
+              },
+              {
+                "package": "plotly.js",
+                "description": "Plotly.js",
+                "weekly_downloads": 957584
+              },
+              {
+                "package": "geojson-vt",
+                "description": "GeoJSON vector tiles (Mapbox)",
+                "weekly_downloads": 4562282
+              },
+              {
+                "package": "react-simple-maps",
+                "description": "react-simple-maps",
+                "weekly_downloads": 514273
+              }
+            ],
+            "total_weekly_downloads": 30781234
+          },
+          {
+            "name": "PyPI — Python geo / visualization ecosystem",
+            "category": "propagation",
+            "ecosystem": "python_pypi",
+            "source_url": "bigquery-public-data.pypi.file_downloads (primary); https://pypistats.org/ (fallback)",
+            "status": "incorrect",
+            "detail": "Combined weekly PyPI downloads of Python libraries in the Natural Earth chain: 34,084,085. Two layers: high-level libraries (geopandas / cartopy / folium / mapclassify / basemap / plotnine) at 6,840,269 weekly; and the C++ binding layer (shapely / pyproj / pyogrio / fiona / rasterio / gdal) at 27,243,816 weekly. The C++ binding layer is the universal Python entry point to GDAL, PROJ, and GEOS — every higher-level Python geo library (including geopandas, cartopy, and folium) goes through it. shapely alone, at ~15M weekly downloads, exceeds the entire npm visualization ecosystem combined.",
+            "packages_high_level": [
+              {
+                "package": "cartopy",
+                "description": "Cartopy — Python cartographic library",
+                "weekly_downloads": 259290,
+                "source": "bigquery_public_pypi"
+              },
+              {
+                "package": "geopandas",
+                "description": "GeoPandas — PR #2670 fixed the Crimea inheritance in v0.12.2",
+                "weekly_downloads": 4770808,
+                "source": "bigquery_public_pypi"
+              },
+              {
+                "package": "folium",
+                "description": "folium — Python wrapper for Leaflet.js",
+                "weekly_downloads": 761415,
+                "source": "bigquery_public_pypi"
+              },
+              {
+                "package": "mapclassify",
+                "description": "mapclassify — choropleth map classification",
+                "weekly_downloads": 169687,
+                "source": "bigquery_public_pypi"
+              },
+              {
+                "package": "basemap",
+                "description": "basemap — matplotlib mapping toolkit (deprecated, still in use)",
+                "weekly_downloads": 23807,
+                "source": "bigquery_public_pypi"
+              },
+              {
+                "package": "plotnine",
+                "description": "plotnine — ggplot2-style plotting for Python",
+                "weekly_downloads": 855262,
+                "source": "bigquery_public_pypi"
+              }
+            ],
+            "packages_cpp_bindings": [
+              {
+                "package": "shapely",
+                "description": "shapely — GEOS C++ geometry binding (the universal Python geometry library)",
+                "weekly_downloads": 15219220,
+                "source": "bigquery_public_pypi"
+              },
+              {
+                "package": "pyproj",
+                "description": "pyproj — PROJ coordinate transformation binding",
+                "weekly_downloads": 5931222,
+                "source": "bigquery_public_pypi"
+              },
+              {
+                "package": "pyogrio",
+                "description": "pyogrio — newer GDAL/OGR vector binding (faster than fiona)",
+                "weekly_downloads": 3755579,
+                "source": "bigquery_public_pypi"
+              },
+              {
+                "package": "fiona",
+                "description": "fiona — original GDAL/OGR vector binding for Python",
+                "weekly_downloads": 1360931,
+                "source": "bigquery_public_pypi"
+              },
+              {
+                "package": "rasterio",
+                "description": "rasterio — GDAL raster I/O binding",
+                "weekly_downloads": 887582,
+                "source": "bigquery_public_pypi"
+              },
+              {
+                "package": "gdal",
+                "description": "gdal — bare GDAL Python binding",
+                "weekly_downloads": 89282,
+                "source": "bigquery_public_pypi"
+              }
+            ],
+            "high_level_total": 6840269,
+            "cpp_bindings_total": 27243816,
+            "total_weekly_downloads": 34084085
+          },
+          {
+            "name": "CRAN — R geo / visualization ecosystem",
+            "category": "propagation",
+            "ecosystem": "r_cran",
+            "source_url": "https://cranlogs.r-pkg.org/downloads/total/last-week/",
+            "status": "incorrect",
+            "detail": "Combined weekly CRAN downloads of R geo libraries that consume Natural Earth: 152,192. The direct consumer is `rnaturalearth` (+ `rnaturalearthdata`), which is then pulled in by `sf` (R's spatial core), `tmap`, `ggmap`, and nearly every R mapping tutorial and course. The R ecosystem has not corrected Crimea.",
+            "packages": [
+              {
+                "package": "rnaturalearth",
+                "description": "rnaturalearth — the R binding for Natural Earth (direct consumer)",
+                "weekly_downloads": 8751
+              },
+              {
+                "package": "rnaturalearthdata",
+                "description": "rnaturalearthdata — rnaturalearth's bundled data",
+                "weekly_downloads": 5740
+              },
+              {
+                "package": "sf",
+                "description": "sf — simple features, R's spatial core (binds GDAL/GEOS/PROJ)",
+                "weekly_downloads": 87359
+              },
+              {
+                "package": "tmap",
+                "description": "tmap — thematic map visualization for R",
+                "weekly_downloads": 6624
+              },
+              {
+                "package": "ggmap",
+                "description": "ggmap — spatial ggplot2 extension",
+                "weekly_downloads": 4479
+              },
+              {
+                "package": "leaflet",
+                "description": "leaflet — R binding for Leaflet.js",
+                "weekly_downloads": 39239
+              }
+            ],
+            "total_weekly_downloads": 152192
+          },
+          {
+            "name": "Rust crates.io — Rust geo ecosystem",
+            "category": "propagation",
+            "ecosystem": "rust_cratesio",
+            "source_url": "https://crates.io/api/v1/crates/",
+            "status": "incorrect",
+            "detail": "Combined weekly Rust crate downloads in the Natural Earth chain: ~667,166 (estimated as recent_90d / 13). The Rust geo ecosystem is small but growing fast — geo-types and geo are the geometry primitives, gdal binds the C++ GDAL library, and geozero provides zero-copy I/O. Used by Rust GIS tools, edge-compute geospatial services, and the emerging Rust map server stack.",
+            "crates": [
+              {
+                "crate": "geo-types",
+                "description": "geo-types — Rust geometry primitives",
+                "weekly_downloads": 255166,
+                "recent_90d_downloads": 3317162,
+                "lifetime_downloads": 17744185
+              },
+              {
+                "crate": "geo",
+                "description": "geo — Rust geo algorithms (uses geo-types)",
+                "weekly_downloads": 223642,
+                "recent_90d_downloads": 2907357,
+                "lifetime_downloads": 15108405
+              },
+              {
+                "crate": "geojson",
+                "description": "geojson — Rust GeoJSON I/O",
+                "weekly_downloads": 111521,
+                "recent_90d_downloads": 1449783,
+                "lifetime_downloads": 7825615
+              },
+              {
+                "crate": "gdal",
+                "description": "gdal — Rust GDAL/OGR binding",
+                "weekly_downloads": 63883,
+                "recent_90d_downloads": 830486,
+                "lifetime_downloads": 3207398
+              },
+              {
+                "crate": "geozero",
+                "description": "geozero — Rust zero-copy geo I/O (with GDAL backend)",
+                "weekly_downloads": 8875,
+                "recent_90d_downloads": 115375,
+                "lifetime_downloads": 829022
+              },
+              {
+                "crate": "proj",
+                "description": "proj — Rust PROJ coordinate-transform binding",
+                "weekly_downloads": 4079,
+                "recent_90d_downloads": 53027,
+                "lifetime_downloads": 560567
+              }
+            ],
+            "total_weekly_downloads": 667166
+          },
+          {
+            "name": "NuGet — .NET geo ecosystem",
+            "category": "propagation",
+            "ecosystem": "dotnet_nuget",
+            "source_url": "https://azuresearch-usnc.nuget.org/query",
+            "status": "incorrect",
+            "detail": "Cumulative .NET / NuGet downloads of geo packages in the Natural Earth chain: 190,182,977 lifetime downloads across the probed set. NetTopologySuite alone (the JTS port that Entity Framework Core uses as its spatial backend) accounts for the bulk — every .NET application that handles geographic data goes through it. NuGet's public API does not expose per-week download counts, so we report cumulative lifetime totals here.",
+            "packages": [
+              {
+                "package": "NetTopologySuite",
+                "description": "NetTopologySuite — JTS port, Entity Framework Core spatial backend",
+                "lifetime_downloads": 187258636
+              },
+              {
+                "package": "GDAL",
+                "description": "GDAL — official .NET binding",
+                "lifetime_downloads": 1018051
+              },
+              {
+                "package": "Esri.ArcGISRuntime",
+                "description": "Esri ArcGIS Runtime — official .NET SDK",
+                "lifetime_downloads": 1906290
+              }
+            ],
+            "lifetime_downloads_total": 190182977
+          },
+          {
+            "name": "Documented adjacent findings",
+            "category": "documented",
+            "status": "documented",
+            "source_url": "multiple (see README)",
+            "detail": "Highcharts deliberate override + GeoPandas PR #2670 + 2022 consumer-vs-developer bifurcation — documented from public sources, not live-probed by this scan.",
+            "items": [
+              {
+                "key": "highcharts_override",
+                "description": "Highcharts is the only major visualization library in the npm ecosystem that ships a deliberate override of Natural Earth's Crimea classification. Their TopoJSON bundles for Europe and the World explicitly re-assign Crimea to Ukraine. No other major npm visualization library does this.",
+                "source": "https://code.highcharts.com/mapdata/"
+              },
+              {
+                "key": "geopandas_fix",
+                "description": "GeoPandas merged pull request #2670 in version 0.12.2 (late 2022) to correct the Natural Earth dependency behaviour for Crimea. Downstream GeoPandas users therefore get the corrected answer if they upgrade past 0.12.2.",
+                "source": "https://github.com/geopandas/geopandas/pull/2670"
+              },
+              {
+                "key": "bifurcation_2022",
+                "description": "After Russia's February 2022 full-scale invasion, consumer-facing platforms updated their Crimea classifications while developer infrastructure did not. Consumer side changed: Apple Maps (Crimea as Ukraine for non-Russian users), TikTok (Ukraine region separated from Russia), Booking.com / Airbnb / Netflix / Spotify (exited Russia). Developer infrastructure unchanged: Natural Earth SOVEREIGNT still Russia, Google Maps still shows disputed dashed border (unchanged since 2014), IANA tzdata zone1970.tab still 'RU,UA' (Russia first), and every major visualization library except Highcharts inherits the Natural Earth default.",
+                "source": "documented from press + GitHub history"
+              }
+            ]
+          }
+        ],
+        "key_findings": [
+          "Natural Earth's admin_1_states_provinces.json carries internally contradictory metadata for Crimea and Sevastopol. Across the two rows combined, 14 fields assert Russian sovereignty (admin, adm0_a3, adm1_code, iso_a2, sov_a3, gu_a3, geonunit) and 14 fields carry correct Ukrainian metadata in the SAME ROWS — iso_3166_2=UA-43/UA-40, FIPS codes starting with UP (= Ukraine in the FIPS standard), GeoNames names in Ukrainian form ('Avtonomna Respublika Krym', \"Misto Sevastopol'\"), and Yahoo WoE labels that literally say 'Crimea, UA, Ukraine'. The sovereignty assignment is not upstream inheritance failure — Natural Earth has the correct information in adjacent fields of its own record.",
+          "Natural Earth's admin_0_map_units.json classifies the polygon containing Simferopol (44.95 N, 34.10 E) as SOVEREIGNT='Russia' with no NOTE_ADM0 footnote and no NOTE_BRK disputed flag. The top-level country polygon silently incorporates Crimea into Russia.",
+          "nvkelso/natural-earth-vector has 18 currently open issues mentioning Crimea, and 33 total items (issues + PRs, open and closed) over the repository's history. None of the open issues have been acted on by the maintainers.",
+          "Cross-ecosystem propagation measurement: combined live weekly downloads of libraries that consume Natural Earth across four package ecosystems — JavaScript (npm), Python (PyPI), R (CRAN), and Rust (crates.io) — total ~65,684,677. The Python total includes the C++ binding layer (shapely, pyproj, fiona, pyogrio, rasterio, gdal) that is the universal Python entry point to GDAL/PROJ/GEOS — every higher-level Python geo library goes through it. shapely alone (~15M weekly) is bigger than the entire npm visualization ecosystem combined. .NET (NuGet) doesn't expose weekly stats but NetTopologySuite alone has 190,182,977 cumulative lifetime downloads — it is the spatial backend of Entity Framework Core, used by every .NET application that handles geographic data. The chain also extends into desktop GIS (QGIS, ArcGIS, GeoServer, PostGIS, MapServer, GRASS), enterprise BI (Tableau, Power BI), and Java (GeoTools), Go, Julia, and MATLAB — not live-probed but all documented. The contribution of this pipeline is measurement of the scale, not discovery of the issue — the issue has been publicly raised for over a decade. The scale across the full ecosystem has not been measured before.",
+          "The deeper structural finding: the chain is rooted in GDAL/PROJ/GEOS — the C++ universal geospatial library stack that nearly every other ecosystem reads through. Python's geopandas → fiona → libgdal. R's sf → libgdal. QGIS, PostGIS, MapServer, GeoTools (Java), GDAL.NET, Rust's gdal-rs — all of them are language bindings on top of the same C++ implementation. Natural Earth distributes shapefiles, GDAL is the universal shapefile reader, and every geospatial application not written in JavaScript goes through GDAL to read them. The propagation chain is not 'JS / Python / R' as parallel ecosystems — it is one tree rooted at GDAL with language bindings as branches.",
+          "Highcharts (~2 million weekly npm downloads) is the only major visualization library that ships a deliberate override: its TopoJSON bundles re-assign Crimea to Ukraine. Every other library in the ecosystem ships the Natural Earth default unchanged. Existence proof that overriding is technically possible, and an editorial decision that 99%+ of the ecosystem has declined to make.",
+          "2022 bifurcation: after Russia's February 2022 full-scale invasion, consumer-facing platforms updated their Crimea classifications (Apple Maps, TikTok, Booking / Airbnb / Netflix / Spotify exited Russia). Developer infrastructure did not — Natural Earth SOVEREIGNT still Russia, Google Maps still shows a disputed dashed border unchanged since 2014, IANA tzdata still 'RU,UA' with Russia first, every major visualization library except Highcharts still inherits Natural Earth. The consumer side moved; the infrastructure side did not. That is the regulation gap measured across time."
+        ],
+        "limitations": [
+          "Natural Earth is fetched from a public mirror (martynafford/natural-earth-geojson), which tracks the upstream repository but may lag by days. The authoritative upstream is nvkelso/natural-earth-vector.",
+          "Point-in-polygon test uses a single representative coordinate (Simferopol center). A full region test would enumerate every administrative polygon within the peninsula.",
+          "GitHub Search API counts 'crimea' keyword matches including historical discussions, not only issues explicitly requesting sovereignty correction. Manual inspection confirms the open set is dominated by correction requests.",
+          "npm download counts are weekly snapshots and fluctuate; the total represents the state at scan time (recorded in manifest `generated` timestamp).",
+          "The Highcharts override is documented from public Highcharts map-bundle files; we did not diff Highcharts' TopoJSON against Natural Earth's in this run.",
+          "2022 bifurcation items (Apple / TikTok / Booking / Airbnb / Netflix / Spotify changes) are documented from press reporting, not live-probed by this scan. The associated entries are labelled 'documented' in the manifest and should not be cited as freshly verified."
+        ]
+      },
+      "available": true
     },
     "weather": {
       "name": "weather",
