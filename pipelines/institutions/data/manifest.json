@@ -1,0 +1,408 @@
+{
+  "pipeline": "institutions",
+  "version": "2.0",
+  "generated": "2026-04-08T05:41:29+00:00",
+  "method": "live_http + ofac_csv + eurlex_docs + loc_api + ror_api + openalex_api",
+  "summary": {
+    "total_systems": 10,
+    "correct": 9,
+    "ambiguous": 1,
+    "incorrect": 0,
+    "unreachable": 0,
+    "na": 0,
+    "ofac_crimea_pob_ukraine": 25,
+    "ofac_crimea_pob_russia": 5,
+    "ror_institutions_total": 5,
+    "ror_institutions_ua": 4,
+    "ror_institutions_ru": 1,
+    "loc_subject_headings_ua": 4,
+    "loc_subject_headings_ru_only": 4
+  },
+  "findings": [
+    {
+      "name": "OFAC SDN List",
+      "category": "legislation_sanctions",
+      "status": "correct",
+      "source_url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV",
+      "detail": "OFAC SDN has 18,699 total entries. 51 mention a Crimean city, 31 record a place-of-birth. 25 POBs are classified 'Ukraine'; 5 classified 'Russia' (for individuals born in mainland Russia, not Crimea). No Crimean POB is recorded as 'Simferopol, Russia'.",
+      "total_sdn": 18699,
+      "crimea_entries": 51,
+      "with_pob": 31,
+      "pob_classification": {
+        "Ukraine": 25,
+        "Russia": 5,
+        "Crimea (no country)": 1
+      },
+      "sample_entries": [
+        {
+          "name": "16678",
+          "type": "CHALIY, Aleksei Mikhailovich",
+          "program": "individual",
+          "pob": "Sevastopol, Ukraine",
+          "pob_label": "Ukraine"
+        },
+        {
+          "name": "16715",
+          "type": "ZIMA, Pyotr Anatoliyovych",
+          "program": "individual",
+          "pob": "Russia",
+          "pob_label": "Russia"
+        },
+        {
+          "name": "16736",
+          "type": "CHERNOMORNEFTEGAZ",
+          "program": "-0- ",
+          "pob": "",
+          "pob_label": ""
+        },
+        {
+          "name": "16753",
+          "type": "TEMIRGALIEV, Rustam Ilmirovich",
+          "program": "individual",
+          "pob": "Ulan-Ude, Russia",
+          "pob_label": "Russia"
+        },
+        {
+          "name": "16755",
+          "type": "ZHEREBTSOV, Yuriy Gennadievych",
+          "program": "individual",
+          "pob": "Odessa, Ukraine",
+          "pob_label": "Ukraine"
+        },
+        {
+          "name": "16757",
+          "type": "MEDVEDEV, Valery Kirillovich",
+          "program": "individual",
+          "pob": "Russia",
+          "pob_label": "Russia"
+        },
+        {
+          "name": "16759",
+          "type": "MALYSHEV, Mikhail Grigorevich",
+          "program": "individual",
+          "pob": "Simferopol, Crimea",
+          "pob_label": "Crimea (no country)"
+        },
+        {
+          "name": "16760",
+          "type": "TSEKOV, Serhiy Pavlovich",
+          "program": "individual",
+          "pob": "Simferopol, Crimea, Ukraine",
+          "pob_label": "Ukraine"
+        },
+        {
+          "name": "16774",
+          "type": "BELAVENCEV, Oleg Evgenyevich",
+          "program": "individual",
+          "pob": "",
+          "pob_label": ""
+        },
+        {
+          "name": "16934",
+          "type": "MENYAILO, Sergei Ivanovich",
+          "program": "individual",
+          "pob": "Alagir, North Ossetia, Russia",
+          "pob_label": "Russia"
+        }
+      ]
+    },
+    {
+      "name": "UK Legislation (legislation.gov.uk)",
+      "category": "legislation_sanctions",
+      "status": "correct",
+      "source_url": "https://www.legislation.gov.uk/search?text=crimea",
+      "detail": "20 UK legal acts mention 'Crimea'. Every act frames it as sanctions against Russia over occupied Ukrainian territory, starting with 'The Russia, Crimea and Sevastopol (Sanctions) Order 2014' and subsequent amendments.",
+      "total_acts": 20,
+      "sample_titles": [
+        "The Russia, Crimea and Sevastopol (Sanctions) (Overseas Territories) Order 2014 (revoked)",
+        "Council Decision (CFSP) 2015/1524 of 14 September 2015 amending Decision 2014/145/CFSP concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "Council Implementing Regulation (EU) 2015/1514 of 14 September 2015 implementing Regulation (EU) No 269/2014 concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "The Export Control (Russia, Crimea and Sevastopol Sanctions) Order 2014 (revoked)",
+        "The Russia (Sanctions) (EU Exit) (Amendment) (No. 7) Regulations 2022",
+        "Council Implementing Regulation (EU) 2017/1549 of 14 September 2017 implementing Regulation (EU) No 269/2014 concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "Council Decision (CFSP) 2017/1561 of 14 September 2017 amending Decision 2014/145/CFSP concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "Council Implementing Regulation (EU) 2016/353 of 10 March 2016 implementing Regulation (EU) No 269/2014 concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "Council Decision (CFSP) 2016/359 of 10 March 2016 amending Decision 2014/145/CFSP concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "Council Implementing Regulation (EU) 2017/437 of 13 March 2017 implementing Regulation (EU) No 269/2014 concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "Council Decision (CFSP) 2017/445 of 13 March 2017 amending Decision 2014/145/CFSP concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "Council Regulation (EU) No 1351/2014 of 18 December 2014 amending Regulation (EU) No 692/2014 concerning restrictive measures in response to the illegal annexation of Crimea and Sevastopol",
+        "Council Implementing Regulation (EU) 2016/1661 of 15 September 2016 implementing Regulation (EU) No 269/2014 concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "Council Decision (CFSP) 2016/1671 of 15 September 2016 amending Decision 2014/145/CFSP concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "Council Decision 2014/145/CFSP of 17 March 2014 concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "The Export Control (Russia, Crimea and Sevastopol Sanctions) (Amendment) Order 2015 (revoked)",
+        "Council Implementing Regulation (EU) No 961/2014 of 8 September 2014 implementing Regulation (EU) No 269/2014 concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "Council Implementing Regulation (EU) No 810/2014 of 25 July 2014 implementing Regulation (EU) No 269/2014 concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine",
+        "Council Regulation (EU) No 825/2014 of 30 July 2014 amending Regulation (EU) No 692/2014 concerning restrictions on the import into the Union of goods originating in Crimea or Sevastopol, in response to the illegal annexation of Crimea and Sevastopol",
+        "Council Decision 2014/658/CFSP of 8 September 2014 amending Decision 2014/145/CFSP concerning restrictive measures in respect of actions undermining or threatening the territorial integrity, sovereignty and independence of Ukraine"
+      ]
+    },
+    {
+      "name": "EU EUR-Lex",
+      "category": "legislation_sanctions",
+      "status": "correct",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692",
+      "detail": "7 primary EU legal acts since 2014 consistently classify Crimea as illegally annexed Ukrainian territory. Council Regulation 692/2014 prohibits imports 'originating in Crimea or Sevastopol' — framing both as occupied territory, not Russian. Annually renewed through 12 subsequent Council Decisions; currently in force.",
+      "primary_acts": [
+        {
+          "celex": "32014D0145",
+          "date": "2014-03-17",
+          "title": "Council Decision 2014/145/CFSP — restrictive measures re territorial integrity of Ukraine"
+        },
+        {
+          "celex": "32014R0269",
+          "date": "2014-03-17",
+          "title": "Council Regulation (EU) No 269/2014 — asset freezes re Ukraine sovereignty"
+        },
+        {
+          "celex": "32014D0386",
+          "date": "2014-06-23",
+          "title": "Council Decision 2014/386/CFSP — restrictions on goods from Crimea/Sevastopol"
+        },
+        {
+          "celex": "32014R0692",
+          "date": "2014-06-23",
+          "title": "Council Regulation (EU) No 692/2014 — import restrictions from Crimea/Sevastopol"
+        },
+        {
+          "celex": "32014R0825",
+          "date": "2014-07-30",
+          "title": "Council Regulation (EU) No 825/2014 — amending Crimea import restrictions"
+        },
+        {
+          "celex": "32014R1351",
+          "date": "2014-12-18",
+          "title": "Council Regulation (EU) No 1351/2014 — extending Crimea restrictions"
+        },
+        {
+          "celex": "32022R2065",
+          "date": "2022-10-19",
+          "title": "Digital Services Act — Art 34 systemic risk (applicable to VLOPs showing Crimea)"
+        }
+      ],
+      "annual_renewals_count": 12
+    },
+    {
+      "name": "ICAO Doc 7910",
+      "category": "legislation_sanctions",
+      "status": "correct",
+      "source_url": "https://store.icao.int/en/location-indicators-doc-7910",
+      "detail": "ICAO Doc 7910 maintains Ukrainian prefixes (UKFF, UKFB) for Crimean airports. Russia uses alternative internal codes (URFF for Simferopol) but these are not recognized by ICAO and do not appear in international flight planning systems.",
+      "airports": [
+        {
+          "name": "Simferopol International Airport",
+          "iata": "SIP",
+          "icao": "UKFF",
+          "prefix": "UK (Ukraine)",
+          "russia_internal": "URFF (not ICAO-recognized)"
+        },
+        {
+          "name": "Sevastopol Belbek Airport",
+          "iata": "UKS",
+          "icao": "UKFB",
+          "prefix": "UK (Ukraine)",
+          "russia_internal": "XRFF (not ICAO-recognized)"
+        }
+      ]
+    },
+    {
+      "name": "ITU E.164",
+      "category": "legislation_sanctions",
+      "status": "correct",
+      "source_url": "https://www.itu.int/rec/T-REC-E.164",
+      "detail": "ITU has never reassigned Crimean numbering blocks from Ukraine to Russia. +380-65x (Crimea) and +380-692 (Sevastopol) remain in the Ukrainian numbering plan registered with ITU. Russia created +7-365x and +7-869x unilaterally in 2014 — neither was submitted to ITU for assignment.",
+      "ukraine_assigned": {
+        "+380-65x": "Crimea (ITU-registered Ukrainian numbering plan)",
+        "+380-692": "Sevastopol (ITU-registered Ukrainian numbering plan)"
+      },
+      "russia_unilateral": {
+        "+7-365x": "Crimea (unilateral Russian assignment, NOT ITU-registered)",
+        "+7-869x": "Sevastopol (unilateral Russian assignment, NOT ITU-registered)"
+      },
+      "note": "Google libphonenumber has adopted the Russian +7-978 prefix as canonical in its validation metadata, bypassing the ITU assignment. This is the 'Standards Silencing' pattern — see the tech_infrastructure pipeline for the measurement."
+    },
+    {
+      "name": "ISO 3166-2 / CLDR",
+      "category": "legislation_sanctions",
+      "status": "correct",
+      "source_url": "https://www.iso.org/obp/ui/#iso:code:3166:UA",
+      "detail": "ISO 3166-2 lists Crimea exclusively under Ukraine (UA-43 'Avtonomna Respublika Krym' and UA-40 'Sevastopol'). Russia's ISO 3166-2 entry has 83 federal subdivisions and zero Crimea entries — there is no RU-CR code. Verified directly from the Unicode CLDR subdivisions.xml file, which is the technical bridge that brings ISO 3166 data into every browser and OS. In November 2014 the ISO 3166 Maintenance Agency went the opposite way and renamed UA-43 from 'Respublika Krym' to 'Avtonomna Respublika Krym', explicitly reinforcing the Ukrainian autonomous-republic framing.",
+      "ukraine_entries": {
+        "UA-43": "Avtonomna Respublika Krym (Autonomous Republic of Crimea)",
+        "UA-40": "Sevastopol"
+      },
+      "russia_entries": {
+        "total_subdivisions": 83,
+        "crimea_codes": "none — no RU-CR, no RU-SEV"
+      },
+      "cldr_source": "https://github.com/unicode-org/cldr/blob/main/common/supplemental/subdivisions.xml",
+      "sap_confirmation": "https://userapps.support.sap.com/sap/support/knowledge/en/2518366"
+    },
+    {
+      "name": "Library of Congress LCSH",
+      "category": "library_of_congress",
+      "status": "ambiguous",
+      "source_url": "https://id.loc.gov/authorities/subjects.html",
+      "detail": "Of 47 LCSH subject headings returned for 'Crimea', 4 explicitly mention Ukraine and 4 mention Russia without Ukraine. The canonical form is 'Crimea (Ukraine)', and a specific subject heading 'Crimea (Ukraine)--History--Russian occupation, 2014-' classifies the 2014 events as occupation.",
+      "total_headings": 47,
+      "ukraine_mentions": 4,
+      "russia_only_mentions": 4,
+      "key_headings": [
+        "Crimean Mountains (Ukraine)",
+        "Krymsʹka atomna elektrostant︠s︡ii︠a︡ (Ukraine)",
+        "Crimean War, 1853-1856--Campaigns--Ukraine",
+        "Crimean War, 1853-1856--Campaigns--Ukraine--Congresses"
+      ]
+    },
+    {
+      "name": "Library of Congress catalog",
+      "category": "library_of_congress",
+      "status": "correct",
+      "source_url": "https://www.loc.gov/search/?q=crimea",
+      "detail": "Of 100 books returned by searching the LoC catalog for 'Crimea', 62 are classified under Ukraine, 2 under Russia, 13 under both, and 23 under neither.",
+      "total_books": 100,
+      "by_label": {
+        "ukraine": 62,
+        "both": 13,
+        "neither": 23,
+        "russia": 2
+      }
+    },
+    {
+      "name": "ROR (Research Organization Registry)",
+      "category": "research_registry",
+      "status": "correct",
+      "source_url": "https://ror.org/",
+      "detail": "ROR classifies 4/5 Crimean academic institutions as country_code=UA and 1/5 as RU. Every Crimean institution except the Research Institute of Agriculture of Crimea is registered as Ukrainian. This contradicts the way the same institutions' papers are indexed in OpenAlex/CrossRef with 'Republic of Crimea, Russia' affiliations — see the academic pipeline.",
+      "total_institutions": 5,
+      "ua_count": 4,
+      "ru_count": 1,
+      "institutions": [
+        {
+          "name": "Research Institute of Agriculture of Crimea",
+          "ror_id": "https://ror.org/00dqsh274",
+          "country": "Russia",
+          "country_code": "RU",
+          "city": "Kiyevskoye",
+          "status": "active"
+        },
+        {
+          "name": "Crimea University of Culture Art and Tourism",
+          "ror_id": "https://ror.org/02qst3a08",
+          "country": "Ukraine",
+          "country_code": "UA",
+          "city": "Simferopol",
+          "status": "active"
+        },
+        {
+          "name": "Crimea State Medical University named after S. I. Georgievsky",
+          "ror_id": "https://ror.org/04qfewz28",
+          "country": "Ukraine",
+          "country_code": "UA",
+          "city": "Simferopol",
+          "status": "active"
+        },
+        {
+          "name": "Sevastopol National Technical University",
+          "ror_id": "https://ror.org/053mxw461",
+          "country": "Ukraine",
+          "country_code": "UA",
+          "city": "Sebastopol",
+          "status": "active"
+        },
+        {
+          "name": "Sevastopol National University of Nuclear Energy and Industry",
+          "ror_id": "https://ror.org/01rd41j61",
+          "country": "Ukraine",
+          "country_code": "UA",
+          "city": "Sebastopol",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "name": "OpenAlex institutions",
+      "category": "research_registry",
+      "status": "correct",
+      "source_url": "https://api.openalex.org/institutions",
+      "detail": "OpenAlex classifies 4/5 Crimean institutions as UA and 1/5 as RU. OpenAlex inherits its country code from ROR for most institutions, so these numbers track the ROR registry state.",
+      "total_institutions": 5,
+      "ua_count": 4,
+      "ru_count": 1,
+      "institutions": [
+        {
+          "name": "Research Institute of Agriculture of Crimea",
+          "openalex_id": "https://openalex.org/I4210092324",
+          "country_code": "RU",
+          "city": "Kiyevskoye",
+          "works_count": 3472,
+          "cited_by_count": 32501
+        },
+        {
+          "name": "Crimea State Medical University named after S. I. Georgievsky",
+          "openalex_id": "https://openalex.org/I4210151130",
+          "country_code": "UA",
+          "city": "Simferopol",
+          "works_count": 365,
+          "cited_by_count": 1775
+        },
+        {
+          "name": "Crimea University of Culture Art and Tourism",
+          "openalex_id": "https://openalex.org/I4210110628",
+          "country_code": "UA",
+          "city": "Simferopol",
+          "works_count": 87,
+          "cited_by_count": 78
+        },
+        {
+          "name": "Sevastopol National Technical University",
+          "openalex_id": "https://openalex.org/I74776132",
+          "country_code": "UA",
+          "city": "Sebastopol",
+          "works_count": 2360,
+          "cited_by_count": 14696
+        },
+        {
+          "name": "Sevastopol National University of Nuclear Energy and Industry",
+          "openalex_id": "https://openalex.org/I227854842",
+          "country_code": "UA",
+          "city": "Sebastopol",
+          "works_count": 55,
+          "cited_by_count": 264
+        }
+      ]
+    }
+  ],
+  "findings_by_category": {
+    "legislation_sanctions": [
+      "OFAC SDN List",
+      "UK Legislation (legislation.gov.uk)",
+      "EU EUR-Lex",
+      "ICAO Doc 7910",
+      "ITU E.164",
+      "ISO 3166-2 / CLDR"
+    ],
+    "library_of_congress": [
+      "Library of Congress LCSH",
+      "Library of Congress catalog"
+    ],
+    "research_registry": [
+      "ROR (Research Organization Registry)",
+      "OpenAlex institutions"
+    ]
+  },
+  "key_findings": [
+    "9 of 10 institutional systems classify Crimea as Ukrainian territory. The regulation gap documented in the rest of this audit is not a failure of the legal or institutional layer — every authoritative system that classifies Crimea gets it right. The gap exists in the downstream technical infrastructure that ignores these classifications.",
+    "OFAC SDN list: 31 Crimean place-of-birth records, 25 classified as Ukraine, 5 as Russia (for individuals born in mainland Russia, not Crimea). OFAC's Crimea sanctions program is titled Executive Order 13685 'Crimea Region of Ukraine' — the program name itself is a sovereignty statement.",
+    "ROR + OpenAlex: 4 of 5 Crimean academic institutions registered as UA, 1 as RU. The one RU-registered institution (Research Institute of Agriculture of Crimea) is also the institution that produces the largest number of 'Republic of Crimea, Russia' papers in OpenAlex — see the academic pipeline for the paper-level finding.",
+    "ISO 3166-2 has zero Crimean codes under Russia (RU has 83 federal subdivisions, none of them include Crimea). In November 2014 the ISO 3166 Maintenance Agency renamed UA-43 from 'Respublika Krym' to 'Avtonomna Respublika Krym', explicitly reinforcing the Ukrainian autonomous-republic framing.",
+    "ITU has not reassigned +380-65x from Ukraine to Russia. Russia created +7-365x and +7-978 unilaterally in 2014 — neither was submitted to ITU for assignment. ICAO Doc 7910 maintains UKFF and UKFB for Crimean airports; Russia's internal URFF code is not ICAO-recognized.",
+    "Library of Congress LCSH: 4 subject headings mention Ukraine, 4 mention Russia without Ukraine. The canonical form is 'Crimea (Ukraine)' and 'Crimea (Ukraine)--History--Russian occupation, 2014-' is an explicit US government library classification of the 2014 events as occupation."
+  ],
+  "limitations": [
+    "EU Financial Sanctions Database requires browser authentication (HTTP 403 on direct download); EU-side evidence is the EUR-Lex regulation text, not the database.",
+    "US Congress API requires a registered key; US legislation evidence is OFAC (which is live-fetched) plus documented acts.",
+    "ICAO Doc 7910 is published as a paid PDF; airport codes are cross-referenced with IATA and Wikipedia. An authoritative diff against the paid Doc 7910 would require purchase.",
+    "ISO 3166 sells the standard document; verification uses the Unicode CLDR mirror (the technical implementation used by every browser and OS) which is open-source.",
+    "ROR coverage of Crimean institutions is extensive but not exhaustive. Some smaller or newer institutions may be missing from the registry entirely, which is itself a form of invisibility not captured by a UA/RU count."
+  ]
+}

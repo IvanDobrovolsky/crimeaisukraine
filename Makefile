@@ -50,8 +50,9 @@ pipeline-wikipedia: ## Run Wikipedia + Wikidata pipeline (and rebuild master man
 	cd $(PIPELINES)/wikipedia && uv sync && uv run scan.py
 	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
 
-pipeline-institutions: ## Run institutional registries pipeline (LoC, ROR, OFAC, EU, ICAO, ITU, ISO)
+pipeline-institutions: ## Run institutional registries pipeline (OFAC, EU, UK, ICAO, ITU, ISO, LoC, ROR, OpenAlex; rebuilds master manifest)
 	cd $(PIPELINES)/institutions && uv sync && uv run scan.py
+	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
 
 pipeline-llm: ## Run LLM sovereignty audit (20+ models × 50 langs × 12 cities)
 	cd $(PIPELINES)/llm && uv sync && uv run scan.py
@@ -116,17 +117,10 @@ audit-academic-full: ## Full OpenAlex scan (91K papers, cursor pagination)
 
 audit-wikipedia: pipeline-wikipedia ## Deprecated alias for pipeline-wikipedia
 
-audit-loc: ## Library of Congress subject headings + catalog audit
-	$(PYTHON) $(SCRIPTS)/check_loc.py
-
-audit-ror: ## ROR + OpenAlex institutional classification audit
-	$(PYTHON) $(SCRIPTS)/check_ror.py
-
-audit-iso-eurlex: ## ISO 3166 + EUR-Lex + OFAC sanctions audit
-	$(PYTHON) $(SCRIPTS)/check_iso_eurlex.py
-
-audit-legislation: ## Full legislative audit (OFAC, UK, EU, ICAO, ITU, ISO)
-	$(PYTHON) $(SCRIPTS)/check_legislation.py
+audit-loc: pipeline-institutions ## Deprecated alias for pipeline-institutions
+audit-ror: pipeline-institutions ## Deprecated alias for pipeline-institutions
+audit-iso-eurlex: pipeline-institutions ## Deprecated alias for pipeline-institutions
+audit-legislation: pipeline-institutions ## Deprecated alias for pipeline-institutions
 
 verify-platforms: ## Re-verify all platform findings and fill evidence fields
 

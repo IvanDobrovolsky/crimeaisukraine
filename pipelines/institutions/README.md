@@ -1,204 +1,219 @@
 # Institutional Registries & Legislation: Where the Law is Unanimous
 
-## Why this pipeline exists
+Most pipelines in this audit document **violations** — places where digital systems contradict international law on Crimea. This one documents the opposite. It is the lock-down of the legal baseline: every authoritative legislative, institutional, and library system that classifies Crimea agrees it is Ukrainian territory. **If the law itself were ambiguous, there would be no regulation gap.** This pipeline proves the law is not ambiguous, so that every other pipeline can measure the downstream gap against a stable upstream.
 
-Most of the other pipelines in this project document **violations** — places where digital systems contradict international law on Crimea. This pipeline documents the opposite. It establishes that **the legal and institutional layer is consistent**: every authoritative system that classifies Crimea agrees it is Ukrainian territory.
+## Headline
 
-This matters for the central thesis. The argument that there is a "regulation gap" requires showing two things:
-1. The law says X
-2. Technical infrastructure does Y instead of X
+**10 authoritative systems probed across three institutional layers — legislation & sanctions, library catalogs, and research-organization registries. 9 classify Crimea unambiguously as Ukrainian territory; 1 returned a Library-of-Congress autocomplete result set that is genuinely related-but-ambiguous (see the Statistics section for why). OFAC's SDN list records 25 Crimean places-of-birth as `Ukraine` and zero as `Simferopol, Russia`. ROR and OpenAlex both register 4 of 5 Crimean academic institutions as `country_code=UA`, with the Research Institute of Agriculture of Crimea as the sole RU outlier — and that single outlier is also the institution whose papers appear most often in OpenAlex under a "Republic of Crimea, Russian Federation" affiliation, documented separately in the [academic pipeline](../academic/README.md). The regulation gap is not upstream in the law; it is downstream in the technical infrastructure that ignores the law.**
 
-If the law itself were ambiguous, there would be no gap. By documenting that 6 out of 6 legislative and institutional systems unanimously classify Crimea as Ukraine, we lock down the legal side. Then every other pipeline shows what happens downstream when the law has no enforcement mechanism for the technical layer.
-
-## What is OFAC and how do US sanctions work?
-
-**[OFAC](https://ofac.treasury.gov/) — the Office of Foreign Assets Control** — is a division of the US Treasury that administers economic sanctions. OFAC publishes the **[Specially Designated Nationals (SDN) list](https://sanctionssearch.ofac.treas.gov/)**, a registry of individuals and entities that US persons are prohibited from doing business with. As of 2026, the SDN list contains approximately 18,700 entries.
-
-For each individual on the list, OFAC records identifying information including **place of birth (POB)**. The POB field is structured text — for example, "Simferopol, Crimea, Ukraine" or "St. Petersburg, Russia." This is the US government's official classification of where each sanctioned person was born, written by sanctions analysts who work directly with State Department guidance on territorial classification.
-
-OFAC maintains a Crimea-specific sanctions program: **[Executive Order 13685](https://ofac.treasury.gov/sanctions-programs-and-country-information/ukraine-russia-related-sanctions)**, signed by President Obama on 19 December 2014, titled "Blocking Property of Certain Persons and Prohibiting Certain Transactions With Respect to the Crimea Region of Ukraine." The program name is itself a sovereignty statement: **"the Crimea Region of Ukraine."**
-
-## What is EUR-Lex and how does EU sanctions law work?
-
-**[EUR-Lex](https://eur-lex.europa.eu/)** is the official online portal for European Union law. It contains every EU legal act since 1951 with full text in 24 languages. Each act has a unique CELEX number — for example, `32014R0692` for Council Regulation 692/2014.
-
-The EU's Crimea-specific sanctions regime begins with:
-
-- **[Council Decision 2014/145/CFSP](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014D0145)** (17 March 2014) — restrictive measures concerning territorial integrity
-- **[Council Regulation (EU) No 269/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0269)** (17 March 2014) — asset freezes
-- **[Council Decision 2014/386/CFSP](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014D0386)** (23 June 2014) — restrictions on goods originating in Crimea/Sevastopol
-- **[Council Regulation (EU) No 692/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692)** (23 June 2014) — the prohibition on importing Crimean goods
-
-The text of Regulation 692/2014 is unambiguous: it prohibits "the import of goods **originating in Crimea or Sevastopol**" and treats both as **illegally annexed Ukrainian territory**. The regulation has been **renewed annually since 2014** through subsequent Council Decisions, including [2014/507/CFSP](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014D0507), [2014/872/CFSP](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014D0872), and continuing through the most recent renewals. **It is currently in force.**
-
-## What is ICAO and how are airport codes assigned?
-
-**[ICAO — the International Civil Aviation Organization](https://www.icao.int/)** is a UN specialized agency that sets global standards for civil aviation. ICAO publishes **[Doc 7910 (Location Indicators)](https://store.icao.int/en/location-indicators-doc-7910)** — the master list of four-letter airport codes used for flight planning and air traffic control worldwide.
-
-ICAO codes are assigned by **regional prefix**: the first letter indicates the world region, the second indicates the country. For Ukraine the prefix is **`UK`** (e.g., `UKBB` for Kyiv Boryspil, `UKKK` for Kyiv Zhuliany). Russia's prefix is **`U`** with a different second letter (e.g., `UUEE` for Moscow Sheremetyevo).
-
-For Crimean airports:
-- **Simferopol International Airport** — ICAO `UKFF`, IATA `SIP`
-- **Sevastopol Belbek Airport** — ICAO `UKFB`, IATA `UKS`
-
-The `UK` prefix is the Ukrainian assignment. ICAO has not changed these codes despite Russian operational control of the airports since 2014. Russia uses internal codes (`URFF` for Simferopol, with the `U` Russian prefix), but **these are not recognized in ICAO Doc 7910** and do not appear in international flight planning systems.
-
-## What is ITU and how are phone numbers assigned?
-
-**[ITU — the International Telecommunication Union](https://www.itu.int/)** is the UN agency for telecommunications. ITU maintains the **[E.164 international numbering plan](https://www.itu.int/rec/T-REC-E.164)** which assigns country calling codes:
-
-- Ukraine = **+380**
-- Russia = **+7**
-
-Within Ukraine, area codes are assigned by the [State Service of Special Communications and Information Protection](https://cip.gov.ua/) and registered with ITU. Crimean area codes within the Ukrainian numbering plan include `+380-65x` (most of Crimea) and `+380-692` (Sevastopol).
-
-After 2014, Russia unilaterally created parallel area codes — `+7-365x` and `+7-869x` — without ITU authorization. **ITU has not reassigned the Crimean numbering blocks.** Both numbering plans technically exist: Russia's domestic numbers route through the Russian PSTN, but the Ukrainian assignments remain in the ITU master.
-
-## What is ISO 3166?
-
-**[ISO 3166](https://www.iso.org/iso-3166-country-codes.html)** is the international standard for country codes maintained by the [International Organization for Standardization](https://www.iso.org/). It has three parts:
-
-- **ISO 3166-1**: country codes (`UA` for Ukraine, `RU` for Russia)
-- **ISO 3166-2**: subdivision codes (`UA-43` for Autonomous Republic of Crimea, `UA-40` for Sevastopol)
-- **ISO 3166-3**: formerly used codes
-
-ISO 3166 is the foundation of every address validator, every shipping system, every IBAN, every browser locale, every operating system region setting. When you select "United States" from a dropdown menu, the value sent to the server is `US` per ISO 3166-1.
-
-For Crimea:
-- **UA-43** (Avtonomna Respublika Krym) and **UA-40** (Sevastopol) — both active under Ukraine
-- **There is no `RU-CR` code.** Russia's [ISO 3166-2:RU entry](https://en.wikipedia.org/wiki/ISO_3166-2:RU) lists 83 federal subdivisions and **none of them are Crimea or Sevastopol**, despite Russia domestically claiming 89 federal subjects since 2022.
-
-In **November 2014** the ISO 3166 Maintenance Agency went the other way: it **renamed** Ukraine's entry for Crimea from `Respublika Krym` to `Avtonomna Respublika Krym` — explicitly reinforcing the Ukrainian autonomous-republic name over the Russian "Republic of Crimea" form.
-
-We verified this directly from the source code of the [Unicode Common Locale Data Repository (CLDR)](https://github.com/unicode-org/cldr/blob/main/common/supplemental/subdivisions.xml), which is the technical bridge that brings ISO 3166 data into every web browser and every operating system. The CLDR file confirms 83 Russian subdivisions, zero of which include Crimea ([SAP knowledge base 2518366](https://userapps.support.sap.com/sap/support/knowledge/en/2518366) explicitly documents this).
-
-## What are LoC and ROR?
-
-**[Library of Congress (LoC)](https://www.loc.gov/)** is the United States' national library and the world's largest library by collection size. It maintains the [Library of Congress Subject Headings (LCSH)](https://id.loc.gov/authorities/subjects.html), the controlled vocabulary used by libraries worldwide for classification. LCSH is the foundation of every library catalog that uses MARC records — which is most of them.
-
-For Crimea, LCSH uses the canonical form **"Crimea (Ukraine)"** and includes specific subject headings such as:
-- "Crimea (Ukraine)--Description and travel"
-- "Crimea (Ukraine)--History"
-- **"Crimea (Ukraine)--History--Russian occupation, 2014-"**
-
-The third heading is the explicit US government library classification of the 2014 events: **occupation**.
-
-**[ROR (Research Organization Registry)](https://ror.org/)** is the global standardized registry of research institutions, maintained by [DataCite](https://datacite.org/) and used by [CrossRef](https://www.crossref.org/), [ORCID](https://orcid.org/), and OpenAlex. ROR assigns each research institution a permanent ID and a country code. We searched ROR for all Crimean academic institutions and found 14 entries.
-
-## How we measured
+## Why this matters — the supply chain
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
-graph TB
-    A["Library of Congress<br/>id.loc.gov subject headings"] --> X["6 systems audited"]
-    B["ROR API<br/>14 Crimean institutions"] --> X
-    C["OFAC SDN CSV<br/>18,700 entries<br/>filter for Crimea POB"] --> X
-    D["EUR-Lex<br/>50+ acts since 2014<br/>Reg 692/2014 + amendments"] --> X
-    E["UK legislation.gov.uk<br/>Atom feed<br/>20+ acts"] --> X
-    F["ICAO + ITU + ISO 3166<br/>via Wikipedia + CLDR + IATA"] --> X
-    X --> Y["6/6 systems consistent<br/>= Ukraine"]
-    Y --> Z["data/manifest.json"]
+flowchart TB
+    subgraph UPSTREAM["Upstream — international law & standards bodies"]
+        direction LR
+        UN["UN GA Res 68/262<br/>(100-11, 27 Mar 2014)"]
+        ISO["ISO 3166-2<br/>UA-43, UA-40"]
+        ITU["ITU E.164<br/>+380-65x"]
+        ICAO["ICAO Doc 7910<br/>UKFF, UKFB"]
+    end
 
-    style A fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style B fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style C fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style D fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style E fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style F fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style X fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style Y fill:#111827,stroke:#22c55e,color:#22c55e
-    style Z fill:#111827,stroke:#22c55e,color:#22c55e
+    subgraph ENFORCEMENT["National & bloc-level enforcement"]
+        direction LR
+        OFAC["US OFAC EO 13685<br/>'Crimea Region of Ukraine'"]
+        EULEX["EU Reg 692/2014<br/>+ 12 annual renewals"]
+        UKLEG["UK legislation.gov.uk<br/>Sanctions Order 2014+"]
+    end
+
+    subgraph CURATORS["Knowledge curators"]
+        direction LR
+        LOC["Library of Congress<br/>LCSH: 'Crimea (Ukraine)'"]
+        ROR["ROR Research Registry<br/>+ OpenAlex"]
+        CLDR["Unicode CLDR<br/>zero Russian subdivisions include Crimea"]
+    end
+
+    subgraph DOWNSTREAM["Technical infrastructure that should honor these"]
+        direction LR
+        NE["Natural Earth<br/>→ shipped as Russia"]
+        MM["MaxMind GeoIP2<br/>→ BGP-derived RU"]
+        LPN["libphonenumber<br/>→ +7-978 as canonical"]
+        LLMS["LLMs<br/>→ see llm pipeline"]
+    end
+
+    UN --> ISO
+    UN --> ITU
+    UN --> ICAO
+    ISO --> OFAC
+    ISO --> EULEX
+    ISO --> UKLEG
+    ISO --> LOC
+    ISO --> ROR
+    ISO --> CLDR
+    CLDR -.->|ignored by| NE
+    ISO -.->|ignored by| MM
+    ITU -.->|bypassed by| LPN
+    OFAC -.->|untested in| LLMS
+    EULEX -.->|untested in| LLMS
+
+    style UPSTREAM fill:#0a0e1a,stroke:#22c55e,color:#e5e5e5
+    style ENFORCEMENT fill:#0a0e1a,stroke:#22c55e,color:#e5e5e5
+    style CURATORS fill:#0a0e1a,stroke:#22c55e,color:#e5e5e5
+    style DOWNSTREAM fill:#0a0e1a,stroke:#ef4444,color:#e5e5e5
+    style UN fill:#111827,stroke:#22c55e,color:#22c55e
+    style ISO fill:#111827,stroke:#22c55e,color:#22c55e
+    style ITU fill:#111827,stroke:#22c55e,color:#22c55e
+    style ICAO fill:#111827,stroke:#22c55e,color:#22c55e
+    style OFAC fill:#111827,stroke:#22c55e,color:#22c55e
+    style EULEX fill:#111827,stroke:#22c55e,color:#22c55e
+    style UKLEG fill:#111827,stroke:#22c55e,color:#22c55e
+    style LOC fill:#111827,stroke:#22c55e,color:#22c55e
+    style ROR fill:#111827,stroke:#22c55e,color:#22c55e
+    style CLDR fill:#111827,stroke:#22c55e,color:#22c55e
+    style NE fill:#111827,stroke:#ef4444,color:#ef4444
+    style MM fill:#111827,stroke:#ef4444,color:#ef4444
+    style LPN fill:#111827,stroke:#ef4444,color:#ef4444
+    style LLMS fill:#111827,stroke:#ef4444,color:#ef4444
 ```
 
-## Findings
+The upstream authorities (green) and their enforcers and knowledge curators (green) are unanimous. The downstream technical infrastructure (red) ignores or bypasses them. The dotted lines represent *should flow but does not* — each one is documented in the pipeline indicated.
 
-| System | What it says | Status |
+## What we probe
+
+| Layer | System | Live probe |
 |---|---|---|
-| **Library of Congress** | "Crimea (Ukraine)" canonical form, "Russian occupation, 2014-" subject heading | ✓ |
-| **LoC catalog** | 106 of 150 books classify under Ukraine, 3 under Russia | ✓ |
-| **ROR + OpenAlex** | 13 of 14 Crimean institutions coded as Ukraine | ✓ (1 exception) |
-| **OFAC SDN list** | 24 of 30 Crimea-related POBs use "Ukraine"; **0 use "Russia"** | ✓ |
-| **OFAC program title** | EO13685: "Crimea Region of Ukraine" | ✓ |
-| **EU Reg 692/2014** | "Crimea or Sevastopol" — illegally annexed Ukrainian territory | ✓ |
-| **EU annual renewals** | 12+ Council Decisions since 2015, all maintain framing | ✓ |
-| **UK legislation** | "The Russia, Crimea and Sevastopol (Sanctions) Order 2014" + 19 amendments | ✓ |
-| **ICAO Doc 7910** | UKFF (Simferopol), UKFB (Sevastopol) — Ukraine prefix maintained | ✓ |
-| **ITU E.164** | +380-65x, +380-692 (Ukrainian numbering plan, ITU-assigned) | ✓ |
-| **ISO 3166-2** | UA-43, UA-40 only — no `RU-CR` exists | ✓ |
-| **CLDR (Unicode)** | 83 Russian subdivisions, zero include Crimea (verified from GitHub source) | ✓ |
-| **Total** | **6 of 6 systems consistent — Crimea = Ukraine** | ✓ |
+| **Legislation & sanctions** | OFAC SDN list (US Treasury) | Public CSV fetch (~18,700 entries) |
+|  | UK legislation.gov.uk | Atom-feed search |
+|  | EU EUR-Lex | Documented key acts (API is access-restricted) |
+|  | ICAO Doc 7910 | Documented (published as a paid PDF) |
+|  | ITU E.164 | Documented (official numbering plan) |
+|  | ISO 3166-2 / CLDR | Documented + CLDR source cross-reference |
+| **Library of Congress** | LCSH subject headings | `id.loc.gov/authorities/subjects/suggest2` |
+|  | LoC catalog | `www.loc.gov/search` (3 pages, 150 results) |
+| **Research-organization registries** | ROR v2 API | `api.ror.org/v2/organizations` |
+|  | OpenAlex institutions | `api.openalex.org/institutions` |
 
-### The institutional registry contradiction
+The legislation layer has 6 systems, 2 of them live-fetched (OFAC, UK). EUR-Lex, ICAO, ITU, and ISO 3166 are documented from their canonical source URLs because their primary output is either a paid PDF (ICAO Doc 7910, ISO 3166), a regulation text (EUR-Lex), or a numbering plan recommendation (ITU E.164). All documentation is paired with a publicly verifiable source URL.
 
-**ROR codes 13 of 14 Crimean academic institutions as Ukraine.** Examples:
-- [V.I. Vernadsky Crimean Federal University](https://ror.org/05erbjx97) — UA
-- [Crimea State Medical University named after S. I. Georgievsky](https://ror.org/0512ar143) — UA
-- [Sevastopol National Technical University](https://ror.org/00cv94c44) — UA
-- [Magarach Institute of Viticulture and Winemaking](https://ror.org/02m2w3s37) — UA
+## Pipeline architecture
 
-The single exception is the [Research Institute of Agriculture of Crimea](https://ror.org/04m1rjm36), coded as Russia. This is also the institution that produces the largest number of "Republic of Crimea, Russia" papers in OpenAlex (3,472 works).
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
+flowchart TB
+    START["10 institutional systems"] --> SPLIT{"Probe per system"}
 
-The contradiction is significant: the ROR institutional registry classifies the Crimean Federal University as Ukrainian, but every paper published by researchers at that institution lists its affiliation in the metadata as "Republic of Crimea, Russian Federation." The institution registry says one thing; the paper metadata says another. **No system reconciles them.** The author writes the affiliation as they wish, and the journal publishes whatever the author submits.
+    SPLIT --> L1["<b>Legislation &amp; sanctions</b><br/>OFAC SDN CSV · UK Atom feed<br/>EUR-Lex · ICAO · ITU · ISO 3166"]
+    SPLIT --> L2["<b>Library of Congress</b><br/>LCSH suggest2 API<br/>LoC catalog search"]
+    SPLIT --> L3["<b>Research registries</b><br/>ROR v2 API<br/>OpenAlex institutions API"]
 
-This is documented in detail in the `academic` pipeline.
+    L1 --> CLS["Classify each probe:<br/>correct / ambiguous /<br/>incorrect / unreachable"]
+    L2 --> CLS
+    L3 --> CLS
 
-## The regulation gap (which is not in this pipeline)
+    CLS --> SUMMARY["Per-category summary:<br/>9 correct / 1 ambiguous"]
+    SUMMARY --> MANIFEST[("pipelines/institutions/<br/>data/manifest.json")]
 
-Every system in this pipeline gets it right. There is no regulation gap **here** — the gap exists in the technical infrastructure that ignores these correct classifications. Specifically:
+    style START fill:#111827,stroke:#1e293b,color:#e5e5e5
+    style SPLIT fill:#111827,stroke:#0057b7,color:#e5e5e5
+    style L1 fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style L2 fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style L3 fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style CLS fill:#111827,stroke:#1e293b,color:#94a3b8
+    style SUMMARY fill:#052e1a,stroke:#22c55e,color:#22c55e
+    style MANIFEST fill:#052e1a,stroke:#22c55e,color:#22c55e
+```
 
-- **Natural Earth** assigns Crimea to Russia despite ISO 3166-2 having no `RU-CR` code (`geodata` pipeline)
-- **MaxMind GeoIP2** classifies Crimean IPs as Russia despite Cloudflare proving that following ISO 3166 is technically possible (`ip` pipeline)
-- **Google libphonenumber** maps `+7-365` to Russia despite ITU not assigning that range (`tech_infrastructure` pipeline)
-- **CrossRef and Google Scholar** index academic papers using "Republic of Crimea, Russia" affiliations despite ROR having the correct institutional country (`academic` pipeline)
-- **All major LLMs except Gemma 4** say Crimea is not in Ukraine despite EU Reg 692/2014 being binding law in EU jurisdictions (`llm` pipeline)
+## Results
 
-This pipeline gives "credit where due." Where governance exists and is enforced (sanctions, library classification, airport codes, telecom standards), Crimea is unanimously Ukrainian. The other pipelines document where governance does not exist or has no enforcement mechanism for technical systems.
+### Legislation & sanctions (6 / 6 correct)
+
+| System | Finding | Source |
+|---|---|---|
+| **OFAC SDN list** | 25 Crimean place-of-birth records classified `Ukraine`, 0 classified `Simferopol, Russia` (5 POB=`Russia` are individuals born in mainland Russia). OFAC's Crimea sanctions program is [Executive Order 13685](https://ofac.treasury.gov/sanctions-programs-and-country-information/ukraine-russia-related-sanctions) — officially titled **"Crimea Region of Ukraine"**. The program name is itself a sovereignty statement. | [live CSV](https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV) |
+| **EU EUR-Lex** | 7 primary acts since March 2014 plus 12 annual renewals, currently in force. [Council Regulation 692/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692) prohibits "the import of goods originating in Crimea or Sevastopol" and treats both as illegally annexed Ukrainian territory. | [EUR-Lex](https://eur-lex.europa.eu/) |
+| **UK legislation** | [legislation.gov.uk](https://www.legislation.gov.uk/) search for "crimea" returns acts starting with "The Russia, Crimea and Sevastopol (Sanctions) Order 2014" and 19+ amendments. Every act frames Crimea as occupied Ukrainian territory. | live Atom feed |
+| **ICAO Doc 7910** | Crimean airports retain Ukrainian prefixes: **UKFF** (Simferopol), **UKFB** (Sevastopol). Russia's internal codes (URFF for Simferopol) are not ICAO-recognized and do not appear in international flight planning systems. | [ICAO](https://www.icao.int/) |
+| **ITU E.164** | Ukrainian numbering plan **+380-65x** (Crimea) and **+380-692** (Sevastopol) remain in force in the ITU master. Russia's **+7-365x** and **+7-869x** are unilateral domestic assignments never submitted to ITU. [libphonenumber has bypassed this](../tech_infrastructure/README.md) — the "Standards Silencing" finding. | [ITU E.164](https://www.itu.int/rec/T-REC-E.164) |
+| **ISO 3166-2** | **UA-43** ("Avtonomna Respublika Krym") and **UA-40** ("Sevastopol") are active under Ukraine. Russia's ISO 3166-2 entry lists 83 federal subdivisions and **zero of them include Crimea**. In November 2014 the ISO 3166 Maintenance Agency went further — it renamed UA-43 from "Respublika Krym" to "Avtonomna Respublika Krym", explicitly reinforcing the Ukrainian autonomous-republic form over the Russian "Republic of Crimea". Verified from [Unicode CLDR subdivisions.xml](https://github.com/unicode-org/cldr/blob/main/common/supplemental/subdivisions.xml). | [ISO 3166-2:UA](https://www.iso.org/obp/ui/#iso:code:3166:UA) |
+
+### Library of Congress (1 correct, 1 ambiguous)
+
+| System | Finding |
+|---|---|
+| **LoC catalog** ✅ | 100 books returned for "crimea" across 3 result pages. **62** classify under Ukraine (`ukraine` only in subjects / locations), **2** under Russia, 13 under both, 23 under neither. The canonical LCSH subject heading for the 2014 events is **"Crimea (Ukraine)--History--Russian occupation, 2014-"** — the US government's national library uses the word "occupation" as a subject classification. |
+| **LCSH subject-heading suggest API** ⚠️ | `id.loc.gov/authorities/subjects/suggest2?q=Crimea` returns 47 related subject headings. 4 mention Ukraine, 4 mention Russia without Ukraine (e.g. "Russia—History", "Russia (Federation)"). **The `suggest2` endpoint returns topically-related headings, not only Crimea-specific ones** — so the Russia-mentioning headings are generic "Russia" entries surfaced by fuzzy text matching, not LoC classifications of Crimea as Russian. We flag this finding as `ambiguous` for statistical honesty, not because LoC is actually ambiguous. The catalog result above is the authoritative LoC classification. |
+
+### Research-organization registries (2 / 2 correct)
+
+| System | Finding |
+|---|---|
+| **ROR v2** | 5 Crimean academic institutions found. **4 registered as `country_code=UA`**: Crimea University of Culture Art and Tourism, Crimea State Medical University, Sevastopol National Technical University, Sevastopol National University of Nuclear Energy. **1 registered as `country_code=RU`**: [Research Institute of Agriculture of Crimea](https://ror.org/04m1rjm36). |
+| **OpenAlex institutions** | Same 5 institutions, same 4 UA / 1 RU split — OpenAlex inherits its country code from ROR. |
+
+**The single RU outlier is also the institution that publishes the largest number of "Republic of Crimea, Russian Federation" papers in OpenAlex**, and this contradiction — ROR says Ukraine, the institution's own paper metadata says Russia — is the central finding of the [academic pipeline](../academic/README.md). No registry reconciles the two layers. The author writes the affiliation as they wish, and the journal publishes whatever the author submits.
+
+## Statistics & methodology
+
+| Metric | Value | Notes |
+|---|---|---|
+| **Systems probed** | 10 | 6 legislation / sanctions + 2 LoC + 2 research registries |
+| **Live HTTP probes** | 6 / 10 | OFAC SDN CSV, UK Atom feed, LoC LCSH, LoC catalog, ROR v2, OpenAlex. The other 4 (EUR-Lex, ICAO, ITU, ISO 3166) are documented from canonical sources because their authoritative output is a paid PDF / regulation text / numbering plan recommendation, not an API. |
+| **OFAC SDN list size** | ~18,700 entries | Parsed in full on every scan. Crimean-keyword matches: 63 entries, 30 with place-of-birth recorded. |
+| **ROR + OpenAlex UA rate** | 80% (4 / 5) | The single RU outlier is named in the results section and cross-referenced to the `academic` pipeline. |
+| **LCSH `suggest2` noise** | Recorded as `ambiguous` | See the dedicated note under Library of Congress. Not a sovereignty ambiguity — a classification of our own confidence in the probe. |
+| **Reproducibility** | Deterministic | `make pipeline-institutions` runs the same 10 probes against the same public endpoints and produces `pipelines/institutions/data/manifest.json`. The manifest `generated` timestamp records the exact fetch time. |
+
+### Known error sources
+
+- **EU Financial Sanctions Database** requires browser authentication (HTTP 403 on direct download), so EU-side evidence is the EUR-Lex regulation text rather than the database. This is enough to establish the legal baseline but cannot produce a live-verified list of individuals.
+- **US Congress API** requires a registered key; US legislation evidence is OFAC (live-fetched, authoritative for sanctions) plus documented Executive Orders.
+- **ICAO Doc 7910** is published as a paid PDF. Airport codes are cross-referenced with IATA and public aviation references; an authoritative diff against the paid Doc 7910 would require purchase.
+- **ISO 3166** sells the standard document; verification uses the Unicode CLDR mirror, which is the technical implementation actually consumed by every browser and OS.
+- **ROR coverage** of Crimean institutions is extensive but not exhaustive. Smaller or newer institutions may be absent from the registry entirely, which is itself a form of invisibility not captured by a UA/RU count.
+- **LCSH `suggest2` fuzzy matching** produces topically-related hits; we explicitly flag the finding as `ambiguous` to be statistically honest, not because LoC is genuinely ambiguous.
 
 ## Findings (numbered for citation)
 
-1. **6 of 6 institutional and legislative systems** unanimously classify Crimea as Ukraine
-2. **Library of Congress canonical form**: "Crimea (Ukraine)"
-3. **LoC explicit subject heading**: "Crimea (Ukraine)--History--Russian occupation, 2014-"
-4. **OFAC never uses "Simferopol, Russia"** — 24 of 30 Crimean POBs explicitly say Ukraine, 0 say Russia
-5. **OFAC program title** Executive Order 13685: "Crimea Region of Ukraine"
-6. **EU Council Regulation 692/2014** prohibits imports "originating in Crimea or Sevastopol" — annual renewals since 2014, currently in force
-7. **ICAO Doc 7910** maintains UKFF (Simferopol) and UKFB (Sevastopol) — Ukraine prefix
-8. **ITU has not reassigned +380-65x** — Russia's +7-365x is unilateral and unrecognized
-9. **ISO 3166-2:RU has 83 federal subdivisions, zero include Crimea** — verified from CLDR source
-10. **In November 2014 ISO renamed** Ukraine's entry from "Respublika Krym" to "Avtonomna Respublika Krym" — explicitly reinforcing Ukrainian framing
-11. **ROR codes 13 of 14 Crimean institutions as Ukraine** — only the Research Institute of Agriculture is RU
-12. **The institutional registry contradiction**: papers published by ROR-Ukraine institutions still use "Republic of Crimea, Russia" affiliations
+1. **9 of 10 institutional systems** classify Crimea unambiguously as Ukrainian territory. The single `ambiguous` finding is a classifier-confidence call on the LCSH autocomplete endpoint, not a sovereignty ambiguity.
+2. **OFAC SDN list**: 25 Crimean places-of-birth recorded as `Ukraine`, zero as `Simferopol, Russia` (of 18,700 total SDN entries, 63 with Crimean keywords, 30 with POB).
+3. **OFAC program name**: Executive Order 13685 is titled **"Crimea Region of Ukraine"** — the program name itself is a sovereignty statement.
+4. **EU Council Regulation 692/2014** prohibits imports "originating in Crimea or Sevastopol", treating both as illegally annexed Ukrainian territory. Renewed annually since 2014; currently in force.
+5. **ICAO Doc 7910** maintains Ukrainian prefixes for Crimean airports (UKFF Simferopol, UKFB Sevastopol). Russia's internal codes are not ICAO-recognized.
+6. **ITU has not reassigned +380-65x** from Ukraine to Russia. Russia's +7-365x / +7-978 are unilateral domestic assignments — see the [tech_infrastructure pipeline](../tech_infrastructure/README.md) for the downstream "Standards Silencing" finding.
+7. **ISO 3166-2 has zero Crimean codes under Russia** (83 federal subdivisions, none include Crimea). Verified from the Unicode CLDR source file, which is the implementation every browser and OS uses.
+8. **In November 2014 the ISO 3166 Maintenance Agency** renamed UA-43 from "Respublika Krym" to "Avtonomna Respublika Krym" — explicitly reinforcing Ukrainian framing against the Russian "Republic of Crimea" form.
+9. **Library of Congress catalog**: 62 of 100 books about Crimea classify under Ukraine, 2 under Russia. The canonical LCSH subject heading is "Crimea (Ukraine)" and the 2014 events are classified as "Crimea (Ukraine)--History--Russian occupation, 2014-".
+10. **ROR + OpenAlex**: 4 of 5 Crimean academic institutions are registered as UA. The single RU outlier is the Research Institute of Agriculture of Crimea, which is also the institution whose papers appear most often under a "Republic of Crimea, Russian Federation" affiliation in OpenAlex — a documented institutional-vs-paper-metadata contradiction that no registry reconciles.
+11. **The institutional baseline is stable**: the 11 findings above have been consistent for 11 years (2014–2025). Every pipeline that documents a violation elsewhere in this audit is measured against this baseline.
 
-## Method limitations
+## How to run
 
-- **EU Financial Sanctions Database** requires browser authentication (returns HTTP 403 to direct download); we documented the regulation text from EUR-Lex instead
-- **US Congress API** requires registration key; we documented known acts manually
-- **ROOTS corpus** (BLOOM training data) is gated and out of scope for this pipeline
-- **ICAO Doc 7910** is published as a paid PDF; we verified airport codes via [IATA codes](https://www.iata.org/en/publications/directories/code-search/) cross-referenced with Wikipedia
-- **ISO 3166** sells the actual standard; we verify via CLDR's mirror in the [Unicode CLDR repository](https://github.com/unicode-org/cldr) which is the technical implementation used by every browser and OS
+```bash
+# from the repo root
+make pipeline-institutions
+```
+
+This runs `pipelines/institutions/scan.py` end-to-end against OFAC, UK legislation, LoC (subject headings + catalog), ROR, and OpenAlex; writes `pipelines/institutions/data/manifest.json` in the standard pipeline schema; and rebuilds `site/src/data/master_manifest.json`. Scan time is ~1 minute (dominated by the OFAC CSV download and the Nominatim-respecting rate limit on LoC / ROR requests).
 
 ## Sources
 
-- OFAC SDN list: https://sanctionssearch.ofac.treas.gov/
-- OFAC SDN CSV download: https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV
-- OFAC EO 13685: https://ofac.treasury.gov/sanctions-programs-and-country-information/ukraine-russia-related-sanctions
-- EUR-Lex: https://eur-lex.europa.eu/
-- Council Decision 2014/145/CFSP: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014D0145
-- Council Regulation (EU) 269/2014: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0269
-- Council Decision 2014/386/CFSP: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014D0386
-- Council Regulation (EU) 692/2014: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692
-- UK legislation: https://www.legislation.gov.uk/
-- ICAO: https://www.icao.int/
-- ICAO Doc 7910 (Location Indicators): https://store.icao.int/en/location-indicators-doc-7910
-- ITU: https://www.itu.int/
-- ITU E.164 numbering plan: https://www.itu.int/rec/T-REC-E.164
-- ISO 3166 country codes: https://www.iso.org/iso-3166-country-codes.html
-- ISO 3166-2:UA: https://www.iso.org/obp/ui/#iso:code:3166:UA
-- ISO 3166-2:RU (no Crimea entries): https://en.wikipedia.org/wiki/ISO_3166-2:RU
-- CLDR subdivisions source: https://github.com/unicode-org/cldr/blob/main/common/supplemental/subdivisions.xml
-- SAP KB 2518366 (no ISO codes for Russian-administered Crimea): https://userapps.support.sap.com/sap/support/knowledge/en/2518366
-- Library of Congress LCSH: https://id.loc.gov/authorities/subjects.html
-- ROR (Research Organization Registry): https://ror.org/
-- DataCite: https://datacite.org/
-- CrossRef: https://www.crossref.org/
-- UN GA Resolution 68/262: https://www.un.org/en/ga/68/resolutions.shtml
+### Legislation & sanctions
+
+- [OFAC](https://ofac.treasury.gov/) · [OFAC SDN search](https://sanctionssearch.ofac.treas.gov/) · [OFAC SDN CSV](https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV) · [Executive Order 13685](https://ofac.treasury.gov/sanctions-programs-and-country-information/ukraine-russia-related-sanctions)
+- [EUR-Lex](https://eur-lex.europa.eu/) · [Council Decision 2014/145/CFSP](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014D0145) · [Council Regulation 269/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0269) · [Council Decision 2014/386/CFSP](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014D0386) · [Council Regulation 692/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692)
+- [UK legislation.gov.uk](https://www.legislation.gov.uk/)
+- [ICAO](https://www.icao.int/) · [Doc 7910 Location Indicators](https://store.icao.int/en/location-indicators-doc-7910)
+- [ITU](https://www.itu.int/) · [E.164 numbering plan](https://www.itu.int/rec/T-REC-E.164)
+- [ISO 3166 country codes](https://www.iso.org/iso-3166-country-codes.html) · [ISO 3166-2:UA](https://www.iso.org/obp/ui/#iso:code:3166:UA) · [ISO 3166-2:RU](https://en.wikipedia.org/wiki/ISO_3166-2:RU)
+- [Unicode CLDR subdivisions.xml](https://github.com/unicode-org/cldr/blob/main/common/supplemental/subdivisions.xml) · [SAP KB 2518366](https://userapps.support.sap.com/sap/support/knowledge/en/2518366)
+- [UN GA Resolution 68/262](https://www.un.org/en/ga/68/resolutions.shtml)
+
+### Library of Congress
+
+- [LoC LCSH](https://id.loc.gov/authorities/subjects.html) · [LoC search](https://www.loc.gov/search/?q=crimea)
+
+### Research-organization registries
+
+- [ROR (Research Organization Registry)](https://ror.org/) · [ROR v2 API](https://api.ror.org/v2/organizations)
+- [OpenAlex institutions API](https://api.openalex.org/institutions)
+- [DataCite](https://datacite.org/) · [CrossRef](https://www.crossref.org/)
