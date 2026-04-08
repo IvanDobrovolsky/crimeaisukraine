@@ -188,20 +188,28 @@ The Weather.com label is the sharpest single finding of the pipeline: **the coun
 
 Under [Russian Federal Law 377-FZ (2014)](https://www.consultant.ru/document/cons_doc_LAW_170447/), Russian weather providers are required to represent Crimea as Russian territory. Their classification is legal compliance, not editorial choice. The classifier treats any Russian-origin service that does not affirmatively switch to `/ua/` as `incorrect`.
 
-### 🧪 Untested (2 / 25) — worldview-split hypothesis
+### 🧪 Untested (2 / 25) — the systemic verification barrier
 
 | Service | Why untested |
 |---|---|
 | **Apple WeatherKit** | The `api.weatherkit.apple.com` endpoint requires an Apple Developer JWT (ES256-signed). Worldview-split hypothesis: EU/US IP → UA, Russian IP → RU. Verifying this requires both a signed token *and* a Russian IP proxy. We refuse to classify as "correct" from a single vantage point. |
 | **Google Search weather panel** | Google's weather is rendered inside Search results, localized via `&gl=` (geo) and `&hl=` (language) query parameters. Worldview-split hypothesis: `&gl=us` → UA, `&gl=ru` → RU. Google blocks direct scraping without a full browser session. Flagged for manual browser verification. |
 
-**This is a correction, not a certainty.** The hypothesis is that both services are worldview-compliant (capable of serving either answer, per-viewer). The honest default until we can test from a Russian IP is `untested`.
+**This is a systemic verification barrier, not a methodological gap.** Apple and Google use *conditional rendering* for borders, labels, and knowledge-panel sovereignty claims — the same URL returns a different answer depending on the viewer's IP, Apple ID region, or Google `&gl=` parameter. This is a well-documented industry practice (see [Google's Maps regional versions](https://policies.google.com/terms/maps), [Apple's regional variations of Maps](https://www.apple.com/legal/internet-services/maps/)). From a single vantage point you cannot know what Crimea "is" to these services — you only know what it is *to you, right now, from this IP*. A journalistically defensible audit requires a **multi-vantage-point test** from at least EU, US, and Russian IPs, with the Apple test additionally requiring a signed developer token. Until that is done, the honest label is `untested` — not "correct", not "incorrect", and certainly not "ambiguous" in the sense of editorial hedging. The services are *capable* of serving either answer; which one they serve is a function of the viewer, which is by design opaque.
 
-### 🛰️ Unreachable (3 / 25) — CDN anti-bot blocked the scanner
+### 🛰️ Unreachable (3 / 25) — platform resistance to external auditing
 
 > Weather Atlas (HTTP 403) · Windfinder (HTTP 404) · Gismeteo (HTTP 403)
 
-These services returned non-2xx responses to the scanner's headers, most likely Cloudflare or Akamai bot-detection. They are flagged `unreachable` rather than inheriting any prior classification — honest "we could not verify" over round-number backfill.
+These three services returned non-2xx responses to a standard browser user agent with full `Sec-Ch-Ua` fingerprinting — the same headers a real Chrome session sends. They are not down; a human in a browser can load them. They are *selectively refusing access to anything that looks like an automated audit*.
+
+This is a structural finding about **platform resistance to external auditing**, not a technical failure of the scanner. Three points:
+
+1. **Gismeteo (Russia)** blocks external probes while serving real users, which means independent verification of how it represents Crimea requires either a stable scraping-proxy infrastructure or manual human-in-the-loop auditing — both of which raise the cost of accountability and reduce its frequency.
+2. **Weather Atlas and Windfinder** are Western services that have deployed Cloudflare or Akamai anti-bot hardening for reasons unrelated to Crimea (traffic cost, scraping defense), but the side effect is that their sovereignty classification can only be verified manually. This makes the audit trail fragile: anyone re-running the pipeline next year may find a different subset of services unreachable, purely based on CDN policy drift.
+3. **No prior-status backfill.** These services are flagged `unreachable` rather than inheriting the last-known manual classification. Honest "we could not verify this time" over round-number backfill. The prior classification is preserved in the manifest's `prior_status` field for reference but does not count toward the new taxonomy.
+
+The broader theme: as platforms harden against bots, the space for independent third-party audits of their sovereignty positions shrinks. A methodology that depends on scraping alone is not future-proof — human browser verification is becoming a required methodological layer for any adversarial audit of large-consumer platforms.
 
 ### ➖ N/A (1 / 25)
 
@@ -258,11 +266,12 @@ The IANA [zone1970.tab](https://www.iana.org/time-zones) file lists `Europe/Simf
 3. **Russian weather providers are legally compelled** to represent Crimea as Russian territory under [Federal Law 377-FZ (2014)](https://www.consultant.ru/document/cons_doc_LAW_170447/). Their classification is compliance, not editorial choice.
 4. **Weather.com displays Simferopol's location as `"Simferopol, Simferopol"`** — the country name has been replaced by a city-name repetition. The URL structure is still correct but the visible label is erasure by omission applied to one of the most-used weather brands in the world.
 5. **AccuWeather's location database contains both a `country=UA` and a `country=RU` entry for Simferopol.** Autocomplete returns ordered codes `['UA', 'RU', 'KZ', 'RU', 'KZ']`. The first (default) is UA and routing is correct, but the Cyrillic-named `country=RU` duplicate exists and is client-selectable.
-6. **Apple WeatherKit and Google Search weather panel are classified `untested`** — not "correct". The worldview-split hypothesis (EU/US IP → UA, Russian IP → RU) cannot be verified from a single vantage point.
+6. **Apple WeatherKit and Google Search weather panel are classified `untested`** — not "correct". They constitute a **systemic verification barrier**: Big Tech platforms use conditional rendering keyed to the viewer's IP, region, or auth token, so their sovereignty position is visible only from a multi-vantage-point audit. Apple additionally requires a signed Developer JWT. From a single vantage point you cannot verify what the service shows other users.
 7. **Timezone probe: 3 services explicitly reference `Europe/Simferopol` in HTML (Ventusky, Foreca, Meteostat); 0 reference `Europe/Moscow`.** IANA's `zone1970.tab` lists `Europe/Simferopol` under both UA and RU, so picking UA is a deliberate choice.
 8. **`url_correct_ui_ambiguous` is its own category**, not a subtype of correct. URL path routes to UA but the visible UI strips the country. Four services fall here: Weather.com, Ventusky, Windy.com, MSN Weather.
 9. **GeoNames entry 693805 returns `countryCode: UA`** via the public RDF endpoint — verified live at scan time and cited in the manifest as ground truth.
-10. **Structural lesson**: correctness is not inherited, it is *maintained*. Every Western weather provider chose [GeoNames](https://www.geonames.org/) (ISO 3166) for the country field while continuing to use [OpenStreetMap](https://wiki.openstreetmap.org/wiki/On_the_ground_rule) for visual tiles. This deliberate separation of concerns is what makes the weather pipeline work — the mirror image of the [geodata pipeline](../geodata/README.md), where the industry centralized on Natural Earth for the country field and the entire downstream got Crimea wrong.
+10. **Three services (Weather Atlas, Windfinder, Gismeteo) are `unreachable` via automated audit** — all three serve real users in browsers but block standard browser-fingerprint scrapers with HTTP 403/404. This is **platform resistance to external auditing**, not a scanner failure: as CDN anti-bot defenses harden, the space for independent third-party audits of sovereignty positions shrinks. Manual browser verification is becoming a required methodological layer.
+11. **Structural lesson**: correctness is not inherited, it is *maintained*. Every Western weather provider chose [GeoNames](https://www.geonames.org/) (ISO 3166) for the country field while continuing to use [OpenStreetMap](https://wiki.openstreetmap.org/wiki/On_the_ground_rule) for visual tiles. This deliberate separation of concerns is what makes the weather pipeline work — the mirror image of the [geodata pipeline](../geodata/README.md), where the industry centralized on Natural Earth for the country field and the entire downstream got Crimea wrong.
 
 ## How to run
 

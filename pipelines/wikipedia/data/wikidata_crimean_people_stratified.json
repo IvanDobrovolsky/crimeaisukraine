@@ -10,7 +10,9 @@
       "russian_empire_only": 42,
       "missing": 35,
       "other": 48,
-      "post_2014_ru_passport": 0
+      "post_2014_ru_passport": 0,
+      "post_2014_ua_ended": 0,
+      "invisible_transition": 0
     },
     "died_1991_2014": {
       "n": 67,
@@ -21,7 +23,9 @@
       "russian_empire_only": 0,
       "missing": 8,
       "other": 16,
-      "post_2014_ru_passport": 0
+      "post_2014_ru_passport": 0,
+      "post_2014_ua_ended": 0,
+      "invisible_transition": 0
     },
     "died_post_2014": {
       "n": 50,
@@ -32,7 +36,9 @@
       "russian_empire_only": 1,
       "missing": 7,
       "other": 7,
-      "post_2014_ru_passport": 0
+      "post_2014_ru_passport": 0,
+      "post_2014_ua_ended": 0,
+      "invisible_transition": 0
     },
     "alive_or_unknown": {
       "n": 244,
@@ -43,7 +49,9 @@
       "russian_empire_only": 1,
       "missing": 42,
       "other": 39,
-      "post_2014_ru_passport": 1
+      "post_2014_ru_passport": 1,
+      "post_2014_ua_ended": 1,
+      "invisible_transition": 0
     }
   },
   "notes": {
@@ -55,6 +63,8 @@
       "alive_or_unknown": "no death date recorded"
     },
     "post_2014_ru_passport": "Number of people in the cohort with a P27=Q159 (Russia) edge whose qualifier P580 (start time) is on or after 2014-03-18. Unambiguously post-occupation passportization.",
-    "caveat": "Imperial Russia and Soviet Union are separate buckets from modern Russia (Q159). Prior aggregate conflated these."
+    "post_2014_ua_ended": "Number of people in the cohort with a P27=Q212 (Ukraine) edge whose qualifier P582 (end time) is on or after 2014-03-18. Explicit editorial record that Ukrainian citizenship ended under occupation.",
+    "invisible_transition": "Number of people with an explicit end-of-UA-citizenship edge (P27=Q212 with P582 >= 2014-03-18) but NO matching start-of-RU-citizenship edge (P27=Q159 with P580 >= 2014-03-18). Wikidata records the loss but not the gain — the 'invisible transition' pattern.",
+    "caveat": "Imperial Russia (Q34266/Q12544) and Soviet Union (Q15180) are separate buckets from modern Russia (Q159)."
   }
 }

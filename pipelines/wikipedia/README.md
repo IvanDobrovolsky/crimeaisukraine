@@ -61,7 +61,7 @@ When you ask Google *"what country is Simferopol in?"*, Google reads Wikidata's 
 | 2 | **Wikipedia categories** | Navigation hierarchy (`Cities in Ukraine` vs `Cities in Russia`) | Same 12 editions |
 | 3 | **Wikidata `P17` (country)** | The structured-data answer to "what country" | 17 Crimean entities |
 | 4 | **Wikidata entity sitelinks** | Which editions have standalone articles for each of 3 rival "Crimea" entities | 156 editions |
-| 5 | **Wikidata people (stratified)** | `P19` (place of birth) + `P27` (citizenship) with `P570` (death date) stratification and `P580` (citizenship start time) qualifier | 577 people born in Crimean cities |
+| 5 | **Wikidata people (stratified)** | `P19` (place of birth) + `P27` (citizenship) with `P570` (death date) stratification, and both `P580` (citizenship start time) and `P582` (citizenship end time) qualifiers to detect asymmetric transition recording | 577 people born in Crimean cities |
 
 The five checks share a single SPARQL / REST pipeline that fetches everything live from `query.wikidata.org` and `{lang}.wikipedia.org`.
 
@@ -76,7 +76,7 @@ flowchart TB
     SPLIT --> P2["<b>Probe 2 — Categories</b><br/>MediaWiki API<br/>prop=categories<br/>×12 languages"]
     SPLIT --> P3["<b>Probe 3 — P17 country</b><br/>Wikidata EntityData JSON<br/>current claims only"]
     SPLIT --> P4["<b>Probe 4 — Sitelink sweep</b><br/>Q7835 · Q15966495 · Q756294<br/>all Wikipedia sitelinks"]
-    SPLIT --> P5["<b>Probe 5 — People SPARQL</b><br/>P19 ∈ Crimean cities<br/>+ P27 + P570 + P580 qualifier"]
+    SPLIT --> P5["<b>Probe 5 — People SPARQL</b><br/>P19 ∈ Crimean cities<br/>+ P27 + P570 stratification<br/>+ P580 start + P582 end qualifiers"]
 
     P1 --> CLS1["classify text:<br/>ukraine / russia /<br/>ambiguous / no_signal"]
     P2 --> CLS2["UA / RU /<br/>disputed / no_signal"]
@@ -162,7 +162,9 @@ Crossing the two administrative entities across the 143 editions that cover eith
 | **RU-only** | **23** | Has the Russian federal subject, no parallel Ukrainian article |
 | **Neither** (peninsula only) | 51 | Only the geographic article |
 
-**23 Wikipedia language editions have a standalone article for the Russian federal subject "Republic of Crimea" without a parallel article for the Ukrainian Autonomous Republic.** Mostly smaller editions — Breton, Welsh, Frisian, Bengali, Swahili, Albanian, Maltese, Norwegian Nynorsk, Alemannic, Altai, Burmese, among others. The asymmetry is not about belief — it is about where editorial labor flowed first. For 23 editions, the Russian administrative entity was the one that felt notable enough to write about.
+**23 Wikipedia language editions have a standalone article for the Russian federal subject "Republic of Crimea" without a parallel article for the Ukrainian Autonomous Republic.** Mostly smaller editions — Breton, Welsh, Frisian, Bengali, Swahili, Albanian, Maltese, Norwegian Nynorsk, Alemannic, Altai, Burmese, among others.
+
+This is **infrastructural normalization**. The mechanism is editorial path dependency, not sympathy for Russia: smaller language Wikipedias do not have dedicated sovereignty-aware editors monitoring geopolitics. What they *do* have is recent-event editors who create articles when a topic is in the news. The Russian federal subject "Republic of Crimea" was created in March 2014 and was worldwide news; the Ukrainian Autonomous Republic of Crimea has existed since 1991 and is not. A volunteer sitting down to write about Crimea in 2014 for the Breton or Swahili Wikipedia would see the Russian entity in the global press and write *that* article. The legacy Ukrainian administrative unit, absent any news peg, never got written. The asymmetry is the permanent residue of that one editorial decision compounded across 23 language communities — the infrastructure normalizes the occupier's categorization by inheriting the moment the news cycle chose its subject.
 
 ### 4 — Among living Crimean-born people, UA and RU citizenship are at statistical parity
 
@@ -181,11 +183,22 @@ The pre-1991 cohort is overwhelmingly Soviet Union (89) and Russian Empire (42),
 
 ### 5 — Wikidata cannot represent post-2014 passportization
 
-Russia issued an estimated **2 million** passports in Crimea after March 2014 ([ICRC / OHCHR tracking](https://www.ohchr.org/en/countries/ukraine)). Wikidata's `P27` (citizenship) edge can carry a qualifier `P580` (start time) indicating when citizenship began. If passportization were being recorded, we would expect many living Crimean-born people to have a `P27 = Q159` edge with `P580 ≥ 2014-03-18`.
+Russia issued an estimated **2 million** passports in Crimea after March 2014 ([OHCHR monitoring](https://www.ohchr.org/en/countries/ukraine)). Wikidata's `P27` (citizenship) edge can carry two time-qualifier properties:
 
-Across the entire 577-person cohort: **1 person**.
+- **`P580` (start time)** — marks when a citizenship began. An edge `P27 = Russia` with `P580 ≥ 2014-03-18` is an unambiguous structured record of post-occupation passportization.
+- **`P582` (end time)** — marks when a citizenship ended. An edge `P27 = Ukraine` with `P582 ≥ 2014-03-18` is an unambiguous record that someone's Ukrainian citizenship ended under occupation.
 
-Editors add `P27 = Russia` edges, but almost never qualify them with a start time. There is no structured way in Wikidata to distinguish *"acquired Russian citizenship under occupation in 2014"* from *"has always been a Russian citizen."* The data gap is the finding.
+We queried both across the full 577-person cohort:
+
+| Signal | Count | What it means |
+|---|---:|---|
+| `P27 = Russia` with `P580 ≥ 2014-03-18` | **1** | Explicit post-2014 Russian citizenship start |
+| `P27 = Ukraine` with `P582 ≥ 2014-03-18` | **1** | Explicit post-2014 Ukrainian citizenship end |
+| End-of-UA marked, start-of-RU NOT marked | **0** | "Invisible transition" pattern (loss recorded, gain not) |
+
+Both signals resolve to the same single person in the living-or-unknown cohort. **Exactly one individual** out of 577 has a fully recorded post-2014 citizenship transition. The "invisible transition" count is zero — not because Wikidata is complete, but because it does not record either side. The data gap is **total**, not asymmetric.
+
+Editors add `P27 = Russia` and `P27 = Ukraine` edges. They almost never qualify them with `P580` or `P582`. There is no structured way in Wikidata to distinguish *"acquired Russian citizenship under occupation in 2014"* from *"has always been a Russian citizen"*, and no way to distinguish *"Ukrainian citizenship ended by the occupation"* from *"renounced Ukrainian citizenship voluntarily in 1994"*. One person out of 577 is the ceiling of what the world's most-used structured knowledge base can currently tell you about a 2-million-person demographic event. The data gap is the finding.
 
 ## Statistics & methodology
 
@@ -197,7 +210,9 @@ Editors add `P27 = Russia` edges, but almost never qualify them with a start tim
 | **Sample: People** | 577 | Exhaustive result of the SPARQL `P19 ∈ Crimean cities` query. Not a sample — this is the full population of Wikidata-recorded Crimean-born people. |
 | **UA/RU parity test (living cohort)** | p = 0.93 | Exact two-sided binomial, H₀ : `P(UA)` = 0.5 on the 118 with exclusive citizenship. Cannot reject parity. |
 | **UA/RU Wilson 95% CI** | [0.42, 0.60] | Wilson score interval for `P(UA | exclusive)`. Includes 0.5. |
-| **Post-2014 passportization recall** | 1 / 2,000,000 ≈ 0.00005% | Real-world passportization count per OHCHR; Wikidata `P580`-qualified count. |
+| **Post-2014 `P580` start recall** | 1 / 2,000,000 ≈ 0.00005% | Real-world Russian passportization in Crimea per OHCHR; Wikidata count of `P27=Russia` edges with `P580 ≥ 2014-03-18`. |
+| **Post-2014 `P582` end recall** | 1 / 2,000,000 ≈ 0.00005% | Wikidata count of `P27=Ukraine` edges with `P582 ≥ 2014-03-18` (end of UA citizenship recorded). Same person. |
+| **Invisible transition count** | 0 | People with end-of-UA marked but no start-of-RU. Data gap is total, not asymmetric. |
 | **Description check inter-language agreement** | n/a | Each language edition is independent; no inter-rater agreement applies. Classification by deterministic regex pattern match — reproducible bit-for-bit. |
 
 **Reproducibility.** The entire pipeline runs deterministically against live Wikidata and Wikipedia APIs. A single command (`make pipeline-wikipedia`) reproduces every number in this briefing. Results are a snapshot — Wikidata changes as editors update entries — and the `generated` timestamp in `pipelines/wikipedia/data/manifest.json` records the exact fetch time.
@@ -214,9 +229,9 @@ Editors add `P27 = Russia` edges, but almost never qualify them with a start tim
 2. **German and Indonesian Wikipedia say "Ukraine" for every city tested** (6/6 and 5/5) — proof that the Ukrainian framing is editorially available.
 3. **Italian and Spanish Wikipedia editions are dominated by ambiguous descriptions** (7/8 and 10/12 respectively).
 4. **Wikidata has no current `P17` country property for 11 of 17 Crimean entities** — a structural data gap in the knowledge graph that Google, Bing, Siri, Alexa, and ChatGPT all read from.
-5. **Entity sitelink asymmetry**: 92 Wikipedia editions have a standalone article for the Russian federal subject [Q15966495](https://www.wikidata.org/wiki/Q15966495); 100 for the Ukrainian Autonomous Republic [Q756294](https://www.wikidata.org/wiki/Q756294). **23 editions have the Russian entity but no parallel Ukrainian article**; 31 have the reverse.
+5. **Entity sitelink asymmetry (infrastructural normalization)**: 92 Wikipedia editions have a standalone article for the Russian federal subject [Q15966495](https://www.wikidata.org/wiki/Q15966495); 100 for the Ukrainian Autonomous Republic [Q756294](https://www.wikidata.org/wiki/Q756294). **23 editions have the Russian entity but no parallel Ukrainian article**; 31 have the reverse. The residue of editorial path dependency — smaller language Wikipedias have recent-event editors who wrote about the 2014 news-cycle entity and never wrote about the legacy Ukrainian one.
 6. **Crimean-born people (N=577, stratified)**: among the 244 living-or-unknown cohort, UA-only and RU-only citizenship are at statistical parity (60 vs 58, exact binomial p = 0.93).
-7. **Wikidata cannot represent post-2014 passportization**: only 1 person in the entire 577-entry cohort has a `P27 = Russia` edge with a `P580` (start time) qualifier on or after 2014-03-18, despite ~2 million passports issued in reality.
+7. **Wikidata cannot represent post-2014 passportization**: only 1 person in the entire 577-entry cohort has a `P27 = Russia` edge with a `P580` (start time) qualifier on or after 2014-03-18, and only 1 has a `P27 = Ukraine` edge with a `P582` (end time) qualifier on or after that date. Both signals resolve to the same single person. The "invisible transition" count (end-of-UA marked without matching start-of-RU) is zero — the data gap is total, not asymmetric. Russia issued an estimated 2 million passports in reality.
 8. **In 2014 the Wikipedia category structure was renamed** from "Republic of Crimea" to "Autonomous Republic of Crimea" following ISO 3166-2 — proof that infrastructural fixes are possible when editors decide to make them.
 9. **The [WP:NPOV](https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view) editorial culture** prefers silence over taking sides on disputed territories, even when international law is unambiguous.
 10. **No external enforcement mechanism** binds Wikipedia or Wikidata to international law on sovereignty. [Council Regulation (EU) No 692/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692) binds EU member states but not the Wikimedia Foundation.
@@ -246,7 +261,7 @@ This runs `pipelines/wikipedia/scan.py` end-to-end, writes `pipelines/wikipedia/
 - Wikipedia REST API summary endpoint: [en.wikipedia.org/api/rest_v1/page/summary](https://en.wikipedia.org/api/rest_v1/page/summary/Simferopol)
 - Wikipedia [WP:NPOV policy](https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view) · [Manual of Style for disputed territories](https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Disputed_territories)
 - Wikidata: [wikidata.org](https://www.wikidata.org/) · [SPARQL endpoint](https://query.wikidata.org/sparql)
-- Wikidata properties: [P17 country](https://www.wikidata.org/wiki/Property:P17) · [P19 place of birth](https://www.wikidata.org/wiki/Property:P19) · [P27 citizenship](https://www.wikidata.org/wiki/Property:P27) · [P570 date of death](https://www.wikidata.org/wiki/Property:P570) · [P580 start time](https://www.wikidata.org/wiki/Property:P580)
+- Wikidata properties: [P17 country](https://www.wikidata.org/wiki/Property:P17) · [P19 place of birth](https://www.wikidata.org/wiki/Property:P19) · [P27 citizenship](https://www.wikidata.org/wiki/Property:P27) · [P570 date of death](https://www.wikidata.org/wiki/Property:P570) · [P580 start time](https://www.wikidata.org/wiki/Property:P580) · [P582 end time](https://www.wikidata.org/wiki/Property:P582)
 - Crimea entities: [Q7835 peninsula](https://www.wikidata.org/wiki/Q7835) · [Q15966495 Republic of Crimea (RU)](https://www.wikidata.org/wiki/Q15966495) · [Q756294 Autonomous Republic of Crimea (UA)](https://www.wikidata.org/wiki/Q756294) · [Q178149 Simferopol](https://www.wikidata.org/wiki/Q178149)
 - OHCHR Ukraine monitoring: [ohchr.org/en/countries/ukraine](https://www.ohchr.org/en/countries/ukraine)
 - [Council Regulation (EU) No 692/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692)

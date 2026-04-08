@@ -1,5 +1,5 @@
 {
-  "_generated": "2026-04-07T20:50:03",
+  "_generated": "2026-04-07T21:24:50",
   "_description": "Master manifest aggregating all pipeline outputs. Single source of truth for the site.",
   "pipelines": {
     "ip": {
@@ -702,7 +702,7 @@
       "manifest": {
         "pipeline": "wikipedia",
         "version": "2.0",
-        "generated": "2026-04-08T02:44:51+00:00",
+        "generated": "2026-04-08T04:04:03+00:00",
         "method": "wikidata_sparql + wikipedia_rest_api",
         "summary": {
           "entities_tested": 17,
@@ -721,7 +721,9 @@
           "people_alive_or_unknown": 244,
           "people_alive_ua_only": 60,
           "people_alive_ru_only": 58,
-          "people_post_2014_ru_passport_signal": 1
+          "people_post_2014_ru_passport_signal": 1,
+          "people_post_2014_ua_ended_signal": 1,
+          "people_invisible_transition": 0
         },
         "findings": [
           {
@@ -883,7 +885,9 @@
                   "russian_empire_only": 42,
                   "missing": 35,
                   "other": 48,
-                  "post_2014_ru_passport": 0
+                  "post_2014_ru_passport": 0,
+                  "post_2014_ua_ended": 0,
+                  "invisible_transition": 0
                 },
                 "died_1991_2014": {
                   "n": 67,
@@ -894,7 +898,9 @@
                   "russian_empire_only": 0,
                   "missing": 8,
                   "other": 16,
-                  "post_2014_ru_passport": 0
+                  "post_2014_ru_passport": 0,
+                  "post_2014_ua_ended": 0,
+                  "invisible_transition": 0
                 },
                 "died_post_2014": {
                   "n": 50,
@@ -905,7 +911,9 @@
                   "russian_empire_only": 1,
                   "missing": 7,
                   "other": 7,
-                  "post_2014_ru_passport": 0
+                  "post_2014_ru_passport": 0,
+                  "post_2014_ua_ended": 0,
+                  "invisible_transition": 0
                 },
                 "alive_or_unknown": {
                   "n": 244,
@@ -916,7 +924,9 @@
                   "russian_empire_only": 1,
                   "missing": 42,
                   "other": 39,
-                  "post_2014_ru_passport": 1
+                  "post_2014_ru_passport": 1,
+                  "post_2014_ua_ended": 1,
+                  "invisible_transition": 0
                 }
               },
               "notes": {
@@ -928,7 +938,9 @@
                   "alive_or_unknown": "no death date recorded"
                 },
                 "post_2014_ru_passport": "Number of people in the cohort with a P27=Q159 (Russia) edge whose qualifier P580 (start time) is on or after 2014-03-18. Unambiguously post-occupation passportization.",
-                "caveat": "Imperial Russia and Soviet Union are separate buckets from modern Russia (Q159). Prior aggregate conflated these."
+                "post_2014_ua_ended": "Number of people in the cohort with a P27=Q212 (Ukraine) edge whose qualifier P582 (end time) is on or after 2014-03-18. Explicit editorial record that Ukrainian citizenship ended under occupation.",
+                "invisible_transition": "Number of people with an explicit end-of-UA-citizenship edge (P27=Q212 with P582 >= 2014-03-18) but NO matching start-of-RU-citizenship edge (P27=Q159 with P580 >= 2014-03-18). Wikidata records the loss but not the gain — the 'invisible transition' pattern.",
+                "caveat": "Imperial Russia (Q34266/Q12544) and Soviet Union (Q15180) are separate buckets from modern Russia (Q159)."
               }
             }
           },
@@ -959,9 +971,9 @@
           }
         ],
         "key_findings": [
-          "Entity-sitelink asymmetry: 92 Wikipedia editions have a standalone article for the Russian federal subject 'Republic of Crimea' (Q15966495) vs 100 for the Ukrainian 'Autonomous Republic of Crimea' (Q756294). 23 editions have the Russian entity but NOT the Ukrainian one; 31 have the reverse.",
-          "Stratified Crimean-born people (N=577): among the 244 living or unknown-death cohort, UA-only citizenship 60 (24.6%) vs RU-only 58 (23.8%) — essentially tied. The prior unstratified 69% Russian-citizenship figure was a biographical-lag artifact driven by Imperial-Russia and Soviet-Union successor mapping.",
-          "Wikidata cannot represent post-2014 passportization: only 1 people across 577 entries have a P27=Russia edge with a P580 (start time) qualifier on or after 2014-03-18, despite ~2 million passports issued in reality. The structured-data gap is the finding.",
+          "Entity-sitelink asymmetry: 92 Wikipedia editions have a standalone article for the Russian federal subject 'Republic of Crimea' (Q15966495) vs 100 for the Ukrainian 'Autonomous Republic of Crimea' (Q756294). 23 editions have the Russian entity but NOT the Ukrainian one; 31 have the reverse. The asymmetry in smaller editions is consistent with infrastructural normalization — editors created the Russian federal subject article in 2014 when it was in the news, while the legacy Ukrainian administrative unit was never written about.",
+          "Stratified Crimean-born people (N=577): among the 244 living or unknown-death cohort, UA-only citizenship 60 (24.6%) vs RU-only 58 (23.8%). Exact two-sided binomial test on the 118 people with exclusive citizenship yields statistical parity — p ≈ 0.93 for H0 of P(UA)=0.5.",
+          "Wikidata cannot represent post-2014 passportization: only 1 people across 577 entries have a P27=Russia edge with a P580 (start time) qualifier on or after 2014-03-18, and only 1 have a P27=Ukraine edge with a P582 (end time) qualifier on or after that date. The 'invisible transition' count — end-of-UA marked but no matching start-of-RU — is 0. Russia issued an estimated 2 million passports in Crimea after 2014; Wikidata records almost none of them as structured events. The data gap is the finding.",
           "English Wikipedia description-field erasure: 30 'city in Crimea' (no country) classifications across all tested editions, vs 10 mentioning Ukraine and 0 mentioning Russia.",
           "Wikidata P17 (country) coverage for 17 Crimean entities: 3 list Ukraine, 4 list Russia, 11 have no current country claim."
         ],

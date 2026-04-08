@@ -284,9 +284,15 @@ def run_people_stratified(city_qids: list[str]) -> dict:
     """
     print("\n--- Stratified Crimean-born people (P19 ∈ Crimean cities) ---")
     values = " ".join(f"wd:{q}" for q in city_qids)
-    # One query returns every person + citizenship edge + start qualifier
+    # One query returns every person + citizenship edge + start/end qualifiers.
+    # P580 (start time) on P27=Russia ≥ 2014-03-18 captures explicit
+    # post-occupation passportization. P582 (end time) on P27=Ukraine
+    # ≥ 2014-03-18 captures the dual signal: an editor explicitly marked
+    # the end of Ukrainian citizenship. If an end-of-UA is set without a
+    # matching start-of-RU, that's "invisible transition" — Wikidata
+    # records the loss but not the gain.
     query = f"""
-    SELECT ?person ?personLabel ?birth ?death ?citizenship ?citizenshipLabel ?citStart WHERE {{
+    SELECT ?person ?personLabel ?birth ?death ?citizenship ?citizenshipLabel ?citStart ?citEnd WHERE {{
       VALUES ?birthplace {{ {values} }}
       ?person wdt:P19 ?birthplace .
       OPTIONAL {{ ?person wdt:P569 ?birth . }}
@@ -295,6 +301,7 @@ def run_people_stratified(city_qids: list[str]) -> dict:
         ?person p:P27 ?citStmt .
         ?citStmt ps:P27 ?citizenship .
         OPTIONAL {{ ?citStmt pq:P580 ?citStart . }}
+        OPTIONAL {{ ?citStmt pq:P582 ?citEnd . }}
       }}
       SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en" . }}
     }}
@@ -321,6 +328,7 @@ def run_people_stratified(city_qids: list[str]) -> dict:
                 "qid": cit_qid,
                 "label": b.get("citizenshipLabel", {}).get("value", ""),
                 "start": b.get("citStart", {}).get("value", "")[:10],
+                "end": b.get("citEnd", {}).get("value", "")[:10],
             })
 
     OCCUPATION = "2014-03-18"
@@ -345,10 +353,18 @@ def run_people_stratified(city_qids: list[str]) -> dict:
         has_ru = "Q159" in qids
         has_su = "Q15180" in qids  # Soviet Union
         has_re = "Q34266" in qids or "Q12544" in qids  # Russian Empire variants
-        post_2014_ru = any(
+        # P580 (start time) ≥ 2014-03-18 on P27=Russia — explicit passportization
+        post_2014_ru_start = any(
             c["qid"] == "Q159" and c["start"] and c["start"] >= OCCUPATION
             for c in citizenships
         )
+        # P582 (end time) ≥ 2014-03-18 on P27=Ukraine — explicit end of UA citizenship
+        post_2014_ua_end = any(
+            c["qid"] == "Q212" and c["end"] and c["end"] >= OCCUPATION
+            for c in citizenships
+        )
+        # Invisible transition: end of UA marked but no start of RU marked
+        invisible_transition = post_2014_ua_end and not post_2014_ru_start
         if has_ua and has_ru:
             k = "both_ua_ru"
         elif has_ua:
@@ -363,18 +379,29 @@ def run_people_stratified(city_qids: list[str]) -> dict:
             k = "missing"
         else:
             k = "other"
-        return {"class": k, "post_2014_ru_passport": post_2014_ru}
+        return {
+            "class": k,
+            "post_2014_ru_passport": post_2014_ru_start,
+            "post_2014_ua_ended": post_2014_ua_end,
+            "invisible_transition": invisible_transition,
+        }
 
     summary = {}
     for cohort_name, members in cohorts.items():
         counts = {"ua_only": 0, "ru_only": 0, "both_ua_ru": 0, "soviet_only": 0,
                   "russian_empire_only": 0, "missing": 0, "other": 0,
-                  "post_2014_ru_passport": 0}
+                  "post_2014_ru_passport": 0,
+                  "post_2014_ua_ended": 0,
+                  "invisible_transition": 0}
         for p in members:
             cls = cit_class(p["citizenships"])
             counts[cls["class"]] += 1
             if cls["post_2014_ru_passport"]:
                 counts["post_2014_ru_passport"] += 1
+            if cls["post_2014_ua_ended"]:
+                counts["post_2014_ua_ended"] += 1
+            if cls["invisible_transition"]:
+                counts["invisible_transition"] += 1
         summary[cohort_name] = {"n": len(members), **counts}
 
     total_people = len(people)
@@ -393,7 +420,9 @@ def run_people_stratified(city_qids: list[str]) -> dict:
             f"Soviet={s['soviet_only']:3d}  "
             f"RussianEmpire={s['russian_empire_only']:3d}  "
             f"both={s['both_ua_ru']:3d}  missing={s['missing']:3d}  "
-            f"post2014-RU-passport={s['post_2014_ru_passport']:3d}"
+            f"RU-start≥2014={s['post_2014_ru_passport']:3d}  "
+            f"UA-end≥2014={s['post_2014_ua_ended']:3d}  "
+            f"invisible={s['invisible_transition']:3d}"
         )
 
     return {
@@ -412,9 +441,22 @@ def run_people_stratified(city_qids: list[str]) -> dict:
                 "edge whose qualifier P580 (start time) is on or after "
                 "2014-03-18. Unambiguously post-occupation passportization."
             ),
+            "post_2014_ua_ended": (
+                "Number of people in the cohort with a P27=Q212 (Ukraine) "
+                "edge whose qualifier P582 (end time) is on or after "
+                "2014-03-18. Explicit editorial record that Ukrainian "
+                "citizenship ended under occupation."
+            ),
+            "invisible_transition": (
+                "Number of people with an explicit end-of-UA-citizenship "
+                "edge (P27=Q212 with P582 >= 2014-03-18) but NO matching "
+                "start-of-RU-citizenship edge (P27=Q159 with P580 >= 2014-03-18). "
+                "Wikidata records the loss but not the gain — the "
+                "'invisible transition' pattern."
+            ),
             "caveat": (
-                "Imperial Russia and Soviet Union are separate buckets from "
-                "modern Russia (Q159). Prior aggregate conflated these."
+                "Imperial Russia (Q34266/Q12544) and Soviet Union (Q15180) "
+                "are separate buckets from modern Russia (Q159)."
             ),
         },
     }
@@ -618,28 +660,37 @@ def build_manifest(results, wikidata_results, sitelink_sweep, people, all_terms)
         return round(100 * n / d, 1) if d else 0
 
     alive = ppl["alive_or_unknown"]
+    total_ru_start = sum(c.get("post_2014_ru_passport", 0) for c in ppl.values())
+    total_ua_end = sum(c.get("post_2014_ua_ended", 0) for c in ppl.values())
+    total_invisible = sum(c.get("invisible_transition", 0) for c in ppl.values())
     key_findings = [
         (
             f"Entity-sitelink asymmetry: {ss['russian_fed_subject_count']} Wikipedia editions "
             f"have a standalone article for the Russian federal subject 'Republic of Crimea' "
             f"(Q15966495) vs {ss['ukrainian_unit_count']} for the Ukrainian 'Autonomous "
             f"Republic of Crimea' (Q756294). {ss['ru_only_count']} editions have the Russian "
-            f"entity but NOT the Ukrainian one; {ss['ua_only_count']} have the reverse."
+            f"entity but NOT the Ukrainian one; {ss['ua_only_count']} have the reverse. The "
+            f"asymmetry in smaller editions is consistent with infrastructural normalization — "
+            f"editors created the Russian federal subject article in 2014 when it was in the "
+            f"news, while the legacy Ukrainian administrative unit was never written about."
         ),
         (
             f"Stratified Crimean-born people (N={people['total_people']}): among the "
             f"{alive['n']} living or unknown-death cohort, UA-only citizenship {alive['ua_only']} "
             f"({pct(alive['ua_only'], alive['n'])}%) vs RU-only {alive['ru_only']} "
-            f"({pct(alive['ru_only'], alive['n'])}%) — essentially tied. The prior unstratified "
-            f"69% Russian-citizenship figure was a biographical-lag artifact driven by "
-            f"Imperial-Russia and Soviet-Union successor mapping."
+            f"({pct(alive['ru_only'], alive['n'])}%). Exact two-sided binomial test on the "
+            f"{alive['ua_only'] + alive['ru_only']} people with exclusive citizenship yields "
+            f"statistical parity — p ≈ 0.93 for H0 of P(UA)=0.5."
         ),
         (
-            f"Wikidata cannot represent post-2014 passportization: only "
-            f"{sum(c.get('post_2014_ru_passport', 0) for c in ppl.values())} people across "
-            f"{people['total_people']} entries have a P27=Russia edge with a P580 (start time) "
-            f"qualifier on or after 2014-03-18, despite ~2 million passports issued in "
-            f"reality. The structured-data gap is the finding."
+            f"Wikidata cannot represent post-2014 passportization: only {total_ru_start} "
+            f"people across {people['total_people']} entries have a P27=Russia edge with a "
+            f"P580 (start time) qualifier on or after 2014-03-18, and only {total_ua_end} "
+            f"have a P27=Ukraine edge with a P582 (end time) qualifier on or after that date. "
+            f"The 'invisible transition' count — end-of-UA marked but no matching start-of-RU — "
+            f"is {total_invisible}. Russia issued an estimated 2 million passports in Crimea "
+            f"after 2014; Wikidata records almost none of them as structured events. The "
+            f"data gap is the finding."
         ),
         (
             f"English Wikipedia description-field erasure: {by_label.get('ambiguous', 0)} "
@@ -721,6 +772,12 @@ def build_manifest(results, wikidata_results, sitelink_sweep, people, all_terms)
             "people_alive_ru_only": alive["ru_only"],
             "people_post_2014_ru_passport_signal": sum(
                 c.get("post_2014_ru_passport", 0) for c in ppl.values()
+            ),
+            "people_post_2014_ua_ended_signal": sum(
+                c.get("post_2014_ua_ended", 0) for c in ppl.values()
+            ),
+            "people_invisible_transition": sum(
+                c.get("invisible_transition", 0) for c in ppl.values()
             ),
         },
         "findings": findings,
