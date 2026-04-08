@@ -1,7 +1,7 @@
 {
   "pipeline": "weather",
   "version": "2.0",
-  "generated": "2026-04-08T03:21:32+00:00",
+  "generated": "2026-04-08T03:45:52+00:00",
   "method": "live_http_probe + geonames_ground_truth",
   "summary": {
     "total_services": 25,
@@ -16,7 +16,7 @@
     "incorrect_pct": 12.0,
     "timezone_europe_simferopol": 3,
     "timezone_europe_moscow": 0,
-    "geonames_country_code": null,
+    "geonames_country_code": "UA",
     "disagreements_with_prior_count": 7
   },
   "findings": [
@@ -626,7 +626,7 @@
     "Every 'incorrect' service is Russian-origin (Yandex Weather, Gismeteo, rp5.ru, Pogoda.mail.ru). No Western weather service classifies Crimea as Russian. The cleanest bright line in the entire audit.",
     "Apple WeatherKit and Google Search weather panel are classified 'untested', not 'correct'. Both are suspected worldview-compliant (serve UA on EU/US IPs, RU on Russian IPs), but the hypothesis requires a signed Apple Developer JWT and a Russian IP proxy to verify. We refuse to label as correct without the test. This is a correction from the prior audit, which classified Apple as Correct.",
     "Primary sovereignty signal defined: URL path (/ua/ vs /ru/). Secondary: <title>. Tertiary: breadcrumb/body text. Quaternary: timezone shown (Europe/Simferopol is the ISO-compliant choice; Europe/Moscow is the de-facto Russian choice). 3 services referenced Europe/Simferopol in probed HTML, 0 referenced Europe/Moscow.",
-    "Ground truth: GeoNames entry 693805 (Simferopol) live-fetched — country_code=fetch-failed. This is the upstream that every Western weather service's geocoding inherits from, and it is unambiguous per ISO 3166. The deliberate choice of Western weather providers to use GeoNames for geocoding (while most use OpenStreetMap for map tiles, where Crimea is dual-tagged under OSM's 'on the ground' rule) is the structural finding."
+    "Ground truth: GeoNames entry 693805 (Simferopol) live-fetched — country_code=UA. This is the upstream that every Western weather service's geocoding inherits from, and it is unambiguous per ISO 3166. The deliberate choice of Western weather providers to use GeoNames for geocoding (while most use OpenStreetMap for map tiles, where Crimea is dual-tagged under OSM's 'on the ground' rule) is the structural finding."
   ],
   "limitations": [
     "Tested from an EU/US network. Worldview-compliant services that switch on Russian IPs were not verified from a Russian proxy in this run — this is why Apple WeatherKit and Google Search weather panel are marked 'untested' rather than classified.",
@@ -638,10 +638,10 @@
   ],
   "ground_truth": {
     "geonames": {
-      "source": "https://www.geonames.org/693805/simferopol.html",
+      "source": "https://sws.geonames.org/693805/about.rdf",
       "http": 200,
-      "country_code": null,
-      "matches_iso_ua": false,
+      "country_code": "UA",
+      "matches_iso_ua": true,
       "available": true
     },
     "openweathermap": {

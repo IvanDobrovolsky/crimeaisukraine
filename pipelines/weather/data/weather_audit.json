@@ -63,10 +63,10 @@
     ],
     "ground_truth": {
       "geonames": {
-        "source": "https://www.geonames.org/693805/simferopol.html",
+        "source": "https://sws.geonames.org/693805/about.rdf",
         "http": 200,
-        "country_code": null,
-        "matches_iso_ua": false,
+        "country_code": "UA",
+        "matches_iso_ua": true,
         "available": true
       },
       "openweathermap": {
@@ -89,7 +89,7 @@
       "title": "",
       "notes": "Autocomplete JSON endpoint returns multiple results per query; the first result determines AccuWeather's default routing.",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:01+00:00",
+        "fetched_at": "2026-04-08T03:45:15+00:00",
         "http_status": 200,
         "final_url": "https://www.accuweather.com/web-api/autocomplete?query=Simferopol&language=en-us",
         "url_signal": null,
@@ -127,7 +127,7 @@
       "title": "Weather Forecast and Conditions for Simferopol, Simferopol | weather.com",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:02+00:00",
+        "fetched_at": "2026-04-08T03:45:16+00:00",
         "http_status": 200,
         "final_url": "https://weather.com/weather/today/l/44.95,34.10",
         "url_signal": null,
@@ -159,7 +159,7 @@
       "title": "Simferopol Weather Conditions | Weather Underground",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:04+00:00",
+        "fetched_at": "2026-04-08T03:45:18+00:00",
         "http_status": 200,
         "final_url": "https://www.wunderground.com/weather/ua/simferopol",
         "url_signal": "ua",
@@ -191,7 +191,7 @@
       "title": "Weather for Simferopol, Ukraine",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:05+00:00",
+        "fetched_at": "2026-04-08T03:45:21+00:00",
         "http_status": 200,
         "final_url": "https://www.timeanddate.com/weather/ukraine/simferopol",
         "url_signal": "ua",
@@ -223,7 +223,7 @@
       "title": "",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:05+00:00",
+        "fetched_at": "2026-04-08T03:45:21+00:00",
         "http_status": 202,
         "final_url": "https://weatherspark.com/y/96313/Average-Weather-in-Simferopol-Ukraine-Year-Round",
         "url_signal": "ua",
@@ -255,7 +255,7 @@
       "title": "Weather Poltava - meteoblue",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:06+00:00",
+        "fetched_at": "2026-04-08T03:45:22+00:00",
         "http_status": 200,
         "final_url": "https://www.meteoblue.com/en/weather/week/simferopol_ukraine_696643",
         "url_signal": "ua",
@@ -287,7 +287,7 @@
       "title": "Simferopol Weather Forecast",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:07+00:00",
+        "fetched_at": "2026-04-08T03:45:23+00:00",
         "http_status": 200,
         "final_url": "https://www.weather-forecast.com/locations/Simferopol/forecasts/latest",
         "url_signal": null,
@@ -319,7 +319,7 @@
       "title": "Weather - Simferopol - 14-Day Forecast & Rain | Ventusky",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:08+00:00",
+        "fetched_at": "2026-04-08T03:45:24+00:00",
         "http_status": 200,
         "final_url": "https://www.ventusky.com/simferopol",
         "url_signal": null,
@@ -351,7 +351,7 @@
       "title": "",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:11+00:00",
+        "fetched_at": "2026-04-08T03:45:25+00:00",
         "http_status": 403,
         "final_url": "https://www.weather-atlas.com/en/ukraine/simferopol",
         "url_signal": "ua",
@@ -383,7 +383,7 @@
       "title": "Windy: Wind map & weather forecast",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:12+00:00",
+        "fetched_at": "2026-04-08T03:45:26+00:00",
         "http_status": 200,
         "final_url": "https://www.windy.com/44.948/34.100?44.948,34.100,8",
         "url_signal": null,
@@ -415,7 +415,7 @@
       "title": "Yr - Kyiv - Long term forecast",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:13+00:00",
+        "fetched_at": "2026-04-08T03:45:27+00:00",
         "http_status": 200,
         "final_url": "https://www.yr.no/en/forecast/daily-table/2-703448/Ukraine/Kyiv%20City/Kyiv",
         "url_signal": "ua",
@@ -447,7 +447,7 @@
       "title": "Weather today - Simferopol, Autonomous Republic of Crimea, UA - Foreca.com",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:14+00:00",
+        "fetched_at": "2026-04-08T03:45:28+00:00",
         "http_status": 200,
         "final_url": "https://www.foreca.com/100693805/Simferopol-Gorodskoy%20okrug%20Simferopol,%20Ukraine",
         "url_signal": null,
@@ -479,7 +479,7 @@
       "title": "Meteo Simferopol (Ucraina) - Previsioni Oggi, Prossimi 15 giorni » iLMeteo.it",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:16+00:00",
+        "fetched_at": "2026-04-08T03:45:30+00:00",
         "http_status": 200,
         "final_url": "https://www.ilmeteo.it/meteo/simferopol",
         "url_signal": null,
@@ -511,7 +511,7 @@
       "title": "Predicción ciudades del mundo - Agencia Estatal de Meteorología - AEMET. Gobierno de España",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:16+00:00",
+        "fetched_at": "2026-04-08T03:45:32+00:00",
         "http_status": 200,
         "final_url": "https://www.aemet.es/es/eltiempo/prediccion/mundo?w=27000&l=34109_44948&c=UA",
         "url_signal": null,
@@ -543,7 +543,7 @@
       "title": "",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:17+00:00",
+        "fetched_at": "2026-04-08T03:45:33+00:00",
         "http_status": 404,
         "final_url": "https://www.windfinder.com/forecast/simferopol_international_airport",
         "url_signal": null,
@@ -575,7 +575,7 @@
       "title": "The Weather's Record Keeper | Meteostat",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:18+00:00",
+        "fetched_at": "2026-04-08T03:45:35+00:00",
         "http_status": 200,
         "final_url": "https://meteostat.net/en/place/ua/simferopol?s=33946&t=2024-01-01/2024-12-31",
         "url_signal": "ua",
@@ -607,7 +607,7 @@
       "title": "Weather in Simferopol — Weather forecast in Simferopol, Republic of Crimea",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:19+00:00",
+        "fetched_at": "2026-04-08T03:45:36+00:00",
         "http_status": 200,
         "final_url": "https://yandex.com/weather/en/simferopol",
         "url_signal": null,
@@ -639,7 +639,7 @@
       "title": "",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:22+00:00",
+        "fetched_at": "2026-04-08T03:45:38+00:00",
         "http_status": 403,
         "final_url": "https://meteofor.com/weather-saratov-5032/",
         "url_signal": null,
@@ -671,7 +671,7 @@
       "title": "Weather in Simferopol - RP5",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:23+00:00",
+        "fetched_at": "2026-04-08T03:45:40+00:00",
         "http_status": 200,
         "final_url": "https://rp5.ru/Weather_in_Simferopol",
         "url_signal": null,
@@ -703,7 +703,7 @@
       "title": "Погода Mail: прогноз погоды в Симферополе на сегодня, завтра и ближайшие дни, погода в вашем регионе, на курортах",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:25+00:00",
+        "fetched_at": "2026-04-08T03:45:42+00:00",
         "http_status": 200,
         "final_url": "https://pogoda.mail.ru/prognoz/simferopol/",
         "url_signal": null,
@@ -735,7 +735,7 @@
       "title": "Ukraine Weather | WorldWeatherOnline.com",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:28+00:00",
+        "fetched_at": "2026-04-08T03:45:47+00:00",
         "http_status": 200,
         "final_url": "https://www.worldweatheronline.com/simferopol-weather/avtonomna-respublika-krym/ua.aspx",
         "url_signal": "ua",
@@ -767,7 +767,7 @@
       "title": "Simferopol Weather Forecast | MSN Weather",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:29+00:00",
+        "fetched_at": "2026-04-08T03:45:48+00:00",
         "http_status": 200,
         "final_url": "https://www.msn.com/en-us/weather/forecast/in-Simferopol",
         "url_signal": null,
@@ -799,7 +799,7 @@
       "title": "世界天気 - 日本気象協会 tenki.jp",
       "notes": "",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:30+00:00",
+        "fetched_at": "2026-04-08T03:45:49+00:00",
         "http_status": 200,
         "final_url": "https://tenki.jp/world/",
         "url_signal": null,
@@ -831,7 +831,7 @@
       "title": null,
       "notes": "Requires Apple Developer JWT (ES256) for api.weatherkit.apple.com. Worldview-split hypothesis: EU/US IP → UA, RU IP → RU. Not verifiable from this scanner without a signed token and a Russian IP proxy. Honest default: untested.",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:31+00:00"
+        "fetched_at": "2026-04-08T03:45:50+00:00"
       }
     },
     {
@@ -846,7 +846,7 @@
       "title": null,
       "notes": "Google's weather panel is embedded in Search and localized via &gl= (geo) and &hl= (language). Worldview-split hypothesis: &gl=us → UA, &gl=ru → RU. Google blocks scraping without JS; we record the hypothesis and mark for manual browser verification.",
       "probes": {
-        "fetched_at": "2026-04-08T03:21:32+00:00"
+        "fetched_at": "2026-04-08T03:45:51+00:00"
       }
     }
   ]

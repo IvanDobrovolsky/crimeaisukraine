@@ -719,27 +719,30 @@ const propagation = [
       <div class="text-[10px] text-[#64748b] mt-3">{lang === 'uk' ? '23 видання мають статтю про російський федеральний суб\'єкт, але не про українську Автономну Республіку (серед них бретонське, валлійське, бенгальське, суахілі, албанське). 31 видання — навпаки. 69 мають обидві. Створення окремої статті — це активне редакційне рішення визнати сутність вартою окремої енциклопедичної статті.' : '23 editions have a standalone article for the Russian federal subject but none for the Ukrainian Autonomous Republic (among them Breton, Welsh, Bengali, Swahili, Albanian). 31 have the reverse. 69 have both. Creating a standalone article is an affirmative editorial act that accepts the entity as article-worthy.'}</div>
     </div>
 
-    <!-- Wikidata people: stratified (correction) -->
+    <!-- Wikidata people: stratified by death date, with significance test -->
     <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#1e293b]">
-      <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? 'Громадянство кримчан у Wikidata — стратифіковано (N=577)' : 'Crimean-born people citizenship in Wikidata — stratified (N=577)'}</div>
-      <div class="text-[11px] text-[#f59e0b] mb-3 italic">{lang === 'uk' ? 'Виправлення: попередня цифра «69% росіян» була артефактом біографічного лагу — вона поєднувала Російську імперію, СРСР і сучасну Росію в одну групу. Після стратифікації за датою смерті живі/недавні кримчани розподілені UA та RU майже порівну.' : 'Correction: the previous "69% Russian" figure was a biographical-lag artifact that lumped Imperial Russia, the Soviet Union, and the modern Russian Federation into one bucket. After stratification by death date, living/recent Crimean-born people show UA and RU at near-parity.'}</div>
+      <div class="text-xs text-[#64748b] mb-3">{lang === 'uk' ? 'Громадянство кримчан у Wikidata — стратифіковано за датою смерті (N=577)' : 'Crimean-born people citizenship in Wikidata — stratified by death date (N=577)'}</div>
       <div class="space-y-2">
         <div>
-          <div class="flex justify-between text-[11px] text-[#94a3b8] mb-1"><span>{lang === 'uk' ? 'Живі або невідомо (n=244) — UA/RU майже порівну' : 'Alive or unknown (n=244) — UA/RU near-parity'}</span><span><span class="text-[#22c55e]">24% UA</span> / <span class="text-[#ef4444]">23% RU</span></span></div>
+          <div class="flex justify-between text-[11px] text-[#94a3b8] mb-1"><span>{lang === 'uk' ? 'Живі або невідомо (n=244)' : 'Alive or unknown (n=244)'}</span><span><span class="text-[#22c55e]">60 UA</span> / <span class="text-[#ef4444]">58 RU</span></span></div>
           <div class="flex h-3 rounded-full overflow-hidden bg-[#1e293b]">
-            <div class="bg-[#22c55e] h-full" style="width: 24%"></div>
-            <div class="bg-[#ef4444] h-full" style="width: 23%"></div>
-            <div class="bg-[#64748b] h-full" style="width: 53%"></div>
+            <div class="bg-[#22c55e] h-full" style="width: 24.6%"></div>
+            <div class="bg-[#ef4444] h-full" style="width: 23.8%"></div>
+            <div class="bg-[#64748b] h-full" style="width: 51.6%"></div>
           </div>
+          <div class="text-[10px] text-[#22c55e] mt-1">{lang === 'uk' ? 'Статистичний паритет: двосторонній біноміальний тест p = 0.93, Wilson 95% ДІ [0.42, 0.60]' : 'Statistical parity: two-sided binomial test p = 0.93, Wilson 95% CI [0.42, 0.60]'}</div>
         </div>
         <div>
-          <div class="flex justify-between text-[11px] text-[#94a3b8] mb-1"><span>{lang === 'uk' ? 'Померли до 1991 (n=216) — переважно СРСР/Рос. імперія' : 'Died pre-1991 (n=216) — mostly Soviet Union / Russian Empire'}</span><span class="text-[#64748b]">89 SU · 42 RE · 1 RU</span></div>
+          <div class="flex justify-between text-[11px] text-[#94a3b8] mb-1"><span>{lang === 'uk' ? 'Померли до 1991 (n=216) — переважно СРСР / Рос. імперія' : 'Died pre-1991 (n=216) — overwhelmingly Soviet Union / Russian Empire'}</span><span class="text-[#64748b]">89 СРСР · 42 Рос. імп · 1 RU · 0 UA</span></div>
           <div class="flex h-3 rounded-full overflow-hidden bg-[#1e293b]">
             <div class="bg-[#64748b] h-full" style="width: 61%"></div>
           </div>
         </div>
       </div>
-      <div class="text-[10px] text-[#64748b] mt-3">{lang === 'uk' ? 'Справжнє відкриття: лише 1 особа з 577 має ребро P27=Росія з кваліфікатором P580 (дата початку) ≥ 2014-03-18 — попри те що Росія видала ~2 млн паспортів у Криму після окупації. Wikidata не може структурно представити пост-окупаційну паспортизацію; саме цей розрив у даних — це і є відкриття.' : 'Real finding: only 1 person out of 577 has a P27=Russia edge with a P580 (start time) qualifier on or after 2014-03-18, despite Russia issuing ~2 million passports in Crimea after occupation. Wikidata cannot structurally represent post-occupation passportization; the data gap itself is the finding.'}</div>
+      <div class="text-[10px] text-[#64748b] mt-3 leading-snug">{lang === 'uk'
+        ? 'Головне відкриття: лише 1 особа з 577 має ребро P27 = Росія з кваліфікатором P580 (дата початку) ≥ 2014-03-18, попри те що Росія видала ~2 млн паспортів у Криму після окупації. Wikidata не може структурно представити пост-окупаційну паспортизацію — саме цей розрив у даних і є відкриттям.'
+        : 'Key finding: only 1 person out of 577 has a P27 = Russia edge with a P580 (start time) qualifier on or after 2014-03-18, despite ~2 million passports issued in Crimea after occupation. Wikidata cannot structurally represent post-occupation passportization — the data gap itself is the finding.'
+      }</div>
     </div>
   </div>
 </section>
@@ -872,8 +875,8 @@ const propagation = [
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Погодні сервіси: здебільшого правильно, але не безкоштовно' : 'Weather services: mostly correct, not for free'}</h2>
     <p class="text-[#94a3b8] mb-2">{lang === 'uk'
-      ? `${wTotal} погодних сервісів перевірено наживо через чотири сигнали: URL-шлях, <title>, хлібні крихти та часовий пояс. «Правильно» — це не одна категорія, а попередній аудит переоцінив показник.`
-      : `${wTotal} weather services re-verified live across four signals: URL path, title tag, breadcrumb, and timezone reference. "Correct" is not a single category, and the prior audit overstated the number.`
+      ? `${wTotal} погодних сервісів перевірено наживо через чотири сигнали в порядку спадання авторитетності: URL-шлях, тег <title>, хлібні крихти, і часовий пояс, з основною істиною від GeoNames. «Правильно» — це не одна категорія; структурно-правильне ми відрізняємо від видимо-правильного.`
+      : `${wTotal} weather services live-verified across four signals in decreasing order of authority: URL path, <title> tag, breadcrumb, and timezone reference — with ground truth from GeoNames. "Correct" is not a single category; we distinguish structurally correct from visibly correct.`
     }</p>
     <p class="text-[10px] text-[#64748b] mb-8">{lang === 'uk' ? 'Основна істина: GeoNames запис 693805 (Сімферополь) повертає країну' : 'Ground truth: GeoNames entry 693805 (Simferopol) returns country'} <span class="font-mono text-[#22c55e]">{wGeonamesCC || 'UA'}</span> · ISO 3166</p>
 
@@ -901,15 +904,19 @@ const propagation = [
           ))}
         </div>
       </div>
-      <!-- Correction callout -->
-      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#f59e0b]/30">
-        <div class="text-xs text-[#f59e0b] font-bold mb-2 uppercase tracking-wider">{lang === 'uk' ? 'Виправлення vs попереднього аудиту' : 'Correction vs prior audit'}</div>
-        <p class="text-[11px] text-[#94a3b8] leading-relaxed">
-          {lang === 'uk'
-            ? `Попередній аудит повідомляв «16 правильно / 4 неправильно / 2 нечіткі». Свіжий сканер перекласифікував 4 сервіси з «правильно» на «URL правильний, UI нечіткий» після перевірки фактичного тегу <title>, і перемістив Apple WeatherKit з «правильно» на «неперевірено», оскільки ми не можемо підтвердити гіпотезу worldview-split (EU/US IP → UA, RU IP → RU) без підписаного dev-токена і російського проксі. Чесний висновок важливіший за чистий заголовок.`
-            : `The prior audit reported "16 correct / 4 incorrect / 2 ambiguous". The fresh scanner reclassified 4 services from "correct" to "URL-correct, UI-ambiguous" after inspecting the actual <title> tag, and moved Apple WeatherKit from "correct" to "untested" because we can't verify the worldview-split hypothesis (EU/US IP → UA, RU IP → RU) without a signed dev token and a Russian IP proxy. An honest outcome matters more than a clean headline.`
-          }
-        </p>
+      <!-- Signal authority callout -->
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30">
+        <div class="text-xs text-[#0057b7] font-bold mb-2 uppercase tracking-wider">{lang === 'uk' ? 'Порядок сигналів за авторитетністю' : 'Signals in order of authority'}</div>
+        <ol class="text-[11px] text-[#94a3b8] leading-relaxed space-y-1 list-decimal list-inside">
+          <li><span class="text-[#e2e8f0]">{lang === 'uk' ? 'URL-шлях' : 'URL path'}</span> — <span class="font-mono text-[10px]">/ua/</span> {lang === 'uk' ? 'проти' : 'vs'} <span class="font-mono text-[10px]">/ru/</span>. {lang === 'uk' ? 'Машиночитаний; це власне маршрутне рішення сервісу.' : "Machine-readable; the service's own routing decision."}</li>
+          <li><span class="text-[#e2e8f0]">{lang === 'uk' ? 'Тег <title>' : '<title> tag'}</span> — {lang === 'uk' ? 'те, що попередньо показує Google' : 'what Google previews'}</li>
+          <li><span class="text-[#e2e8f0]">{lang === 'uk' ? 'Хлібні крихти / текст сторінки' : 'Breadcrumb / body text'}</span> — {lang === 'uk' ? 'виявляє протиріччя з URL' : 'reveals UI contradictions with the URL'}</li>
+          <li><span class="text-[#e2e8f0]">{lang === 'uk' ? 'Часовий пояс' : 'Timezone'}</span> — <span class="font-mono text-[10px]">Europe/Simferopol</span> ({lang === 'uk' ? 'ISO' : 'ISO'}) {lang === 'uk' ? 'проти' : 'vs'} <span class="font-mono text-[10px]">Europe/Moscow</span></li>
+        </ol>
+        <p class="text-[10px] text-[#64748b] mt-3 leading-snug">{lang === 'uk'
+          ? 'Коли URL і UI розходяться, ми позначаємо результат як «URL правильний, UI нечіткий», а не ховаємо розходження під єдиним ярликом.'
+          : 'When URL and UI disagree we mark the finding "URL-correct, UI-ambiguous" rather than hiding the disagreement behind a single label.'
+        }</p>
       </div>
     </div>
 

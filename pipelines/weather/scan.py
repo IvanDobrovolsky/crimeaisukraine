@@ -482,28 +482,25 @@ def classify(service: Service, probes: dict) -> tuple[str, str]:
 # ─── Ground truth probes ────────────────────────────────────────────────────
 
 def fetch_geonames_ground_truth() -> dict:
-    """Fetch GeoNames entry 693805 (Simferopol) and extract country code."""
+    """Fetch GeoNames entry 693805 (Simferopol) country code via the
+    stable RDF endpoint. The public HTML page is JavaScript-rendered so
+    we use sws.geonames.org/.../about.rdf which is both public and
+    machine-parseable without an API key."""
     print("\n--- GeoNames ground truth: entry 693805 (Simferopol) ---")
-    url = "https://www.geonames.org/693805/simferopol.html"
+    url = "https://sws.geonames.org/693805/about.rdf"
     status, final_url, body = fetch(url)
     if not body:
         print(f"  HTTP {status} — unable to fetch")
         return {"source": url, "http": status, "country_code": None, "available": False}
-    # Look for the country cell — GeoNames page embeds country name + code
-    country_match = re.search(r"Country Code[:\s]*<[^>]*>([A-Z]{2})", body)
-    country = country_match.group(1) if country_match else None
-    if not country:
-        # Alternative: extract from page text
-        text = BeautifulSoup(body, "html.parser").get_text(" ", strip=True)
-        m = re.search(r"Country\s*Code\s+([A-Z]{2})", text)
-        country = m.group(1) if m else None
+    m = re.search(r"<gn:countryCode>([A-Z]{2})</gn:countryCode>", body)
+    country = m.group(1) if m else None
     print(f"  country_code: {country or 'UNKNOWN'} (expected UA)")
     return {
         "source": url,
         "http": status,
         "country_code": country,
         "matches_iso_ua": country == "UA",
-        "available": True,
+        "available": country is not None,
     }
 
 
