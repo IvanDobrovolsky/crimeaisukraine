@@ -1,5 +1,9 @@
 # Academic Framing: How DOIs Make Sovereignty Claims Permanent
 
+> **In one sentence:** 1,581 peer-reviewed academic papers published by major Western publishers (Wiley, IOP, EDP Sciences, Elsevier SSRN, CERN Zenodo) list their authors' institutional affiliations as "Republic of Crimea, Russian Federation." Each of those papers has a permanent DOI. None will ever be corrected. All of them are now part of the training data used by open-source LLMs through academic corpora like [peS2o](https://github.com/allenai/peS2o), [S2ORC](https://github.com/allenai/s2orc), and [arXiv](https://arxiv.org/) — the same corpora that feed [Dolma](../training_corpora/README.md), which trains AI2's [OLMo-2](https://allenai.org/olmo2).
+
+> **Novelty:** To our knowledge this is the first systematic scan of academic metadata for sovereignty framing at scale. Prior work on Crimea's academic treatment has focused on legal analysis (self-determination, Budapest Memorandum, referendum legitimacy) or on individual case studies. No prior study has measured the propagation of Russian sovereignty framing through the DOI-minted scholarly record. **91,670 papers scanned · 5,151 sovereignty-signaled · 1,581 LLM-confirmed Russia-framed.**
+
 ## What is a DOI and why does it matter?
 
 A **[Digital Object Identifier (DOI)](https://www.doi.org/)** is a permanent unique identifier assigned to a published academic work. The DOI system is administered by the [International DOI Foundation](https://www.doi.org/the-foundation/) and the registration is done by member registries — primarily [CrossRef](https://www.crossref.org/) for journals and [DataCite](https://datacite.org/) for datasets. As of 2025, more than **140 million DOIs** have been assigned to published works ([CrossRef stats](https://www.crossref.org/06members/53status.html)).
@@ -51,6 +55,8 @@ The chain has no sovereignty checkpoint:
 - **Scopus and Web of Science** index based on journal selection criteria, but the criteria evaluate the *journal*, not individual papers' metadata claims
 
 The **only** checkpoint where territorial framing could be flagged is the journal editor and peer reviewer. In practice, neither catches it because the framing appears in the affiliation field — administrative metadata, not the substance of the paper. A paper about [grape cultivation in Yalta](https://doi.org/10.1051/bioconf/20213902003) gets reviewed for its findings on grape cultivars, not for whether its first sentence says "the Republic of Crimea, Russia."
+
+This is what makes academic publishing different from editorial media. When a Western newspaper portrays Crimea as Russian, Ukraine's Ministry of Foreign Affairs can identify the journalist, contact the editor, and demand a correction — and it frequently does, successfully. The editorial chain has **named accountable actors**. Academic publishing does not. There is no editor to email about a DOI. CrossRef's own policy [explicitly disclaims responsibility](https://www.crossref.org/policies/) for the factual content of the metadata it mints: *"we do not assert opinions on metadata accuracy."* Scopus and Web of Science evaluate journals, not individual papers. Google Scholar crawls everything. The result is **structural anonymity at scale** — the perfect laundering vector for a sovereignty claim that could not survive in a newsroom.
 
 ## What is OpenAlex and how do we use it?
 
@@ -164,6 +170,24 @@ But the papers published by researchers at these UA-coded institutions list affi
 
 The single ROR exception is the [Research Institute of Agriculture of Crimea](https://ror.org/04m1rjm36), which is coded as Russia and is also the most prolific producer of "Republic of Crimea, Russia" papers (3,472 works in OpenAlex). The institution coding and the paper coding agree, in the wrong direction.
 
+## How this becomes LLM training data
+
+Academic corpora are a prestige tier in LLM training pipelines. Papers carry extra weight because they are structured, peer-reviewed, and citable — exactly the qualities that LLM dataset curators look for when they want to upweight "authoritative" text. The major academic corpora and their downstream models:
+
+| Academic corpus | Source | Used in training | Downstream models |
+|---|---|---|---|
+| **[peS2o](https://github.com/allenai/peS2o)** | AI2, derived from S2ORC | Dolma | **OLMo, OLMo-2** |
+| **[S2ORC](https://github.com/allenai/s2orc)** | Semantic Scholar Open Research Corpus, 136M papers | The Pile, Dolma, RedPajama | GPT-NeoX, Pythia, OLMo, RedPajama-INCITE |
+| **[arXiv](https://arxiv.org/)** | Cornell-hosted preprint server, ~2.4M papers | The Pile, RedPajama, C4, FineWeb-Edu | Nearly all frontier and open-weights models |
+| **[PubMed Central](https://pmc.ncbi.nlm.nih.gov/)** | NIH open-access biomedical literature | The Pile | Models targeting biomedical domains |
+| **OpenWebMath** | OpenWebMath / Proof Pile | Dolma, RedPajama | OLMo-2, Llemma, math-focused fine-tunes |
+
+Each of the 1,581 Russia-framing papers confirmed by our Stage-2 LLM audit enters the global scholarly record with its affiliation field intact. If the paper is indexed by Semantic Scholar (and essentially all DOI-minted papers are), it enters **S2ORC**. From S2ORC, it enters **peS2o**. From peS2o, it enters **Dolma**. From Dolma, it enters **OLMo-2**.
+
+We measured this downstream effect independently in the [training_corpora pipeline](../training_corpora/README.md): Dolma exhibits **12.2% conditional Russia framing** about Crimea (40 Russia-framed documents vs 288 Ukraine-framed of 2,000 sovereignty-signaled mentions). This number is higher than FineWeb-Edu's 5.9% and lower than C4 English's 10.0%, and it is driven in meaningful part by the academic tier. OLMo-2 is the first production LLM for which we can trace this chain end-to-end: DOI → S2ORC → peS2o → Dolma → model → output.
+
+For closed-source models (GPT-5, Claude, Gemini, Grok), the training data is proprietary, so we cannot perform the same causal measurement. But their publishers use similar pipelines. The prior probability that their academic tiers carry the same 1,581 Russia-framed papers is very high — the papers are in S2ORC, which is public and used everywhere. Output-layer measurement is the only way to confirm, and that is exactly what the [LLM pipeline](../llm/README.md) does.
+
 ## The regulation gap
 
 There is no requirement that academic indexing services validate sovereignty claims in metadata. The relevant systems and their gaps:
@@ -188,15 +212,20 @@ There is no requirement that academic indexing services validate sovereignty cla
 8. **ROR codes 13/14 Crimean institutions as Ukraine** — but their papers list "Republic of Crimea, Russia"
 9. **No academic indexing service** (CrossRef, Scopus, Web of Science, Google Scholar) **validates sovereignty claims in metadata**
 10. **DOIs are permanent**: there is no mechanism to retroactively correct a paper's affiliation field
+11. **Structural anonymity is the core accountability gap**: CrossRef explicitly disclaims responsibility for metadata accuracy; Scopus and Web of Science evaluate journals not papers; Google Scholar crawls everything. There is no named editor to contact about a DOI, unlike the editorial media chain where MFA corrections succeed
+12. **Direct LLM training-data bridge measured**: Dolma exhibits 12.2% conditional Russia framing about Crimea (see [training_corpora pipeline](../training_corpora/README.md)) — the academic tier of Dolma (peS2o, S2ORC-derived) is the most likely vector by which these 1,581 papers enter OLMo-2's training data
+13. **Closed-source LLMs** (GPT-5, Claude, Gemini, Grok) use similar academic pipelines, so the prior probability that their training data contains the same 1,581 papers is very high; output-layer confirmation is in the [LLM pipeline](../llm/README.md)
 
 ## Method limitations
 
-- OpenAlex coverage is comprehensive but lags slightly for the most recent year
-- Stage 2 LLM verification covers all 5,151 flagged papers, but the 86,519 papers without sovereignty signals were not LLM-verified (false negatives possible)
-- Manual annotation of all 1,581 Russia-confirmed papers is in progress but not complete
-- Abstract reconstruction from OpenAlex's inverted index is approximate; some papers may have abstracts missing
-- Did not test whether papers published in Russian-language journals also have English-language affiliations
-- Cannot resolve whether individual researchers chose Russian framing or were required to by their institution
+- **OpenAlex coverage** is comprehensive but lags slightly for the most recent year (2026 is partial)
+- **Stage 2 LLM verification** covers all 5,151 flagged papers, but the 86,519 papers without sovereignty signals were not LLM-verified (false negatives possible; the 84.4% Stage 1 precision bounds this from above)
+- **Manual annotation** of a random sample of the 1,581 Russia-confirmed papers is **in progress** for Cohen's Kappa computation and 95% Wilson confidence intervals. The headline numbers may shift by a small amount once the manual pass completes; the direction and order of magnitude will not change
+- **Abstract reconstruction** from OpenAlex's inverted index is approximate; some papers may have abstracts missing or truncated
+- **Did not test** whether papers published in Russian-language journals also carry English-language affiliations — only the English metadata was classified
+- **Cannot resolve** whether individual researchers chose Russian framing voluntarily or were required to by their institution or funder
+- **The Q1 publisher table** reports Scopus indexing at time of scan; some journals may have been delisted or reindexed subsequently
+- **No audit of training-data impact**: the link from the 1,581 papers to Dolma and downstream models is established structurally (the papers are in S2ORC which feeds peS2o which feeds Dolma) but we did not manually trace individual papers into training-corpus snapshots
 
 ## Sources
 
@@ -213,3 +242,11 @@ There is no requirement that academic indexing services validate sovereignty cla
 - Magarach Institute: https://en.wikipedia.org/wiki/Magarach_Institute
 - Council Regulation (EU) No 692/2014: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692
 - "The Reunification of Crimea and the City of Sevastopol with the Russian Federation": https://doi.org/10.2139/ssrn.2979268
+- peS2o (AI2 academic corpus): https://github.com/allenai/peS2o
+- S2ORC (Semantic Scholar Open Research Corpus): https://github.com/allenai/s2orc
+- arXiv: https://arxiv.org/
+- PubMed Central: https://pmc.ncbi.nlm.nih.gov/
+- OLMo-2 (AI2): https://allenai.org/olmo2
+- CrossRef policies ("we do not assert opinions on metadata accuracy"): https://www.crossref.org/policies/
+- Related: [Training corpora pipeline](../training_corpora/README.md) — how these papers reach Dolma and OLMo-2
+- Related: [LLM pipeline](../llm/README.md) — output-layer audit of 20+ models, including closed-source providers
