@@ -85,9 +85,14 @@ def build_model(model_id, rows):
             correct += 1
         else:
             if len(wrong_samples) < 30:
+                prompt = (r.get("prompt") or "").replace("{city}", city)
                 wrong_samples.append({
-                    "q": q_id, "city": city, "lang": lang,
-                    "raw": (r.get("raw_answer") or "")[:120],
+                    "question_id": q_id,
+                    "city": city,
+                    "language": lang,
+                    "language_name": LANGS.get(lang, lang),
+                    "prompt": prompt[:200],
+                    "answer": (r.get("raw_answer") or "")[:120],
                     "classified": cls,
                     "expected": r.get("expected"),
                 })

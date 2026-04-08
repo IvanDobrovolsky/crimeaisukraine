@@ -524,17 +524,17 @@ const mediaViolatorsByFilter = mediaViolators as any;
   <ul class="space-y-0.5 text-[11px]">
     {[
       { id: 'geodata', label: lang === 'uk' ? 'Geodata — ланцюг' : 'Geodata — chain', accent: 'text-[#ef4444]' },
-      { id: 'wikipedia', label: lang === 'uk' ? 'Wikipedia/Wikidata' : 'Wikipedia/Wikidata' },
-      { id: 'institutions', label: lang === 'uk' ? 'Установи' : 'Institutions' },
-      { id: 'infrastructure', label: lang === 'uk' ? 'Tech infra' : 'Tech infra' },
-      { id: 'telecom', label: lang === 'uk' ? 'Телеком' : 'Telecom' },
-      { id: 'ip-geolocation', label: lang === 'uk' ? 'IP-геолокація' : 'IP geolocation' },
-      { id: 'weather', label: lang === 'uk' ? 'Погода' : 'Weather' },
-      { id: 'map-services', label: lang === 'uk' ? 'Картосервіси' : 'Map services' },
       { id: 'media-framing', label: lang === 'uk' ? 'Медіа-фреймінг' : 'Media framing' },
       { id: 'academic-framing', label: lang === 'uk' ? 'Академ. публікації' : 'Academic framing' },
       { id: 'training-corpora', label: lang === 'uk' ? 'Корпуси навчання' : 'Training corpora' },
       { id: 'llm-audit', label: lang === 'uk' ? 'LLM-аудит' : 'LLM audit' },
+      { id: 'wikipedia', label: lang === 'uk' ? 'Wikipedia/Wikidata' : 'Wikipedia/Wikidata' },
+      { id: 'map-services', label: lang === 'uk' ? 'Картосервіси' : 'Map services' },
+      { id: 'weather', label: lang === 'uk' ? 'Погода' : 'Weather' },
+      { id: 'ip-geolocation', label: lang === 'uk' ? 'IP-геолокація' : 'IP geolocation' },
+      { id: 'infrastructure', label: lang === 'uk' ? 'Tech infra' : 'Tech infra' },
+      { id: 'institutions', label: lang === 'uk' ? 'Установи' : 'Institutions' },
+      { id: 'telecom', label: lang === 'uk' ? 'Телеком' : 'Telecom' },
     ].map(item => (
       <li>
         <a href={`#${item.id}`} data-side-nav={item.id} class={`block px-2 py-1 rounded text-[#94a3b8] hover:bg-[#1e293b] hover:text-white transition ${item.accent || ''}`}>
@@ -543,7 +543,6 @@ const mediaViolatorsByFilter = mediaViolators as any;
       </li>
     ))}
   </ul>
-  <div class="mt-3 pt-2 border-t border-[#1e293b] px-2 text-[9px] text-[#475569]">{lang === 'uk' ? '8/11 пайплайнів актуальні' : '8/11 pipelines live'}</div>
 </aside>
 
 <script>
@@ -773,10 +772,10 @@ const mediaViolatorsByFilter = mediaViolators as any;
     <div class="mb-6">
       <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
         <div>
-          <h3 class="text-base font-bold text-white">{lang === 'uk' ? 'Ланцюг розповсюдження (top-down)' : 'Propagation chain (top-down)'}</h3>
+          <h3 class="text-base font-bold text-white">{lang === 'uk' ? 'Ланцюг розповсюдження' : 'Propagation chain'}</h3>
           <p class="text-[11px] text-[#64748b] mt-0.5">{lang === 'uk'
-            ? 'Природна Земля вгорі · ширина зв\'язку = живі тижневі завантаження · наведіть курсор для точних чисел · прокручуйте, щоб побачити всі 32 бібліотеки'
-            : 'Natural Earth at the top · link width = live weekly downloads · hover for exact numbers · scroll the diagram to see all 32 libraries'
+            ? 'Зліва → праворуч: Природна Земля → GDAL → 5 екосистем → 32 бібліотеки → кінцевий результат · ширина зв\'язку = живі тижневі завантаження · наведіть для деталей'
+            : 'Left → right: Natural Earth → GDAL → 5 ecosystems → 32 libraries → end outcome · link width = live weekly downloads · hover for details'
           }</p>
         </div>
         <div class="hidden md:flex items-center gap-3 text-[10px] text-[#64748b]">
@@ -786,13 +785,13 @@ const mediaViolatorsByFilter = mediaViolators as any;
           <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#0057b7]"></span>{lang === 'uk' ? 'екосистема' : 'ecosystem'}</span>
         </div>
       </div>
-      <div id="sankey-container" class="relative w-full bg-[#0a0e1a] rounded-xl border border-[#1e293b] overflow-auto" style="height: 680px;">
+      <div id="sankey-container" class="relative w-full bg-[#0a0e1a] rounded-xl border border-[#1e293b] overflow-auto" style="min-height: 1100px;">
         <div id="sankey-loading" class="absolute inset-0 flex flex-col items-center justify-center text-[#64748b] text-xs gap-2 pointer-events-none">
           <div class="w-8 h-8 border-2 border-[#ef4444] border-t-transparent rounded-full animate-spin"></div>
           <div>{lang === 'uk' ? 'Завантаження діаграми…' : 'Loading diagram…'}</div>
           <div class="text-[10px] text-[#475569]">d3 + d3-sankey (~80 KB, lazy-loaded)</div>
         </div>
-        <svg id="sankey-svg" class="w-full h-full"></svg>
+        <svg id="sankey-svg" class="block w-full"></svg>
         <div id="sankey-tooltip" class="hidden absolute pointer-events-none bg-[#0a0e1a]/95 border border-[#1e293b] rounded-lg px-3 py-2 text-xs text-[#e2e8f0] max-w-xs z-10 backdrop-blur-sm" style="left: 0; top: 0;"></div>
       </div>
       <div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-[#64748b]">
@@ -898,25 +897,25 @@ const mediaViolatorsByFilter = mediaViolators as any;
         const nodes = rawData.nodes.map((n: any) => ({ ...n }));
         const links = rawData.links.map((l: any) => ({ ...l }));
 
-        // Layout dimensions — Sankey is TOP-DOWN so we want a tall SVG
-        const width = Math.max(container.clientWidth, 900);
-        const height = 1200;
+        // Natural left → right Sankey. Tall enough to give 32 leaf
+        // packages real vertical space (~30 px each). The previous
+        // implementation rotated the whole SVG 90° which forced labels
+        // to also rotate and overlap.
+        const width = Math.max(container.clientWidth, 1000);
+        const labelPaddingLeft = 180;   // room for source labels
+        const labelPaddingRight = 240;  // room for terminal label "End user sees Crimea as Russia"
+        const height = 1100;
 
         svgEl.setAttribute('width', String(width));
         svgEl.setAttribute('height', String(height));
         svgEl.setAttribute('viewBox', `0 0 ${width} ${height}`);
 
-        // Configure sankey for top-to-bottom flow. nodeSort=null keeps
-        // our insertion order (terminal-bad wider than terminal-ok).
         const sankey = sankeyMod.sankey()
           .nodeId((d: any) => d.id)
           .nodeAlign(sankeyMod.sankeyJustify)
-          .nodeWidth(18)
-          .nodePadding(14)
-          // Rotate sankey 90° by swapping x and y via a custom transform.
-          // Actually simpler: use .extent with smaller x-range and
-          // transform the whole svg group.
-          .extent([[30, 30], [height - 30, width - 30]]);
+          .nodeWidth(16)
+          .nodePadding(8)
+          .extent([[labelPaddingLeft, 30], [width - labelPaddingRight, height - 30]]);
 
         const graph = sankey({
           nodes: nodes.map((d: any) => ({ ...d })),
@@ -926,9 +925,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
         const svg = d3.select(svgEl);
         svg.selectAll('*').remove();
 
-        // Rotate the whole sankey 90° so nodes flow top→bottom instead of L→R
-        const g = svg.append('g')
-          .attr('transform', `rotate(90) translate(0, -${width})`);
+        const g = svg.append('g');
 
         // Draw links
         const linkGroup = g.append('g')
@@ -980,18 +977,29 @@ const mediaViolatorsByFilter = mediaViolators as any;
             if (tooltipEl) tooltipEl.classList.add('hidden');
           });
 
-        // Node labels — rotated -90° back to readable upright orientation
-        // Each label sits to the right of its node in the rotated frame
-        // (which translates to "below the node" in the viewer's perspective).
+        // Labels: source-side nodes (root, hub, ecosystem) get labels
+        // on the LEFT of the node; package and terminal nodes get labels
+        // on the RIGHT. This is the standard Sankey label convention and
+        // does not require rotation.
         nodeGroup.selectAll('text')
           .data(graph.nodes)
           .join('text')
-          .attr('x', (d: any) => d.x1 + 6)
+          .attr('x', (d: any) => {
+            const isLeftSide = d.group === 'root' || d.group === 'hub' || d.group === 'ecosystem';
+            return isLeftSide ? d.x0 - 6 : d.x1 + 6;
+          })
           .attr('y', (d: any) => (d.y0 + d.y1) / 2)
           .attr('dy', '0.35em')
-          .attr('text-anchor', 'start')
-          .attr('transform', (d: any) => `rotate(-90, ${d.x1 + 6}, ${(d.y0 + d.y1) / 2})`)
-          .style('font-size', '10px')
+          .attr('text-anchor', (d: any) => {
+            const isLeftSide = d.group === 'root' || d.group === 'hub' || d.group === 'ecosystem';
+            return isLeftSide ? 'end' : 'start';
+          })
+          .style('font-size', (d: any) =>
+            (d.group === 'root' || d.group === 'hub' || d.group === 'terminal-ok' || d.group === 'terminal-bad')
+              ? '12px' : '10px')
+          .style('font-weight', (d: any) =>
+            (d.group === 'root' || d.group === 'hub' || d.group === 'terminal-ok' || d.group === 'terminal-bad')
+              ? '700' : '400')
           .style('font-family', 'system-ui, sans-serif')
           .style('fill', (d: any) => {
             if (d.group === 'highcharts') return '#22c55e';
@@ -1006,8 +1014,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
           .style('pointer-events', 'none')
           .text((d: any) => {
             const name = d.name || '';
-            // Truncate very long names
-            return name.length > 28 ? name.slice(0, 26) + '…' : name;
+            return name.length > 32 ? name.slice(0, 30) + '…' : name;
           });
 
         // Tooltip mouse-follow (relative to container)
