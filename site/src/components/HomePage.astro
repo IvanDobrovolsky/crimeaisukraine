@@ -8,6 +8,8 @@ import mediaViolators from '../data/media_violators.json';
 import findingsUk from '../data/findings_uk.json';
 import auditData from '../data/llm_audit_results.json';
 import modelsData from '../data/llm_models.json';
+// Fresh pipeline manifest for the weather section (re-verified 2026-04 scan)
+import weatherPipeline from '../../../pipelines/weather/data/manifest.json';
 
 interface Props {
   lang: Lang;
@@ -94,18 +96,29 @@ const cs = (cat: string) => m[cat] || m.by_category[cat] || { total: 0, correct:
 const pct = (n: number, t: number) => t > 0 ? Math.round(n / t * 100) : 0;
 
 // --- Per-section data (findings + manifest stats) ---
-// Weather
-const weatherFindings = catFindings('weather');
-const wS = cs('weather');
-const wCorrect = weatherFindings.filter((f: any) => f.status === 'correct');
-const wIncorrect = weatherFindings.filter((f: any) => f.status === 'incorrect');
-const wAmbiguous = weatherFindings.filter((f: any) => f.status === 'ambiguous');
-const wNA = weatherFindings.filter((f: any) => f.status === 'n/a');
-const wTotal = wS.total;
-const wPctCorrect = pct(wS.correct, wTotal);
-const wPctIncorrect = pct(wS.incorrect, wTotal);
-const wPctAmbiguous = pct(wS.ambiguous, wTotal);
-const wPctNA = pct(wS['n/a'], wTotal);
+// Weather — uses the fresh pipeline manifest (2026-04 re-verified scan)
+const wpM = (weatherPipeline as any);
+const wpSummary = wpM.summary;
+const wpFindings = wpM.findings as any[];
+const wpByStatus = (s: string) => wpFindings.filter(f => f.status === s);
+const wCorrect = wpByStatus('correct');
+const wUiAmbig = wpByStatus('url_correct_ui_ambiguous');
+const wIncorrect = wpByStatus('incorrect');
+const wUnreachable = wpByStatus('unreachable');
+const wUntested = wpByStatus('untested');
+const wNA = wpByStatus('na');
+const wTotal = wpSummary.total_services;
+const wPctCorrect = pct(wpSummary.correct, wTotal);
+const wPctUiAmbig = pct(wpSummary.url_correct_ui_ambiguous, wTotal);
+const wPctIncorrect = pct(wpSummary.incorrect, wTotal);
+const wPctUnreachable = pct(wpSummary.unreachable, wTotal);
+const wPctUntested = pct(wpSummary.untested, wTotal);
+const wPctNA = pct(wpSummary.na, wTotal);
+const wTzSimferopol = wpSummary.timezone_europe_simferopol;
+const wTzMoscow = wpSummary.timezone_europe_moscow;
+const wGeonamesCC = wpSummary.geonames_country_code;
+const wAccuWeather = wpFindings.find((f: any) => f.platform === 'AccuWeather');
+const wWeatherCom = wpFindings.find((f: any) => f.platform?.startsWith('Weather.com'));
 
 // Map services
 const mapFindings = catFindings('map_service');
@@ -854,120 +867,174 @@ const propagation = [
   </div>
 </section>
 
-<!-- Weather Services — Expanded Section -->
+<!-- Weather Services — Expanded Section (2026-04 re-verified) -->
 <section id="weather" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.weatherTitle}</h2>
-    <p class="text-[#94a3b8] mb-8">{t.weatherDesc}</p>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Погодні сервіси: здебільшого правильно, але не безкоштовно' : 'Weather services: mostly correct, not for free'}</h2>
+    <p class="text-[#94a3b8] mb-2">{lang === 'uk'
+      ? `${wTotal} погодних сервісів перевірено наживо через чотири сигнали: URL-шлях, <title>, хлібні крихти та часовий пояс. «Правильно» — це не одна категорія, а попередній аудит переоцінив показник.`
+      : `${wTotal} weather services re-verified live across four signals: URL path, title tag, breadcrumb, and timezone reference. "Correct" is not a single category, and the prior audit overstated the number.`
+    }</p>
+    <p class="text-[10px] text-[#64748b] mb-8">{lang === 'uk' ? 'Основна істина: GeoNames запис 693805 (Сімферополь) повертає країну' : 'Ground truth: GeoNames entry 693805 (Simferopol) returns country'} <span class="font-mono text-[#22c55e]">{wGeonamesCC || 'UA'}</span> · ISO 3166</p>
 
-    <!-- Top row: Donut + Stats -->
-    <div class="grid md:grid-cols-[240px_1fr] gap-8 mb-10">
-      <!-- Donut Chart -->
-      <div class="flex flex-col items-center">
-        <div class="relative w-44 h-44">
-          <svg viewBox="0 0 36 36" class="w-full h-full -rotate-90">
-            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1e293b" stroke-width="3.8" />
-            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#22c55e" stroke-width="3.8"
-              stroke-dasharray={`${wPctCorrect} ${100 - wPctCorrect}`} stroke-dashoffset="0" />
-            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#ef4444" stroke-width="3.8"
-              stroke-dasharray={`${wPctIncorrect} ${100 - wPctIncorrect}`} stroke-dashoffset={`${-wPctCorrect}`} />
-            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f59e0b" stroke-width="3.8"
-              stroke-dasharray={`${wPctAmbiguous} ${100 - wPctAmbiguous}`} stroke-dashoffset={`${-(wPctCorrect + wPctIncorrect)}`} />
-            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#64748b" stroke-width="3.8"
-              stroke-dasharray={`${wPctNA} ${100 - wPctNA}`} stroke-dashoffset={`${-(wPctCorrect + wPctIncorrect + wPctAmbiguous)}`} />
-          </svg>
-          <div class="absolute inset-0 flex flex-col items-center justify-center">
-            <div class="text-3xl font-black text-white">{wTotal}</div>
-            <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'сервісів' : 'services'}</div>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-4 text-xs text-[#94a3b8] justify-center">
-          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>{wCorrect.length} {t.weatherCorrectLabel}</span>
-          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>{wIncorrect.length} {t.weatherIncorrectLabel}</span>
-          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>{wAmbiguous.length} {t.weatherAmbiguousLabel}</span>
-          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#64748b]"></span>{wNA.length} {t.weatherAbsentLabel}</span>
+    <!-- Six-status bar chart + stat cards -->
+    <div class="grid md:grid-cols-[1fr_1fr] gap-6 mb-8">
+      <!-- Horizontal stacked bar -->
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#1e293b]">
+        <div class="text-xs text-[#64748b] mb-3">{lang === 'uk' ? 'Розподіл статусів' : 'Status distribution'}</div>
+        <div class="space-y-2">
+          {[
+            { key: 'correct', label: lang === 'uk' ? 'Правильно' : 'Correct', count: wCorrect.length, pct: wPctCorrect, color: '#22c55e' },
+            { key: 'ui_ambig', label: lang === 'uk' ? 'URL правильний, UI нечіткий' : 'URL-correct, UI-ambiguous', count: wUiAmbig.length, pct: wPctUiAmbig, color: '#f59e0b' },
+            { key: 'incorrect', label: lang === 'uk' ? 'Неправильно (всі російські)' : 'Incorrect (all Russian)', count: wIncorrect.length, pct: wPctIncorrect, color: '#ef4444' },
+            { key: 'unreachable', label: lang === 'uk' ? 'Недоступно (CDN)' : 'Unreachable (CDN)', count: wUnreachable.length, pct: wPctUnreachable, color: '#64748b' },
+            { key: 'untested', label: lang === 'uk' ? 'Неперевірено (гіпотеза worldview)' : 'Untested (worldview hypothesis)', count: wUntested.length, pct: wPctUntested, color: '#cbd5e1' },
+            { key: 'na', label: 'N/A', count: wNA.length, pct: wPctNA, color: '#334155' },
+          ].map((row) => (
+            <div class="flex items-center gap-3">
+              <div class="text-[11px] text-[#94a3b8] w-52 flex-shrink-0 truncate">{row.label}</div>
+              <div class="flex-1 bg-[#1e293b] h-3 rounded-full overflow-hidden">
+                <div class="h-full" style={`width: ${row.pct}%; background:${row.color}`}></div>
+              </div>
+              <div class="text-[11px] font-mono w-8 text-right" style={`color:${row.color}`}>{row.count}</div>
+            </div>
+          ))}
         </div>
       </div>
+      <!-- Correction callout -->
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#f59e0b]/30">
+        <div class="text-xs text-[#f59e0b] font-bold mb-2 uppercase tracking-wider">{lang === 'uk' ? 'Виправлення vs попереднього аудиту' : 'Correction vs prior audit'}</div>
+        <p class="text-[11px] text-[#94a3b8] leading-relaxed">
+          {lang === 'uk'
+            ? `Попередній аудит повідомляв «16 правильно / 4 неправильно / 2 нечіткі». Свіжий сканер перекласифікував 4 сервіси з «правильно» на «URL правильний, UI нечіткий» після перевірки фактичного тегу <title>, і перемістив Apple WeatherKit з «правильно» на «неперевірено», оскільки ми не можемо підтвердити гіпотезу worldview-split (EU/US IP → UA, RU IP → RU) без підписаного dev-токена і російського проксі. Чесний висновок важливіший за чистий заголовок.`
+            : `The prior audit reported "16 correct / 4 incorrect / 2 ambiguous". The fresh scanner reclassified 4 services from "correct" to "URL-correct, UI-ambiguous" after inspecting the actual <title> tag, and moved Apple WeatherKit from "correct" to "untested" because we can't verify the worldview-split hypothesis (EU/US IP → UA, RU IP → RU) without a signed dev token and a Russian IP proxy. An honest outcome matters more than a clean headline.`
+          }
+        </p>
+      </div>
+    </div>
 
-      <!-- Stat Cards -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#22c55e]/30 text-center">
-          <div class="text-3xl font-black text-[#22c55e]">{wCorrect.length}</div>
-          <div class="text-xs text-[#94a3b8] mt-1">{t.weatherCorrectLabel}</div>
-          <div class="text-[10px] text-[#64748b] mt-0.5">{wPctCorrect}%</div>
-        </div>
-        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
-          <div class="text-3xl font-black text-[#ef4444]">{wIncorrect.length}</div>
-          <div class="text-xs text-[#94a3b8] mt-1">{t.weatherIncorrectLabel}</div>
-          <div class="text-[10px] text-[#64748b] mt-0.5">{wPctIncorrect}%</div>
-        </div>
-        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#f59e0b]/30 text-center">
-          <div class="text-3xl font-black text-[#f59e0b]">{wAmbiguous.length}</div>
-          <div class="text-xs text-[#94a3b8] mt-1">{t.weatherAmbiguousLabel}</div>
-          <div class="text-[10px] text-[#64748b] mt-0.5">{wPctAmbiguous}%</div>
-        </div>
-        <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#64748b]/30 text-center">
-          <div class="text-3xl font-black text-[#64748b]">{wNA.length}</div>
-          <div class="text-xs text-[#94a3b8] mt-1">{t.weatherAbsentLabel}</div>
-          <div class="text-[10px] text-[#64748b] mt-0.5">{wPctNA}%</div>
-        </div>
+    <!-- Three striking callouts -->
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <!-- Weather.com erasure -->
+      <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#f59e0b]/30">
+        <div class="text-[10px] text-[#f59e0b] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Стирання країни (Weather.com)' : 'Country erasure (Weather.com)'}</div>
+        <div class="font-mono text-xs text-[#f59e0b] mb-2 break-all">"Simferopol, Simferopol"</div>
+        <p class="text-[10px] text-[#94a3b8] leading-snug">{lang === 'uk'
+          ? 'Назву країни замінено повторенням назви міста. URL-шлях ще нейтральний, але видимий підпис локації прибрав «Ukraine». Це патерн «стирання через пропуск» у погодному інтерфейсі, який бачать мільярди користувачів.'
+          : 'The country name is replaced by a repeat of the city name. URL path is still neutral, but the visible location label strips "Ukraine". This is the "erasure by omission" pattern in the weather UI billions of users see.'
+        }</p>
+      </div>
+      <!-- AccuWeather dual listing -->
+      <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#0057b7]/30">
+        <div class="text-[10px] text-[#0057b7] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Подвійний запис (AccuWeather)' : 'Dual-listing (AccuWeather)'}</div>
+        <div class="font-mono text-xs text-[#94a3b8] mb-2">['UA', 'RU', 'KZ', 'RU', 'KZ']</div>
+        <p class="text-[10px] text-[#94a3b8] leading-snug">{lang === 'uk'
+          ? 'Автодоповнення AccuWeather для «Simferopol» повертає п\'ять результатів. Перший — country=UA (за замовчуванням, тому маршрут правильний). Але кириличний дубль country=RU існує в тій самій базі і доступний клієнтам.'
+          : "AccuWeather's autocomplete for 'Simferopol' returns five results. The first is country=UA (the default, so routing is correct). But a Cyrillic-named country=RU duplicate exists in the same database and is selectable by clients."
+        }</p>
+      </div>
+      <!-- Timezone probe -->
+      <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#22c55e]/30">
+        <div class="text-[10px] text-[#22c55e] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Часовий пояс як сигнал' : 'Timezone as a signal'}</div>
+        <div class="font-mono text-xs text-[#22c55e] mb-2">Europe/Simferopol · {wTzSimferopol}</div>
+        <div class="font-mono text-xs text-[#ef4444] mb-2">Europe/Moscow · {wTzMoscow}</div>
+        <p class="text-[10px] text-[#94a3b8] leading-snug">{lang === 'uk'
+          ? 'IANA файл zone1970.tab перелічує Europe/Simferopol для UA і RU. Те, який пояс обирає сервіс, — навмисне рішення. У нашій вибірці всі сервіси з явним посиланням на IANA обирають ISO-сумісний варіант.'
+          : "IANA's zone1970.tab lists Europe/Simferopol under both UA and RU. Which zone a service quotes is a deliberate choice. In our sample, every service that references IANA explicitly picks the ISO-compliant one."
+        }</p>
       </div>
     </div>
 
     <!-- Service listings by group -->
-    <div class="space-y-6">
-      <!-- Correct: International -->
+    <div class="space-y-5">
+      <!-- Correct -->
       <div>
-        <h3 class="text-sm font-bold text-[#22c55e] uppercase tracking-wider mb-3 flex items-center gap-2">
+        <h3 class="text-xs font-bold text-[#22c55e] uppercase tracking-wider mb-2 flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>
-          {t.weatherIntlTitle} ({wCorrect.length})
+          {lang === 'uk' ? 'Правильно — URL і <title> обидва вказують на Україну' : 'Correct — URL and <title> both attribute to Ukraine'} ({wCorrect.length})
         </h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
           {wCorrect.sort((a: any, b: any) => a.platform.localeCompare(b.platform)).map((f: any) => (
-            <a href={f.url} target="_blank" rel="noopener" class="group bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm flex items-center gap-2 border border-[#1e293b] hover:border-[#22c55e]/50 transition">
-              <span class="text-[#22c55e] flex-shrink-0 text-xs">&#x2713;</span>
-              <div class="min-w-0">
-                <div class="text-[#e2e8f0] truncate text-xs font-medium group-hover:text-white transition">{f.platform}</div>
-              </div>
+            <a href={f.url} target="_blank" rel="noopener" class="group bg-[#0a0e1a] rounded-lg px-3 py-2 text-xs flex items-center gap-2 border border-[#1e293b] hover:border-[#22c55e]/50 transition">
+              <span class="text-[#22c55e] flex-shrink-0">&#x2713;</span>
+              <span class="text-[#e2e8f0] truncate font-medium group-hover:text-white">{f.platform}</span>
             </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- URL-correct, UI-ambiguous -->
+      <div>
+        <h3 class="text-xs font-bold text-[#f59e0b] uppercase tracking-wider mb-2 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>
+          {lang === 'uk' ? 'URL правильний, UI нечіткий — країну пропущено у видимому підписі' : 'URL-correct, UI-ambiguous — country omitted in the visible label'} ({wUiAmbig.length})
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {wUiAmbig.map((f: any) => (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2 border border-[#f59e0b]/20">
+              <div class="flex items-center gap-2 mb-0.5">
+                <span class="text-[#f59e0b] text-xs">&#x26A0;</span>
+                <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
+              </div>
+              <div class="text-[10px] text-[#64748b] pl-5 truncate">{f.evidence || f.detail}</div>
+            </div>
           ))}
         </div>
       </div>
 
       <!-- Incorrect: Russian -->
       <div>
-        <h3 class="text-sm font-bold text-[#ef4444] uppercase tracking-wider mb-3 flex items-center gap-2">
+        <h3 class="text-xs font-bold text-[#ef4444] uppercase tracking-wider mb-2 flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>
-          {t.weatherRuTitle} ({wIncorrect.length})
+          {lang === 'uk' ? 'Неправильно — російського походження, юридично зобов\'язані' : 'Incorrect — Russian-origin, legally compelled'} ({wIncorrect.length})
         </h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
           {wIncorrect.map((f: any) => (
-            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#ef4444]/20">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="text-[#ef4444] flex-shrink-0 text-xs">&#x2717;</span>
-                <span class="text-[#e2e8f0] truncate text-xs font-medium">{f.platform}</span>
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2 border border-[#ef4444]/20">
+              <div class="flex items-center gap-2">
+                <span class="text-[#ef4444] text-xs">&#x2717;</span>
+                <span class="text-[#e2e8f0] text-xs font-medium truncate">{f.platform}</span>
               </div>
-              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{lang === 'uk' ? 'Показує як Росію' : 'Shows as Russia'}</div>
+            </div>
+          ))}
+        </div>
+        <p class="text-[10px] text-[#64748b] mt-2 leading-snug">{lang === 'uk'
+          ? 'Російські погодні сервіси юридично зобов\'язані представляти Крим як російську територію згідно з федеральним законом №377-ФЗ (2014) та подальшими поправками про територіальну цілісність. Їхня класифікація — це не редакційний вибір, а відповідність законодавству.'
+          : 'Russian weather services are legally compelled to represent Crimea as Russian territory under Federal Law No. 377-FZ (2014) and subsequent territorial-integrity amendments. Their classification is not editorial choice but legal compliance.'
+        }</p>
+      </div>
+
+      <!-- Untested: worldview-compliant candidates -->
+      <div>
+        <h3 class="text-xs font-bold text-[#cbd5e1] uppercase tracking-wider mb-2 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#cbd5e1]"></span>
+          {lang === 'uk' ? 'Неперевірено — кандидати в worldview-compliant' : 'Untested — worldview-compliant candidates'} ({wUntested.length})
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {wUntested.map((f: any) => (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2 border border-[#cbd5e1]/20">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-[#cbd5e1] text-xs">&#x2753;</span>
+                <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
+              </div>
+              <div class="text-[10px] text-[#64748b] pl-5 leading-snug">{f.notes || f.detail}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <!-- Ambiguous -->
-      {wAmbiguous.length > 0 && (
+      <!-- Unreachable -->
+      {wUnreachable.length > 0 && (
       <div>
-        <h3 class="text-sm font-bold text-[#f59e0b] uppercase tracking-wider mb-3 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>
-          {t.weatherAmbiguousTitle} ({wAmbiguous.length})
+        <h3 class="text-xs font-bold text-[#64748b] uppercase tracking-wider mb-2 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#64748b]"></span>
+          {lang === 'uk' ? 'Недоступно — CDN заблокував сканер, не переперевірено' : 'Unreachable — CDN blocked the scanner, not re-verified'} ({wUnreachable.length})
         </h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {wAmbiguous.map((f: any) => (
-            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2.5 text-sm border border-[#f59e0b]/20">
-              <div class="flex items-center gap-2 mb-1">
-                <span class="text-[#f59e0b] flex-shrink-0 text-xs">&#x26A0;</span>
-                <span class="text-[#e2e8f0] text-xs font-medium">{f.platform}</span>
-              </div>
-              <div class="text-[10px] text-[#64748b] leading-tight pl-4">{f.detail}</div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {wUnreachable.map((f: any) => (
+            <div class="bg-[#0a0e1a] rounded-lg px-3 py-2 border border-[#1e293b]">
+              <span class="text-[#94a3b8] text-xs truncate">{f.platform}</span>
+              <div class="text-[10px] text-[#64748b] mt-0.5">HTTP {f.probes?.http_status || '?'}</div>
             </div>
           ))}
         </div>
@@ -975,10 +1042,13 @@ const propagation = [
       )}
     </div>
 
-    <!-- Insight callout -->
+    <!-- Structural lesson callout -->
     <div class="mt-8 bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30">
-      <p class="text-sm text-[#94a3b8]">
-        <span class="text-[#0057b7] font-bold">{lang === 'uk' ? 'Висновок' : 'Key insight'}:</span> {t.weatherInsight}
+      <p class="text-sm text-[#94a3b8] leading-relaxed">
+        <span class="text-[#0057b7] font-bold">{lang === 'uk' ? 'Структурний висновок' : 'Structural lesson'}:</span> {lang === 'uk'
+          ? 'Коректність не успадковується — вона підтримується. Кожен західний постачальник погоди мав вибір: GeoNames (ISO-сумісний) або OSM (правило «на землі», де Крим позначено подвійно). Усі вибрали GeoNames для поля країни і OSM для візуальних тайлів. Це протилежність геоданим, де індустрія централізувалася на Natural Earth (неправильно).'
+          : 'Correctness is not inherited — it is maintained. Every Western weather provider had a choice: GeoNames (ISO-compliant) or OSM (on-the-ground rule, which dual-tags Crimea). They all picked GeoNames for the country field and OSM for visual tiles. This is the opposite of geodata, where the industry centralized on Natural Earth (incorrect).'
+        }
       </p>
     </div>
   </div>

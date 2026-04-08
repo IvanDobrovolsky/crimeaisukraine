@@ -32,8 +32,9 @@ pipeline-tech_infrastructure: ## Run tech infrastructure pipeline (IANA tz, libp
 pipeline-geodata: ## Run geodata pipeline (Natural Earth + maps + viz libs)
 	cd $(PIPELINES)/geodata && uv sync && uv run scan.py
 
-pipeline-weather: ## Run weather services pipeline (23 services)
+pipeline-weather: ## Run weather services pipeline (25 services, 4-signal probe; rebuilds master manifest)
 	cd $(PIPELINES)/weather && uv sync && uv run scan.py
+	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
 
 pipeline-media: ## Run media framing pipeline (GDELT 154K + LLM verification)
 	cd $(PIPELINES)/media && uv sync && uv run scan.py

@@ -1,0 +1,853 @@
+{
+  "summary": {
+    "total_services": 25,
+    "by_status": {
+      "correct": 12,
+      "url_correct_ui_ambiguous": 4,
+      "unreachable": 3,
+      "incorrect": 3,
+      "na": 1,
+      "untested": 2
+    },
+    "timezone_europe_simferopol": 3,
+    "timezone_europe_moscow": 0,
+    "services_showing_europe_simferopol": [
+      "Ventusky",
+      "Foreca",
+      "Meteostat (Germany)"
+    ],
+    "services_showing_europe_moscow": [],
+    "disagreements_with_prior": [
+      {
+        "service": "Weather.com (The Weather Channel)",
+        "prior": "correct",
+        "now": "url_correct_ui_ambiguous",
+        "reason": "Neither URL path nor title carry a clear signal; body UA/RU hits=1/0 below threshold=5"
+      },
+      {
+        "service": "Ventusky",
+        "prior": "correct",
+        "now": "url_correct_ui_ambiguous",
+        "reason": "Neither URL path nor title carry a clear signal; body UA/RU hits=3/0 below threshold=5"
+      },
+      {
+        "service": "Weather Atlas",
+        "prior": "correct",
+        "now": "unreachable",
+        "reason": "HTTP 403 — scraper blocked (likely CDN anti-bot) or service down. Prior manual audit status preserved in prior_status field; not re-verified."
+      },
+      {
+        "service": "Windy.com",
+        "prior": "correct",
+        "now": "url_correct_ui_ambiguous",
+        "reason": "Neither URL path nor title carry a clear signal; body UA/RU hits=0/0 below threshold=5"
+      },
+      {
+        "service": "Windfinder (Germany)",
+        "prior": "correct",
+        "now": "unreachable",
+        "reason": "HTTP 404 — scraper blocked (likely CDN anti-bot) or service down. Prior manual audit status preserved in prior_status field; not re-verified."
+      },
+      {
+        "service": "Gismeteo",
+        "prior": "incorrect",
+        "now": "unreachable",
+        "reason": "HTTP 403 — scraper blocked (likely CDN anti-bot) or service down. Prior manual audit status preserved in prior_status field; not re-verified."
+      },
+      {
+        "service": "World Weather Online",
+        "prior": "ambiguous",
+        "now": "correct",
+        "reason": "URL path=ua AND title mentions Ukraine; body UA/RU hits=29/1"
+      }
+    ],
+    "ground_truth": {
+      "geonames": {
+        "source": "https://www.geonames.org/693805/simferopol.html",
+        "http": 200,
+        "country_code": null,
+        "matches_iso_ua": false,
+        "available": true
+      },
+      "openweathermap": {
+        "source": "https://api.openweathermap.org/geo/1.0/direct",
+        "skipped": true,
+        "reason": "OWM_API_KEY env var not set; run with key to enable live verification"
+      }
+    }
+  },
+  "findings": [
+    {
+      "service": "AccuWeather",
+      "origin_country": "US",
+      "canonical_url": "https://www.accuweather.com/web-api/autocomplete?query=Simferopol&language=en-us",
+      "prior_status": "correct",
+      "status": "correct",
+      "agrees_with_prior": true,
+      "reason": "JSON geocoding API: first result country=UA (default); full ordered list=['UA', 'RU', 'KZ', 'RU', 'KZ'] — note dual-listing with RU entry",
+      "final_url": "https://www.accuweather.com/web-api/autocomplete?query=Simferopol&language=en-us",
+      "title": "",
+      "notes": "Autocomplete JSON endpoint returns multiple results per query; the first result determines AccuWeather's default routing.",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:01+00:00",
+        "http_status": 200,
+        "final_url": "https://www.accuweather.com/web-api/autocomplete?query=Simferopol&language=en-us",
+        "url_signal": null,
+        "title": "",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 2,
+          "ru_hits": 2,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": [
+            "UA",
+            "RU",
+            "KZ",
+            "RU",
+            "KZ"
+          ]
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "Weather.com (The Weather Channel)",
+      "origin_country": "US",
+      "canonical_url": "https://weather.com/weather/today/l/44.95,34.10",
+      "prior_status": "correct",
+      "status": "url_correct_ui_ambiguous",
+      "agrees_with_prior": false,
+      "reason": "Neither URL path nor title carry a clear signal; body UA/RU hits=1/0 below threshold=5",
+      "final_url": "https://weather.com/weather/today/l/44.95,34.10",
+      "title": "Weather Forecast and Conditions for Simferopol, Simferopol | weather.com",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:02+00:00",
+        "http_status": 200,
+        "final_url": "https://weather.com/weather/today/l/44.95,34.10",
+        "url_signal": null,
+        "title": "Weather Forecast and Conditions for Simferopol, Simferopol | weather.com",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 1,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "Weather Underground",
+      "origin_country": "US",
+      "canonical_url": "https://www.wunderground.com/weather/ua/simferopol",
+      "prior_status": "correct",
+      "status": "correct",
+      "agrees_with_prior": true,
+      "reason": "URL path=ua; title neutral; body UA/RU hits=3/0",
+      "final_url": "https://www.wunderground.com/weather/ua/simferopol",
+      "title": "Simferopol Weather Conditions | Weather Underground",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:04+00:00",
+        "http_status": 200,
+        "final_url": "https://www.wunderground.com/weather/ua/simferopol",
+        "url_signal": "ua",
+        "title": "Simferopol Weather Conditions | Weather Underground",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 3,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "TimeAndDate.com",
+      "origin_country": "Norway",
+      "canonical_url": "https://www.timeanddate.com/weather/ukraine/simferopol",
+      "prior_status": "correct",
+      "status": "correct",
+      "agrees_with_prior": true,
+      "reason": "URL path=ua AND title mentions Ukraine; body UA/RU hits=54/0",
+      "final_url": "https://www.timeanddate.com/weather/ukraine/simferopol",
+      "title": "Weather for Simferopol, Ukraine",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:05+00:00",
+        "http_status": 200,
+        "final_url": "https://www.timeanddate.com/weather/ukraine/simferopol",
+        "url_signal": "ua",
+        "title": "Weather for Simferopol, Ukraine",
+        "title_probe": {
+          "mentions_ukraine": true,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 54,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": "\n{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Weather\",\"item\":\"https://www.timeanddate.com/weather/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Ukraine\",\"item\":\"https://www.timeanddate.com/weather/ukraine\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Simferopol\"}]}\n"
+      }
+    },
+    {
+      "service": "Weather Spark",
+      "origin_country": "US",
+      "canonical_url": "https://weatherspark.com/y/96313/Average-Weather-in-Simferopol-Ukraine-Year-Round",
+      "prior_status": "correct",
+      "status": "correct",
+      "agrees_with_prior": true,
+      "reason": "URL path=ua; title neutral; body UA/RU hits=0/0",
+      "final_url": "https://weatherspark.com/y/96313/Average-Weather-in-Simferopol-Ukraine-Year-Round",
+      "title": "",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:05+00:00",
+        "http_status": 202,
+        "final_url": "https://weatherspark.com/y/96313/Average-Weather-in-Simferopol-Ukraine-Year-Round",
+        "url_signal": "ua",
+        "title": "",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 0,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "Meteoblue",
+      "origin_country": "Switzerland",
+      "canonical_url": "https://www.meteoblue.com/en/weather/week/simferopol_ukraine_696643",
+      "prior_status": "correct",
+      "status": "correct",
+      "agrees_with_prior": true,
+      "reason": "URL path=ua; title neutral; body UA/RU hits=3/2",
+      "final_url": "https://www.meteoblue.com/en/weather/week/simferopol_ukraine_696643",
+      "title": "Weather Poltava - meteoblue",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:06+00:00",
+        "http_status": 200,
+        "final_url": "https://www.meteoblue.com/en/weather/week/simferopol_ukraine_696643",
+        "url_signal": "ua",
+        "title": "Weather Poltava - meteoblue",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 3,
+          "ru_hits": 2,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "Weather-Forecast.com",
+      "origin_country": "UK",
+      "canonical_url": "https://www.weather-forecast.com/locations/Simferopol/forecasts/latest",
+      "prior_status": "correct",
+      "status": "correct",
+      "agrees_with_prior": true,
+      "reason": "Body UA-dominant (23 vs 0) without URL path signal",
+      "final_url": "https://www.weather-forecast.com/locations/Simferopol/forecasts/latest",
+      "title": "Simferopol Weather Forecast",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:07+00:00",
+        "http_status": 200,
+        "final_url": "https://www.weather-forecast.com/locations/Simferopol/forecasts/latest",
+        "url_signal": null,
+        "title": "Simferopol Weather Forecast",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 23,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": "Ukraine Simferopol"
+      }
+    },
+    {
+      "service": "Ventusky",
+      "origin_country": "Czechia",
+      "canonical_url": "https://www.ventusky.com/simferopol",
+      "prior_status": "correct",
+      "status": "url_correct_ui_ambiguous",
+      "agrees_with_prior": false,
+      "reason": "Neither URL path nor title carry a clear signal; body UA/RU hits=3/0 below threshold=5",
+      "final_url": "https://www.ventusky.com/simferopol",
+      "title": "Weather - Simferopol - 14-Day Forecast & Rain | Ventusky",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:08+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ventusky.com/simferopol",
+        "url_signal": null,
+        "title": "Weather - Simferopol - 14-Day Forecast & Rain | Ventusky",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 3,
+          "ru_hits": 0,
+          "tz_simferopol": true,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "Weather Atlas",
+      "origin_country": "Serbia",
+      "canonical_url": "https://www.weather-atlas.com/en/ukraine/simferopol",
+      "prior_status": "correct",
+      "status": "unreachable",
+      "agrees_with_prior": false,
+      "reason": "HTTP 403 — scraper blocked (likely CDN anti-bot) or service down. Prior manual audit status preserved in prior_status field; not re-verified.",
+      "final_url": "https://www.weather-atlas.com/en/ukraine/simferopol",
+      "title": "",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:11+00:00",
+        "http_status": 403,
+        "final_url": "https://www.weather-atlas.com/en/ukraine/simferopol",
+        "url_signal": "ua",
+        "title": "",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 0,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "Windy.com",
+      "origin_country": "Czechia",
+      "canonical_url": "https://www.windy.com/44.948/34.100?44.948,34.100,8",
+      "prior_status": "correct",
+      "status": "url_correct_ui_ambiguous",
+      "agrees_with_prior": false,
+      "reason": "Neither URL path nor title carry a clear signal; body UA/RU hits=0/0 below threshold=5",
+      "final_url": "https://www.windy.com/44.948/34.100?44.948,34.100,8",
+      "title": "Windy: Wind map & weather forecast",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:12+00:00",
+        "http_status": 200,
+        "final_url": "https://www.windy.com/44.948/34.100?44.948,34.100,8",
+        "url_signal": null,
+        "title": "Windy: Wind map & weather forecast",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 0,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "yr.no (Norwegian Met Institute)",
+      "origin_country": "Norway",
+      "canonical_url": "https://www.yr.no/en/forecast/daily-table/2-703448/Ukraine/Autonomous%20Republic%20of%20Crimea/Simferopol/Simferopol",
+      "prior_status": "correct",
+      "status": "correct",
+      "agrees_with_prior": true,
+      "reason": "URL path=ua; title neutral; body UA/RU hits=25/0",
+      "final_url": "https://www.yr.no/en/forecast/daily-table/2-703448/Ukraine/Kyiv%20City/Kyiv",
+      "title": "Yr - Kyiv - Long term forecast",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:13+00:00",
+        "http_status": 200,
+        "final_url": "https://www.yr.no/en/forecast/daily-table/2-703448/Ukraine/Kyiv%20City/Kyiv",
+        "url_signal": "ua",
+        "title": "Yr - Kyiv - Long term forecast",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 25,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "Foreca",
+      "origin_country": "Finland",
+      "canonical_url": "https://www.foreca.com/Ukraine/Simferopol",
+      "prior_status": "correct",
+      "status": "correct",
+      "agrees_with_prior": true,
+      "reason": "Title mentions Ukraine (no URL path signal); body UA/RU hits=101/2",
+      "final_url": "https://www.foreca.com/100693805/Simferopol-Gorodskoy%20okrug%20Simferopol,%20Ukraine",
+      "title": "Weather today - Simferopol, Autonomous Republic of Crimea, UA - Foreca.com",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:14+00:00",
+        "http_status": 200,
+        "final_url": "https://www.foreca.com/100693805/Simferopol-Gorodskoy%20okrug%20Simferopol,%20Ukraine",
+        "url_signal": null,
+        "title": "Weather today - Simferopol, Autonomous Republic of Crimea, UA - Foreca.com",
+        "title_probe": {
+          "mentions_ukraine": true,
+          "mentions_russia": false,
+          "mentions_crimea": true
+        },
+        "body_probe": {
+          "ua_hits": 101,
+          "ru_hits": 2,
+          "tz_simferopol": true,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "ilMeteo (Italy)",
+      "origin_country": "Italy",
+      "canonical_url": "https://www.ilmeteo.it/meteo/Simferopol",
+      "prior_status": "correct",
+      "status": "correct",
+      "agrees_with_prior": true,
+      "reason": "Title mentions Ukraine (no URL path signal); body UA/RU hits=13/1",
+      "final_url": "https://www.ilmeteo.it/meteo/simferopol",
+      "title": "Meteo Simferopol (Ucraina) - Previsioni Oggi, Prossimi 15 giorni » iLMeteo.it",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:16+00:00",
+        "http_status": 200,
+        "final_url": "https://www.ilmeteo.it/meteo/simferopol",
+        "url_signal": null,
+        "title": "Meteo Simferopol (Ucraina) - Previsioni Oggi, Prossimi 15 giorni » iLMeteo.it",
+        "title_probe": {
+          "mentions_ukraine": true,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 13,
+          "ru_hits": 1,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "AEMET (Spain)",
+      "origin_country": "Spain",
+      "canonical_url": "https://www.aemet.es/es/eltiempo/prediccion/mundo?w=27000&l=34109_44948&c=UA",
+      "prior_status": "correct",
+      "status": "correct",
+      "agrees_with_prior": true,
+      "reason": "Body UA-dominant (24 vs 0) without URL path signal",
+      "final_url": "https://www.aemet.es/es/eltiempo/prediccion/mundo?w=27000&l=34109_44948&c=UA",
+      "title": "Predicción ciudades del mundo - Agencia Estatal de Meteorología - AEMET. Gobierno de España",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:16+00:00",
+        "http_status": 200,
+        "final_url": "https://www.aemet.es/es/eltiempo/prediccion/mundo?w=27000&l=34109_44948&c=UA",
+        "url_signal": null,
+        "title": "Predicción ciudades del mundo - Agencia Estatal de Meteorología - AEMET. Gobierno de España",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 24,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "Windfinder (Germany)",
+      "origin_country": "Germany",
+      "canonical_url": "https://www.windfinder.com/forecast/simferopol_international_airport",
+      "prior_status": "correct",
+      "status": "unreachable",
+      "agrees_with_prior": false,
+      "reason": "HTTP 404 — scraper blocked (likely CDN anti-bot) or service down. Prior manual audit status preserved in prior_status field; not re-verified.",
+      "final_url": "https://www.windfinder.com/forecast/simferopol_international_airport",
+      "title": "",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:17+00:00",
+        "http_status": 404,
+        "final_url": "https://www.windfinder.com/forecast/simferopol_international_airport",
+        "url_signal": null,
+        "title": "",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 0,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "Meteostat (Germany)",
+      "origin_country": "Germany",
+      "canonical_url": "https://meteostat.net/en/place/ua/simferopol?s=33946&t=2024-01-01/2024-12-31",
+      "prior_status": "correct",
+      "status": "correct",
+      "agrees_with_prior": true,
+      "reason": "URL path=ua; title neutral; body UA/RU hits=19/2",
+      "final_url": "https://meteostat.net/en/place/ua/simferopol?s=33946&t=2024-01-01/2024-12-31",
+      "title": "The Weather's Record Keeper | Meteostat",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:18+00:00",
+        "http_status": 200,
+        "final_url": "https://meteostat.net/en/place/ua/simferopol?s=33946&t=2024-01-01/2024-12-31",
+        "url_signal": "ua",
+        "title": "The Weather's Record Keeper | Meteostat",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 19,
+          "ru_hits": 2,
+          "tz_simferopol": true,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "Yandex Weather",
+      "origin_country": "Russia",
+      "canonical_url": "https://yandex.com/weather/simferopol",
+      "prior_status": "incorrect",
+      "status": "incorrect",
+      "agrees_with_prior": true,
+      "reason": "RU-origin service (legally compelled to represent Crimea as Russian under Russian territorial integrity law); url_signal=None, body UA/RU hits=0/3",
+      "final_url": "https://yandex.com/weather/en/simferopol",
+      "title": "Weather in Simferopol — Weather forecast in Simferopol, Republic of Crimea",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:19+00:00",
+        "http_status": 200,
+        "final_url": "https://yandex.com/weather/en/simferopol",
+        "url_signal": null,
+        "title": "Weather in Simferopol — Weather forecast in Simferopol, Republic of Crimea",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": true
+        },
+        "body_probe": {
+          "ua_hits": 0,
+          "ru_hits": 3,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "Gismeteo",
+      "origin_country": "Russia",
+      "canonical_url": "https://www.gismeteo.com/weather-simferopol-5032/",
+      "prior_status": "incorrect",
+      "status": "unreachable",
+      "agrees_with_prior": false,
+      "reason": "HTTP 403 — scraper blocked (likely CDN anti-bot) or service down. Prior manual audit status preserved in prior_status field; not re-verified.",
+      "final_url": "https://meteofor.com/weather-saratov-5032/",
+      "title": "",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:22+00:00",
+        "http_status": 403,
+        "final_url": "https://meteofor.com/weather-saratov-5032/",
+        "url_signal": null,
+        "title": "",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 0,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "rp5.ru",
+      "origin_country": "Russia",
+      "canonical_url": "https://rp5.ru/Weather_in_Simferopol",
+      "prior_status": "incorrect",
+      "status": "incorrect",
+      "agrees_with_prior": true,
+      "reason": "RU-origin service (legally compelled to represent Crimea as Russian under Russian territorial integrity law); url_signal=None, body UA/RU hits=2/2",
+      "final_url": "https://rp5.ru/Weather_in_Simferopol",
+      "title": "Weather in Simferopol - RP5",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:23+00:00",
+        "http_status": 200,
+        "final_url": "https://rp5.ru/Weather_in_Simferopol",
+        "url_signal": null,
+        "title": "Weather in Simferopol - RP5",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 2,
+          "ru_hits": 2,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "Pogoda.mail.ru",
+      "origin_country": "Russia",
+      "canonical_url": "https://pogoda.mail.ru/prognoz/simferopol/",
+      "prior_status": "incorrect",
+      "status": "incorrect",
+      "agrees_with_prior": true,
+      "reason": "RU-origin service (legally compelled to represent Crimea as Russian under Russian territorial integrity law); url_signal=None, body UA/RU hits=0/20",
+      "final_url": "https://pogoda.mail.ru/prognoz/simferopol/",
+      "title": "Погода Mail: прогноз погоды в Симферополе на сегодня, завтра и ближайшие дни, погода в вашем регионе, на курортах",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:25+00:00",
+        "http_status": 200,
+        "final_url": "https://pogoda.mail.ru/prognoz/simferopol/",
+        "url_signal": null,
+        "title": "Погода Mail: прогноз погоды в Симферополе на сегодня, завтра и ближайшие дни, погода в вашем регионе, на курортах",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 0,
+          "ru_hits": 20,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "World Weather Online",
+      "origin_country": "UK",
+      "canonical_url": "https://www.worldweatheronline.com/simferopol-weather/avtonomna-respublika-krym/ua.aspx",
+      "prior_status": "ambiguous",
+      "status": "correct",
+      "agrees_with_prior": false,
+      "reason": "URL path=ua AND title mentions Ukraine; body UA/RU hits=29/1",
+      "final_url": "https://www.worldweatheronline.com/simferopol-weather/avtonomna-respublika-krym/ua.aspx",
+      "title": "Ukraine Weather | WorldWeatherOnline.com",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:28+00:00",
+        "http_status": 200,
+        "final_url": "https://www.worldweatheronline.com/simferopol-weather/avtonomna-respublika-krym/ua.aspx",
+        "url_signal": "ua",
+        "title": "Ukraine Weather | WorldWeatherOnline.com",
+        "title_probe": {
+          "mentions_ukraine": true,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 29,
+          "ru_hits": 1,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": "HOME World Weather Ukraine"
+      }
+    },
+    {
+      "service": "MSN Weather (Microsoft)",
+      "origin_country": "US",
+      "canonical_url": "https://www.msn.com/en-us/weather/forecast/in-Simferopol",
+      "prior_status": "ambiguous",
+      "status": "url_correct_ui_ambiguous",
+      "agrees_with_prior": true,
+      "reason": "Neither URL path nor title carry a clear signal; body UA/RU hits=0/0 below threshold=5",
+      "final_url": "https://www.msn.com/en-us/weather/forecast/in-Simferopol",
+      "title": "Simferopol Weather Forecast | MSN Weather",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:29+00:00",
+        "http_status": 200,
+        "final_url": "https://www.msn.com/en-us/weather/forecast/in-Simferopol",
+        "url_signal": null,
+        "title": "Simferopol Weather Forecast | MSN Weather",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 0,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": ""
+      }
+    },
+    {
+      "service": "tenki.jp (Japan)",
+      "origin_country": "Japan",
+      "canonical_url": "https://tenki.jp/world/",
+      "prior_status": "na",
+      "status": "na",
+      "agrees_with_prior": true,
+      "reason": "Service categorized as N/A (Simferopol not covered); stray body hits UA/RU=1/0",
+      "final_url": "https://tenki.jp/world/",
+      "title": "世界天気 - 日本気象協会 tenki.jp",
+      "notes": "",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:30+00:00",
+        "http_status": 200,
+        "final_url": "https://tenki.jp/world/",
+        "url_signal": null,
+        "title": "世界天気 - 日本気象協会 tenki.jp",
+        "title_probe": {
+          "mentions_ukraine": false,
+          "mentions_russia": false,
+          "mentions_crimea": false
+        },
+        "body_probe": {
+          "ua_hits": 1,
+          "ru_hits": 0,
+          "tz_simferopol": false,
+          "tz_moscow": false,
+          "ordered_country_codes": []
+        },
+        "breadcrumb": "トップ 世界天気"
+      }
+    },
+    {
+      "service": "Apple WeatherKit",
+      "origin_country": "US",
+      "canonical_url": "https://developer.apple.com/weatherkit/",
+      "prior_status": "untested",
+      "status": "untested",
+      "agrees_with_prior": true,
+      "reason": "Requires Apple Developer JWT (ES256) for api.weatherkit.apple.com. Worldview-split hypothesis: EU/US IP → UA, RU IP → RU. Not verifiable from this scanner without a signed token and a Russian IP proxy. Honest default: untested.",
+      "final_url": null,
+      "title": null,
+      "notes": "Requires Apple Developer JWT (ES256) for api.weatherkit.apple.com. Worldview-split hypothesis: EU/US IP → UA, RU IP → RU. Not verifiable from this scanner without a signed token and a Russian IP proxy. Honest default: untested.",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:31+00:00"
+      }
+    },
+    {
+      "service": "Google Search Weather Panel",
+      "origin_country": "US",
+      "canonical_url": "https://www.google.com/search?q=Simferopol+weather&gl=us&hl=en",
+      "prior_status": "untested",
+      "status": "untested",
+      "agrees_with_prior": true,
+      "reason": "Google's weather panel is embedded in Search and localized via &gl= (geo) and &hl= (language). Worldview-split hypothesis: &gl=us → UA, &gl=ru → RU. Google blocks scraping without JS; we record the hypothesis and mark for manual browser verification.",
+      "final_url": null,
+      "title": null,
+      "notes": "Google's weather panel is embedded in Search and localized via &gl= (geo) and &hl= (language). Worldview-split hypothesis: &gl=us → UA, &gl=ru → RU. Google blocks scraping without JS; we record the hypothesis and mark for manual browser verification.",
+      "probes": {
+        "fetched_at": "2026-04-08T03:21:32+00:00"
+      }
+    }
+  ]
+}
