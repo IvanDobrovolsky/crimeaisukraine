@@ -38,8 +38,9 @@ pipeline-weather: ## Run weather services pipeline (25 services, 4-signal probe;
 	cd $(PIPELINES)/weather && uv sync && uv run scan.py
 	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
 
-pipeline-media: ## Run media framing pipeline (GDELT 154K + LLM verification)
+pipeline-media: ## Run media framing pipeline aggregator (reads framing.json + media_violators.json; rebuilds master manifest)
 	cd $(PIPELINES)/media && uv sync && uv run scan.py
+	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
 
 pipeline-academic: ## Run academic framing pipeline (OpenAlex 91K + LLM verification)
 	cd $(PIPELINES)/academic && uv sync && uv run scan.py

@@ -1,0 +1,64 @@
+{
+  "pipeline": "media",
+  "version": "2.0",
+  "generated": "2026-04-08T05:02:15+00:00",
+  "method": "gdelt_bigquery + regex_stage1 + llm_stage2 + manual_stage3 (read from framing.json)",
+  "summary": {
+    "total_articles": 153937,
+    "classified_any_signal": 38663,
+    "stage1_ukraine": 33112,
+    "stage1_russia": 5194,
+    "stage1_disputed": 357,
+    "llm_verified": 7670,
+    "llm_endorses_all": 4714,
+    "llm_endorses_russian_domain": 4475,
+    "llm_endorses_nonrussian_domain": 239,
+    "violators_total_distinct_domains": 411,
+    "major_international_outlets_endorsements": 0,
+    "precision_stage1_overall": 61.5,
+    "precision_stage1_nonrussian": 9.1,
+    "precision_stage1_overall_ci95_pct": [
+      60.366,
+      62.543
+    ],
+    "precision_stage1_nonrussian_ci95_pct": [
+      8.06,
+      10.262
+    ],
+    "nonrussian_endorsement_rate_pct_of_classified": 0.618,
+    "nonrussian_endorsement_rate_ci95_pct_of_classified": [
+      0.545,
+      0.701
+    ],
+    "nonrussian_endorsement_rate_pct_of_corpus": 0.155,
+    "nonrussian_endorsement_rate_ci95_pct_of_corpus": [
+      0.137,
+      0.176
+    ],
+    "major_intl_zero_endorsements_rule_of_3_upper_pct": 0.114,
+    "llm_correction_factor": 0.552
+  },
+  "findings": [],
+  "key_findings": [
+    "GDELT corpus: 153,937 Crimea-mentioning articles indexed 2015–2026. Stage 1 regex classified 38,663 (25.1%) as containing any sovereignty signal.",
+    "Stage 2 LLM verification on 7,670 articles: 4,714 confirmed as genuine endorsements (61.5% precision, Wilson 95% CI [60.366%, 62.543%]).",
+    "Non-Russian-domain endorsements: 239 (0.545%–0.701% of 38,663 classified articles; 0.137%–0.176% of the full 153,937-article corpus). The prior fear that Russian narrative leaks into Western outlets is measurable, and the measurement is: it gets quoted, rarely endorsed.",
+    "Stage 1 non-Russian precision: 9.1% (Wilson 95% CI [8.06%, 10.262%]). About 90.9% of Stage 1's non-Russian 'russia-framed' flags are false positives — quotation, not endorsement. Naive keyword monitors would over-report Western 'violations' by roughly 10×.",
+    "Zero major international outlets (BBC, Reuters, CNN, NYT, Guardian, AP, AFP, DW, Le Monde, El País) appear in the LLM-verified endorsement list. Rule-of-three upper bound with n≈2626: true rate ≤ 0.114% with 95% confidence.",
+    "LLM independence firewall: the Stage 2 prompt contains only article body text — no domain name, no publisher country, no Stage 1 metadata. Stratified disagreement between Stage 1 and Stage 2 is 38.5% overall and roughly 91% for non-Russian articles — the LLM is performing substantive classification on article content, not rubber-stamping Stage 1."
+  ],
+  "limitations": [
+    "This is an aggregator pipeline: it reads site/src/data/framing.json and site/src/data/media_violators.json produced by the upstream scripts (scripts/scan_gdelt_framing.py for GDELT + regex, scripts/llm_verify.py for LLM verification). It does not re-run either upstream on every invocation. To refresh the numbers, rerun the upstream scripts first.",
+    "GDELT coverage gaps for the most recent months may cause under-representation of newly published articles.",
+    "Paywalled articles are not fetched; open-web bias.",
+    "Domain-country attribution depends on GDELT metadata which is occasionally empty or mis-attributed.",
+    "The Wilson CI for Stage 1 non-Russian precision uses an inferred denominator (llm_endorses_nonru / precision_nonru). If the upstream framing.json rounded precision_nonru, the denominator may be off by a few units; the CI is still useful for magnitude.",
+    "Single-vantage-point LLM verification — all Stage 2 calls used the same Claude Haiku model. A cross-model verification against a second LLM would strengthen the precision estimates."
+  ],
+  "upstream_data_sources": {
+    "framing_json": "site/src/data/framing.json",
+    "violators_json": "site/src/data/media_violators.json",
+    "gdelt_query_script": "scripts/scan_gdelt_framing.py",
+    "llm_verifier_script": "scripts/llm_verify.py"
+  }
+}
