@@ -32,6 +32,32 @@ Natural Earth ships at three resolutions — 10m (1:10 million scale, most detai
 
 This is the policy choice. The implementation of this policy in the case of Crimea is the heart of this pipeline's finding.
 
+### Who decides, and how
+
+Natural Earth is not governed by an international body, standards committee, or peer-reviewed process. The dataset's editorial decisions are made by a six-person **[Map Update Committee](https://www.naturalearthdata.com/about/map-update-committee/)**, none of whom hold posts in international law, in the United Nations system, or in any Eastern European regional-studies institution. As listed on the project's own page, the committee is:
+
+| Name | Role | Affiliation |
+|---|---|---|
+| Nathaniel Vaughn Kelso | Project Manager | Kelso Cartography (formerly Apple Maps, Stamen) |
+| Tom Patterson | Chief Cartographer | ShadedRelief.com, retired U.S. National Park Service |
+| Dick Furno | Populated Places | Azimuth, Inc. — retired from *The Washington Post* |
+| Tanya Buckingham | Supervisor of GIS | University of Wisconsin Cartography Lab |
+| Nick Springer | Website Development | Springer Cartographic |
+| Louis Cross | NACIS Liaison | Florida Resources and Environmental Analysis Center, Florida State |
+
+No chair is identified. No signing author appears on the disputed boundaries policy page itself.
+
+The disputed-boundaries policy page was **last updated on 27 February 2022 — three days after Russia's full-scale invasion of Ukraine on 24 February 2022**. The committee revised the text of the page in the first week of the war but did not reclassify Crimea. The Crimea polygon has shipped as part of the Russian Federation's `SOVEREIGNT` field continuously since the policy was written.
+
+### The committee's own criteria arguably exclude Crimea from Russia
+
+Natural Earth's stated rubric for whether a territory should be treated as sovereign or as a sub-national map unit invokes the following criteria (paraphrased from the policy page): a sustained administrative apparatus, the capacity to make and enforce laws, a distinct currency, tax collection, a standing army, longevity, and a **declared act of self-determination**. Two worked examples appear on the policy page:
+
+- **Somaliland** is treated as sovereign, because it meets the rubric above.
+- **Kurdistan (Iraqi)** is treated as a sub-national map unit of Iraq, because it lacks a formal declaration of independence.
+
+By the same rubric, **Crimea should be classified as a sub-national map unit, not absorbed into the Russian Federation's default polygon**. Crimea has no declaration of independence from Ukraine that is internationally recognized (the 2014 referendum was declared invalid by [UN General Assembly Resolution 68/262](https://undocs.org/A/RES/68/262), adopted 100–11). Russia did not recognize Crimea as an independent state and then annex it; Russia asserted that Crimea was "returned" directly to Russian federal administration. Under Natural Earth's own stated criteria, this is the same situation as Iraqi Kurdistan — a self-administered region absent a legitimate declaration of independence — and should be classified accordingly. The committee applies the rubric inconsistently.
+
 ## How GeoJSON propagates to every map on the internet
 
 Most developers don't write maps from scratch. They use libraries that bundle Natural Earth data, repackage it, and ship it via [npm](https://www.npmjs.com/) (JavaScript) or [PyPI](https://pypi.org/) (Python). The propagation chain looks like this:
