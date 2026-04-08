@@ -1,0 +1,165 @@
+{
+  "pipeline": "telecom",
+  "version": "2.0",
+  "generated": "2026-04-08T04:37:08+00:00",
+  "method": "curated_findings + platforms_json",
+  "summary": {
+    "total_services": 11,
+    "correct": 1,
+    "incorrect": 4,
+    "na_withdrew": 3,
+    "blocked_by_sanctions": 3,
+    "correct_pct": 9.1,
+    "incorrect_pct": 36.4,
+    "na_pct": 27.3,
+    "blocked_pct": 27.3
+  },
+  "findings": [
+    {
+      "platform": "Vodafone Ukraine",
+      "category": "telecom",
+      "status": "n/a",
+      "status_icon": "➖",
+      "method": "automated_api",
+      "detail": "Ceased Crimea operations in 2015. Coverage map excludes peninsula entirely — neither labeled nor shown.",
+      "url": "https://www.vodafone.ua/",
+      "evidence": "Coverage map lists 24 Ukrainian oblasts + Kyiv. Crimea NOT listed. Ceased operations 2015. https://www.vodafone.ua/",
+      "notes": "Ukrainian operator. Crimea absent from coverage.",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "Kyivstar",
+      "category": "telecom",
+      "status": "n/a",
+      "status_icon": "➖",
+      "method": "automated_api",
+      "detail": "Ceased Crimea operations in 2015. Coverage map excludes Crimea.",
+      "url": "https://www.kyivstar.ua/",
+      "evidence": "Coverage map excludes Crimea. Ceased operations 2015. https://www.kyivstar.ua/",
+      "notes": "Ukrainian operator. Crimea absent from coverage.",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "lifecell",
+      "category": "telecom",
+      "status": "n/a",
+      "status_icon": "➖",
+      "method": "automated_api",
+      "detail": "Ceased Crimea operations in 2015. States 98.82% coverage of Ukraine's 'inhabited territory' — excludes Crimea.",
+      "url": "https://www.lifecell.ua/",
+      "evidence": "Coverage map excludes Crimea. States 98.82% coverage of Ukraine's 'inhabited territory' — excludes Crimea. https://www.lifecell.ua/",
+      "notes": "Ukrainian operator. Crimea absent from coverage.",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "K-Telecom (Win Mobile)",
+      "category": "telecom",
+      "status": "incorrect",
+      "status_icon": "❌",
+      "method": "automated_api",
+      "detail": "De facto monopoly operator in Crimea since August 2014. Replaced Ukrainian operators. ~99% Crimea coverage, 3,000+ base stations. Russian ruble pricing.",
+      "url": "https://win-mobile.ru/",
+      "evidence": "Site win-mobile.ru blocked outside Russia (ECONNREFUSED). De facto monopoly operator since Aug 2014. Uses +7 country code, Russian ruble pricing, 3000+ base stations.",
+      "notes": "Also operates as '+7Telecom' in occupied Luhansk, Donetsk, Zaporizhzhia, Kherson.",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "RIPE NCC (IP registrations)",
+      "category": "telecom",
+      "status": "incorrect",
+      "status_icon": "❌",
+      "method": "automated_api",
+      "detail": "Crimean ASNs systematically re-registered from UA to RU after 2014. CrimeaCom: UA→RU Dec 2014. Lancom: UA→RU Mar 2014 (same day as annexation treaty). RIPE refused Ukraine's 2022 reversal request.",
+      "url": "https://stat.ripe.net/",
+      "evidence": "AS28761 changed UA→RU Dec 12 2014; Miranda-Media AS201776 registered as RU from creation Jul 2014",
+      "notes": "RIPE cited 'neutrality': registrations should not enforce political outcomes.",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "crimea.ua (domain)",
+      "category": "telecom",
+      "status": "correct",
+      "status_icon": "✅",
+      "method": "automated_api",
+      "detail": ".crimea.ua is active under Ukraine's .ua ccTLD. Managed by CrisNet Ltd (Kyiv). Created Dec 2, 1992. .crimea.ru does not exist as a standard domain.",
+      "url": "https://www.whois.com/whois/crimea.ua",
+      "evidence": "HTTP 200; mentions_crimea=true",
+      "notes": "One of few digital infrastructure elements where Crimea remains formally Ukrainian.",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "Kerch Strait Cable (Rostelecom)",
+      "category": "telecom",
+      "status": "incorrect",
+      "status_icon": "❌",
+      "method": "automated_api",
+      "detail": "46km fiber-optic cable from Krasnodar to Crimea. Laid by Rostelecom in 2014, 110 Gbps capacity. The sole submarine connection — Crimea fully dependent on Russian internet backbone.",
+      "url": "https://www.submarinecablemap.com/",
+      "evidence": "46km fiber-optic cable Krasnodar→Crimea, laid 2014, 110 Gbps. Transit via Miranda-Media (AS201776). Sole submarine connection. https://www.submarinecablemap.com/",
+      "notes": "Transit via Miranda-Media (Rostelecom Crimean subsidiary).",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "Starlink (SpaceX)",
+      "category": "telecom",
+      "status": "blocked",
+      "status_icon": "🚫",
+      "method": "automated_api",
+      "detail": "Geofenced out of Crimea. SpaceX enforces strict terminal verification — unauthorized terminals disabled. Ukraine criticized SpaceX for not extending coverage to Crimea.",
+      "url": "https://starlink.com/",
+      "evidence": "Geofenced out of Crimea. SpaceX enforces terminal verification. Ukraine criticized SpaceX for not extending coverage. https://starlink.com/",
+      "notes": "Satellite geofencing prevents coverage in Russian-occupied territories.",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "Netflix",
+      "category": "telecom",
+      "status": "blocked",
+      "status_icon": "🚫",
+      "method": "automated_api",
+      "detail": "Never available in Crimea (US OFAC sanctions since 2014). All Russia service suspended March 2022. Crimea listed alongside DPRK, Syria as unavailable territories.",
+      "url": "https://www.netflix.com/",
+      "evidence": "Never available in Crimea (US OFAC sanctions since 2014). All Russia service suspended March 2022. https://www.netflix.com/",
+      "notes": "",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "Speedtest.net (Ookla)",
+      "category": "telecom",
+      "status": "blocked",
+      "status_icon": "🚫",
+      "method": "automated_api",
+      "detail": "Blocked in Russia by Roskomnadzor since July 30, 2025. Before block, Ukraine at rank 71 (84.40 Mbps). Competitor nPerf lists Simferopol under UA country code.",
+      "url": "https://www.speedtest.net/",
+      "evidence": "Blocked in Russia by Roskomnadzor since July 2025. Competitor nPerf lists Simferopol under UA country code. https://www.speedtest.net/",
+      "notes": "nPerf classifies Crimean cities as Ukrainian territory.",
+      "date_checked": "2026-04-02"
+    },
+    {
+      "platform": "Miranda-Media (Rostelecom Crimea)",
+      "category": "telecom",
+      "status": "incorrect",
+      "status_icon": "❌",
+      "method": "automated_api",
+      "detail": "Rostelecom's Crimean subsidiary. AS201776 registered as RU from creation (Jul 2014). Sole transit provider — by mid-2017 all Crimean traffic routed through Russian networks.",
+      "url": "https://stat.ripe.net/AS201776",
+      "evidence": "AS201776 registered as RU from creation Jul 2014. By mid-2017 all Crimean traffic routed via Russian networks. https://stat.ripe.net/AS201776",
+      "notes": "Complete 'Russification' of Crimea's internet routing by 2017.",
+      "date_checked": "2026-04-02"
+    }
+  ],
+  "key_findings": [
+    "All 3 Ukrainian mobile operators (Kyivstar, Vodafone Ukraine, lifecell) withdrew from Crimea by October 2015. They are classified `n/a` — the services no longer exist in Crimea — not `incorrect` and not `blocked`. The distinction matters: withdrawal is a Ukrainian operator decision under occupation, not a sovereignty claim about Crimea being Russian.",
+    "4 telecom entities operate in Crimea under Russian regulation and are classified `incorrect`: K-Telecom (Win Mobile, the de-facto monopoly operator since August 2014), RIPE NCC (which permitted the UA→RU ASN re-registrations under transfer policy ripe-733 without sovereignty review), the Kerch Strait submarine cable (laid by Rostelecom in 2014), and Miranda-Media (Rostelecom's Crimean data subsidiary, AS201776 registered as RU from July 2014).",
+    "3 services are `blocked` in Crimea: Starlink (SpaceX geofence, OFAC compliance), Netflix (OFAC since 2014), Speedtest.net / Ookla (blocked in Russia by Roskomnadzor as of July 2025). 'Blocked' here means the service is actively prevented from operating, not withdrawn by its operator.",
+    "1 service is `correct`: the `.crimea.ua` subdomain is active under Ukraine's .ua ccTLD, managed by Hostmaster.ua — an infrastructural assertion of Ukrainian sovereignty that has survived since before 2014.",
+    "Status taxonomy: `n/a` = operator withdrew (service gone). `incorrect` = service operates in Crimea under Russian regulation. `blocked` = service prevented by sanctions or state action. `correct` = operates per Ukrainian jurisdiction. These are NOT interchangeable — conflating `n/a` with `blocked` would misrepresent the withdrawn Ukrainian operators as victims of sanctions rather than as operators that left under occupation."
+  ],
+  "limitations": [
+    "Curation pipeline: findings are hand-researched from public sources, not produced by a live scanner. Live RIPE STAT API / E.164 / TeleGeography probes are planned as a follow-up.",
+    "Cannot directly query Russian operator coverage databases (sanctioned, requires Russian-IP access + manual browser session).",
+    "Submarine cable data is from public sources via TeleGeography; not all regional cables are mapped.",
+    "Ukrainian operators no longer publish Crimean coverage information (withdrawn), so current state is documented from withdrawal announcements.",
+    "WHOIS records can be edited by holders without external review, so RIPE NCC reassignment dates reflect the state at the date_checked timestamp in each finding."
+  ]
+}

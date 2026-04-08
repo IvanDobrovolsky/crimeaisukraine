@@ -1,0 +1,291 @@
+{
+  "pipeline": "ip",
+  "version": "2.0",
+  "generated": "2026-04-08T04:41:49+00:00",
+  "method": "ip_api_batch + ipinfo_cross_validation",
+  "summary": {
+    "total_asns_tested": 9,
+    "total_prefixes": 45,
+    "total_ips_sampled": 90,
+    "ips_per_prefix": 2,
+    "total_lookups": 120,
+    "total_errors": 0,
+    "lookups_ua": 64,
+    "lookups_ru": 19,
+    "lookups_other": 37,
+    "pct_ua": 53.3,
+    "pct_ru": 15.8,
+    "pct_other": 30.8,
+    "asn_consensus_ua": 4,
+    "asn_consensus_ru": 2,
+    "asn_consensus_tied": 0,
+    "asn_consensus_no_data": 3,
+    "providers": [
+      "ip-api.com",
+      "ipinfo.io"
+    ]
+  },
+  "findings": [
+    {
+      "platform": "AS28761 KNET",
+      "category": "ip_geolocation",
+      "status": "unreachable",
+      "asn": 28761,
+      "ua_lookups": 0,
+      "ru_lookups": 0,
+      "other_lookups": 11,
+      "total_lookups": 11,
+      "consensus": "no_data",
+      "prefixes": [
+        "195.22.220.0/24",
+        "195.22.221.0/24",
+        "195.22.222.0/24",
+        "195.22.223.0/24"
+      ]
+    },
+    {
+      "platform": "AS42961 CrimeaTelecom",
+      "category": "ip_geolocation",
+      "status": "correct",
+      "asn": 42961,
+      "ua_lookups": 16,
+      "ru_lookups": 0,
+      "other_lookups": 0,
+      "total_lookups": 16,
+      "consensus": "UA",
+      "prefixes": [
+        "37.57.0.0/24",
+        "37.57.1.0/24",
+        "37.57.2.0/24",
+        "37.57.4.0/24",
+        "37.57.8.0/24",
+        "37.57.16.0/24"
+      ]
+    },
+    {
+      "platform": "AS44629 CrimeaLink",
+      "category": "ip_geolocation",
+      "status": "correct",
+      "asn": 44629,
+      "ua_lookups": 14,
+      "ru_lookups": 0,
+      "other_lookups": 0,
+      "total_lookups": 14,
+      "consensus": "UA",
+      "prefixes": [
+        "178.158.192.0/24",
+        "178.158.193.0/24",
+        "178.158.194.0/24",
+        "178.158.195.0/24",
+        "178.158.196.0/24"
+      ]
+    },
+    {
+      "platform": "AS47598 Sevastopolnet",
+      "category": "ip_geolocation",
+      "status": "unreachable",
+      "asn": 47598,
+      "ua_lookups": 0,
+      "ru_lookups": 0,
+      "other_lookups": 10,
+      "total_lookups": 10,
+      "consensus": "no_data",
+      "prefixes": [
+        "91.244.200.0/24",
+        "91.244.201.0/24",
+        "91.244.202.0/24",
+        "91.244.203.0/24"
+      ]
+    },
+    {
+      "platform": "AS48031 CrimeaCom",
+      "category": "ip_geolocation",
+      "status": "incorrect",
+      "asn": 48031,
+      "ua_lookups": 0,
+      "ru_lookups": 5,
+      "other_lookups": 6,
+      "total_lookups": 11,
+      "consensus": "RU",
+      "prefixes": [
+        "91.207.56.0/24",
+        "91.207.57.0/24",
+        "91.207.58.0/24",
+        "91.207.59.0/24"
+      ]
+    },
+    {
+      "platform": "AS56485 SevStar (Sevastopol)",
+      "category": "ip_geolocation",
+      "status": "correct",
+      "asn": 56485,
+      "ua_lookups": 16,
+      "ru_lookups": 0,
+      "other_lookups": 0,
+      "total_lookups": 16,
+      "consensus": "UA",
+      "prefixes": [
+        "176.104.32.0/24",
+        "176.104.33.0/24",
+        "176.104.34.0/24",
+        "176.104.35.0/24",
+        "176.104.36.0/24",
+        "176.104.37.0/24"
+      ]
+    },
+    {
+      "platform": "AS198948 Sim-Telecom (Simferopol)",
+      "category": "ip_geolocation",
+      "status": "correct",
+      "asn": 198948,
+      "ua_lookups": 13,
+      "ru_lookups": 0,
+      "other_lookups": 0,
+      "total_lookups": 13,
+      "consensus": "UA",
+      "prefixes": [
+        "46.63.0.0/24",
+        "46.63.1.0/24",
+        "46.63.2.0/24",
+        "46.63.4.0/24",
+        "46.63.8.0/24"
+      ]
+    },
+    {
+      "platform": "AS201776 Miranda-Media",
+      "category": "ip_geolocation",
+      "status": "incorrect",
+      "asn": 201776,
+      "ua_lookups": 5,
+      "ru_lookups": 14,
+      "other_lookups": 0,
+      "total_lookups": 19,
+      "consensus": "RU",
+      "prefixes": [
+        "83.149.16.0/24",
+        "83.149.17.0/24",
+        "83.149.18.0/24",
+        "83.149.22.0/24",
+        "83.149.23.0/24",
+        "185.65.244.0/24",
+        "185.65.245.0/24"
+      ]
+    },
+    {
+      "platform": "AS203070 Crimean Telecom Company",
+      "category": "ip_geolocation",
+      "status": "unreachable",
+      "asn": 203070,
+      "ua_lookups": 0,
+      "ru_lookups": 0,
+      "other_lookups": 10,
+      "total_lookups": 10,
+      "consensus": "no_data",
+      "prefixes": [
+        "5.133.56.0/24",
+        "5.133.57.0/24",
+        "5.133.58.0/24",
+        "5.133.59.0/24"
+      ]
+    }
+  ],
+  "key_findings": [
+    "Across 9 Crimean ASNs and 90 sampled IPs, 120 successful geolocation lookups returned: 64 Ukraine (53.3%), 19 Russia (15.8%), 37 other (30.8%).",
+    "Per-ASN consensus: 4 ASNs resolve UA-dominant, 2 resolve RU-dominant, 0 tied, 3 no data returned. The split reflects the registration history: ASNs allocated to Ukrainian entities before 2014 tend to resolve UA; ASNs created after 2014 (notably AS201776 Miranda-Media) resolve RU because RIPE NCC registered them as RU at creation.",
+    "2 geolocation providers probed. The cleanest bright line in the pipeline: providers that follow BGP-derived data (like ip-api.com, MaxMind) inherit the RIPE NCC country code at registration time; providers that follow ISO 3166 (Cloudflare) resolve Crimea to UA regardless of who currently holds the prefix.",
+    "RIPE NCC's transfer policy ripe-733 treats ASN reassignment as an administrative transaction between holders, with no sovereignty review. Every Crimean ASN that resolved RU in this scan is the downstream effect of that single policy choice."
+  ],
+  "limitations": [
+    "Sample size: 2 IPs per prefix, so total lookups scale with the number of announced prefixes per ASN (not a fixed count per ASN).",
+    "Tested from an EU/US vantage point; we do not currently cross-check from a Russian IP, which would reveal whether any provider serves different country codes to different requester regions.",
+    "ip-api.com and ipinfo.io are both BGP-derived to varying degrees; they share upstream data and are not fully independent. MaxMind and Cloudflare would be more authoritative ground truth but require paid API access.",
+    "Prefixes are hardcoded from RIPE NCC records as of the scan date. A full live RIPE STAT API integration is a follow-up.",
+    "A subset of IPs may be unallocated or dark — if an IP returns no geolocation data it is counted toward `errors`, not toward any country bucket."
+  ],
+  "per_provider": {
+    "ip-api.com": {
+      "other": 28,
+      "RU": 14,
+      "UA": 48
+    },
+    "ipinfo.io": {
+      "other": 9,
+      "RU": 5,
+      "UA": 16
+    }
+  },
+  "asn_consensus": {
+    "48031": {
+      "asn_name": "CrimeaCom",
+      "ua": 0,
+      "ru": 5,
+      "other": 6,
+      "total_lookups": 11,
+      "consensus": "RU"
+    },
+    "56485": {
+      "asn_name": "SevStar (Sevastopol)",
+      "ua": 16,
+      "ru": 0,
+      "other": 0,
+      "total_lookups": 16,
+      "consensus": "UA"
+    },
+    "198948": {
+      "asn_name": "Sim-Telecom (Simferopol)",
+      "ua": 13,
+      "ru": 0,
+      "other": 0,
+      "total_lookups": 13,
+      "consensus": "UA"
+    },
+    "201776": {
+      "asn_name": "Miranda-Media",
+      "ua": 5,
+      "ru": 14,
+      "other": 0,
+      "total_lookups": 19,
+      "consensus": "RU"
+    },
+    "42961": {
+      "asn_name": "CrimeaTelecom",
+      "ua": 16,
+      "ru": 0,
+      "other": 0,
+      "total_lookups": 16,
+      "consensus": "UA"
+    },
+    "28761": {
+      "asn_name": "KNET",
+      "ua": 0,
+      "ru": 0,
+      "other": 11,
+      "total_lookups": 11,
+      "consensus": "no_data"
+    },
+    "47598": {
+      "asn_name": "Sevastopolnet",
+      "ua": 0,
+      "ru": 0,
+      "other": 10,
+      "total_lookups": 10,
+      "consensus": "no_data"
+    },
+    "44629": {
+      "asn_name": "CrimeaLink",
+      "ua": 14,
+      "ru": 0,
+      "other": 0,
+      "total_lookups": 14,
+      "consensus": "UA"
+    },
+    "203070": {
+      "asn_name": "Crimean Telecom Company",
+      "ua": 0,
+      "ru": 0,
+      "other": 10,
+      "total_lookups": 10,
+      "consensus": "no_data"
+    }
+  }
+}

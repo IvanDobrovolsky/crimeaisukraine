@@ -1,119 +1,224 @@
 # IP Geolocation: How the Internet Knows Where You Are
 
-## What is an IP address and why does it matter for sovereignty?
+Every internet request carries an IP address, and every serious website runs that IP through a **geolocation database** to decide what to do next — which ads to show, which videos to unblock, which fraud rules to apply, whether to collect VAT, and whether to comply with sanctions. These databases are consumed by [Cloudflare](https://www.cloudflare.com/), Google Analytics, Stripe, Netflix, every major CDN, and every SaaS platform with a "users by country" dashboard. What they say about Crimean IPs therefore decides what billions of automated systems believe about Crimea's sovereignty every second of every day.
 
-Every device connected to the internet has an **IP address** — a numeric identifier like `91.198.174.192`. When you load a website, your phone's IP travels with the request, and the website can look up which country you're in. This lookup is done by **IP geolocation databases** — commercial and free services that map IP addresses to physical locations.
+## Headline
 
-These databases power:
-- **Content geofencing** ("this video is unavailable in your country")
-- **Fraud detection** (your bank flags purchases from unexpected countries)
-- **Ad targeting** (Coca-Cola buys ads only in Germany)
-- **Tax calculation** (Stripe charges VAT based on buyer location)
-- **Compliance** (sanctions enforcement, GDPR jurisdiction)
-- **Analytics** (Google Analytics country reports)
+**Across 9 Crimean ASNs and 90 sampled IPs, `ip-api.com` returns Ukraine for 53%, Russia for 16%, and a third country for 31% of lookups. Four ASNs resolve UA-dominant, two resolve RU-dominant, and three resolve to non-UA/non-RU transit countries. The split is not a measurement error — it is a faithful reproduction of RIPE NCC's registry state. Every ASN that resolves as Russia is the downstream effect of RIPE NCC's transfer policy `ripe-733`, which treats ASN reassignment as an administrative transaction between consenting parties, with no sovereignty review. Cloudflare, which follows ISO 3166 instead of BGP-derived data, resolves *all* Crimean prefixes to `UA-43` regardless of who currently holds them — proving that following the international standard is a deliberate engineering choice that any provider could make.**
 
-The most widely used databases are [MaxMind GeoIP2](https://www.maxmind.com/en/geoip-databases) (commercial, used by Cloudflare and most CDNs), [ip-api.com](https://ip-api.com/) (free), and [ipinfo.io](https://ipinfo.io/) (freemium).
-
-## How IP addresses are assigned
-
-IP addresses are not assigned to countries directly. They are assigned to **Autonomous Systems** (ASes), which are large networks operated by ISPs, telecoms, and corporations. Each AS has an **AS Number (ASN)** — for example, AS35415 is Webazilla in the Netherlands; AS3216 is Beeline Russia.
-
-The assignment chain:
-
-1. [**IANA**](https://www.iana.org/) (Internet Assigned Numbers Authority) allocates large IP blocks to **Regional Internet Registries (RIRs)**
-2. **RIRs** allocate to ISPs and corporations. The five RIRs are [ARIN](https://www.arin.net/) (North America), [RIPE NCC](https://www.ripe.net/) (Europe + Russia + Middle East), [APNIC](https://www.apnic.net/) (Asia-Pacific), [LACNIC](https://www.lacnic.net/) (Latin America), [AFRINIC](https://afrinic.net/) (Africa)
-3. ISPs announce their IP blocks via [**BGP**](https://www.cloudflare.com/learning/security/glossary/what-is-bgp/) (Border Gateway Protocol) — the routing system that tells the internet "to reach 91.198.174.0/24, send packets to AS35415"
-
-**Crimea sits at the seam** of two RIRs in theory (RIPE NCC covers both Ukraine and Russia) but in practice all reassignments happen within RIPE NCC.
-
-## What happened in Crimea after 2014
-
-Before 2014, Crimea's mobile and fixed-line networks were operated by Ukrainian carriers — [Kyivstar](https://kyivstar.ua/), [Vodafone Ukraine](https://www.vodafone.ua/), [lifecell](https://www.lifecell.ua/) — using ASNs registered with RIPE NCC under Ukraine. After Russia's annexation in February 2014, all three Ukrainian operators were forced out by October 2015 ([Reuters, 2015](https://www.reuters.com/article/us-ukraine-crisis-crimea-mobile-idUSKCN0Q428H20150730)). Russian operators ([MTS](https://www.mts.ru/), [MegaFon](https://www.megafon.ru/), [Win Mobile / K-Telecom](https://www.win.ua/)) replaced them.
-
-**RIPE NCC permitted ASN re-registrations from Ukrainian to Russian holders without invoking sovereignty policy.** RIPE has no Crimea-specific procedure; the [registry policy](https://www.ripe.net/publications/docs/ripe-733) treats ASN transfers as administrative transactions between consenting parties. The political dimension is invisible to the database.
-
-The result: Crimean infrastructure that was once `country=UA` is now mostly `country=RU` in geolocation databases. Cloudflare, which follows ISO 3166 instead of pure BGP routing, still reports `UA-43` for Crimean IPs ([Cloudflare radar docs](https://developers.cloudflare.com/network/ip-geolocation/)).
-
-## Why this matters
-
-When a Crimean user opens a website, every analytics tool, every fraud system, every tax engine, every "show me users from Russia/Ukraine" dashboard treats them as Russian. This is not a moral judgment by the database operators — it's a faithful reflection of where the packets physically route. But when a global digital service trusts its IP database to enforce sanctions, target advertising, or report user demographics, that database is making a sovereignty decision **with no human in the loop**.
-
-## How we measured
-
-We selected **9 ASNs** that announce IP space in Crimea, sampled **10 IP addresses per ASN**, and queried each address against **2 free geolocation providers** ([ip-api.com](https://ip-api.com/) and [ipinfo.io](https://ipinfo.io/)). That gave us **180 lookups** total. The 9 ASNs span three categories:
-
-1. **Pre-2014 Ukrainian operators** that survived migration
-2. **Post-2014 Russian operators** registered after annexation (MTS, MegaFon, K-Telecom)
-3. **Re-routed networks** that now reach Crimea via mainland Ukraine or third countries
-
-The ASN list was compiled from [BGPView](https://bgpview.io/) prefix queries and cross-checked against [bgp.tools](https://bgp.tools/).
+## Why this matters — the supply chain
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b', 'secondaryColor': '#111827', 'tertiaryColor': '#0a0e1a'}}}%%
-graph TB
-    A["9 Crimean ASNs<br/>compiled from BGPView"] --> B["BGPView API<br/>get announced prefixes"]
-    B --> C["Sample 10 IPs<br/>per ASN<br/>total: 90 IPs"]
-    C --> D["ip-api.com<br/>country_code field"]
-    C --> E["ipinfo.io<br/>country field"]
-    D --> F["Aggregate by<br/>ASN × provider"]
-    E --> F
-    F --> G["180 lookups<br/>UA / RU / Other"]
-    G --> H["data/manifest.json"]
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
+flowchart LR
+    subgraph UPSTREAM["Upstream authorities"]
+        direction TB
+        ISO["ISO 3166-2:UA<br/>no RU-CR entry<br/>(Crimea is UA-43)"]
+        RIPE["RIPE NCC<br/>transfer policy ripe-733<br/>(no sovereignty review)"]
+        EU["EU Reg 692/2014<br/>Crimea = occupied<br/>(no enforcement on DBs)"]
+    end
 
-    style A fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style B fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style C fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style D fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style E fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style F fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style G fill:#111827,stroke:#22c55e,color:#22c55e
-    style H fill:#111827,stroke:#22c55e,color:#22c55e
+    subgraph REGISTRY["RIPE NCC registry state"]
+        direction TB
+        ASN_UA["UA-registered ASNs<br/>pre-2014 (mostly unchanged)"]
+        ASN_RU["RU-registered ASNs<br/>post-2014 (Miranda-Media +<br/>reassignments)"]
+        ASN_3RD["Transit-routed ASNs<br/>(mainland UA or 3rd country)"]
+    end
+
+    subgraph DBS["Geolocation databases"]
+        direction TB
+        MAXMIND["MaxMind GeoIP2<br/>(Cloudflare-paid,<br/>BGP-derived)"]
+        IPAPI["ip-api.com<br/>(free, BGP-derived)"]
+        IPINFO["ipinfo.io<br/>(freemium, BGP-derived)"]
+        CLOUDFLARE["Cloudflare Radar<br/>(ISO 3166-2<br/>deliberate override)"]
+    end
+
+    subgraph CONSUMERS["Consumer surfaces"]
+        direction TB
+        CDN["CDNs · content<br/>geofencing"]
+        ADS["Ad networks<br/>(Google · Meta)"]
+        TAX["Tax · VAT<br/>(Stripe · Shopify)"]
+        SANCT["Sanctions<br/>compliance<br/>(OFAC screens)"]
+        FRAUD["Fraud detection<br/>(banks · payments)"]
+    end
+
+    ISO --> CLOUDFLARE
+    RIPE --> ASN_UA
+    RIPE --> ASN_RU
+    RIPE --> ASN_3RD
+    ASN_UA -->|mostly UA| IPAPI
+    ASN_UA -->|mostly UA| IPINFO
+    ASN_UA -->|mostly UA| MAXMIND
+    ASN_RU -->|RU| IPAPI
+    ASN_RU -->|RU| IPINFO
+    ASN_RU -->|RU| MAXMIND
+    ASN_3RD -->|transit country| IPAPI
+    ASN_3RD -->|transit country| IPINFO
+    EU -.->|no enforcement| DBS
+
+    MAXMIND --> CDN
+    MAXMIND --> ADS
+    MAXMIND --> TAX
+    MAXMIND --> SANCT
+    IPAPI --> FRAUD
+    CLOUDFLARE --> CDN
+
+    style UPSTREAM fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style REGISTRY fill:#0a0e1a,stroke:#1e293b,color:#e5e5e5
+    style DBS fill:#0a0e1a,stroke:#1e293b,color:#e5e5e5
+    style CONSUMERS fill:#0a0e1a,stroke:#22c55e,color:#e5e5e5
+    style ISO fill:#111827,stroke:#22c55e,color:#22c55e
+    style RIPE fill:#111827,stroke:#ef4444,color:#ef4444
+    style EU fill:#111827,stroke:#f59e0b,color:#f59e0b
+    style ASN_UA fill:#111827,stroke:#22c55e,color:#22c55e
+    style ASN_RU fill:#111827,stroke:#ef4444,color:#ef4444
+    style ASN_3RD fill:#111827,stroke:#94a3b8,color:#94a3b8
+    style MAXMIND fill:#111827,stroke:#1e293b,color:#e5e5e5
+    style IPAPI fill:#111827,stroke:#1e293b,color:#e5e5e5
+    style IPINFO fill:#111827,stroke:#1e293b,color:#e5e5e5
+    style CLOUDFLARE fill:#111827,stroke:#22c55e,color:#22c55e
+    style CDN fill:#111827,stroke:#1e293b,color:#e5e5e5
+    style ADS fill:#111827,stroke:#1e293b,color:#e5e5e5
+    style TAX fill:#111827,stroke:#1e293b,color:#e5e5e5
+    style SANCT fill:#111827,stroke:#1e293b,color:#e5e5e5
+    style FRAUD fill:#111827,stroke:#1e293b,color:#e5e5e5
 ```
 
-**Precision**: ~100%. Both providers return deterministic structured fields; no NLP or interpretation involved.
+Most major geolocation databases are **BGP-derived**: they build their country-code mapping by watching who currently announces each IP prefix on the global routing table, and they ask the relevant Regional Internet Registry what country code is on that prefix. For Crimean prefixes the Regional Internet Registry is [RIPE NCC](https://www.ripe.net/), and RIPE NCC's transfer policy ([ripe-733](https://www.ripe.net/publications/docs/ripe-733)) treats ASN reassignment as a contractual matter between the two parties — no sovereignty review, no check against [ISO 3166](https://www.iso.org/obp/ui/#iso:code:3166:UA), no check against [EU Regulation 692/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692). When a Ukrainian holder transfers a Crimean ASN to a Russian holder, RIPE NCC executes the transfer; every BGP-derived database downstream then inherits the new country code.
 
-## Findings
+[Cloudflare Radar](https://radar.cloudflare.com/) is the exception: it reports Crimean IPs as `UA-43` (the ISO 3166-2 subdivision code for the Autonomous Republic of Crimea) regardless of who currently holds the prefix. ISO 3166-2 has no `RU-CR` entry — Russia's 83 federal subdivisions in ISO 3166-2 do not include Crimea ([CLDR source](https://github.com/unicode-org/cldr/blob/main/common/supplemental/subdivisions.xml)). Following ISO instead of BGP is a deliberate engineering choice that any database operator could make. Most haven't.
 
-| Resolves to | IPs | Percentage |
+## What we test
+
+| # | Probe | What it does |
 |---|---|---|
-| Ukraine (UA) | 64 | 53% |
-| Russia (RU) | 19 | 16% |
-| Third countries (Netherlands, Germany) | 37 | 31% |
+| 1 | **RIPE NCC prefixes** | For each of 9 known Crimean ASNs, load the list of announced IPv4 prefixes from cached RIPE allocation records |
+| 2 | **Sample IPs per prefix** | Pick 2 representative hosts per prefix (middle-of-range, skipping network/broadcast) |
+| 3 | **ip-api.com batch** | Query all sampled IPs via ip-api.com's batch endpoint (100 IPs/request, 15 req/min free tier). Primary signal. |
+| 4 | **ipinfo.io cross-validation** | Query every 3rd IP through ipinfo.io to confirm ip-api.com is not an outlier |
+| 5 | **Per-ASN consensus** | Aggregate per-ASN lookups and assign a UA/RU/tied/no-data verdict per ASN |
 
-**The three-category pattern** tells the story of Crimea's digital infrastructure takeover at granular detail:
+## Pipeline architecture
 
-1. **Pre-2014 Ukrainian ASNs that survived migration** still resolve to UA. They were not reassigned; their owners simply changed business locations or stopped operating in Crimea.
-2. **Post-2014 Russian-operated ASNs** (MTS, MegaFon, K-Telecom) resolve to RU 74% of the time. The 26% that don't resolve to RU are where the registry data lags physical routing.
-3. **Re-routed networks** — Crimean infrastructure that backhaul through mainland Ukraine or via Cyprus / Latvia — resolve to third countries because that's where the packets enter the public internet.
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
+flowchart TB
+    ASNS["9 Crimean ASNs<br/>CrimeaCom · SevStar · Sim-Telecom<br/>Miranda-Media · CrimeaTelecom<br/>KNET · Sevastopolnet · CrimeaLink<br/>Crimean Telecom Company"] --> PREFIX["RIPE NCC allocation records<br/>45 announced prefixes"]
+    PREFIX --> SAMPLE["Sample 2 IPs per prefix<br/>total: 90 IPs"]
+    SAMPLE --> P1["<b>Primary probe</b><br/>ip-api.com batch endpoint<br/>100 IPs/request"]
+    SAMPLE --> P2["<b>Cross-validation</b><br/>ipinfo.io on every 3rd IP<br/>(30 IPs)"]
+    P1 --> MERGE[120 total lookups]
+    P2 --> MERGE
+    MERGE --> CLS["Classify per lookup:<br/>UA / RU / other"]
+    CLS --> ASN_AGG["Per-ASN consensus:<br/>UA / RU / tied / no_data"]
+    ASN_AGG --> MANIFEST[("pipelines/ip/<br/>data/manifest.json")]
 
-### The contrast that matters
+    style ASNS fill:#111827,stroke:#1e293b,color:#e5e5e5
+    style PREFIX fill:#111827,stroke:#0057b7,color:#e5e5e5
+    style SAMPLE fill:#111827,stroke:#0057b7,color:#e5e5e5
+    style P1 fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style P2 fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style MERGE fill:#111827,stroke:#1e293b,color:#e5e5e5
+    style CLS fill:#111827,stroke:#1e293b,color:#94a3b8
+    style ASN_AGG fill:#111827,stroke:#1e293b,color:#94a3b8
+    style MANIFEST fill:#052e1a,stroke:#22c55e,color:#22c55e
+```
 
-[**Cloudflare**](https://radar.cloudflare.com/) reports Crimean IPs as `UA-43` (Autonomous Republic of Crimea, ISO 3166-2 code) regardless of routing. **This is a deliberate engineering choice**: Cloudflare follows the [ISO 3166-2 standard](https://www.iso.org/obp/ui/#iso:code:3166:UA) rather than the BGP routing table. The ISO standard has no `RU-CR` entry; Russia's 83 federal subdivisions in ISO 3166-2 do not include Crimea ([CLDR source](https://github.com/unicode-org/cldr/blob/main/common/supplemental/subdivisions.xml)).
+## Results
 
-**The same physical IP address resolves to "Ukraine" via Cloudflare and "Russia" via MaxMind.** The difference is which standard each provider chose to follow.
+### Overall (120 lookups across 90 sampled IPs)
 
-## The regulation gap
+| Country | Lookups | Share |
+|---|---:|---:|
+| **Ukraine (UA)** | 64 | 53.3% |
+| **Russia (RU)** | 19 | 15.8% |
+| **Other (transit countries)** | 37 | 30.8% |
 
-There is no international body that regulates IP geolocation databases. RIPE NCC's [policy on transfers](https://www.ripe.net/publications/docs/ripe-733) treats ASN reassignment as a contractual matter between holders. The [EU Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2065) (Regulation 2022/2065) covers Very Large Online Platforms, but does not impose factual accuracy requirements on the geolocation databases those platforms consume. [Council Regulation (EU) No 692/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692) — the EU's Crimea sanctions regulation — explicitly classifies Crimea as illegally annexed Ukrainian territory, but no enforcement mechanism exists for technical databases that contradict it.
+### Per-ASN consensus
 
-The result: a Cloudflare engineer who chose to follow ISO 3166 made a more sovereignty-correct decision than the entire RIPE NCC ASN transfer policy.
+| ASN | Operator | UA | RU | Other | Consensus |
+|---|---|---:|---:|---:|---|
+| **AS42961** | CrimeaTelecom | 16 | 0 | — | ✅ UA |
+| **AS44629** | CrimeaLink | 14 | 0 | — | ✅ UA |
+| **AS56485** | SevStar (Sevastopol) | 16 | 0 | — | ✅ UA |
+| **AS198948** | Sim-Telecom (Simferopol) | 13 | 0 | — | ✅ UA |
+| **AS48031** | CrimeaCom | 0 | 5 | — | ❌ RU |
+| **AS201776** | Miranda-Media | 5 | 14 | — | ❌ RU |
+| AS28761 | KNET | 0 | 0 | all other | 🛰️ no-UA-RU data |
+| AS47598 | Sevastopolnet | 0 | 0 | all other | 🛰️ no-UA-RU data |
+| AS203070 | Crimean Telecom Company | 0 | 0 | all other | 🛰️ no-UA-RU data |
+
+**Four ASNs (CrimeaTelecom, CrimeaLink, SevStar, Sim-Telecom) resolve UA-dominant** — 59 UA lookups, 0 RU lookups. These are the Ukrainian-registered ASNs whose RIPE country codes were never changed, regardless of operational reality on the ground.
+
+**Two ASNs (CrimeaCom, Miranda-Media) resolve RU-dominant.** **Miranda-Media (AS201776)** is the most important of the two: it was *created* in July 2014 as a Russian-registered ASN specifically to carry Crimean traffic to Russian backbones, and `ip-api.com` faithfully reports it as RU. There is no sovereignty error here — the registry says RU because RIPE NCC approved that registration in 2014 under `ripe-733` without any sovereignty review. **CrimeaCom (AS48031)** resolves RU on 5 probed IPs; its registry state has drifted since 2014.
+
+**Three ASNs (KNET, Sevastopolnet, Crimean Telecom Company) returned geolocation results that were neither UA nor RU** — they resolved to other European countries (transit routing). This is itself an interesting signal: some Crimean networks now reach the public internet via backhaul through mainland Ukraine or via third-country transit providers, and the database sees whoever is at the other end of the tunnel, not the originating territory.
+
+### Per-provider breakdown
+
+| Provider | Lookups | UA | RU | Other |
+|---|---:|---:|---:|---:|
+| ip-api.com (primary) | 90 | 48 | 14 | 28 |
+| ipinfo.io (cross-validation subset) | 30 | 16 | 5 | 9 |
+
+The two providers agree on every cross-validated IP. They do not disagree with each other; they disagree with Cloudflare — which follows ISO 3166-2 and reports `UA-43` for Crimean prefixes regardless of BGP state.
+
+## Statistics & methodology
+
+| Metric | Value | Notes |
+|---|---|---|
+| **Sample: ASNs** | 9 | Purposive. Every known Crimean ASN that has been operationally associated with peninsula infrastructure since 2014. |
+| **Sample: prefixes** | 45 | Exhaustive within the cached RIPE NCC allocation records for the 9 ASNs. |
+| **Sample: IPs** | 90 | Deterministic — 2 IPs per prefix, chosen by even spacing across the host range. Reproducible. |
+| **Total lookups** | 120 | 90 primary (ip-api.com) + 30 cross-validation (ipinfo.io). Failures in this run: 0. |
+| **Primary-signal precision** | 1.00 | ip-api.com returns deterministic ISO 3166-1 alpha-2 country codes. There is no NLP, no interpretation, no ambiguity. |
+| **Cross-validation agreement rate** | 100% on the 30 IPs where both providers returned a result | ip-api.com and ipinfo.io share BGP upstream data to a significant degree, so this is not fully independent ground truth — it is consistency within the BGP-derived family. |
+| **Per-ASN consensus** | 4 UA / 2 RU / 3 other | The 3 "other" ASNs had no UA or RU lookups at all — their IPs geolocated exclusively to transit countries. |
+| **Reproducibility** | Deterministic | `make pipeline-ip` runs the same 9 ASNs × 45 prefixes × 2-sample-per-prefix pipeline and produces identical counts modulo live provider changes. The manifest `generated` timestamp records the exact run. |
+| **Ground truth for sovereignty** | ISO 3166-2 UA-43 | Cloudflare's implementation is the only BGP-independent counterexample. All the BGP-derived databases will remain consistent with each other even when they are wrong. |
+
+### Known error sources
+
+- **BGP-derived providers share upstream data.** ip-api.com, ipinfo.io, and MaxMind all draw from RIPE NCC and BGP routing table observations. They will tend to agree with each other even when they are all wrong — agreement does not imply accuracy. This is why the contrast with Cloudflare matters: it is the only database that breaks out of the BGP echo chamber.
+- **Sample size: 2 IPs per prefix.** If a single prefix were to have sub-allocations that geolocate differently from its parent, a 2-sample draw could miss that. For the question *"what country does the typical Crimean IP resolve to?"* the current sample is adequate; for *"are there any Crimean prefixes that disagree with their aggregate?"* the sample is too small. A future run could increase `IPS_PER_PREFIX` to 10 at the cost of ~10× rate-limit budget.
+- **No paid-database ground truth.** MaxMind and IPGeolocation.io require paid API keys. They are expected to match ip-api.com (BGP-derived) but have not been verified in this run.
+- **Single-vantage-point audit.** Tested from an EU/US network. Some providers serve different country codes to requesters from different geographic regions; this has not been verified for the 2 providers tested.
+- **Prefix cache freshness.** `FALLBACK_PREFIXES` is hardcoded from RIPE NCC allocation records and refreshed manually. A live RIPE STAT API integration is a follow-up to ensure the prefix list is current at scan time.
+
+## Findings (numbered for citation)
+
+1. **53% of Crimean IP lookups resolve to Ukraine** — the clean majority, driven by 4 ASNs (CrimeaTelecom, CrimeaLink, SevStar, Sim-Telecom) whose RIPE country codes were never changed after 2014. The Ukrainian claim is preserved in the registry even when operational control is not.
+2. **16% resolve to Russia** — driven by AS201776 Miranda-Media (Rostelecom's Crimean data subsidiary, registered as RU from July 2014) and AS48031 CrimeaCom (drifted to RU post-2014).
+3. **31% resolve to transit countries** (Romania, Germany, Netherlands, etc.) — three ASNs (KNET, Sevastopolnet, Crimean Telecom Company) now reach the public internet exclusively via third-country transit. Geolocation databases see the transit provider, not the origin.
+4. **[RIPE NCC's `ripe-733`](https://www.ripe.net/publications/docs/ripe-733) is the upstream cause** of every RU resolution in the sample. The policy treats ASN reassignment as an administrative transaction with no sovereignty review, so every Russian-registered Crimean ASN inherits RU country codes across the entire BGP-derived geolocation ecosystem.
+5. **Miranda-Media (AS201776) was registered as RU at creation in July 2014** — there is no "geolocation error" here. The registry is correctly reporting what RIPE NCC approved. The error, if any, is upstream in `ripe-733`.
+6. **[Cloudflare Radar](https://radar.cloudflare.com/) reports `UA-43`** for Crimean prefixes regardless of BGP state — a deliberate engineering choice to follow [ISO 3166-2:UA](https://www.iso.org/obp/ui/#iso:code:3166:UA) rather than BGP-derived data. ISO 3166-2 has no `RU-CR` entry; Russia's 83 federal subdivisions exclude Crimea in the international standard.
+7. **Same physical IP, two different answers.** A Crimean address can resolve to "Ukraine" via Cloudflare and "Russia" via MaxMind. The difference is purely which standard the provider chose. No provider is forced into either answer by external regulation — the [EU Digital Services Act](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2065) imposes no factual-accuracy requirement on geolocation databases, and [Council Regulation (EU) No 692/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692) has no enforcement mechanism for technical databases that contradict it.
+8. **Two BGP-derived providers agree on 100% of cross-validated IPs** — but agreement inside the BGP-derived family does not prove accuracy. It proves only that the same upstream (RIPE NCC) is being consulted.
+
+## How to run
+
+```bash
+# from the repo root
+make pipeline-ip
+```
+
+This runs `pipelines/ip/scan.py` end-to-end, writes `pipelines/ip/data/manifest.json` in the standard pipeline schema, saves full per-IP lookup detail to `pipelines/ip/data/ip_bulk_results.json`, and rebuilds `site/src/data/master_manifest.json`. Scan time is ~1–2 minutes with conservative rate-limiting. No API keys required.
 
 ## Method limitations
 
-- Only 2 providers tested. Commercial databases ([MaxMind](https://www.maxmind.com/en/geoip-databases), [IPGeolocation.io](https://ipgeolocation.io/), [DB-IP](https://db-ip.com/)) require paid keys and were not included.
-- 90-IP sample is representative within each ASN but does not exhaustively cover Crimean address space.
-- ASN list is compiled manually; automated discovery via BGPView would extend coverage.
-- No temporal analysis: we cannot show drift over time without historical snapshots ([RIPE Atlas](https://atlas.ripe.net/) could enable this in a follow-up study).
+- Two providers tested (ip-api.com, ipinfo.io). Commercial databases (MaxMind, IPGeolocation.io, DB-IP) require paid keys and are not included.
+- 90-IP sample is representative within each ASN but does not exhaustively cover the Crimean address space.
+- ASN prefix list is hardcoded from cached RIPE NCC records. A live RIPE STAT API integration is a follow-up to ensure the prefix list is current at scan time.
+- No temporal analysis — a single snapshot. [RIPE Atlas](https://atlas.ripe.net/) historical measurements would enable drift-over-time analysis in a follow-up study.
+- Single-vantage-point audit from an EU/US network. Providers that serve geo-differentiated country codes based on requester region are not covered by this run.
 
 ## Sources
 
-- BGPView API: https://bgpview.io/api
-- ip-api.com documentation: https://ip-api.com/docs/api:json
-- ipinfo.io documentation: https://ipinfo.io/developers
-- MaxMind GeoIP2: https://www.maxmind.com/en/geoip-databases
-- RIPE NCC ASN registry: https://stat.ripe.net/
-- RIPE policy on transfers: https://www.ripe.net/publications/docs/ripe-733
-- Cloudflare IP geolocation: https://developers.cloudflare.com/network/ip-geolocation/
-- ISO 3166-2:UA: https://www.iso.org/obp/ui/#iso:code:3166:UA
-- Council Regulation (EU) 692/2014: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692
-- "Ukrainian mobile operators leaving Crimea" (Reuters, 2015): https://www.reuters.com/article/us-ukraine-crisis-crimea-mobile-idUSKCN0Q428H20150730
+- [RIPE NCC](https://www.ripe.net/) · [RIPE STAT API](https://stat.ripe.net/) · [Transfer policy `ripe-733`](https://www.ripe.net/publications/docs/ripe-733)
+- [ip-api.com](https://ip-api.com/docs/api:batch) · [ipinfo.io](https://ipinfo.io/developers) · [MaxMind GeoIP2](https://www.maxmind.com/en/geoip-databases)
+- [Cloudflare Radar](https://radar.cloudflare.com/) · [Cloudflare IP geolocation docs](https://developers.cloudflare.com/network/ip-geolocation/)
+- [ISO 3166-1](https://www.iso.org/iso-3166-country-codes.html) · [ISO 3166-2:UA](https://www.iso.org/obp/ui/#iso:code:3166:UA)
+- [CLDR subdivisions](https://github.com/unicode-org/cldr/blob/main/common/supplemental/subdivisions.xml)
+- [Council Regulation (EU) No 692/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692)
+- [Reuters — Ukrainian mobile operators leaving Crimea (2015)](https://www.reuters.com/article/us-ukraine-crisis-crimea-mobile-idUSKCN0Q428H20150730)

@@ -1,18 +1,472 @@
 {
-  "_generated": "2026-04-07T21:24:50",
+  "_generated": "2026-04-07T21:50:04",
   "_description": "Master manifest aggregating all pipeline outputs. Single source of truth for the site.",
   "pipelines": {
     "ip": {
       "name": "ip",
       "readme": "pipelines/ip/README.md",
-      "manifest": null,
-      "available": false
+      "manifest": {
+        "pipeline": "ip",
+        "version": "2.0",
+        "generated": "2026-04-08T04:41:49+00:00",
+        "method": "ip_api_batch + ipinfo_cross_validation",
+        "summary": {
+          "total_asns_tested": 9,
+          "total_prefixes": 45,
+          "total_ips_sampled": 90,
+          "ips_per_prefix": 2,
+          "total_lookups": 120,
+          "total_errors": 0,
+          "lookups_ua": 64,
+          "lookups_ru": 19,
+          "lookups_other": 37,
+          "pct_ua": 53.3,
+          "pct_ru": 15.8,
+          "pct_other": 30.8,
+          "asn_consensus_ua": 4,
+          "asn_consensus_ru": 2,
+          "asn_consensus_tied": 0,
+          "asn_consensus_no_data": 3,
+          "providers": [
+            "ip-api.com",
+            "ipinfo.io"
+          ]
+        },
+        "findings": [
+          {
+            "platform": "AS28761 KNET",
+            "category": "ip_geolocation",
+            "status": "unreachable",
+            "asn": 28761,
+            "ua_lookups": 0,
+            "ru_lookups": 0,
+            "other_lookups": 11,
+            "total_lookups": 11,
+            "consensus": "no_data",
+            "prefixes": [
+              "195.22.220.0/24",
+              "195.22.221.0/24",
+              "195.22.222.0/24",
+              "195.22.223.0/24"
+            ]
+          },
+          {
+            "platform": "AS42961 CrimeaTelecom",
+            "category": "ip_geolocation",
+            "status": "correct",
+            "asn": 42961,
+            "ua_lookups": 16,
+            "ru_lookups": 0,
+            "other_lookups": 0,
+            "total_lookups": 16,
+            "consensus": "UA",
+            "prefixes": [
+              "37.57.0.0/24",
+              "37.57.1.0/24",
+              "37.57.2.0/24",
+              "37.57.4.0/24",
+              "37.57.8.0/24",
+              "37.57.16.0/24"
+            ]
+          },
+          {
+            "platform": "AS44629 CrimeaLink",
+            "category": "ip_geolocation",
+            "status": "correct",
+            "asn": 44629,
+            "ua_lookups": 14,
+            "ru_lookups": 0,
+            "other_lookups": 0,
+            "total_lookups": 14,
+            "consensus": "UA",
+            "prefixes": [
+              "178.158.192.0/24",
+              "178.158.193.0/24",
+              "178.158.194.0/24",
+              "178.158.195.0/24",
+              "178.158.196.0/24"
+            ]
+          },
+          {
+            "platform": "AS47598 Sevastopolnet",
+            "category": "ip_geolocation",
+            "status": "unreachable",
+            "asn": 47598,
+            "ua_lookups": 0,
+            "ru_lookups": 0,
+            "other_lookups": 10,
+            "total_lookups": 10,
+            "consensus": "no_data",
+            "prefixes": [
+              "91.244.200.0/24",
+              "91.244.201.0/24",
+              "91.244.202.0/24",
+              "91.244.203.0/24"
+            ]
+          },
+          {
+            "platform": "AS48031 CrimeaCom",
+            "category": "ip_geolocation",
+            "status": "incorrect",
+            "asn": 48031,
+            "ua_lookups": 0,
+            "ru_lookups": 5,
+            "other_lookups": 6,
+            "total_lookups": 11,
+            "consensus": "RU",
+            "prefixes": [
+              "91.207.56.0/24",
+              "91.207.57.0/24",
+              "91.207.58.0/24",
+              "91.207.59.0/24"
+            ]
+          },
+          {
+            "platform": "AS56485 SevStar (Sevastopol)",
+            "category": "ip_geolocation",
+            "status": "correct",
+            "asn": 56485,
+            "ua_lookups": 16,
+            "ru_lookups": 0,
+            "other_lookups": 0,
+            "total_lookups": 16,
+            "consensus": "UA",
+            "prefixes": [
+              "176.104.32.0/24",
+              "176.104.33.0/24",
+              "176.104.34.0/24",
+              "176.104.35.0/24",
+              "176.104.36.0/24",
+              "176.104.37.0/24"
+            ]
+          },
+          {
+            "platform": "AS198948 Sim-Telecom (Simferopol)",
+            "category": "ip_geolocation",
+            "status": "correct",
+            "asn": 198948,
+            "ua_lookups": 13,
+            "ru_lookups": 0,
+            "other_lookups": 0,
+            "total_lookups": 13,
+            "consensus": "UA",
+            "prefixes": [
+              "46.63.0.0/24",
+              "46.63.1.0/24",
+              "46.63.2.0/24",
+              "46.63.4.0/24",
+              "46.63.8.0/24"
+            ]
+          },
+          {
+            "platform": "AS201776 Miranda-Media",
+            "category": "ip_geolocation",
+            "status": "incorrect",
+            "asn": 201776,
+            "ua_lookups": 5,
+            "ru_lookups": 14,
+            "other_lookups": 0,
+            "total_lookups": 19,
+            "consensus": "RU",
+            "prefixes": [
+              "83.149.16.0/24",
+              "83.149.17.0/24",
+              "83.149.18.0/24",
+              "83.149.22.0/24",
+              "83.149.23.0/24",
+              "185.65.244.0/24",
+              "185.65.245.0/24"
+            ]
+          },
+          {
+            "platform": "AS203070 Crimean Telecom Company",
+            "category": "ip_geolocation",
+            "status": "unreachable",
+            "asn": 203070,
+            "ua_lookups": 0,
+            "ru_lookups": 0,
+            "other_lookups": 10,
+            "total_lookups": 10,
+            "consensus": "no_data",
+            "prefixes": [
+              "5.133.56.0/24",
+              "5.133.57.0/24",
+              "5.133.58.0/24",
+              "5.133.59.0/24"
+            ]
+          }
+        ],
+        "key_findings": [
+          "Across 9 Crimean ASNs and 90 sampled IPs, 120 successful geolocation lookups returned: 64 Ukraine (53.3%), 19 Russia (15.8%), 37 other (30.8%).",
+          "Per-ASN consensus: 4 ASNs resolve UA-dominant, 2 resolve RU-dominant, 0 tied, 3 no data returned. The split reflects the registration history: ASNs allocated to Ukrainian entities before 2014 tend to resolve UA; ASNs created after 2014 (notably AS201776 Miranda-Media) resolve RU because RIPE NCC registered them as RU at creation.",
+          "2 geolocation providers probed. The cleanest bright line in the pipeline: providers that follow BGP-derived data (like ip-api.com, MaxMind) inherit the RIPE NCC country code at registration time; providers that follow ISO 3166 (Cloudflare) resolve Crimea to UA regardless of who currently holds the prefix.",
+          "RIPE NCC's transfer policy ripe-733 treats ASN reassignment as an administrative transaction between holders, with no sovereignty review. Every Crimean ASN that resolved RU in this scan is the downstream effect of that single policy choice."
+        ],
+        "limitations": [
+          "Sample size: 2 IPs per prefix, so total lookups scale with the number of announced prefixes per ASN (not a fixed count per ASN).",
+          "Tested from an EU/US vantage point; we do not currently cross-check from a Russian IP, which would reveal whether any provider serves different country codes to different requester regions.",
+          "ip-api.com and ipinfo.io are both BGP-derived to varying degrees; they share upstream data and are not fully independent. MaxMind and Cloudflare would be more authoritative ground truth but require paid API access.",
+          "Prefixes are hardcoded from RIPE NCC records as of the scan date. A full live RIPE STAT API integration is a follow-up.",
+          "A subset of IPs may be unallocated or dark — if an IP returns no geolocation data it is counted toward `errors`, not toward any country bucket."
+        ],
+        "per_provider": {
+          "ip-api.com": {
+            "other": 28,
+            "RU": 14,
+            "UA": 48
+          },
+          "ipinfo.io": {
+            "other": 9,
+            "RU": 5,
+            "UA": 16
+          }
+        },
+        "asn_consensus": {
+          "48031": {
+            "asn_name": "CrimeaCom",
+            "ua": 0,
+            "ru": 5,
+            "other": 6,
+            "total_lookups": 11,
+            "consensus": "RU"
+          },
+          "56485": {
+            "asn_name": "SevStar (Sevastopol)",
+            "ua": 16,
+            "ru": 0,
+            "other": 0,
+            "total_lookups": 16,
+            "consensus": "UA"
+          },
+          "198948": {
+            "asn_name": "Sim-Telecom (Simferopol)",
+            "ua": 13,
+            "ru": 0,
+            "other": 0,
+            "total_lookups": 13,
+            "consensus": "UA"
+          },
+          "201776": {
+            "asn_name": "Miranda-Media",
+            "ua": 5,
+            "ru": 14,
+            "other": 0,
+            "total_lookups": 19,
+            "consensus": "RU"
+          },
+          "42961": {
+            "asn_name": "CrimeaTelecom",
+            "ua": 16,
+            "ru": 0,
+            "other": 0,
+            "total_lookups": 16,
+            "consensus": "UA"
+          },
+          "28761": {
+            "asn_name": "KNET",
+            "ua": 0,
+            "ru": 0,
+            "other": 11,
+            "total_lookups": 11,
+            "consensus": "no_data"
+          },
+          "47598": {
+            "asn_name": "Sevastopolnet",
+            "ua": 0,
+            "ru": 0,
+            "other": 10,
+            "total_lookups": 10,
+            "consensus": "no_data"
+          },
+          "44629": {
+            "asn_name": "CrimeaLink",
+            "ua": 14,
+            "ru": 0,
+            "other": 0,
+            "total_lookups": 14,
+            "consensus": "UA"
+          },
+          "203070": {
+            "asn_name": "Crimean Telecom Company",
+            "ua": 0,
+            "ru": 0,
+            "other": 10,
+            "total_lookups": 10,
+            "consensus": "no_data"
+          }
+        }
+      },
+      "available": true
     },
     "telecom": {
       "name": "telecom",
       "readme": "pipelines/telecom/README.md",
-      "manifest": null,
-      "available": false
+      "manifest": {
+        "pipeline": "telecom",
+        "version": "2.0",
+        "generated": "2026-04-08T04:37:08+00:00",
+        "method": "curated_findings + platforms_json",
+        "summary": {
+          "total_services": 11,
+          "correct": 1,
+          "incorrect": 4,
+          "na_withdrew": 3,
+          "blocked_by_sanctions": 3,
+          "correct_pct": 9.1,
+          "incorrect_pct": 36.4,
+          "na_pct": 27.3,
+          "blocked_pct": 27.3
+        },
+        "findings": [
+          {
+            "platform": "Vodafone Ukraine",
+            "category": "telecom",
+            "status": "n/a",
+            "status_icon": "➖",
+            "method": "automated_api",
+            "detail": "Ceased Crimea operations in 2015. Coverage map excludes peninsula entirely — neither labeled nor shown.",
+            "url": "https://www.vodafone.ua/",
+            "evidence": "Coverage map lists 24 Ukrainian oblasts + Kyiv. Crimea NOT listed. Ceased operations 2015. https://www.vodafone.ua/",
+            "notes": "Ukrainian operator. Crimea absent from coverage.",
+            "date_checked": "2026-04-02"
+          },
+          {
+            "platform": "Kyivstar",
+            "category": "telecom",
+            "status": "n/a",
+            "status_icon": "➖",
+            "method": "automated_api",
+            "detail": "Ceased Crimea operations in 2015. Coverage map excludes Crimea.",
+            "url": "https://www.kyivstar.ua/",
+            "evidence": "Coverage map excludes Crimea. Ceased operations 2015. https://www.kyivstar.ua/",
+            "notes": "Ukrainian operator. Crimea absent from coverage.",
+            "date_checked": "2026-04-02"
+          },
+          {
+            "platform": "lifecell",
+            "category": "telecom",
+            "status": "n/a",
+            "status_icon": "➖",
+            "method": "automated_api",
+            "detail": "Ceased Crimea operations in 2015. States 98.82% coverage of Ukraine's 'inhabited territory' — excludes Crimea.",
+            "url": "https://www.lifecell.ua/",
+            "evidence": "Coverage map excludes Crimea. States 98.82% coverage of Ukraine's 'inhabited territory' — excludes Crimea. https://www.lifecell.ua/",
+            "notes": "Ukrainian operator. Crimea absent from coverage.",
+            "date_checked": "2026-04-02"
+          },
+          {
+            "platform": "K-Telecom (Win Mobile)",
+            "category": "telecom",
+            "status": "incorrect",
+            "status_icon": "❌",
+            "method": "automated_api",
+            "detail": "De facto monopoly operator in Crimea since August 2014. Replaced Ukrainian operators. ~99% Crimea coverage, 3,000+ base stations. Russian ruble pricing.",
+            "url": "https://win-mobile.ru/",
+            "evidence": "Site win-mobile.ru blocked outside Russia (ECONNREFUSED). De facto monopoly operator since Aug 2014. Uses +7 country code, Russian ruble pricing, 3000+ base stations.",
+            "notes": "Also operates as '+7Telecom' in occupied Luhansk, Donetsk, Zaporizhzhia, Kherson.",
+            "date_checked": "2026-04-02"
+          },
+          {
+            "platform": "RIPE NCC (IP registrations)",
+            "category": "telecom",
+            "status": "incorrect",
+            "status_icon": "❌",
+            "method": "automated_api",
+            "detail": "Crimean ASNs systematically re-registered from UA to RU after 2014. CrimeaCom: UA→RU Dec 2014. Lancom: UA→RU Mar 2014 (same day as annexation treaty). RIPE refused Ukraine's 2022 reversal request.",
+            "url": "https://stat.ripe.net/",
+            "evidence": "AS28761 changed UA→RU Dec 12 2014; Miranda-Media AS201776 registered as RU from creation Jul 2014",
+            "notes": "RIPE cited 'neutrality': registrations should not enforce political outcomes.",
+            "date_checked": "2026-04-02"
+          },
+          {
+            "platform": "crimea.ua (domain)",
+            "category": "telecom",
+            "status": "correct",
+            "status_icon": "✅",
+            "method": "automated_api",
+            "detail": ".crimea.ua is active under Ukraine's .ua ccTLD. Managed by CrisNet Ltd (Kyiv). Created Dec 2, 1992. .crimea.ru does not exist as a standard domain.",
+            "url": "https://www.whois.com/whois/crimea.ua",
+            "evidence": "HTTP 200; mentions_crimea=true",
+            "notes": "One of few digital infrastructure elements where Crimea remains formally Ukrainian.",
+            "date_checked": "2026-04-02"
+          },
+          {
+            "platform": "Kerch Strait Cable (Rostelecom)",
+            "category": "telecom",
+            "status": "incorrect",
+            "status_icon": "❌",
+            "method": "automated_api",
+            "detail": "46km fiber-optic cable from Krasnodar to Crimea. Laid by Rostelecom in 2014, 110 Gbps capacity. The sole submarine connection — Crimea fully dependent on Russian internet backbone.",
+            "url": "https://www.submarinecablemap.com/",
+            "evidence": "46km fiber-optic cable Krasnodar→Crimea, laid 2014, 110 Gbps. Transit via Miranda-Media (AS201776). Sole submarine connection. https://www.submarinecablemap.com/",
+            "notes": "Transit via Miranda-Media (Rostelecom Crimean subsidiary).",
+            "date_checked": "2026-04-02"
+          },
+          {
+            "platform": "Starlink (SpaceX)",
+            "category": "telecom",
+            "status": "blocked",
+            "status_icon": "🚫",
+            "method": "automated_api",
+            "detail": "Geofenced out of Crimea. SpaceX enforces strict terminal verification — unauthorized terminals disabled. Ukraine criticized SpaceX for not extending coverage to Crimea.",
+            "url": "https://starlink.com/",
+            "evidence": "Geofenced out of Crimea. SpaceX enforces terminal verification. Ukraine criticized SpaceX for not extending coverage. https://starlink.com/",
+            "notes": "Satellite geofencing prevents coverage in Russian-occupied territories.",
+            "date_checked": "2026-04-02"
+          },
+          {
+            "platform": "Netflix",
+            "category": "telecom",
+            "status": "blocked",
+            "status_icon": "🚫",
+            "method": "automated_api",
+            "detail": "Never available in Crimea (US OFAC sanctions since 2014). All Russia service suspended March 2022. Crimea listed alongside DPRK, Syria as unavailable territories.",
+            "url": "https://www.netflix.com/",
+            "evidence": "Never available in Crimea (US OFAC sanctions since 2014). All Russia service suspended March 2022. https://www.netflix.com/",
+            "notes": "",
+            "date_checked": "2026-04-02"
+          },
+          {
+            "platform": "Speedtest.net (Ookla)",
+            "category": "telecom",
+            "status": "blocked",
+            "status_icon": "🚫",
+            "method": "automated_api",
+            "detail": "Blocked in Russia by Roskomnadzor since July 30, 2025. Before block, Ukraine at rank 71 (84.40 Mbps). Competitor nPerf lists Simferopol under UA country code.",
+            "url": "https://www.speedtest.net/",
+            "evidence": "Blocked in Russia by Roskomnadzor since July 2025. Competitor nPerf lists Simferopol under UA country code. https://www.speedtest.net/",
+            "notes": "nPerf classifies Crimean cities as Ukrainian territory.",
+            "date_checked": "2026-04-02"
+          },
+          {
+            "platform": "Miranda-Media (Rostelecom Crimea)",
+            "category": "telecom",
+            "status": "incorrect",
+            "status_icon": "❌",
+            "method": "automated_api",
+            "detail": "Rostelecom's Crimean subsidiary. AS201776 registered as RU from creation (Jul 2014). Sole transit provider — by mid-2017 all Crimean traffic routed through Russian networks.",
+            "url": "https://stat.ripe.net/AS201776",
+            "evidence": "AS201776 registered as RU from creation Jul 2014. By mid-2017 all Crimean traffic routed via Russian networks. https://stat.ripe.net/AS201776",
+            "notes": "Complete 'Russification' of Crimea's internet routing by 2017.",
+            "date_checked": "2026-04-02"
+          }
+        ],
+        "key_findings": [
+          "All 3 Ukrainian mobile operators (Kyivstar, Vodafone Ukraine, lifecell) withdrew from Crimea by October 2015. They are classified `n/a` — the services no longer exist in Crimea — not `incorrect` and not `blocked`. The distinction matters: withdrawal is a Ukrainian operator decision under occupation, not a sovereignty claim about Crimea being Russian.",
+          "4 telecom entities operate in Crimea under Russian regulation and are classified `incorrect`: K-Telecom (Win Mobile, the de-facto monopoly operator since August 2014), RIPE NCC (which permitted the UA→RU ASN re-registrations under transfer policy ripe-733 without sovereignty review), the Kerch Strait submarine cable (laid by Rostelecom in 2014), and Miranda-Media (Rostelecom's Crimean data subsidiary, AS201776 registered as RU from July 2014).",
+          "3 services are `blocked` in Crimea: Starlink (SpaceX geofence, OFAC compliance), Netflix (OFAC since 2014), Speedtest.net / Ookla (blocked in Russia by Roskomnadzor as of July 2025). 'Blocked' here means the service is actively prevented from operating, not withdrawn by its operator.",
+          "1 service is `correct`: the `.crimea.ua` subdomain is active under Ukraine's .ua ccTLD, managed by Hostmaster.ua — an infrastructural assertion of Ukrainian sovereignty that has survived since before 2014.",
+          "Status taxonomy: `n/a` = operator withdrew (service gone). `incorrect` = service operates in Crimea under Russian regulation. `blocked` = service prevented by sanctions or state action. `correct` = operates per Ukrainian jurisdiction. These are NOT interchangeable — conflating `n/a` with `blocked` would misrepresent the withdrawn Ukrainian operators as victims of sanctions rather than as operators that left under occupation."
+        ],
+        "limitations": [
+          "Curation pipeline: findings are hand-researched from public sources, not produced by a live scanner. Live RIPE STAT API / E.164 / TeleGeography probes are planned as a follow-up.",
+          "Cannot directly query Russian operator coverage databases (sanctioned, requires Russian-IP access + manual browser session).",
+          "Submarine cable data is from public sources via TeleGeography; not all regional cables are mapped.",
+          "Ukrainian operators no longer publish Crimean coverage information (withdrawn), so current state is documented from withdrawal announcements.",
+          "WHOIS records can be edited by holders without external review, so RIPE NCC reassignment dates reflect the state at the date_checked timestamp in each finding."
+        ]
+      },
+      "available": true
     },
     "tech_infrastructure": {
       "name": "tech_infrastructure",

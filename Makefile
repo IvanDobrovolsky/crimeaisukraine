@@ -20,11 +20,13 @@ PIPELINE_NAMES := ip telecom tech_infrastructure geodata weather media \
 
 # ─── Per-pipeline targets ───────────────────────────────
 
-pipeline-ip: ## Run IP geolocation pipeline (90 IPs across 9 ASNs)
+pipeline-ip: ## Run IP geolocation pipeline (90 IPs × 9 ASNs, rebuilds master manifest)
 	cd $(PIPELINES)/ip && uv sync && uv run scan.py
+	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
 
-pipeline-telecom: ## Run telecom operators pipeline
+pipeline-telecom: ## Run telecom operators pipeline (curation, rebuilds master manifest)
 	cd $(PIPELINES)/telecom && uv sync && uv run scan.py
+	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
 
 pipeline-tech_infrastructure: ## Run tech infrastructure pipeline (IANA tz, libphonenumber, ISO)
 	cd $(PIPELINES)/tech_infrastructure && uv sync && uv run scan.py
