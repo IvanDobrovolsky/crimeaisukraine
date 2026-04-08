@@ -1,0 +1,60 @@
+{
+  "total_people": 577,
+  "by_cohort": {
+    "died_pre_1991": {
+      "n": 216,
+      "ua_only": 0,
+      "ru_only": 1,
+      "both_ua_ru": 1,
+      "soviet_only": 89,
+      "russian_empire_only": 42,
+      "missing": 35,
+      "other": 48,
+      "post_2014_ru_passport": 0
+    },
+    "died_1991_2014": {
+      "n": 67,
+      "ua_only": 8,
+      "ru_only": 19,
+      "both_ua_ru": 1,
+      "soviet_only": 15,
+      "russian_empire_only": 0,
+      "missing": 8,
+      "other": 16,
+      "post_2014_ru_passport": 0
+    },
+    "died_post_2014": {
+      "n": 50,
+      "ua_only": 9,
+      "ru_only": 14,
+      "both_ua_ru": 6,
+      "soviet_only": 6,
+      "russian_empire_only": 1,
+      "missing": 7,
+      "other": 7,
+      "post_2014_ru_passport": 0
+    },
+    "alive_or_unknown": {
+      "n": 244,
+      "ua_only": 60,
+      "ru_only": 58,
+      "both_ua_ru": 31,
+      "soviet_only": 13,
+      "russian_empire_only": 1,
+      "missing": 42,
+      "other": 39,
+      "post_2014_ru_passport": 1
+    }
+  },
+  "notes": {
+    "occupation_date": "2014-03-18",
+    "cohort_definitions": {
+      "died_pre_1991": "death date < 1991-01-01 — Imperial / Soviet era",
+      "died_1991_2014": "1991-01-01 <= death < 2014-03-18 — post-Soviet, pre-occupation",
+      "died_post_2014": "death >= 2014-03-18 — includes post-occupation deaths",
+      "alive_or_unknown": "no death date recorded"
+    },
+    "post_2014_ru_passport": "Number of people in the cohort with a P27=Q159 (Russia) edge whose qualifier P580 (start time) is on or after 2014-03-18. Unambiguously post-occupation passportization.",
+    "caveat": "Imperial Russia and Soviet Union are separate buckets from modern Russia (Q159). Prior aggregate conflated these."
+  }
+}

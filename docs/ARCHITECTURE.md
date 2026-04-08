@@ -207,19 +207,21 @@ graph LR
     L --> M["69% Russian<br/>31% Ukrainian"]
 ```
 
-**Three checks per term:**
+**Five checks per term:**
 1. **Wikipedia description** — what Google shows as search preview. Classified by country mention and admin name usage.
 2. **Wikidata P17** — structured country property. Unambiguous, machine-readable.
-3. **Wikidata people** — citizenship (P27) of people born in Crimea (P19).
+3. **Wikipedia categories** — navigation hierarchy (Cities in Russia / Cities in Ukraine).
+4. **Wikidata entity sitelinks** — which Wikipedia editions have standalone articles for the Russian federal subject (Q15966495) vs the Ukrainian Autonomous Republic (Q756294) vs the peninsula (Q7835).
+5. **Wikidata people stratified** — citizenship (P27) of people born in Crimean cities (P19), stratified by P570 death date into pre-1991 / 1991-2014 / post-2014 / alive cohorts, with P580 (start time) qualifier used to detect post-2014 passportization.
 
-**Script:** `scripts/check_wikipedia.py`
+**Script:** `pipelines/wikipedia/scan.py` (run with `make pipeline-wikipedia`)
 
 **Key findings:**
 - English Wikipedia: 11/14 cities say "city in Crimea" — no country (**erasure by omission**)
 - German Wikipedia: 6/6 say "Ukraine" (**correct**)
-- Chinese Wikipedia: "Republic of Crimea" (**Russian admin name**)
-- Wikidata: 11/17 entities have NO country property (**structural gap**)
-- Wikidata people: 69% Russian citizenship, 31% Ukrainian (N=261)
+- Wikidata: 11/17 entities have NO current P17 country claim (**structural gap**)
+- Entity sitelinks: 92 editions have an article for the Russian federal subject "Republic of Crimea"; 100 for the Ukrainian Autonomous Republic; 23 editions have the Russian entity but not the Ukrainian one (**structural asymmetry**)
+- Wikidata people (stratified, N=577): UA and RU citizenship at parity (24% vs 23%) in the living-or-unknown cohort; only 1 person has a post-2014 P27=Russia start-time qualifier despite ~2M passports issued. **The prior 69% figure was a biographical-lag artifact driven by Imperial-Russia and Soviet-Union successor mapping and is withdrawn.**
 
 ---
 

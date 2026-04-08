@@ -640,26 +640,26 @@ const propagation = [
 <!-- Wikipedia & Wikidata -->
 <section id="wikipedia" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Вікіпедія та Wikidata: стирання через пропуск' : 'Wikipedia & Wikidata: erasure by omission'}</h2>
-    <p class="text-[#94a3b8] mb-8">{lang === 'uk' ? '17 кримських термінів перевірено в 30 мовних версіях Вікіпедії. Англомовна Вікіпедія не каже «Росія» — вона просто видаляє «Україна».' : '17 Crimean terms checked across 30 Wikipedia language editions. English Wikipedia does not say "Russia" — it simply removes "Ukraine."'}</p>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Вікіпедія та Wikidata: стирання через пропуск і структурна асиметрія' : 'Wikipedia & Wikidata: erasure by omission and structural asymmetry'}</h2>
+    <p class="text-[#94a3b8] mb-8">{lang === 'uk' ? '17 кримських сутностей, перевірених у описах, категоріях, P17 і sitelinks сутностей. Англомовна Вікіпедія мовчить про країну; а під капотом 23 видання мають окрему статтю про російський федеральний суб\'єкт і не мають для української Автономної Республіки.' : '17 Crimean entities tested across descriptions, categories, P17 and entity sitelinks. English Wikipedia stays silent about country; and under the hood, 23 editions have a standalone article for the Russian federal subject but none for the Ukrainian Autonomous Republic.'}</p>
 
     <!-- Stats -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
+        <div class="text-2xl font-bold text-[#ef4444]">23</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'видань лише з росс. статтею' : 'editions RU-only'}</div>
+      </div>
       <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#22c55e]/30 text-center">
-        <div class="text-2xl font-bold text-[#22c55e]">20</div>
-        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'Україна' : 'Ukraine'}</div>
+        <div class="text-2xl font-bold text-[#22c55e]">31</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'видань лише з укр. статтею' : 'editions UA-only'}</div>
       </div>
       <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#f59e0b]/30 text-center">
-        <div class="text-2xl font-bold text-[#f59e0b]">30</div>
-        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'Без країни' : 'No country'}</div>
-      </div>
-      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
-        <div class="text-2xl font-bold text-[#ef4444]">1</div>
-        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'Росія (кит.)' : 'Russia (Chinese)'}</div>
+        <div class="text-2xl font-bold text-[#f59e0b]">11/17</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'Wikidata без P17' : 'Wikidata no P17'}</div>
       </div>
       <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#64748b]/30 text-center">
-        <div class="text-2xl font-bold text-[#64748b]">11/17</div>
-        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'Wikidata без P17' : 'Wikidata no P17'}</div>
+        <div class="text-2xl font-bold text-[#64748b]">1</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'запис про пост-2014 паспорт' : 'post-2014 passport records'}</div>
       </div>
     </div>
 
@@ -677,29 +677,56 @@ const propagation = [
       </div>
     </div>
 
-    <!-- Chinese finding -->
-    <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#ef4444]/20 mb-6">
-      <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? 'Китайська Вікіпедія — єдина з російським фреймінгом' : 'Chinese Wikipedia — the only one with Russian framing'}</div>
-      <div class="font-mono text-sm text-[#ef4444]">"克里米亚共和国的首都"</div>
-      <div class="text-[10px] text-[#64748b] mt-1">{lang === 'uk' ? '← «Столиця Республіки Крим» — адміністративна назва РФ, без «Автономна»' : '← "Capital of the Republic of Crimea" — Russian Federation admin name, no "Autonomous"'}</div>
-    </div>
-
-    <!-- Wikidata people -->
-    <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#1e293b]">
-      <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? 'Громадянство кримчан у Wikidata (261 особа)' : 'Crimean-born people citizenship in Wikidata (261 people)'}</div>
-      <div class="flex gap-4 items-center">
-        <div class="flex-1">
-          <div class="flex h-4 rounded-full overflow-hidden bg-[#1e293b]">
-            <div class="bg-[#ef4444] h-full" style="width: 69%"></div>
-            <div class="bg-[#22c55e] h-full" style="width: 31%"></div>
+    <!-- Entity sitelink asymmetry -->
+    <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#1e293b] mb-6">
+      <div class="text-xs text-[#64748b] mb-3">{lang === 'uk' ? 'Асиметрія sitelinks сутностей Wikidata: скільки видань Вікіпедії мають окрему статтю для кожної сутності' : 'Wikidata entity sitelink asymmetry: how many Wikipedia editions have a standalone article for each entity'}</div>
+      <div class="space-y-2">
+        <div class="flex items-center gap-3">
+          <div class="text-xs text-[#94a3b8] w-64 flex-shrink-0">{lang === 'uk' ? 'Півострів Крим (Q7835, географічний)' : 'Crimea peninsula (Q7835, geographic)'}</div>
+          <div class="flex-1 bg-[#1e293b] h-4 rounded-full overflow-hidden">
+            <div class="bg-[#64748b] h-full" style="width: 100%"></div>
           </div>
+          <div class="text-xs text-[#94a3b8] w-10 text-right">156</div>
         </div>
-        <div class="text-xs text-[#94a3b8] flex-shrink-0">
-          <span class="text-[#ef4444]">69% {lang === 'uk' ? 'Росія' : 'Russia'}</span> /
-          <span class="text-[#22c55e]">31% {lang === 'uk' ? 'Україна' : 'Ukraine'}</span>
+        <div class="flex items-center gap-3">
+          <div class="text-xs text-[#94a3b8] w-64 flex-shrink-0">{lang === 'uk' ? 'Автономна Республіка Крим (Q756294, UA)' : 'Autonomous Republic of Crimea (Q756294, UA)'}</div>
+          <div class="flex-1 bg-[#1e293b] h-4 rounded-full overflow-hidden">
+            <div class="bg-[#22c55e] h-full" style="width: 64%"></div>
+          </div>
+          <div class="text-xs text-[#22c55e] w-10 text-right">100</div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="text-xs text-[#94a3b8] w-64 flex-shrink-0">{lang === 'uk' ? 'Республіка Крим (Q15966495, рос. фед. суб\'єкт)' : 'Republic of Crimea (Q15966495, RU fed. subject)'}</div>
+          <div class="flex-1 bg-[#1e293b] h-4 rounded-full overflow-hidden">
+            <div class="bg-[#ef4444] h-full" style="width: 59%"></div>
+          </div>
+          <div class="text-xs text-[#ef4444] w-10 text-right">92</div>
         </div>
       </div>
-      <div class="text-[10px] text-[#64748b] mt-2">{lang === 'uk' ? 'Ці дані поширюються на біографії Вікіпедії, Google Knowledge Panel та спортивні бази даних. Індивідуальний вибір громадянства є легітимним, але агрегований патерн відображає структурне кодування.' : 'This data propagates to Wikipedia biographies, Google Knowledge Panels, and sports databases. Individual citizenship choices are legitimate, but the aggregate pattern reflects structural encoding.'}</div>
+      <div class="text-[10px] text-[#64748b] mt-3">{lang === 'uk' ? '23 видання мають статтю про російський федеральний суб\'єкт, але не про українську Автономну Республіку (серед них бретонське, валлійське, бенгальське, суахілі, албанське). 31 видання — навпаки. 69 мають обидві. Створення окремої статті — це активне редакційне рішення визнати сутність вартою окремої енциклопедичної статті.' : '23 editions have a standalone article for the Russian federal subject but none for the Ukrainian Autonomous Republic (among them Breton, Welsh, Bengali, Swahili, Albanian). 31 have the reverse. 69 have both. Creating a standalone article is an affirmative editorial act that accepts the entity as article-worthy.'}</div>
+    </div>
+
+    <!-- Wikidata people: stratified (correction) -->
+    <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#1e293b]">
+      <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? 'Громадянство кримчан у Wikidata — стратифіковано (N=577)' : 'Crimean-born people citizenship in Wikidata — stratified (N=577)'}</div>
+      <div class="text-[11px] text-[#f59e0b] mb-3 italic">{lang === 'uk' ? 'Виправлення: попередня цифра «69% росіян» була артефактом біографічного лагу — вона поєднувала Російську імперію, СРСР і сучасну Росію в одну групу. Після стратифікації за датою смерті живі/недавні кримчани розподілені UA та RU майже порівну.' : 'Correction: the previous "69% Russian" figure was a biographical-lag artifact that lumped Imperial Russia, the Soviet Union, and the modern Russian Federation into one bucket. After stratification by death date, living/recent Crimean-born people show UA and RU at near-parity.'}</div>
+      <div class="space-y-2">
+        <div>
+          <div class="flex justify-between text-[11px] text-[#94a3b8] mb-1"><span>{lang === 'uk' ? 'Живі або невідомо (n=244) — UA/RU майже порівну' : 'Alive or unknown (n=244) — UA/RU near-parity'}</span><span><span class="text-[#22c55e]">24% UA</span> / <span class="text-[#ef4444]">23% RU</span></span></div>
+          <div class="flex h-3 rounded-full overflow-hidden bg-[#1e293b]">
+            <div class="bg-[#22c55e] h-full" style="width: 24%"></div>
+            <div class="bg-[#ef4444] h-full" style="width: 23%"></div>
+            <div class="bg-[#64748b] h-full" style="width: 53%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between text-[11px] text-[#94a3b8] mb-1"><span>{lang === 'uk' ? 'Померли до 1991 (n=216) — переважно СРСР/Рос. імперія' : 'Died pre-1991 (n=216) — mostly Soviet Union / Russian Empire'}</span><span class="text-[#64748b]">89 SU · 42 RE · 1 RU</span></div>
+          <div class="flex h-3 rounded-full overflow-hidden bg-[#1e293b]">
+            <div class="bg-[#64748b] h-full" style="width: 61%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-[10px] text-[#64748b] mt-3">{lang === 'uk' ? 'Справжнє відкриття: лише 1 особа з 577 має ребро P27=Росія з кваліфікатором P580 (дата початку) ≥ 2014-03-18 — попри те що Росія видала ~2 млн паспортів у Криму після окупації. Wikidata не може структурно представити пост-окупаційну паспортизацію; саме цей розрив у даних — це і є відкриття.' : 'Real finding: only 1 person out of 577 has a P27=Russia edge with a P580 (start time) qualifier on or after 2014-03-18, despite Russia issuing ~2 million passports in Crimea after occupation. Wikidata cannot structurally represent post-occupation passportization; the data gap itself is the finding.'}</div>
     </div>
   </div>
 </section>

@@ -41,8 +41,9 @@ pipeline-media: ## Run media framing pipeline (GDELT 154K + LLM verification)
 pipeline-academic: ## Run academic framing pipeline (OpenAlex 91K + LLM verification)
 	cd $(PIPELINES)/academic && uv sync && uv run scan.py
 
-pipeline-wikipedia: ## Run Wikipedia + Wikidata pipeline
+pipeline-wikipedia: ## Run Wikipedia + Wikidata pipeline (and rebuild master manifest)
 	cd $(PIPELINES)/wikipedia && uv sync && uv run scan.py
+	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
 
 pipeline-institutions: ## Run institutional registries pipeline (LoC, ROR, OFAC, EU, ICAO, ITU, ISO)
 	cd $(PIPELINES)/institutions && uv sync && uv run scan.py
@@ -110,8 +111,7 @@ audit-academic: ## Scan academic papers via OpenAlex + CrossRef (2010-present)
 audit-academic-full: ## Full OpenAlex scan (91K papers, cursor pagination)
 	$(PYTHON) $(SCRIPTS)/scan_academic_full.py
 
-audit-wikipedia: ## Wikipedia & Wikidata sovereignty audit (17 terms × 12 langs)
-	$(PYTHON) $(SCRIPTS)/check_wikipedia.py
+audit-wikipedia: pipeline-wikipedia ## Deprecated alias for pipeline-wikipedia
 
 audit-loc: ## Library of Congress subject headings + catalog audit
 	$(PYTHON) $(SCRIPTS)/check_loc.py
