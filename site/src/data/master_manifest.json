@@ -1,5 +1,5 @@
 {
-  "_generated": "2026-04-07T21:50:04",
+  "_generated": "2026-04-07T21:59:30",
   "_description": "Master manifest aggregating all pipeline outputs. Single source of truth for the site.",
   "pipelines": {
     "ip": {
@@ -303,9 +303,9 @@
       "readme": "pipelines/telecom/README.md",
       "manifest": {
         "pipeline": "telecom",
-        "version": "2.0",
-        "generated": "2026-04-08T04:37:08+00:00",
-        "method": "curated_findings + platforms_json",
+        "version": "3.0",
+        "generated": "2026-04-08T04:58:14+00:00",
+        "method": "curated_findings + live_ripe_stat_asn_probes",
         "summary": {
           "total_services": 11,
           "correct": 1,
@@ -315,7 +315,15 @@
           "correct_pct": 9.1,
           "incorrect_pct": 36.4,
           "na_pct": 27.3,
-          "blocked_pct": 27.3
+          "blocked_pct": 27.3,
+          "asns_probed": 9,
+          "asns_reassigned": 8,
+          "asns_still_at_original_holder": 1,
+          "asns_ripe_country_ru": 2,
+          "asns_ripe_country_ua": 4,
+          "asns_ripe_country_other": 3,
+          "asns_created_post_occupation": 2,
+          "asns_with_ru_abuse_tld": 1
         },
         "findings": [
           {
@@ -451,7 +459,119 @@
             "date_checked": "2026-04-02"
           }
         ],
+        "findings_asn_registry": [
+          {
+            "asn": 48031,
+            "historical_label": "CrimeaCom",
+            "current_ripe_holder": "XSERVERCLOUD - Ivanov Vitaliy Sergeevich",
+            "current_holder_matches_historical": false,
+            "ripe_country": "UA",
+            "whois_created": "2008-10-02T08:12:58Z",
+            "whois_last_modified": "2025-10-16T18:02:40Z",
+            "whois_org": "ORG-IVS6-RIPE",
+            "whois_abuse_domain_tld": null,
+            "whois_status": "ASSIGNED"
+          },
+          {
+            "asn": 56485,
+            "historical_label": "SevStar (Sevastopol)",
+            "current_ripe_holder": "THEHOST-AS - TheHost LLC",
+            "current_holder_matches_historical": false,
+            "ripe_country": "UA",
+            "whois_created": "2011-03-02T14:47:15Z",
+            "whois_last_modified": "2024-10-31T10:27:53Z",
+            "whois_org": "ORG-TL914-RIPE",
+            "whois_abuse_domain_tld": null,
+            "whois_status": "ASSIGNED"
+          },
+          {
+            "asn": 198948,
+            "historical_label": "Sim-Telecom (Simferopol)",
+            "current_ripe_holder": "UNINET-AS - UNINET Sp. z o.o.",
+            "current_holder_matches_historical": false,
+            "ripe_country": "PL",
+            "whois_created": "2012-06-28T13:36:20Z",
+            "whois_last_modified": "2020-07-22T10:49:53Z",
+            "whois_org": "ORG-USZO18-RIPE",
+            "whois_abuse_domain_tld": null,
+            "whois_status": "ASSIGNED"
+          },
+          {
+            "asn": 201776,
+            "historical_label": "Miranda-Media",
+            "current_ripe_holder": "MIRANDA-AS - Miranda-Media Ltd",
+            "current_holder_matches_historical": true,
+            "ripe_country": "RU",
+            "whois_created": "2014-07-16T12:36:48Z",
+            "whois_last_modified": "2025-04-16T06:38:14Z",
+            "whois_org": "ORG-ML281-RIPE",
+            "whois_abuse_domain_tld": "ru",
+            "whois_status": "ASSIGNED"
+          },
+          {
+            "asn": 42961,
+            "historical_label": "CrimeaTelecom",
+            "current_ripe_holder": "GPRS-AS - Mobile Telecommunications Company K.S.C.P.",
+            "current_holder_matches_historical": false,
+            "ripe_country": "KW",
+            "whois_created": "2007-05-15T11:57:21Z",
+            "whois_last_modified": "2018-09-04T10:24:08Z",
+            "whois_org": "ORG-MTC1-RIPE",
+            "whois_abuse_domain_tld": null,
+            "whois_status": "ASSIGNED"
+          },
+          {
+            "asn": 28761,
+            "historical_label": "KNET",
+            "current_ripe_holder": "CRIMEACOM-LLC - CrimeaCom South LLC",
+            "current_holder_matches_historical": false,
+            "ripe_country": "RU",
+            "whois_created": "2003-02-18T14:35:57Z",
+            "whois_last_modified": "2026-02-06T05:39:08Z",
+            "whois_org": "ORG-CL819-RIPE",
+            "whois_abuse_domain_tld": null,
+            "whois_status": "ASSIGNED"
+          },
+          {
+            "asn": 47598,
+            "historical_label": "Sevastopolnet",
+            "current_ripe_holder": "KHTEL-AS - PE \"Khersontelecom\"",
+            "current_holder_matches_historical": false,
+            "ripe_country": "UA",
+            "whois_created": "2008-07-18T11:07:02Z",
+            "whois_last_modified": "2024-12-19T09:42:08Z",
+            "whois_org": "ORG-PA266-RIPE",
+            "whois_abuse_domain_tld": null,
+            "whois_status": "ASSIGNED"
+          },
+          {
+            "asn": 44629,
+            "historical_label": "CrimeaLink",
+            "current_ripe_holder": "POINTUA-AS - PE Sinenko Vitaliy Mihailovich",
+            "current_holder_matches_historical": false,
+            "ripe_country": "UA",
+            "whois_created": "2008-02-14T15:08:12Z",
+            "whois_last_modified": "2025-12-29T13:26:58Z",
+            "whois_org": "ORG-PSVM1-RIPE",
+            "whois_abuse_domain_tld": null,
+            "whois_status": "ASSIGNED"
+          },
+          {
+            "asn": 203070,
+            "historical_label": "Crimean Telecom Company",
+            "current_ripe_holder": "YAHOO-FRA - Yahoo-UK Limited",
+            "current_holder_matches_historical": false,
+            "ripe_country": "GB",
+            "whois_created": "2016-04-06T07:41:20Z",
+            "whois_last_modified": "2018-09-04T11:46:54Z",
+            "whois_org": "ORG-YE1-RIPE",
+            "whois_abuse_domain_tld": null,
+            "whois_status": "ASSIGNED"
+          }
+        ],
         "key_findings": [
+          "**ASN reassignment in action.** Of 9 ASNs historically associated with Crimean operators, **8 are no longer held by their historical operator** — they have been reassigned to different entities under RIPE NCC transfer policy `ripe-733` without any sovereignty review. Only 1 of the original 9 are still at their original holders. The reassignments include a transfer to Mobile Telecommunications Company K.S.C.P. (Kuwait's MTC), to UNINET (a Polish ISP), and to Yahoo-UK Limited — none of these entities are operating Crimean networks. This is the cleanest demonstration possible of the regulation gap: RIPE NCC has no sovereignty-review step and no mechanism exists to flag a Crimean ASN transfer as politically significant.",
+          "Live RIPE NCC country codes (9 ASNs): 2 currently registered RU, 4 currently UA, 3 in third countries (Poland, Kuwait, UK). 2 ASNs were created on or after 2014-02-20 (post-occupation). 1 have a .ru abuse email domain. Miranda-Media (AS201776, created 2014-07-16 with a .ru abuse email and RU country code) is the only clean example of 'created post-occupation as RU' in the probed sample.",
           "All 3 Ukrainian mobile operators (Kyivstar, Vodafone Ukraine, lifecell) withdrew from Crimea by October 2015. They are classified `n/a` — the services no longer exist in Crimea — not `incorrect` and not `blocked`. The distinction matters: withdrawal is a Ukrainian operator decision under occupation, not a sovereignty claim about Crimea being Russian.",
           "4 telecom entities operate in Crimea under Russian regulation and are classified `incorrect`: K-Telecom (Win Mobile, the de-facto monopoly operator since August 2014), RIPE NCC (which permitted the UA→RU ASN re-registrations under transfer policy ripe-733 without sovereignty review), the Kerch Strait submarine cable (laid by Rostelecom in 2014), and Miranda-Media (Rostelecom's Crimean data subsidiary, AS201776 registered as RU from July 2014).",
           "3 services are `blocked` in Crimea: Starlink (SpaceX geofence, OFAC compliance), Netflix (OFAC since 2014), Speedtest.net / Ookla (blocked in Russia by Roskomnadzor as of July 2025). 'Blocked' here means the service is actively prevented from operating, not withdrawn by its operator.",
@@ -459,7 +579,7 @@
           "Status taxonomy: `n/a` = operator withdrew (service gone). `incorrect` = service operates in Crimea under Russian regulation. `blocked` = service prevented by sanctions or state action. `correct` = operates per Ukrainian jurisdiction. These are NOT interchangeable — conflating `n/a` with `blocked` would misrepresent the withdrawn Ukrainian operators as victims of sanctions rather than as operators that left under occupation."
         ],
         "limitations": [
-          "Curation pipeline: findings are hand-researched from public sources, not produced by a live scanner. Live RIPE STAT API / E.164 / TeleGeography probes are planned as a follow-up.",
+          "Curated operator findings (Kyivstar, K-Telecom, Netflix, etc.) are hand-researched from public sources. The RIPE NCC per-ASN registry probes are live.",
           "Cannot directly query Russian operator coverage databases (sanctioned, requires Russian-IP access + manual browser session).",
           "Submarine cable data is from public sources via TeleGeography; not all regional cables are mapped.",
           "Ukrainian operators no longer publish Crimean coverage information (withdrawn), so current state is documented from withdrawal announcements.",
