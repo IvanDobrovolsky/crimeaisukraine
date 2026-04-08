@@ -28,8 +28,9 @@ pipeline-telecom: ## Run telecom operators pipeline (curation, rebuilds master m
 	cd $(PIPELINES)/telecom && uv sync && uv run scan.py
 	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
 
-pipeline-tech_infrastructure: ## Run tech infrastructure pipeline (IANA tz, libphonenumber, ISO)
+pipeline-tech_infrastructure: ## Run tech infrastructure pipeline (IANA tz, libphonenumber, OSM Nominatim; rebuilds master manifest)
 	cd $(PIPELINES)/tech_infrastructure && uv sync && uv run scan.py
+	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
 
 pipeline-geodata: ## Run geodata pipeline (Natural Earth + maps + viz libs)
 	cd $(PIPELINES)/geodata && uv sync && uv run scan.py
@@ -75,8 +76,7 @@ install: ## Install Python dependencies
 audit-open-source: ## Check open source geographic datasets (Natural Earth, D3, etc)
 	$(PYTHON) $(SCRIPTS)/check_open_source.py
 
-audit-infrastructure: ## Check tech infrastructure (IANA, libphonenumber, DNS, etc)
-	$(PYTHON) $(SCRIPTS)/check_infrastructure.py
+audit-infrastructure: pipeline-tech_infrastructure ## Deprecated alias for pipeline-tech_infrastructure
 
 audit-propagation: ## Analyze npm/PyPI dependency propagation
 	$(PYTHON) $(SCRIPTS)/check_propagation.py
@@ -91,8 +91,7 @@ audit-platforms: ## Check web platforms (weather, travel, search, reference)
 audit-map-services: ## Check map services and geocoding APIs
 	$(PYTHON) $(SCRIPTS)/check_map_services.py
 
-audit-ip: ## Bulk IP geolocation test (90 IPs, 9 ASNs)
-	$(PYTHON) $(SCRIPTS)/check_ip_bulk.py
+audit-ip: pipeline-ip ## Deprecated alias for pipeline-ip
 
 audit-ip-quick: ## Quick IP geolocation test (4 sample IPs)
 	$(PYTHON) $(SCRIPTS)/check_ip_geolocation.py

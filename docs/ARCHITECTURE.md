@@ -122,7 +122,7 @@ graph LR
     D --> E["UA: 53%<br/>RU: 16%<br/>Other: 31%"]
 ```
 
-**Script:** `check_ip_bulk.py` | **90 IPs x 2 providers = 120 lookups**
+**Script:** `pipelines/ip/scan.py` (run with `make pipeline-ip`) | **90 IPs x 2 providers = 120 lookups**
 
 ---
 
@@ -139,7 +139,7 @@ graph LR
 ```
 
 **Method:** Direct config/database file inspection
-**Script:** `check_infrastructure.py` | **Precision:** ~100%
+**Script:** `pipelines/tech_infrastructure/scan.py` (run with `make pipeline-tech_infrastructure`) | **Precision:** ~100%
 
 ---
 
@@ -165,8 +165,8 @@ graph LR
     E -->|"reports"| H["Reclassified"]
 ```
 
-**Scripts:** `fetch_and_classify.py`, `llm_verify.py`
-**Cost:** ~$2 BQ + ~$2.50 LLM verification
+**Scripts:** `pipelines/media/scan.py` (aggregator), `scripts/scan_gdelt_framing.py` (upstream GDELT query), `scripts/llm_verify.py` (Stage 2 LLM verification)
+**Cost:** ~$2 BQ + ~$5 LLM verification
 
 ---
 

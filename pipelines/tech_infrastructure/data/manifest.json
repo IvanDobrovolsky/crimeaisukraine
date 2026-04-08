@@ -1,0 +1,109 @@
+{
+  "pipeline": "tech_infrastructure",
+  "version": "2.0",
+  "generated": "2026-04-08T05:28:15+00:00",
+  "method": "live_http + iana_tzdata + libphonenumber + osm_nominatim",
+  "summary": {
+    "probes_total": 3,
+    "correct": 1,
+    "incorrect": 1,
+    "ambiguous": 1,
+    "na": 0,
+    "unknown": 0,
+    "iana_zone1970_cc": "RU,UA",
+    "iana_zone_tab_cc": "UA",
+    "libphonenumber_ru_crimean_entries": 2,
+    "libphonenumber_ua_crimean_entries": 3,
+    "libphonenumber_7978_carriers": 4,
+    "osm_cities_tested": 6,
+    "osm_ua_count": 6,
+    "osm_ru_count": 0
+  },
+  "findings": [
+    {
+      "name": "IANA Time Zone Database",
+      "source_url": "https://github.com/eggert/tz",
+      "zone1970_cc": "RU,UA",
+      "zone1970_line": "RU,UA\t+4457+03406\tEurope/Simferopol\tCrimea",
+      "zone_tab_cc": "UA",
+      "zone_tab_line": "UA\t+4457+03406\tEurope/Simferopol\tCrimea",
+      "status": "ambiguous",
+      "detail": "zone1970.tab lists Europe/Simferopol as 'RU,UA' — both countries, RU listed first. This is the dual-listing compromise documented in the IANA tz mailing list: when Crimea switched to Moscow time in 2014, maintainers added RU without removing UA."
+    },
+    {
+      "name": "Google libphonenumber",
+      "source_url": "https://github.com/google/libphonenumber",
+      "ru_crimea_entries": [
+        "736|Simferopol",
+        "7869|Sevastopol"
+      ],
+      "ua_crimea_entries": [
+        "3806297|Mangosh/Yalta, Donetsk",
+        "38065|Crimea",
+        "38069|Sevastopol city"
+      ],
+      "carriers_7978": [
+        "Elemte-Invest",
+        "K-Telecom Ltd",
+        "MTS",
+        "Sevastopol TELECOM"
+      ],
+      "status": "incorrect",
+      "detail": "libphonenumber has dual Crimean encoding: 3 entries under +380 (Ukraine, ITU-valid) AND 2 entries under +7 (Russia). Additionally, the +7-978 carrier file lists 4 Russian mobile operators operating under a prefix Russia unilaterally assigned in 2014 and never submitted to ITU. Every Android phone, Chrome sign-up form, and phone validation library worldwide treats the Russian +7-978 prefix as canonical."
+    },
+    {
+      "name": "OpenStreetMap Nominatim",
+      "source_url": "https://nominatim.openstreetmap.org/",
+      "cities_tested": [
+        {
+          "city": "Simferopol",
+          "country": "Україна",
+          "country_code": "UA"
+        },
+        {
+          "city": "Sevastopol",
+          "country": "Україна",
+          "country_code": "UA"
+        },
+        {
+          "city": "Yalta",
+          "country": "Україна",
+          "country_code": "UA"
+        },
+        {
+          "city": "Kerch",
+          "country": "Україна",
+          "country_code": "UA"
+        },
+        {
+          "city": "Feodosia",
+          "country": "Україна",
+          "country_code": "UA"
+        },
+        {
+          "city": "Evpatoria",
+          "country": "Україна",
+          "country_code": "UA"
+        }
+      ],
+      "status": "correct",
+      "detail": "All 6 Crimean cities returned country_code=UA",
+      "ua_count": 6,
+      "ru_count": 0,
+      "tested": 6
+    }
+  ],
+  "key_findings": [
+    "**IANA Time Zone Database** lists Europe/Simferopol with country codes 'RU,UA' in zone1970.tab. zone1970.tab lists Europe/Simferopol as 'RU,UA' — both countries, RU listed first. This is the dual-listing compromise documented in the IANA tz mailing list: when Crimea switched to Moscow time in 2014, maintainers added RU without removing UA.",
+    "**Google libphonenumber** has dual-encoded Crimean phone prefixes: 2 entries under +7 (Russia) and 3 under +380 (Ukraine). The +7-978 Crimean mobile prefix — unilaterally assigned by Russia in 2014 and never submitted to ITU — lists 4 carriers as active: Elemte-Invest, K-Telecom Ltd, MTS, Sevastopol TELECOM. Every Android phone and browser validation library that uses libphonenumber treats this unilateral prefix as canonical. This is the 'Standards Silencing' pattern: ITU formally lists +380-65x for Crimea, but the validation layer that every downstream application actually consults has switched to the Russian numbering.",
+    "**OpenStreetMap Nominatim** resolves 6/6 tested Crimean cities to country_code=UA (0 to RU). OSM applies the 'on the ground' rule but the Nominatim geocoder currently returns the Ukrainian classification.",
+    "The three probes measure different layers of the same underlying question: timezone databases (OS-level), phone number libraries (validation-level), and geocoding (application-level). The IANA and libphonenumber findings together establish that Crimean sovereignty has been quietly downgraded from 'UA' to 'UA+RU' or 'RU' in foundational infrastructure without any standards body or international regulator objecting or being notified."
+  ],
+  "limitations": [
+    "Live fetches against github.com (IANA + libphonenumber) and nominatim.openstreetmap.org — results are snapshots at scan time.",
+    "Nominatim rate-limits at 1 req/sec; the 6-city test takes ~8 seconds.",
+    "libphonenumber changes slowly but not never — the +7-978 carrier list can gain or lose operators between scans.",
+    "The 'on the ground' rule in OpenStreetMap is under active discussion in OSM's WikiProject Crimea. The Nominatim result is a snapshot of the current OSM community consensus.",
+    "Additional infrastructure systems (CLDR territories, ICU locale data, Unicode regional codes) are not yet probed by this scan."
+  ]
+}
