@@ -1,5 +1,5 @@
 {
-  "_generated": "2026-04-07T23:33:04",
+  "_generated": "2026-04-07T23:44:44",
   "_description": "Master manifest aggregating all pipeline outputs. Single source of truth for the site.",
   "pipelines": {
     "ip": {

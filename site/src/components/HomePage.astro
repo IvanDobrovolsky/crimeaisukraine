@@ -11,6 +11,11 @@ import modelsData from '../data/llm_models.json';
 // Fresh pipeline manifests (rewritten 2026-04)
 import weatherPipeline from '../../../pipelines/weather/data/manifest.json';
 import institutionsPipeline from '../../../pipelines/institutions/data/manifest.json';
+import geodataPipeline from '../../../pipelines/geodata/data/manifest.json';
+import telecomPipeline from '../../../pipelines/telecom/data/manifest.json';
+import ipPipeline from '../../../pipelines/ip/data/manifest.json';
+import mediaPipeline from '../../../pipelines/media/data/manifest.json';
+import techInfraPipeline from '../../../pipelines/tech_infrastructure/data/manifest.json';
 
 interface Props {
   lang: Lang;
@@ -139,6 +144,269 @@ const instRorTotal = instSummary.ror_institutions_total;
 const instRorUA = instSummary.ror_institutions_ua;
 const instRorRU = instSummary.ror_institutions_ru;
 
+// ── Geodata pipeline + 3D propagation graph data ──────────────
+const geoM = (geodataPipeline as any);
+const geoSummary = geoM.summary;
+const geoFindings = (geoM.findings || []) as any[];
+const geoCrimeaRU = geoSummary.natural_earth_crimea_russia_fields;
+const geoCrimeaUA = geoSummary.natural_earth_crimea_ukraine_fields;
+const geoSevRU = geoSummary.natural_earth_sevastopol_russia_fields;
+const geoSevUA = geoSummary.natural_earth_sevastopol_ukraine_fields;
+const geoNeSovereignt = geoSummary.natural_earth_admin_0_sovereignt;
+const geoOpenIssues = geoSummary.github_open_crimea_issues;
+const geoTotalIssues = geoSummary.github_total_crimea_items;
+const geoNpmTotal = geoSummary.npm_total_weekly_downloads;
+const geoPypiTotal = geoSummary.pypi_total_weekly_downloads;
+const geoPypiHigh = geoSummary.pypi_high_level_total;
+const geoPypiBindings = geoSummary.pypi_cpp_bindings_total;
+const geoCranTotal = geoSummary.cran_total_weekly_downloads;
+const geoCratesTotal = geoSummary.crates_total_weekly_downloads;
+const geoNugetCumulative = geoSummary.nuget_lifetime_downloads_total;
+const geoCrossEcoTotal = geoSummary.cross_ecosystem_total_weekly_downloads;
+
+// Build the 3D force-graph nodes and links from the geodata manifest.
+// This is the data the propagation chain visualization renders.
+function buildPropagationGraph() {
+  const nodes: any[] = [];
+  const links: any[] = [];
+
+  // Helper: log-scale node size from weekly downloads
+  const sizeFromDownloads = (n: number) => {
+    if (!n || n <= 0) return 1.5;
+    return Math.max(1.5, Math.log10(n) - 2);
+  };
+  const particlesFromDownloads = (n: number) => {
+    if (!n || n <= 0) return 0;
+    return Math.max(1, Math.min(10, Math.round(Math.log10(n) - 3)));
+  };
+
+  // Layer 0 — ignored upstream authorities (the contradiction)
+  const ignored = [
+    { id: 'iso', name: 'ISO 3166-2 (UA-43, UA-40)', detail: "Ignored by Natural Earth's top-level fields, present in iso_3166_2 column" },
+    { id: 'fips', name: 'FIPS country codes (UP11, UP20)', detail: "FIPS 'UP' = Ukraine; present in fips column" },
+    { id: 'geonames', name: 'GeoNames (Avtonomna Respublika Krym)', detail: "Ukrainian name in gn_name column" },
+    { id: 'woe', name: 'Yahoo WoE (\"Crimea, UA, Ukraine\")', detail: "Literally says 'UA, Ukraine' in woe_label column" },
+  ];
+  for (const u of ignored) {
+    nodes.push({ ...u, group: 'ignored', val: 4, color: '#22c55e' });
+    links.push({ source: u.id, target: 'ne', value: 1, dashed: true, color: '#22c55e', particles: 0 });
+  }
+
+  // Layer 1 — Natural Earth (the bottleneck root)
+  nodes.push({
+    id: 'ne',
+    name: 'Natural Earth',
+    detail: `admin=Russia + iso_3166_2=UA-43 in same row · ${geoCrimeaRU + geoSevRU} contradictory fields`,
+    group: 'root',
+    val: 18,
+    color: '#ef4444',
+  });
+
+  // Layer 2 — GDAL hub (C++ universal reader)
+  nodes.push({
+    id: 'gdal',
+    name: 'GDAL / PROJ / GEOS',
+    detail: 'C++ universal geospatial readers — every non-JS ecosystem reads through here',
+    group: 'hub',
+    val: 12,
+    color: '#f59e0b',
+  });
+  links.push({ source: 'ne', target: 'gdal', value: 10, color: '#ef4444', particles: 8 });
+
+  // Layer 3 — ecosystem nodes
+  const ecosystems = [
+    { id: 'eco-npm', name: 'npm (JavaScript)', weekly: geoNpmTotal, color: '#0057b7', from: 'ne' },
+    { id: 'eco-pypi', name: 'PyPI (Python)', weekly: geoPypiTotal, color: '#0057b7', from: 'gdal' },
+    { id: 'eco-cran', name: 'CRAN (R)', weekly: geoCranTotal, color: '#0057b7', from: 'gdal' },
+    { id: 'eco-crates', name: 'crates.io (Rust)', weekly: geoCratesTotal, color: '#0057b7', from: 'gdal' },
+    { id: 'eco-nuget', name: 'NuGet (.NET)', weekly: geoNugetCumulative, color: '#0057b7', from: 'gdal', cumulative: true },
+  ];
+  for (const e of ecosystems) {
+    nodes.push({
+      id: e.id,
+      name: e.name,
+      detail: e.cumulative
+        ? `${e.weekly.toLocaleString()} cumulative .NET downloads`
+        : `${e.weekly.toLocaleString()} weekly downloads`,
+      group: 'ecosystem',
+      val: Math.max(4, sizeFromDownloads(e.weekly)),
+      color: e.color,
+    });
+    links.push({
+      source: e.from,
+      target: e.id,
+      value: Math.max(1, sizeFromDownloads(e.weekly)),
+      color: e.color,
+      particles: particlesFromDownloads(e.weekly),
+    });
+  }
+
+  // Layer 4 — individual library nodes (built from manifest)
+  const ecosystemMap: Record<string, string> = {
+    javascript_npm: 'eco-npm',
+    python_pypi: 'eco-pypi',
+    r_cran: 'eco-cran',
+    rust_cratesio: 'eco-crates',
+    dotnet_nuget: 'eco-nuget',
+  };
+
+  for (const f of geoFindings) {
+    const ecoKey = (f as any).ecosystem;
+    if (!ecoKey || !ecosystemMap[ecoKey]) continue;
+    const parentId = ecosystemMap[ecoKey];
+
+    // Different package list keys depending on ecosystem
+    let pkgs: any[] = [];
+    if (ecoKey === 'python_pypi') {
+      pkgs = [
+        ...((f as any).packages_high_level || []),
+        ...((f as any).packages_cpp_bindings || []),
+      ];
+    } else if (ecoKey === 'rust_cratesio') {
+      pkgs = ((f as any).crates || []).map((c: any) => ({
+        package: c.crate,
+        weekly_downloads: c.weekly_downloads,
+        description: c.description,
+      }));
+    } else if (ecoKey === 'dotnet_nuget') {
+      pkgs = ((f as any).packages || []).map((p: any) => ({
+        package: p.package,
+        weekly_downloads: p.lifetime_downloads,
+        description: p.description,
+        cumulative: true,
+      }));
+    } else {
+      pkgs = (f as any).packages || [];
+    }
+
+    for (const p of pkgs) {
+      const pkgName = p.package;
+      const dl = p.weekly_downloads || 0;
+      const isHighcharts = pkgName === 'highcharts';
+      const isGeoPandasFix = pkgName === 'geopandas';
+      const id = `pkg-${ecoKey}-${pkgName}`;
+      nodes.push({
+        id,
+        name: pkgName,
+        detail: p.cumulative
+          ? `${dl.toLocaleString()} cumulative downloads · ${p.description || ''}`
+          : `${dl.toLocaleString()} weekly downloads · ${p.description || ''}`,
+        group: isHighcharts ? 'highcharts' : 'package',
+        val: sizeFromDownloads(dl),
+        color: isHighcharts ? '#22c55e' : (isGeoPandasFix ? '#facc15' : '#ef4444'),
+        weekly: dl,
+        ecosystem: ecoKey,
+        is_override: isHighcharts,
+        is_partial_fix: isGeoPandasFix,
+      });
+      links.push({
+        source: parentId,
+        target: id,
+        value: Math.max(0.5, sizeFromDownloads(dl) / 2),
+        color: '#475569',
+        particles: particlesFromDownloads(dl),
+      });
+
+      // Library → terminal outcome
+      if (isHighcharts) {
+        links.push({ source: id, target: 'terminal-ok', value: 2, color: '#22c55e', particles: 4 });
+      } else if (isGeoPandasFix) {
+        // GeoPandas: fixed in v0.12.2+, but pre-fix versions still inherit
+        links.push({ source: id, target: 'terminal-bad', value: 1, color: '#ef4444', particles: 1 });
+        links.push({ source: id, target: 'terminal-ok', value: 1, color: '#facc15', particles: 1 });
+      } else {
+        links.push({ source: id, target: 'terminal-bad', value: 1, color: '#ef4444', particles: 1 });
+      }
+    }
+  }
+
+  // Layer 5 — documented downstream consumers
+  const downstream = [
+    { id: 'qgis', name: 'QGIS', detail: 'Most-used free desktop GIS, ~1M downloads/month. Bundles Natural Earth as default.' },
+    { id: 'arcgis', name: 'ArcGIS', detail: 'Esri commercial desktop GIS, NE in Living Atlas as "World Boundary"' },
+    { id: 'geoserver', name: 'GeoServer', detail: 'Open-source web GIS server (Java/GeoTools/gdal-java), NE as default sample' },
+    { id: 'postgis', name: 'PostGIS', detail: 'PostgreSQL spatial extension (C), GDAL backend, NE in tutorials' },
+    { id: 'observable', name: 'Observable / D3', detail: 'mbostock/world-atlas packages NE as TopoJSON for d3-geo notebooks' },
+    { id: 'tableau', name: 'Tableau / Power BI', detail: 'Enterprise BI world-map starter visuals derived from NE' },
+  ];
+  for (const d of downstream) {
+    nodes.push({ ...d, group: 'downstream', val: 5, color: '#94a3b8' });
+    links.push({ source: 'gdal', target: d.id, value: 1.5, color: '#94a3b8', particles: 2 });
+    links.push({ source: d.id, target: 'terminal-bad', value: 1.5, color: '#94a3b8', particles: 1 });
+  }
+  // Observable specifically inherits from npm via world-atlas, not GDAL
+  links.push({ source: 'eco-npm', target: 'observable', value: 1, color: '#0057b7', particles: 1 });
+
+  // Layer 6 — terminal outcomes
+  nodes.push({
+    id: 'terminal-bad',
+    name: 'End user sees Crimea as Russia',
+    detail: 'News graphics · COVID/fraud/ad/crypto dashboards · academic papers · government dashboards',
+    group: 'terminal-bad',
+    val: 22,
+    color: '#ef4444',
+  });
+  nodes.push({
+    id: 'terminal-ok',
+    name: 'End user sees Crimea as Ukraine',
+    detail: 'Highcharts override only (~2M weekly), plus GeoPandas v0.12.2+',
+    group: 'terminal-ok',
+    val: 8,
+    color: '#22c55e',
+  });
+
+  return { nodes, links };
+}
+
+const propagationGraphData = buildPropagationGraph();
+
+// ── Pipeline manifests for the rewired sections ───────────────
+const tcMani = (telecomPipeline as any);
+const tcSum = tcMani.summary;
+const tcFreshFindings = (tcMani.findings || []) as any[];
+const tcReassigned = tcSum.asns_reassigned;
+const tcStillOriginal = tcSum.asns_still_at_original_holder;
+const tcAsnsProbed = tcSum.asns_probed;
+const tcRipeRU = tcSum.asns_ripe_country_ru;
+const tcRipeUA = tcSum.asns_ripe_country_ua;
+
+const ipMani = (ipPipeline as any);
+const ipSum = ipMani.summary;
+const ipFreshFindings = (ipMani.findings || []) as any[];
+const ipPctUaFresh = ipSum.pct_ua;
+const ipPctRuFresh = ipSum.pct_ru;
+const ipPctOtherFresh = ipSum.pct_other;
+const ipAsnConsensusUaFresh = ipSum.asn_consensus_ua;
+const ipAsnConsensusRuFresh = ipSum.asn_consensus_ru;
+const ipTotalLookupsFresh = ipSum.total_lookups;
+const ipTotalIpsFresh = ipSum.total_ips_sampled;
+const ipTotalAsnsFresh = ipSum.total_asns_tested;
+
+const mediaMani = (mediaPipeline as any);
+const mediaSum = mediaMani.summary;
+const mediaTotal = mediaSum.total_articles;
+const mediaClassified = mediaSum.classified_any_signal;
+const mediaLlmVerified = mediaSum.llm_verified;
+const mediaEndorseAll = mediaSum.llm_endorses_all;
+const mediaEndorseNonRu = mediaSum.llm_endorses_nonrussian_domain;
+const mediaPrecisionAll = mediaSum.precision_stage1_overall;
+const mediaPrecisionNonRu = mediaSum.precision_stage1_nonrussian;
+const mediaMajorIntlEndorse = mediaSum.major_international_outlets_endorsements;
+const mediaPrecisionAllCi = mediaSum.precision_stage1_overall_ci95_pct;
+const mediaPrecisionNonRuCi = mediaSum.precision_stage1_nonrussian_ci95_pct;
+const mediaRule3 = mediaSum.major_intl_zero_endorsements_rule_of_3_upper_pct;
+
+const techMani = (techInfraPipeline as any);
+const techSum = techMani.summary;
+const techFindings = (techMani.findings || []) as any[];
+const techIanaCC = techSum.iana_zone1970_cc;
+const techIanaLegacy = techSum.iana_zone_tab_cc;
+const techLpnRu = techSum.libphonenumber_ru_crimean_entries;
+const techLpnUa = techSum.libphonenumber_ua_crimean_entries;
+const techLpn7978 = techSum.libphonenumber_7978_carriers;
+const techOsmUa = techSum.osm_ua_count;
+const techOsmTotal = techSum.osm_cities_tested;
+
 // Map services
 const mapFindings = catFindings('map_service');
 const mS = cs('map_service');
@@ -263,6 +531,70 @@ const propagation = [
   </div>
 </nav>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     Sticky sidebar navigation — anchors to every pipeline section
+     Hidden on mobile (toggle button shows). Active section
+     highlighted via IntersectionObserver.
+     ═══════════════════════════════════════════════════════════════ -->
+<aside id="side-nav" class="hidden xl:block fixed top-24 left-4 z-30 w-44 bg-[#111827]/90 border border-[#1e293b] rounded-xl backdrop-blur-sm p-3">
+  <div class="text-[10px] text-[#64748b] uppercase tracking-widest font-bold mb-2 px-2">{lang === 'uk' ? 'Розділи' : 'Sections'}</div>
+  <ul class="space-y-0.5 text-[11px]">
+    {[
+      { id: 'geodata', label: lang === 'uk' ? '⊗ Geodata (root)' : '⊗ Geodata (root)', accent: 'text-[#ef4444]' },
+      { id: 'wikipedia', label: lang === 'uk' ? 'Wikipedia/Wikidata' : 'Wikipedia/Wikidata' },
+      { id: 'institutions', label: lang === 'uk' ? 'Установи' : 'Institutions' },
+      { id: 'infrastructure', label: lang === 'uk' ? 'Tech infra' : 'Tech infra' },
+      { id: 'telecom', label: lang === 'uk' ? 'Телеком' : 'Telecom' },
+      { id: 'ip-geolocation', label: lang === 'uk' ? 'IP-геолокація' : 'IP geolocation' },
+      { id: 'weather', label: lang === 'uk' ? 'Погода' : 'Weather' },
+      { id: 'map-services', label: lang === 'uk' ? 'Картосервіси' : 'Map services' },
+      { id: 'media-framing', label: lang === 'uk' ? 'Медіа-фреймінг' : 'Media framing' },
+      { id: 'academic-framing', label: lang === 'uk' ? 'Академ. публікації' : 'Academic framing' },
+      { id: 'llm-audit', label: lang === 'uk' ? 'LLM-аудит' : 'LLM audit' },
+    ].map(item => (
+      <li>
+        <a href={`#${item.id}`} data-side-nav={item.id} class={`block px-2 py-1 rounded text-[#94a3b8] hover:bg-[#1e293b] hover:text-white transition ${item.accent || ''}`}>
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <div class="mt-3 pt-2 border-t border-[#1e293b] px-2 text-[9px] text-[#475569]">{lang === 'uk' ? '8/11 пайплайнів актуальні' : '8/11 pipelines live'}</div>
+</aside>
+
+<script>
+  // Highlight the currently-visible section in the sidebar
+  (function () {
+    const links = document.querySelectorAll('[data-side-nav]') as NodeListOf<HTMLAnchorElement>;
+    if (!links.length) return;
+    const map = new Map<string, HTMLAnchorElement>();
+    links.forEach(l => map.set(l.dataset.sideNav || '', l));
+
+    const setActive = (id: string) => {
+      links.forEach(l => l.classList.remove('bg-[#1e293b]', 'text-white'));
+      const link = map.get(id);
+      if (link) link.classList.add('bg-[#1e293b]', 'text-white');
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter(e => e.isIntersecting)
+          .sort((a, b) => (a.target.getBoundingClientRect().top || 0) - (b.target.getBoundingClientRect().top || 0));
+        if (visible.length) {
+          const id = (visible[0].target as HTMLElement).id;
+          if (id) setActive(id);
+        }
+      },
+      { rootMargin: '-100px 0px -60% 0px', threshold: 0 }
+    );
+    map.forEach((_, id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  })();
+</script>
+
 <!-- Hero -->
 <header class="relative overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-[#0057b7]/20 via-transparent to-[#ffd700]/10"></div>
@@ -334,6 +666,293 @@ const propagation = [
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     GEODATA — root cause finding + interactive 3D propagation chain
+     This is the top thematic section because the entire downstream
+     story collapses to this one upstream dataset.
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="geodata" class="max-w-6xl mx-auto px-6 mb-12">
+  <div class="bg-[#111827] border border-[#ef4444]/30 rounded-2xl p-8 md:p-10">
+    <div class="flex items-center gap-3 mb-2">
+      <span class="text-[10px] font-bold text-[#ef4444] uppercase tracking-widest px-2 py-1 rounded bg-[#ef4444]/10 border border-[#ef4444]/30">{lang === 'uk' ? 'Корінна причина' : 'Root cause'}</span>
+      <span class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Один файл, ~65 мільйонів завантажень на тиждень' : 'One file, ~65 million weekly downloads'}</span>
+    </div>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Geodata: чому майже кожна цифрова мапа показує Крим як Росію' : 'Geodata: why nearly every digital map shows Crimea as Russia'}</h2>
+    <p class="text-[#94a3b8] mb-2">{lang === 'uk'
+      ? 'Natural Earth — фундаментальний геоданий датасет з відкритим вихідним кодом — класифікує Крим як суверенну територію Росії. Те, що Natural Earth НЕ класифікує його так у власному рядку бази даних: ISO 3166-2, FIPS, GeoNames та Yahoo Where-on-Earth усі показують Україну. Контрадикція внутрішня — у тому ж рядку.'
+      : "Natural Earth — the foundational open-source geographic dataset — classifies Crimea's sovereignty as Russia. What Natural Earth does NOT do is read its own adjacent fields in the same row: ISO 3166-2, FIPS, GeoNames, and Yahoo Where-on-Earth all say Ukraine. The contradiction is internal."
+    }</p>
+    <p class="text-[10px] text-[#64748b] mb-6 italic">{lang === 'uk'
+      ? 'Це питання публічно піднімається понад десятиліття. Внесок цього аудиту — не відкриття, а вимірювання масштабу та документація ланцюга.'
+      : 'The issue has been raised publicly for over a decade. The contribution of this audit is not discovery — it is measurement of the scale and documentation of the chain.'
+    }</p>
+
+    <!-- 14-field internal contradiction callout -->
+    <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 mb-6">
+      <div class="text-xs text-[#ef4444] font-bold mb-3 uppercase tracking-wider">{lang === 'uk' ? '14 суперечливих полів у тому ж рядку' : '14 contradictory fields in the same row'}</div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Поля що говорять "Росія" (7)' : 'Fields saying "Russia" (7)'}</div>
+          <ul class="text-[11px] text-[#94a3b8] space-y-0.5 font-mono">
+            <li><span class="text-[#ef4444]">admin</span> = 'Russia'</li>
+            <li><span class="text-[#ef4444]">adm0_a3</span> = 'RUS'</li>
+            <li><span class="text-[#ef4444]">adm1_code</span> = 'RUS-283'</li>
+            <li><span class="text-[#ef4444]">iso_a2</span> = 'RU'</li>
+            <li><span class="text-[#ef4444]">sov_a3</span> = 'RUS'</li>
+            <li><span class="text-[#ef4444]">gu_a3</span> = 'RUS'</li>
+            <li><span class="text-[#ef4444]">geonunit</span> = 'Russia'</li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Поля що говорять "Україна" (7) — у тому ж рядку' : 'Fields saying "Ukraine" (7) — in the same row'}</div>
+          <ul class="text-[11px] text-[#94a3b8] space-y-0.5 font-mono">
+            <li><span class="text-[#22c55e]">iso_3166_2</span> = 'UA-43' <span class="text-[10px] text-[#64748b]">← ISO standard</span></li>
+            <li><span class="text-[#22c55e]">fips</span> = 'UP11' <span class="text-[10px] text-[#64748b]">← UP = Ukraine</span></li>
+            <li><span class="text-[#22c55e]">fips_alt</span> = 'UP16'</li>
+            <li><span class="text-[#22c55e]">gn_a1_code</span> = 'UA.11'</li>
+            <li><span class="text-[#22c55e]">gn_name</span> = 'Avtonomna Respublika Krym'</li>
+            <li><span class="text-[#22c55e]">gns_adm1</span> = 'UP11'</li>
+            <li><span class="text-[#22c55e]">woe_label</span> = '<span class="text-[#22c55e] font-bold">Crimea, UA, Ukraine</span>' <span class="text-[10px] text-[#64748b]">← literally</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-[10px] text-[#64748b] mt-3">{lang === 'uk'
+        ? `Той самий патерн для Севастополя: ${geoSevRU} полів РФ + ${geoSevUA} полів UA в одному рядку (iso_3166_2='UA-40', woe_label='Sevastopol City Municipality, UA, Ukraine'). Природа Землі має правильну інформацію в сусідніх полях власного запису. Більшість бібліотек нижче по течії читають перші 7 полів і ігнорують останні 7.`
+        : `Same pattern for Sevastopol: ${geoSevRU} RU-fields + ${geoSevUA} UA-fields in the same row (iso_3166_2='UA-40', woe_label='Sevastopol City Municipality, UA, Ukraine'). Natural Earth has the correct information in adjacent fields of its own record. Most downstream libraries read the first 7 fields and ignore the last 7.`
+      }</p>
+    </div>
+
+    <!-- 5-stat header row -->
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
+        <div class="text-2xl font-bold text-[#ef4444]">{(geoCrossEcoTotal / 1_000_000).toFixed(1)}M</div>
+        <div class="text-[10px] text-[#94a3b8] mt-1">{lang === 'uk' ? 'завантажень/тиждень' : 'weekly downloads'}</div>
+        <div class="text-[10px] text-[#64748b]">npm + PyPI + CRAN + Rust</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
+        <div class="text-2xl font-bold text-[#ef4444]">{geoCrimeaRU + geoSevRU + geoCrimeaUA + geoSevUA}</div>
+        <div class="text-[10px] text-[#94a3b8] mt-1">{lang === 'uk' ? 'суперечливих полів' : 'contradictory fields'}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'у 2 рядках NE' : 'across 2 NE rows'}</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 text-center">
+        <div class="text-2xl font-bold text-[#ef4444]">{geoOpenIssues}</div>
+        <div class="text-[10px] text-[#94a3b8] mt-1">{lang === 'uk' ? 'GitHub-питань' : 'GitHub issues'}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? `всі без відповіді (${geoTotalIssues} всього)` : `all unactioned (${geoTotalIssues} total)`}</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#22c55e]/30 text-center">
+        <div class="text-2xl font-bold text-[#22c55e]">1</div>
+        <div class="text-[10px] text-[#94a3b8] mt-1">{lang === 'uk' ? 'свідоме перевизначення' : 'deliberate override'}</div>
+        <div class="text-[10px] text-[#64748b]">Highcharts</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30 text-center">
+        <div class="text-2xl font-bold text-[#0057b7]">{(geoNugetCumulative / 1_000_000).toFixed(0)}M</div>
+        <div class="text-[10px] text-[#94a3b8] mt-1">{lang === 'uk' ? '.NET всього' : '.NET cumulative'}</div>
+        <div class="text-[10px] text-[#64748b]">NetTopologySuite</div>
+      </div>
+    </div>
+
+    <!-- ═══ INTERACTIVE 3D PROPAGATION CHAIN ═══ -->
+    <div class="mb-6">
+      <div class="flex items-center justify-between mb-2">
+        <div>
+          <h3 class="text-base font-bold text-white">{lang === 'uk' ? 'Інтерактивний 3D-ланцюг розповсюдження' : 'Interactive 3D propagation chain'}</h3>
+          <p class="text-[11px] text-[#64748b] mt-0.5">{lang === 'uk'
+            ? 'Натисніть і перетягніть, щоб обертати · колесо для масштабу · клацніть по вузлу, щоб полетіти до нього · наведіть для деталей'
+            : 'Click and drag to rotate · scroll to zoom · click any node to fly to it · hover for details'
+          }</p>
+        </div>
+        <div class="hidden md:flex items-center gap-3 text-[10px] text-[#64748b]">
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>{lang === 'uk' ? 'правильно' : 'correct'}</span>
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>{lang === 'uk' ? 'успадковує помилку' : 'inherits the wrong answer'}</span>
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>GDAL hub</span>
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#0057b7]"></span>{lang === 'uk' ? 'екосистема' : 'ecosystem'}</span>
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#94a3b8]"></span>{lang === 'uk' ? 'десктоп GIS' : 'desktop GIS'}</span>
+        </div>
+      </div>
+      <div id="ng-graph-container" class="relative w-full bg-[#0a0e1a] rounded-xl border border-[#1e293b] overflow-hidden" style="height: 520px;">
+        <div id="ng-graph-loading" class="absolute inset-0 flex flex-col items-center justify-center text-[#64748b] text-xs gap-2">
+          <div class="w-8 h-8 border-2 border-[#ef4444] border-t-transparent rounded-full animate-spin"></div>
+          <div>{lang === 'uk' ? 'Завантаження інтерактивної 3D-візуалізації…' : 'Loading interactive 3D visualization…'}</div>
+          <div class="text-[10px] text-[#64748b]">3d-force-graph + Three.js (~600 KB)</div>
+        </div>
+        <div id="ng-graph"></div>
+        <div id="ng-tooltip" class="hidden absolute pointer-events-none bg-[#0a0e1a]/95 border border-[#1e293b] rounded-lg px-3 py-2 text-xs text-[#e2e8f0] max-w-xs z-10 backdrop-blur-sm" style="left: 0; top: 0;"></div>
+      </div>
+      <div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-[#64748b]">
+        <span><span class="text-[#94a3b8]">{lang === 'uk' ? 'Натуральна Земля' : 'Natural Earth'}</span> → GDAL/PROJ/GEOS → {lang === 'uk' ? '5 екосистем' : '5 ecosystems'} → 32 {lang === 'uk' ? 'бібліотек' : 'libraries'} → {lang === 'uk' ? 'кінцеве рішення' : 'end outcome'}</span>
+        <span class="text-[#22c55e]">{lang === 'uk' ? '↗ зелена гілка тільки одна — Highcharts' : '↗ the only green branch is Highcharts'}</span>
+      </div>
+    </div>
+
+    <!-- Per-package live download breakdown -->
+    <details class="bg-[#0a0e1a] rounded-xl border border-[#1e293b] mb-6">
+      <summary class="cursor-pointer select-none px-4 py-3 text-xs font-bold text-[#94a3b8] uppercase tracking-wider hover:text-white transition">{lang === 'uk' ? 'Розгорнути: 32 пакети × тижневі завантаження × жива інформація' : 'Expand: 32 packages × weekly downloads × live data'}</summary>
+      <div class="px-4 pb-4 space-y-3">
+        {[
+          { id: 'javascript_npm', label: lang === 'uk' ? 'npm (JavaScript)' : 'npm (JavaScript)' },
+          { id: 'python_pypi', label: 'PyPI (Python)' },
+          { id: 'r_cran', label: 'CRAN (R)' },
+          { id: 'rust_cratesio', label: 'crates.io (Rust)' },
+          { id: 'dotnet_nuget', label: 'NuGet (.NET) — cumulative lifetime' },
+        ].map(eco => {
+          const finding: any = geoFindings.find((f: any) => f.ecosystem === eco.id);
+          if (!finding) return null;
+          let pkgs: any[] = [];
+          if (eco.id === 'python_pypi') {
+            pkgs = [...(finding.packages_high_level || []), ...(finding.packages_cpp_bindings || [])];
+          } else if (eco.id === 'rust_cratesio') {
+            pkgs = (finding.crates || []).map((c: any) => ({ package: c.crate, weekly_downloads: c.weekly_downloads, description: c.description }));
+          } else if (eco.id === 'dotnet_nuget') {
+            pkgs = (finding.packages || []).map((p: any) => ({ package: p.package, weekly_downloads: p.lifetime_downloads, description: p.description }));
+          } else {
+            pkgs = finding.packages || [];
+          }
+          pkgs = pkgs.sort((a: any, b: any) => (b.weekly_downloads || 0) - (a.weekly_downloads || 0));
+          return (
+            <div>
+              <div class="text-[11px] font-bold text-[#0057b7] uppercase tracking-wider mb-1">{eco.label}</div>
+              <div class="space-y-0.5">
+                {pkgs.map((p: any) => (
+                  <div class="flex items-center justify-between gap-2 text-[11px]">
+                    <span class={`font-mono ${p.package === 'highcharts' ? 'text-[#22c55e] font-bold' : (p.package === 'geopandas' ? 'text-[#facc15]' : 'text-[#94a3b8]')}`}>
+                      {p.package === 'highcharts' && '✓ '}{p.package === 'geopandas' && '⚠ '}{p.package}
+                    </span>
+                    <span class={`font-mono ${p.package === 'highcharts' ? 'text-[#22c55e]' : 'text-[#64748b]'}`}>
+                      {p.weekly_downloads ? p.weekly_downloads.toLocaleString() : '—'} /wk
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </details>
+
+    <!-- Insight callout -->
+    <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30">
+      <p class="text-sm text-[#94a3b8] leading-relaxed">
+        <span class="text-[#0057b7] font-bold">{lang === 'uk' ? 'Структурний висновок' : 'Structural lesson'}:</span> {lang === 'uk'
+          ? 'ланцюг розповсюдження не «JavaScript проти Python проти R» як паралельні екосистеми — це одне дерево, вкорінене в GDAL/PROJ/GEOS (C++), з мовними прив\'язками як гілками. Natural Earth поширює shapefile-и, GDAL — універсальний читач shapefile-ів, і кожен геопросторовий додаток, не написаний на JavaScript, читає через GDAL. Highcharts — єдиний свідомий виняток у всьому досліджуваному наборі з 32 пакетів. Доказ існування того, що перевизначення технічно можливе, і редакційне рішення, яке ~99% екосистеми відмовилися прийняти.'
+          : 'the propagation chain is not "JavaScript vs Python vs R" as parallel ecosystems — it is one tree rooted at GDAL/PROJ/GEOS (C++) with language bindings as branches. Natural Earth distributes shapefiles, GDAL is the universal shapefile reader, and every geospatial application not written in JavaScript reads through GDAL. Highcharts is the single deliberate exception in the entire 32-package live-probed set. Existence proof that overriding is technically possible — and an editorial decision that ~99% of the ecosystem has declined to make.'
+        }
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- propagation graph data — picked up by the lazy-loaded 3d-force-graph script below -->
+<script type="application/json" id="ng-graph-data" set:html={JSON.stringify(propagationGraphData)}></script>
+
+<script>
+  // Lazy-load 3d-force-graph (Three.js + WebGL) when the propagation
+  // chain section comes into view. Library is ~600 KB so we don't want
+  // to block initial render.
+  (function () {
+    const container = document.getElementById('ng-graph-container');
+    if (!container) return;
+
+    let loaded = false;
+    const observer = new IntersectionObserver(async ([entry]) => {
+      if (!entry.isIntersecting || loaded) return;
+      loaded = true;
+      observer.disconnect();
+
+      const graphEl = document.getElementById('ng-graph') as HTMLElement | null;
+      const loadingEl = document.getElementById('ng-graph-loading');
+      const dataEl = document.getElementById('ng-graph-data');
+      const tooltipEl = document.getElementById('ng-tooltip');
+      if (!graphEl || !dataEl) return;
+
+      let data: any = null;
+      try {
+        data = JSON.parse(dataEl.textContent || '{"nodes":[],"links":[]}');
+      } catch {
+        if (loadingEl) loadingEl.innerHTML = '<div class="text-[#ef4444] text-xs">Failed to parse propagation graph data.</div>';
+        return;
+      }
+
+      try {
+        const mod = await import('https://esm.sh/3d-force-graph@1.73.4');
+        const ForceGraph3D = (mod as any).default || (mod as any);
+
+        const width = container.clientWidth;
+        const height = 520;
+
+        const Graph = ForceGraph3D()(graphEl)
+          .graphData(data)
+          .width(width)
+          .height(height)
+          .backgroundColor('#0a0e1a')
+          .nodeLabel(() => '')
+          .nodeColor((n: any) => n.color || '#94a3b8')
+          .nodeVal((n: any) => n.val || 2)
+          .nodeOpacity(0.95)
+          .nodeResolution(16)
+          .linkColor((l: any) => l.color || '#475569')
+          .linkOpacity(0.55)
+          .linkWidth((l: any) => Math.max(0.5, (l.value || 1) * 0.4))
+          .linkDirectionalParticles((l: any) => l.particles || 0)
+          .linkDirectionalParticleSpeed(0.006)
+          .linkDirectionalParticleWidth(1.2)
+          .onNodeClick((node: any) => {
+            const distance = 80;
+            const distRatio = 1 + distance / Math.hypot(node.x || 1, node.y || 1, node.z || 1);
+            Graph.cameraPosition(
+              { x: (node.x || 0) * distRatio, y: (node.y || 0) * distRatio, z: (node.z || 0) * distRatio },
+              node,
+              1500,
+            );
+          })
+          .onNodeHover((node: any) => {
+            if (!tooltipEl) return;
+            if (node) {
+              tooltipEl.classList.remove('hidden');
+              tooltipEl.innerHTML =
+                '<div class="font-bold text-white">' + (node.name || '') + '</div>' +
+                (node.detail ? '<div class="text-[10px] text-[#94a3b8] mt-1">' + node.detail + '</div>' : '');
+              graphEl.style.cursor = 'pointer';
+            } else {
+              tooltipEl.classList.add('hidden');
+              graphEl.style.cursor = 'default';
+            }
+          });
+
+        // Track mouse for tooltip positioning
+        graphEl.addEventListener('mousemove', (e: MouseEvent) => {
+          if (!tooltipEl || tooltipEl.classList.contains('hidden')) return;
+          const rect = container.getBoundingClientRect();
+          const x = Math.min(e.clientX - rect.left + 12, rect.width - 280);
+          const y = Math.min(e.clientY - rect.top + 12, rect.height - 80);
+          tooltipEl.style.left = x + 'px';
+          tooltipEl.style.top = y + 'px';
+        });
+
+        // Resize handling
+        const handleResize = () => {
+          Graph.width(container.clientWidth).height(520);
+        };
+        window.addEventListener('resize', handleResize);
+
+        // Hide loading indicator
+        if (loadingEl) loadingEl.style.display = 'none';
+
+        // Initial camera pull-back so the whole chain is visible
+        setTimeout(() => {
+          Graph.zoomToFit(2000, 50);
+        }, 1500);
+      } catch (err) {
+        console.error('Failed to load 3d-force-graph', err);
+        if (loadingEl) {
+          loadingEl.innerHTML = '<div class="text-[#ef4444] text-xs px-4 text-center">Failed to load 3D visualization. Try a modern browser with WebGL support.</div>';
+        }
+      }
+    }, { rootMargin: '200px' });
+
+    observer.observe(container);
+  })();
+</script>
+
 <!-- Category Bar Chart -->
 <section class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] rounded-2xl p-6 md:p-8 border border-[#1e293b]">
@@ -366,11 +985,12 @@ const propagation = [
 <!-- Media Framing (GDELT) -->
 <section id="media-framing" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingMediaTitle} — 154K {lang === 'uk' ? 'статей' : 'Articles'}</h2>
-    <p class="text-[#94a3b8] mb-6">{lang === 'uk'
-      ? 'GDELT, 2015-2026. 154K статей проскановано, 8,472 верифіковано LLM. Виключаючи російські ЗМІ — жодне велике міжнародне видання не підтримує російську позицію.'
-      : 'GDELT, 2015–2026. 154K articles scanned, 8,472 LLM-verified. Excluding Russian media — zero major international outlets endorse Russian sovereignty framing.'
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingMediaTitle} — {(mediaTotal/1000).toFixed(0)}K {lang === 'uk' ? 'статей' : 'Articles'}</h2>
+    <p class="text-[#94a3b8] mb-3">{lang === 'uk'
+      ? `GDELT 2015–2026. ${mediaTotal.toLocaleString()} статей проіндексовано, ${mediaClassified.toLocaleString()} класифіковано Stage 1, ${mediaLlmVerified.toLocaleString()} верифіковано LLM. Серед ${mediaMajorIntlEndorse} статей з топ-10 міжнародних видань (BBC, Reuters, CNN, NYT, Guardian, AP, AFP, DW, Le Monde, El País): нуль ендорсментів. Stage 1 неросійська точність ${mediaPrecisionNonRu}% — означає, що ${(100 - mediaPrecisionNonRu).toFixed(1)}% «російсько-фреймованих» хітів у західних ЗМІ — це цитування, а не схвалення.`
+      : `GDELT 2015–2026. ${mediaTotal.toLocaleString()} articles indexed, ${mediaClassified.toLocaleString()} Stage-1 classified, ${mediaLlmVerified.toLocaleString()} LLM-verified. Across the 10 major international outlets watch-list (BBC, Reuters, CNN, NYT, Guardian, AP, AFP, DW, Le Monde, El País): ${mediaMajorIntlEndorse} endorsements (rule-of-3 upper bound ≤ ${mediaRule3}%). Stage-1 non-Russian precision is just ${mediaPrecisionNonRu}% [${mediaPrecisionNonRuCi[0]}, ${mediaPrecisionNonRuCi[1]}] — meaning ${(100 - mediaPrecisionNonRu).toFixed(1)}% of Stage-1 "russia-framed" flags on Western media are quotation, not endorsement. The methodological finding: naive keyword monitors of Western media over-report by ~10×.`
     }</p>
+    <div class="text-[10px] text-[#64748b] mb-6 italic">{lang === 'uk' ? 'Свіжі дані з pipelines/media/data/manifest.json — Stage 1 точність' : 'Fresh data from pipelines/media/data/manifest.json — Stage 1 precision'} <span class="text-[#22c55e] font-mono">{mediaPrecisionAll}%</span> [{mediaPrecisionAllCi[0]}, {mediaPrecisionAllCi[1]}] · {mediaEndorseAll.toLocaleString()} {lang === 'uk' ? 'підтверджених ендорсментів, з них' : 'confirmed endorsements,'} {mediaEndorseNonRu} {lang === 'uk' ? 'не з російських доменів' : 'from non-Russian domains'}.</div>
 
     <!-- Pipeline infographic -->
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
@@ -1084,7 +1704,11 @@ const propagation = [
 <section id="ip-geolocation" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'IP-геолокація: де інтернет думає Крим?' : 'IP geolocation: where does the internet think Crimea is?'}</h2>
-    <p class="text-[#94a3b8] mb-6">{lang === 'uk' ? 'Ми перевірили 90 реальних кримських IP-адрес від 9 провайдерів через 2 сервіси геолокації. Результат залежить не від географії, а від того, коли провайдер був зареєстрований.' : 'We tested 90 real Crimean IP addresses from 9 ISPs via 2 geolocation services. The result depends not on geography but on when the ISP was registered.'}</p>
+    <p class="text-[#94a3b8] mb-3">{lang === 'uk'
+      ? `Свіжі живі дані: ${ipTotalIpsFresh} IP-адрес × ${ipTotalAsnsFresh} ASN × ${ipTotalLookupsFresh} запитів. ${ipPctUaFresh}% розв'язуються як Україна, ${ipPctRuFresh}% як Росія, ${ipPctOtherFresh}% як треті країни (Німеччина, Польща, Кувейт, Велика Британія — наслідок реєстрового відмивання, документованого в розділі telecom).`
+      : `Fresh live data: ${ipTotalIpsFresh} IP addresses across ${ipTotalAsnsFresh} ASNs, ${ipTotalLookupsFresh} total lookups via ip-api.com + ipinfo.io cross-validation. ${ipPctUaFresh}% resolve as Ukraine, ${ipPctRuFresh}% as Russia, ${ipPctOtherFresh}% as third countries (Germany, Poland, Kuwait, the UK — the consequence of registry laundering documented in the telecom section). Per-ASN consensus: ${ipAsnConsensusUaFresh} UA-dominant, ${ipAsnConsensusRuFresh} RU-dominant.`
+    }</p>
+    <div class="text-[10px] text-[#64748b] italic mb-6">{lang === 'uk' ? 'Свіжі дані з' : 'Fresh data from'} <span class="font-mono">pipelines/ip/data/manifest.json</span></div>
 
     <!-- The story in three rows -->
     <div class="space-y-4 mb-8">
@@ -1164,7 +1788,32 @@ const propagation = [
 <section id="infrastructure" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.infraTitle}</h2>
-    <p class="text-[#94a3b8] mb-8">{t.infraDesc}</p>
+    <p class="text-[#94a3b8] mb-3">{t.infraDesc}</p>
+
+    <!-- Fresh live probe results from pipelines/tech_infrastructure -->
+    <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30 mb-6">
+      <div class="text-xs text-[#0057b7] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Жива перевірка (3 зонди)' : 'Live probes (3 systems)'}</div>
+      <div class="grid md:grid-cols-3 gap-3 text-[11px]">
+        <div>
+          <div class="text-[#94a3b8] font-bold">IANA tzdata</div>
+          <div class="text-[#64748b] mt-0.5">zone1970.tab country code: <span class="font-mono text-[#f59e0b]">{techIanaCC}</span> {lang === 'uk' ? '(подвійний)' : '(dual, RU first)'}</div>
+          <div class="text-[#64748b]">{lang === 'uk' ? 'застаріла zone.tab:' : 'legacy zone.tab:'} <span class="font-mono text-[#22c55e]">{techIanaLegacy}</span></div>
+        </div>
+        <div>
+          <div class="text-[#94a3b8] font-bold">libphonenumber</div>
+          <div class="text-[#64748b] mt-0.5">{lang === 'uk' ? '+7 кримських' : '+7 Crimean'}: <span class="font-mono text-[#ef4444]">{techLpnRu}</span> · +380: <span class="font-mono text-[#22c55e]">{techLpnUa}</span></div>
+          <div class="text-[#64748b]">+7-978 {lang === 'uk' ? 'операторів' : 'carriers'}: <span class="font-mono text-[#ef4444]">{techLpn7978}</span></div>
+        </div>
+        <div>
+          <div class="text-[#94a3b8] font-bold">OSM Nominatim</div>
+          <div class="text-[#64748b] mt-0.5">{lang === 'uk' ? 'кримських міст' : 'Crimean cities'} → UA: <span class="font-mono text-[#22c55e]">{techOsmUa}/{techOsmTotal}</span></div>
+        </div>
+      </div>
+      <div class="mt-3 text-[10px] text-[#64748b]">{lang === 'uk'
+        ? 'Це шаблон Standards Silencing: ITU формально перелічує +380-65x, але libphonenumber (рівень валідації, який всі додатки фактично використовують) тихо переключився на російський +7-978. Жоден орган ООН не помічає, коли стандарт обходять його ж власні споживачі.'
+        : 'This is the Standards Silencing pattern: ITU formally lists +380-65x, but libphonenumber (the validation layer every downstream application actually consults) has quietly switched to the Russian +7-978. No UN body notices when a standard is bypassed by its own consumers.'
+      }</div>
+    </div>
 
     <!-- Donut + Stats (same pattern as other sections) -->
     <div class="grid md:grid-cols-[240px_1fr] gap-8 mb-10">
@@ -1355,7 +2004,34 @@ const propagation = [
 <section id="telecom" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.telecomTitle}</h2>
-    <p class="text-[#94a3b8] mb-8">{t.telecomDesc}</p>
+    <p class="text-[#94a3b8] mb-3">{t.telecomDesc}</p>
+
+    <!-- Registry laundering finding from live RIPE STAT probe -->
+    <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#ef4444]/30 mb-6">
+      <div class="flex items-center justify-between mb-2">
+        <div class="text-xs text-[#ef4444] font-bold uppercase tracking-wider">{lang === 'uk' ? 'Реєстрове відмивання — живий зонд RIPE NCC' : 'Registry laundering — live RIPE NCC probe'}</div>
+        <div class="text-2xl font-black text-[#ef4444]">{tcReassigned}/{tcAsnsProbed}</div>
+      </div>
+      <p class="text-[11px] text-[#94a3b8] leading-relaxed">{lang === 'uk'
+        ? `${tcReassigned} з ${tcAsnsProbed} ASN, історично пов'язаних з кримськими операторами, більше не належать своїм оригінальним власникам — це 89% переуступок. Тільки Miranda-Media (AS201776) залишилась на оригінальному власнику. Інші 8 переуступлено через RIPE NCC ripe-733 без перевірки суверенітету — Mobile Telecommunications Company K.S.C.P. (Кувейт), UNINET (польський ISP), Yahoo-UK і кільком фізичним особам. BGP-історія кожного «відмитого» ASN ефективно стирається на рівні реєстру.`
+        : `${tcReassigned} of ${tcAsnsProbed} ASNs historically associated with Crimean operators are no longer held by their original holders — an 89% reassignment rate. Only Miranda-Media (AS201776) remains. The other 8 were reassigned under RIPE NCC's transfer policy ripe-733 without sovereignty review, to entities including Mobile Telecommunications Company K.S.C.P. (Kuwait), UNINET (Polish ISP), Yahoo-UK Limited, and individuals. The BGP history of each laundered ASN is effectively bleached at the registry layer — a downstream geocoder sees Kuwait, Poland, or the UK rather than occupied Ukraine.`
+      }</p>
+      <div class="mt-3 grid grid-cols-3 gap-2 text-[10px]">
+        <div class="text-center bg-[#0a0e1a] p-2 rounded border border-[#1e293b]">
+          <div class="font-mono text-[#ef4444] font-bold">{tcRipeRU}</div>
+          <div class="text-[#64748b]">{lang === 'uk' ? 'зараз RU' : 'currently RU'}</div>
+        </div>
+        <div class="text-center bg-[#0a0e1a] p-2 rounded border border-[#1e293b]">
+          <div class="font-mono text-[#22c55e] font-bold">{tcRipeUA}</div>
+          <div class="text-[#64748b]">{lang === 'uk' ? 'зараз UA' : 'currently UA'}</div>
+        </div>
+        <div class="text-center bg-[#0a0e1a] p-2 rounded border border-[#1e293b]">
+          <div class="font-mono text-[#f59e0b] font-bold">{tcAsnsProbed - tcRipeRU - tcRipeUA}</div>
+          <div class="text-[#64748b]">PL · KW · GB</div>
+        </div>
+      </div>
+      <div class="mt-2 text-[10px] text-[#64748b] italic">{lang === 'uk' ? 'Свіжі дані з' : 'Fresh data from'} <span class="font-mono">pipelines/telecom/data/manifest.json</span></div>
+    </div>
 
     <!-- Stat overview -->
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
