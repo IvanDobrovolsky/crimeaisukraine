@@ -1,10 +1,12 @@
 # Tech Infrastructure: Standards, Libraries, and Protocols
 
-## Why this layer matters
+Behind every map and every login form there are technical standards — timezone databases, phone-number libraries, postal codes, airport identifiers, country codes. They are invisible to end users and propagate to billions of applications. When the IANA timezone database lists `Europe/Simferopol` with country code `RU,UA`, every app inheriting that database silently encodes a sovereignty position.
 
-Behind every map and every login form there are technical standards: timezone databases, phone number libraries, postal code systems, airport identifiers, country codes. These are usually invisible to end users but propagate to billions of applications. **When the IANA timezone database lists Europe/Simferopol with country code `RU,UA` (dual), every app inheriting that database silently encodes a sovereignty position.**
+## Headline
 
-This pipeline audits 15 infrastructure-layer systems and the libraries built on top of them. Most of these libraries are downloaded **tens of millions of times per week** from npm and PyPI. The combined downstream impact of the timezone and phone-number libraries alone exceeds **175 million weekly downloads**.
+**The pipeline runs three live probes covering the foundational standards layer that every operating system, browser, and Android phone consults: the IANA Time Zone Database, Google libphonenumber, and OpenStreetMap Nominatim. Live results: IANA `zone1970.tab` lists `Europe/Simferopol` as `RU,UA` — a dual-country listing with **Russia first**. The legacy `zone.tab` still says `UA`. Google libphonenumber's `+7-978` carrier file lists **4 Russian mobile operators currently active under a prefix Russia unilaterally assigned in 2014 and never submitted to ITU**: Elemte-Invest, K-Telecom Ltd, MTS, Sevastopol TELECOM. OpenStreetMap Nominatim resolves all 6 tested Crimean cities to country_code=UA. The IANA dual-listing and the libphonenumber carrier file together establish the "Standards Silencing" pattern documented in the [telecom pipeline](../telecom/README.md): the formal standards body (ITU) still lists the Ukrainian assignment, but the validation layer that every downstream application actually consults has quietly switched to the Russian numbering. The UN system has no mechanism to notice when a standard is being selectively silenced by its own consumers.**
+
+This pipeline's impact also has a *quantifiable* downstream weight: the IANA dual listing propagates to roughly **189 million weekly library downloads** across pytz, dayjs, luxon, moment-timezone, and date-fns-tz alone — see the propagation diagram below.
 
 ## What is the IANA Time Zone Database?
 
@@ -79,9 +81,14 @@ The downstream consumers include Django (every Python web app), Pandas (data sci
 
 libphonenumber maintains a single XML metadata file ([`PhoneNumberMetadata.xml`](https://github.com/google/libphonenumber/blob/master/resources/PhoneNumberMetadata.xml)) that describes the numbering plan for every country. For each country code, the file lists the valid prefix patterns and area codes.
 
-For Crimea, libphonenumber maps **`+7-365`** (the Russian-assigned numbering for Crimean cities) to country code **`RU` (Russia)**. The library does not have a corresponding entry under `+380` for Crimean Ukrainian numbers — the historical Ukrainian assignment.
+For Crimea, libphonenumber maps **`+7-365`** and **`+7-978`** (the Russian-assigned numbering for Crimean cities and mobile carriers) to country code **`RU` (Russia)**. Live fetch of [`resources/carrier/en/7.txt`](https://raw.githubusercontent.com/google/libphonenumber/master/resources/carrier/en/7.txt) shows **4 Russian mobile operators currently listed under the `+7-978` Crimean mobile prefix**:
 
-This means: when a user enters a Crimean phone number `+7-3652-XXXXXX`, libphonenumber says "this is a Russian number." Every form, every fraud system, every messaging app inherits this classification. **The library is treating the Russian unilateral numbering as the canonical answer, despite ITU never having reassigned the Crimean numbering blocks** (see the `institutions` pipeline for ITU's position).
+- **Elemte-Invest**
+- **K-Telecom Ltd**
+- **MTS**
+- **Sevastopol TELECOM**
+
+Russia assigned `+7-978` unilaterally in 2014 and never submitted it to ITU. The fact that libphonenumber lists 4 active carriers under it means every messaging app, every Android phone, every fraud-detection system that uses libphonenumber treats those carriers as canonical Russian operators. ITU's [E.164 numbering plan](https://www.itu.int/rec/T-REC-E.164) still has `+380-65x` and `+380-692` assigned to Ukraine — the Russian assignment is not in the international plan — but the validation layer has bypassed the standards body entirely. We call this **Standards Silencing**: the standard is not revoked, it is selectively bypassed by its own downstream consumers, and the UN system has no mechanism to notice. See the [telecom pipeline](../telecom/README.md) for the broader concept.
 
 ## What is the Cloudflare contrast?
 
@@ -91,53 +98,72 @@ This means: when a user enters a Crimean phone number `+7-3652-XXXXXX`, libphone
 
 Cloudflare is an existence proof that **following the international standard is technically possible**. Other providers choose to follow physical routing because that's "more accurate" by their own metrics — but accuracy of what? If the standard says one thing and the routing says another, the choice is a sovereignty decision.
 
-## How we measured
+## What does OpenStreetMap Nominatim return?
+
+[OpenStreetMap](https://www.openstreetmap.org/) is the other half of the web's open mapping infrastructure. Its [Nominatim](https://nominatim.openstreetmap.org/) geocoder is the free alternative to Google Geocoding and powers every application that asks *"what country is this latitude/longitude in?"* without a paid API. OSM formally applies the ["On the Ground" rule](https://wiki.openstreetmap.org/wiki/On_the_ground_rule), which in principle could support either the Russian or the Ukrainian classification for Crimea — depending on which version of "the ground" a given editor sees.
+
+Live probe: we queried Nominatim for 6 Crimean cities (Simferopol, Sevastopol, Yalta, Kerch, Feodosia, Evpatoria). **All 6 returned `country_code=UA` (`Україна`).** OSM applies the on-the-ground rule but the Nominatim geocoder, in its current deployment, consistently resolves Crimean cities to Ukraine. This is one of the cleanest cases in the audit where the *policy framework* permits ambiguity but the *operational answer* is unambiguous.
+
+## Pipeline architecture
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
-graph TB
-    A["GitHub source files<br/>raw.githubusercontent.com"] --> B["Direct fetch<br/>zone1970.tab<br/>PhoneNumberMetadata.xml<br/>cldr/subdivisions.xml"]
-    B --> C["Parse fields<br/>find Crimean entries"]
-    C --> D["Compare against<br/>international standards<br/>ICAO / ITU / ISO 3166"]
-    D --> E["Status classifier<br/>correct / incorrect / dual / blocked"]
-    F["npm registry API<br/>pypistats.org"] --> G["Download counts<br/>(weekly snapshot)"]
-    G --> H["Multiply by impact"]
-    E --> I["data/manifest.json"]
-    H --> I
+flowchart TB
+    START["3 live probes"] --> P1["<b>IANA tzdata</b><br/>github.com/eggert/tz<br/>zone1970.tab + zone.tab"]
+    START --> P2["<b>libphonenumber</b><br/>github.com/google/libphonenumber<br/>geocoding/en/7.txt + 380.txt<br/>carrier/en/7.txt (+7-978)"]
+    START --> P3["<b>OSM Nominatim</b><br/>nominatim.openstreetmap.org<br/>6 Crimean cities"]
+    P1 --> CLS["Classify per probe:<br/>correct / incorrect /<br/>ambiguous / na"]
+    P2 --> CLS
+    P3 --> CLS
+    CLS --> MANIFEST[("pipelines/tech_infrastructure/<br/>data/manifest.json")]
 
-    style A fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style B fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style F fill:#111827,stroke:#0057b7,color:#e5e5e5
-    style C fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style D fill:#111827,stroke:#1e293b,color:#e5e5e5
-    style I fill:#111827,stroke:#22c55e,color:#22c55e
+    style START fill:#111827,stroke:#1e293b,color:#e5e5e5
+    style P1 fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style P2 fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style P3 fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style CLS fill:#111827,stroke:#1e293b,color:#94a3b8
+    style MANIFEST fill:#052e1a,stroke:#22c55e,color:#22c55e
 ```
 
 ## Findings
 
-| Standard / library | Crimea classification | Status |
-|---|---|---|
-| **IANA tz `zone1970.tab`** | `RU,UA` (dual listing) | ⚠ Dual |
-| moment-timezone (npm 14.2M/wk) | Inherits IANA dual | ⚠ |
-| **luxon (npm 23.2M/wk)** | Inherits IANA dual | ⚠ |
-| **date-fns-tz (npm 7.1M/wk)** | Inherits IANA dual | ⚠ |
-| **dayjs (npm 39.6M/wk)** | Inherits IANA via Intl API | ⚠ |
-| **pytz (PyPI 105.5M/wk)** | Inherits IANA dual | ⚠ |
-| **Google libphonenumber** | `+7-365` → RU | ✗ |
-| libphonenumber-js (npm 14.1M/wk) | Inherits libphonenumber | ✗ |
-| Russian Post postal codes | `29xxxx` for Crimea | ✗ |
-| **ICAO airport codes** | UKFF (Simferopol), UKFB (Sevastopol) | ✓ |
-| IATA codes | SIP, UKS | ✓ |
-| **ISO 3166-2** | UA-43, UA-40 only — no RU-CR | ✓ |
-| **CLDR (Unicode)** | 83 RU subdivisions, zero include Crimea | ✓ |
-| **Cloudflare** | UA-43 (follows ISO) | ✓ |
-| **Domain TLDs** | .ua vs .ru ccTLDs | ✓ |
+### Live probes (what this pipeline measures on every run)
 
-**Status counts**: 5 correct, 3 incorrect, 7 dual/ambiguous.
+| Probe | Result | Status |
+|---|---|:---:|
+| **IANA `zone1970.tab`** | `RU,UA +4457+03406 Europe/Simferopol Crimea` — dual, Russia listed first | ⚠️ ambiguous |
+| **IANA legacy `zone.tab`** | `UA` (older format, single country code) | ✅ correct |
+| **libphonenumber `+7-978` carrier file** | 4 active Russian mobile carriers: Elemte-Invest, K-Telecom Ltd, MTS, Sevastopol TELECOM | ❌ incorrect |
+| **libphonenumber `+7` geocoding** | 2 Crimean-city entries | ❌ incorrect |
+| **libphonenumber `+380` geocoding** | 3 Crimean-city entries (dual-encoded) | — |
+| **OSM Nominatim** | 6 / 6 Crimean cities → `country_code=UA` | ✅ correct |
+
+### Documented downstream libraries (not live-probed, see propagation diagram)
+
+| Library | Registry | Weekly downloads | Inherits from |
+|---|---|---:|---|
+| **pytz** | PyPI | 105.5M | IANA tzdata |
+| **dayjs** | npm | 39.6M | IANA tzdata (via Intl API) |
+| **luxon** | npm | 23.2M | IANA tzdata |
+| **moment-timezone** | npm | 14.2M | IANA tzdata |
+| **date-fns-tz** | npm | 7.1M | IANA tzdata |
+| **libphonenumber-js** | npm | 14.1M | Google libphonenumber |
+| **google-libphonenumber** | npm | 1.5M | Google libphonenumber |
+
+Combined weekly download impact: **~205 million**. Every one of these libraries inherits the IANA `RU,UA` dual listing or the libphonenumber `+7-978` Russian-carrier assignment without doing its own sovereignty verification.
+
+### Documented adjacent standards (covered in the `institutions` pipeline)
+
+| System | Finding | Source |
+|---|---|---|
+| **ICAO Doc 7910** | UKFF (Simferopol), UKFB (Sevastopol) — Ukrainian prefix maintained | see [institutions](../institutions/README.md) |
+| **ISO 3166-2** | UA-43, UA-40 only. 83 Russian subdivisions, zero include Crimea | see [institutions](../institutions/README.md) |
+| **Unicode CLDR** | 83 Russian subdivisions, zero include Crimea (verified from GitHub source) | see [institutions](../institutions/README.md) |
+| **Cloudflare** | UA-43 (follows ISO instead of BGP) | see [ip](../ip/README.md) |
 
 ### The contrast that matters
 
-Cloudflare and ISO 3166-2 follow international standards and report Ukraine. IANA tz, libphonenumber, moment-timezone, luxon, dayjs, pytz, and date-fns-tz all inherit dual or Russian framing from the same upstream sources. **The choice is not technical — both approaches are technically possible.** Cloudflare proves it. The choice is about whether to follow an international standard (ISO) or physical routing / unilateral national assignments (RUS).
+Cloudflare, ISO 3166-2, CLDR, and OSM Nominatim follow international standards and report Ukraine. IANA tzdata, Google libphonenumber, and the 5+ downstream time-zone libraries inherit dual or Russian framing from the same upstream sources. **The choice is not technical — both approaches are technically possible.** Cloudflare proves it, OSM Nominatim proves it, and the legacy IANA `zone.tab` (which still says `UA`) proves that the dual listing in `zone1970.tab` is a 2014 editorial decision, not a data-model requirement. The choice is about whether to follow the international standard or the de-facto / unilateral national assignment.
 
 ## The regulation gap
 
@@ -152,24 +178,33 @@ The result: a few volunteer maintainers and a Google open-source project make so
 
 ## Findings (numbered for citation)
 
-1. **IANA tz `zone1970.tab` lists Europe/Simferopol as `RU,UA`** — dual country listing, verified from [github.com/eggert/tz](https://github.com/eggert/tz)
-2. **Google libphonenumber maps `+7-365` to RU**, verified from `PhoneNumberMetadata.xml`
-3. **Combined timezone library impact**: ~189 million weekly downloads (pytz 105.5M + dayjs 39.6M + luxon 23.2M + moment-timezone 14.2M + date-fns-tz 7.1M)
-4. **Combined phone library impact**: 15.6 million weekly npm downloads (libphonenumber-js + google-libphonenumber)
-5. **ISO 3166-2 has no `RU-CR` entry** — Russia has 83 federal subdivisions in ISO, none include Crimea (verified from CLDR source on GitHub)
-6. **Cloudflare reports UA-43** for Crimean IPs — proof that following the international standard is technically possible
-7. **ICAO maintains UKFF (Simferopol) and UKFB (Sevastopol)** — the Ukrainian prefix
-8. **In November 2014 ISO renamed** Ukraine's Crimea entry to "Avtonomna Respublika Krym" — explicitly reinforcing Ukrainian framing
-9. **Russian Post has assigned the 29xxxx postal-code series to Crimean addresses** since 2014 — visible in any address validator that uses Russian Post data
-10. **No regulatory framework binds open-source standards bodies** to international law on territorial sovereignty
+1. **IANA `zone1970.tab` lists Europe/Simferopol as `RU,UA` — dual country listing, with Russia first**. Legacy `zone.tab` still lists only `UA`. Verified from [github.com/eggert/tz](https://github.com/eggert/tz) on every scan run.
+2. **libphonenumber `+7-978` carrier file lists 4 active Russian mobile operators**: Elemte-Invest, K-Telecom Ltd, MTS, Sevastopol TELECOM. Russia assigned `+7-978` unilaterally in 2014 and never submitted it to ITU. Verified from [`resources/carrier/en/7.txt`](https://raw.githubusercontent.com/google/libphonenumber/master/resources/carrier/en/7.txt) live on every scan.
+3. **Google libphonenumber dual-encodes Crimean phone numbers** — 3 entries under `+380` (Ukraine, ITU-valid) and 2 entries under `+7` (Russia, never submitted to ITU). Every Android phone and browser validation library that uses libphonenumber treats both as canonical.
+4. **OpenStreetMap Nominatim resolves 6 / 6 tested Crimean cities to `country_code=UA`** — OSM applies the "on the ground" rule and the Nominatim geocoder consistently returns the Ukrainian classification.
+5. **Combined downstream timezone library impact: ~189 million weekly downloads** — pytz (PyPI 105.5M) + dayjs (npm 39.6M) + luxon (npm 23.2M) + moment-timezone (npm 14.2M) + date-fns-tz (npm 7.1M). Every one of these inherits the IANA dual listing without sovereignty verification.
+6. **Combined downstream phone library impact: ~15.6 million weekly npm downloads** — libphonenumber-js + google-libphonenumber. Both inherit the `+7-978` Russian carrier assignment.
+7. **Standards Silencing** — the ITU formally lists `+380-65x` for Crimea, but libphonenumber (the validation layer every downstream application actually consults) has quietly encoded the Russian `+7-978` prefix as operational. The UN system has no mechanism to notice when a standard is selectively silenced by its own consumers. See the [telecom pipeline](../telecom/README.md) for the broader concept.
+8. **Cloudflare reports `UA-43` for Crimean IPs** — proof that following the international standard is technically possible. Cross-referenced in the [ip pipeline](../ip/README.md).
+9. **The IANA dual listing is an editorial decision, not a data-model requirement** — the legacy `zone.tab` format still uses `UA` as a single code, so the switch to `RU,UA` in `zone1970.tab` reflects a choice the maintainers made in 2014, not a technical constraint.
+10. **No regulatory framework binds open-source standards bodies** to international law on territorial sovereignty. A handful of volunteer maintainers and one Google open-source project make sovereignty decisions that propagate to ~205 million weekly downloads with zero oversight.
 
 ## Method limitations
 
-- npm and PyPI download counts are weekly snapshots and fluctuate
-- Cannot test all libraries that consume IANA tz (thousands exist worldwide)
-- libphonenumber metadata is XML and may change format; we verified the current state but historical analysis would require git blame
-- ISO sells the actual standard; we verify via CLDR which is the de facto open implementation
-- Russian Post postal codes verified from documentation, not live API queries
+- The pipeline actively probes 3 systems (IANA tzdata, libphonenumber, OSM Nominatim). Adjacent standards (ICAO, ISO 3166, CLDR, Cloudflare) are **documented** with canonical sources but not live-fetched here — see the [institutions pipeline](../institutions/README.md) for the live probes of those systems.
+- npm and PyPI download counts are weekly snapshots that fluctuate; the ~205M figure is a point-in-time snapshot verified against [api.npmjs.org](https://api.npmjs.org/downloads/point/last-week/) and [pypistats.org](https://pypistats.org/) on 2026-04-07.
+- Cannot test all libraries that consume IANA tzdata (thousands exist worldwide); the 7 we track are the highest-volume.
+- Nominatim rate-limits at 1 req/sec; the 6-city probe takes ~8 seconds.
+- libphonenumber metadata can change between scans; the `+7-978` carrier list is verified on every run.
+
+## How to run
+
+```bash
+# from the repo root
+make pipeline-tech_infrastructure
+```
+
+This runs `pipelines/tech_infrastructure/scan.py` end-to-end (IANA tzdata + libphonenumber + OSM Nominatim), writes `pipelines/tech_infrastructure/data/manifest.json` in the standard pipeline schema, and rebuilds `site/src/data/master_manifest.json`. Scan time is ~20 seconds (dominated by the 1 req/sec rate limit on Nominatim).
 
 ## Sources
 

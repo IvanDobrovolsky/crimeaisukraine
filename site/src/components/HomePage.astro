@@ -8,8 +8,9 @@ import mediaViolators from '../data/media_violators.json';
 import findingsUk from '../data/findings_uk.json';
 import auditData from '../data/llm_audit_results.json';
 import modelsData from '../data/llm_models.json';
-// Fresh pipeline manifest for the weather section (re-verified 2026-04 scan)
+// Fresh pipeline manifests (rewritten 2026-04)
 import weatherPipeline from '../../../pipelines/weather/data/manifest.json';
+import institutionsPipeline from '../../../pipelines/institutions/data/manifest.json';
 
 interface Props {
   lang: Lang;
@@ -119,6 +120,24 @@ const wTzMoscow = wpSummary.timezone_europe_moscow;
 const wGeonamesCC = wpSummary.geonames_country_code;
 const wAccuWeather = wpFindings.find((f: any) => f.platform === 'AccuWeather');
 const wWeatherCom = wpFindings.find((f: any) => f.platform?.startsWith('Weather.com'));
+
+// Institutions — uses the fresh pipeline manifest (2026-04 consolidated scan)
+const instM = (institutionsPipeline as any);
+const instSummary = instM.summary;
+const instFindings = (instM.findings || []) as any[];
+const instByStatus = (s: string) => instFindings.filter(f => f.status === s);
+const instCorrect = instByStatus('correct');
+const instAmbiguous = instByStatus('ambiguous');
+const instIncorrect = instByStatus('incorrect');
+const instByCategory = (cat: string) => instFindings.filter(f => f.category === cat);
+const instLegislation = instByCategory('legislation_sanctions');
+const instLoC = instByCategory('library_of_congress');
+const instResearch = instByCategory('research_registry');
+const instOfacUA = instSummary.ofac_crimea_pob_ukraine;
+const instOfacRU = instSummary.ofac_crimea_pob_russia;
+const instRorTotal = instSummary.ror_institutions_total;
+const instRorUA = instSummary.ror_institutions_ua;
+const instRorRU = instSummary.ror_institutions_ru;
 
 // Map services
 const mapFindings = catFindings('map_service');
@@ -1249,6 +1268,85 @@ const propagation = [
           ))}
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Institutional Registries & Legislation (reads pipelines/institutions/data/manifest.json) -->
+<section id="institutions" class="max-w-6xl mx-auto px-6 mb-12">
+  <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Інституційні реєстри та законодавство: там, де закон одностайний' : 'Institutional registries & legislation: where the law is unanimous'}</h2>
+    <p class="text-[#94a3b8] mb-2">{lang === 'uk'
+      ? `10 авторитетних систем перевірено через три інституційні рівні — законодавство і санкції, бібліотечні каталоги, реєстри дослідницьких організацій. Базова правова лінія щодо Криму одностайна: жодного гепу регулювання у самому законі, геп існує нижче по течії в технічній інфраструктурі, яка ігнорує правильні класифікації.`
+      : `10 authoritative systems probed across three institutional layers — legislation & sanctions, library catalogs, research-organization registries. The legal baseline on Crimea is unanimous: there is no regulation gap in the law itself. The gap exists downstream in technical infrastructure that ignores the correct classifications.`
+    }</p>
+    <p class="text-[10px] text-[#64748b] mb-8">{lang === 'uk' ? 'Чому це важливо: кожен pipeline, що документує порушення деінде в цьому аудиті, вимірюється відносно цього базового рівня.' : "Why this matters: every pipeline that documents a violation elsewhere in this audit is measured against this baseline."}</p>
+
+    <!-- 4-stat header row -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#22c55e]/30 text-center">
+        <div class="text-2xl font-bold text-[#22c55e]">{instCorrect.length}/{instSummary.total_systems}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'систем правильні' : 'systems correct'}</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#22c55e]/30 text-center">
+        <div class="text-2xl font-bold text-[#22c55e]">{instOfacUA}</div>
+        <div class="text-[10px] text-[#94a3b8] mt-1">{lang === 'uk' ? 'OFAC POB = Україна' : 'OFAC POB = Ukraine'}</div>
+        <div class="text-[10px] text-[#ef4444] mt-0.5">{lang === 'uk' ? '0 «Сімферополь, Росія»' : '0 "Simferopol, Russia"'}</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#22c55e]/30 text-center">
+        <div class="text-2xl font-bold text-[#22c55e]">{instRorUA}/{instRorTotal}</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'ROR = Україна' : 'ROR = Ukraine'}</div>
+      </div>
+      <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#22c55e]/30 text-center">
+        <div class="text-2xl font-bold text-[#22c55e]">83 / 0</div>
+        <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'ISO 3166-2:RU не містить Крим' : 'ISO 3166-2:RU excludes Crimea'}</div>
+      </div>
+    </div>
+
+    <!-- Three-layer results -->
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <!-- Layer 1: Legislation & sanctions -->
+      <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#0057b7]/30">
+        <div class="text-[10px] text-[#0057b7] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Законодавство і санкції' : 'Legislation & sanctions'} ({instLegislation.length})</div>
+        <ul class="text-[11px] text-[#94a3b8] space-y-1.5 leading-snug">
+          <li><span class="text-[#22c55e]">✓</span> <span class="text-[#e2e8f0]">OFAC SDN</span> — EO 13685 «Crimea Region of Ukraine»</li>
+          <li><span class="text-[#22c55e]">✓</span> <span class="text-[#e2e8f0]">EU Reg 692/2014</span> — {lang === 'uk' ? '7 первинних актів + 12 щорічних продовжень' : '7 primary acts + 12 annual renewals'}</li>
+          <li><span class="text-[#22c55e]">✓</span> <span class="text-[#e2e8f0]">UK legislation</span> — {lang === 'uk' ? 'Sanctions Order 2014 + 19 поправок' : 'Sanctions Order 2014 + 19 amendments'}</li>
+          <li><span class="text-[#22c55e]">✓</span> <span class="text-[#e2e8f0]">ICAO Doc 7910</span> — UKFF, UKFB</li>
+          <li><span class="text-[#22c55e]">✓</span> <span class="text-[#e2e8f0]">ITU E.164</span> — +380-65x</li>
+          <li><span class="text-[#22c55e]">✓</span> <span class="text-[#e2e8f0]">ISO 3166-2</span> — UA-43, UA-40; {lang === 'uk' ? 'нуль кримських кодів під РФ' : 'zero Crimean codes under RU'}</li>
+        </ul>
+      </div>
+
+      <!-- Layer 2: Library of Congress -->
+      <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#0057b7]/30">
+        <div class="text-[10px] text-[#0057b7] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Бібліотека Конгресу США' : 'Library of Congress'} ({instLoC.length})</div>
+        <ul class="text-[11px] text-[#94a3b8] space-y-1.5 leading-snug">
+          <li><span class="text-[#22c55e]">✓</span> <span class="text-[#e2e8f0]">{lang === 'uk' ? 'Каталог LoC' : 'LoC catalog'}</span> — 62/100 {lang === 'uk' ? 'книг класифіковано як Україна' : 'books classified under Ukraine'}</li>
+          <li class="text-[10px] text-[#64748b] pl-4">{lang === 'uk' ? 'канонічна рубрика:' : 'canonical heading:'} <span class="font-mono text-[#94a3b8]">"Crimea (Ukraine)--History--Russian occupation, 2014-"</span></li>
+          <li><span class="text-[#f59e0b]">⚠</span> <span class="text-[#e2e8f0]">LCSH suggest2</span> — {lang === 'uk' ? 'fuzzy-пошук повертає пов\'язані заголовки; позначено неоднозначно через класифікаторну впевненість, а не через фактичну неоднозначність' : 'fuzzy suggest returns related headings; flagged ambiguous for classifier confidence, not actual ambiguity'}</li>
+        </ul>
+      </div>
+
+      <!-- Layer 3: Research registries -->
+      <div class="bg-[#0a0e1a] rounded-lg p-4 border border-[#0057b7]/30">
+        <div class="text-[10px] text-[#0057b7] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Реєстри дослідницьких організацій' : 'Research registries'} ({instResearch.length})</div>
+        <ul class="text-[11px] text-[#94a3b8] space-y-1.5 leading-snug">
+          <li><span class="text-[#22c55e]">✓</span> <span class="text-[#e2e8f0]">ROR v2</span> — {instRorUA}/{instRorTotal} UA, {instRorRU} RU</li>
+          <li><span class="text-[#22c55e]">✓</span> <span class="text-[#e2e8f0]">OpenAlex</span> — {lang === 'uk' ? 'ті ж 4/5 UA / 1 RU' : 'same 4/5 UA / 1 RU'}</li>
+          <li class="text-[10px] text-[#64748b] pl-4">{lang === 'uk' ? 'Виключення:' : 'Outlier:'} <span class="italic">Research Institute of Agriculture of Crimea</span> — {lang === 'uk' ? 'також інституція з найбільшою кількістю праць під «Республіка Крим, РФ» в OpenAlex (суперечність реєстр-проти-метаданих, див.' : 'also the institution with the most "Republic of Crimea, Russian Federation" papers in OpenAlex (registry-vs-metadata contradiction, see'} <a href="#academic-framing" class="text-[#0057b7] hover:underline">academic</a> {lang === 'uk' ? 'pipeline)' : 'pipeline)'}</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Structural lesson -->
+    <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30">
+      <p class="text-sm text-[#94a3b8] leading-relaxed">
+        <span class="text-[#0057b7] font-bold">{lang === 'uk' ? 'Структурний висновок' : 'Structural lesson'}:</span> {lang === 'uk'
+          ? 'якщо сам закон був би неоднозначним, не було б розриву регулювання. Цей pipeline фіксує юридичну базу, щоб кожен інший pipeline міг виміряти, що відбувається вниз по течії, коли закон не має механізму забезпечення для технічного шару. Правовий шар не винен — винна технічна інфраструктура, яка ігнорує правильні класифікації.'
+          : 'if the law itself were ambiguous, there would be no regulation gap. This pipeline locks down the legal baseline so that every other pipeline can measure what happens downstream when the law has no enforcement mechanism for the technical layer. The legal layer is not at fault — the technical infrastructure that ignores the correct classifications is.'
+        }
+      </p>
     </div>
   </div>
 </section>
