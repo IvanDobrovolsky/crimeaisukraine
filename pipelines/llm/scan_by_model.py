@@ -19,15 +19,16 @@ from pathlib import Path
 from datetime import datetime
 
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "scripts"))
 from audit_llm_sovereignty_full import (
     MODELS, OLLAMA_MODELS, QUESTIONS, LANGS, CITIES,
     YES_WORDS, NO_WORDS, DISPUTED_HINTS,
-    classify, query_ollama, query_claude,
+    classify, query_ollama, query_claude, query_gemini, query_openai, query_xai,
     load_translation_cache, build_translations,
     TRANSLATION_CACHE_PATH,
 )
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent.parent.parent  # repo root
 DATA = PROJECT / "data"
 OUTPUT_PATH = DATA / "llm_sovereignty_full.jsonl"
 
@@ -39,6 +40,9 @@ def main():
     args = parser.parse_args()
 
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    google_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY", "")
+    openai_key = os.environ.get("OPENAI_API_KEY", "")
+    xai_key = os.environ.get("XAI_API_KEY", "")
 
     # Load translations
     translations = load_translation_cache()
@@ -98,8 +102,15 @@ def main():
 
                     try:
                         reasoning = ""
-                        if model.get("provider") == "ollama":
+                        provider = model.get("provider")
+                        if provider == "ollama":
                             raw, reasoning = query_ollama(prompt, model["id"])
+                        elif provider == "google":
+                            raw = query_gemini(prompt, google_key, model["id"])
+                        elif provider == "openai":
+                            raw = query_openai(prompt, openai_key, model["id"])
+                        elif provider == "xai":
+                            raw = query_xai(prompt, xai_key, model["id"])
                         else:
                             raw = query_claude(prompt, api_key, model["id"])
 

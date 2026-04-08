@@ -22,6 +22,7 @@ from collections import Counter
 
 import sys
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent / "_shared"))
 from sovereignty_classifier import SovereigntyClassifier
 
 try:
@@ -30,7 +31,7 @@ except ImportError:
     print("Install: pip install datasets")
     raise
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent.parent.parent  # repo root (pipelines/training_corpora -> pipelines -> repo)
 DATA = PROJECT / "data"
 OUT_PATH = DATA / "training_corpora_scan.jsonl"
 SUMMARY_PATH = DATA / "training_corpora_summary.json"

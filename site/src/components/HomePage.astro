@@ -8,6 +8,7 @@ import mediaViolators from '../data/media_violators.json';
 import findingsUk from '../data/findings_uk.json';
 import auditData from '../data/llm_audit_results.json';
 import modelsData from '../data/llm_models.json';
+import tasResults from '../data/llm_tas_results.json';
 // Fresh pipeline manifests (rewritten 2026-04)
 import weatherPipeline from '../../../pipelines/weather/data/manifest.json';
 import institutionsPipeline from '../../../pipelines/institutions/data/manifest.json';
@@ -1330,82 +1331,95 @@ const mediaViolatorsByFilter = mediaViolators as any;
 <section id="llm-audit" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Аудит LLM: суверенітет Криму' : 'LLM Audit: Crimea Sovereignty'}</h2>
-    <p class="text-[#94a3b8] mb-2">
+    <p class="text-[#94a3b8] mb-3">
       {lang === 'uk'
-        ? 'Стандартизований аудит фронтирних моделей: 15 запитань, 50 мов, 12 міст. Тестуємо чи називає LLM Кримські міста українськими.'
-        : 'Standardized audit of frontier models: 15 questions × 50 languages × 12 cities. Tests whether LLMs call Crimean cities Ukrainian.'}
+        ? '18 моделей з 6 лабораторій, детермінований аудит при temperature=0. Дворівнева елісітація: 1850 запитань з вимушеним вибором + 676 відкритих запитань на модель. ~45 500 запитів загалом.'
+        : '18 models from 6 labs, deterministic audit at temperature=0. Dual-tier elicitation: 1,850 forced-choice queries + 676 open-ended queries per model. ~45,500 queries total.'}
     </p>
-    <p class="text-xs text-[#64748b] mb-6">
+    <p class="text-xs text-[#64748b] mb-3">
       {lang === 'uk'
-        ? 'Ключове відкриття: усі моделі правильно відповідають про Донбас та південь України (100%) але провалюються на Криму (17–96%). Це доводить, що проросійський фреймінг Криму до 2022 року просочився у тренувальні дані, тоді як фреймінг 2022+ був вивчений правильно.'
-        : 'Key finding: all models answer correctly about Donbas/South Ukraine (~100%) but fail on Crimea (17–96%). Proves pre-2022 Russian framing leaked into training data while 2022+ narrative was learned correctly.'}
+        ? 'Шкала Toponymic Alignment Score (TAS) комбінує чотири рівні запитань за складністю елісітації: пряме територіальне (D̄), правово-нормативне (L̄), імпліцитне суверенне (Ī) та вільне відтворення (R̄). Рекомендовані ваги (0.15, 0.20, 0.25, 0.40) надають найбільшої ваги вільному відтворенню, оскільки воно показує дефолтний розподіл моделі. RLHF-розрив = D̄ − R̄: позитивний означає, що модель приховує дефолтний bias за хорошою поверхневою відповіддю.'
+        : 'The Toponymic Alignment Score (TAS) is a tiered composite of four question types ordered by elicitation difficulty: direct territorial (D̄), legal-normative (L̄), implicit sovereignty (Ī), and free-recall (R̄). Recommended weights (0.15, 0.20, 0.25, 0.40) put the most weight on free-recall because it exposes the model\'s default generation distribution. The RLHF gap = D̄ − R̄: a positive gap means the model hides its default bias behind a corrected surface answer.'}
     </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6 text-xs">
+      <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-lg p-3">
+        <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Розрив RLHF на флагманах' : 'Cross-lab flagship RLHF gap'}</div>
+        <div class="text-base text-white"><strong>+0.22 to +0.33</strong> across 4 labs (Anthropic, Google, OpenAI). 22–33 pt overestimation by forced-choice benchmarks.</div>
+      </div>
+      <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-lg p-3">
+        <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Інверсія малих моделей' : 'Open / small inversion'}</div>
+        <div class="text-base text-white"><strong>−0.20 to −0.50</strong> on 8 models. Smaller / open models leak hedging templates ("internationally recognized as Ukraine") in free-recall.</div>
+      </div>
+      <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-lg p-3">
+        <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Каузальний ланцюг Dolma → OLMo' : 'Dolma → OLMo causal chain'}</div>
+        <div class="text-base text-white">Dolma v1.6 = <strong>2.0%</strong> RU framing → OLMo-2 TAS <strong>0.642</strong>, OLMo-3 TAS <strong>0.562</strong>. The only fully reproducible corpus→model trace in the audit.</div>
+      </div>
+    </div>
 
-    <!-- Models table -->
+    <!-- TAS table -->
     <div class="overflow-x-auto rounded-xl border border-[#1e293b]">
-      <table class="w-full text-sm">
+      <table class="w-full text-xs md:text-sm">
         <thead>
           <tr class="bg-[#1e293b]">
-            <th class="p-3 text-left text-[#e5e5e5] font-semibold">Model</th>
-            <th class="p-3 text-left text-[#e5e5e5] font-semibold">Org</th>
-            <th class="p-3 text-left text-[#e5e5e5] font-semibold">Params</th>
-            <th class="p-3 text-left text-[#e5e5e5] font-semibold">Released</th>
-            <th class="p-3 text-center text-[#e5e5e5] font-semibold">Queries</th>
-            <th class="p-3 text-center text-[#e5e5e5] font-semibold">Overall</th>
-            <th class="p-3 text-center text-[#e5e5e5] font-semibold">Crimea</th>
-            <th class="p-3 text-center text-[#e5e5e5] font-semibold">Donbas</th>
-            <th class="p-3 text-center text-[#e5e5e5] font-semibold">Gap</th>
+            <th class="p-2 text-left text-[#e5e5e5] font-semibold">#</th>
+            <th class="p-2 text-left text-[#e5e5e5] font-semibold">Model</th>
+            <th class="p-2 text-left text-[#e5e5e5] font-semibold">Lab</th>
+            <th class="p-2 text-left text-[#e5e5e5] font-semibold">Access</th>
+            <th class="p-2 text-center text-[#e5e5e5] font-semibold">TAS</th>
+            <th class="p-2 text-center text-[#e5e5e5] font-semibold" title="Direct territorial mean">D̄</th>
+            <th class="p-2 text-center text-[#e5e5e5] font-semibold" title="Legal-normative mean">L̄</th>
+            <th class="p-2 text-center text-[#e5e5e5] font-semibold" title="Implicit sovereignty mean">Ī</th>
+            <th class="p-2 text-center text-[#e5e5e5] font-semibold" title="Free-recall mean">R̄</th>
+            <th class="p-2 text-center text-[#e5e5e5] font-semibold" title="RLHF gap = D̄ − R̄">RLHF gap</th>
           </tr>
         </thead>
         <tbody>
-          {(modelsData as any).models.map((m: any) => {
-            const audit = (auditData as any).models[m.id];
-            if (!audit || audit.total === 0) {
+          {(modelsData as any).models
+            .map((m: any) => ({ m, r: (tasResults as any).results[m.id] }))
+            .filter((row: any) => row.r && row.r.tas !== null)
+            .sort((a: any, b: any) => b.r.tas - a.r.tas)
+            .map((row: any, idx: number) => {
+              const m = row.m; const r = row.r;
+              const tas = r.tas;
+              const tasColor = tas >= 0.85 ? '#22c55e' : tas >= 0.75 ? '#84cc16' : tas >= 0.65 ? '#f59e0b' : tas >= 0.55 ? '#f97316' : '#ef4444';
+              const cell = (v: number | null): string => {
+                if (v === null) return '#1e293b';
+                if (v >= 0.85) return '#16653433';
+                if (v >= 0.65) return '#9a691733';
+                return '#7f1d1d33';
+              };
+              const gap = r.rlhf_gap;
+              const gapColor = gap === null ? '#94a3b8' : gap >= 0.15 ? '#ef4444' : gap >= 0.05 ? '#f59e0b' : gap > -0.05 ? '#94a3b8' : gap > -0.20 ? '#84cc16' : '#22c55e';
+              const f = (v: number | null) => v === null ? '—' : v.toFixed(3);
+              const accessBadge = m.access === 'closed' ? 'closed' : 'open';
+              const accessColor = m.access === 'closed' ? '#0057b7' : '#22c55e';
               return (
-                <tr class="border-t border-[#1e293b] opacity-50">
-                  <td class="p-3 text-white font-medium">{m.display_name}</td>
-                  <td class="p-3 text-[#94a3b8]">{m.org}</td>
-                  <td class="p-3 text-[#94a3b8]">{m.params}</td>
-                  <td class="p-3 text-[#94a3b8]">{m.release}</td>
-                  <td class="p-3 text-center text-[#64748b]">—</td>
-                  <td class="p-3 text-center text-[#64748b]" colspan="4">no data</td>
+                <tr class="border-t border-[#1e293b] hover:bg-[#0a0e1a]/50 transition">
+                  <td class="p-2 text-[#64748b]">{idx + 1}</td>
+                  <td class="p-2">
+                    <a href={`/llm-audit/${m.id}`} class="text-[#0057b7] hover:text-[#3b82f6] hover:underline font-medium">
+                      {m.display_name}
+                    </a>
+                  </td>
+                  <td class="p-2 text-[#94a3b8]">{m.org}</td>
+                  <td class="p-2"><span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase" style={`background:${accessColor}33; color:${accessColor}`}>{accessBadge}</span></td>
+                  <td class="p-2 text-center font-bold text-white" style={`background:${tasColor}`}>{f(tas)}</td>
+                  <td class="p-2 text-center text-white" style={`background:${cell(r.D)}`}>{f(r.D)}</td>
+                  <td class="p-2 text-center text-white" style={`background:${cell(r.L)}`}>{f(r.L)}</td>
+                  <td class="p-2 text-center text-white" style={`background:${cell(r.I)}`}>{f(r.I)}</td>
+                  <td class="p-2 text-center text-white" style={`background:${cell(r.R)}`}>{f(r.R)}</td>
+                  <td class="p-2 text-center font-bold" style={`color:${gapColor}`}>{gap === null ? '—' : (gap > 0 ? '+' : '') + gap.toFixed(3)}</td>
                 </tr>
               );
-            }
-            const cp = audit.correct_pct;
-            const crimeaP = audit.crimea_vs_donbas.crimea.pct;
-            const donbasP = audit.crimea_vs_donbas.donbas.pct;
-            const gap = audit.crimea_vs_donbas.gap;
-            const cpColor = cp >= 90 ? '#22c55e' : cp >= 75 ? '#84cc16' : cp >= 50 ? '#f59e0b' : cp >= 25 ? '#f97316' : '#ef4444';
-            const crimeaColor = crimeaP >= 90 ? '#22c55e' : crimeaP >= 75 ? '#84cc16' : crimeaP >= 50 ? '#f59e0b' : crimeaP >= 25 ? '#f97316' : '#ef4444';
-            const donbasColor = donbasP >= 90 ? '#22c55e' : donbasP >= 75 ? '#84cc16' : donbasP >= 50 ? '#f59e0b' : donbasP >= 25 ? '#f97316' : '#ef4444';
-            const gapColor = Math.abs(gap) > 30 ? '#ef4444' : Math.abs(gap) > 15 ? '#f59e0b' : '#22c55e';
-            const isPartial = audit.total < 1800;
-            return (
-              <tr class="border-t border-[#1e293b] hover:bg-[#0a0e1a]/50 transition">
-                <td class="p-3">
-                  <a href={`/llm-audit/${m.id}`} class="text-[#0057b7] hover:text-[#3b82f6] hover:underline font-medium">
-                    {m.display_name}
-                  </a>
-                  {isPartial && <span class="ml-2 text-[10px] text-[#f59e0b]">partial</span>}
-                </td>
-                <td class="p-3 text-[#94a3b8]">{m.org}</td>
-                <td class="p-3 text-[#94a3b8]">{m.params}</td>
-                <td class="p-3 text-[#94a3b8]">{m.release}</td>
-                <td class="p-3 text-center text-[#e5e5e5]">{audit.total.toLocaleString()}</td>
-                <td class="p-3 text-center font-bold text-white" style={`background:${cpColor}`}>{cp}%</td>
-                <td class="p-3 text-center font-bold text-white" style={`background:${crimeaColor}`}>{crimeaP}%</td>
-                <td class="p-3 text-center font-bold text-white" style={`background:${donbasColor}`}>{donbasP}%</td>
-                <td class="p-3 text-center font-bold text-white" style={`background:${gapColor}`}>{gap > 0 ? '+' : ''}{gap}</td>
-              </tr>
-            );
-          })}
+            })}
         </tbody>
       </table>
     </div>
 
     <p class="text-xs text-[#64748b] mt-3">
-      {lang === 'uk' ? 'Натисніть на назву моделі для детальної таблиці результатів.' : 'Click any model name for detailed results table.'}
+      {lang === 'uk'
+        ? 'Натисніть на назву моделі для детальної таблиці результатів. TAS обчислено як зважену суму чотирьох рівнів. RLHF-розрив > 0 означає, що модель приховує дефолтний bias; розрив < 0 означає, що дефолтний шаблон хеджування домінує над поверхневою відповіддю.'
+        : 'Click any model name for the detailed per-question table. TAS is computed as the weighted sum of the four tiers. A positive RLHF gap means the model hides its default bias; a negative gap means cached hedging templates in free generation dominate over the surface answer.'}
     </p>
   </div>
 </section>

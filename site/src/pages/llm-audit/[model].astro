@@ -2,17 +2,24 @@
 import Layout from '../../layouts/Layout.astro';
 import auditData from '../../data/llm_audit_results.json';
 import modelsData from '../../data/llm_models.json';
+import tasResults from '../../data/llm_tas_results.json';
 
 export async function getStaticPaths() {
   const audit = auditData as any;
+  const tas = tasResults as any;
   const models = (modelsData as any).models;
   return models.map((m: any) => ({
     params: { model: m.id },
-    props: { model: m, audit: audit.models[m.id] || null, meta: audit },
+    props: {
+      model: m,
+      audit: audit.models[m.id] || null,
+      meta: audit,
+      tas: tas.results[m.id] || null,
+    },
   }));
 }
 
-const { model, audit, meta } = Astro.props as any;
+const { model, audit, meta, tas } = Astro.props as any;
 const cities = meta.cities;
 const langs = meta.languages;
 const questions = meta.questions;
@@ -26,7 +33,21 @@ function colorForPct(pct: number | null): string {
   return '#ef4444';
 }
 
+function colorForTas(t: number | null): string {
+  if (t === null || t === undefined) return '#1e293b';
+  if (t >= 0.85) return '#22c55e';
+  if (t >= 0.75) return '#84cc16';
+  if (t >= 0.65) return '#f59e0b';
+  if (t >= 0.55) return '#f97316';
+  return '#ef4444';
+}
+
+function fmt(v: number | null): string {
+  return v === null || v === undefined ? '—' : v.toFixed(3);
+}
+
 const hasData = audit && audit.total > 0;
+const hasTas = tas && tas.tas !== null;
 ---
 
 <Layout title={`${model.display_name} — Crimea Sovereignty Audit`} lang="en">
@@ -34,12 +55,69 @@ const hasData = audit && audit.total > 0;
     <div class="mb-2"><a href="/" class="text-[#0057b7] hover:underline text-sm">← Back to home</a></div>
 
     <h1 class="text-3xl font-bold text-white mb-1">{model.display_name}</h1>
-    <p class="text-[#94a3b8] mb-6">{model.org} · {model.params} · Released {model.release} · {model.type}</p>
+    <p class="text-[#94a3b8] mb-6">{model.org} · {model.access || model.params || ''} · Released {model.release} · {model.type}</p>
+
+    {hasTas && (
+      <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-6 mb-8">
+        <div class="flex items-baseline justify-between mb-4">
+          <h2 class="text-xl font-bold text-white">Toponymic Alignment Score (TAS)</h2>
+          <a href="/#llm-audit" class="text-xs text-[#0057b7] hover:underline">methodology →</a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-4">
+          <div class="md:col-span-2 bg-[#0a0e1a] border rounded-xl p-4" style={`border-color: ${colorForTas(tas.tas)}`}>
+            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">TAS</div>
+            <div class="text-4xl font-bold" style={`color: ${colorForTas(tas.tas)}`}>{fmt(tas.tas)}</div>
+            <div class="text-[10px] text-[#64748b] mt-1">recommended weights (0.15·D + 0.20·L + 0.25·I + 0.40·R)</div>
+          </div>
+          <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
+            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1" title="Direct territorial">D̄</div>
+            <div class="text-2xl font-bold text-white">{fmt(tas.D)}</div>
+            <div class="text-[10px] text-[#64748b] mt-1">direct territorial</div>
+          </div>
+          <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
+            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1" title="Legal-normative">L̄</div>
+            <div class="text-2xl font-bold text-white">{fmt(tas.L)}</div>
+            <div class="text-[10px] text-[#64748b] mt-1">legal-normative</div>
+          </div>
+          <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
+            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1" title="Implicit sovereignty">Ī</div>
+            <div class="text-2xl font-bold text-white">{fmt(tas.I)}</div>
+            <div class="text-[10px] text-[#64748b] mt-1">implicit sovereignty</div>
+          </div>
+          <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
+            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1" title="Free-recall">R̄</div>
+            <div class="text-2xl font-bold text-white">{fmt(tas.R)}</div>
+            <div class="text-[10px] text-[#64748b] mt-1">free-recall</div>
+          </div>
+        </div>
+        {tas.rlhf_gap !== null && (
+          <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
+            <div class="flex items-baseline justify-between mb-1">
+              <div class="text-[10px] text-[#64748b] uppercase tracking-wider">RLHF gap (D̄ − R̄)</div>
+              <div class="text-2xl font-bold" style={`color: ${tas.rlhf_gap >= 0.15 ? '#ef4444' : tas.rlhf_gap >= 0.05 ? '#f59e0b' : tas.rlhf_gap > -0.05 ? '#94a3b8' : tas.rlhf_gap > -0.20 ? '#84cc16' : '#22c55e'}`}>
+                {tas.rlhf_gap > 0 ? '+' : ''}{tas.rlhf_gap.toFixed(3)}
+              </div>
+            </div>
+            <div class="text-xs text-[#94a3b8]">
+              {tas.rlhf_gap >= 0.15
+                ? 'Surface-patched: model says the right thing in forced-choice but reverts to inherited bias in free generation. Standard benchmarks systematically overestimate this model.'
+                : tas.rlhf_gap >= 0.05
+                  ? 'Mildly surface-patched: small but visible gap between forced-choice score and free-recall.'
+                  : tas.rlhf_gap > -0.05
+                    ? 'Consistent: surface answer matches default generation distribution.'
+                    : tas.rlhf_gap > -0.20
+                      ? 'Mildly inverted: model deploys hedging templates in free-recall while still defaulting to inherited bias on forced-choice probes.'
+                      : 'Strongly inverted: cached hedging templates ("internationally recognized as part of Ukraine") dominate free-recall while the underlying answer-token distribution still defaults to Russia framing on forced probes.'}
+            </div>
+          </div>
+        )}
+      </div>
+    )}
 
     {!hasData ? (
       <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-12 text-center">
-        <div class="text-2xl text-[#94a3b8]">No audit data yet</div>
-        <p class="text-[#64748b] mt-2">Audit is still running for this model.</p>
+        <div class="text-2xl text-[#94a3b8]">{hasTas ? 'Per-question table will appear here once the legacy report is regenerated.' : 'No audit data yet'}</div>
+        <p class="text-[#64748b] mt-2">{hasTas ? 'TAS data above is from the temperature=0 dual-tier audit (April 2026).' : 'Audit is still running for this model.'}</p>
       </div>
     ) : (
       <div>

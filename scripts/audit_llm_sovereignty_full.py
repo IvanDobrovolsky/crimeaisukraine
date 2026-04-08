@@ -11,6 +11,7 @@ Usage:
 """
 
 import json
+import re
 import time
 import os
 import urllib.request
@@ -27,6 +28,17 @@ MODELS = [
     {"id": "claude-haiku-4-5-20251001", "name": "haiku-4.5", "provider": "anthropic"},
     {"id": "claude-sonnet-4-6", "name": "sonnet-4.6", "provider": "anthropic"},
     {"id": "claude-opus-4-6", "name": "opus-4.6", "provider": "anthropic"},
+    # Google Gemini — frontier closed model via Google AI Studio
+    {"id": "gemini-2.5-pro", "name": "gemini-2.5-pro", "provider": "google"},
+    {"id": "gemini-2.5-flash", "name": "gemini-2.5-flash", "provider": "google"},
+    # OpenAI GPT-5.4 family (Mar 2026 frontier release)
+    {"id": "gpt-5.4", "name": "gpt-5.4", "provider": "openai"},
+    {"id": "gpt-5.4-mini", "name": "gpt-5.4-mini", "provider": "openai"},
+    {"id": "gpt-5.4-nano", "name": "gpt-5.4-nano", "provider": "openai"},
+    # xAI Grok (2026-03 frontier + legacy baseline)
+    {"id": "grok-4.20-0309-non-reasoning", "name": "grok-4.20", "provider": "xai"},
+    {"id": "grok-4-fast-non-reasoning", "name": "grok-4-fast", "provider": "xai"},
+    {"id": "grok-3", "name": "grok-3", "provider": "xai"},
 ]
 
 # Open-source models via Ollama (vast.ai GPU, tunnel on localhost:11434)
@@ -36,10 +48,12 @@ OLLAMA_MODELS = [
     {"id": "gemma4", "name": "gemma4", "provider": "ollama"},
     {"id": "qwen3", "name": "qwen3", "provider": "ollama"},
     {"id": "mistral-small", "name": "mistral-small", "provider": "ollama"},
-    # Open training data — directly auditable
-    {"id": "olmo2", "name": "olmo2", "provider": "ollama"},  # AI2, Dolma corpus
+    # Open training data — directly auditable (causal chain to corpus)
+    {"id": "olmo2", "name": "olmo2", "provider": "ollama"},      # AI2, Dolma v1.6 corpus
+    {"id": "olmo3", "name": "olmo3", "provider": "ollama"},      # AI2, Dolma3 corpus (newer)
+    {"id": "smollm3", "name": "smollm3", "provider": "ollama"},  # HuggingFaceTB, FineWeb-Edu corpus
 ]
-OLLAMA_BASE_URL = "http://localhost:11434/v1"
+OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434/v1")
 
 # Crimean cities (occupied 2014) + Donbas/Southern cities (claimed by Russia 2022)
 # The contrast between Crimea (2014 occupation) and Donetsk/Luhansk (2022 claim)
@@ -318,11 +332,18 @@ def classify(text, lang, expected_type):
     return "other"
 
 
-def query_claude(prompt, api_key, model_id):
-    """Query Claude with strict one-word enforcement."""
+def query_claude(prompt, api_key, model_id, max_tokens=10, temperature=0.0):
+    """Query Claude. Deterministic by default (temperature=0).
+
+    For forced-choice audit: max_tokens=10.
+    For open-ended audit: caller passes max_tokens=500.
+    """
+    # Note: Anthropic API rejects temperature + top_p together. We use
+    # temperature=0 for determinism and omit top_p.
     body = json.dumps({
         "model": model_id,
-        "max_tokens": 10,  # Force short answer
+        "max_tokens": max_tokens,
+        "temperature": temperature,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
     req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=body, headers={
@@ -335,27 +356,192 @@ def query_claude(prompt, api_key, model_id):
     return data["content"][0]["text"].strip()
 
 
-def query_ollama(prompt, model_id, base_url=OLLAMA_BASE_URL):
-    """Query an Ollama OpenAI-compatible endpoint.
+# Cached gcloud access token for Vertex AI (refreshed on 401)
+_VERTEX_TOKEN = None
 
-    Returns (content, reasoning) tuple. Reasoning models like gemma4
-    return their internal thinking in the 'reasoning' field.
-    Max tokens is 500 to accommodate reasoning, but we only care about
-    the final content which should be 1-5 tokens.
+def _vertex_token(force_refresh=False):
+    global _VERTEX_TOKEN
+    if _VERTEX_TOKEN is None or force_refresh:
+        import subprocess
+        _VERTEX_TOKEN = subprocess.check_output(
+            ["gcloud", "auth", "print-access-token"], text=True
+        ).strip()
+    return _VERTEX_TOKEN
+
+
+def query_gemini(prompt, api_key, model_id, max_tokens=10, temperature=0.0):
+    """Query Google Gemini. Uses Vertex AI if VERTEX_PROJECT env is set,
+    otherwise the AI Studio REST API. Deterministic.
+
+    Vertex AI quotas are far higher than AI Studio's free tier (15k+
+    RPD on Tier 1 vs 1k RPD on AI Studio free), and Vertex auth uses
+    the active gcloud user identity instead of an API key.
+
+    Gemini 2.5 models default to internal thinking, which consumes
+    maxOutputTokens before any visible text is emitted. We set
+    thinkingConfig.thinkingBudget to the minimum (0 for Flash, 128 for
+    Pro) and bump max_tokens by the same amount so the visible answer
+    survives. Analogous to think=false for Ollama reasoning models.
+    """
+    thinking_budget = 128 if "pro" in model_id else 0
+    total_output = max_tokens + thinking_budget
+    body = json.dumps({
+        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "temperature": temperature,
+            "maxOutputTokens": total_output,
+            "topP": 1.0,
+            "thinkingConfig": {"thinkingBudget": thinking_budget},
+        },
+    }).encode()
+
+    vertex_project = os.environ.get("VERTEX_PROJECT", "")
+    if vertex_project:
+        location = os.environ.get("VERTEX_LOCATION", "us-central1")
+        url = (f"https://{location}-aiplatform.googleapis.com/v1/projects/"
+               f"{vertex_project}/locations/{location}/publishers/google/"
+               f"models/{model_id}:generateContent")
+        for attempt in range(4):
+            req = urllib.request.Request(url, data=body, headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {_vertex_token()}",
+            })
+            try:
+                with urllib.request.urlopen(req, timeout=60) as resp:
+                    data = json.loads(resp.read().decode())
+                break
+            except urllib.error.HTTPError as e:
+                if e.code == 401 and attempt < 3:
+                    _vertex_token(force_refresh=True)
+                    continue
+                if e.code == 429 and attempt < 3:
+                    time.sleep(2 ** attempt * 5)
+                    continue
+                raise
+    else:
+        url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
+               f"{model_id}:generateContent?key={api_key}")
+        req = urllib.request.Request(url, data=body, headers={
+            "Content-Type": "application/json",
+        })
+        for attempt in range(4):
+            try:
+                with urllib.request.urlopen(req, timeout=60) as resp:
+                    data = json.loads(resp.read().decode())
+                break
+            except urllib.error.HTTPError as e:
+                if e.code == 429 and attempt < 3:
+                    time.sleep(2 ** attempt * 5)
+                    continue
+                raise
+
+    try:
+        return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+    except (KeyError, IndexError):
+        return ""
+
+
+def query_openai(prompt, api_key, model_id, max_tokens=10, temperature=0.0):
+    """Query OpenAI GPT via the chat/completions endpoint. Deterministic.
+
+    GPT-5 family are reasoning models: use `max_completion_tokens` and
+    `reasoning_effort="none"` to surface the answer directly (analogous
+    to Gemini thinkingBudget=0 and Ollama think=false). Older models
+    (gpt-4o, gpt-4.1) accept both max_tokens and max_completion_tokens.
+    """
+    body_dict = {
+        "model": model_id,
+        "messages": [{"role": "user", "content": prompt}],
+        "max_completion_tokens": max_tokens,
+        "temperature": temperature,
+    }
+    # GPT-5.x reasoning control
+    if model_id.startswith("gpt-5") or model_id.startswith("o"):
+        body_dict["reasoning_effort"] = "none"
+
+    body = json.dumps(body_dict).encode()
+    req = urllib.request.Request("https://api.openai.com/v1/chat/completions",
+                                 data=body, headers={
+                                     "Content-Type": "application/json",
+                                     "Authorization": f"Bearer {api_key}",
+                                 })
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        data = json.loads(resp.read().decode())
+    try:
+        return (data["choices"][0]["message"].get("content") or "").strip()
+    except (KeyError, IndexError):
+        return ""
+
+
+def query_xai(prompt, api_key, model_id, max_tokens=10, temperature=0.0):
+    """Query xAI Grok via OpenAI-compatible chat/completions endpoint.
+
+    Note: we deliberately pick the *-non-reasoning tags where available
+    for deterministic single-word answers. Reasoning variants would
+    burn tokens on hidden thought traces.
     """
     body = json.dumps({
         "model": model_id,
-        "max_tokens": 500,  # Higher for reasoning models
-        "messages": [{"role": "user", "content": prompt}]
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": max_tokens,
+        "temperature": temperature,
     }).encode()
-    req = urllib.request.Request(f"{base_url}/chat/completions", data=body, headers={
+    req = urllib.request.Request("https://api.x.ai/v1/chat/completions",
+                                 data=body, headers={
+                                     "Content-Type": "application/json",
+                                     "Authorization": f"Bearer {api_key}",
+                                 })
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        data = json.loads(resp.read().decode())
+    try:
+        return (data["choices"][0]["message"].get("content") or "").strip()
+    except (KeyError, IndexError):
+        return ""
+
+
+def query_ollama(prompt, model_id, base_url=OLLAMA_BASE_URL, max_tokens=500, temperature=0.0, seed=42):
+    """Query Ollama via native /api/chat. Deterministic by default.
+
+    Uses think=false to disable reasoning-mode for models that support
+    it (qwen3, gemma4, deepseek-r1) so the final answer is emitted
+    directly instead of being hidden inside a thinking block. If a
+    model ignores think=false and still emits reasoning, we fall back
+    to the 'thinking' field so we never lose content.
+
+    Returns (content, reasoning) tuple.
+    """
+    # base_url may end in /v1 (openai-compat) from earlier config;
+    # strip it to talk to native /api endpoint directly.
+    root = base_url.rsplit("/v1", 1)[0]
+    body = json.dumps({
+        "model": model_id,
+        "messages": [{"role": "user", "content": prompt}],
+        "stream": False,
+        "think": False,
+        "options": {
+            "temperature": temperature,
+            "top_p": 1.0,
+            "seed": seed,
+            "num_predict": max_tokens,
+        },
+    }).encode()
+    req = urllib.request.Request(f"{root}/api/chat", data=body, headers={
         "Content-Type": "application/json",
     })
     with urllib.request.urlopen(req, timeout=180) as resp:
         data = json.loads(resp.read().decode())
-    msg = data["choices"][0]["message"]
-    content = msg.get("content", "").strip()
-    reasoning = msg.get("reasoning", "")
+    msg = data.get("message", {})
+    content = (msg.get("content") or "").strip()
+    reasoning = msg.get("thinking") or ""
+    # Some reasoning models (SmolLM3) emit <think>...</think> tags
+    # inline even with think=false honored at the protocol level.
+    # Strip them so classification sees the final answer.
+    content = re.sub(r"<think>.*?</think>\s*", "", content, flags=re.DOTALL).strip()
+    # Fallback: some reasoning models ignore think=false and emit
+    # thinking only. Use the thinking text as the raw answer in that
+    # case so classification has something to work with.
+    if not content and reasoning:
+        content = reasoning.strip()
     return content, reasoning
 
 

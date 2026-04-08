@@ -25,7 +25,7 @@ from datetime import datetime
 sys.path.insert(0, str(Path(__file__).parent))
 from audit_llm_sovereignty_full import (
     MODELS, OLLAMA_MODELS, LANGS, CITIES,
-    query_ollama, query_claude,
+    query_ollama, query_claude, query_gemini, query_openai, query_xai,
     load_translation_cache,
     OLLAMA_BASE_URL,
 )
@@ -196,6 +196,9 @@ def main():
     args = parser.parse_args()
 
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    google_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY", "")
+    openai_key = os.environ.get("OPENAI_API_KEY", "")
+    xai_key = os.environ.get("XAI_API_KEY", "")
 
     print("Open-Ended LLM Sovereignty Audit")
     print(f"Questions: {len(OPENENDED_QUESTIONS)}")
@@ -248,34 +251,17 @@ def main():
 
                     try:
                         reasoning = ""
-                        if model.get("provider") == "ollama":
-                            # Longer answer for open-ended
-                            body = json.dumps({
-                                "model": model["id"],
-                                "max_tokens": 200,
-                                "messages": [{"role": "user", "content": prompt}]
-                            }).encode()
-                            req = urllib.request.Request(f"{OLLAMA_BASE_URL}/chat/completions", data=body, headers={"Content-Type": "application/json"})
-                            with urllib.request.urlopen(req, timeout=180) as resp:
-                                data = json.loads(resp.read().decode())
-                            msg = data["choices"][0]["message"]
-                            raw = msg.get("content", "").strip()
-                            reasoning = msg.get("reasoning", "")
+                        provider = model.get("provider")
+                        if provider == "ollama":
+                            raw, reasoning = query_ollama(prompt, model["id"], max_tokens=500)
+                        elif provider == "google":
+                            raw = query_gemini(prompt, google_key, model["id"], max_tokens=500)
+                        elif provider == "openai":
+                            raw = query_openai(prompt, openai_key, model["id"], max_tokens=500)
+                        elif provider == "xai":
+                            raw = query_xai(prompt, xai_key, model["id"], max_tokens=500)
                         else:
-                            # Claude
-                            body = json.dumps({
-                                "model": model["id"],
-                                "max_tokens": 200,
-                                "messages": [{"role": "user", "content": prompt}]
-                            }).encode()
-                            req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=body, headers={
-                                "Content-Type": "application/json",
-                                "x-api-key": api_key,
-                                "anthropic-version": "2023-06-01",
-                            })
-                            with urllib.request.urlopen(req, timeout=30) as resp:
-                                data = json.loads(resp.read().decode())
-                            raw = data["content"][0]["text"].strip()
+                            raw = query_claude(prompt, api_key, model["id"], max_tokens=500)
 
                         classification = classify_openended(raw, q_data, lang_code)
 

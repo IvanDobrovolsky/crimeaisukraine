@@ -1,6 +1,93 @@
 {
-  "date": "2026-04-06T23:23:22",
+  "date": "2026-04-07T18:35:28",
+  "rebuilt_from": "training_corpora_scan.jsonl",
   "results": [
+    {
+      "corpus": "c4_en",
+      "hf_dataset": "allenai/c4",
+      "config": "en",
+      "models_using": [
+        "T5",
+        "LLaMA-1",
+        "mT5"
+      ],
+      "total_scanned": 3557497,
+      "crimea_mentions": 2436,
+      "ukraine_frame": 243,
+      "russia_frame": 27,
+      "disputed": 3,
+      "no_signal": 2163,
+      "russia_pct": 1.1,
+      "ukraine_pct": 10.0
+    },
+    {
+      "corpus": "c4_ru",
+      "hf_dataset": "allenai/c4",
+      "config": "ru",
+      "models_using": [
+        "mT5",
+        "multi-lang models"
+      ],
+      "total_scanned": 60158,
+      "crimea_mentions": 2000,
+      "ukraine_frame": 43,
+      "russia_frame": 61,
+      "disputed": 0,
+      "no_signal": 1896,
+      "russia_pct": 3.0,
+      "ukraine_pct": 2.1
+    },
+    {
+      "corpus": "c4_uk",
+      "hf_dataset": "allenai/c4",
+      "config": "uk",
+      "models_using": [
+        "mT5",
+        "multi-lang models"
+      ],
+      "total_scanned": 25120,
+      "crimea_mentions": 2000,
+      "ukraine_frame": 194,
+      "russia_frame": 1,
+      "disputed": 0,
+      "no_signal": 1805,
+      "russia_pct": 0.1,
+      "ukraine_pct": 9.7
+    },
+    {
+      "corpus": "dolma",
+      "hf_dataset": "allenai/dolma",
+      "config": null,
+      "models_using": [
+        "OLMo",
+        "OLMo-2"
+      ],
+      "total_scanned": 2089255,
+      "crimea_mentions": 2000,
+      "ukraine_frame": 288,
+      "russia_frame": 40,
+      "disputed": 6,
+      "no_signal": 1666,
+      "russia_pct": 2.0,
+      "ukraine_pct": 14.4
+    },
+    {
+      "corpus": "fineweb_edu",
+      "hf_dataset": "HuggingFaceFW/fineweb-edu",
+      "config": "CC-MAIN-2024-10",
+      "models_using": [
+        "SmolLM",
+        "SmolLM-2"
+      ],
+      "total_scanned": 1355195,
+      "crimea_mentions": 2000,
+      "ukraine_frame": 208,
+      "russia_frame": 13,
+      "disputed": 4,
+      "no_signal": 1775,
+      "russia_pct": 0.7,
+      "ukraine_pct": 10.4
+    },
     {
       "corpus": "pile_sample",
       "hf_dataset": "NeelNanda/pile-10k",
@@ -10,7 +97,7 @@
         "GPT-NeoX",
         "Pythia"
       ],
-      "total_scanned": 10000,
+      "total_scanned": 9894,
       "crimea_mentions": 13,
       "ukraine_frame": 4,
       "russia_frame": 1,
@@ -18,6 +105,20 @@
       "no_signal": 8,
       "russia_pct": 7.7,
       "ukraine_pct": 30.8
+    },
+    {
+      "corpus": "redpajama_v2",
+      "hf_dataset": null,
+      "config": null,
+      "models_using": [],
+      "total_scanned": 38495,
+      "crimea_mentions": 90,
+      "ukraine_frame": 12,
+      "russia_frame": 0,
+      "disputed": 0,
+      "no_signal": 78,
+      "russia_pct": 0.0,
+      "ukraine_pct": 13.3
     }
   ]
 }
