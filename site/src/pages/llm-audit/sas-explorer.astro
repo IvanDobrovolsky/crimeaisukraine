@@ -176,8 +176,41 @@ const jsonPayload = JSON.stringify(rows);
       </div>
     </div>
 
-    <!-- Live ranking -->
+    <!-- Visualisations: 2D Pareto + 3D tier-space — ABOVE the table -->
     <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-6 mb-6">
+      <div class="flex items-baseline justify-between mb-2 flex-wrap gap-2">
+        <h2 class="text-lg font-bold text-white">Tier-space visualisations</h2>
+        <div class="text-[10px] text-[#64748b]">
+          point positions are raw D̄/L̄/Ī/R̄ (weight-free) · point colour is current SAS under your weights
+        </div>
+      </div>
+      <p class="text-xs text-[#94a3b8] mb-4 max-w-3xl">
+        Each model is a single point in tier space. The <strong class="text-white">positions</strong> are the raw tier means
+        — they do not move when you drag the sliders, because the sliders only change the SAS formula, not the underlying
+        measurements. The <strong class="text-white">colour</strong> of each point is the SAS under your current weight
+        vector <strong class="text-[#ffd700]">w</strong>, so colours update live as you drag. The 2D view shows the
+        forced-vs-free geometry that makes the RLHF gap visible without any weight choice; the 3D view lets you rotate
+        through (D̄, Ī, R̄) tier space to see the full cluster structure.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <div class="text-[10px] text-[#64748b] uppercase tracking-wider font-semibold mb-1">2D — forced vs free (y = x consistent line)</div>
+          <div id="plot-2d" class="w-full" style="min-height:460px;"></div>
+        </div>
+        <div>
+          <div class="text-[10px] text-[#64748b] uppercase tracking-wider font-semibold mb-1">3D — drag to rotate · scroll to zoom</div>
+          <div id="plot-3d" class="w-full" style="min-height:460px;"></div>
+        </div>
+      </div>
+      <div class="text-[10px] text-[#64748b] mt-3 flex flex-wrap gap-x-4 gap-y-1">
+        <span>Hover any point for model + per-tier scores + current SAS.</span>
+        <span>Click → open the per-model detail page.</span>
+        <span>3D plot: drag to orbit, shift-drag to pan, scroll to zoom.</span>
+      </div>
+    </div>
+
+    <!-- Live ranking -->
+    <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-6 mb-8">
       <div class="flex items-baseline justify-between mb-4 flex-wrap gap-2">
         <h2 class="text-lg font-bold text-white">Live SAS ranking</h2>
         <div class="text-[10px] text-[#64748b]">
@@ -187,30 +220,6 @@ const jsonPayload = JSON.stringify(rows);
       <div id="ranking-container" class="space-y-1">
         <!-- bars rendered by JS -->
       </div>
-    </div>
-
-    <!-- Pareto scatter: D̄ vs R̄ -->
-    <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-6 mb-8">
-      <div class="flex items-baseline justify-between mb-2 flex-wrap gap-2">
-        <h2 class="text-lg font-bold text-white">Weight-free view: forced-choice vs free-recall</h2>
-        <div class="text-[10px] text-[#64748b]">static · independent of the sliders</div>
-      </div>
-      <p class="text-xs text-[#94a3b8] mb-4 max-w-3xl">
-        Every model as a single point. The horizontal axis is D̄ (direct territorial mean — what standard forced-choice
-        benchmarks measure). The vertical axis is R̄ (free-recall mean — what the model writes when asked to generate freely
-        about a Crimean city). The dashed diagonal is <span class="font-mono">y = x</span>: the "consistent" line where
-        surface answer matches default generation. <strong class="text-[#ef4444]">Below the diagonal</strong> = closed
-        flagships hiding bias behind RLHF. <strong class="text-[#0057b7]">Above the diagonal</strong> = open / small models
-        deploying cached Ukraine-aligned hedging templates in generation. The vertical distance from the diagonal is the
-        RLHF gap. This view is deliberately weight-free — the structural asymmetry is visible without any choice of
-        <strong class="text-white">w</strong>.
-      </p>
-      <div class="flex justify-center">
-        <svg id="pareto-svg" viewBox="0 0 680 680" class="w-full max-w-[640px]" xmlns="http://www.w3.org/2000/svg">
-          <!-- rendered by JS below -->
-        </svg>
-      </div>
-      <p class="text-[10px] text-[#64748b] mt-2 text-center">Hover any point to see the model · click to open the detail page.</p>
     </div>
 
     <!-- Footer -->
@@ -229,6 +238,11 @@ const jsonPayload = JSON.stringify(rows);
     </div>
   </main>
 
+  <!-- Plotly.js for 2D + 3D scatter. Loaded from CDN (one-time ~3.5MB
+       cached across sessions). We use the "basic" bundle + scatter3d
+       module explicitly would be smaller, but the full bundle is easier
+       to integrate and every hosting CDN has it. -->
+  <script is:inline src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <script is:inline set:html={`window.__SAS_ROWS__ = ${jsonPayload};`}></script>
 
   <script is:inline>
@@ -415,6 +429,9 @@ const jsonPayload = JSON.stringify(rows);
           node.bar.style.backgroundColor = color;
         }
 
+        // Update plots with new SAS-under-current-w colours
+        updatePlotColors(w);
+
         // Update preset highlighting
         highlightMatchingPreset();
 
@@ -427,196 +444,220 @@ const jsonPayload = JSON.stringify(rows);
         }
       }
 
-      // ── Pareto scatter: static, rendered once ──────────────────────
-      function renderPareto() {
-        const svg = document.getElementById('pareto-svg');
-        if (!svg) return;
-        const W = 680, H = 680;
-        const margin = { top: 30, right: 30, bottom: 60, left: 60 };
-        const plotW = W - margin.left - margin.right;
-        const plotH = H - margin.top - margin.bottom;
-        const xScale = (v) => margin.left + v * plotW;
-        const yScale = (v) => margin.top + (1 - v) * plotH;
+      // ── Plotly 2D + 3D tier-space plots ─────────────────────────────
+      // Point positions are raw tier means (D, I, R) — they do not move
+      // when sliders change. Point colors are SAS under the current
+      // weight vector, recomputed and pushed via Plotly.restyle on
+      // every slider move (see updatePlotColors below).
+      let plot2dReady = false;
+      let plot3dReady = false;
 
-        const SVG_NS = 'http://www.w3.org/2000/svg';
-        const el = (tag, attrs, text) => {
-          const e = document.createElementNS(SVG_NS, tag);
-          for (const k in attrs) e.setAttribute(k, attrs[k]);
-          if (text != null) e.textContent = text;
-          return e;
+      function sasColor(s) {
+        // Match the ranking bar colour scheme
+        if (s >= 0.85) return '#22c55e';
+        if (s >= 0.75) return '#84cc16';
+        if (s >= 0.65) return '#f59e0b';
+        if (s >= 0.55) return '#f97316';
+        return '#ef4444';
+      }
+
+      function renderPlots() {
+        if (typeof Plotly === 'undefined') {
+          // Plotly not loaded yet; retry shortly.
+          setTimeout(renderPlots, 80);
+          return;
+        }
+
+        const xD = rows.map(r => r.D);
+        const yL = rows.map(r => r.L);
+        const zI = rows.map(r => r.I);
+        const rR = rows.map(r => r.R);
+        const names = rows.map(r => r.name);
+        const ids = rows.map(r => r.id);
+        const hover = rows.map(r =>
+          '<b>' + r.name + '</b><br>' +
+          r.org + ' · ' + (r.access || '—') + '<br>' +
+          'D̄ = ' + (r.D ?? 0).toFixed(3) +
+          '  L̄ = ' + (r.L ?? 0).toFixed(3) +
+          '  Ī = ' + (r.I ?? 0).toFixed(3) +
+          '  R̄ = ' + (r.R ?? 0).toFixed(3) + '<br>' +
+          'RLHF gap = ' + (r.rlhfGap != null ? (r.rlhfGap >= 0 ? '+' : '') + r.rlhfGap.toFixed(3) : '—') +
+          '<extra></extra>'
+        );
+
+        const initialW = { D: 0.10, L: 0.50, I: 0.20, R: 0.20 };  // legal-heavy default
+        const initialSas = rows.map(r => sasOf(r, initialW));
+        const initialColors = initialSas.map(sasColor);
+
+        // Common layout bits
+        const baseLayout = {
+          paper_bgcolor: '#0a0e1a',
+          plot_bgcolor: '#0a0e1a',
+          font: { color: '#94a3b8', family: 'system-ui, -apple-system, sans-serif', size: 11 },
+          margin: { l: 50, r: 10, t: 10, b: 50 },
+          showlegend: false,
+          hoverlabel: {
+            bgcolor: '#111827',
+            bordercolor: '#334155',
+            font: { color: '#e5e5e5', size: 11 },
+          },
         };
 
-        // Background panels (below/above diagonal)
-        const belowPts = [
-          [margin.left, margin.top + plotH],
-          [margin.left + plotW, margin.top],
-          [margin.left + plotW, margin.top + plotH],
-        ].map(p => p.join(',')).join(' ');
-        svg.appendChild(el('polygon', { points: belowPts, fill: '#ef4444', 'fill-opacity': 0.05 }));
-        const abovePts = [
-          [margin.left, margin.top + plotH],
-          [margin.left, margin.top],
-          [margin.left + plotW, margin.top],
-        ].map(p => p.join(',')).join(' ');
-        svg.appendChild(el('polygon', { points: abovePts, fill: '#0057b7', 'fill-opacity': 0.05 }));
-
-        // Zone labels
-        svg.appendChild(el('text', {
-          x: xScale(0.78), y: yScale(0.30), fill: '#ef4444', 'font-size': 11,
-          'font-weight': 'bold', 'text-anchor': 'middle', opacity: 0.85,
-        }, 'surface-patched'));
-        svg.appendChild(el('text', {
-          x: xScale(0.78), y: yScale(0.24), fill: '#ef4444', 'font-size': 9,
-          'text-anchor': 'middle', opacity: 0.75,
-        }, '(forced > free)'));
-        svg.appendChild(el('text', {
-          x: xScale(0.25), y: yScale(0.80), fill: '#0057b7', 'font-size': 11,
-          'font-weight': 'bold', 'text-anchor': 'middle', opacity: 0.85,
-        }, 'cached hedging'));
-        svg.appendChild(el('text', {
-          x: xScale(0.25), y: yScale(0.74), fill: '#0057b7', 'font-size': 9,
-          'text-anchor': 'middle', opacity: 0.75,
-        }, '(free > forced)'));
-
-        // Grid lines every 0.1
-        for (let v = 0; v <= 1.001; v += 0.1) {
-          svg.appendChild(el('line', {
-            x1: xScale(v), y1: margin.top, x2: xScale(v), y2: margin.top + plotH,
-            stroke: '#1e293b', 'stroke-width': 0.6, 'stroke-dasharray': '2 3',
-          }));
-          svg.appendChild(el('line', {
-            x1: margin.left, y1: yScale(v), x2: margin.left + plotW, y2: yScale(v),
-            stroke: '#1e293b', 'stroke-width': 0.6, 'stroke-dasharray': '2 3',
-          }));
-        }
-
-        // Diagonal y=x
-        svg.appendChild(el('line', {
-          x1: xScale(0), y1: yScale(0), x2: xScale(1), y2: yScale(1),
-          stroke: '#64748b', 'stroke-width': 1.5, 'stroke-dasharray': '6 4',
-        }));
-        svg.appendChild(el('text', {
-          x: xScale(0.92), y: yScale(0.89), fill: '#64748b', 'font-size': 10,
-          'font-style': 'italic', 'text-anchor': 'end',
-        }, 'y = x  (consistent)'));
-
-        // Axes
-        svg.appendChild(el('line', {
-          x1: margin.left, y1: margin.top + plotH,
-          x2: margin.left + plotW, y2: margin.top + plotH,
-          stroke: '#475569', 'stroke-width': 1.5,
-        }));
-        svg.appendChild(el('line', {
-          x1: margin.left, y1: margin.top, x2: margin.left, y2: margin.top + plotH,
-          stroke: '#475569', 'stroke-width': 1.5,
-        }));
-
-        // Axis labels
-        for (let v = 0; v <= 1.001; v += 0.2) {
-          svg.appendChild(el('text', {
-            x: xScale(v), y: margin.top + plotH + 16, fill: '#94a3b8', 'font-size': 10,
-            'text-anchor': 'middle',
-          }, v.toFixed(1)));
-          svg.appendChild(el('text', {
-            x: margin.left - 8, y: yScale(v) + 4, fill: '#94a3b8', 'font-size': 10,
-            'text-anchor': 'end',
-          }, v.toFixed(1)));
-        }
-        svg.appendChild(el('text', {
-          x: margin.left + plotW / 2, y: margin.top + plotH + 38,
-          fill: '#e5e5e5', 'font-size': 12, 'text-anchor': 'middle', 'font-weight': 'bold',
-        }, 'D̄ — direct territorial (forced-choice)'));
-        const yLabel = el('text', {
-          x: 18, y: margin.top + plotH / 2,
-          fill: '#e5e5e5', 'font-size': 12, 'text-anchor': 'middle', 'font-weight': 'bold',
-          transform: 'rotate(-90, 18, ' + (margin.top + plotH / 2) + ')',
-        }, 'R̄ — free-recall (default generation)');
-        svg.appendChild(yLabel);
-
-        // Points — handle label collisions by nudging
-        const placed = [];
-        rows.forEach((r, idx) => {
-          if (r.D == null || r.R == null) return;
-          const cx = xScale(r.D);
-          const cy = yScale(r.R);
-          const isClosed = /closed/i.test(r.access);
-          const g = r.rlhfGap ?? 0;
-          const color = g > 0.10 ? '#ef4444' : g < -0.10 ? '#0057b7' : '#f59e0b';
-
-          // Interactive group: link + hover
-          const a = el('a', { href: '/llm-audit/' + r.id });
-          const circle = el(isClosed ? 'circle' : 'rect',
-            isClosed
-              ? { cx: cx, cy: cy, r: 9, fill: color, stroke: 'white', 'stroke-width': 1.5, opacity: 0.92, 'data-idx': idx }
-              : { x: cx - 9, y: cy - 9, width: 18, height: 18, fill: color, stroke: 'white', 'stroke-width': 1.5, opacity: 0.92, 'data-idx': idx });
-          circle.style.cursor = 'pointer';
-          const title = el('title', {}, r.name + ' — D̄=' + r.D.toFixed(3) + '  R̄=' + r.R.toFixed(3) + '  gap=' + (g >= 0 ? '+' : '') + g.toFixed(3));
-          circle.appendChild(title);
-          a.appendChild(circle);
-          svg.appendChild(a);
-
-          // Label collision: try 8 placements around the point, pick first non-overlapping
-          const shortName = r.name.replace('Claude ', '').replace('GPT-', 'gpt-')
-              .replace('Gemini ', 'gem-').replace('-4.6', '').replace('-2.5', '')
-              .replace('Llama ', 'llama').replace('Qwen ', 'qwen')
-              .replace('Gemma ', 'gemma').replace('Mistral ', 'mistral');
-          const placements = [
-            { dx: 12, dy: 4, anchor: 'start' },
-            { dx: -12, dy: 4, anchor: 'end' },
-            { dx: 0, dy: -12, anchor: 'middle' },
-            { dx: 0, dy: 18, anchor: 'middle' },
-            { dx: 12, dy: -8, anchor: 'start' },
-            { dx: -12, dy: -8, anchor: 'end' },
-            { dx: 12, dy: 16, anchor: 'start' },
-            { dx: -12, dy: 16, anchor: 'end' },
-          ];
-          let chosen = placements[0];
-          for (const p of placements) {
-            const lx = cx + p.dx;
-            const ly = cy + p.dy;
-            const collides = placed.some(pl => Math.abs(pl.x - lx) < 55 && Math.abs(pl.y - ly) < 11);
-            if (!collides) { chosen = p; break; }
-          }
-          const lx = cx + chosen.dx;
-          const ly = cy + chosen.dy;
-          placed.push({ x: lx, y: ly });
-
-          svg.appendChild(el('text', {
-            x: lx, y: ly, fill: '#e5e5e5', 'font-size': 10,
-            'text-anchor': chosen.anchor, 'font-weight': '600',
-            'pointer-events': 'none',
-          }, shortName));
+        // ── 2D: forced (D) vs free (R) scatter ────────────────────────
+        const layout2d = Object.assign({}, baseLayout, {
+          xaxis: {
+            title: { text: 'D̄ — direct territorial (forced-choice)', font: { color: '#e5e5e5', size: 12 } },
+            range: [-0.02, 1.02], gridcolor: '#1e293b', zerolinecolor: '#334155',
+            tickfont: { color: '#94a3b8' },
+          },
+          yaxis: {
+            title: { text: 'R̄ — free-recall (default generation)', font: { color: '#e5e5e5', size: 12 } },
+            range: [-0.02, 1.02], gridcolor: '#1e293b', zerolinecolor: '#334155',
+            tickfont: { color: '#94a3b8' }, scaleanchor: 'x', scaleratio: 1,
+          },
+          shapes: [
+            // y = x consistent line
+            {
+              type: 'line', xref: 'x', yref: 'y',
+              x0: 0, y0: 0, x1: 1, y1: 1,
+              line: { color: '#64748b', width: 1.6, dash: 'dash' },
+            },
+            // Below-diagonal shading (surface-patched)
+            {
+              type: 'path',
+              path: 'M 0 0 L 1 0 L 1 1 Z',
+              fillcolor: 'rgba(239, 68, 68, 0.05)',
+              line: { width: 0 },
+            },
+            // Above-diagonal shading (hedging templates)
+            {
+              type: 'path',
+              path: 'M 0 0 L 0 1 L 1 1 Z',
+              fillcolor: 'rgba(0, 87, 183, 0.05)',
+              line: { width: 0 },
+            },
+          ],
+          annotations: [
+            {
+              x: 0.82, y: 0.30, xref: 'x', yref: 'y', showarrow: false,
+              text: '<b>surface-patched</b><br><span style="font-size:9px">forced > free</span>',
+              font: { color: '#ef4444', size: 11 }, opacity: 0.85, align: 'center',
+            },
+            {
+              x: 0.28, y: 0.82, xref: 'x', yref: 'y', showarrow: false,
+              text: '<b>cached hedging</b><br><span style="font-size:9px">free > forced</span>',
+              font: { color: '#0057b7', size: 11 }, opacity: 0.85, align: 'center',
+            },
+            {
+              x: 0.93, y: 0.91, xref: 'x', yref: 'y', showarrow: false,
+              text: '<i>y = x</i>', font: { color: '#64748b', size: 10 }, xanchor: 'right',
+            },
+          ],
         });
 
-        // Legend
-        const legendX = margin.left + plotW - 190;
-        const legendY = margin.top + plotH - 82;
-        svg.appendChild(el('rect', {
-          x: legendX - 8, y: legendY - 14, width: 198, height: 74,
-          fill: '#0a0e1a', stroke: '#1e293b', 'stroke-width': 1, rx: 4,
-        }));
-        const li = (offset, shape, color, text) => {
-          const sy = legendY + offset;
-          if (shape === 'circle') {
-            svg.appendChild(el('circle', { cx: legendX + 6, cy: sy - 3, r: 6, fill: color, stroke: 'white', 'stroke-width': 1 }));
-          } else {
-            svg.appendChild(el('rect', { x: legendX, y: sy - 9, width: 12, height: 12, fill: color, stroke: 'white', 'stroke-width': 1 }));
-          }
-          svg.appendChild(el('text', { x: legendX + 18, y: sy, fill: '#94a3b8', 'font-size': 9 }, text));
+        const trace2d = {
+          x: xD, y: rR,
+          mode: 'markers+text',
+          type: 'scatter',
+          text: rows.map(r => {
+            // short label for the top performers and bottom outliers only
+            return r.name.length > 18 ? r.name.slice(0, 16) + '…' : r.name;
+          }),
+          textposition: 'top center',
+          textfont: { color: '#e5e5e5', size: 9 },
+          marker: {
+            size: 14,
+            color: initialColors,
+            line: { color: 'white', width: 1.5 },
+            opacity: 0.92,
+          },
+          hovertemplate: hover,
+          customdata: ids,
         };
-        li(0, 'circle', '#ef4444', 'closed · pos. RLHF gap');
-        li(15, 'rect',   '#0057b7', 'open · neg. RLHF gap');
-        li(30, 'circle', '#f59e0b', 'near-zero gap');
-        li(45, 'line',   '#64748b', '');
-        svg.appendChild(el('line', {
-          x1: legendX, y1: legendY + 42, x2: legendX + 12, y2: legendY + 42,
-          stroke: '#64748b', 'stroke-width': 1.5, 'stroke-dasharray': '4 3',
-        }));
-        svg.appendChild(el('text', {
-          x: legendX + 18, y: legendY + 45, fill: '#94a3b8', 'font-size': 9,
-        }, 'diagonal y = x'));
+
+        Plotly.newPlot('plot-2d', [trace2d], layout2d, {
+          displayModeBar: false, responsive: true,
+        }).then(() => {
+          plot2dReady = true;
+          // clickable points → model detail page
+          document.getElementById('plot-2d').on('plotly_click', (ev) => {
+            if (ev.points && ev.points[0]) {
+              const id = ev.points[0].customdata;
+              if (id) window.location.href = '/llm-audit/' + id;
+            }
+          });
+        });
+
+        // ── 3D: (D̄, Ī, R̄) scatter ───────────────────────────────────
+        const layout3d = Object.assign({}, baseLayout, {
+          scene: {
+            xaxis: {
+              title: { text: 'D̄ direct', font: { color: '#e5e5e5', size: 11 } },
+              range: [0, 1], gridcolor: '#1e293b', zerolinecolor: '#334155',
+              backgroundcolor: '#0a0e1a', tickfont: { color: '#94a3b8', size: 9 },
+            },
+            yaxis: {
+              title: { text: 'Ī implicit', font: { color: '#e5e5e5', size: 11 } },
+              range: [0, 1], gridcolor: '#1e293b', zerolinecolor: '#334155',
+              backgroundcolor: '#0a0e1a', tickfont: { color: '#94a3b8', size: 9 },
+            },
+            zaxis: {
+              title: { text: 'R̄ free-recall', font: { color: '#e5e5e5', size: 11 } },
+              range: [0, 1], gridcolor: '#1e293b', zerolinecolor: '#334155',
+              backgroundcolor: '#0a0e1a', tickfont: { color: '#94a3b8', size: 9 },
+            },
+            bgcolor: '#0a0e1a',
+            camera: {
+              eye: { x: 1.65, y: 1.45, z: 1.2 },
+            },
+          },
+          margin: { l: 0, r: 0, t: 0, b: 0 },
+        });
+
+        const trace3d = {
+          x: xD, y: zI, z: rR,
+          mode: 'markers+text',
+          type: 'scatter3d',
+          text: names,
+          textposition: 'top center',
+          textfont: { color: '#cbd5e1', size: 9 },
+          marker: {
+            size: 6,
+            color: initialColors,
+            line: { color: 'white', width: 0.8 },
+            opacity: 0.95,
+          },
+          hovertemplate: hover,
+          customdata: ids,
+        };
+
+        Plotly.newPlot('plot-3d', [trace3d], layout3d, {
+          displayModeBar: false, responsive: true,
+        }).then(() => {
+          plot3dReady = true;
+          document.getElementById('plot-3d').on('plotly_click', (ev) => {
+            if (ev.points && ev.points[0]) {
+              const id = ev.points[0].customdata;
+              if (id) window.location.href = '/llm-audit/' + id;
+            }
+          });
+        });
       }
-      renderPareto();
+
+      // Called from render() on every slider change: push new colours.
+      function updatePlotColors(w) {
+        if (typeof Plotly === 'undefined') return;
+        const newColors = rows.map(r => sasColor(sasOf(r, w)));
+        if (plot2dReady) {
+          try { Plotly.restyle('plot-2d', { 'marker.color': [newColors] }); } catch (e) {}
+        }
+        if (plot3dReady) {
+          try { Plotly.restyle('plot-3d', { 'marker.color': [newColors] }); } catch (e) {}
+        }
+      }
+
+      renderPlots();
+
 
       function requestRender() {
         if (rafId != null) return;
