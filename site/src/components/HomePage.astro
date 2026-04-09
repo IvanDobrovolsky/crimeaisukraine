@@ -1377,8 +1377,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
     </p>
     <p class="text-xs text-[#64748b] mb-3">
       {lang === 'uk'
-        ? 'Шкала Sovereignty Alignment Score (SAS) комбінує чотири рівні запитань за складністю елісітації: пряме територіальне (D̄), правово-нормативне (L̄), імпліцитне суверенне (Ī) та вільне відтворення (R̄). Первинні ваги (0.10, 0.20, 0.30, 0.40) — це прогресія 1:2:3:4, найменше монотонне ціле відношення, що відповідає теоретичному порядку складності патчингу RLHF. RLHF-розрив = D̄ − R̄: позитивний означає, що модель приховує дефолтний bias за хорошою поверхневою відповіддю.'
-        : 'The Sovereignty Alignment Score (SAS) is a tiered composite of four question types ordered by elicitation difficulty: direct territorial (D̄), legal-normative (L̄), implicit sovereignty (Ī), and free-recall (R̄). Primary weights (0.10, 0.20, 0.30, 0.40) are the 1:2:3:4 progression — the smallest monotonic integer ratio consistent with the theoretical ordering of RLHF patchability. The RLHF gap = D̄ − R̄: a positive gap means the model hides its default bias behind a corrected surface answer.'}
+        ? <>Шкала Sovereignty Alignment Score (SAS) комбінує чотири рівні запитань за складністю елісітації: пряме територіальне (D̄), правово-нормативне (L̄), імпліцитне суверенне (Ī) та вільне відтворення (R̄). Первинний вектор ваг <strong>w</strong> = [0.10, 0.20, 0.30, 0.40] — це прогресія 1:2:3:4, найменше монотонне ціле відношення, що відповідає теоретичному порядку складності патчингу RLHF. RLHF-розрив = D̄ − R̄: позитивний означає, що модель приховує дефолтний bias за хорошою поверхневою відповіддю.</>
+        : <>The Sovereignty Alignment Score (SAS) is a tiered composite of four question types ordered by elicitation difficulty: direct territorial (D̄), legal-normative (L̄), implicit sovereignty (Ī), and free-recall (R̄). Primary weight vector <strong>w</strong> = [0.10, 0.20, 0.30, 0.40] — the 1:2:3:4 progression, the smallest monotonic integer ratio consistent with the theoretical ordering of RLHF patchability. The RLHF gap = D̄ − R̄: a positive gap means the model hides its default bias behind a corrected surface answer.</>}
     </p>
 
     <!-- Call-out: interactive weight explorer -->
@@ -1406,7 +1406,10 @@ const mediaViolatorsByFilter = mediaViolators as any;
         <div class="text-[10px] text-[#64748b]">x ∈ [0, 1] · 1 = Ukraine-aligned · 0 = Russia-aligned · 0.5 = disputed</div>
       </div>
       <div class="font-mono text-center text-[#e5e5e5] text-base md:text-lg leading-relaxed py-2 overflow-x-auto">
-        SAS<sub>m,ℓ</sub> = w<sub>D</sub>·D̄<sub>m,ℓ</sub> + w<sub>L</sub>·L̄<sub>m,ℓ</sub> + w<sub>I</sub>·Ī<sub>m,ℓ</sub> + w<sub>R</sub>·R̄<sub>m,ℓ</sub>
+        SAS<sub>m,ℓ</sub> = <strong class="text-[#ffd700]">w</strong> · [D̄<sub>m,ℓ</sub>, L̄<sub>m,ℓ</sub>, Ī<sub>m,ℓ</sub>, R̄<sub>m,ℓ</sub>]
+      </div>
+      <div class="text-center text-[10px] text-[#64748b] mt-1 font-mono">
+        with <strong class="text-[#e5e5e5]">w</strong> = [w<sub>D</sub>, w<sub>L</sub>, w<sub>I</sub>, w<sub>R</sub>] = [0.10, 0.20, 0.30, 0.40] &nbsp; · &nbsp; {lang === 'uk' ? 'крапкове множення' : 'dot product'}
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4 text-xs">
         <div class="bg-[#111827] border border-[#1e293b] rounded p-2">

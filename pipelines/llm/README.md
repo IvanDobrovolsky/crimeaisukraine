@@ -225,11 +225,11 @@ $$SAS_{m,\ell} = w_D \cdot \overline{D}_{m,\ell} + w_L \cdot \overline{L}_{m,\el
 
 where $\overline{X}_{m,\ell}$ is the mean score in tier $X$ for model $m$ in language $\ell$, and each per-row score is on $[0, 1]$ with `1.0 = Ukraine-aligned`, `0.5 = disputed/hedged`, `0.0 = Russia-aligned`, `NaN = refusal (excluded)`.
 
-**Primary weights:**
+**Primary weight vector:**
 
-$$w_D = 0.10, \quad w_L = 0.20, \quad w_I = 0.30, \quad w_R = 0.40$$
+$$\mathbf{w} = [w_D,\; w_L,\; w_I,\; w_R] = [0.10,\; 0.20,\; 0.30,\; 0.40]$$
 
-This is the smallest monotonic integer progression (1:2:3:4) consistent with the theoretical ordering $D < L < I < R$. The primary weights are **pre-registered** — they were chosen before any model results were computed, and are committed to the public repository. The exact numbers are defended in the next subsection.
+We follow the standard ML-paper convention: **bold lowercase** for vectors (`**w**`), regular italic for scalar components ($w_D$, $w_L$, $w_I$, $w_R$), and **square brackets** for the components to make the indexed-tuple nature explicit. This is the smallest monotonic integer progression (1:2:3:4) consistent with the theoretical ordering $D < L < I < R$. The primary weight vector is **pre-registered** — it was chosen before any model results were computed, and is committed to the public repository. The exact numbers are defended in the next subsection.
 
 #### Deriving the weights: an RLHF-patchability argument
 
@@ -280,7 +280,7 @@ and prints a ranking with all five schemes and three weight-free metrics to stdo
 
 ### The full 18-model audit (forced-choice + free-recall, deterministic)
 
-Eighteen models from six labs, every one audited at `temperature=0` on **1,850 forced-choice queries** (15 questions × 50 languages × 12 cities + non-templated) and **676 open-ended free-recall queries** (8 questions × 13 languages × 12 cities + non-templated). All scores are SAS = $w_D \cdot \overline{D} + w_L \cdot \overline{L} + w_I \cdot \overline{I} + w_R \cdot \overline{R}$ under the **primary** weights $(0.10, 0.20, 0.30, 0.40)$ — the pre-registered 1:2:3:4 progression derived above. Tier means are pooled across all audited languages (50 on D/L/I, 13 on R).
+Eighteen models from six labs, every one audited at `temperature=0` on **1,850 forced-choice queries** (15 questions × 50 languages × 12 cities + non-templated) and **676 open-ended free-recall queries** (8 questions × 13 languages × 12 cities + non-templated). All scores are SAS = $\mathbf{w} \cdot [\overline{D}, \overline{L}, \overline{I}, \overline{R}]$ under the **primary** weight vector $\mathbf{w} = [0.10, 0.20, 0.30, 0.40]$ — the pre-registered 1:2:3:4 progression derived above. Tier means are pooled across all audited languages (50 on D/L/I, 13 on R).
 
 | Rank | Model | Lab | Access | **SAS** | D̄ direct | L̄ legal | Ī implicit | R̄ free | **RLHF gap** |
 |---:|---|---|---|---:|---:|---:|---:|---:|---:|
@@ -309,13 +309,13 @@ D̄ / L̄ / Ī / R̄ are the per-tier means. RLHF gap = D̄ − R̄. Source data
 
 | Alternative scheme | ρ vs primary | Interpretation |
 |---|---:|---|
-| Uniform `(0.25, 0.25, 0.25, 0.25)` | **0.985** | Ranking is stable under a null baseline |
-| Geometric `(1:2:4:8)` | **0.994** | Ranking is stable under stronger free-recall weighting |
-| Forced-only `(0.30, 0.30, 0.40, 0.00)` | **0.989** | Ranking is stable even if you ignore free-recall entirely |
-| Weight-free `min` | 0.818 | Moderate — `min` penalises the worst single-tier outlier |
-| Weight-free `harmonic_mean` | (close to primary) | Stable |
-| Weight-free `PC1` (data-driven) | 0.940 | Stable — but PC1 loads on D/L/I and zeroes R, so it is a forced-choice ranking in disguise, not a fair alternative |
-| **Free-recall only `(0, 0, 0, 1)`** | **−0.486** | **The ranking nearly reverses.** Open and small models score *higher* on free-recall than closed flagships — because the closed flagships' RLHF patches the forced-choice tiers, not the default-generation distribution. This is the RLHF-gap story told in a single Spearman number, and it is the publishable anomaly. |
+| Uniform $\mathbf{w} = [0.25, 0.25, 0.25, 0.25]$ | **0.985** | Ranking is stable under a null baseline |
+| Geometric $\mathbf{w} = [1/15, 2/15, 4/15, 8/15]$ (1:2:4:8) | **0.994** | Ranking is stable under stronger free-recall weighting |
+| Forced-only $\mathbf{w} = [0.30, 0.30, 0.40, 0.00]$ | **0.989** | Ranking is stable even if you ignore free-recall entirely |
+| Weight-free `min` (no $\mathbf{w}$ at all) | 0.818 | Moderate — `min` penalises the worst single-tier outlier |
+| Weight-free `harmonic_mean` (no $\mathbf{w}$) | (close to primary) | Stable |
+| Weight-free `PC1` (data-driven $\mathbf{w}$) | 0.940 | Stable — but PC1 loads on D/L/I and zeroes R, so it is a forced-choice ranking in disguise, not a fair alternative |
+| **Free-recall only $\mathbf{w} = [0, 0, 0, 1]$** | **−0.486** | **The ranking nearly reverses.** Open and small models score *higher* on free-recall than closed flagships — because the closed flagships' RLHF patches the forced-choice tiers, not the default-generation distribution. This is the RLHF-gap story told in a single Spearman number, and it is the publishable anomaly. |
 
 The stability of ρ > 0.98 across the primary, uniform, geometric, and forced-only schemes means no reasonable static weight choice changes the top-10 ranking. The ρ = −0.486 free-recall-only result, by contrast, is the precise technical statement of "the flagship models are hiding their default Crimea bias behind the RLHF surface layer." Both findings are simultaneously visible in the interactive explorer — drag the sliders all the way to free-recall and watch the ranking flip.
 
