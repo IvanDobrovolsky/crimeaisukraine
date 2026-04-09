@@ -1,15 +1,21 @@
 {
   "schema_version": 1,
   "description": "Per-model per-tier mean scores for the SAS interactive explorer",
-  "generated": "2026-04-08T16:59:10",
+  "generated": "2026-04-08T18:25:47",
   "default_weights": {
     "D": 0.1,
-    "L": 0.2,
-    "I": 0.3,
-    "R": 0.4
+    "L": 0.5,
+    "I": 0.2,
+    "R": 0.2
   },
   "presets": {
     "primary": {
+      "D": 0.1,
+      "L": 0.5,
+      "I": 0.2,
+      "R": 0.2
+    },
+    "monotonic": {
       "D": 0.1,
       "L": 0.2,
       "I": 0.3,
@@ -81,6 +87,17 @@
       "n_languages": 50
     },
     {
+      "name": "sonnet-4.6",
+      "tiers": {
+        "D": 0.9198,
+        "L": 0.9401,
+        "I": 0.9082,
+        "R": 0.6878
+      },
+      "rlhf_gap": 0.232,
+      "n_languages": 50
+    },
+    {
       "name": "opus-4.6",
       "tiers": {
         "D": 0.8904,
@@ -103,12 +120,12 @@
       "n_languages": 50
     },
     {
-      "name": "sonnet-4.6",
+      "name": "gemini-2.5-flash",
       "tiers": {
-        "D": 0.9198,
-        "L": 0.9401,
-        "I": 0.9082,
-        "R": 0.6878
+        "D": 0.8636,
+        "L": 0.9793,
+        "I": 0.7721,
+        "R": 0.6316
       },
       "rlhf_gap": 0.232,
       "n_languages": 50
@@ -125,14 +142,25 @@
       "n_languages": 50
     },
     {
-      "name": "gemini-2.5-flash",
+      "name": "gemma3-4b",
       "tiers": {
-        "D": 0.8636,
-        "L": 0.9793,
-        "I": 0.7721,
-        "R": 0.6316
+        "D": 0.3897,
+        "L": 0.9412,
+        "I": 0.8955,
+        "R": null
       },
-      "rlhf_gap": 0.232,
+      "rlhf_gap": null,
+      "n_languages": 50
+    },
+    {
+      "name": "gpt-5.4-mini",
+      "tiers": {
+        "D": 0.7143,
+        "L": 0.8952,
+        "I": 0.7563,
+        "R": 0.6682
+      },
+      "rlhf_gap": 0.0461,
       "n_languages": 50
     },
     {
@@ -152,17 +180,6 @@
         "D": null,
         "L": null,
         "I": 0.8343,
-        "R": null
-      },
-      "rlhf_gap": null,
-      "n_languages": 50
-    },
-    {
-      "name": "gemma3-4b",
-      "tiers": {
-        "D": 0.3897,
-        "L": 0.9412,
-        "I": 0.8955,
         "R": null
       },
       "rlhf_gap": null,
@@ -191,39 +208,6 @@
       "n_languages": 50
     },
     {
-      "name": "gpt-5.4-mini",
-      "tiers": {
-        "D": 0.7143,
-        "L": 0.8952,
-        "I": 0.7563,
-        "R": 0.6682
-      },
-      "rlhf_gap": 0.0461,
-      "n_languages": 50
-    },
-    {
-      "name": "gpt-5.4-nano",
-      "tiers": {
-        "D": 0.5372,
-        "L": 0.7466,
-        "I": 0.9138,
-        "R": 0.77
-      },
-      "rlhf_gap": -0.2328,
-      "n_languages": 50
-    },
-    {
-      "name": "mistral-7b",
-      "tiers": {
-        "D": 0.3333,
-        "L": null,
-        "I": 0.7699,
-        "R": null
-      },
-      "rlhf_gap": null,
-      "n_languages": 49
-    },
-    {
       "name": "grok-4-fast",
       "tiers": {
         "D": 0.7149,
@@ -246,14 +230,25 @@
       "n_languages": 50
     },
     {
-      "name": "llama3.1-8b",
+      "name": "mistral-7b",
       "tiers": {
-        "D": 0.4022,
+        "D": 0.3333,
         "L": null,
-        "I": 0.7897,
+        "I": 0.7699,
         "R": null
       },
       "rlhf_gap": null,
+      "n_languages": 49
+    },
+    {
+      "name": "gpt-5.4-nano",
+      "tiers": {
+        "D": 0.5372,
+        "L": 0.7466,
+        "I": 0.9138,
+        "R": 0.77
+      },
+      "rlhf_gap": -0.2328,
       "n_languages": 50
     },
     {
@@ -268,26 +263,15 @@
       "n_languages": 50
     },
     {
-      "name": "smollm3",
+      "name": "llama3.1-8b",
       "tiers": {
-        "D": 0.4712,
-        "L": 0.4941,
-        "I": 0.7806,
-        "R": 0.7866
+        "D": 0.4022,
+        "L": null,
+        "I": 0.7897,
+        "R": null
       },
-      "rlhf_gap": -0.3154,
-      "n_languages": 48
-    },
-    {
-      "name": "olmo2",
-      "tiers": {
-        "D": 0.4358,
-        "L": 0.5953,
-        "I": 0.7392,
-        "R": 0.8676
-      },
-      "rlhf_gap": -0.4318,
-      "n_languages": 49
+      "rlhf_gap": null,
+      "n_languages": 50
     },
     {
       "name": "gemma4",
@@ -301,6 +285,17 @@
       "n_languages": 50
     },
     {
+      "name": "olmo2",
+      "tiers": {
+        "D": 0.4358,
+        "L": 0.5953,
+        "I": 0.7392,
+        "R": 0.8676
+      },
+      "rlhf_gap": -0.4318,
+      "n_languages": 49
+    },
+    {
       "name": "qwen3",
       "tiers": {
         "D": 0.2408,
@@ -309,6 +304,17 @@
         "R": 0.73
       },
       "rlhf_gap": -0.4892,
+      "n_languages": 50
+    },
+    {
+      "name": "llama3.2-3b",
+      "tiers": {
+        "D": 0.4722,
+        "L": 0.6504,
+        "I": 0.5504,
+        "R": null
+      },
+      "rlhf_gap": null,
       "n_languages": 50
     },
     {
@@ -323,15 +329,15 @@
       "n_languages": 5
     },
     {
-      "name": "llama3.2-3b",
+      "name": "smollm3",
       "tiers": {
-        "D": 0.4722,
-        "L": 0.6504,
-        "I": 0.5504,
-        "R": null
+        "D": 0.4712,
+        "L": 0.4941,
+        "I": 0.7806,
+        "R": 0.7866
       },
-      "rlhf_gap": null,
-      "n_languages": 50
+      "rlhf_gap": -0.3154,
+      "n_languages": 48
     },
     {
       "name": "olmo3",

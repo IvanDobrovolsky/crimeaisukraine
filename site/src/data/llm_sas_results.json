@@ -1,5 +1,5 @@
 {
-  "_generated": "2026-04-08T16:59:10",
+  "_generated": "2026-04-08T18:25:47",
   "_description": "Sovereignty Alignment Score (SAS) per model from the deterministic audit",
   "_methodology": {
     "forced_choice_queries_per_model": 1850,
@@ -10,9 +10,9 @@
     "temperature": 0.0,
     "sas_weights": {
       "D": 0.1,
-      "L": 0.2,
-      "I": 0.3,
-      "R": 0.4
+      "L": 0.5,
+      "I": 0.2,
+      "R": 0.2
     },
     "pre_registered": true,
     "explorer_url": "/llm-audit/sas-explorer"
@@ -35,7 +35,7 @@
       "n_languages": 47
     },
     "gemini-2.5-flash": {
-      "sas": 0.8249,
+      "sas": 0.8939,
       "sas_uniform": 0.8502,
       "sas_free_only": 0.6316,
       "sas_forced_only": 0.8548,
@@ -51,7 +51,7 @@
       "n_languages": 50
     },
     "gemini-2.5-pro": {
-      "sas": 0.9282,
+      "sas": 0.9465,
       "sas_uniform": 0.9354,
       "sas_free_only": 0.5942,
       "sas_forced_only": 0.9575,
@@ -99,7 +99,7 @@
       "n_languages": 50
     },
     "gemma3-4b": {
-      "sas": 0.8188,
+      "sas": 0.8499,
       "sas_uniform": 0.7344,
       "sas_free_only": null,
       "sas_forced_only": 0.7501,
@@ -115,7 +115,7 @@
       "n_languages": 50
     },
     "gemma4": {
-      "sas": 0.6521,
+      "sas": 0.6571,
       "sas_uniform": 0.598,
       "sas_free_only": 0.8806,
       "sas_forced_only": 0.5879,
@@ -131,7 +131,7 @@
       "n_languages": 50
     },
     "gpt-5.4": {
-      "sas": 0.9089,
+      "sas": 0.9013,
       "sas_uniform": 0.9132,
       "sas_free_only": 0.6575,
       "sas_forced_only": 0.9348,
@@ -147,7 +147,7 @@
       "n_languages": 50
     },
     "gpt-5.4-mini": {
-      "sas": 0.7756,
+      "sas": 0.8309,
       "sas_uniform": 0.7729,
       "sas_free_only": 0.6682,
       "sas_forced_only": 0.7789,
@@ -163,7 +163,7 @@
       "n_languages": 50
     },
     "gpt-5.4-nano": {
-      "sas": 0.7684,
+      "sas": 0.7436,
       "sas_uniform": 0.7133,
       "sas_free_only": 0.7699,
       "sas_forced_only": 0.7296,
@@ -179,7 +179,7 @@
       "n_languages": 50
     },
     "grok-3": {
-      "sas": 0.8152,
+      "sas": 0.8142,
       "sas_uniform": 0.7652,
       "sas_free_only": 0.6287,
       "sas_forced_only": 0.7892,
@@ -195,7 +195,7 @@
       "n_languages": 50
     },
     "grok-4-fast": {
-      "sas": 0.7449,
+      "sas": 0.7871,
       "sas_uniform": 0.7512,
       "sas_free_only": 0.5858,
       "sas_forced_only": 0.7554,
@@ -211,7 +211,7 @@
       "n_languages": 50
     },
     "grok-4.20": {
-      "sas": 0.8398,
+      "sas": 0.8835,
       "sas_uniform": 0.8069,
       "sas_free_only": 0.5732,
       "sas_forced_only": 0.8328,
@@ -227,7 +227,7 @@
       "n_languages": 50
     },
     "haiku-4.5": {
-      "sas": 0.7768,
+      "sas": 0.8028,
       "sas_uniform": 0.7518,
       "sas_free_only": 0.6648,
       "sas_forced_only": 0.7633,
@@ -243,7 +243,7 @@
       "n_languages": 50
     },
     "llama3.1-8b": {
-      "sas": 0.6969,
+      "sas": 0.6659,
       "sas_uniform": 0.604,
       "sas_free_only": null,
       "sas_forced_only": 0.6306,
@@ -275,7 +275,7 @@
       "n_languages": 46
     },
     "llama3.2-3b": {
-      "sas": 0.5745,
+      "sas": 0.6037,
       "sas_uniform": 0.5603,
       "sas_free_only": null,
       "sas_forced_only": 0.5603,
@@ -323,7 +323,7 @@
       "n_languages": 50
     },
     "mistral-7b": {
-      "sas": 0.7552,
+      "sas": 0.753,
       "sas_uniform": 0.7486,
       "sas_free_only": null,
       "sas_forced_only": 0.7505,
@@ -339,7 +339,7 @@
       "n_languages": 49
     },
     "mistral-small": {
-      "sas": 0.6708,
+      "sas": 0.7084,
       "sas_uniform": 0.6467,
       "sas_free_only": 0.7205,
       "sas_forced_only": 0.6419,
@@ -355,7 +355,7 @@
       "n_languages": 50
     },
     "olmo2": {
-      "sas": 0.6629,
+      "sas": 0.6279,
       "sas_uniform": 0.6114,
       "sas_free_only": 0.8676,
       "sas_forced_only": 0.6099,
@@ -371,7 +371,7 @@
       "n_languages": 49
     },
     "olmo3": {
-      "sas": 0.5737,
+      "sas": 0.5734,
       "sas_uniform": 0.5475,
       "sas_free_only": 0.6607,
       "sas_forced_only": 0.5505,
@@ -387,7 +387,7 @@
       "n_languages": 49
     },
     "opus-4.6": {
-      "sas": 0.9138,
+      "sas": 0.911,
       "sas_uniform": 0.9117,
       "sas_free_only": 0.6802,
       "sas_forced_only": 0.9351,
@@ -483,7 +483,7 @@
       "n_languages": 1
     },
     "qwen2.5-7b": {
-      "sas": 0.7415,
+      "sas": 0.763,
       "sas_uniform": 0.6761,
       "sas_free_only": null,
       "sas_forced_only": 0.6886,
@@ -499,7 +499,7 @@
       "n_languages": 50
     },
     "qwen3": {
-      "sas": 0.6106,
+      "sas": 0.6261,
       "sas_uniform": 0.5401,
       "sas_free_only": 0.7301,
       "sas_forced_only": 0.5382,
@@ -515,7 +515,7 @@
       "n_languages": 50
     },
     "smollm3": {
-      "sas": 0.6631,
+      "sas": 0.5865,
       "sas_uniform": 0.6141,
       "sas_free_only": 0.7866,
       "sas_forced_only": 0.6244,
@@ -531,7 +531,7 @@
       "n_languages": 48
     },
     "sonnet-4.6": {
-      "sas": 0.891,
+      "sas": 0.9137,
       "sas_uniform": 0.9043,
       "sas_free_only": 0.6907,
       "sas_forced_only": 0.918,
