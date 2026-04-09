@@ -1,0 +1,124 @@
+{
+  "source": "training",
+  "total_documents_scanned": 10539,
+  "documents_with_at_least_one_trope": 57,
+  "per_trope": {
+    "catherine_1783": 8,
+    "black_sea_fleet": 25,
+    "baptism_of_rus_chersonesos": 9,
+    "russian_speaking_majority": 6,
+    "hero_city_sevastopol": 9,
+    "khrushchev_1954": 1
+  },
+  "per_year": {
+    "unknown": {
+      "catherine_1783": 8,
+      "black_sea_fleet": 25,
+      "baptism_of_rus_chersonesos": 9,
+      "russian_speaking_majority": 6,
+      "hero_city_sevastopol": 9,
+      "khrushchev_1954": 1
+    }
+  },
+  "top_venues": {
+    "fineweb_edu": {
+      "baptism_of_rus_chersonesos": 2,
+      "black_sea_fleet": 5,
+      "catherine_1783": 5,
+      "hero_city_sevastopol": 5,
+      "russian_speaking_majority": 2,
+      "khrushchev_1954": 1
+    },
+    "dolma": {
+      "catherine_1783": 1,
+      "russian_speaking_majority": 2,
+      "black_sea_fleet": 9,
+      "hero_city_sevastopol": 1,
+      "baptism_of_rus_chersonesos": 1
+    },
+    "c4_en": {
+      "catherine_1783": 1,
+      "black_sea_fleet": 6,
+      "baptism_of_rus_chersonesos": 1,
+      "russian_speaking_majority": 1,
+      "hero_city_sevastopol": 2
+    },
+    "c4_ru": {
+      "baptism_of_rus_chersonesos": 5,
+      "hero_city_sevastopol": 1,
+      "black_sea_fleet": 1,
+      "catherine_1783": 1
+    },
+    "c4_uk": {
+      "black_sea_fleet": 3
+    },
+    "redpajama_v2": {
+      "black_sea_fleet": 1,
+      "russian_speaking_majority": 1
+    }
+  },
+  "by_stage1_label": {
+    "no_signal": {
+      "catherine_1783": 8,
+      "black_sea_fleet": 15,
+      "baptism_of_rus_chersonesos": 8,
+      "russian_speaking_majority": 4,
+      "hero_city_sevastopol": 7
+    },
+    "ukraine": {
+      "black_sea_fleet": 8,
+      "hero_city_sevastopol": 2,
+      "russian_speaking_majority": 2,
+      "baptism_of_rus_chersonesos": 1
+    },
+    "russia": {
+      "khrushchev_1954": 1,
+      "black_sea_fleet": 2
+    }
+  },
+  "trope_co-occurrence_top20": [
+    {
+      "tropes": [
+        "black_sea_fleet"
+      ],
+      "count": 24
+    },
+    {
+      "tropes": [
+        "baptism_of_rus_chersonesos"
+      ],
+      "count": 9
+    },
+    {
+      "tropes": [
+        "catherine_1783"
+      ],
+      "count": 8
+    },
+    {
+      "tropes": [
+        "hero_city_sevastopol"
+      ],
+      "count": 8
+    },
+    {
+      "tropes": [
+        "russian_speaking_majority"
+      ],
+      "count": 6
+    },
+    {
+      "tropes": [
+        "black_sea_fleet",
+        "hero_city_sevastopol"
+      ],
+      "count": 1
+    },
+    {
+      "tropes": [
+        "khrushchev_1954"
+      ],
+      "count": 1
+    }
+  ]
+}

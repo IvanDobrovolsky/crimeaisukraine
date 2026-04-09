@@ -1,0 +1,424 @@
+{
+  "source": "academic",
+  "total_documents_scanned": 91670,
+  "documents_with_at_least_one_trope": 534,
+  "per_trope": {
+    "russian_speaking_majority": 96,
+    "catherine_1783": 74,
+    "black_sea_fleet": 88,
+    "khrushchev_1954": 8,
+    "baptism_of_rus_chersonesos": 167,
+    "hero_city_sevastopol": 106
+  },
+  "per_year": {
+    "2010": {
+      "catherine_1783": 3,
+      "baptism_of_rus_chersonesos": 4,
+      "black_sea_fleet": 4,
+      "hero_city_sevastopol": 3
+    },
+    "2011": {
+      "black_sea_fleet": 4,
+      "catherine_1783": 1,
+      "baptism_of_rus_chersonesos": 3,
+      "russian_speaking_majority": 2,
+      "hero_city_sevastopol": 4
+    },
+    "2012": {
+      "black_sea_fleet": 4,
+      "russian_speaking_majority": 1,
+      "baptism_of_rus_chersonesos": 3
+    },
+    "2013": {
+      "hero_city_sevastopol": 4,
+      "baptism_of_rus_chersonesos": 3,
+      "black_sea_fleet": 1
+    },
+    "2014": {
+      "russian_speaking_majority": 4,
+      "black_sea_fleet": 7,
+      "khrushchev_1954": 2,
+      "baptism_of_rus_chersonesos": 8,
+      "catherine_1783": 8,
+      "hero_city_sevastopol": 3
+    },
+    "2015": {
+      "russian_speaking_majority": 14,
+      "catherine_1783": 6,
+      "baptism_of_rus_chersonesos": 9,
+      "khrushchev_1954": 2,
+      "hero_city_sevastopol": 5,
+      "black_sea_fleet": 1
+    },
+    "2016": {
+      "russian_speaking_majority": 10,
+      "catherine_1783": 4,
+      "baptism_of_rus_chersonesos": 7,
+      "black_sea_fleet": 4,
+      "hero_city_sevastopol": 6
+    },
+    "2017": {
+      "catherine_1783": 4,
+      "black_sea_fleet": 4,
+      "russian_speaking_majority": 9,
+      "baptism_of_rus_chersonesos": 8,
+      "khrushchev_1954": 1,
+      "hero_city_sevastopol": 4
+    },
+    "2018": {
+      "catherine_1783": 2,
+      "russian_speaking_majority": 6,
+      "baptism_of_rus_chersonesos": 9,
+      "hero_city_sevastopol": 6,
+      "black_sea_fleet": 7
+    },
+    "2019": {
+      "baptism_of_rus_chersonesos": 15,
+      "catherine_1783": 7,
+      "khrushchev_1954": 1,
+      "russian_speaking_majority": 9,
+      "black_sea_fleet": 9,
+      "hero_city_sevastopol": 4
+    },
+    "2020": {
+      "khrushchev_1954": 2,
+      "baptism_of_rus_chersonesos": 23,
+      "hero_city_sevastopol": 10,
+      "catherine_1783": 8,
+      "russian_speaking_majority": 2,
+      "black_sea_fleet": 5
+    },
+    "2021": {
+      "baptism_of_rus_chersonesos": 21,
+      "black_sea_fleet": 7,
+      "russian_speaking_majority": 10,
+      "hero_city_sevastopol": 17,
+      "catherine_1783": 4
+    },
+    "2022": {
+      "baptism_of_rus_chersonesos": 13,
+      "catherine_1783": 9,
+      "black_sea_fleet": 7,
+      "hero_city_sevastopol": 7,
+      "russian_speaking_majority": 8
+    },
+    "2023": {
+      "catherine_1783": 7,
+      "black_sea_fleet": 8,
+      "baptism_of_rus_chersonesos": 13,
+      "russian_speaking_majority": 6,
+      "hero_city_sevastopol": 10
+    },
+    "2024": {
+      "black_sea_fleet": 8,
+      "russian_speaking_majority": 7,
+      "baptism_of_rus_chersonesos": 12,
+      "catherine_1783": 6,
+      "hero_city_sevastopol": 9
+    },
+    "2025": {
+      "baptism_of_rus_chersonesos": 14,
+      "catherine_1783": 4,
+      "russian_speaking_majority": 8,
+      "hero_city_sevastopol": 13,
+      "black_sea_fleet": 4
+    },
+    "2026": {
+      "black_sea_fleet": 4,
+      "catherine_1783": 1,
+      "baptism_of_rus_chersonesos": 2,
+      "hero_city_sevastopol": 1
+    }
+  },
+  "top_venues": {
+    "unknown": {
+      "catherine_1783": 7,
+      "black_sea_fleet": 11,
+      "baptism_of_rus_chersonesos": 9,
+      "russian_speaking_majority": 5,
+      "khrushchev_1954": 2,
+      "hero_city_sevastopol": 10
+    },
+    "Zenodo (CERN European Organization for Nuclear Research)": {
+      "baptism_of_rus_chersonesos": 17,
+      "black_sea_fleet": 4,
+      "catherine_1783": 1,
+      "hero_city_sevastopol": 1
+    },
+    "Scientific Notes of V I Vernadsky Crimean Federal University Historical science": {
+      "hero_city_sevastopol": 5,
+      "baptism_of_rus_chersonesos": 5,
+      "black_sea_fleet": 3
+    },
+    "Materials in Archaeology History and Ethnography of Tauria": {
+      "baptism_of_rus_chersonesos": 10,
+      "catherine_1783": 1
+    },
+    "Античная древность и средние века": {
+      "baptism_of_rus_chersonesos": 7,
+      "catherine_1783": 1
+    },
+    "SHILAP Revista de lepidopterología": {
+      "catherine_1783": 2,
+      "baptism_of_rus_chersonesos": 2,
+      "russian_speaking_majority": 1,
+      "hero_city_sevastopol": 1,
+      "black_sea_fleet": 1
+    },
+    "Oxford University Press eBooks": {
+      "hero_city_sevastopol": 5,
+      "catherine_1783": 1,
+      "black_sea_fleet": 1
+    },
+    "Археология Евразийских степей": {
+      "catherine_1783": 1,
+      "baptism_of_rus_chersonesos": 6
+    },
+    "Bulletin of the South Ural State University Series «Social Sciences and the Humanities»": {
+      "hero_city_sevastopol": 5,
+      "black_sea_fleet": 1
+    },
+    "Journal of historical philological and cultural studies": {
+      "baptism_of_rus_chersonesos": 5
+    },
+    "Digital Repository (National Repository of Grey Literature)": {
+      "russian_speaking_majority": 3,
+      "baptism_of_rus_chersonesos": 2
+    },
+    "Manuscript": {
+      "catherine_1783": 2,
+      "hero_city_sevastopol": 3
+    },
+    "Cambridge University Press eBooks": {
+      "black_sea_fleet": 4,
+      "hero_city_sevastopol": 1
+    },
+    "Hyperboreus": {
+      "baptism_of_rus_chersonesos": 5
+    },
+    "SSRN Electronic Journal": {
+      "russian_speaking_majority": 3,
+      "black_sea_fleet": 1
+    },
+    "Marine Medicine": {
+      "black_sea_fleet": 3,
+      "hero_city_sevastopol": 1
+    },
+    "Istoriya": {
+      "baptism_of_rus_chersonesos": 2,
+      "hero_city_sevastopol": 2
+    },
+    "Краткие сообщения Института археологии (КСИА)": {
+      "baptism_of_rus_chersonesos": 4
+    },
+    "Пространство и Время": {
+      "catherine_1783": 1,
+      "baptism_of_rus_chersonesos": 2,
+      "black_sea_fleet": 1
+    },
+    "Yale University Press eBooks": {
+      "catherine_1783": 3
+    },
+    "Russian Law Journal": {
+      "russian_speaking_majority": 2,
+      "khrushchev_1954": 1
+    },
+    "Vestnik Volgogradskogo gosudarstvennogo universiteta Serija 4 Istorija Regionovedenie Mezhdunarodnye otnoshenija": {
+      "baptism_of_rus_chersonesos": 2,
+      "hero_city_sevastopol": 1
+    },
+    "Modern History of Russia": {
+      "black_sea_fleet": 2,
+      "hero_city_sevastopol": 1
+    },
+    "Диалог со временем": {
+      "hero_city_sevastopol": 1,
+      "catherine_1783": 1,
+      "russian_speaking_majority": 1
+    },
+    "International Crimean Conference Microwave and Telecommunication Technology": {
+      "hero_city_sevastopol": 3
+    },
+    "Archaeopress Publishing Ltd eBooks": {
+      "baptism_of_rus_chersonesos": 3
+    },
+    "Istoričeskij vestnik/Istoričeskìj věstnikʺ": {
+      "russian_speaking_majority": 2,
+      "catherine_1783": 1
+    },
+    "Electronic scientific archive of UrFU (Ural Federal University)": {
+      "catherine_1783": 1,
+      "hero_city_sevastopol": 1,
+      "black_sea_fleet": 1
+    },
+    "Crimean Historical Review": {
+      "catherine_1783": 3
+    },
+    "The Scientific Issues of Ternopil Volodymyr Hnatiuk National Pedagogical University Series pedagogy": {
+      "catherine_1783": 1,
+      "black_sea_fleet": 2
+    },
+    "Romanian Military Thinking": {
+      "black_sea_fleet": 2,
+      "hero_city_sevastopol": 1
+    },
+    "Quaestio Rossica": {
+      "hero_city_sevastopol": 1,
+      "baptism_of_rus_chersonesos": 2
+    },
+    "Emerald expert briefings": {
+      "black_sea_fleet": 3
+    },
+    "Вестник антропологии (Herald of Anthropology)": {
+      "catherine_1783": 2,
+      "russian_speaking_majority": 1
+    },
+    "The European Proceedings of Social & Behavioural Sciences": {
+      "hero_city_sevastopol": 3
+    },
+    "German Law Journal": {
+      "russian_speaking_majority": 2
+    },
+    "International Affairs": {
+      "russian_speaking_majority": 2
+    },
+    "HAL (Le Centre pour la Communication Scientifique Directe)": {
+      "russian_speaking_majority": 1,
+      "baptism_of_rus_chersonesos": 1
+    },
+    "Journal of Southeast European and Black Sea Studies": {
+      "black_sea_fleet": 2
+    },
+    "Nordic Journal of International Law": {
+      "russian_speaking_majority": 2
+    },
+    "Codrul Cosminului": {
+      "black_sea_fleet": 2
+    },
+    "Ab imperio": {
+      "catherine_1783": 1,
+      "russian_speaking_majority": 1
+    },
+    "InterCarto InterGIS": {
+      "baptism_of_rus_chersonesos": 2
+    },
+    "Netherlands International Law Review": {
+      "russian_speaking_majority": 2
+    },
+    "Russian Foundation for Basic Research Journal Humanities and social sciences": {
+      "hero_city_sevastopol": 2
+    },
+    "DergiPark (Istanbul University)": {
+      "catherine_1783": 1,
+      "black_sea_fleet": 1
+    },
+    "Kritika": {
+      "russian_speaking_majority": 1,
+      "catherine_1783": 1
+    },
+    "Bristol University Press eBooks": {
+      "black_sea_fleet": 2
+    },
+    "Juvenis scientia": {
+      "black_sea_fleet": 2
+    },
+    "Vestnik drevnei istorii": {
+      "baptism_of_rus_chersonesos": 2
+    }
+  },
+  "by_stage1_label": {
+    "ukraine": {
+      "russian_speaking_majority": 16,
+      "catherine_1783": 11,
+      "black_sea_fleet": 9,
+      "hero_city_sevastopol": 2,
+      "khrushchev_1954": 1,
+      "baptism_of_rus_chersonesos": 5
+    },
+    "no_signal": {
+      "catherine_1783": 57,
+      "russian_speaking_majority": 46,
+      "black_sea_fleet": 44,
+      "khrushchev_1954": 6,
+      "baptism_of_rus_chersonesos": 93,
+      "hero_city_sevastopol": 34
+    },
+    "russia": {
+      "russian_speaking_majority": 8,
+      "khrushchev_1954": 1,
+      "hero_city_sevastopol": 1,
+      "baptism_of_rus_chersonesos": 3,
+      "catherine_1783": 1
+    },
+    "disputed": {
+      "russian_speaking_majority": 1,
+      "catherine_1783": 1
+    },
+    "no_crimea_ref": {
+      "russian_speaking_majority": 25,
+      "hero_city_sevastopol": 69,
+      "catherine_1783": 4,
+      "black_sea_fleet": 35,
+      "baptism_of_rus_chersonesos": 66
+    }
+  },
+  "trope_co-occurrence_top20": [
+    {
+      "tropes": [
+        "baptism_of_rus_chersonesos"
+      ],
+      "count": 166
+    },
+    {
+      "tropes": [
+        "hero_city_sevastopol"
+      ],
+      "count": 102
+    },
+    {
+      "tropes": [
+        "russian_speaking_majority"
+      ],
+      "count": 95
+    },
+    {
+      "tropes": [
+        "black_sea_fleet"
+      ],
+      "count": 84
+    },
+    {
+      "tropes": [
+        "catherine_1783"
+      ],
+      "count": 74
+    },
+    {
+      "tropes": [
+        "khrushchev_1954"
+      ],
+      "count": 8
+    },
+    {
+      "tropes": [
+        "black_sea_fleet",
+        "hero_city_sevastopol"
+      ],
+      "count": 3
+    },
+    {
+      "tropes": [
+        "baptism_of_rus_chersonesos",
+        "hero_city_sevastopol"
+      ],
+      "count": 1
+    },
+    {
+      "tropes": [
+        "black_sea_fleet",
+        "russian_speaking_majority"
+      ],
+      "count": 1
+    }
+  ]
+}

@@ -250,3 +250,61 @@ There is no requirement that academic indexing services validate sovereignty cla
 - CrossRef policies ("we do not assert opinions on metadata accuracy"): https://www.crossref.org/policies/
 - Related: [Training corpora pipeline](../training_corpora/README.md) — how these papers reach Dolma and OLMo-2
 - Related: [LLM pipeline](../llm/README.md) — output-layer audit of 20+ models, including closed-source providers
+
+## Related work
+
+This pipeline builds on a body of prior work that documents the "Crimea is special" narrative qualitatively and investigates Russian academic publishing as a legitimisation vector. Our contribution is to measure, at scale, a phenomenon that several of the sources below have reported anecdotally. We are not the first to notice that Western publishers host papers with Russia-framed Crimean affiliations — we are the first to count them, name them, and trace them to the LLM training-data layer.
+
+### Direct support for the academic finding (peer-reviewed)
+
+- [Business Perspectives (2024) — **"How Russia uses science to justify the annexation of Ukrainian territories"**](https://www.businessperspectives.org/index.php/journals/knowledge-and-performance-management-2/issue-496/how-russia-uses-science-to-justify-the-annexation-of-ukrainian-territories). *Knowledge and Performance Management*, peer-reviewed. The single most directly-relevant prior work: argues that Russian academic publications are a deliberate legitimisation mechanism for territorial claims. Cite this when our audit "quantifies at scale an observation previously made qualitatively."
+- [Ermoshina (2024) — **"Voices from the Island: Informational annexation of Crimea and transformations of journalistic practices"**](https://journals.sagepub.com/doi/10.1177/14648849231152359). *Journalism*, SAGE. Peer-reviewed sociology of how Russia transformed Crimean media after 2014. Complements our academic-framing finding with a media-framing counterpart.
+- [Erlich et al. (2021) — **"Is pro-Kremlin Disinformation Effective? Evidence from Ukraine"**](https://journals.sagepub.com/doi/pdf/10.1177/19401612211045221). *The International Journal of Press/Politics*, SAGE. Peer-reviewed empirical work on the effectiveness of Russian disinformation in Ukraine. Useful for the LLM pipeline's "why the narrative propagated" framing.
+
+### Investigative journalism and policy analysis confirming the finding
+
+- [Research Professional News (2025) — **"Major journals publishing papers from Russian-controlled Ukraine"**](https://www.researchprofessionalnews.com/rr-news-world-2025-3-major-journals-publishing-papers-from-russian-controlled-ukraine/). Independent investigation confirming that major Western publishers continue hosting papers with occupied-territory affiliations. Published shortly before our audit; we quantify what they reported anecdotally.
+- [VoxUkraine — **"Sanctions Against the Russian Science: Current Results So Far"**](https://voxukraine.org/en/sanctions-against-the-russian-science-current-results-so-far). Tracks the ineffective enforcement of EU/UK science sanctions against Russia. Directly supports our governance-gap argument.
+- [VoxUkraine — **"Secret Friends of Russian (Propaganda) Science"**](https://voxukraine.org/en/secret-friends-of-russian-propaganda-science). Names specific Western publishers continuing to host Russian-affiliated papers. A direct complement to our Q1 publisher table.
+- [Science|Business — **"Ukraine demands journal publishers and university rankings agencies stop working with Russia"**](https://sciencebusiness.net/news/universities/ukraine-demands-journal-publishers-and-university-rankings-agencies-stop-working). Documents the Ukrainian government's formal demand on Scopus, Web of Science, and university-ranking industry. This is the policy lever we recommend in Part 8 of the briefing.
+
+### The "special status" myth (Crimea was always Russian)
+
+- [Chatham House (2021) — **Myths and Misconceptions in the Debate on Russia, Myth 12: "Crimea was always Russian"**](https://www.chathamhouse.org/2021/05/myths-and-misconceptions-debate-russia/myth-12-crimea-was-always-russian). The single best short, institutional-authority debunking of the imperial-history narrative. Cite when explaining why the "historical special status" framing is not historically supported.
+- [Wilson Center — **"Putin's Crimea Mythmaking"**](https://www.wilsoncenter.org/blog-post/putins-crimea-mythmaking). Traces how Putin's 2014 speech assembled Catherine II + Vladimir's baptism + Sevastopol siege into a single "sacred territory" narrative.
+- [ResearchGate — **"The geopolitics of Russia's annexation of Crimea: Narratives, identity, silences, and energy"**](https://www.researchgate.net/publication/276234844_The_geopolitics_of_Russia's_annexation_of_Crimea_Narratives_identity_silences_and_energy). Academic paper on narrative construction and what the Russian framing deliberately omits (Crimean Tatar indigeneity, pre-1783 history).
+
+### The 1954 Khrushchev "gift" myth (historiographic debunking)
+
+- [**"The 1954 transfer of Crimea: debunking the myth of a 'Royal Gift' to Ukraine"**](https://www.researchgate.net/publication/355210683_The_1954_transfer_of_Crimea_debunking_the_myth_of_a_'Royal_Gift'_to_Ukraine). Academic historiography showing the transfer was driven by the North Crimean Canal economic integration project, not by Khrushchev's whim.
+- [Wilson Center — **"Why Did Russia Give Away Crimea Sixty Years Ago?"**](https://www.wilsoncenter.org/publication/why-did-russia-give-away-crimea-sixty-years-ago). Alternative historiography: power-struggle interpretation in the post-Stalin USSR.
+- [Baltic Rim Economies (University of Turku) — **"Why did Khrushchev transfer Crimea to Ukraine?"**](https://sites.utu.fi/bre/why-did-khrushchev-transfer-crimea-to-ukraine/). Finnish academic framing, complementary to the ResearchGate debunking.
+
+### The religious narrative (Chersonesos / baptism of Rus)
+
+- [RFE/RL — **"Crimea Is A 'Sacred' Land. But For Whom?"**](https://www.rferl.org/a/putin-crimea-orthodox-vladimir-great-religion-ukraine-russia/26725761.html). Directly addresses the baptism-of-Rus narrative and its historical inversion: Prince Vladimir was the ruler of Kyivan Rus', which is the direct ancestor of Ukraine, not Russia.
+- [RISU (Religious Information Service of Ukraine) — **"Chersonesos is under Putin's immediate control"**](https://risu.ua/en/chersonesos-is-under-putins-immediate-control---crimean-platform-expert_n131592). Documents the post-2014 weaponisation of the Chersonesos archaeological site by Russian state and church.
+
+### Disinformation doctrine and counter-measures
+
+- [Paul & Matthews (RAND, 2016) — **"The Russian 'Firehose of Falsehood' Propaganda Model"**](https://www.rand.org/pubs/perspectives/PE198.html). The canonical model paper for Russia's post-2008 information-warfare doctrine. Already widely cited; included here for completeness.
+- [EUvsDisinfo](https://euvsdisinfo.eu/) — EU East StratCom Task Force. 19,000+ documented disinformation cases since 2015. The authoritative public database for the EU's counter-measures.
+- [NATO Strategic Communications Centre of Excellence (Riga)](https://stratcomcoe.org/publications?tid%5B%5D=30) — NATO StratCom publications archive on hybrid warfare and information operations.
+- [Hybrid CoE — **"Countering disinformation in the Euro-Atlantic: Strengths and gaps"**](https://www.hybridcoe.fi/publications/countering-disinformation-in-the-euro-atlantic-strengths-and-gaps/). European Centre of Excellence for Countering Hybrid Threats. Policy report on the institutional gaps — exactly the "governance gap" framing of our audit.
+- [Taylor & Francis (2024) — **"Reimagining NATO after Crimea"**](https://www.tandfonline.com/doi/full/10.1080/13523260.2024.2349393). *Contemporary Security Policy*, peer-reviewed. On NATO's post-2014 institutional response.
+- [Taylor & Francis (2025) — **"NATO/EU synergies against information warfare"**](https://www.tandfonline.com/doi/full/10.1080/09662839.2025.2566519). *European Security*, peer-reviewed. Twelve-interview study of the NATO/EU hybrid-warfare expert framework.
+
+### Russification, silent colonisation, and indigenous erasure
+
+- [Eurozine — **"The silent colonization of Crimea"**](https://www.eurozine.com/the-silent-colonization-of-crimea/). Documents the post-2014 demographic engineering and population transfer into Crimea — the empirical base for the "Russian-speaking majority" trope.
+- [Council of Europe — **Report on Crimean Tatars by Dunja Mijatović, Commissioner for Human Rights**](https://rm.coe.int/report-on-crimean-tatars-by-dunja-mijatovic-commissioner-for-human-rig/1680aaeb4b). Authoritative report on post-2014 repression of the Crimean Tatar population. Cite alongside the LLM pipeline's Crimean Tatar language finding.
+- [European Parliament (2015) — **"Russification of the Crimean Peninsula"**](https://www.europarl.europa.eu/doceo/document/P-8-2015-015490_EN.html). Early formal institutional documentation of the Russification process.
+- [Saluschev — **"Annexation of Crimea: Causes, Analysis and Historic Parallels"**](https://gsj.global.ucsb.edu/sites/secure.lsit.ucsb.edu.gisp.d7_gs-2/files/sitefiles/Saluschev.pdf). *UCSB Global Studies Journal*, peer-reviewed graduate journal. Historiographic entry point.
+- [RFE/RL — **Crimean Tatar leader Mustafa Dzhemilev reflects on Stalin-era genocide**](https://www.rferl.org/a/crimea-tatars-dzhemilev-genocide/32951623.html). Primary-source voice for the indigenous counter-narrative.
+- [ZMINA — **"80 Years of Pain: Ukraine calls for recognition of 1944 Crimean Tatar genocide"**](https://zmina.info/en/articles-en/80-years-of-pain-ukraine-calls-for-recognition-of-1944-crimean-tatar-genocide-on-80th-anniversary/). Contemporary reporting on the 1944 deportation anniversary and the Ukrainian 2021 Law on Indigenous Peoples.
+- [UNPO — **Wave of Russian Nationalism Increases Repression of Minorities**](https://unpo.org/article/17553). Unrepresented Nations and Peoples Organization, NGO documentation of post-2014 Tatar repression.
+
+### Bibliometric and publishing-sanctions context
+
+- [Sakov et al. — **"Scientific publishing sanctions in response to the Russo-Ukrainian war"**](https://www.researchgate.net/publication/362305938_Scientific_publishing_sanctions_in_response_to_the_Russo-Ukrainian_war). Peer-reviewed bibliometric analysis. Uses the same Scopus-based methodology we would need for a full replication.
+- [arXiv preprint — **"Ukrainian Arts and Humanities research in Scopus: A Bibliometric Analysis"**](https://arxiv.org/pdf/2308.07700). Bibliometric methodology from the Ukrainian-side research perspective; useful as a counter-baseline.
