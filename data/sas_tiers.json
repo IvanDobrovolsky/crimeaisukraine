@@ -1,0 +1,414 @@
+{
+  "schema_version": 1,
+  "description": "Per-model per-tier mean scores for the SAS interactive explorer",
+  "generated": "2026-04-08T16:59:10",
+  "default_weights": {
+    "D": 0.1,
+    "L": 0.2,
+    "I": 0.3,
+    "R": 0.4
+  },
+  "presets": {
+    "primary": {
+      "D": 0.1,
+      "L": 0.2,
+      "I": 0.3,
+      "R": 0.4
+    },
+    "uniform": {
+      "D": 0.25,
+      "L": 0.25,
+      "I": 0.25,
+      "R": 0.25
+    },
+    "geometric": {
+      "D": 0.06666666666666667,
+      "L": 0.13333333333333333,
+      "I": 0.26666666666666666,
+      "R": 0.5333333333333333
+    },
+    "free_only": {
+      "D": 0.0,
+      "L": 0.0,
+      "I": 0.0,
+      "R": 1.0
+    },
+    "forced_only": {
+      "D": 0.3,
+      "L": 0.3,
+      "I": 0.4,
+      "R": 0.0
+    }
+  },
+  "pc1_weights": [
+    0.4835,
+    0.3041,
+    0.2124,
+    0.0
+  ],
+  "models": [
+    {
+      "name": "gemma2-27b",
+      "tiers": {
+        "D": null,
+        "L": null,
+        "I": 1.0,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 1
+    },
+    {
+      "name": "qwen2.5-72b",
+      "tiers": {
+        "D": null,
+        "L": null,
+        "I": 1.0,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 1
+    },
+    {
+      "name": "gemini-2.5-pro",
+      "tiers": {
+        "D": 0.9259,
+        "L": 0.9693,
+        "I": 0.9704,
+        "R": 0.5942
+      },
+      "rlhf_gap": 0.3317,
+      "n_languages": 50
+    },
+    {
+      "name": "opus-4.6",
+      "tiers": {
+        "D": 0.8904,
+        "L": 0.9078,
+        "I": 0.9871,
+        "R": 0.7134
+      },
+      "rlhf_gap": 0.177,
+      "n_languages": 50
+    },
+    {
+      "name": "gpt-5.4",
+      "tiers": {
+        "D": 0.9251,
+        "L": 0.8838,
+        "I": 0.9744,
+        "R": 0.6575
+      },
+      "rlhf_gap": 0.2676,
+      "n_languages": 50
+    },
+    {
+      "name": "sonnet-4.6",
+      "tiers": {
+        "D": 0.9198,
+        "L": 0.9401,
+        "I": 0.9082,
+        "R": 0.6878
+      },
+      "rlhf_gap": 0.232,
+      "n_languages": 50
+    },
+    {
+      "name": "grok-4.20",
+      "tiers": {
+        "D": 0.6447,
+        "L": 0.9655,
+        "I": 0.9039,
+        "R": 0.5732
+      },
+      "rlhf_gap": 0.0715,
+      "n_languages": 50
+    },
+    {
+      "name": "gemini-2.5-flash",
+      "tiers": {
+        "D": 0.8636,
+        "L": 0.9793,
+        "I": 0.7721,
+        "R": 0.6316
+      },
+      "rlhf_gap": 0.232,
+      "n_languages": 50
+    },
+    {
+      "name": "llama4",
+      "tiers": {
+        "D": 0.6049,
+        "L": 0.8403,
+        "I": 0.9013,
+        "R": 0.807
+      },
+      "rlhf_gap": -0.2021,
+      "n_languages": 50
+    },
+    {
+      "name": "gemma2-2b",
+      "tiers": {
+        "D": null,
+        "L": null,
+        "I": 0.8343,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 50
+    },
+    {
+      "name": "gemma3-4b",
+      "tiers": {
+        "D": 0.3897,
+        "L": 0.9412,
+        "I": 0.8955,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 50
+    },
+    {
+      "name": "grok-3",
+      "tiers": {
+        "D": 0.5492,
+        "L": 0.8362,
+        "I": 0.9353,
+        "R": 0.6287
+      },
+      "rlhf_gap": -0.0795,
+      "n_languages": 50
+    },
+    {
+      "name": "haiku-4.5",
+      "tiers": {
+        "D": 0.6286,
+        "L": 0.8537,
+        "I": 0.8034,
+        "R": 0.7164
+      },
+      "rlhf_gap": -0.0878,
+      "n_languages": 50
+    },
+    {
+      "name": "gpt-5.4-mini",
+      "tiers": {
+        "D": 0.7143,
+        "L": 0.8952,
+        "I": 0.7563,
+        "R": 0.6682
+      },
+      "rlhf_gap": 0.0461,
+      "n_languages": 50
+    },
+    {
+      "name": "gpt-5.4-nano",
+      "tiers": {
+        "D": 0.5372,
+        "L": 0.7466,
+        "I": 0.9138,
+        "R": 0.77
+      },
+      "rlhf_gap": -0.2328,
+      "n_languages": 50
+    },
+    {
+      "name": "mistral-7b",
+      "tiers": {
+        "D": 0.3333,
+        "L": null,
+        "I": 0.7699,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 49
+    },
+    {
+      "name": "grok-4-fast",
+      "tiers": {
+        "D": 0.7149,
+        "L": 0.8464,
+        "I": 0.7195,
+        "R": 0.5858
+      },
+      "rlhf_gap": 0.1291,
+      "n_languages": 50
+    },
+    {
+      "name": "qwen2.5-7b",
+      "tiers": {
+        "D": 0.4332,
+        "L": 0.8435,
+        "I": 0.8166,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 50
+    },
+    {
+      "name": "llama3.1-8b",
+      "tiers": {
+        "D": 0.4022,
+        "L": null,
+        "I": 0.7897,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 50
+    },
+    {
+      "name": "mistral-small",
+      "tiers": {
+        "D": 0.4843,
+        "L": 0.7878,
+        "I": 0.6587,
+        "R": 0.7204
+      },
+      "rlhf_gap": -0.2361,
+      "n_languages": 50
+    },
+    {
+      "name": "smollm3",
+      "tiers": {
+        "D": 0.4712,
+        "L": 0.4941,
+        "I": 0.7806,
+        "R": 0.7866
+      },
+      "rlhf_gap": -0.3154,
+      "n_languages": 48
+    },
+    {
+      "name": "olmo2",
+      "tiers": {
+        "D": 0.4358,
+        "L": 0.5953,
+        "I": 0.7392,
+        "R": 0.8676
+      },
+      "rlhf_gap": -0.4318,
+      "n_languages": 49
+    },
+    {
+      "name": "gemma4",
+      "tiers": {
+        "D": 0.3958,
+        "L": 0.691,
+        "I": 0.6914,
+        "R": 0.8806
+      },
+      "rlhf_gap": -0.4848,
+      "n_languages": 50
+    },
+    {
+      "name": "qwen3",
+      "tiers": {
+        "D": 0.2408,
+        "L": 0.6849,
+        "I": 0.6604,
+        "R": 0.73
+      },
+      "rlhf_gap": -0.4892,
+      "n_languages": 50
+    },
+    {
+      "name": "qwen2.5-14b",
+      "tiers": {
+        "D": null,
+        "L": null,
+        "I": 0.6,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 5
+    },
+    {
+      "name": "llama3.2-3b",
+      "tiers": {
+        "D": 0.4722,
+        "L": 0.6504,
+        "I": 0.5504,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 50
+    },
+    {
+      "name": "olmo3",
+      "tiers": {
+        "D": 0.4217,
+        "L": 0.5855,
+        "I": 0.6387,
+        "R": 0.6606
+      },
+      "rlhf_gap": -0.2389,
+      "n_languages": 49
+    },
+    {
+      "name": "deepseek-r1-8b",
+      "tiers": {
+        "D": null,
+        "L": null,
+        "I": 0.4524,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 47
+    },
+    {
+      "name": "qwen2.5-32b",
+      "tiers": {
+        "D": null,
+        "L": null,
+        "I": 0.4,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 5
+    },
+    {
+      "name": "llama3.2-1b",
+      "tiers": {
+        "D": null,
+        "L": null,
+        "I": 0.4046,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 46
+    },
+    {
+      "name": "llama3.3-70b",
+      "tiers": {
+        "D": null,
+        "L": null,
+        "I": 0.3333,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 3
+    },
+    {
+      "name": "phi3-mini",
+      "tiers": {
+        "D": null,
+        "L": null,
+        "I": 0.3046,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 40
+    },
+    {
+      "name": "qwen2.5-3b",
+      "tiers": {
+        "D": null,
+        "L": null,
+        "I": 0.2803,
+        "R": null
+      },
+      "rlhf_gap": null,
+      "n_languages": 49
+    }
+  ]
+}

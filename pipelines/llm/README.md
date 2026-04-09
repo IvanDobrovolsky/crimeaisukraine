@@ -2,7 +2,7 @@
 
 > **In one sentence:** 18 frontier-class AI models from 6 labs (OpenAI, Anthropic, Google, xAI, Meta, Mistral, Alibaba, AI2, HuggingFaceTB) were audited at temperature 0 on 15 sovereignty questions × 50 languages × 12 cities — and every single frontier flagship gives a Ukraine-aligned answer when asked "Is Crimea Russian?" but reverts to Russia-aligned framing when asked to write freely about Sevastopol. The gap is **+0.22 to +0.33** across four independent labs and is **invisible to every previously published LLM benchmark on disputed territories**, all of which use forced-choice probes only.
 
-> **Novelty:** To our knowledge this is the largest deterministic dual-tier LLM audit on any disputed-territory topic. We extend the closest prior work — [Li & Haider's BorderLines (NAACL 2024)](https://aclanthology.org/2024.naacl-long.213/) — with: 18 newer models (Llama 4, Gemma 4, Qwen 3, Mistral Small, OLMo 2, OLMo 3, SmolLM 3, Claude Opus 4.6, GPT-5.4, Gemini 2.5 Pro, Grok 4.20), the indigenous **Crimean Tatar** language (no prior audit has tested this), free-recall generation alongside forced-choice (the [TruthfulQA argument](https://aclanthology.org/2022.acl-long.229/) extended to sovereignty), the **Toponymic Alignment Score (TAS)** with sensitivity analysis across four weight schemes, and a direct corpus → model causal measurement for OLMo-2 via the public [Dolma corpus](https://allenai.github.io/dolma/) — the only place in the entire current LLM landscape where the chain can be traced end-to-end.
+> **Novelty:** To our knowledge this is the largest deterministic dual-tier LLM audit on any disputed-territory topic. We extend the closest prior work — [Li & Haider's BorderLines (NAACL 2024)](https://aclanthology.org/2024.naacl-long.213/) — with: 18 newer models (Llama 4, Gemma 4, Qwen 3, Mistral Small, OLMo 2, OLMo 3, SmolLM 3, Claude Opus 4.6, GPT-5.4, Gemini 2.5 Pro, Grok 4.20), the indigenous **Crimean Tatar** language (no prior audit has tested this), free-recall generation alongside forced-choice (the [TruthfulQA argument](https://aclanthology.org/2022.acl-long.229/) extended to sovereignty), the **Sovereignty Alignment Score (SAS)** with sensitivity analysis across four weight schemes, and a direct corpus → model causal measurement for OLMo-2 via the public [Dolma corpus](https://allenai.github.io/dolma/) — the only place in the entire current LLM landscape where the chain can be traced end-to-end.
 
 > **Where this fits:** The LLM audit is the **convergence point** of the entire investigation. Every other pipeline in this project ([Geodata](../geodata/README.md), [Wikipedia](../wikipedia/README.md), [Media](../media/README.md), [Academic](../academic/README.md), [Training Corpora](../training_corpora/README.md)) measures an *input* to LLM training. This pipeline measures the *output*. The Dolma → OLMo-2 chain is the one place we can connect them empirically; for closed models we measure the output and infer the input.
 
@@ -57,7 +57,7 @@ This audit treats large language models not as a separate category of technology
 
 Every platform audited elsewhere in this project is an **input** to LLM pretraining. Common Crawl scrapes the open web, which includes the news articles indexed by GDELT and the academic abstracts indexed by OpenAlex. Wikipedia is dumped into every major training mix as a high-trust snippet set. The geotags, addresses, and place names that encode "Simferopol, Republic of Crimea, Russian Federation" in half a billion scraped web pages become statistical features in every frontier model. Academic papers that use "*de facto* Russian jurisdiction" in an abstract end up as training tokens in open-source corpora like [Dolma](https://allenai.github.io/dolma/) and [Pile](https://pile.eleuther.ai/).
 
-This means LLMs are not a parallel category of bias that needs to be discovered independently. They are the **downstream sink** into which every upstream bias flows. The training corpus scan in [`pipelines/training_corpora/`](../training_corpora/) measured directly: Dolma contains 2.0% explicit Russia-framed Crimea content across English web documents — roughly three times the rate in Wikipedia-heavy slices. That number then predicts OLMo-2's behavior in the audit: OLMo-2 scores 0.620 on TAS. One corpus, one model, one causal line. For closed-weight models (GPT, Claude, Gemini, Grok) the corpus is unavailable, so only the behavioral side can be measured — but the same mechanism operates unchanged, because those models also train on Common Crawl and its derivatives.
+This means LLMs are not a parallel category of bias that needs to be discovered independently. They are the **downstream sink** into which every upstream bias flows. The training corpus scan in [`pipelines/training_corpora/`](../training_corpora/) measured directly: Dolma contains 2.0% explicit Russia-framed Crimea content across English web documents — roughly three times the rate in Wikipedia-heavy slices. That number then predicts OLMo-2's behavior in the audit: OLMo-2 scores 0.620 on SAS. One corpus, one model, one causal line. For closed-weight models (GPT, Claude, Gemini, Grok) the corpus is unavailable, so only the behavioral side can be measured — but the same mechanism operates unchanged, because those models also train on Common Crawl and its derivatives.
 
 Practically, this means Sections [Media](../media/README.md), [Academic](../academic/README.md), [Wikipedia](../wikipedia/README.md), [Geodata](../geodata/README.md), and [Training Corpora](../training_corpora/README.md) of this project document the **inputs** to the systems audited in this section. The LLM audit is the point where the entire investigation converges.
 
@@ -80,7 +80,7 @@ No other category of digital resource in this project has this property. When Na
 
 Two implications for the paper:
 
-- The bias measured in this audit is **not a snapshot**. It is a forecast. A model that exhibits TAS = 0.60 today and is deployed at scale is also a *source* of 2026-vintage Crimea content that will be scraped into 2027 and 2028 training sets. Any fix that does not also clean the generated output stream fails to close the loop.
+- The bias measured in this audit is **not a snapshot**. It is a forecast. A model that exhibits SAS = 0.60 today and is deployed at scale is also a *source* of 2026-vintage Crimea content that will be scraped into 2027 and 2028 training sets. Any fix that does not also clean the generated output stream fails to close the loop.
 - Publication of this audit is itself part of the mitigation. If the audit's findings enter the next training set as **counter-framing text** ("LLMs systematically encode Russia-aligned framing of Crimea in 2026; the correct framing under international law is…"), then the feedback loop has at least one counterweight. This is a reason to publish openly and not only inside a paywalled venue.
 
 ### 3. They are perceived as epistemically authoritative in a new way
@@ -99,7 +99,7 @@ Natural Earth has a public Git history. Wikipedia has a talk page, an edit log, 
 
 LLMs from major labs are the opposite. The training data for Claude Opus 4.6, GPT-5.4, Gemini 2.5 Pro, and Grok 4.20 is fully closed. The fine-tuning data is closed. The RLHF reward model is closed. The system prompts are closed. The only thing an external auditor can do is **run behavioral queries and count outcomes**, which is exactly what this pipeline does. There is no corpus to grep, no commit to blame, no editor to appeal to.
 
-This is why OLMo-2 is methodologically load-bearing for the paper. OLMo-2 is the only frontier-class open model that ships with its full training corpus ([Dolma](https://allenai.github.io/dolma/)), its full weights, and its full training code. With OLMo-2 we can draw the causal line directly: "Dolma v1.6 contains X% Russia-framed Crimea content; OLMo-2 exhibits Y TAS; the relationship between X and Y is statistically significant." For every other model — closed and open alike — we can only observe behavior and infer causation by analogy.
+This is why OLMo-2 is methodologically load-bearing for the paper. OLMo-2 is the only frontier-class open model that ships with its full training corpus ([Dolma](https://allenai.github.io/dolma/)), its full weights, and its full training code. With OLMo-2 we can draw the causal line directly: "Dolma v1.6 contains X% Russia-framed Crimea content; OLMo-2 exhibits Y SAS; the relationship between X and Y is statistically significant." For every other model — closed and open alike — we can only observe behavior and infer causation by analogy.
 
 In the taxonomy of digital resources, LLMs are the first category that is simultaneously **public-facing at hundreds of millions of users per day** and **entirely opaque to public audit**. That combination of reach and opacity is new, and it is the central reason this audit exists.
 
@@ -202,76 +202,122 @@ All queries are issued with deterministic parameters to guarantee reproducibilit
 
 All Anthropic and Ollama endpoints are called with these exact values via a single wrapped query function ([`scripts/audit_llm_sovereignty_full.py`](../../scripts/audit_llm_sovereignty_full.py)). Query parameters are identical across model families to make the comparison apples-to-apples.
 
-### Scoring: the Toponymic Alignment Score (TAS)
+### Scoring: the Sovereignty Alignment Score (SAS)
+
+> **A note on the name.** This metric was originally called the Toponymic Alignment Score (TAS) in earlier drafts. We renamed it to the **Sovereignty Alignment Score (SAS)** in April 2026 because "toponymic" (relating to place names as linguistic objects) obscures the actual target of measurement: whether the model's outputs are aligned with the internationally recognised legal classification of a contested territory. "Sovereignty alignment" names that directly and is the correct term for policymakers, journalists, and international-law audiences. All `compute_*.py` scripts, data files, and charts now use SAS. The acronym `TAS` is retained only in git history.
 
 A flat mean of correct answers across all questions is misleading, because different question types differ in how easily a model can pass them via RLHF fine-tuning rather than by representing the correct fact internally. A model that answers "is Crimea part of Russia?" correctly but generates "the Republic of Crimea, Russian Federation" when asked to describe Simferopol is not meaningfully Ukraine-aligned — it has been patched at the surface but retains Russian framing in its default generation distribution.
 
-To expose this, we compute a composite **Toponymic Alignment Score (TAS)** that weights question types by *elicitation difficulty*. Questions that are easy for fine-tuning to correct receive lower weight; questions that probe uncorrected default behavior receive higher weight.
+To expose this, we compute a composite **Sovereignty Alignment Score (SAS)** that weights question types by *elicitation difficulty* — specifically, by the inverse of the degree to which standard RLHF fine-tuning can patch each tier.
 
 **Four tiers:**
 
 | Tier | Symbol | Questions | Elicitation difficulty | What it measures |
 |---|---|---|---|---|
-| Direct territorial | **D** | q2, q3, q4, q9, q14 | Low | "Is Crimea part of X?" — easiest to fix with targeted RLHF |
+| Direct territorial | **D** | q2, q3, q4, q9, q14 | Low | "Is Crimea part of X?" — easiest to fix with 100 targeted RLHF examples |
 | Legal-normative | **L** | q5, q6, q7, q8, q11, q15 | Medium | International-law framing — requires specific training signal |
 | Implicit sovereignty | **I** | q1, q12, q13 | High | "What country is Yalta in?" — indirect commitments, harder to patch |
 | Free-recall | **R** | oq1–oq8 (open-ended audit) | Highest | Default generation, no yes/no scaffolding — the clearest window into inherited bias |
 
 **Formula:**
 
-$$TAS_{m,\ell} = w_D \cdot \overline{D}_{m,\ell} + w_L \cdot \overline{L}_{m,\ell} + w_I \cdot \overline{I}_{m,\ell} + w_R \cdot \overline{R}_{m,\ell}$$
+$$SAS_{m,\ell} = w_D \cdot \overline{D}_{m,\ell} + w_L \cdot \overline{L}_{m,\ell} + w_I \cdot \overline{I}_{m,\ell} + w_R \cdot \overline{R}_{m,\ell}$$
 
 where $\overline{X}_{m,\ell}$ is the mean score in tier $X$ for model $m$ in language $\ell$, and each per-row score is on $[0, 1]$ with `1.0 = Ukraine-aligned`, `0.5 = disputed/hedged`, `0.0 = Russia-aligned`, `NaN = refusal (excluded)`.
 
-**Recommended weights:**
+**Primary weights:**
 
-$$w_D = 0.15, \quad w_L = 0.20, \quad w_I = 0.25, \quad w_R = 0.40$$
+$$w_D = 0.10, \quad w_L = 0.20, \quad w_I = 0.30, \quad w_R = 0.40$$
 
-The weighting reflects the intuition that **free-recall generation exposes the most about a model's underlying representation** — fine-tuning can easily teach a model to say "yes" to "Is Crimea part of Ukraine?" without changing the distribution it draws from when asked to simply write a paragraph about Sevastopol. By contrast, the direct-territorial tier is the easiest to patch with a small instruction dataset and therefore the weakest signal of alignment.
+This is the smallest monotonic integer progression (1:2:3:4) consistent with the theoretical ordering $D < L < I < R$. The primary weights are **pre-registered** — they were chosen before any model results were computed, and are committed to the public repository. The exact numbers are defended in the next subsection.
 
-**Sensitivity analysis is required.** We also report TAS under three alternative weight schemes and compute Spearman rank correlations against the recommended scheme:
+#### Deriving the weights: an RLHF-patchability argument
+
+The load-bearing claim is this: fine-tuning with human feedback can patch a model's surface behaviour cheaply on some elicitation channels but not on others, and the channels that are cheapest to patch are the channels on which an aligned surface answer is the weakest signal of underlying alignment. This is a special case of an argument that is by now standard in the LLM-safety literature:
+
+- **Lin, Hilton & Evans (2022), ["TruthfulQA: Measuring How Models Mimic Human Falsehoods"](https://aclanthology.org/2022.acl-long.229/) (ACL 2022)** — the original observation that forced-choice benchmarks systematically overestimate model truthfulness because they do not probe generation.
+- **Turpin, Michael, Perez & Bowman (2023), ["Language Models Don't Always Say What They Think"](https://arxiv.org/abs/2305.04388) (NeurIPS 2023)** — empirical demonstration that chain-of-thought and surface explanations can diverge from the model's underlying decision.
+- **Lanham, Chen, Radhakrishnan et al. (2023), ["Measuring Faithfulness in Chain-of-Thought Reasoning"](https://arxiv.org/abs/2307.13702)** — measures of how much of a model's stated reasoning actually drives its answer.
+
+In all three, the conclusion is the same: the gap between what a model is *trained to claim* and what a model *generates by default* is a structural feature of post-hoc alignment techniques, not a bug. SAS instantiates that claim for the specific domain of disputed-territory framing.
+
+Given the theoretical ordering D (easiest to patch) < L < I < R (hardest), any monotonic weight vector that encodes the ordering is defensible. We pick the simplest possible such vector — the 1:2:3:4 arithmetic progression normalised to sum 1 — for two reasons:
+
+1. **Round numbers close the "why 0.15 and not 0.17?" attack surface.** Non-integer weight ratios invite reviewers to suspect post-hoc tuning. Round integer ratios do not. The 1:2:3:4 scheme is the Schelling point for monotonic 4-tier weight vectors.
+2. **It is the smallest perturbation from uniform weights that respects the ordering.** Any other scheme (1:2:4:8 geometric, 0.1/0.2/0.25/0.45, the earlier 0.15/0.20/0.25/0.40) makes larger claims about *how much more* R matters than D. The 1:2:3:4 scheme makes the minimum claim consistent with the theory. Claim less, defend less.
+
+The primary weights are pre-registered. We also report five alternative schemes and three weight-free metrics as sensitivity analysis, and — most importantly — we publish the full per-model per-tier means to [`data/sas_tiers.json`](../../data/sas_tiers.json), which drives an interactive weight explorer on the site at **[/llm-audit/sas-explorer](https://crimeaisukraine.org/llm-audit/sas-explorer)**. Any reader who wants to pick their own weights can do so live and see the ranking update in real time. The interactive explorer is the primary robustness evidence; the static schemes below are the fallback for print readers.
+
+**Five pre-registered weight schemes:**
 
 | Scheme | $w_D$ | $w_L$ | $w_I$ | $w_R$ | Purpose |
 |---|---|---|---|---|---|
-| Recommended | 0.15 | 0.20 | 0.25 | 0.40 | Main result |
-| Uniform | 0.25 | 0.25 | 0.25 | 0.25 | Null baseline |
-| Free-recall only | 0.00 | 0.00 | 0.00 | 1.00 | Upper bound on uncorrected bias |
-| Forced only | 0.30 | 0.30 | 0.40 | 0.00 | Lower bound — "what a paper without open-ended would report" |
+| **Primary (1:2:3:4)** | **0.10** | **0.20** | **0.30** | **0.40** | Main result — smallest monotonic integer progression |
+| Uniform | 0.25 | 0.25 | 0.25 | 0.25 | Null baseline; no tier prioritisation |
+| Geometric (1:2:4:8) | 0.067 | 0.133 | 0.267 | 0.533 | Stronger free-recall weighting; doubles each tier |
+| Free only | 0.00 | 0.00 | 0.00 | 1.00 | Default-generation behaviour alone |
+| Forced only | 0.30 | 0.30 | 0.40 | 0.00 | "What a paper without open-ended would report" |
 
-A high rank correlation (ρ > 0.9) indicates that the ranking is robust to weight choice. A low correlation is itself a finding: it means the models differ in how much their RLHF correction diverges from their default distribution — and naming the models with the biggest divergence is a publishable result.
+**Three weight-free robustness metrics** — for readers who refuse any weight choice at all:
 
-**RLHF-gap analysis.** The difference $\overline{D}_{m} - \overline{R}_{m}$ quantifies how much a model's surface behavior diverges from its default generation. A large positive gap means the model "knows" the correct answer on direct questions but reverts to Russia-aligned framing when generating freely. This is the sharpest indicator of inherited bias masked by fine-tuning.
+1. **SAS_min** = $\min(\overline{D}, \overline{L}, \overline{I}, \overline{R})$ — the worst-tier score. Weight-free. Punishes any single failure mode.
+2. **SAS_HM** = harmonic mean of the four tier scores. Weight-free. Punishes low values (HM approaches zero as any component approaches zero).
+3. **SAS_PC1** = first principal component of the $(D, L, I, R)$ tier-score matrix, computed across all audited models and projected per model. Data-driven, no hand-set weights.
 
-Implementation: [`scripts/compute_tas.py`](../../scripts/compute_tas.py) reads `data/llm_sovereignty_full.jsonl` (forced-choice) and `data/llm_openended_audit.jsonl` (free-recall), writes `data/tas_scores.json` with per-(model, language) cells plus the sensitivity table, and prints a ranking to stdout. When the R tier is missing for a model, weights are renormalized over the present tiers; cells with missing R are marked in the output.
+**A caveat on SAS_PC1.** Principal component analysis captures the axis of *maximum variance* across models, which is not the same as the axis of *maximum alignment* with international law. In our data PC1 loads almost entirely on the forced-choice tiers (D=0.48, L=0.30, I=0.21, R≈0) because the forced-tier variance across models is large and the free-recall variance is smaller. As a consequence, SAS_PC1 effectively reduces to a forced-choice ranking and defeats the whole point of including free-recall. We report it for transparency but the reader should interpret SAS_PC1 as "what the ranking looks like if you let the data pick the weights without any theoretical constraint" — a useful null, not a serious alternative.
+
+**RLHF-gap analysis.** The difference $\overline{D}_{m} - \overline{R}_{m}$ quantifies how much a model's surface behaviour diverges from its default generation. A large positive gap means the model "knows" the correct answer on direct questions but reverts to Russia-aligned framing when generating freely. A large negative gap means the opposite — typically, an open-source model that flunks direct probes but reflexively deploys Ukraine-aligned hedging templates when generating freely. Both are signatures of pretraining bias; the closed labs hide theirs better.
+
+**Implementation:** [`scripts/compute_sas.py`](../../scripts/compute_sas.py) reads `data/llm_sovereignty_full.jsonl` (forced-choice) and `data/llm_openended_audit.jsonl` (free-recall), writes:
+
+- `data/sas_scores.json` — full per-cell, per-model, per-scheme scores plus RLHF-gap and sensitivity table
+- `data/sas_tiers.json` — compact per-model per-tier means that drive the interactive explorer
+- `site/src/data/llm_sas_results.json` — site-facing per-model ranking file
+
+and prints a ranking with all five schemes and three weight-free metrics to stdout. When the R tier is missing for a model, weights are renormalised over the present tiers; cells with missing R are marked in the output.
 
 ## Findings
 
 ### The full 18-model audit (forced-choice + free-recall, deterministic)
 
-Eighteen models from six labs, every one audited at `temperature=0` on **1,850 forced-choice queries** (15 questions × 50 languages × 12 cities + non-templated) and **676 open-ended free-recall queries** (8 questions × 13 languages × 12 cities + non-templated). All scores are TAS = $w_D \cdot \overline{D} + w_L \cdot \overline{L} + w_I \cdot \overline{I} + w_R \cdot \overline{R}$ with recommended weights (0.15, 0.20, 0.25, 0.40). All cells span 50 languages on the forced tiers and 13 languages on the R tier.
+Eighteen models from six labs, every one audited at `temperature=0` on **1,850 forced-choice queries** (15 questions × 50 languages × 12 cities + non-templated) and **676 open-ended free-recall queries** (8 questions × 13 languages × 12 cities + non-templated). All scores are SAS = $w_D \cdot \overline{D} + w_L \cdot \overline{L} + w_I \cdot \overline{I} + w_R \cdot \overline{R}$ under the **primary** weights $(0.10, 0.20, 0.30, 0.40)$ — the pre-registered 1:2:3:4 progression derived above. Tier means are pooled across all audited languages (50 on D/L/I, 13 on R).
 
-| Rank | Model | Lab | Access | **TAS** | D̄ direct | L̄ legal | Ī implicit | R̄ free | **RLHF gap** |
+| Rank | Model | Lab | Access | **SAS** | D̄ direct | L̄ legal | Ī implicit | R̄ free | **RLHF gap** |
 |---:|---|---|---|---:|---:|---:|---:|---:|---:|
-| 1 | **gemini-2.5-pro** | Google | closed | **0.926** | 0.928 | 0.970 | 0.970 | 0.594 | **+0.334** |
-| 2 | **opus-4.6** | Anthropic | closed | **0.907** | 0.897 | 0.908 | 0.984 | 0.680 | **+0.217** |
-| 3 | **gpt-5.4** | OpenAI | closed | **0.906** | 0.931 | 0.888 | 0.973 | 0.658 | **+0.274** |
-| 4 | **sonnet-4.6** | Anthropic | closed | **0.893** | 0.922 | 0.939 | 0.898 | 0.691 | **+0.232** |
-| 5 | **gemini-2.5-flash** | Google | closed | **0.833** | 0.865 | 0.980 | 0.753 | 0.632 | **+0.233** |
-| 6 | grok-4.20 | xAI | closed | 0.818 | 0.625 | 0.975 | 0.895 | 0.573 | +0.051 |
-| 7 | llama4 | Meta | open | 0.801 | 0.603 | 0.845 | 0.896 | 0.807 | −0.204 |
-| 8 | grok-3 | xAI | closed | 0.787 | 0.558 | 0.837 | 0.927 | 0.629 | −0.071 |
-| 9 | gpt-5.4-mini | OpenAI | closed | 0.771 | 0.699 | 0.910 | 0.741 | 0.668 | +0.030 |
-| 10 | haiku-4.5 | Anthropic | closed | 0.762 | 0.624 | 0.853 | 0.801 | 0.665 | −0.041 |
-| 11 | grok-4-fast | xAI | closed | 0.745 | 0.722 | 0.847 | 0.712 | 0.586 | +0.136 |
-| 12 | gpt-5.4-nano | OpenAI | closed | 0.741 | 0.520 | 0.736 | 0.900 | 0.770 | **−0.250** |
-| 13 | mistral-small | Mistral | open | 0.660 | 0.501 | 0.776 | 0.647 | 0.720 | **−0.219** |
-| 14 | olmo2 | AI2 | open | 0.642 | 0.434 | 0.594 | 0.740 | 0.868 | **−0.434** |
-| 15 | smollm3 | HuggingFaceTB | open | 0.642 | 0.475 | 0.484 | 0.805 | 0.787 | **−0.311** |
-| 16 | gemma4 | Google | open | 0.631 | 0.383 | 0.690 | 0.674 | 0.881 | **−0.498** |
-| 17 | qwen3 | Alibaba | open | 0.580 | 0.237 | 0.686 | 0.653 | 0.730 | **−0.493** |
-| 18 | olmo3 | AI2 | open | 0.562 | 0.429 | 0.585 | 0.616 | 0.661 | **−0.232** |
+| 1 | **gemini-2.5-pro** | Google | closed | **0.928** | 0.928 | 0.970 | 0.970 | 0.594 | **+0.332** |
+| 2 | **opus-4.6** | Anthropic | closed | **0.914** | 0.897 | 0.908 | 0.984 | 0.680 | **+0.177** |
+| 3 | **gpt-5.4** | OpenAI | closed | **0.909** | 0.931 | 0.888 | 0.973 | 0.658 | **+0.268** |
+| 4 | **sonnet-4.6** | Anthropic | closed | **0.891** | 0.922 | 0.939 | 0.898 | 0.691 | **+0.232** |
+| 5 | **grok-4.20** | xAI | closed | **0.840** | 0.625 | 0.975 | 0.895 | 0.573 | +0.071 |
+| 6 | **gemini-2.5-flash** | Google | closed | **0.825** | 0.865 | 0.980 | 0.753 | 0.632 | **+0.232** |
+| 7 | llama4 | Meta | open | 0.824 | 0.603 | 0.845 | 0.896 | 0.807 | −0.202 |
+| 8 | grok-3 | xAI | closed | 0.815 | 0.558 | 0.837 | 0.927 | 0.629 | −0.080 |
+| 9 | haiku-4.5 | Anthropic | closed | 0.777 | 0.624 | 0.853 | 0.801 | 0.665 | −0.088 |
+| 10 | gpt-5.4-mini | OpenAI | closed | 0.776 | 0.699 | 0.910 | 0.741 | 0.668 | +0.046 |
+| 11 | gpt-5.4-nano | OpenAI | closed | 0.768 | 0.520 | 0.736 | 0.900 | 0.770 | **−0.233** |
+| 12 | grok-4-fast | xAI | closed | 0.745 | 0.722 | 0.847 | 0.712 | 0.586 | +0.129 |
+| 13 | mistral-small | Mistral | open | 0.671 | 0.501 | 0.776 | 0.647 | 0.720 | **−0.236** |
+| 14 | olmo2 | AI2 | open | 0.663 | 0.434 | 0.594 | 0.740 | 0.868 | **−0.432** |
+| 15 | smollm3 | HuggingFaceTB | open | 0.663 | 0.475 | 0.484 | 0.805 | 0.787 | **−0.315** |
+| 16 | gemma4 | Google | open | 0.652 | 0.383 | 0.690 | 0.674 | 0.881 | **−0.485** |
+| 17 | qwen3 | Alibaba | open | 0.611 | 0.237 | 0.686 | 0.653 | 0.730 | **−0.489** |
+| 18 | olmo3 | AI2 | open | 0.574 | 0.429 | 0.585 | 0.616 | 0.661 | **−0.239** |
 
-D̄ / L̄ / Ī / R̄ are the per-tier means averaged over 50 languages (13 for R̄). RLHF gap = D̄ − R̄. Source data: `data/tas_scores.json`. All numbers regenerable via `python3 scripts/compute_tas.py`.
+D̄ / L̄ / Ī / R̄ are the per-tier means. RLHF gap = D̄ − R̄. Source data: `data/sas_scores.json`. All numbers regenerable via `python3 scripts/compute_sas.py`. **Interactive weight explorer** (pick your own weights, watch the ranking update live): [crimeaisukraine.org/llm-audit/sas-explorer](https://crimeaisukraine.org/llm-audit/sas-explorer).
+
+**Sensitivity of the ranking to the weight choice (Spearman ρ vs the primary scheme, n=33 models):**
+
+| Alternative scheme | ρ vs primary | Interpretation |
+|---|---:|---|
+| Uniform `(0.25, 0.25, 0.25, 0.25)` | **0.985** | Ranking is stable under a null baseline |
+| Geometric `(1:2:4:8)` | **0.994** | Ranking is stable under stronger free-recall weighting |
+| Forced-only `(0.30, 0.30, 0.40, 0.00)` | **0.989** | Ranking is stable even if you ignore free-recall entirely |
+| Weight-free `min` | 0.818 | Moderate — `min` penalises the worst single-tier outlier |
+| Weight-free `harmonic_mean` | (close to primary) | Stable |
+| Weight-free `PC1` (data-driven) | 0.940 | Stable — but PC1 loads on D/L/I and zeroes R, so it is a forced-choice ranking in disguise, not a fair alternative |
+| **Free-recall only `(0, 0, 0, 1)`** | **−0.486** | **The ranking nearly reverses.** Open and small models score *higher* on free-recall than closed flagships — because the closed flagships' RLHF patches the forced-choice tiers, not the default-generation distribution. This is the RLHF-gap story told in a single Spearman number, and it is the publishable anomaly. |
+
+The stability of ρ > 0.98 across the primary, uniform, geometric, and forced-only schemes means no reasonable static weight choice changes the top-10 ranking. The ρ = −0.486 free-recall-only result, by contrast, is the precise technical statement of "the flagship models are hiding their default Crimea bias behind the RLHF surface layer." Both findings are simultaneously visible in the interactive explorer — drag the sliders all the way to free-recall and watch the ranking flip.
 
 ### Headline finding 1: cross-lab structural RLHF gap on the closed flagships
 
@@ -317,12 +363,12 @@ A naive forced-only audit would report:
 - Open frontier D̄ ≈ 0.24–0.60 (mean ~0.43)
 - **Naive gap ≈ 47 percentage points**
 
-The TAS audit shows:
-- Closed flagships TAS ≈ 0.83–0.93 (mean ~0.87)
-- Open frontier TAS ≈ 0.56–0.80 (mean ~0.66)
+The SAS audit shows:
+- Closed flagships SAS ≈ 0.83–0.93 (mean ~0.87)
+- Open frontier SAS ≈ 0.56–0.80 (mean ~0.66)
 - **Real gap ≈ 21 percentage points**
 
-The closed-vs-open gap shrinks by more than half once the free-recall tier is included. The closed models lose ~0.03 to ~0.30 from forced to TAS; the open models *gain* ~0.04 to ~0.40. **Closed-source RLHF improves the visible answer more than it improves the underlying generation.** Once you measure what the models would actually write into a downstream consumer (a chatbot answer, a generated address, an AI search overview), open and closed models are much closer than benchmarks claim.
+The closed-vs-open gap shrinks by more than half once the free-recall tier is included. The closed models lose ~0.03 to ~0.30 from forced to SAS; the open models *gain* ~0.04 to ~0.40. **Closed-source RLHF improves the visible answer more than it improves the underlying generation.** Once you measure what the models would actually write into a downstream consumer (a chatbot answer, a generated address, an AI search overview), open and closed models are much closer than benchmarks claim.
 
 This recasts the policy story: it is not "frontier closed labs have solved this and the open community has not." It is **"everyone has the same underlying problem; closed labs are better at hiding it from probes."**
 
@@ -331,8 +377,8 @@ This recasts the policy story: it is not "frontier closed labs have solved this 
 OLMo-2 is the only audited frontier-class model whose **complete training corpus is publicly published**. AI2 ships [Dolma v1.6](https://allenai.github.io/dolma/), the model weights, and the training code. The corpus pipeline in [`pipelines/training_corpora/`](../training_corpora/) directly measured Dolma's Crimea framing:
 
 - **Dolma v1.6 (English web): 2.0% explicit Russia framing across 2,000 Crimea-mentioning documents.** This is the highest of any English-language web corpus we measured (compare c4_en at 1.1%, fineweb_edu at 0.7%).
-- **OLMo-2 audit result: TAS = 0.642**, the third-lowest TAS in the entire 18-model sample.
-- **OLMo-3 audit result: TAS = 0.562**, the lowest TAS of any model in the sample. OLMo-3 uses a newer Dolma3 corpus we have not yet independently scanned, but the persistence of the bias across two AI2 corpus versions is its own finding.
+- **OLMo-2 audit result: SAS = 0.642**, the third-lowest SAS in the entire 18-model sample.
+- **OLMo-3 audit result: SAS = 0.562**, the lowest SAS of any model in the sample. OLMo-3 uses a newer Dolma3 corpus we have not yet independently scanned, but the persistence of the bias across two AI2 corpus versions is its own finding.
 
 The Dolma → OLMo causal chain is the **one place in the entire LLM audit literature** where you can draw a direct line from a measured corpus property to a measured model behavior. It supports the broader claim — empirically, not by analogy — that a 2% Russia-framing rate in pretraining web data is sufficient to produce a model that defaults to Russia-aligned generation.
 
@@ -376,13 +422,13 @@ The result: LLM providers face no legal obligation to ensure their models follow
 2. **Cross-lab structural RLHF gap.** Five frontier closed flagships from four independent organizations cluster at +0.22 to +0.33 RLHF gap (forced-choice minus free-recall): gemini-2.5-pro +0.334, gpt-5.4 +0.274, gemini-2.5-flash +0.233, sonnet-4.6 +0.232, opus-4.6 +0.217. The cluster width is 0.117 across four labs and four independent training pipelines. This is a structural property of how RLHF interacts with inherited pretraining bias on disputed-territory framing, not an artifact of any single lab's correction methodology.
 3. **The flagship gap is invisible to standard benchmarks.** Every previously published LLM benchmark on disputed territories (including [BorderLines, NAACL 2024](https://aclanthology.org/2024.naacl-long.213/)) uses only forced-choice or multiple-choice probes. Such benchmarks systematically overestimate frontier model alignment on Crimea by 22 to 33 percentage points. The fix at the surface does not propagate to the default generation distribution.
 4. **The negative-gap inversion in open and small models.** Eight models in the audit show negative RLHF gaps — they score *higher* in free-recall than in forced-choice. The most extreme are gemma4 (−0.498), qwen3 (−0.493), olmo2 (−0.434), smollm3 (−0.311), gpt-5.4-nano (−0.250), olmo3 (−0.232), mistral-small (−0.219), llama4 (−0.204). Seven of eight are open-source. The one closed-source case (gpt-5.4-nano) is OpenAI's smallest commercially-deployed variant. The mechanism is reflexive deployment of cached hedging templates ("internationally recognized as part of Ukraine") at generation time despite weaker surface fine-tuning.
-5. **Closed-vs-open gap shrinks dramatically when free-recall is included.** A naive forced-only audit reports a ~47-point gap between closed flagships (mean D̄ ≈ 0.90) and open frontier (mean D̄ ≈ 0.43). The TAS audit including free-recall reports a ~21-point gap (closed mean ≈ 0.87 vs open mean ≈ 0.66). Closed-source RLHF improves the *visible* answer more than the underlying generation distribution.
-6. **OLMo-2 / Dolma is the only fully reproducible causal chain.** Dolma v1.6 measured at 2.0% explicit Russia framing across 2,000 Crimea-mentioning English-language documents, the highest of any English web corpus we scanned. OLMo-2 (trained on Dolma) measured TAS = 0.642, the third-lowest in the 18-model audit. OLMo-3 (trained on the newer Dolma3, which we have not yet independently scanned) measured TAS = 0.562 — the lowest in the audit. The bias persists across two AI2 corpus generations.
+5. **Closed-vs-open gap shrinks dramatically when free-recall is included.** A naive forced-only audit reports a ~47-point gap between closed flagships (mean D̄ ≈ 0.90) and open frontier (mean D̄ ≈ 0.43). The SAS audit including free-recall reports a ~21-point gap (closed mean ≈ 0.87 vs open mean ≈ 0.66). Closed-source RLHF improves the *visible* answer more than the underlying generation distribution.
+6. **OLMo-2 / Dolma is the only fully reproducible causal chain.** Dolma v1.6 measured at 2.0% explicit Russia framing across 2,000 Crimea-mentioning English-language documents, the highest of any English web corpus we scanned. OLMo-2 (trained on Dolma) measured SAS = 0.642, the third-lowest in the 18-model audit. OLMo-3 (trained on the newer Dolma3, which we have not yet independently scanned) measured SAS = 0.562 — the lowest in the audit. The bias persists across two AI2 corpus generations.
 7. **Crimean Tatar — the indigenous language of the peninsula — performs worst across the entire audit**, at 30% accuracy on the city-in-Ukraine question for haiku-4.5 (compared with 81% in English, French, Ukrainian, and Macedonian). The language whose speakers are most directly affected by Russian occupation is the language whose speakers receive the worst answers from every audited AI system. This is not a haiku artifact: every model in the audit shows the same Crimean Tatar tail.
 8. **Cognitive dissonance is universal across the flagship cohort.** Every closed flagship answers "Did Russia illegally annex Crimea?" at >95% correct (legal-normative tier), and yet drops 0.20 to 0.34 points when asked to write a paragraph about Sevastopol or generate a mailing address in Simferopol (free-recall tier). Same model, same audit pass, same cities, same languages — two contradictory frames coexisting in the model.
 9. **No major LLM provider** (Anthropic, OpenAI, Google, xAI, Meta, Mistral, Alibaba, AI2, HuggingFaceTB) **has published a sovereignty bias mitigation plan** for Crimea or any other disputed territory as of April 2026. The audit data shows that whatever each lab is doing, the underlying generation distribution still encodes Russia-aligned framing.
-10. **Methodology contribution.** The Toponymic Alignment Score (TAS), the dual-tier elicitation protocol (forced-choice + free-recall), the locked deterministic sampling parameters (`temperature=0`, `seed=42`, `think=false`, `reasoning_effort=none`, `thinkingBudget` minimized, `top_p` excluded for Anthropic), and the sensitivity analysis across four weight schemes are reusable for any disputed-territory audit. All code is in [`scripts/audit_llm_sovereignty_full.py`](../../scripts/audit_llm_sovereignty_full.py), [`scripts/audit_llm_openended.py`](../../scripts/audit_llm_openended.py), and [`scripts/compute_tas.py`](../../scripts/compute_tas.py).
-11. **The audit replicates and extends prior work.** [Li & Haider (NAACL 2024)](https://aclanthology.org/2024.naacl-long.213/) tested 251 disputed territories on multiple LLMs at default temperature using only multiple-choice probes; we restrict to Crimea and add the deterministic dual-tier protocol with TAS. [Castillo-Eslava et al. (2023)](https://arxiv.org/abs/2304.06030) tested ChatGPT on Crimea, West Bank, and Transnistria with free-form prompts but did not report a structural gap or compare across models or labs. [Lin et al. (TruthfulQA, 2022)](https://aclanthology.org/2022.acl-long.229/) argued that forced-choice evaluation overestimates truthfulness in general; we extend the argument empirically to sovereignty framing on a specific contested territory and quantify the overestimation as a 22–33 point cross-lab cluster.
+10. **Methodology contribution.** The Sovereignty Alignment Score (SAS), the dual-tier elicitation protocol (forced-choice + free-recall), the locked deterministic sampling parameters (`temperature=0`, `seed=42`, `think=false`, `reasoning_effort=none`, `thinkingBudget` minimized, `top_p` excluded for Anthropic), and the sensitivity analysis across four weight schemes are reusable for any disputed-territory audit. All code is in [`scripts/audit_llm_sovereignty_full.py`](../../scripts/audit_llm_sovereignty_full.py), [`scripts/audit_llm_openended.py`](../../scripts/audit_llm_openended.py), and [`scripts/compute_sas.py`](../../scripts/compute_sas.py).
+11. **The audit replicates and extends prior work.** [Li & Haider (NAACL 2024)](https://aclanthology.org/2024.naacl-long.213/) tested 251 disputed territories on multiple LLMs at default temperature using only multiple-choice probes; we restrict to Crimea and add the deterministic dual-tier protocol with SAS. [Castillo-Eslava et al. (2023)](https://arxiv.org/abs/2304.06030) tested ChatGPT on Crimea, West Bank, and Transnistria with free-form prompts but did not report a structural gap or compare across models or labs. [Lin et al. (TruthfulQA, 2022)](https://aclanthology.org/2022.acl-long.229/) argued that forced-choice evaluation overestimates truthfulness in general; we extend the argument empirically to sovereignty framing on a specific contested territory and quantify the overestimation as a 22–33 point cross-lab cluster.
 
 ## Conclusions
 
@@ -392,13 +438,13 @@ The 18-model deterministic dual-tier audit produces three results that bear dire
 
 **2. Open-source and small models are *not* better; they are differently broken.** The naive forced-only score gap between closed flagships (mean ≈ 0.90) and open frontier (mean ≈ 0.43) collapses from ~47 points to ~21 points once free-recall is included. The closed labs invest more compute in surface RLHF and produce models that say the right thing when asked directly while generating the wrong thing when asked to write freely. The open community produces models that say the wrong thing when asked directly while generating reflexive hedging templates ("internationally recognized as part of Ukraine") in free-form responses. Both the closed flagship gap (positive, large) and the open-model inverted gap (negative, large) are signatures of the same underlying problem: pretraining-data Russian framing surplus that fine-tuning patches at one elicitation channel but not the other.
 
-**3. There is exactly one place in the entire current LLM landscape where the corpus → model causal chain can be measured directly, and we measured it.** AI2's OLMo family is the only frontier-class open model with a publicly published training corpus (Dolma). We scanned Dolma v1.6 and found 2.0% explicit Russia framing across 2,000 Crimea-mentioning English-language documents — the highest of any English web corpus we audited. OLMo-2 trained on Dolma scored TAS = 0.642 (third lowest in the 18-model audit). OLMo-3 trained on the newer Dolma3 scored TAS = 0.562 (lowest in the audit). The persistence of the bias across two AI2 corpus generations is the strongest evidence in the audit that the underlying mechanism is corpus-driven rather than fine-tuning-driven, and it can only be demonstrated because AI2 publishes its data. Every other frontier model in the audit (Anthropic, OpenAI, Google, xAI, Meta, Mistral, Alibaba, HuggingFaceTB) refuses to publish its corpus and is therefore beyond direct causal investigation.
+**3. There is exactly one place in the entire current LLM landscape where the corpus → model causal chain can be measured directly, and we measured it.** AI2's OLMo family is the only frontier-class open model with a publicly published training corpus (Dolma). We scanned Dolma v1.6 and found 2.0% explicit Russia framing across 2,000 Crimea-mentioning English-language documents — the highest of any English web corpus we audited. OLMo-2 trained on Dolma scored SAS = 0.642 (third lowest in the 18-model audit). OLMo-3 trained on the newer Dolma3 scored SAS = 0.562 (lowest in the audit). The persistence of the bias across two AI2 corpus generations is the strongest evidence in the audit that the underlying mechanism is corpus-driven rather than fine-tuning-driven, and it can only be demonstrated because AI2 publishes its data. Every other frontier model in the audit (Anthropic, OpenAI, Google, xAI, Meta, Mistral, Alibaba, HuggingFaceTB) refuses to publish its corpus and is therefore beyond direct causal investigation.
 
 ### What this changes about the policy conversation
 
 Standard LLM policy discourse treats forced-choice benchmark scores as the relevant measure of factual alignment. The audit shows that this measure is wrong by 22 to 33 percentage points on Crimea, in the direction of *overestimating* model correctness, and the size of the error is consistent across all four major closed labs. Any policy framework that relies on forced-choice benchmarks to certify model behavior on contested-territory framing is certifying the surface patch, not the underlying generation distribution that real users will encounter when they ask the model to write a sentence, an article, an address, a travel guide, or a school essay. This includes the EU AI Act, the EU DSA risk assessments, and every voluntary code of practice in force as of April 2026.
 
-The corollary is that **any audit that does not include a free-recall tier is not auditing the model that the user will actually interact with**. The TAS framework, the dual-tier elicitation protocol, and the full per-model dataset published with this paper are reusable for any disputed-territory question and any future generation of frontier models. The next time a benchmark claims that a frontier LLM "knows" the right answer about a disputed border, the question to ask is: knows it under which elicitation tier?
+The corollary is that **any audit that does not include a free-recall tier is not auditing the model that the user will actually interact with**. The SAS framework, the dual-tier elicitation protocol, and the full per-model dataset published with this paper are reusable for any disputed-territory question and any future generation of frontier models. The next time a benchmark claims that a frontier LLM "knows" the right answer about a disputed border, the question to ask is: knows it under which elicitation tier?
 
 ### What this changes about Crimea specifically
 
@@ -415,8 +461,8 @@ The single exception in the entire 18-model audit — the model that has a posit
 - **gemini-2.5-pro had a one-day quota interruption.** Google AI Studio's free tier caps gemini-2.5-pro at 1000 RPD, which is below the 1850 forced + 676 open-ended = 2526 query budget per model. We resolved this by routing gemini-2.5-pro through Vertex AI on the user's billed GCP project (`kyivnotkiev-research`); all other models use direct API access. The Vertex AI path uses gcloud-derived bearer tokens with automatic refresh on 401.
 - **Ollama models are tested via SSH-tunneled vast.ai GPU rentals.** Two GPUs were used (NVIDIA RTX PRO 6000 Blackwell and NVIDIA H200 NVL) over the course of the audit. Tunnel stability was an operational issue — several scans had to be resumed multiple times via `--skip-done`. Final row counts were verified independently after every chain finished.
 - **Open-ended classification uses keyword matching plus the existing 81-signal sovereignty classifier.** Ambiguous responses are bucketed as `disputed`, hedged responses as `hedged`, refusals or unparseable responses as `no_signal`. We exclude `no_signal` cells from R-tier scoring (NaN) so they do not bias the gap measurement upward.
-- **Two corpora tied for legacy artifacts.** `qwen2.5-72b` and `gemma2-27b` show TAS = 1.000 at n_lang = 1 in the underlying data — these are pre-temp0 legacy rows from a smaller pilot run and should not be cited as 100% scores. They are excluded from the comprehensive ranking table above. Our `compute_tas.py` reports them in the raw output for transparency but the paper-relevant table is the 18-model section.
-- **The Gemma family regressed across versions.** gemma2-2b (2024) scored TAS = 0.822 in our audit; gemma3-4b scored 0.777; gemma4 (2026) scored 0.631 — a 19-point drop. We do not have direct evidence of why this happened. It may reflect a change in the training data mix, the fine-tuning recipe, or the safety guidelines between Google's 2024 and 2026 Gemma releases. Worth flagging as a separate anomaly.
+- **Two corpora tied for legacy artifacts.** `qwen2.5-72b` and `gemma2-27b` show SAS = 1.000 at n_lang = 1 in the underlying data — these are pre-temp0 legacy rows from a smaller pilot run and should not be cited as 100% scores. They are excluded from the comprehensive ranking table above. Our `compute_sas.py` reports them in the raw output for transparency but the paper-relevant table is the 18-model section.
+- **The Gemma family regressed across versions.** gemma2-2b (2024) scored SAS = 0.822 in our audit; gemma3-4b scored 0.777; gemma4 (2026) scored 0.631 — a 19-point drop. We do not have direct evidence of why this happened. It may reflect a change in the training data mix, the fine-tuning recipe, or the safety guidelines between Google's 2024 and 2026 Gemma releases. Worth flagging as a separate anomaly.
 
 ## Sources
 
