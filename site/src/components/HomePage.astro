@@ -905,11 +905,19 @@ const mediaViolatorsByFilter = mediaViolators as any;
 <!-- Academic Framing (OpenAlex) -->
 <section id="academic-framing" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingAcademicTitle} — {(academic.total_papers || 988).toLocaleString()} {lang === 'uk' ? 'робіт' : 'Papers'}</h2>
-    <p class="text-[#94a3b8] mb-6">{lang === 'uk'
-      ? 'OpenAlex, 2010-2026. 5,151 робіт з сигналами суверенітету, верифіковані LLM.'
-      : 'OpenAlex, 2010–2026. 5,151 papers with sovereignty signals, LLM-verified.'
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingAcademicTitle} — 91,670 {lang === 'uk' ? 'робіт' : 'Papers'}</h2>
+    <p class="text-[#94a3b8] mb-4">{lang === 'uk'
+      ? 'OpenAlex, 2010-2026. 91,670 робіт проскановано; 5,151 з сигналами суверенітету; 1,581 LLM-підтверджено з російським фреймінгом.'
+      : 'OpenAlex, 2010–2026. 91,670 papers scanned; 5,151 sovereignty-signaled; 1,581 LLM-confirmed Russia framing.'
     }</p>
+    <div class="text-xs text-[#64748b] mb-6 flex flex-wrap items-center gap-2">
+      <span class="text-[#475569]">📂 pipelines/academic/</span>
+      <a href={pipelineLinks('academic').readme} target="_blank" rel="noopener" class="text-[#0057b7] hover:text-white transition">README ↗</a>
+      <span class="text-[#334155]">·</span>
+      <a href={pipelineLinks('academic').manifest} target="_blank" rel="noopener" class="text-[#0057b7] hover:text-white transition">manifest.json ↗</a>
+      <span class="text-[#334155]">·</span>
+      <a href={pipelineLinks('academic').scan} target="_blank" rel="noopener" class="text-[#0057b7] hover:text-white transition">scan.py ↗</a>
+    </div>
 
     <!-- Stats row -->
     <div class="flex gap-3 mb-6">
@@ -1042,6 +1050,16 @@ const mediaViolatorsByFilter = mediaViolators as any;
         ? '18 моделей з 6 лабораторій, детермінований аудит при temperature=0. Дворівнева елісітація: 1850 запитань з вимушеним вибором + 676 відкритих запитань на модель. ~45 500 запитів загалом.'
         : '18 models from 6 labs, deterministic audit at temperature=0. Dual-tier elicitation: 1,850 forced-choice queries + 676 open-ended queries per model. ~45,500 queries total.'}
     </p>
+    <div class="text-xs text-[#64748b] mb-4 flex flex-wrap items-center gap-2">
+      <span class="text-[#475569]">📂 pipelines/llm/</span>
+      <a href={pipelineLinks('llm').readme} target="_blank" rel="noopener" class="text-[#0057b7] hover:text-white transition">README ↗</a>
+      <span class="text-[#334155]">·</span>
+      <a href={pipelineLinks('llm').manifest} target="_blank" rel="noopener" class="text-[#0057b7] hover:text-white transition">manifest.json ↗</a>
+      <span class="text-[#334155]">·</span>
+      <a href={pipelineLinks('llm').scan} target="_blank" rel="noopener" class="text-[#0057b7] hover:text-white transition">scan_by_model.py ↗</a>
+      <span class="text-[#334155]">·</span>
+      <a href="https://github.com/IvanDobrovolsky/crimeaisukraine/blob/main/scripts/compute_sas.py" target="_blank" rel="noopener" class="text-[#0057b7] hover:text-white transition">compute_sas.py ↗</a>
+    </div>
 
     <!-- Plain-language explainer: what LLMs are, what RLHF is, what the
          "gap" measures, why SAS is weighted. For non-technical readers
@@ -1342,10 +1360,19 @@ const mediaViolatorsByFilter = mediaViolators as any;
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.mapTitle}</h2>
     <p class="text-[#94a3b8] mb-4">{t.mapDesc}</p>
-    <p class="text-xs text-[#64748b] mb-8">{lang === 'uk'
+    <p class="text-xs text-[#64748b] mb-4">{lang === 'uk'
       ? 'Методологія: автоматичні API-запити «Simferopol» → перевірка поля country_code у відповіді (UA/RU/порожнє). JS-рендерені карти перевірені через документацію worldview.'
       : 'Methodology: automated API queries for "Simferopol" → checking country_code field in response (UA/RU/empty). JS-rendered maps verified via worldview documentation.'
     }</p>
+    <div class="text-xs text-[#64748b] mb-8 flex flex-wrap items-center gap-2">
+      <span class="text-[#475569]">📂 pipelines/geodata/</span>
+      <a href={pipelineLinks('geodata').readme} target="_blank" rel="noopener" class="text-[#0057b7] hover:text-white transition">README ↗</a>
+      <span class="text-[#334155]">·</span>
+      <a href={pipelineLinks('geodata').manifest} target="_blank" rel="noopener" class="text-[#0057b7] hover:text-white transition">manifest.json ↗</a>
+      <span class="text-[#334155]">·</span>
+      <a href={pipelineLinks('geodata').scan} target="_blank" rel="noopener" class="text-[#0057b7] hover:text-white transition">scan.py ↗</a>
+      <span class="text-[#64748b] italic">({lang === 'uk' ? 'consumer-API перевірки живуть у geodata пайплайні' : 'consumer-API checks live in the geodata pipeline'})</span>
+    </div>
 
     <!-- Top row: Donut + Stats -->
     <div class="grid md:grid-cols-[240px_1fr] gap-8 mb-10">
@@ -2189,82 +2216,12 @@ const mediaViolatorsByFilter = mediaViolators as any;
   </div>
 </section>
 
-<!-- Methodology -->
-<section class="max-w-6xl mx-auto px-6 mb-12">
-  <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.methodTitle}</h2>
-    <p class="text-[#94a3b8] mb-8">{T.methodDesc}</p>
-
-    <!-- Three methods -->
-    <div class="grid md:grid-cols-3 gap-4 mb-8">
-      <div class="bg-[#0a0e1a] rounded-xl p-5 border border-[#22c55e]/30">
-        <div class="flex items-center justify-between mb-2">
-          <h3 class="font-bold text-[#22c55e] text-sm">{t.tier1}</h3>
-          <span class="text-xs bg-[#22c55e]/20 text-[#22c55e] px-2 py-0.5 rounded-full">{T.tier1count}</span>
-        </div>
-        <p class="text-xs text-[#94a3b8]">{T.tier1desc}</p>
-      </div>
-      <div class="bg-[#0a0e1a] rounded-xl p-5 border border-[#0057b7]/30">
-        <div class="flex items-center justify-between mb-2">
-          <h3 class="font-bold text-[#0057b7] text-sm">{t.tier2}</h3>
-          <span class="text-xs bg-[#0057b7]/20 text-[#0057b7] px-2 py-0.5 rounded-full">{T.tier2count}</span>
-        </div>
-        <p class="text-xs text-[#94a3b8]">{T.tier2desc}</p>
-      </div>
-      <div class="bg-[#0a0e1a] rounded-xl p-5 border border-[#64748b]/30">
-        <div class="flex items-center justify-between mb-2">
-          <h3 class="font-bold text-[#94a3b8] text-sm">{t.tier3}</h3>
-          <span class="text-xs bg-[#64748b]/20 text-[#94a3b8] px-2 py-0.5 rounded-full">{T.tier3count}</span>
-        </div>
-        <p class="text-xs text-[#94a3b8]">{T.tier3desc}</p>
-      </div>
-    </div>
-
-    <!-- Sovereignty Classifier -->
-    <div class="mb-8">
-      <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-3">
-        {lang === 'uk' ? 'Класифікатор суверенітету' : 'Sovereignty Classifier'}
-      </h3>
-      <div class="bg-[#0a0e1a] rounded-xl p-5 border border-[#1e293b]">
-        <p class="text-xs text-[#94a3b8] mb-3">
-          {lang === 'uk'
-            ? 'Класифікатор на основі правил з 81 сигналом на 3 мовах (англійська, російська, українська). Виявляє мітки місцезнаходження, адміністративні назви, мову фреймінгу та структурні сигнали. Жодних ML-моделей — чисте зіставлення шаблонів.'
-            : 'Rule-based classifier with 81 sovereignty signals across 3 languages (English, Russian, Ukrainian). Detects location labels, administrative names, framing language, and structural signals. No ML models — pure pattern matching.'}
-        </p>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
-          <div class="bg-[#111827] rounded-lg p-2">
-            <div class="text-lg font-bold text-white">81</div>
-            <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'сигналів' : 'signals'}</div>
-          </div>
-          <div class="bg-[#111827] rounded-lg p-2">
-            <div class="text-lg font-bold text-white">3</div>
-            <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'мови' : 'languages'}</div>
-          </div>
-          <div class="bg-[#111827] rounded-lg p-2">
-            <div class="text-lg font-bold text-white">18/18</div>
-            <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'тестів' : 'tests pass'}</div>
-          </div>
-          <div class="bg-[#111827] rounded-lg p-2">
-            <div class="text-lg font-bold text-white">0</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Known Limitations -->
-    <div>
-      <h3 class="text-sm font-bold text-[#f59e0b] uppercase tracking-wider mb-3">
-        {lang === 'uk' ? 'Відомі обмеження' : 'Known Limitations'}
-      </h3>
-      <ul class="space-y-1.5 text-xs text-[#94a3b8]">
-        <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">1.</span>{lang === 'uk' ? 'Точність: академічні — 98% (49/50 перевірено вручну). Медіа — нижча через заперечення та цитування (~5% хибнопозитивних).' : 'Precision: academic — 98% (49/50 manually verified). Media — lower due to negation and quotation contexts (~5% estimated false positives).'}</li>
-        <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">2.</span>{lang === 'uk' ? 'Цитування vs схвалення: медіа, що цитують російський наратив для критики, класифікуються як «російський фреймінг». Контекстне розуміння обмежене.' : 'Quotation vs endorsement: media quoting Russian narrative for criticism is classified as "Russian framing." Context understanding is limited.'}</li>
-        <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">3.</span>{lang === 'uk' ? 'GDELT починається з 2015 (v2). Медіадані 2010-2014 недоступні через цей API.' : 'GDELT starts at 2015 (v2). Media data for 2010-2014 is not available through this API.'}</li>
-        <li class="flex gap-2"><span class="text-[#f59e0b] flex-shrink-0">4.</span>{lang === 'uk' ? 'Мертві посилання: 53% URL-адрес GDELT 2021 року повертають помилки. Старіші роки мають вищий показник.' : 'Dead links: 53% of 2021 GDELT URLs return errors. Older years have higher rates.'}</li>
-      </ul>
-    </div>
-  </div>
-</section>
+<!-- Methodology section removed: the three-method findings-count cards
+     (Source Code Inspection 18 · API Queries 76 · Automated Data 22)
+     inherit the same unit-mismatch problem as the overview stats, and
+     the "Sovereignty Classifier + Known Limitations" block is now
+     documented per-pipeline in each README. The top-level methodology
+     lives in the main repository README and in the briefing document. -->
 
 <!-- "About This Research" section removed: the three summary cards
      repeated category counts ("120 platforms, 25 weather services, 13
