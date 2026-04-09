@@ -206,166 +206,9 @@ const geoCratesTotal = geoSummary.crates_total_weekly_downloads;
 const geoNugetCumulative = geoSummary.nuget_lifetime_downloads_total;
 const geoCrossEcoTotal = geoSummary.cross_ecosystem_total_weekly_downloads;
 
-// Build a top-down Sankey diagram dataset from the geodata manifest.
-// The Sankey runs: Natural Earth → {GDAL, direct-to-npm} → 5 ecosystems
-// → ~32 named libraries → 2 terminal outcomes. Link values are actual
-// live weekly downloads (with NuGet cumulative scaled so it doesn't
-// dominate the layout). The 4 "ignored upstream" nodes and the desktop
-// GIS layer are shown separately in HTML because Sankey can't represent
-// non-flows, and the desktop layer clutters the package-ecosystem spine.
-function buildPropagationGraph() {
-  const nodes: any[] = [];
-  const links: any[] = [];
+// Propagation chain is now a static HTML layered diagram in the geodata section;
+// the old buildPropagationGraph helper + d3-sankey lazy loader have been removed.
 
-  // NuGet is cumulative lifetime rather than weekly. Scale it down so
-  // it doesn't dwarf the weekly columns visually. 150 ≈ ~3 years of
-  // weekly at current rates — a defensible proxy for "weekly-equivalent".
-  const NUGET_SCALE = 150;
-  const nugetScaled = Math.round(geoNugetCumulative / NUGET_SCALE);
-
-  // --- Root ------------------------------------------------------------
-  nodes.push({
-    id: 'ne',
-    name: 'Natural Earth',
-    detail: `admin_1 row has 7 RU-fields + 7 UA-fields in the same row · admin_0 SOVEREIGNT='${geoNeSovereignt || 'Russia'}'`,
-    group: 'root',
-    color: '#ef4444',
-  });
-
-  // --- GDAL hub --------------------------------------------------------
-  // Everything except npm reads Natural Earth via the GDAL C++ library
-  // (libgdal + libproj + libgeos). npm reads NE directly as TopoJSON.
-  nodes.push({
-    id: 'gdal',
-    name: 'GDAL / PROJ / GEOS (C++)',
-    detail: 'Universal geospatial C++ library stack. Every non-JS ecosystem reads Natural Earth shapefiles through libgdal.',
-    group: 'hub',
-    color: '#f59e0b',
-  });
-
-  const gdalInflow = geoPypiTotal + geoCranTotal + geoCratesTotal + nugetScaled;
-  links.push({ source: 'ne', target: 'gdal', value: gdalInflow, color: '#f59e0b' });
-  links.push({ source: 'ne', target: 'eco-npm', value: geoNpmTotal, color: '#ef4444' });
-
-  // --- Ecosystems ------------------------------------------------------
-  const ecosystems = [
-    { id: 'eco-npm',    name: 'npm (JavaScript)',   weekly: geoNpmTotal,   parent: null },
-    { id: 'eco-pypi',   name: 'PyPI (Python)',      weekly: geoPypiTotal,  parent: 'gdal' },
-    { id: 'eco-cran',   name: 'CRAN (R)',           weekly: geoCranTotal,  parent: 'gdal' },
-    { id: 'eco-crates', name: 'crates.io (Rust)',   weekly: geoCratesTotal,parent: 'gdal' },
-    { id: 'eco-nuget',  name: 'NuGet (.NET)',       weekly: nugetScaled,   parent: 'gdal',
-      isCumulative: true, cumulativeDisplay: geoNugetCumulative },
-  ];
-  for (const e of ecosystems) {
-    nodes.push({
-      id: e.id,
-      name: e.name,
-      detail: e.isCumulative
-        ? `${e.cumulativeDisplay.toLocaleString()} cumulative lifetime (NetTopologySuite dominates; NuGet has no weekly API)`
-        : `${e.weekly.toLocaleString()} live weekly downloads`,
-      group: 'ecosystem',
-      color: '#0057b7',
-    });
-    if (e.parent) {
-      links.push({ source: e.parent, target: e.id, value: e.weekly, color: '#0057b7' });
-    }
-  }
-
-  // --- Named library nodes (built from manifest) ----------------------
-  const ecosystemMap: Record<string, string> = {
-    javascript_npm:  'eco-npm',
-    python_pypi:     'eco-pypi',
-    r_cran:          'eco-cran',
-    rust_cratesio:   'eco-crates',
-    dotnet_nuget:    'eco-nuget',
-  };
-  for (const f of geoFindings) {
-    const ecoKey = (f as any).ecosystem;
-    if (!ecoKey || !ecosystemMap[ecoKey]) continue;
-    const parentId = ecosystemMap[ecoKey];
-
-    let pkgs: any[] = [];
-    if (ecoKey === 'python_pypi') {
-      pkgs = [
-        ...((f as any).packages_high_level || []),
-        ...((f as any).packages_cpp_bindings || []),
-      ];
-    } else if (ecoKey === 'rust_cratesio') {
-      pkgs = ((f as any).crates || []).map((c: any) => ({
-        package: c.crate,
-        weekly_downloads: c.weekly_downloads,
-        description: c.description,
-      }));
-    } else if (ecoKey === 'dotnet_nuget') {
-      pkgs = ((f as any).packages || []).map((p: any) => ({
-        package: p.package,
-        weekly_downloads: Math.round((p.lifetime_downloads || 0) / NUGET_SCALE),
-        description: p.description,
-        cumulativeDisplay: p.lifetime_downloads,
-        isCumulative: true,
-      }));
-    } else {
-      pkgs = (f as any).packages || [];
-    }
-
-    for (const p of pkgs) {
-      const pkgName = p.package;
-      const dl = p.weekly_downloads || 0;
-      if (dl <= 0) continue;
-      const isHighcharts = pkgName === 'highcharts';
-      const isGeoPandasFix = pkgName === 'geopandas';
-      const id = `pkg-${ecoKey}-${pkgName}`;
-      nodes.push({
-        id,
-        name: pkgName,
-        detail: p.isCumulative
-          ? `${p.cumulativeDisplay.toLocaleString()} cumulative lifetime downloads · ${p.description || ''}`
-          : `${dl.toLocaleString()} live weekly downloads · ${p.description || ''}`,
-        group: isHighcharts ? 'highcharts' : (isGeoPandasFix ? 'partial' : 'package'),
-        color: isHighcharts ? '#22c55e' : (isGeoPandasFix ? '#facc15' : '#ef4444'),
-      });
-      links.push({
-        source: parentId, target: id, value: dl,
-        color: isHighcharts ? '#22c55e' : (isGeoPandasFix ? '#facc15' : '#475569'),
-      });
-
-      // Library → terminal outcome
-      if (isHighcharts) {
-        links.push({ source: id, target: 'terminal-ok', value: dl, color: '#22c55e' });
-      } else if (isGeoPandasFix) {
-        // GeoPandas v0.12.2+ is correct; pre-fix versions still inherit.
-        // Assume ~30% of weekly downloads are still on pre-0.12.2 — this
-        // is a rough estimate; the real split is not public.
-        const preFix = Math.round(dl * 0.3);
-        const postFix = dl - preFix;
-        links.push({ source: id, target: 'terminal-bad', value: preFix, color: '#ef4444' });
-        links.push({ source: id, target: 'terminal-ok',  value: postFix, color: '#facc15' });
-      } else {
-        links.push({ source: id, target: 'terminal-bad', value: dl, color: '#ef4444' });
-      }
-    }
-  }
-
-  // --- Terminal outcomes ----------------------------------------------
-  nodes.push({
-    id: 'terminal-bad',
-    name: 'End user sees Crimea as Russia',
-    detail: 'News graphics · COVID / fraud / ad / crypto dashboards · academic papers · government dashboards · every map on the modern web that did not deliberately override Natural Earth',
-    group: 'terminal-bad',
-    color: '#ef4444',
-  });
-  nodes.push({
-    id: 'terminal-ok',
-    name: 'End user sees Crimea as Ukraine',
-    detail: 'Highcharts (deliberate override) + GeoPandas v0.12.2+ (PR #2670)',
-    group: 'terminal-ok',
-    color: '#22c55e',
-  });
-
-  return { nodes, links };
-}
-
-const propagationGraphData = buildPropagationGraph();
 
 // ── Pipeline manifests for the rewired sections ───────────────
 const tcMani = (telecomPipeline as any);
@@ -710,41 +553,117 @@ const mediaViolatorsByFilter = mediaViolators as any;
       </div>
     </div>
 
-    <!-- ═══ TOP-DOWN SANKEY PROPAGATION CHAIN ═══
-         A 2D D3 Sankey flowing top→bottom: Natural Earth at the top,
-         width of each link proportional to live weekly downloads, the
-         single green Highcharts branch visible as an offshoot on the
-         way to the red end-outcome terminal.
-         Lazy-loaded from esm.sh when the section comes into view.
+    <!-- ═══ PROPAGATION CHAIN — clean layered flow ═══
+         Three tiers, top→bottom, pure HTML/CSS. No library, no lazy
+         load, no 1100px scrollable area. The previous d3-sankey version
+         was visually messy — 32 individual package nodes crammed into a
+         single Sankey produced tangled flows and overlapping labels.
+         The per-package detail lives in the <details> block further
+         down, where a table is the right widget for 32 rows.
          ═══════════════════════════════════════════════════════════ -->
     <div class="mb-6">
-      <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
-        <div>
-          <h3 class="text-base font-bold text-white">{lang === 'uk' ? 'Ланцюг розповсюдження' : 'Propagation chain'}</h3>
-          <p class="text-[11px] text-[#64748b] mt-0.5">{lang === 'uk'
-            ? 'Зліва → праворуч: Природна Земля → GDAL → 5 екосистем → 32 бібліотеки → кінцевий результат · ширина зв\'язку = живі тижневі завантаження · наведіть для деталей'
-            : 'Left → right: Natural Earth → GDAL → 5 ecosystems → 32 libraries → end outcome · link width = live weekly downloads · hover for details'
-          }</p>
-        </div>
-        <div class="hidden md:flex items-center gap-3 text-[10px] text-[#64748b]">
-          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#ef4444]"></span>{lang === 'uk' ? 'успадковує помилку' : 'inherits RU framing'}</span>
-          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>{lang === 'uk' ? 'правильно' : 'correct (Highcharts)'}</span>
-          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#facc15]"></span>{lang === 'uk' ? 'частково виправлено' : 'partial fix (GeoPandas)'}</span>
-          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#0057b7]"></span>{lang === 'uk' ? 'екосистема' : 'ecosystem'}</span>
-        </div>
+      <div class="flex items-baseline justify-between mb-3 flex-wrap gap-2">
+        <h3 class="text-base font-bold text-white">{lang === 'uk' ? 'Ланцюг розповсюдження' : 'Propagation chain'}</h3>
+        <div class="text-xs text-[#64748b]">{lang === 'uk' ? 'живі тижневі завантаження — дані з BigQuery, npm, CRAN, crates.io, NuGet' : 'live weekly downloads — BigQuery · npm · CRAN · crates.io · NuGet'}</div>
       </div>
-      <div id="sankey-container" class="relative w-full bg-[#0a0e1a] rounded-xl border border-[#1e293b] overflow-auto" style="min-height: 1100px;">
-        <div id="sankey-loading" class="absolute inset-0 flex flex-col items-center justify-center text-[#64748b] text-xs gap-2 pointer-events-none">
-          <div class="w-8 h-8 border-2 border-[#ef4444] border-t-transparent rounded-full animate-spin"></div>
-          <div>{lang === 'uk' ? 'Завантаження діаграми…' : 'Loading diagram…'}</div>
-          <div class="text-[10px] text-[#475569]">d3 + d3-sankey (~80 KB, lazy-loaded)</div>
+
+      <div class="bg-[#0a0e1a] rounded-xl border border-[#1e293b] p-4 md:p-6">
+
+        <!-- Tier 1: Natural Earth (the root) -->
+        <div class="flex justify-center mb-3">
+          <div class="bg-[#ef4444]/10 border border-[#ef4444]/50 rounded-xl p-4 max-w-xl text-center">
+            <div class="text-[10px] uppercase tracking-widest text-[#ef4444] font-bold mb-1">{lang === 'uk' ? 'Upstream · коренева помилка' : 'Upstream · the root'}</div>
+            <div class="text-lg md:text-xl font-black text-white">Natural Earth</div>
+            <div class="text-xs text-[#94a3b8] mt-2 leading-relaxed">
+              <code class="font-mono text-[#ef4444]">admin_0.SOVEREIGNT = '{geoNeSovereignt || 'Russia'}'</code>
+              <br />
+              <span class="text-[#64748b]">{lang === 'uk' ? 'рядок' : 'row'} admin_1:</span>{' '}
+              <strong class="text-[#ef4444]">{geoCrimeaRU} RU {lang === 'uk' ? 'полів' : 'fields'}</strong>{' + '}
+              <strong class="text-[#22c55e]">{geoCrimeaUA} UA {lang === 'uk' ? 'полів' : 'fields'}</strong>{' '}
+              <span class="text-[#64748b]">{lang === 'uk' ? '— у тому самому рядку' : '— same row'}</span>
+            </div>
+          </div>
         </div>
-        <svg id="sankey-svg" class="block w-full"></svg>
-        <div id="sankey-tooltip" class="hidden absolute pointer-events-none bg-[#0a0e1a]/95 border border-[#1e293b] rounded-lg px-3 py-2 text-xs text-[#e2e8f0] max-w-xs z-10 backdrop-blur-sm" style="left: 0; top: 0;"></div>
+
+        <div class="flex justify-center text-[#ef4444] text-2xl leading-none mb-2" aria-hidden="true">↓</div>
+
+        <!-- Tier 2: 5 ecosystem cards -->
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 mb-3">
+          <div class="bg-[#111827] border border-[#ef4444]/20 rounded-lg p-3 text-center">
+            <div class="text-[10px] uppercase tracking-wider text-[#64748b] font-semibold">JavaScript</div>
+            <div class="text-sm font-bold text-white mt-0.5">npm</div>
+            <div class="text-xl md:text-2xl font-black text-[#ef4444] mt-1">{(geoNpmTotal / 1_000_000).toFixed(1)}M</div>
+            <div class="text-[10px] text-[#94a3b8]">{lang === 'uk' ? 'завантажень/тижд.' : 'downloads/wk'}</div>
+          </div>
+          <div class="bg-[#111827] border border-[#ef4444]/20 rounded-lg p-3 text-center">
+            <div class="text-[10px] uppercase tracking-wider text-[#64748b] font-semibold">Python</div>
+            <div class="text-sm font-bold text-white mt-0.5">PyPI</div>
+            <div class="text-xl md:text-2xl font-black text-[#ef4444] mt-1">{(geoPypiTotal / 1_000_000).toFixed(1)}M</div>
+            <div class="text-[10px] text-[#94a3b8]">{lang === 'uk' ? 'завантажень/тижд.' : 'downloads/wk'}</div>
+          </div>
+          <div class="bg-[#111827] border border-[#ef4444]/20 rounded-lg p-3 text-center">
+            <div class="text-[10px] uppercase tracking-wider text-[#64748b] font-semibold">R</div>
+            <div class="text-sm font-bold text-white mt-0.5">CRAN</div>
+            <div class="text-xl md:text-2xl font-black text-[#ef4444] mt-1">{(geoCranTotal / 1000).toFixed(0)}K</div>
+            <div class="text-[10px] text-[#94a3b8]">{lang === 'uk' ? 'завантажень/тижд.' : 'downloads/wk'}</div>
+          </div>
+          <div class="bg-[#111827] border border-[#ef4444]/20 rounded-lg p-3 text-center">
+            <div class="text-[10px] uppercase tracking-wider text-[#64748b] font-semibold">Rust</div>
+            <div class="text-sm font-bold text-white mt-0.5">crates.io</div>
+            <div class="text-xl md:text-2xl font-black text-[#ef4444] mt-1">{(geoCratesTotal / 1000).toFixed(0)}K</div>
+            <div class="text-[10px] text-[#94a3b8]">{lang === 'uk' ? 'завантажень/тижд.' : 'downloads/wk'}</div>
+          </div>
+          <div class="bg-[#111827] border border-[#ef4444]/20 rounded-lg p-3 text-center">
+            <div class="text-[10px] uppercase tracking-wider text-[#64748b] font-semibold">.NET</div>
+            <div class="text-sm font-bold text-white mt-0.5">NuGet</div>
+            <div class="text-xl md:text-2xl font-black text-[#ef4444] mt-1">{(geoNugetCumulative / 1_000_000).toFixed(0)}M</div>
+            <div class="text-[10px] text-[#94a3b8]">{lang === 'uk' ? 'за весь час' : 'lifetime'}</div>
+          </div>
+        </div>
+        <div class="text-center text-[11px] text-[#64748b] mb-3">
+          {lang === 'uk'
+            ? 'чотири з п\'яти екосистем читають Natural Earth через GDAL/PROJ/GEOS (C++); тільки npm читає напряму як TopoJSON'
+            : 'four of five ecosystems read Natural Earth through the GDAL / PROJ / GEOS C++ stack; only npm reads the shapefile directly as TopoJSON'}
+        </div>
+
+        <div class="flex justify-center text-[#ef4444] text-2xl leading-none mb-2" aria-hidden="true">↓</div>
+
+        <!-- Tier 3: Outcome — one giant incorrect number vs the single exception -->
+        <div class="grid md:grid-cols-[2fr_auto_1fr] gap-3 md:gap-4 items-stretch">
+          <div class="bg-[#ef4444]/10 border border-[#ef4444]/50 rounded-xl p-4">
+            <div class="text-[10px] uppercase tracking-widest text-[#ef4444] font-bold mb-1">{lang === 'uk' ? 'Кінцевий результат' : 'End outcome'}</div>
+            <div class="text-3xl md:text-4xl font-black text-[#ef4444]">~{((geoNpmTotal + geoPypiTotal + geoCranTotal + geoCratesTotal) / 1_000_000).toFixed(0)}M+</div>
+            <div class="text-sm text-white font-semibold mt-1">
+              {lang === 'uk' ? 'тижневих завантажень успадковують помилку' : 'weekly downloads inherit the error'}
+            </div>
+            <div class="text-xs text-[#94a3b8] mt-2 leading-relaxed">
+              {lang === 'uk'
+                ? 'новини · дашборди COVID / крипто / реклами · академічні статті · урядові візуалізації · кожна мапа сучасного вебу, яка не перевизначила Natural Earth вручну'
+                : 'news graphics · COVID/crypto/ad dashboards · academic papers · government dashboards · every map on the modern web that did not deliberately override Natural Earth'}
+            </div>
+          </div>
+
+          <div class="hidden md:flex items-center justify-center text-xs text-[#64748b] font-bold uppercase tracking-widest">vs</div>
+
+          <div class="bg-[#22c55e]/10 border border-[#22c55e]/50 rounded-xl p-4">
+            <div class="text-[10px] uppercase tracking-widest text-[#22c55e] font-bold mb-1">{lang === 'uk' ? 'Винятки' : 'The exceptions'}</div>
+            <div class="text-3xl md:text-4xl font-black text-[#22c55e]">2</div>
+            <div class="text-sm text-white font-semibold mt-1">{lang === 'uk' ? 'свідомих перевизначень' : 'deliberate overrides'}</div>
+            <div class="text-xs text-[#94a3b8] mt-2 leading-relaxed">
+              <strong class="text-[#22c55e]">Highcharts</strong> {lang === 'uk' ? '— повне перевизначення' : '— full override'}
+              <br />
+              <strong class="text-[#facc15]">GeoPandas v0.12.2+</strong> {lang === 'uk' ? '— часткове виправлення (PR #2670)' : '— partial fix (PR #2670)'}
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-[#64748b]">
-        <span><span class="text-[#94a3b8]">{lang === 'uk' ? 'Природна Земля' : 'Natural Earth'}</span> → GDAL/PROJ/GEOS → {lang === 'uk' ? '5 екосистем' : '5 ecosystems'} → 32 {lang === 'uk' ? 'бібліотек' : 'libraries'} → {lang === 'uk' ? 'кінцеве рішення' : 'end outcome'}</span>
-        <span class="text-[#22c55e]">{lang === 'uk' ? '↗ тільки одна зелена гілка — Highcharts' : '↗ only one green branch — Highcharts'}</span>
+
+      <div class="mt-2 text-[11px] text-[#64748b] italic">
+        {lang === 'uk'
+          ? 'Детальний розподіл по 32 пакетах — у розгортувальному блоці нижче. '
+          : 'Per-package breakdown for all 32 libraries in the expandable block below. '}
+        <a href={pipelineLinks('geodata').readme} target="_blank" rel="noopener" class="text-[#0057b7] hover:underline">{lang === 'uk' ? 'README пайплайну' : 'pipeline README'} ↗</a>
       </div>
     </div>
 
@@ -805,188 +724,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
   </div>
 </section>
 
-<!-- Propagation graph data — picked up by the lazy-loaded Sankey script below -->
-<script type="application/json" id="sankey-data" set:html={JSON.stringify(propagationGraphData)}></script>
-
-<script>
-  // Lazy-load d3 + d3-sankey from esm.sh when the propagation chain
-  // container scrolls into view. Together they are ~80 KB minified,
-  // so much lighter than the previous 3D Three.js approach.
-  (function () {
-    const container = document.getElementById('sankey-container');
-    if (!container) return;
-
-    let loaded = false;
-    const observer = new IntersectionObserver(async ([entry]) => {
-      if (!entry.isIntersecting || loaded) return;
-      loaded = true;
-      observer.disconnect();
-
-      const svgEl = document.getElementById('sankey-svg') as SVGSVGElement | null;
-      const loadingEl = document.getElementById('sankey-loading');
-      const dataEl = document.getElementById('sankey-data');
-      const tooltipEl = document.getElementById('sankey-tooltip');
-      if (!svgEl || !dataEl) return;
-
-      let rawData: { nodes: any[]; links: any[] } | null = null;
-      try {
-        rawData = JSON.parse(dataEl.textContent || '{"nodes":[],"links":[]}');
-      } catch {
-        if (loadingEl) loadingEl.innerHTML = '<div class="text-[#ef4444] text-xs">Failed to parse propagation graph data.</div>';
-        return;
-      }
-      if (!rawData || !rawData.nodes || !rawData.links) return;
-
-      try {
-        const d3: any = await import('https://esm.sh/d3@7');
-        const sankeyMod: any = await import('https://esm.sh/d3-sankey@0.12.3');
-
-        // d3-sankey mutates input; deep-clone first
-        const nodes = rawData.nodes.map((n: any) => ({ ...n }));
-        const links = rawData.links.map((l: any) => ({ ...l }));
-
-        // Natural left → right Sankey. Tall enough to give 32 leaf
-        // packages real vertical space (~30 px each). The previous
-        // implementation rotated the whole SVG 90° which forced labels
-        // to also rotate and overlap.
-        const width = Math.max(container.clientWidth, 1000);
-        const labelPaddingLeft = 180;   // room for source labels
-        const labelPaddingRight = 240;  // room for terminal label "End user sees Crimea as Russia"
-        const height = 1100;
-
-        svgEl.setAttribute('width', String(width));
-        svgEl.setAttribute('height', String(height));
-        svgEl.setAttribute('viewBox', `0 0 ${width} ${height}`);
-
-        const sankey = sankeyMod.sankey()
-          .nodeId((d: any) => d.id)
-          .nodeAlign(sankeyMod.sankeyJustify)
-          .nodeWidth(16)
-          .nodePadding(8)
-          .extent([[labelPaddingLeft, 30], [width - labelPaddingRight, height - 30]]);
-
-        const graph = sankey({
-          nodes: nodes.map((d: any) => ({ ...d })),
-          links: links.map((d: any) => ({ ...d })),
-        });
-
-        const svg = d3.select(svgEl);
-        svg.selectAll('*').remove();
-
-        const g = svg.append('g');
-
-        // Draw links
-        const linkGroup = g.append('g')
-          .attr('fill', 'none')
-          .attr('stroke-opacity', 0.35);
-
-        linkGroup.selectAll('path')
-          .data(graph.links)
-          .join('path')
-          .attr('d', sankeyMod.sankeyLinkHorizontal())
-          .attr('stroke', (d: any) => d.color || '#475569')
-          .attr('stroke-width', (d: any) => Math.max(1, d.width || 1))
-          .on('mouseenter', function (event: MouseEvent, d: any) {
-            d3.select(this).attr('stroke-opacity', 0.7);
-            if (!tooltipEl) return;
-            tooltipEl.classList.remove('hidden');
-            const sourceName = (d.source && d.source.name) || '';
-            const targetName = (d.target && d.target.name) || '';
-            tooltipEl.innerHTML =
-              `<div class="font-bold text-white">${sourceName} → ${targetName}</div>` +
-              `<div class="text-[10px] text-[#94a3b8] mt-1">${Math.round(d.value).toLocaleString()} weekly downloads</div>`;
-          })
-          .on('mouseleave', function () {
-            d3.select(this).attr('stroke-opacity', 0.35);
-            if (tooltipEl) tooltipEl.classList.add('hidden');
-          });
-
-        // Draw nodes
-        const nodeGroup = g.append('g');
-        nodeGroup.selectAll('rect')
-          .data(graph.nodes)
-          .join('rect')
-          .attr('x', (d: any) => d.x0)
-          .attr('y', (d: any) => d.y0)
-          .attr('width', (d: any) => d.x1 - d.x0)
-          .attr('height', (d: any) => Math.max(2, d.y1 - d.y0))
-          .attr('fill', (d: any) => d.color || '#94a3b8')
-          .attr('stroke', '#0a0e1a')
-          .attr('stroke-width', 1)
-          .style('cursor', 'pointer')
-          .on('mouseenter', function (event: MouseEvent, d: any) {
-            if (!tooltipEl) return;
-            tooltipEl.classList.remove('hidden');
-            tooltipEl.innerHTML =
-              `<div class="font-bold text-white">${d.name || ''}</div>` +
-              (d.detail ? `<div class="text-[10px] text-[#94a3b8] mt-1">${d.detail}</div>` : '');
-          })
-          .on('mouseleave', function () {
-            if (tooltipEl) tooltipEl.classList.add('hidden');
-          });
-
-        // Labels: source-side nodes (root, hub, ecosystem) get labels
-        // on the LEFT of the node; package and terminal nodes get labels
-        // on the RIGHT. This is the standard Sankey label convention and
-        // does not require rotation.
-        nodeGroup.selectAll('text')
-          .data(graph.nodes)
-          .join('text')
-          .attr('x', (d: any) => {
-            const isLeftSide = d.group === 'root' || d.group === 'hub' || d.group === 'ecosystem';
-            return isLeftSide ? d.x0 - 6 : d.x1 + 6;
-          })
-          .attr('y', (d: any) => (d.y0 + d.y1) / 2)
-          .attr('dy', '0.35em')
-          .attr('text-anchor', (d: any) => {
-            const isLeftSide = d.group === 'root' || d.group === 'hub' || d.group === 'ecosystem';
-            return isLeftSide ? 'end' : 'start';
-          })
-          .style('font-size', (d: any) =>
-            (d.group === 'root' || d.group === 'hub' || d.group === 'terminal-ok' || d.group === 'terminal-bad')
-              ? '12px' : '10px')
-          .style('font-weight', (d: any) =>
-            (d.group === 'root' || d.group === 'hub' || d.group === 'terminal-ok' || d.group === 'terminal-bad')
-              ? '700' : '400')
-          .style('font-family', 'system-ui, sans-serif')
-          .style('fill', (d: any) => {
-            if (d.group === 'highcharts') return '#22c55e';
-            if (d.group === 'partial') return '#facc15';
-            if (d.group === 'terminal-ok') return '#22c55e';
-            if (d.group === 'terminal-bad') return '#ef4444';
-            if (d.group === 'root') return '#ef4444';
-            if (d.group === 'hub') return '#f59e0b';
-            if (d.group === 'ecosystem') return '#60a5fa';
-            return '#cbd5e1';
-          })
-          .style('pointer-events', 'none')
-          .text((d: any) => {
-            const name = d.name || '';
-            return name.length > 32 ? name.slice(0, 30) + '…' : name;
-          });
-
-        // Tooltip mouse-follow (relative to container)
-        container.addEventListener('mousemove', (e: MouseEvent) => {
-          if (!tooltipEl || tooltipEl.classList.contains('hidden')) return;
-          const rect = container.getBoundingClientRect();
-          const x = Math.min(e.clientX - rect.left + 14, rect.width - 300);
-          const y = Math.min(e.clientY - rect.top + 14, rect.height - 80);
-          tooltipEl.style.left = x + 'px';
-          tooltipEl.style.top = y + 'px';
-        });
-
-        if (loadingEl) loadingEl.style.display = 'none';
-      } catch (err) {
-        console.error('Failed to render propagation Sankey', err);
-        if (loadingEl) {
-          loadingEl.innerHTML = '<div class="text-[#ef4444] text-xs px-4 text-center">Failed to load propagation diagram. See the per-package list below for the same data.</div>';
-        }
-      }
-    }, { rootMargin: '200px' });
-
-    observer.observe(container);
-  })();
-</script>
+<!-- The d3-sankey lazy-loaded propagation visualisation was removed and
+     replaced with a plain-HTML three-tier layered diagram (see the
+     geodata section above). The old Sankey crammed 32 package nodes into
+     one diagram and the labels overlapped; the layered version is
+     mobile-friendly, library-free, and instant to render. -->
 
 <!-- "Results by Category" bar chart removed: conflating Data Visualization
      Libraries (where one entry = one npm package with millions of weekly
@@ -2226,21 +1968,21 @@ const mediaViolatorsByFilter = mediaViolators as any;
         ? `${tcReassigned} з ${tcAsnsProbed} ASN, історично пов'язаних з кримськими операторами, більше не належать своїм оригінальним власникам — це 89% переуступок. Тільки Miranda-Media (AS201776) залишилась на оригінальному власнику. Інші 8 переуступлено через RIPE NCC ripe-733 без перевірки суверенітету — Mobile Telecommunications Company K.S.C.P. (Кувейт), UNINET (польський ISP), Yahoo-UK і кільком фізичним особам. BGP-історія кожного «відмитого» ASN ефективно стирається на рівні реєстру.`
         : `${tcReassigned} of ${tcAsnsProbed} ASNs historically associated with Crimean operators are no longer held by their original holders — an 89% reassignment rate. Only Miranda-Media (AS201776) remains. The other 8 were reassigned under RIPE NCC's transfer policy ripe-733 without sovereignty review, to entities including Mobile Telecommunications Company K.S.C.P. (Kuwait), UNINET (Polish ISP), Yahoo-UK Limited, and individuals. The BGP history of each laundered ASN is effectively bleached at the registry layer — a downstream geocoder sees Kuwait, Poland, or the UK rather than occupied Ukraine.`
       }</p>
-      <div class="mt-3 grid grid-cols-3 gap-2 text-[10px]">
-        <div class="text-center bg-[#0a0e1a] p-2 rounded border border-[#1e293b]">
-          <div class="font-mono text-[#ef4444] font-bold">{tcRipeRU}</div>
-          <div class="text-[#64748b]">{lang === 'uk' ? 'зараз RU' : 'currently RU'}</div>
+      <div class="mt-4 grid grid-cols-3 gap-2">
+        <div class="text-center bg-[#0a0e1a] p-3 rounded-lg border border-[#ef4444]/30">
+          <div class="text-2xl font-bold text-[#ef4444]">{tcRipeRU}</div>
+          <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'зараз RU' : 'currently RU'}</div>
         </div>
-        <div class="text-center bg-[#0a0e1a] p-2 rounded border border-[#1e293b]">
-          <div class="font-mono text-[#22c55e] font-bold">{tcRipeUA}</div>
-          <div class="text-[#64748b]">{lang === 'uk' ? 'зараз UA' : 'currently UA'}</div>
+        <div class="text-center bg-[#0a0e1a] p-3 rounded-lg border border-[#22c55e]/30">
+          <div class="text-2xl font-bold text-[#22c55e]">{tcRipeUA}</div>
+          <div class="text-xs text-[#94a3b8] mt-1">{lang === 'uk' ? 'зараз UA' : 'currently UA'}</div>
         </div>
-        <div class="text-center bg-[#0a0e1a] p-2 rounded border border-[#1e293b]">
-          <div class="font-mono text-[#f59e0b] font-bold">{tcAsnsProbed - tcRipeRU - tcRipeUA}</div>
-          <div class="text-[#64748b]">PL · KW · GB</div>
+        <div class="text-center bg-[#0a0e1a] p-3 rounded-lg border border-[#f59e0b]/30">
+          <div class="text-2xl font-bold text-[#f59e0b]">{tcAsnsProbed - tcRipeRU - tcRipeUA}</div>
+          <div class="text-xs text-[#94a3b8] mt-1">PL · KW · GB</div>
         </div>
       </div>
-      <div class="mt-2 text-[10px] text-[#64748b] italic">{lang === 'uk' ? 'Свіжі дані з' : 'Fresh data from'} <span class="font-mono">pipelines/telecom/data/manifest.json</span></div>
+      <div class="mt-3 text-xs text-[#64748b] italic">{lang === 'uk' ? 'Свіжі дані з' : 'Fresh data from'} <span class="font-mono">pipelines/telecom/data/manifest.json</span></div>
     </div>
 
     <div class="text-[10px] text-[#64748b] mb-6 flex flex-wrap items-center gap-2">
