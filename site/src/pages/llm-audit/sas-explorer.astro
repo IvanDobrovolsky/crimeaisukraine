@@ -185,27 +185,28 @@ const jsonPayload = JSON.stringify(rows);
         </div>
       </div>
       <p class="text-xs text-[#94a3b8] mb-4 max-w-3xl">
-        Each model is a single point in tier space. The <strong class="text-white">positions</strong> are the raw tier means
-        — they do not move when you drag the sliders, because the sliders only change the SAS formula, not the underlying
-        measurements. The <strong class="text-white">colour</strong> of each point is the SAS under your current weight
-        vector <strong class="text-[#ffd700]">w</strong>, so colours update live as you drag. The 2D view shows the
-        forced-vs-free geometry that makes the RLHF gap visible without any weight choice; the 3D view lets you rotate
-        through (D̄, Ī, R̄) tier space to see the full cluster structure.
+        Each model is a single point in tier space. The <strong class="text-[#ef4444]">2D view</strong> is the weight-free
+        Pareto plane — D̄ horizontal, R̄ vertical, y = x dashed — so its point positions never move. Dragging the sliders
+        only recolours the 2D points to their current SAS. The <strong class="text-[#ffd700]">3D view</strong> is a live
+        response surface: X = D̄ and Y = R̄ anchor each model to its Pareto plane position, while the Z coordinate is the
+        model's SAS under your current weight vector <strong class="text-[#ffd700]">w</strong>. Drag a slider and every
+        point physically rises or falls to its new SAS height. Set <strong class="text-[#ffd700]">w</strong> = [1, 0, 0, 0]
+        and the response surface collapses to Z = D̄ (Z equals X); set <strong class="text-[#ffd700]">w</strong> = [0, 0, 0, 1]
+        and it collapses to Z = R̄ (Z equals Y). The math becomes visible.
       </p>
       <div class="grid md:grid-cols-2 gap-4">
         <div>
-          <div class="text-[10px] text-[#64748b] uppercase tracking-wider font-semibold mb-1">2D — forced vs free (y = x consistent line)</div>
+          <div class="text-[10px] text-[#64748b] uppercase tracking-wider font-semibold mb-1">2D — forced vs free · y = x consistent line</div>
           <div id="plot-2d" class="w-full" style="min-height:460px;"></div>
         </div>
         <div>
-          <div class="text-[10px] text-[#64748b] uppercase tracking-wider font-semibold mb-1">3D — drag to rotate · scroll to zoom</div>
+          <div class="text-[10px] text-[#64748b] uppercase tracking-wider font-semibold mb-1">3D response surface — drag to rotate · Z = your SAS</div>
           <div id="plot-3d" class="w-full" style="min-height:460px;"></div>
         </div>
       </div>
       <div class="text-[10px] text-[#64748b] mt-3 flex flex-wrap gap-x-4 gap-y-1">
-        <span>Hover any point for model + per-tier scores + current SAS.</span>
-        <span>Click → open the per-model detail page.</span>
-        <span>3D plot: drag to orbit, shift-drag to pan, scroll to zoom.</span>
+        <span>Hover any point for model + all four tier means + current SAS.</span>
+        <span>3D: drag to orbit · shift-drag to pan · scroll to zoom.</span>
       </div>
     </div>
 
@@ -576,83 +577,89 @@ const jsonPayload = JSON.stringify(rows);
         };
 
         Plotly.newPlot('plot-2d', [trace2d], layout2d, {
-          displayModeBar: false, responsive: true,
-        }).then(() => {
-          plot2dReady = true;
-          // clickable points → model detail page
-          document.getElementById('plot-2d').on('plotly_click', (ev) => {
-            if (ev.points && ev.points[0]) {
-              const id = ev.points[0].customdata;
-              if (id) window.location.href = '/llm-audit/' + id;
-            }
-          });
-        });
+          displayModeBar: false, responsive: true, staticPlot: false,
+        }).then(() => { plot2dReady = true; });
 
-        // ── 3D: (D̄, Ī, R̄) scatter ───────────────────────────────────
+        // ── 3D: (D̄, R̄, SAS) response surface ───────────────────────
+        // X and Y are the same Pareto plane as the 2D chart (weight-free
+        // raw data). Z is the LIVE SAS under the current weight vector.
+        // As sliders move, we recompute Z for every model and push via
+        // Plotly.restyle — so the 3D plot literally reshapes in real time,
+        // while X/Y anchor each model to its fixed tier-space position.
+        const initialZ = rows.map(r => sasOf(r, initialW));
+
         const layout3d = Object.assign({}, baseLayout, {
           scene: {
             xaxis: {
-              title: { text: 'D̄ direct', font: { color: '#e5e5e5', size: 11 } },
+              title: { text: 'D̄  (direct territorial)', font: { color: '#e5e5e5', size: 11 } },
               range: [0, 1], gridcolor: '#1e293b', zerolinecolor: '#334155',
               backgroundcolor: '#0a0e1a', tickfont: { color: '#94a3b8', size: 9 },
             },
             yaxis: {
-              title: { text: 'Ī implicit', font: { color: '#e5e5e5', size: 11 } },
+              title: { text: 'R̄  (free-recall)', font: { color: '#e5e5e5', size: 11 } },
               range: [0, 1], gridcolor: '#1e293b', zerolinecolor: '#334155',
               backgroundcolor: '#0a0e1a', tickfont: { color: '#94a3b8', size: 9 },
             },
             zaxis: {
-              title: { text: 'R̄ free-recall', font: { color: '#e5e5e5', size: 11 } },
+              title: { text: 'SAS  (under your w)', font: { color: '#ffd700', size: 11 } },
               range: [0, 1], gridcolor: '#1e293b', zerolinecolor: '#334155',
               backgroundcolor: '#0a0e1a', tickfont: { color: '#94a3b8', size: 9 },
             },
             bgcolor: '#0a0e1a',
             camera: {
-              eye: { x: 1.65, y: 1.45, z: 1.2 },
+              eye: { x: 1.75, y: 1.55, z: 1.05 },
             },
+            aspectmode: 'cube',
           },
           margin: { l: 0, r: 0, t: 0, b: 0 },
         });
 
         const trace3d = {
-          x: xD, y: zI, z: rR,
+          x: xD, y: rR, z: initialZ,
           mode: 'markers+text',
           type: 'scatter3d',
-          text: names,
+          text: rows.map(r => {
+            const short = r.name.replace('Claude ', '').replace('GPT-', 'gpt-')
+              .replace('Gemini ', 'gem-').replace('-4.6', '')
+              .replace('-2.5', '').replace(' Pro', '').replace(' Flash', '');
+            return short.length > 14 ? short.slice(0, 12) + '…' : short;
+          }),
           textposition: 'top center',
-          textfont: { color: '#cbd5e1', size: 9 },
+          textfont: { color: '#cbd5e1', size: 8 },
           marker: {
-            size: 6,
+            size: 7,
             color: initialColors,
             line: { color: 'white', width: 0.8 },
             opacity: 0.95,
           },
           hovertemplate: hover,
-          customdata: ids,
         };
 
         Plotly.newPlot('plot-3d', [trace3d], layout3d, {
-          displayModeBar: false, responsive: true,
-        }).then(() => {
-          plot3dReady = true;
-          document.getElementById('plot-3d').on('plotly_click', (ev) => {
-            if (ev.points && ev.points[0]) {
-              const id = ev.points[0].customdata;
-              if (id) window.location.href = '/llm-audit/' + id;
-            }
-          });
-        });
+          displayModeBar: false, responsive: true, staticPlot: false,
+        }).then(() => { plot3dReady = true; });
       }
 
-      // Called from render() on every slider change: push new colours.
+      // Called from render() on every slider change.
+      // - 2D: position is fixed (weight-free Pareto), only colors update
+      // - 3D: Z coordinate IS the live SAS, so Z updates along with color
+      //       — the 3D plot literally reshapes with the weights
       function updatePlotColors(w) {
         if (typeof Plotly === 'undefined') return;
-        const newColors = rows.map(r => sasColor(sasOf(r, w)));
+        const sasValues = rows.map(r => sasOf(r, w));
+        const newColors = sasValues.map(sasColor);
         if (plot2dReady) {
-          try { Plotly.restyle('plot-2d', { 'marker.color': [newColors] }); } catch (e) {}
+          try {
+            Plotly.restyle('plot-2d', { 'marker.color': [newColors] });
+          } catch (e) {}
         }
         if (plot3dReady) {
-          try { Plotly.restyle('plot-3d', { 'marker.color': [newColors] }); } catch (e) {}
+          try {
+            Plotly.restyle('plot-3d', {
+              'marker.color': [newColors],
+              z: [sasValues],
+            });
+          } catch (e) {}
         }
       }
 

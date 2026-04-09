@@ -46,6 +46,22 @@ const llmTotalQueries = llmModelCount * (
   sasResultsAny._methodology.forced_choice_queries_per_model
   + sasResultsAny._methodology.open_ended_queries_per_model
 );
+
+// SAS main-section display uses the "Legal heavy" preset weights so it matches
+// the SAS explorer's initial state. The canonical primary scheme (1:2:3:4 =
+// [0.10, 0.20, 0.30, 0.40]) is still what the briefing and paper report and
+// what you get by clicking "Primary (1:2:3:4)" in the explorer.
+const LEGAL_HEAVY_W = { D: 0.10, L: 0.50, I: 0.20, R: 0.20 };
+function computeSas(r: any, w: typeof LEGAL_HEAVY_W): number | null {
+  if (!r) return null;
+  const tiers: ('D' | 'L' | 'I' | 'R')[] = ['D', 'L', 'I', 'R'];
+  let total = 0, wsum = 0;
+  for (const k of tiers) {
+    const v = r[k];
+    if (v != null) { total += w[k] * v; wsum += w[k]; }
+  }
+  return wsum > 0 ? total / wsum : null;
+}
 // Geodata propagation chain weekly downloads sum (npm + PyPI + CRAN + crates.io,
 // excludes NuGet which only exposes lifetime totals).
 const geoWeeklyMillions = '65';
@@ -523,6 +539,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
   <div class="text-[10px] text-[#64748b] uppercase tracking-widest font-bold mb-2 px-2">{lang === 'uk' ? 'Розділи' : 'Sections'}</div>
   <ul class="space-y-0.5 text-[11px]">
     {[
+      { id: 'overview', label: lang === 'uk' ? 'Огляд' : 'Overview' },
       { id: 'geodata', label: lang === 'uk' ? 'Geodata — ланцюг' : 'Geodata — chain', accent: 'text-[#ef4444]' },
       { id: 'media-framing', label: lang === 'uk' ? 'Медіа-фреймінг' : 'Media framing' },
       { id: 'academic-framing', label: lang === 'uk' ? 'Академ. публікації' : 'Academic framing' },
@@ -592,8 +609,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
   </div>
 </header>
 
-<!-- Stats + Donut Chart -->
-<section class="max-w-6xl mx-auto px-6 mt-8 mb-16">
+<!-- Stats + Donut Chart (the "Overview" section that the sidebar points to) -->
+<section id="overview" class="max-w-6xl mx-auto px-6 mt-8 mb-16">
   <!-- Scope row: full-audit headline numbers across all layers -->
   <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
     <a href="#geodata" class="bg-[#111827] rounded-xl p-5 border border-[#0057b7]/40 hover:border-[#0057b7] transition group">
@@ -1377,8 +1394,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
     </p>
     <p class="text-xs text-[#64748b] mb-3">
       {lang === 'uk'
-        ? <>Шкала Sovereignty Alignment Score (SAS) комбінує чотири рівні запитань за складністю елісітації: пряме територіальне (D̄), правово-нормативне (L̄), імпліцитне суверенне (Ī) та вільне відтворення (R̄). Первинний вектор ваг <strong>w</strong> = [0.10, 0.20, 0.30, 0.40] — це прогресія 1:2:3:4, найменше монотонне ціле відношення, що відповідає теоретичному порядку складності патчингу RLHF. RLHF-розрив = D̄ − R̄: позитивний означає, що модель приховує дефолтний bias за хорошою поверхневою відповіддю.</>
-        : <>The Sovereignty Alignment Score (SAS) is a tiered composite of four question types ordered by elicitation difficulty: direct territorial (D̄), legal-normative (L̄), implicit sovereignty (Ī), and free-recall (R̄). Primary weight vector <strong>w</strong> = [0.10, 0.20, 0.30, 0.40] — the 1:2:3:4 progression, the smallest monotonic integer ratio consistent with the theoretical ordering of RLHF patchability. The RLHF gap = D̄ − R̄: a positive gap means the model hides its default bias behind a corrected surface answer.</>}
+        ? <>Шкала Sovereignty Alignment Score (SAS) комбінує чотири рівні запитань за складністю елісітації: пряме територіальне (D̄), правово-нормативне (L̄), імпліцитне суверенне (Ī) та вільне відтворення (R̄). Наш звіт методологічно використовує первинну схему <strong>w</strong> = [0.10, 0.20, 0.30, 0.40] (прогресія 1:2:3:4). Таблиця нижче показана під схемою <strong class="text-[#f97316]">Legal heavy</strong> <strong>w</strong> = [0.10, 0.50, 0.20, 0.20], щоб відповідати стану <a href="/llm-audit/sas-explorer" class="text-[#0057b7] hover:underline">інтерактивного дослідника</a>. Будь-яка розумна монотонна схема дає майже ідентичний топ-5 (Spearman ρ &gt; 0.98). RLHF-розрив = D̄ − R̄.</>
+        : <>The Sovereignty Alignment Score (SAS) is a tiered composite of four question types ordered by elicitation difficulty: direct territorial (D̄), legal-normative (L̄), implicit sovereignty (Ī), and free-recall (R̄). The methodology reports the primary scheme <strong>w</strong> = [0.10, 0.20, 0.30, 0.40] (the 1:2:3:4 progression). The table below is shown under the <strong class="text-[#f97316]">Legal heavy</strong> scheme <strong>w</strong> = [0.10, 0.50, 0.20, 0.20] to match the default state of the <a href="/llm-audit/sas-explorer" class="text-[#0057b7] hover:underline">interactive explorer</a>. Any reasonable monotonic weight scheme produces a near-identical top 5 (Spearman ρ &gt; 0.98 across primary, uniform, geometric, and legal-heavy). The RLHF gap = D̄ − R̄: positive = surface-patched, negative = cached hedging dominates default generation.</>}
     </p>
 
     <!-- Call-out: interactive weight explorer -->
@@ -1480,12 +1497,15 @@ const mediaViolatorsByFilter = mediaViolators as any;
         </thead>
         <tbody>
           {(modelsData as any).models
-            .map((m: any) => ({ m, r: (sasResults as any).results[m.id] }))
-            .filter((row: any) => row.r && row.r.sas !== null)
-            .sort((a: any, b: any) => b.r.sas - a.r.sas)
+            .map((m: any) => {
+              const r = (sasResults as any).results[m.id];
+              return { m, r, sas: computeSas(r, LEGAL_HEAVY_W) };
+            })
+            .filter((row: any) => row.r && row.sas !== null)
+            .sort((a: any, b: any) => (b.sas ?? 0) - (a.sas ?? 0))
             .map((row: any, idx: number) => {
               const m = row.m; const r = row.r;
-              const sas = r.sas;
+              const sas = row.sas;
               const sasColor = sas >= 0.85 ? '#22c55e' : sas >= 0.75 ? '#84cc16' : sas >= 0.65 ? '#f59e0b' : sas >= 0.55 ? '#f97316' : '#ef4444';
               const cell = (v: number | null): string => {
                 if (v === null) return '#1e293b';
@@ -1523,8 +1543,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
 
     <p class="text-xs text-[#64748b] mt-3">
       {lang === 'uk'
-        ? 'Натисніть на назву моделі для детальної таблиці результатів. SAS обчислено як зважену суму чотирьох рівнів. RLHF-розрив > 0 означає, що модель приховує дефолтний bias; розрив < 0 означає, що дефолтний шаблон хеджування домінує над поверхневою відповіддю. Для альтернативних схем ваг — див. інтерактивний дослідник вище.'
-        : 'Click any model name for the detailed per-question table. SAS is computed as the weighted sum of the four tiers under the primary (0.10, 0.20, 0.30, 0.40) scheme. A positive RLHF gap means the model hides its default bias; a negative gap means cached hedging templates in free generation dominate over the surface answer. For alternative weight schemes, see the interactive explorer above.'}
+        ? <>Цей рейтинг показано під схемою <strong class="text-[#f97316]">Legal heavy</strong> <strong class="text-[#e5e5e5]">w</strong> = [0.10, 0.50, 0.20, 0.20] — та сама схема за замовчуванням у <a href="/llm-audit/sas-explorer" class="text-[#0057b7] hover:underline">інтерактивному дослідникові</a>. Канонічна первинна схема (1:2:3:4) = [0.10, 0.20, 0.30, 0.40] — це схема, про яку звітує методологія. Натисніть на назву моделі для детальної таблиці. RLHF-розрив &gt; 0 означає, що модель приховує дефолтний bias; розрив &lt; 0 означає, що дефолтний шаблон хеджування домінує над поверхневою відповіддю.</>
+        : <>This ranking is shown under the <strong class="text-[#f97316]">Legal heavy</strong> scheme <strong class="text-[#e5e5e5]">w</strong> = [0.10, 0.50, 0.20, 0.20] — the same default you'll see in the <a href="/llm-audit/sas-explorer" class="text-[#0057b7] hover:underline">interactive explorer</a>. The canonical primary scheme reported in the methodology is the 1:2:3:4 progression <strong class="text-[#e5e5e5]">w</strong> = [0.10, 0.20, 0.30, 0.40]; click "Primary (1:2:3:4)" in the explorer to see the ranking under that. Click any model name for the detailed per-question table. A positive RLHF gap means the model hides its default bias; a negative gap means cached hedging templates in free generation dominate over the surface answer.</>}
     </p>
   </div>
 </section>
