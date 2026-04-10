@@ -250,7 +250,7 @@ export const translations = {
     aboutReproDesc: 'Усі скрипти на GitHub. JSONL + JSON дані. Makefile: `make all` відтворює все.',
     footerBy: 'Дослідження',
     footerName: 'Іван Добровольський',
-    footerRole: 'Software and Machine Learning Engineer and Researcher',
+    footerRole: 'Інженер програмного забезпечення та машинного навчання, дослідник',
     footerData: 'Дані: березень–квітень 2026',
   },
 } as const;

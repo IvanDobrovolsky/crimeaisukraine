@@ -452,13 +452,108 @@ const mediaViolatorsByFilter = mediaViolators as any;
   </div>
 </header>
 
-<!-- The old Stats + Donut + platform classification cards were removed
-     here. "Platforms audited" is a misleading unified unit (Natural Earth
-     with ~65M weekly downloads and AccuWeather's autocomplete for one
-     city both count as "1 platform") and summing categories blurs vastly
-     different scales. Per-pipeline numbers live inside each section
-     below; the SAS ranking and the training corpora numbers stand on
-     their own. No master totals. -->
+<!-- ═══════════════════════════════════════════════════════════════
+     NAMING SHIFT — "Autonomous Republic of Crimea" → "Republic of Crimea"
+     This section demonstrates how a single-word erasure created a
+     sovereignty narrative shift across 91,670 academic papers.
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="naming-shift" class="max-w-6xl mx-auto px-6 mb-12 mt-8">
+  <div class="bg-[#111827] border border-[#475569]/40 rounded-2xl p-8 md:p-10">
+    <div class="flex items-center gap-3 mb-3">
+      <span class="text-[10px] font-bold text-[#ffd700] uppercase tracking-widest px-2 py-1 rounded bg-[#ffd700]/10 border border-[#ffd700]/30">{lang === 'uk' ? 'Зміна назви' : 'Naming shift'}</span>
+      <span class="text-[10px] text-[#64748b]">{lang === 'uk' ? '91 670 наукових статей, 2010–2025' : '91,670 academic papers, 2010–2025'}</span>
+    </div>
+
+    <h2 class="text-2xl md:text-3xl font-bold mb-3">{lang === 'uk'
+      ? 'Одне слово стерте — суверенітет переписаний'
+      : 'One word erased — sovereignty rewritten'
+    }</h2>
+
+    <p class="text-[#94a3b8] mb-2 max-w-4xl">{lang === 'uk'
+      ? 'До 2014 року міжнародне академічне середовище використовувало українське конституційне позначення — «Автономна Республіка Крим». Після анексії Росія створила нове позначення — «Республіка Крим», видаливши слово «Автономна». Протягом 12 місяців російське позначення домінувало в 82% нових академічних публікацій. Жодна система DOI, Scopus або Web of Science не позначає різницю.'
+      : "Before 2014, international academia used the Ukrainian constitutional designation — \"Autonomous Republic of Crimea.\" After annexation, Russia created a new designation — \"Republic of Crimea\" — by erasing the word \"Autonomous.\" Within 12 months, the Russian designation dominated 82% of new academic papers. No DOI, Scopus, or Web of Science system flags the difference."
+    }</p>
+
+    <p class="text-[10px] text-[#64748b] mb-6 italic">{lang === 'uk'
+      ? '«Автономна» — не стилістична відмінність. Це конституційне позначення України, визнане Резолюцією ГА ООН 68/262.'
+      : '"Autonomous" is not a stylistic difference. It is Ukraine\'s constitutional designation, recognized in UN GA Resolution 68/262.'
+    }</p>
+
+    <!-- The two designations side by side -->
+    <div class="grid md:grid-cols-2 gap-4 mb-8">
+      <div class="bg-[#0057b7]/10 border border-[#0057b7]/30 rounded-xl p-5">
+        <div class="text-[10px] text-[#0057b7] uppercase tracking-widest mb-2">{lang === 'uk' ? 'Українське позначення (до 2014)' : 'Ukrainian designation (pre-2014)'}</div>
+        <div class="text-xl font-bold text-[#0057b7]"><span class="bg-[#0057b7]/20 px-1 rounded">Autonomous</span> Republic of Crimea</div>
+        <div class="text-[10px] text-[#64748b] mt-2">ISO 3166-2:UA · UN GA 68/262 · Library of Congress · Britannica</div>
+      </div>
+      <div class="bg-[#CC0000]/10 border border-[#CC0000]/30 rounded-xl p-5">
+        <div class="text-[10px] text-[#CC0000] uppercase tracking-widest mb-2">{lang === 'uk' ? 'Російське позначення (після 2014)' : 'Russian designation (post-2014)'}</div>
+        <div class="text-xl font-bold text-[#CC0000]"><span class="line-through opacity-40">Autonomous</span> Republic of Crimea</div>
+        <div class="text-[10px] text-[#64748b] mt-2">{lang === 'uk' ? 'Росстат · Конституція РФ · Окуповані інституції' : 'Rosstat · RF Constitution · Occupied institutions'}</div>
+      </div>
+    </div>
+
+    <!-- Bar chart -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-[10px] text-[#64748b] uppercase tracking-wider">
+            <th class="text-left py-2 w-16">{lang === 'uk' ? 'Рік' : 'Year'}</th>
+            <th class="text-left py-2">{lang === 'uk' ? 'Розподіл у статтях' : 'Distribution in papers'}</th>
+            <th class="text-right py-2 w-20">% RU</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            { year: '2010–13', ua: 41, ru: 6 },
+            { year: '2014', ua: 18, ru: 16 },
+            { year: '2015', ua: 16, ru: 75 },
+            { year: '2016', ua: 9, ru: 61 },
+            { year: '2017', ua: 7, ru: 58 },
+            { year: '2018', ua: 18, ru: 96 },
+            { year: '2019', ua: 19, ru: 95 },
+            { year: '2020', ua: 17, ru: 126 },
+            { year: '2021', ua: 14, ru: 163 },
+            { year: '2022', ua: 17, ru: 108 },
+            { year: '2023', ua: 20, ru: 104 },
+            { year: '2024', ua: 9, ru: 96 },
+            { year: '2025', ua: 11, ru: 88 },
+          ].map(row => {
+            const total = row.ua + row.ru;
+            const pctRu = total > 0 ? Math.round(row.ru / total * 100) : 0;
+            const pctUa = total > 0 ? Math.round(row.ua / total * 100) : 0;
+            const maxBar = 180; // max papers in any row for scaling
+            const barUa = Math.round(row.ua / maxBar * 100);
+            const barRu = Math.round(row.ru / maxBar * 100);
+            return (
+              <tr class="border-t border-[#1e293b]">
+                <td class="py-1.5 text-[#cbd5e1] font-mono text-xs">{row.year}</td>
+                <td class="py-1.5">
+                  <div class="flex items-center gap-0.5 h-5">
+                    <div class="h-full rounded-l bg-[#0057b7]/70" style={`width: ${barUa}%`} title={`${row.ua} papers (Ukrainian designation)`}></div>
+                    <div class="h-full rounded-r bg-[#CC0000]/70" style={`width: ${barRu}%`} title={`${row.ru} papers (Russian designation)`}></div>
+                    <span class="text-[10px] text-[#64748b] ml-2">{row.ua + row.ru}</span>
+                  </div>
+                </td>
+                <td class={`py-1.5 text-right font-mono text-xs ${pctRu >= 80 ? 'text-[#CC0000] font-bold' : pctRu >= 40 ? 'text-[#ffd700]' : 'text-[#0057b7]'}`}>{pctRu}%</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="flex items-center gap-4 mt-4 text-[10px] text-[#64748b]">
+      <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-[#0057b7]/70 inline-block"></span> {lang === 'uk' ? '«Автономна Республіка Крим»' : '"Autonomous Republic of Crimea"'}</span>
+      <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-[#CC0000]/70 inline-block"></span> {lang === 'uk' ? '«Республіка Крим» (без «Автономна»)' : '"Republic of Crimea" (without "Autonomous")'}</span>
+    </div>
+
+    <p class="text-[#64748b] text-xs mt-4 max-w-4xl">{lang === 'uk'
+      ? 'Дані: 91 670 статей з OpenAlex. Для «Республіки Крим» без «Автономна» — рахуються лише випадки, де слово «Autonomous» відсутнє, щоб виділити виключно російське позначення.'
+      : 'Data: 91,670 papers from OpenAlex. "Republic of Crimea" without "Autonomous" counts only instances where the word "Autonomous" is absent, isolating the Russian-only designation.'
+    }</p>
+  </div>
+</section>
 
 <!-- ═══════════════════════════════════════════════════════════════
      GEODATA — Natural Earth contradiction + Sankey propagation chain
