@@ -1136,7 +1136,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Корпуси навчання LLM — сирі числа' : 'LLM training corpora — raw numbers'}</h2>
     <p class="text-[#94a3b8] mb-3">{lang === 'uk'
       ? 'Що відкриті моделі "бачили" в своєму навчальному корпусі для терміна "Crimea". Ми відсканували 7 публічно доступних корпусів — сирі підрахунки без висновків. Висновки про поведінку моделей дивіться в розділі "LLM аудит" нижче — корпуси і поведінка моделі є дві різні речі, і їх треба читати разом.'
-      : 'What open-source models "saw" about Crimea in their training data. We scanned 7 publicly accessible corpora — raw counts, no conclusions. Conclusions about model output behaviour live in the LLM audit section below; training data and model output are two different things and should be read together.'
+      : 'What open-source models "saw" about Crimea in their training data. We scanned 7 publicly accessible corpora — raw counts, no conclusions. DOI-level trace: 95.7% of the 1,581 human-confirmed Russia-framing papers are indexed in Semantic Scholar (S2ORC), which feeds Dolma\'s academic tier — that tier shows 18.5% Russia-framing vs 12.2% in web tier. Conclusions about model output behaviour live in the LLM audit section below; training data and model output are two different things and should be read together.'
     }</p>
     <div class="text-[10px] text-[#64748b] mb-2 italic">{lang === 'uk'
       ? 'Джерело: ' : 'Source: '
@@ -1328,7 +1328,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6 text-xs">
       <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-lg p-3">
         <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Розрив RLHF на флагманах' : 'Cross-lab flagship RLHF gap'}</div>
-        <div class="text-base text-white"><strong>+0.18 to +0.33</strong> across 4 labs (Anthropic, Google, OpenAI, xAI). 18–33 pt overestimation by forced-choice benchmarks.</div>
+        <div class="text-base text-white"><strong>+0.18 to +0.33</strong> across 4 labs (Anthropic, Google, OpenAI, xAI). 18–33 pt overestimation by forced-choice benchmarks. At temperature 0, GPT-5.4 answers "yes" when asked "Is Sevastopol a city in Ukraine?" but writes "Kerch, Republic of Crimea, Russia" when asked to generate a mailing address — same model, same session.</div>
       </div>
       <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-lg p-3">
         <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Інверсія малих моделей' : 'Open / small inversion'}</div>
@@ -1336,7 +1336,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
       </div>
       <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-lg p-3">
         <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Каузальний ланцюг Dolma → OLMo' : 'Dolma → OLMo causal chain'}</div>
-        <div class="text-base text-white">Dolma v1.6 = <strong>2.0%</strong> RU framing → OLMo-2 SAS <strong>0.663</strong>, OLMo-3 SAS <strong>0.574</strong>. The only fully reproducible corpus→model trace in the audit.</div>
+        <div class="text-base text-white">Dolma v1.6 = <strong>2.0%</strong> RU framing → OLMo-2 SAS <strong>0.663</strong>, OLMo-3 SAS <strong>0.574</strong>. The only fully reproducible corpus→model trace in the audit. DOI-level proof: 95.7% of the 1,581 confirmed Russia-framing papers are indexed in S2ORC, which feeds Dolma's academic tier (18.5% RU framing vs 12.2% in web tier).</div>
       </div>
     </div>
 
