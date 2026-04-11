@@ -19,7 +19,6 @@ from pathlib import Path
 from datetime import datetime
 
 sys.path.insert(0, str(Path(__file__).parent))
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / "scripts"))
 from audit_llm_sovereignty_full import (
     MODELS, OLLAMA_MODELS, QUESTIONS, LANGS, CITIES,
     YES_WORDS, NO_WORDS, DISPUTED_HINTS,

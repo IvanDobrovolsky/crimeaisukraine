@@ -22,6 +22,7 @@ from collections import Counter
 
 import sys
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent / "_shared"))
 from sovereignty_classifier import SovereigntyClassifier
 
 try:

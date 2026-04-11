@@ -46,7 +46,7 @@ lines = []
 lines.append(f"# All Findings ({total} platforms)")
 lines.append("")
 lines.append(f"*Auto-generated {datetime.now().strftime('%Y-%m-%d')} from `platforms.json`.*")
-lines.append(f"*Regenerate: `python scripts/generate_findings_doc.py`*")
+lines.append(f"*Regenerate: `python pipelines/_shared/generate_findings_doc.py`*")
 lines.append("")
 lines.append(f"| Status | Count |")
 lines.append(f"|--------|-------|")

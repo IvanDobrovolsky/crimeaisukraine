@@ -1,7 +1,7 @@
 # All Findings (116 platforms)
 
 *Auto-generated 2026-04-04 from `platforms.json`.*
-*Regenerate: `python scripts/generate_findings_doc.py`*
+*Regenerate: `python pipelines/_shared/generate_findings_doc.py`*
 
 | Status | Count |
 |--------|-------|

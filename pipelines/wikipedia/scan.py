@@ -626,7 +626,7 @@ def main():
 def build_manifest(results, wikidata_results, sitelink_sweep, people, all_terms) -> dict:
     """
     Produce the standardized pipeline manifest consumed by
-    scripts/build_master_manifest.py and rendered on the site.
+    pipelines/_shared/build_master_manifest.py and rendered on the site.
 
     Schema follows pipelines/README.md: pipeline, version, generated, method,
     summary, findings, key_findings, limitations.

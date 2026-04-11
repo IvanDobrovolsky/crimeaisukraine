@@ -4,8 +4,8 @@
 # Run `make pipeline-NAME` to execute one pipeline (e.g. `make pipeline-ip`).
 
 PYTHON := python3
-SCRIPTS := scripts
 PIPELINES := pipelines
+SHARED := pipelines/_shared
 
 # Data outputs
 DATA := data
@@ -22,38 +22,38 @@ PIPELINE_NAMES := ip telecom tech_infrastructure geodata weather media \
 
 pipeline-ip: ## Run IP geolocation pipeline (90 IPs × 9 ASNs, rebuilds master manifest)
 	cd $(PIPELINES)/ip && uv sync && uv run scan.py
-	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
+	$(PYTHON) $(SHARED)/build_master_manifest.py
 
 pipeline-telecom: ## Run telecom operators pipeline (curation, rebuilds master manifest)
 	cd $(PIPELINES)/telecom && uv sync && uv run scan.py
-	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
+	$(PYTHON) $(SHARED)/build_master_manifest.py
 
 pipeline-tech_infrastructure: ## Run tech infrastructure pipeline (IANA tz, libphonenumber, OSM Nominatim; rebuilds master manifest)
 	cd $(PIPELINES)/tech_infrastructure && uv sync && uv run scan.py
-	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
+	$(PYTHON) $(SHARED)/build_master_manifest.py
 
 pipeline-geodata: ## Run geodata pipeline (Natural Earth + 5-ecosystem propagation; rebuilds master manifest)
 	cd $(PIPELINES)/geodata && uv sync && uv run scan.py
-	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
+	$(PYTHON) $(SHARED)/build_master_manifest.py
 
 pipeline-weather: ## Run weather services pipeline (25 services, 4-signal probe; rebuilds master manifest)
 	cd $(PIPELINES)/weather && uv sync && uv run scan.py
-	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
+	$(PYTHON) $(SHARED)/build_master_manifest.py
 
 pipeline-media: ## Run media framing pipeline aggregator (reads framing.json + media_violators.json; rebuilds master manifest)
 	cd $(PIPELINES)/media && uv sync && uv run scan.py
-	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
+	$(PYTHON) $(SHARED)/build_master_manifest.py
 
 pipeline-academic: ## Run academic framing pipeline (OpenAlex 91K + LLM verification)
 	cd $(PIPELINES)/academic && uv sync && uv run scan.py
 
 pipeline-wikipedia: ## Run Wikipedia + Wikidata pipeline (and rebuild master manifest)
 	cd $(PIPELINES)/wikipedia && uv sync && uv run scan.py
-	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
+	$(PYTHON) $(SHARED)/build_master_manifest.py
 
 pipeline-institutions: ## Run institutional registries pipeline (OFAC, EU, UK, ICAO, ITU, ISO, LoC, ROR, OpenAlex; rebuilds master manifest)
 	cd $(PIPELINES)/institutions && uv sync && uv run scan.py
-	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
+	$(PYTHON) $(SHARED)/build_master_manifest.py
 
 pipeline-llm: ## Run LLM sovereignty audit (20+ models × 50 langs × 12 cities)
 	cd $(PIPELINES)/llm && uv sync && uv run scan.py
@@ -85,30 +85,30 @@ audit-core: pipeline-geodata pipeline-tech_infrastructure ## Run core checks (no
 # ─── API-based audit (needs internet) ──────────────────
 
 audit-platforms: ## Check web platforms (weather, travel, search, reference)
-	$(PYTHON) $(SCRIPTS)/check_platforms.py
+	$(PYTHON) $(SHARED)/check_platforms.py
 
 audit-ip: pipeline-ip ## Deprecated alias for pipeline-ip
 
 audit-ip-quick: ## Quick IP geolocation test (4 sample IPs)
-	$(PYTHON) $(SCRIPTS)/check_ip_geolocation.py
+	$(PYTHON) $(PIPELINES)/ip/check_ip_geolocation.py
 
 audit-media: ## GDELT media framing analysis
-	$(PYTHON) $(SCRIPTS)/check_media_framing.py
+	$(PYTHON) $(PIPELINES)/media/check_media_framing.py
 
 audit-trends: ## Google Trends + Ngrams sovereignty framing
-	$(PYTHON) $(SCRIPTS)/check_trends.py
+	$(PYTHON) $(SHARED)/check_trends.py
 
 audit-gdelt-framing: ## Scan GDELT for sovereignty framing (2010-2026)
-	$(PYTHON) $(SCRIPTS)/scan_gdelt_framing.py --start 2010
+	$(PYTHON) $(PIPELINES)/media/scan_gdelt_framing.py --start 2010
 
 audit-gdelt-quick: ## Quick GDELT framing scan (last 3 months)
-	$(PYTHON) $(SCRIPTS)/scan_gdelt_framing.py --quick
+	$(PYTHON) $(PIPELINES)/media/scan_gdelt_framing.py --quick
 
 audit-academic: ## Scan academic papers via OpenAlex + CrossRef (2010-present)
-	$(PYTHON) $(SCRIPTS)/scan_academic.py --start 2010
+	$(PYTHON) $(PIPELINES)/academic/scan_academic.py --start 2010
 
 audit-academic-full: ## Full OpenAlex scan (91K papers, cursor pagination)
-	$(PYTHON) $(SCRIPTS)/scan_academic_full.py
+	$(PYTHON) $(PIPELINES)/academic/scan.py
 
 audit-wikipedia: pipeline-wikipedia ## Deprecated alias for pipeline-wikipedia
 
@@ -120,8 +120,8 @@ audit-legislation: pipeline-institutions ## Deprecated alias for pipeline-instit
 verify-platforms: ## Re-verify all platform findings and fill evidence fields
 
 verify-llm: ## LLM verification of Russia-labeled articles (requires ANTHROPIC_API_KEY)
-	$(PYTHON) $(SCRIPTS)/llm_verify.py --resume
-	$(PYTHON) $(SCRIPTS)/verify_all.py
+	$(PYTHON) $(PIPELINES)/media/llm_verify.py --resume
+	$(PYTHON) $(SHARED)/verify_all.py
 
 audit-api: audit-platforms audit-map-services audit-ip audit-media audit-trends ## Run all API-based checks
 
@@ -130,13 +130,13 @@ audit-framing: audit-gdelt-framing audit-academic ## Run all sovereignty framing
 # ─── Browser-based audit (needs Playwright + Chromium) ──
 
 audit-browsers: ## Browser screenshots (needs: playwright install chromium)
-	$(PYTHON) $(SCRIPTS)/check_browsers.py
+	$(PYTHON) $(SHARED)/check_browsers.py
 
 audit-double-game: ## Detect geo-dependent platform behavior
-	$(PYTHON) $(SCRIPTS)/check_double_game.py
+	$(PYTHON) $(PIPELINES)/geodata/check_double_game.py
 
 audit-geo: ## Multi-location browser testing
-	$(PYTHON) $(SCRIPTS)/check_geo_dependent.py
+	$(PYTHON) $(PIPELINES)/geodata/check_geo_dependent.py
 
 audit-browser: audit-browsers audit-double-game audit-geo ## Run all browser-based checks
 
@@ -151,16 +151,16 @@ all: audit-core audit-api export site ## Run full audit pipeline and build site
 # ─── Export & build ────────────────────────────────────
 
 export: ## Export findings to CSV and sync to site JSON
-	$(PYTHON) $(SCRIPTS)/export_findings.py
+	$(PYTHON) $(SHARED)/export_findings.py
 
 findings-doc: ## Regenerate docs/FINDINGS.md from platforms.json
-	$(PYTHON) $(SCRIPTS)/generate_findings_doc.py
+	$(PYTHON) $(SHARED)/generate_findings_doc.py
 
 statistics: ## Compute publication statistics (Kappa, CI, regression)
-	$(PYTHON) $(SCRIPTS)/compute_statistics.py
+	$(PYTHON) $(SHARED)/compute_statistics.py
 
 manifest: ## Regenerate manifest.json (single source of truth for all site numbers)
-	$(PYTHON) $(SCRIPTS)/generate_manifest.py
+	$(PYTHON) $(SHARED)/generate_manifest.py
 
 site: manifest ## Build the static site (regenerates manifest first)
 	cd site && npm run build
@@ -202,5 +202,5 @@ print(f'Total: {len(f)} findings across {len(cats)} categories'); \
 # ─── Master manifest ──────────────────────────────────────
 
 master-manifest: ## Build master manifest aggregating all pipeline outputs
-	$(PYTHON) $(SCRIPTS)/build_master_manifest.py
+	$(PYTHON) $(SHARED)/build_master_manifest.py
 

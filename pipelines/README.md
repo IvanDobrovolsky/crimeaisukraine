@@ -59,7 +59,7 @@ pipelines/<name>/
 
 ## Master manifest
 
-The `scripts/build_master_manifest.py` script reads each pipeline's `manifest.json` and aggregates them into `site/src/data/master_manifest.json` — the single source of truth the site reads.
+The `pipelines/_shared/build_master_manifest.py` script reads each pipeline's `manifest.json` and aggregates them into `site/src/data/master_manifest.json` — the single source of truth the site reads.
 
 ## Running a single pipeline
 

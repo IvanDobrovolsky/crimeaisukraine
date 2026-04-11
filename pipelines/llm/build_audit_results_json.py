@@ -24,7 +24,7 @@ PROJECT = Path(__file__).parent.parent
 DATA = PROJECT / "data"
 SITE_DATA = PROJECT / "site" / "src" / "data"
 
-sys.path.insert(0, str(PROJECT / "scripts"))
+sys.path.insert(0, str(Path(__file__).parent))
 from audit_llm_sovereignty_full import (  # type: ignore
     QUESTIONS,
     LANGS,

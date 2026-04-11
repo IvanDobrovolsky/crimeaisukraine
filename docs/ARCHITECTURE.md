@@ -165,7 +165,7 @@ graph LR
     E -->|"reports"| H["Reclassified"]
 ```
 
-**Scripts:** `pipelines/media/scan.py` (aggregator), `scripts/scan_gdelt_framing.py` (upstream GDELT query), `scripts/llm_verify.py` (Stage 2 LLM verification)
+**Scripts:** `pipelines/media/scan.py` (aggregator), `pipelines/media/scan_gdelt_framing.py` (upstream GDELT query), `pipelines/media/llm_verify.py` (Stage 2 LLM verification)
 **Cost:** ~$2 BQ + ~$5 LLM verification
 
 ---
@@ -239,7 +239,7 @@ graph LR
 
 **Weights:** Location labels (2.0) > Admin names (1.5) > Framing (1.0–2.0) > Structural (1.0–1.5)
 
-**Defined in:** `scripts/sovereignty_signals.py`
+**Defined in:** `pipelines/_shared/sovereignty_signals.py`
 
 ---
 

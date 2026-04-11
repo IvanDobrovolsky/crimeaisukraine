@@ -8,8 +8,8 @@ re-run the upstream GDELT query or the LLM verification — those are
 heavier operations that depend on BigQuery credentials and an
 ANTHROPIC_API_KEY, and are performed by separate scripts:
 
-    scripts/scan_gdelt_framing.py  — BigQuery GDELT query + regex Stage 1
-    scripts/llm_verify.py          — Stage 2 LLM verification (Claude Haiku)
+    pipelines/media/scan_gdelt_framing.py  — BigQuery GDELT query + regex Stage 1
+    pipelines/media/llm_verify.py          — Stage 2 LLM verification (Claude Haiku)
 
 The output of those two scripts lands in:
 
@@ -18,7 +18,7 @@ The output of those two scripts lands in:
     site/src/data/media_violators.json ← per-domain violator list
 
 This aggregator reads those files and produces a schema-compliant
-manifest consumable by scripts/build_master_manifest.py and the site's
+manifest consumable by pipelines/_shared/build_master_manifest.py and the site's
 HomePage.astro media section.
 
 Usage:
@@ -193,8 +193,8 @@ def main():
     limitations = [
         "This is an aggregator pipeline: it reads site/src/data/framing.json "
         "and site/src/data/media_violators.json produced by the upstream "
-        "scripts (scripts/scan_gdelt_framing.py for GDELT + regex, "
-        "scripts/llm_verify.py for LLM verification). It does not re-run "
+        "scripts (pipelines/media/scan_gdelt_framing.py for GDELT + regex, "
+        "pipelines/media/llm_verify.py for LLM verification). It does not re-run "
         "either upstream on every invocation. To refresh the numbers, "
         "rerun the upstream scripts first.",
         "GDELT coverage gaps for the most recent months may cause "
@@ -245,8 +245,8 @@ def main():
         "upstream_data_sources": {
             "framing_json": str(FRAMING_JSON.relative_to(REPO_ROOT)),
             "violators_json": str(VIOLATORS_JSON.relative_to(REPO_ROOT)),
-            "gdelt_query_script": "scripts/scan_gdelt_framing.py",
-            "llm_verifier_script": "scripts/llm_verify.py",
+            "gdelt_query_script": "pipelines/media/scan_gdelt_framing.py",
+            "llm_verifier_script": "pipelines/media/llm_verify.py",
         },
     }
 
