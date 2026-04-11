@@ -1,0 +1,116 @@
+{
+  "pipeline": "training_corpora",
+  "version": "1.0",
+  "generated": "2026-04-11T00:00:00+00:00",
+  "method": "huggingface_streaming + sovereignty_classifier (81 signals)",
+  "summary": {
+    "corpora_scanned": 5,
+    "corpora_inaccessible": 4,
+    "corpora_inaccessible_note": "OSCAR (legal), Dolma v1.7 (script-loader), RedPajama-v2 (script-loader), Qwen3.5 (llama.cpp arch mismatch)",
+    "total_documents_scanned": 7135614,
+    "total_crimea_mentions": 10539,
+    "c4_russian_ru_pct": 58.7,
+    "dolma_ru_pct": 12.2,
+    "c4_english_ru_pct": 10.0,
+    "fineweb_ru_pct": 5.9,
+    "dolma_academic_ru_pct": 18.5,
+    "doi_match": "10.12737/1998-071x-2021-9-2-54-64",
+    "s2orc_coverage_pct": 95.7
+  },
+  "per_corpus": [
+    {
+      "corpus": "c4_en",
+      "hf_dataset": "allenai/c4",
+      "config": "en",
+      "models_using": ["T5", "LLaMA-1", "mT5"],
+      "total_scanned": 3557497,
+      "crimea_mentions": 2436,
+      "russia_frame": 27,
+      "ukraine_frame": 243,
+      "russia_of_labeled_pct": 10.0
+    },
+    {
+      "corpus": "c4_ru",
+      "hf_dataset": "allenai/c4",
+      "config": "ru",
+      "models_using": ["mT5", "multi-lang models"],
+      "total_scanned": 60158,
+      "crimea_mentions": 2000,
+      "russia_frame": 61,
+      "ukraine_frame": 43,
+      "russia_of_labeled_pct": 58.7
+    },
+    {
+      "corpus": "c4_uk",
+      "hf_dataset": "allenai/c4",
+      "config": "uk",
+      "models_using": ["mT5", "multi-lang models"],
+      "total_scanned": 25120,
+      "crimea_mentions": 2000,
+      "russia_frame": 1,
+      "ukraine_frame": 194,
+      "russia_of_labeled_pct": 0.5
+    },
+    {
+      "corpus": "dolma",
+      "hf_dataset": "allenai/dolma",
+      "config": null,
+      "models_using": ["OLMo", "OLMo-2"],
+      "total_scanned": 2089255,
+      "crimea_mentions": 2000,
+      "russia_frame": 40,
+      "ukraine_frame": 288,
+      "russia_of_labeled_pct": 12.2
+    },
+    {
+      "corpus": "fineweb_edu",
+      "hf_dataset": "HuggingFaceFW/fineweb-edu",
+      "config": "CC-MAIN-2024-10",
+      "models_using": ["SmolLM", "SmolLM-2"],
+      "total_scanned": 1355195,
+      "crimea_mentions": 2000,
+      "russia_frame": 13,
+      "ukraine_frame": 208,
+      "russia_of_labeled_pct": 5.9
+    },
+    {
+      "corpus": "pile_sample",
+      "hf_dataset": "NeelNanda/pile-10k",
+      "config": null,
+      "models_using": ["GPT-J", "GPT-NeoX", "Pythia"],
+      "total_scanned": 9894,
+      "crimea_mentions": 13,
+      "russia_frame": 1,
+      "ukraine_frame": 4,
+      "russia_of_labeled_pct": 20.0
+    },
+    {
+      "corpus": "redpajama_v2",
+      "hf_dataset": null,
+      "config": null,
+      "models_using": [],
+      "total_scanned": 38495,
+      "crimea_mentions": 90,
+      "russia_frame": 0,
+      "ukraine_frame": 12,
+      "russia_of_labeled_pct": 0.0
+    }
+  ],
+  "data_sources": {
+    "scan_results": "data/training_corpora_scan.jsonl",
+    "summary": "data/training_corpora_summary.json",
+    "analysis": "data/training_vs_models_analysis.json"
+  },
+  "key_findings": [
+    "C4-Russian (ru config) has 58.7% Russia-framing among labeled Crimea mentions — the highest of any accessible corpus. This is the primary training signal for multilingual models on Russian-language Crimea content.",
+    "Dolma (OLMo's training corpus) has 12.2% Russia-framing, directly explaining OLMo2/OLMo3's bottom-5 SAS ranking in the LLM pipeline.",
+    "C4-English has 10.0% Russia-framing, suggesting English-language web content carries a measurable Russia-sovereignty signal even in the dominant training language.",
+    "4 of 9 targeted corpora are inaccessible through 4 distinct failure modes: OSCAR (legal restrictions), Dolma v1.7 and RedPajama-v2 (script-loader architectures), Qwen3.5 (llama.cpp architecture mismatch). This corpus accessibility crisis is itself a finding."
+  ],
+  "limitations": [
+    "Streaming scan sees a subset of each corpus (first N documents with Crimea mentions); not exhaustive.",
+    "Sovereignty classifier uses 81 keyword/pattern signals; nuanced framing may be missed.",
+    "4 inaccessible corpora (OSCAR, Dolma v1.7, RedPajama-v2, Qwen3.5) could not be scanned at all.",
+    "dolma_academic_ru_pct and s2orc_coverage are from the Dolma academic subset analysis, not the main streaming scan."
+  ]
+}

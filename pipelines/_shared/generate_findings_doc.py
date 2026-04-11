@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent.parent.parent   # _shared → pipelines → project root
 
 with open(PROJECT / "site/src/data/platforms.json") as f:
     data = json.load(f)

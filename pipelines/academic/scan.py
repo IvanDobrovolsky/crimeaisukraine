@@ -14,10 +14,14 @@ from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent / "_shared"))
 from sovereignty_classifier import SovereigntyClassifier
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent          # pipelines/academic
+PROJECT_ROOT = Path(__file__).parent.parent.parent   # project root
 DATA = PROJECT / "data"
+DATA.mkdir(exist_ok=True)
+ROOT_DATA = PROJECT_ROOT / "data"
 CONTACT = "dobrovolsky94@gmail.com"
 API = "https://api.openalex.org/works"
 

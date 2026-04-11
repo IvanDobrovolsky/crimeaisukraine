@@ -1,0 +1,53 @@
+{
+  "pipeline": "llm",
+  "version": "1.0",
+  "generated": "2026-04-11T00:00:00+00:00",
+  "method": "forced_choice_15q + open_ended_8q × 50_languages × 18_models, temp=0, seed=42",
+  "summary": {
+    "models_audited": 18,
+    "laboratories": 8,
+    "total_queries_forced": 33300,
+    "total_queries_approx": 45500,
+    "languages": 50,
+    "questions_forced": 15,
+    "questions_open_ended": 8,
+    "top_model": "gemini-2.5-pro",
+    "top_model_sas": 0.947,
+    "rlhf_gap_range": "+0.05 to +0.33",
+    "positive_gap_models": 8,
+    "negative_gap_models": 10,
+    "weight_schemes_tested": 6,
+    "tier_count": 4
+  },
+  "top_5_models": [
+    {"model": "gemini-2.5-pro", "lab": "Google", "sas": 0.947},
+    {"model": "sonnet-4.6", "lab": "Anthropic", "sas": 0.914},
+    {"model": "opus-4.6", "lab": "Anthropic", "sas": 0.911},
+    {"model": "gemini-2.5-flash", "lab": "Google", "sas": 0.894},
+    {"model": "gpt-5.4", "lab": "OpenAI", "sas": 0.877}
+  ],
+  "bottom_5_models": [
+    {"model": "qwen3", "lab": "Alibaba", "sas": 0.580},
+    {"model": "gemma4", "lab": "Google", "sas": 0.631},
+    {"model": "olmo2", "lab": "AI2", "sas": 0.642},
+    {"model": "smollm3", "lab": "HuggingFace", "sas": 0.642},
+    {"model": "olmo3", "lab": "AI2", "sas": 0.562}
+  ],
+  "data_sources": {
+    "sas_scores": "data/sas_scores.json",
+    "audit_results": "site/src/data/llm_audit_results.json",
+    "sovereignty_full": "data/llm_sovereignty_full.jsonl",
+    "open_ended": "data/llm_openended_audit.jsonl"
+  },
+  "key_findings": [
+    "Cross-lab RLHF gap: all 8 flagship models show positive D-R gap (+0.05 to +0.33), meaning forced-choice sovereignty alignment exceeds free-recall alignment. Strongest gap: gemini-2.5-pro (+0.33), gpt-5.4 (+0.27).",
+    "Negative-gap inversion on 10 open/small models: open-ended recall is more Ukraine-aligned than forced-choice answers, suggesting RLHF training overcorrects toward neutrality.",
+    "OLMo/Dolma causal chain: OLMo2 and OLMo3 (trained on Dolma corpus) rank in bottom 5, consistent with Dolma's 12.2% Russia-framing rate measured in the training_corpora pipeline.",
+    "4-tier SAS (Sovereignty Alignment Score) with 6 weight schemes shows rank-order stability (Spearman > 0.9 across schemes)."
+  ],
+  "limitations": [
+    "Tested from EU/US network endpoints; API behavior from Russian IPs not verified.",
+    "temp=0 does not guarantee determinism across all providers; seed=42 used where supported.",
+    "Open-ended queries available for subset of models (13 languages); forced-choice covers all 50."
+  ]
+}

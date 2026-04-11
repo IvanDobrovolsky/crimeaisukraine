@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from enum import Enum
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).parent.parent
+PROJECT_ROOT = Path(__file__).parent.parent.parent   # _shared → pipelines → project root
 DATA_DIR = PROJECT_ROOT / "data"
 DOCS_DIR = PROJECT_ROOT / "docs"
 

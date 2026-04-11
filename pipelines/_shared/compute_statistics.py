@@ -19,7 +19,7 @@ from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent.parent.parent   # _shared → pipelines → project root
 DATA = PROJECT / "data"
 
 

@@ -15,7 +15,7 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent.parent.parent   # _shared → pipelines → project root
 PIPELINES = PROJECT / "pipelines"
 SITE_DATA = PROJECT / "site/src/data"
 DATA = PROJECT / "data"

@@ -31,7 +31,7 @@ from apache_beam.options.pipeline_options import PipelineOptions
 from sovereignty_classifier import SovereigntyClassifier
 from sovereignty_signals import CRIMEA_REFERENCE
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent.parent.parent   # _shared → pipelines → project root
 DATA = PROJECT / "data"
 
 CONTACT_EMAIL = "dobrovolsky94@gmail.com"

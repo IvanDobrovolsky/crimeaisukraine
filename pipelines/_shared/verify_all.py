@@ -14,7 +14,7 @@ import time
 import urllib.request
 from pathlib import Path
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent.parent.parent   # _shared → pipelines → project root
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",

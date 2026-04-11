@@ -46,6 +46,7 @@ pipeline-media: ## Run media framing pipeline aggregator (reads framing.json + m
 
 pipeline-academic: ## Run academic framing pipeline (OpenAlex 91K + LLM verification)
 	cd $(PIPELINES)/academic && uv sync && uv run scan.py
+	$(PYTHON) $(SHARED)/build_master_manifest.py
 
 pipeline-wikipedia: ## Run Wikipedia + Wikidata pipeline (and rebuild master manifest)
 	cd $(PIPELINES)/wikipedia && uv sync && uv run scan.py
@@ -57,9 +58,11 @@ pipeline-institutions: ## Run institutional registries pipeline (OFAC, EU, UK, I
 
 pipeline-llm: ## Run LLM sovereignty audit (20+ models × 50 langs × 12 cities)
 	cd $(PIPELINES)/llm && uv sync && uv run scan.py
+	$(PYTHON) $(SHARED)/build_master_manifest.py
 
 pipeline-training_corpora: ## Run training corpora scan (C4, Dolma, Pile, FineWeb)
 	cd $(PIPELINES)/training_corpora && uv sync && uv run scan.py
+	$(PYTHON) $(SHARED)/build_master_manifest.py
 
 pipelines-all: $(addprefix pipeline-,$(PIPELINE_NAMES)) ## Run all pipelines sequentially
 

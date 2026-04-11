@@ -17,8 +17,11 @@ import urllib.request
 from pathlib import Path
 from datetime import datetime
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent          # pipelines/llm
+PROJECT_ROOT = Path(__file__).parent.parent.parent   # project root
 DATA = PROJECT / "data"
+DATA.mkdir(exist_ok=True)
+ROOT_DATA = PROJECT_ROOT / "data"
 
 # =====================================================================
 # MODELS
