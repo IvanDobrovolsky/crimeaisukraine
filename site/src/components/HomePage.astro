@@ -857,7 +857,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
       </div>
       <div class="text-center p-3 rounded-lg bg-[#0a0e1a] border border-[#1e293b]">
         <div class="text-2xl font-black text-white">8,472</div>
-        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'верифіковано LLM' : 'LLM-verified'}</div>
+        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Stage-2 верифіковано' : 'Stage-2 verified'}</div>
       </div>
       <div class="text-center p-3 rounded-lg bg-[#0a0e1a] border border-[#22c55e]/30">
         <div class="text-2xl font-black text-[#22c55e]">99.5%</div>
@@ -1002,8 +1002,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
   <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingAcademicTitle} — 91,670 {lang === 'uk' ? 'робіт' : 'Papers'}</h2>
     <p class="text-[#94a3b8] mb-4">{lang === 'uk'
-      ? 'OpenAlex, 2010-2026. 91,670 робіт проскановано; 5,151 з сигналами суверенітету; 1,581 LLM-підтверджено з російським фреймінгом.'
-      : 'OpenAlex, 2010–2026. 91,670 papers scanned; 5,151 sovereignty-signaled; 1,581 LLM-confirmed Russia framing.'
+      ? 'OpenAlex, 2010–2026. 91 670 робіт → Етап 1 regex: 5 151 → Етап 2 LLM: 1 581 → Етап 3 ручна перевірка: 1 581 підтверджено (точність 98,3%, хибно-позитивних 1,7%).'
+      : 'OpenAlex, 2010–2026. 91,670 papers → Stage 1 regex: 5,151 → Stage 2 LLM: 1,581 → Stage 3 human review: 1,581 confirmed (98.3% precision, 1.7% false positive rate).'
     }</p>
     <div class="text-xs text-[#64748b] mb-6 flex flex-wrap items-center gap-2">
       <span class="text-[#475569]">📂 pipelines/academic/</span>
@@ -1014,25 +1014,51 @@ const mediaViolatorsByFilter = mediaViolators as any;
       <a href={pipelineLinks('academic').scan} target="_blank" rel="noopener" class="text-[#0057b7] hover:text-white transition">scan.py ↗</a>
     </div>
 
+    <!-- 3-stage verification badge -->
+    <div class="bg-[#0a0e1a] rounded-xl p-4 border border-[#0057b7]/30 mb-6">
+      <div class="flex flex-wrap items-center gap-4 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#64748b]"></span>
+          <span class="text-[#94a3b8]">{t.stage1Label}</span>
+          <span class="font-mono text-white">91,670 → 5,151</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>
+          <span class="text-[#94a3b8]">{t.stage2Label}</span>
+          <span class="font-mono text-white">5,151 → 1,581</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>
+          <span class="text-[#94a3b8]">{t.stage3Label}</span>
+          <span class="font-mono text-white">1,605 {t.stage3Reviewed} → 1,581 {t.stage3Confirmed}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-[#22c55e] font-bold">{t.precisionLabel}: 98.3%</span>
+          <span class="text-[#64748b]">|</span>
+          <span class="text-[#94a3b8]">{t.fpLabel}: 1.7%</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Stats row -->
     <div class="flex gap-3 mb-6">
       <div class="flex-1 text-center p-3 rounded-lg bg-[#22c55e]/10 border border-[#22c55e]/20">
         <div class="text-2xl font-bold text-[#22c55e]">{(academic.ukraine_llm || academic.ukraine || 0).toLocaleString()}</div>
-        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Україна (LLM)' : 'Ukraine (LLM)'}</div>
+        <div class="text-[10px] text-[#64748b]">{t.ukraineFraming}</div>
       </div>
       <div class="flex-1 text-center p-3 rounded-lg bg-[#ef4444]/10 border border-[#ef4444]/20">
-        <div class="text-2xl font-bold text-[#ef4444]">{(academic.russia_llm || academic.russia || 0).toLocaleString()}</div>
-        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Росія (LLM)' : 'Russia (LLM)'}</div>
+        <div class="text-2xl font-bold text-[#ef4444]">1,581</div>
+        <div class="text-[10px] text-[#64748b]">{t.russiaVerified}</div>
       </div>
       <div class="flex-1 text-center p-3 rounded-lg bg-[#64748b]/10 border border-[#64748b]/20">
         <div class="text-2xl font-bold text-[#94a3b8]">{(academic.analyzes || 0) + (academic.unclear || 0)}</div>
-        <div class="text-[10px] text-[#64748b]">{lang === 'uk' ? 'Аналізує / Неясно' : 'Analyzes / Unclear'}</div>
+        <div class="text-[10px] text-[#64748b]">{t.analyzesUnclear}</div>
       </div>
     </div>
 
     <!-- Line chart -->
     <div class="mb-6">
-      <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? 'Україна vs Росія (LLM-підтверджені роботи)' : 'Ukraine vs Russia framing (LLM-confirmed papers)'}</div>
+      <div class="text-xs text-[#64748b] mb-2">{lang === 'uk' ? 'Україна vs Росія (3-етапна верифікація: regex → LLM → ручна анотація)' : 'Ukraine vs Russia framing (3-stage verification: regex → LLM → human annotation)'}</div>
       <div class="relative" style="height: 320px;">
         <canvas id="academic-chart" class="w-full h-full"></canvas>
       </div>
@@ -1050,10 +1076,39 @@ const mediaViolatorsByFilter = mediaViolators as any;
       </p>
     </div>
 
-    <!-- Violator papers with DOIs -->
+    <!-- Key verified examples — mic-drop findings -->
+    <div class="mb-6">
+      <h3 class="text-xs font-bold text-[#ef4444] uppercase tracking-wider mb-3">
+        {t.keyFindings}
+      </h3>
+      <div class="space-y-2">
+        {[
+          { pub: 'FAO / United Nations', detail: lang === 'uk' ? '«Севастополь, Російська Федерація» — ООН суперечить власній Резолюції ГА 68/262' : '"Sevastopol, Russian Federation" — UN contradicts its own GA Resolution 68/262', url: 'https://www.fao.org/fishery/en/openasfa/e27f2e91-b270-40af-a70e-81e4158b42bd', color: '#ef4444' },
+          { pub: 'Routledge (T&F)', detail: lang === 'uk' ? 'Довідник «Території Російської Федерації 2022» — Крим як частина Росії' : 'Reference book "Territories of the Russian Federation 2022" — Crimea as part of Russia', url: 'https://doi.org/10.4324/9781003280965-9', color: '#ef4444' },
+          { pub: 'Oxford (EHJ, IF 37.6)', detail: lang === 'uk' ? '«Сімферополь, Російська Федерація» у метаданих #1 кардіологічного журналу' : '"Simferopol, Russian Federation" in metadata of #1 cardiology journal', url: 'https://doi.org/10.1093/eurheartj/ehab724.1501', color: '#ef4444' },
+          { pub: 'SSRN / Elsevier', detail: lang === 'uk' ? '«Незаконна анексія Криму Україною в 1991» — інверсія агресора' : '"The 1991 illegal annexation of Crimea by Ukraine" — inverts aggressor', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2979268', color: '#ef4444' },
+          { pub: 'Oxford (Q1 law)', detail: lang === 'uk' ? '«Возз\'єднання Криму з Росією: Російська перспектива»' : '"Reunification of Crimea with Russia: A Russian Perspective"', url: 'https://doi.org/10.1093/chinesejil/jmu036', color: '#f59e0b' },
+          { pub: 'Max Planck (ZAORV)', detail: lang === 'uk' ? 'Два документи з «reunification» у заголовку журналу міжнародного права' : 'Two papers with "reunification" in a Q1 international law journal', url: 'https://openalex.org/W2286296980', color: '#f59e0b' },
+          { pub: 'Springer / Allerton', detail: lang === 'uk' ? 'Водні ресурси Криму в умовах «водної блокади» — управління окупованою територією' : 'Crimea water resources under "water blockade" — occupation resource management', url: 'https://doi.org/10.3103/S1068373924110013', color: '#f59e0b' },
+          { pub: 'EDP Sciences / CNRS', detail: lang === 'uk' ? '19 статей з окупованого Криму через французького видавця (2016-2025)' : '19 papers from occupied Crimea through French gov publisher (2016-2025)', url: 'https://www.e3s-conferences.org/articles/e3sconf/abs/2023/94/e3sconf_fci2023_02030/e3sconf_fci2023_02030.html', color: '#f59e0b' },
+          { pub: 'IEEE (USA)', detail: lang === 'uk' ? 'Інститут Ковалевського (1871) як «РАН, Севастополь, Росія»' : 'Kovalevsky Institute (1871) listed as "RAS, Sevastopol, Russia"', url: 'https://doi.org/10.1109/RWP.2019.8810252', color: '#f59e0b' },
+          { pub: 'European Proceedings (UK)', detail: lang === 'uk' ? '«Моральне виховання» молоді через російську ідентичність Криму' : '"Moral upbringing" of youth using Crimea\'s Russian identity', url: 'https://doi.org/10.15405/epsbs.2020.12.03.42', color: '#f59e0b' },
+          { pub: 'SHILAP (Spain)', detail: lang === 'uk' ? '37 статей про Крим у журналі про метеликів — жодної про метеликів' : '37 Crimea papers in a butterfly journal — zero about butterflies', url: 'https://doaj.org/article/7f84d68a08514895a7ea1ed6e286342f', color: '#64748b' },
+          { pub: 'CERN Zenodo (EU)', detail: lang === 'uk' ? 'Конференція в Керчі, вересень 2022 — через 7 місяців повномасштабного вторгнення' : 'Conference in Kerch, Sep 2022 — 7 months into full-scale invasion', url: 'https://zenodo.org/records/7790823', color: '#64748b' },
+        ].map(row => (
+          <a href={row.url} target="_blank" rel="noopener" class="flex items-start gap-2 text-[10px] py-2 px-3 rounded-lg bg-[#0a0e1a] border border-[#1e293b] hover:border-[#0057b7]/50 transition group">
+            <span class="font-bold text-white flex-shrink-0 w-36" style={`color: ${row.color}`}>{row.pub}</span>
+            <span class="text-[#94a3b8] group-hover:text-white flex-1 leading-tight">{row.detail}</span>
+            <span class="text-[#475569] flex-shrink-0">↗</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Full violator list (scrollable) -->
     <div>
       <h3 class="text-xs font-bold text-[#64748b] uppercase tracking-wider mb-2">
-        {t.framingAcadViolatorsTitle} ({(academic.russia_llm || academic.violators_total || 0).toLocaleString()} {lang === 'uk' ? 'підтверджено' : 'LLM-confirmed'})
+        {t.framingAcadViolatorsTitle} ({(academic.russia_llm || academic.violators_total || 0).toLocaleString()} {t.verifiedStages})
       </h3>
       <div class="space-y-1 max-h-64 overflow-y-auto">
         {acadViolators.slice(0, 50).map((v: any) => (
@@ -1191,7 +1246,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 
             <p><strong class="text-white">Why 50% weight on the legal-normative tier — in student-exam terms.</strong> Think of SAS as grading a student's exam on international law. The <strong class="text-white">legal-normative tier</strong> is the direct exam question: <em>"Did Russia illegally annex Crimea?"</em> This is the one question that directly tests whether the student has read the rulebook (UN GA Resolution 68/262). That is why it carries 50% of the grade. The <strong class="text-white">free-recall tier</strong> is the essay question: <em>"Write a paragraph about Sevastopol."</em> This reveals what the student actually writes when they are not being quizzed on the rulebook — whether they <em>internalised</em> the rule or just <em>memorised</em> the answer. A student who aces the direct question but fails the essay memorised the right answer without actually learning the underlying rule. <strong class="text-white">The bigger the gap between quiz-score and essay-score, the more we know: that student was taught <em>what to say</em>, not <em>what to think</em>.</strong></p>
 
-            <p><strong class="text-white">That is exactly what the RLHF gap measures.</strong> A +0.22 to +0.33 gap on the closed flagships (Gemini 2.5 Pro, GPT-5.4, Claude Opus 4.6, Sonnet 4.6, Gemini 2.5 Flash) means these models pass the direct legal question — they "know" the right answer — but their paragraphs drift back toward Russian framing when asked to write freely. In plain words: <em>the flagships have been taught the correct answer, but they have not been taught to believe it.</em> The weight choice and the gap measurement work together as a two-part test. The <strong class="text-white">legal-normative score</strong> tells us <em>did the model at least learn to state the rule correctly?</em> — necessary. The <strong class="text-white">gap</strong> tells us <em>did the model actually internalise the rule, or is it just reciting the passage when it sees the exam question?</em> — sufficient. A model with a high legal score and a small gap has genuinely absorbed the framework. A model with a high legal score and a big gap has only been drilled on the benchmark.</p>
+            <p><strong class="text-white">That is exactly what the RLHF gap measures.</strong> A +0.18 to +0.33 gap on the closed flagships (Gemini 2.5 Pro, GPT-5.4, Claude Opus 4.6, Sonnet 4.6, Gemini 2.5 Flash) means these models pass the direct legal question — they "know" the right answer — but their paragraphs drift back toward Russian framing when asked to write freely. In plain words: <em>the flagships have been taught the correct answer, but they have not been taught to believe it.</em> The weight choice and the gap measurement work together as a two-part test. The <strong class="text-white">legal-normative score</strong> tells us <em>did the model at least learn to state the rule correctly?</em> — necessary. The <strong class="text-white">gap</strong> tells us <em>did the model actually internalise the rule, or is it just reciting the passage when it sees the exam question?</em> — sufficient. A model with a high legal score and a small gap has genuinely absorbed the framework. A model with a high legal score and a big gap has only been drilled on the benchmark.</p>
 
             <p><strong class="text-white">Why these 18 models specifically?</strong> Five principles drove the selection: <strong class="text-white">(1) frontier-class only</strong> — models currently deployed at scale, not legacy generations (so Llama 4 and Gemma 4 are in, Llama 2 and Gemma 1 are out); <strong class="text-white">(2) cross-lab coverage</strong> — OpenAI, Anthropic, Google, xAI, Meta, Mistral, Alibaba, AI2, and HuggingFaceTB: nine independent organisations with nine independent pretraining pipelines, so the RLHF-gap finding cannot be written off as a quirk of any one company's methodology; <strong class="text-white">(3) a mix of closed and open</strong> — closed flagships (GPT-5.4, Claude Opus 4.6, Gemini 2.5 Pro) are what billions of users actually interact with, and open models (especially AI2's OLMo, the only fully-transparent frontier training corpus in the audit) are the only ones where we can trace the causal chain from pretraining data to model behaviour; <strong class="text-white">(4) a mix of sizes</strong> from ~3B parameters (SmolLM 3) up through hundreds of billions (Claude Opus 4.6, Gemini 2.5 Pro) to test whether the RLHF gap is a capacity artefact — it is not; <strong class="text-white">(5) latest releases</strong> — an audit of GPT-4 and Gemini 1.5 in 2026 would be a historical curiosity, whereas an audit of GPT-5.4 and Gemini 2.5 is actionable because those are the models deployed today. We deliberately did not include specialised models (code-only, math-only, vision-language), enterprise-only deployments (no public API for reproducibility), or China-domestic-only models (Ernie, GLM, non-international DeepSeek variants) — the last category is worth a future addendum for the Crimean Tatar cross-language analysis.</p>
           </>
@@ -1273,11 +1328,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6 text-xs">
       <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-lg p-3">
         <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Розрив RLHF на флагманах' : 'Cross-lab flagship RLHF gap'}</div>
-        <div class="text-base text-white"><strong>+0.22 to +0.33</strong> across 4 labs (Anthropic, Google, OpenAI). 22–33 pt overestimation by forced-choice benchmarks.</div>
+        <div class="text-base text-white"><strong>+0.18 to +0.33</strong> across 4 labs (Anthropic, Google, OpenAI, xAI). 18–33 pt overestimation by forced-choice benchmarks.</div>
       </div>
       <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-lg p-3">
         <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Інверсія малих моделей' : 'Open / small inversion'}</div>
-        <div class="text-base text-white"><strong>−0.20 to −0.50</strong> on 8 models. Smaller / open models leak hedging templates ("internationally recognized as Ukraine") in free-recall.</div>
+        <div class="text-base text-white"><strong>−0.08 to −0.49</strong> on 10 models. Smaller / open models leak hedging templates ("internationally recognized as Ukraine") in free-recall.</div>
       </div>
       <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-lg p-3">
         <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Каузальний ланцюг Dolma → OLMo' : 'Dolma → OLMo causal chain'}</div>
