@@ -396,22 +396,22 @@ const mediaViolatorsByFilter = mediaViolators as any;
      highlighted via IntersectionObserver.
      ═══════════════════════════════════════════════════════════════ -->
 <aside id="side-nav" class="hidden xl:block fixed top-24 left-4 z-30 w-44 bg-[#e6e9ef]/90 border border-[#ccd0da] rounded-xl backdrop-blur-sm p-3">
-  <div class="text-[10px] text-[#6c6f85] uppercase tracking-widest font-bold mb-2 px-2">{lang === 'uk' ? 'Розділи' : 'Sections'}</div>
+  <div class="text-[10px] text-[#6c6f85] uppercase tracking-widest font-bold mb-2 px-2">{t.navSections}</div>
   <ul class="space-y-0.5 text-[11px]">
     {[
-      { id: 'overview', label: lang === 'uk' ? 'Огляд' : 'Overview' },
-      { id: 'geodata', label: lang === 'uk' ? 'Geodata — ланцюг' : 'Geodata — chain' },
-      { id: 'media-framing', label: lang === 'uk' ? 'Медіа-фреймінг' : 'Media framing' },
-      { id: 'academic-framing', label: lang === 'uk' ? 'Академ. публікації' : 'Academic framing' },
-      { id: 'training-corpora', label: lang === 'uk' ? 'Корпуси навчання' : 'Training corpora' },
-      { id: 'llm-audit', label: lang === 'uk' ? 'LLM-аудит' : 'LLM audit' },
-      { id: 'wikipedia', label: lang === 'uk' ? 'Wikipedia/Wikidata' : 'Wikipedia/Wikidata' },
-      { id: 'map-services', label: lang === 'uk' ? 'Картосервіси' : 'Map services' },
-      { id: 'weather', label: lang === 'uk' ? 'Погода' : 'Weather' },
-      { id: 'ip-geolocation', label: lang === 'uk' ? 'IP-геолокація' : 'IP geolocation' },
-      { id: 'infrastructure', label: lang === 'uk' ? 'Техн. інфра' : 'Tech infra' },
-      { id: 'institutions', label: lang === 'uk' ? 'Установи' : 'Institutions' },
-      { id: 'telecom', label: lang === 'uk' ? 'Телеком' : 'Telecom' },
+      { id: 'overview', label: t.navOverview },
+      { id: 'geodata', label: t.navGeodata },
+      { id: 'media-framing', label: t.navMediaFraming },
+      { id: 'academic-framing', label: t.navAcademicFraming },
+      { id: 'training-corpora', label: t.navTrainingCorpora },
+      { id: 'llm-audit', label: t.navLlmAudit },
+      { id: 'wikipedia', label: t.navWikipedia },
+      { id: 'map-services', label: t.navMapServices },
+      { id: 'weather', label: t.navWeather },
+      { id: 'ip-geolocation', label: t.navIpGeolocation },
+      { id: 'infrastructure', label: t.navTechInfra },
+      { id: 'institutions', label: t.navInstitutions },
+      { id: 'telecom', label: t.navTelecom },
     ].map(item => (
       <li>
         <a href={`#${item.id}`} data-side-nav={item.id} class={`block px-2 py-1 rounded text-[#5c5f77] hover:bg-[#ccd0da] hover:text-[#4c4f69] transition ${item.accent || ''}`}>
@@ -477,14 +477,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
 <section id="naming-shift" class="max-w-6xl mx-auto px-6 mb-12 mt-8">
   <div class="bg-[#e6e9ef] border border-[#5c5f77]/40 rounded-2xl p-8 md:p-10">
     <div class="flex items-center gap-3 mb-3">
-      <span class="text-[10px] font-bold text-[#df8e1d] uppercase tracking-widest px-2 py-1 rounded bg-[#df8e1d]/10 border border-[#df8e1d]/30">{lang === 'uk' ? 'Зміна назви' : 'Naming shift'}</span>
-      <span class="text-[10px] text-[#6c6f85]">{lang === 'uk' ? '91 670 наукових статей, 2010–2025' : '91,670 academic papers, 2010–2025'}</span>
+      <span class="text-[10px] font-bold text-[#df8e1d] uppercase tracking-widest px-2 py-1 rounded bg-[#df8e1d]/10 border border-[#df8e1d]/30">{t.namingShiftBadge}</span>
+      <span class="text-[10px] text-[#6c6f85]">{t.namingShiftSubtitle}</span>
     </div>
 
-    <h2 class="text-2xl md:text-3xl font-bold mb-3">{lang === 'uk'
-      ? 'Одне слово стерте — суверенітет переписаний'
-      : 'One word erased — sovereignty rewritten'
-    }</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-3">{t.namingShiftTitle}</h2>
 
     <p class="text-[#5c5f77] mb-2 max-w-4xl">{lang === 'uk'
       ? 'До 2014 року міжнародне академічне середовище використовувало українське конституційне позначення — «Автономна Республіка Крим». Після анексії Росія створила нове позначення — «Республіка Крим», видаливши слово «Автономна». Протягом 12 місяців російське позначення домінувало в 82% нових академічних публікацій. Жодна система DOI, Scopus або Web of Science не позначає різницю.'
@@ -580,10 +577,10 @@ const mediaViolatorsByFilter = mediaViolators as any;
 <section id="geodata" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#d20f39]/30 rounded-2xl p-8 md:p-10">
     <div class="flex items-center gap-3 mb-2">
-      <span class="text-[10px] font-bold text-[#d20f39] uppercase tracking-widest px-2 py-1 rounded bg-[#d20f39]/10 border border-[#d20f39]/30">{lang === 'uk' ? 'Ланцюг розповсюдження' : 'Propagation chain'}</span>
-      <span class="text-[10px] text-[#6c6f85]">{lang === 'uk' ? 'Один файл, ~65 мільйонів завантажень на тиждень' : 'One file, ~65 million weekly downloads'}</span>
+      <span class="text-[10px] font-bold text-[#d20f39] uppercase tracking-widest px-2 py-1 rounded bg-[#d20f39]/10 border border-[#d20f39]/30">{t.geodataBadge}</span>
+      <span class="text-[10px] text-[#6c6f85]">{t.geodataBadgeSub}</span>
     </div>
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Geodata: чому майже кожна цифрова мапа показує Крим як Росію' : 'Geodata: why nearly every digital map shows Crimea as Russia'}</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.geodataSectionTitle}</h2>
     <p class="text-[#5c5f77] mb-2">{lang === 'uk'
       ? 'Natural Earth — фундаментальний геоданий датасет з відкритим вихідним кодом — класифікує Крим як суверенну територію Росії. Те, що Natural Earth НЕ класифікує його так у власному рядку бази даних: ISO 3166-2, FIPS, GeoNames та Yahoo Where-on-Earth усі показують Україну. Контрадикція внутрішня — у тому ж рядку.'
       : "Natural Earth — the foundational open-source geographic dataset — classifies Crimea's sovereignty as Russia. What Natural Earth does NOT do is read its own adjacent fields in the same row: ISO 3166-2, FIPS, GeoNames, and Yahoo Where-on-Earth all say Ukraine. The contradiction is internal."
@@ -1150,7 +1147,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
      ═══════════════════════════════════════════════════════════════ -->
 <section id="training-corpora" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Корпуси навчання LLM — сирі числа' : 'LLM training corpora — raw numbers'}</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.trainingCorporaTitle}</h2>
     <p class="text-[#5c5f77] mb-3">{lang === 'uk'
       ? 'Що відкриті моделі "бачили" в своєму навчальному корпусі для терміна "Crimea". Ми відсканували 7 публічно доступних корпусів — сирі підрахунки без висновків. Висновки про поведінку моделей дивіться в розділі "LLM аудит" нижче — корпуси і поведінка моделі є дві різні речі, і їх треба читати разом.'
       : 'What open-source models "saw" about Crimea in their training data. We scanned 7 publicly accessible corpora — raw counts, no conclusions. DOI-level trace: 95.7% of the 1,581 human-confirmed Russia-framing papers are indexed in Semantic Scholar (S2ORC), which feeds Dolma\'s academic tier — that tier shows 18.5% Russia-framing vs 12.2% in web tier. Conclusions about model output behaviour live in the LLM audit section below; training data and model output are two different things and should be read together.'
@@ -1211,7 +1208,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 <!-- LLM Sovereignty Audit -->
 <section id="llm-audit" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Аудит LLM: суверенітет Криму' : 'LLM Audit: Crimea Sovereignty'}</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.llmAuditTitle}</h2>
     <p class="text-[#5c5f77] mb-3">
       {lang === 'uk'
         ? '18 моделей з 9 лабораторій, детермінований аудит при temperature=0. Дворівнева елісітація: 1850 запитань з вимушеним вибором + 676 відкритих запитань на модель. ~45 500 запитів загалом.'
@@ -1432,7 +1429,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 <!-- Wikipedia & Wikidata -->
 <section id="wikipedia" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Вікіпедія та Wikidata: стирання через пропуск і структурна асиметрія' : 'Wikipedia & Wikidata: erasure by omission and structural asymmetry'}</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.wikipediaTitle}</h2>
     <p class="text-[#5c5f77] mb-3">{lang === 'uk' ? '17 кримських сутностей, перевірених у описах, категоріях, P17 і sitelinks сутностей. Англомовна Вікіпедія мовчить про країну; а під капотом 23 видання мають окрему статтю про російський федеральний суб\'єкт і не мають для української Автономної Республіки.' : '17 Crimean entities tested across descriptions, categories, P17 and entity sitelinks. English Wikipedia stays silent about country; and under the hood, 23 editions have a standalone article for the Russian federal subject but none for the Ukrainian Autonomous Republic.'}</p>
     <div class="text-[10px] text-[#6c6f85] mb-6 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/wikipedia/</span>
@@ -1669,7 +1666,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 <!-- Weather Services — Expanded Section (2026-04 re-verified) -->
 <section id="weather" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Погодні сервіси: здебільшого правильно, але не безкоштовно' : 'Weather services: mostly correct, not for free'}</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.weatherSectionTitle}</h2>
     <p class="text-[#5c5f77] mb-2">{lang === 'uk'
       ? `${wTotal} погодних сервісів перевірено наживо через чотири сигнали в порядку спадання авторитетності: URL-шлях, тег <title>, хлібні крихти, і часовий пояс, з основною істиною від GeoNames. «Правильно» — це не одна категорія; структурно-правильне ми відрізняємо від видимо-правильного.`
       : `${wTotal} weather services live-verified across four signals in decreasing order of authority: URL path, <title> tag, breadcrumb, and timezone reference — with ground truth from GeoNames. "Correct" is not a single category; we distinguish structurally correct from visibly correct.`
@@ -1868,7 +1865,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 <!-- IP Geolocation -->
 <section id="ip-geolocation" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'IP-геолокація: де інтернет думає Крим?' : 'IP geolocation: where does the internet think Crimea is?'}</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.ipSectionTitle}</h2>
     <p class="text-[#5c5f77] mb-3">{lang === 'uk'
       ? `Свіжі живі дані: ${ipTotalIpsFresh} IP-адрес × ${ipTotalAsnsFresh} ASN × ${ipTotalLookupsFresh} запитів. ${ipPctUaFresh}% розв'язуються як Україна, ${ipPctRuFresh}% як Росія, ${ipPctOtherFresh}% як треті країни (Німеччина, Польща, Кувейт, Велика Британія — наслідок реєстрового відмивання, документованого в розділі telecom).`
       : `Fresh live data: ${ipTotalIpsFresh} IP addresses across ${ipTotalAsnsFresh} ASNs, ${ipTotalLookupsFresh} total lookups via ip-api.com + ipinfo.io cross-validation. ${ipPctUaFresh}% resolve as Ukraine, ${ipPctRuFresh}% as Russia, ${ipPctOtherFresh}% as third countries (Germany, Poland, Kuwait, the UK — the consequence of registry laundering documented in the telecom section). Per-ASN consensus: ${ipAsnConsensusUaFresh} UA-dominant, ${ipAsnConsensusRuFresh} RU-dominant.`
@@ -2106,7 +2103,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 <!-- Institutional Registries & Legislation (reads pipelines/institutions/data/manifest.json) -->
 <section id="institutions" class="max-w-6xl mx-auto px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{lang === 'uk' ? 'Інституційні реєстри та законодавство: там, де закон одностайний' : 'Institutional registries & legislation: where the law is unanimous'}</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.institutionsTitle}</h2>
     <p class="text-[#5c5f77] mb-2">{lang === 'uk'
       ? `10 авторитетних систем перевірено через три інституційні рівні — законодавство і санкції, бібліотечні каталоги, реєстри дослідницьких організацій. Базова правова лінія щодо Криму одностайна: жодного гепу регулювання у самому законі, геп існує нижче по течії в технічній інфраструктурі, яка ігнорує правильні класифікації.`
       : `10 authoritative systems probed across three institutional layers — legislation & sanctions, library catalogs, research-organization registries. The legal baseline on Crimea is unanimous: there is no regulation gap in the law itself. The gap exists downstream in technical infrastructure that ignores the correct classifications.`
