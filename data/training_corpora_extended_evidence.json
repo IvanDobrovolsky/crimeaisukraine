@@ -1,0 +1,287 @@
+{
+  "date": "2026-04-11",
+  "purpose": "Extended evidence of Russian sovereignty narratives in LLM training data, beyond initial 5-corpus scan",
+  "methodology": "HuggingFace datasets-server API search + academic literature review + web intelligence",
+
+  "source_1_c4_en_api_search": {
+    "dataset": "allenai/c4",
+    "config": "en",
+    "api_endpoint": "https://datasets-server.huggingface.co/search?dataset=allenai/c4&config=en&split=train",
+    "queries_run": [
+      "Crimea Republic Russia",
+      "Simferopol Russia",
+      "Sevastopol Russia Crimea",
+      "Crimean peninsula Russia federal subject",
+      "Crimea reunification Russia referendum",
+      "Crimea Russia territory belongs",
+      "Crimea Russian territory since 2014",
+      "Crimea part of Russia international",
+      "Crimea Russia sputnik RT news",
+      "Crimea Russia tourist travel visit",
+      "Crimea bridge Russia Kerch",
+      "Crimea occupation illegal annexation Ukraine"
+    ],
+    "findings": {
+      "russian_sovereignty_narratives": [
+        {
+          "quote": "Republic of Crimea is a federal subject of Russia that is located on the Crimean Peninsula.",
+          "source_type": "webcam/tourism site",
+          "framing": "presents_as_fact"
+        },
+        {
+          "quote": "Crimea reunited with Russia in March of 2014, when over 96 percent of Crimean residents voted in favor.",
+          "source_type": "RT (Russia Today)",
+          "framing": "reunification_narrative"
+        },
+        {
+          "quote": "The territory is now administered by Russia as two federal subjects - the Republic of Crimea and the city of Sebastopole.",
+          "source_type": "informational",
+          "framing": "administrative_fact"
+        },
+        {
+          "quote": "Crimea rejoined Russia in 2014 when about 97% of its citizens voted in favor of reunification in a referendum.",
+          "source_type": "Sputnik News",
+          "framing": "reunification_narrative"
+        },
+        {
+          "quote": "Everyone said that they preferred to be independent from Ukraine and join the great state of Russia. It was the mood and the feeling of the people. Nobody obliged them to vote for secession.",
+          "source_type": "Sputnik News",
+          "framing": "voluntary_choice_narrative"
+        },
+        {
+          "quote": "Crimea has always been an integral part of Russia.",
+          "source_type": "Putin speech March 16 2014",
+          "framing": "historical_claim"
+        },
+        {
+          "quote": "Sevastopol has always been part of Russia",
+          "source_type": "Putin statement",
+          "framing": "historical_claim"
+        },
+        {
+          "quote": "Russia annexed Crimea in order to save the population of this Ukrainian peninsula from the threat of a civil war",
+          "source_type": "pro-Russian commentary",
+          "framing": "humanitarian_intervention"
+        },
+        {
+          "quote": "Crimea's status of a Russian territory is fait accompli",
+          "source_type": "German politician quote",
+          "framing": "acceptance_narrative"
+        }
+      ],
+      "russian_state_media_in_c4": {
+        "sputnik_documents_found": "7+",
+        "rt_documents_found": "multiple",
+        "note": "Russian state media content (Sputnik, RT) is present in C4 English split, carrying pro-Russian Crimea framing"
+      },
+      "simferopol_country_attribution": {
+        "as_russia": [
+          "Panoramic webcam in Koktebel: live from Crimea, Russia",
+          "Live webcams in the Republic of Crimea [described as] a federal subject of Russia",
+          "Feodosia webcam: live from the Crimean peninsula, Russia"
+        ],
+        "as_ukraine": [
+          "97546, Ukraine, AR Crimea",
+          "Ukraine (Crimea) - visa requirements context"
+        ]
+      },
+      "sevastopol_country_attribution": {
+        "as_russia": [
+          "the Russian city of Sevastopol in Russian-occupied Crimea",
+          "Sevastopol as part of the Republic of Crimea (Russian federal territory)"
+        ],
+        "as_ukraine": [
+          "Ukrainian city of Sevastopol (pre-2014 context)",
+          "the main military port of Crimea listed among Ukraine's administrative divisions"
+        ]
+      },
+      "tourism_normalizing_russian_sovereignty": [
+        "Crimean peninsula described as Russian tourist destination",
+        "Republic of Crimea - live webcams (as Russian territory)",
+        "Crimean resorts popular among Russian vacationers post-2014"
+      ],
+      "kerch_bridge_normalization": {
+        "finding": "Content describes the bridge as infrastructure connecting 'Russian-annexed Crimea' to mainland Russia, some sources treat the connection as normalized"
+      }
+    }
+  },
+
+  "source_2_common_crawl_composition": {
+    "url": "https://commoncrawl.github.io/cc-crawl-statistics/plots/languages.html",
+    "crawl": "CC-MAIN-2026-12",
+    "key_statistics": {
+      "english_pct": 41.06,
+      "russian_pct": 6.49,
+      "russian_rank": 3,
+      "note": "Russian is the 3rd largest language in Common Crawl at 6.49%, meaning substantial Russian-language content (including Russian sovereignty narratives about Crimea) enters all Common Crawl-derived training datasets"
+    },
+    "source_domain_bias": {
+      "finding": "Common Crawl prioritizes pages on domains that are frequently linked to (harmonic centrality). This popularity bias means high-traffic Russian state media domains (RT, Sputnik) are likely well-represented.",
+      "source": "Mozilla Foundation Common Crawl report"
+    }
+  },
+
+  "source_3_pravda_network_llm_grooming": {
+    "description": "Russian state-backed disinformation network deliberately contaminating AI training data",
+    "scale": {
+      "articles": "3.7 million total, 3.6 million in 2024 alone",
+      "domains": "150+ fake local news sites",
+      "languages": "46-49 languages",
+      "false_narratives": "207+ provably false claims",
+      "articles_per_narrative": "~18,000 average"
+    },
+    "mechanism": "Scrapes content from RT, Sputnik, RIA Novosti -> translates into dozens of languages -> republishes across hundreds of fake sites -> seeds into Common Crawl and Wikidata -> incorporated into LLM training corpora",
+    "term": "LLM grooming",
+    "crimea_connection": "Network created by TigerWeb, owned by Yevgeny Shevchenko, a Crimean-born web developer who previously worked for Krymtechnologii, which built websites for the Russian-backed Crimean government",
+    "ai_impact": {
+      "chatbots_tested": ["ChatGPT-4o", "Claude", "Meta AI", "Gemini", "Copilot", "Perplexity"],
+      "false_narrative_repetition_rate": "33.55%",
+      "ignored_rate": "18.22%",
+      "refuted_rate": "48.22%"
+    },
+    "sources": [
+      "https://www.newsguardrealitycheck.com/p/a-well-funded-moscow-based-global",
+      "https://meduza.io/en/feature/2025/03/07/russian-disinformation-network-flooded-training-data-to-manipulate-western-ai-chatbots-study-finds",
+      "https://securingdemocracy.gmfus.org/incident/russia-exploits-ai-training-data-to-spread-propaganda-via-chatbots/",
+      "https://erkansaka.net/2025/12/24/ai-and-international-relations-how-authoritarian-powers-weaponize-data-to-control-the-future-of-knowledge/"
+    ]
+  },
+
+  "source_4_academic_papers": {
+    "borderlines_naacl_2024": {
+      "title": "This Land is {Your, My} Land: Evaluating Geopolitical Biases in Language Models through Territorial Disputes",
+      "authors": "Bryan Li, Samar Haider, Chris Callison-Burch",
+      "venue": "NAACL 2024",
+      "url": "https://aclanthology.org/2024.naacl-long.213/",
+      "dataset": "BorderLines - 251 territories, 726 questions, 49 languages",
+      "crimea_findings": {
+        "gpt4_russian_query": "answers 'Russia' but notes international non-recognition",
+        "gpt4_ukrainian_query": "answers 'Ukraine' and mentions illegality of annexation",
+        "un_peacekeeper_persona": "both languages answer 'Ukraine'",
+        "nationalist_persona_ru": "answers 'Russia'",
+        "nationalist_persona_uk": "answers 'Ukraine'",
+        "demographic_reasoning_flip": "In ru answers 'Ukraine', in uk answers 'Russia' - opposite of vanilla",
+        "key_quote": "For demographic reasoning, interestingly, we see a flip: the model responds 'Ukraine' in ru and 'Russia' in uk."
+      },
+      "models_tested": ["GPT-4", "GPT-3 Curie", "GPT-3 DaVinci", "BLOOM 560M", "BLOOM 7.1B", "BLOOMZ variants"],
+      "training_data_note": "Larger base models underperformed on territorial knowledge, possibly also internalized more conflicting multilingual information"
+    },
+    "sovereign_llms_jorit_2025": {
+      "title": "Geopolitical Bias in Sovereign Large Language Models: A Comparative Mixed-Methods Study",
+      "venue": "JORIT 2025",
+      "url": "https://www.acadlore.com/article/JORIT/2025_4_2/jorit.v4.2(8).04",
+      "models": ["GPT-4o (USA)", "DeepSeek-R1 (China)", "Mistral (EU)"],
+      "disputes_covered": "12 territorial disputes including Russia-Ukraine (Crimea & Donbas)",
+      "queries_per_territory": 25,
+      "total_queries": 300,
+      "key_finding": "Model provenance substantially shapes tone and stance of outputs, with each LLM reflecting distinct biases aligned with its national context",
+      "training_data_mechanism": "Sovereign LLMs are trained on deliberately curated datasets that mirror national information ecosystems, incorporating government publications, state-mediated content, and culturally contextualized corpora"
+    },
+    "dual_layered_acl_2025": {
+      "title": "A Dual-Layered Evaluation of Geopolitical and Cultural Bias in LLMs",
+      "venue": "ACL 2025 SRW",
+      "url": "https://aclanthology.org/2025.acl-srw.38/",
+      "key_finding": "inference bias dominates factual QA (language drives answer variation), while model bias is stronger in political disputes (LLMs align with national perspectives)",
+      "crimea_mentioned": false,
+      "relevant_quote": "factual questions tend to elicit language-adapted responses grounded in shared knowledge, whereas politically sensitive topics activate culturally embedded patterns from model training"
+    },
+    "airi_geopolitical_2025": {
+      "title": "Geopolitical biases in LLMs: what are the good and the bad countries",
+      "url": "https://arxiv.org/html/2506.06751v1",
+      "models_tested": ["GPT-4o-mini", "Qwen2.5 72B", "Llama-4-Maverick", "GigaChat-Max"],
+      "key_findings": [
+        "Even Chinese and Russian models favor American narratives",
+        "Simple prompts dramatically shift bias: 'Chinese Patriot' instruction reversed GPT-4o-mini from 78.6% USA to 7.1% USA",
+        "Standard debiasing instructions produced negligible results",
+        "Wikipedia sources carry Western-centric perspectives that marginalize non-Western viewpoints"
+      ]
+    },
+    "revisionist_future_2025": {
+      "title": "Revisionist future: Russia's assault on large language models, the distortion of collective memory, and the politics of eternity",
+      "authors": "Huw Dylan, Elena Grossfeld",
+      "venue": "SAGE journal 2025",
+      "url": "https://journals.sagepub.com/doi/10.1177/29768640251377941",
+      "key_finding": "The vulnerability of LLMs provides Putin and other authoritarians an opportunity to embed their preferred narratives in an increasingly manipulated digital social memory, and in so doing to perpetuate their brand of eternity politics",
+      "mechanism": "strategically contaminating ongoing or future training data with the objective that future outputs are shaped favourably to the groomer",
+      "evidence": "Russian intelligence is targeting AI infrastructures, operations exposed by Atlantic Council DFRL, CheckFirst, and French Viginum"
+    },
+    "pretraining_bias_pipeline_acl_2023": {
+      "title": "From Pretraining Data to Language Models to Downstream Tasks: Tracking the Trails of Political Biases Leading to Unfair NLP Models",
+      "venue": "ACL 2023",
+      "url": "https://aclanthology.org/2023.acl-long.656/",
+      "relevance": "Establishes causal chain from pretraining data political biases to downstream model behavior"
+    }
+  },
+
+  "source_5_roots_bloom": {
+    "corpus": "ROOTS (1.6TB, 59 languages)",
+    "model": "BLOOM (176B parameters)",
+    "search_tool_status": "OFFLINE - ROOTS search tool at huggingface.co/spaces/bigscience-data/roots-search returns 401 Unauthorized",
+    "geographic_bias": "1321.89 GB for Eurasia, 18GB for Papunesia (Indonesian only), 0.4GB for Africa",
+    "bloom_territorial_performance": "Instruction fine-tuned BLOOMZ models underperform their BLOOM counterparts on territorial disputes: knowledge-based consistency scores 49.7 < 61.5 (560M) and 50.3 < 58.4 (7.1B)",
+    "data_quality": "corpus contains fake news or conspiracy theories from web crawls",
+    "sources": [
+      "https://openreview.net/forum?id=UoEw6KigkUn",
+      "https://aclanthology.org/2023.acl-demo.29/"
+    ]
+  },
+
+  "source_6_natural_earth_pipeline": {
+    "url": "https://www.andrewheiss.com/blog/2025/02/13/natural-earth-crimea/",
+    "finding": "Natural Earth shows Crimea as part of Russia by default (de facto policy). Russia's MULTIPOLYGON contains Crimea as one of 14 polygon shapes.",
+    "pipeline_implication": "Any geospatial LLM pipeline using Natural Earth shapefiles inherits Russian sovereignty framing for Crimea",
+    "fix_required": "Manual polygon extraction and reassignment needed (documented in R by Andrew Heiss)",
+    "github_issue": "https://github.com/nvkelso/natural-earth-vector/issues/391"
+  },
+
+  "source_7_wikipedia_edit_war": {
+    "url": "https://abcnews.go.com/International/crimea-war-words-wikipedia/story?id=22970582",
+    "finding": "Wikipedia Crimea article edited 500+ times in March 2014 alone, reaching 360,000 page views daily",
+    "description_changes": "Shifted from 'autonomous parliamentary republic within Ukraine' to 'Nationality of Crimea is disputed'. Separate 'Republic of Crimea' article created.",
+    "training_data_implication": "Wikipedia snapshots used in training data (ROOTS, Dolma, The Pile all include Wikipedia) capture different sovereignty framings depending on snapshot date",
+    "talk_page_debates": ["Should we change the name to Republic of Crimea yet?", "Isn't the name Russian propaganda"]
+  },
+
+  "source_8_pile_status": {
+    "url": "https://pile.eleuther.ai/",
+    "status": "Original site taken down by 2024, available from file sharing services",
+    "search_capability": "No search API. pile-explorer (GitHub) is a local Python analysis tool, not a web search interface",
+    "component_datasets": "22 smaller high-quality datasets combined",
+    "note": "Cannot search for Crimea content without downloading full 825GiB dataset"
+  },
+
+  "source_9_refinedweb_falcon": {
+    "dataset": "tiiuae/falcon-refinedweb",
+    "size": "5 trillion tokens from Common Crawl, 600B publicly released",
+    "search_status": "HuggingFace datasets-server returned 500 error for search queries",
+    "bias_note": "toxic or biased data is prevalent on the internet, likely the dataset contains such content",
+    "filtering": "URL blocklist for adult content, trafilatura extraction, fastText language ID, MassiveWeb heuristics - no geopolitical content filtering documented"
+  },
+
+  "source_10_huggingface_crimea_datasets": {
+    "url": "https://huggingface.co/api/datasets?search=crimea",
+    "datasets_found": [
+      {
+        "id": "jafarisbarov/CrimeanTatarMMLU",
+        "description": "Language understanding benchmark for Crimean Tatar (moved to TUMLU-mini)"
+      },
+      {
+        "id": "gaydmi/CrimeanTatarMMLU-fork",
+        "description": "Crimean Tatar-exams, part of TUMLU benchmark for Turkic languages"
+      }
+    ],
+    "note": "No Crimea sovereignty-specific datasets found on HuggingFace"
+  },
+
+  "key_new_evidence_summary": {
+    "1_russian_state_media_in_c4": "RT and Sputnik content confirmed present in C4 English split, carrying 'reunification' framing for Crimea",
+    "2_pravda_network": "3.7M articles across 150 domains in 46 languages deliberately targeting Common Crawl for LLM grooming; 33.55% false narrative repetition rate across major chatbots",
+    "3_common_crawl_russian_6pct": "Russian is 3rd largest language at 6.49% of Common Crawl, ensuring significant Russian-perspective content enters all CC-derived corpora",
+    "4_borderlines_crimea_proof": "GPT-4 answers 'Russia' for Crimea when queried in Russian, 'Ukraine' when queried in Ukrainian - direct evidence of language-dependent sovereignty framing",
+    "5_sovereign_llm_bias": "Model provenance shapes territorial dispute outputs - GPT, DeepSeek, Mistral all produce different Crimea framings aligned with national context",
+    "6_bloom_regression": "Instruction fine-tuning WORSENS territorial dispute accuracy in BLOOM models (BLOOMZ < BLOOM on consistency scores)",
+    "7_natural_earth_geospatial": "Crimea coded as Russian polygon in Natural Earth shapefiles, contaminating any geospatial AI pipeline",
+    "8_wikipedia_snapshot_lottery": "Wikipedia Crimea article underwent 500+ edits in March 2014; training data snapshot date determines which sovereignty framing models learn",
+    "9_deliberate_contamination": "Academic paper (Dylan & Grossfeld 2025) documents Russia's strategic 'LLM grooming' to embed preferred narratives in AI collective memory"
+  }
+}
