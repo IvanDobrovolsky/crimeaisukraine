@@ -1,16 +1,18 @@
 {
   "scan": "wikidata_religious_institutions",
-  "date": "2026-04-12T05:04:37.044598+00:00",
-  "total_institutions": 7,
+  "date": "2026-04-12T05:12:34.067448+00:00",
+  "total_institutions": 12,
   "country_counts": {
-    "Russia": 7
+    "Russia": 11,
+    "missing": 1
   },
   "diocese_affiliation_counts": {
-    "other/unknown": 5,
-    "none": 2
+    "other/unknown": 6,
+    "none": 6
   },
   "religion_counts": {
-    "unspecified": 7
+    "unspecified": 11,
+    "Eastern Orthodoxy": 1
   },
   "institutions": [
     {
@@ -96,6 +98,66 @@
       "diocese_affiliation": "none",
       "religion_qid": "",
       "religion_label": ""
+    },
+    {
+      "qid": "Q109448056",
+      "label": "Ay-Konstant",
+      "type": "",
+      "country_qid": "Q159",
+      "country": "Russia",
+      "diocese_qid": "",
+      "diocese_label": "",
+      "diocese_affiliation": "none",
+      "religion_qid": "",
+      "religion_label": ""
+    },
+    {
+      "qid": "Q111534187",
+      "label": "Northern Monastery",
+      "type": "",
+      "country_qid": "Q159",
+      "country": "Russia",
+      "diocese_qid": "",
+      "diocese_label": "",
+      "diocese_affiliation": "none",
+      "religion_qid": "",
+      "religion_label": ""
+    },
+    {
+      "qid": "Q111571039",
+      "label": "Southeastern Monastery",
+      "type": "",
+      "country_qid": "Q159",
+      "country": "Russia",
+      "diocese_qid": "",
+      "diocese_label": "",
+      "diocese_affiliation": "none",
+      "religion_qid": "",
+      "religion_label": ""
+    },
+    {
+      "qid": "Q12151107",
+      "label": "Saint George Monastery (Balaklava)",
+      "type": "",
+      "country_qid": "Q159",
+      "country": "Russia",
+      "diocese_qid": "Q4419900",
+      "diocese_label": "Simferopol-Crimea Eparchy",
+      "diocese_affiliation": "other/unknown",
+      "religion_qid": "",
+      "religion_label": ""
+    },
+    {
+      "qid": "Q137585248",
+      "label": "Свято-Владимирский Херсонесский монастырь",
+      "type": "",
+      "country_qid": "",
+      "country": "missing",
+      "diocese_qid": "",
+      "diocese_label": "",
+      "diocese_affiliation": "none",
+      "religion_qid": "Q3333484",
+      "religion_label": "Eastern Orthodoxy"
     }
   ],
   "organizations": []
