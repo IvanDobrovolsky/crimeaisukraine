@@ -9,13 +9,14 @@
 
   <rect width="1200" height="630" fill="url(#bg)"/>
 
-  <!-- Ukraine flag top bar -->
-  <rect x="0" y="0" width="1200" height="6" fill="#0057b7"/>
-  <rect x="0" y="6" width="1200" height="6" fill="#ffd700"/>
+  <!-- Crimean flag top bar (blue/white/red) -->
+  <rect x="0" y="0" width="1200" height="4" fill="#0068B7"/>
+  <rect x="0" y="4" width="1200" height="4" fill="#FFFFFF"/>
+  <rect x="0" y="8" width="1200" height="4" fill="#D52B1E"/>
 
   <!-- Title -->
-  <text x="80" y="180" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="72" fill="#0057b7">Crimea Is</text>
-  <text x="80" y="270" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="72" fill="#ffd700">Ukraine</text>
+  <text x="80" y="180" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="72" fill="#0068B7">Crimea Is</text>
+  <text x="80" y="270" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="72" fill="#FFFFFF">Ukraine</text>
 
   <!-- Subtitle -->
   <text x="80" y="330" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="24" fill="#94a3b8">Automated Digital Sovereignty Audit</text>
@@ -43,7 +44,8 @@
   <text x="80" y="550" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="18" fill="#64748b">crimeaisukraine.org</text>
   <text x="1120" y="550" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="16" fill="#64748b" text-anchor="end">Ivan Dobrovolskyi</text>
 
-  <!-- Bottom flag bar -->
-  <rect x="0" y="618" width="1200" height="6" fill="#0057b7"/>
-  <rect x="0" y="624" width="1200" height="6" fill="#ffd700"/>
+  <!-- Crimean flag bottom bar (blue/white/red) -->
+  <rect x="0" y="618" width="1200" height="4" fill="#0068B7"/>
+  <rect x="0" y="622" width="1200" height="4" fill="#FFFFFF"/>
+  <rect x="0" y="626" width="1200" height="4" fill="#D52B1E"/>
 </svg>

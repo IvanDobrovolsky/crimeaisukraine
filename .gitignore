@@ -31,6 +31,9 @@ data/geolite2/
 .DS_Store
 Thumbs.db
 
+# HuggingFace export (generated via scripts/export_hf_parquet.py, pushed via scripts/push_hf.sh)
+hf_export/
+
 # Claude
 .claude
 CLAUDE.md

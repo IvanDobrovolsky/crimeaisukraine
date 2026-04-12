@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="16" fill="#0057b7"/>
-  <rect y="16" width="32" height="16" fill="#ffd700"/>
+  <!-- Crimean flag: blue/white/red, ratio 1:6:1 -->
+  <rect width="32" height="4" fill="#0068B7"/>
+  <rect y="4" width="32" height="24" fill="#FFFFFF"/>
+  <rect y="28" width="32" height="4" fill="#D52B1E"/>
 </svg>

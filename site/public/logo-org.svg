@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Crimean flag colors matched from reference image -->
+    <!-- Blue: #0068B7, White: #FFFFFF, Red: #D52B1E -->
+    <!-- Stripe ratio 1:6:1 -->
+  </defs>
+
+  <!-- Background: dark, matching site theme -->
+  <rect width="512" height="512" rx="64" fill="#0a0e1a"/>
+
+  <!-- Crimean flag as a shield shape, centered -->
+  <clipPath id="shield">
+    <path d="M256 72 C160 72 96 100 96 100 L96 296 C96 376 172 432 256 456 C340 432 416 376 416 296 L416 100 C416 100 352 72 256 72Z"/>
+  </clipPath>
+
+  <g clip-path="url(#shield)">
+    <!-- Blue stripe (1/8 of shield height ≈ top portion) -->
+    <rect x="96" y="72" width="320" height="48" fill="#0068B7"/>
+    <!-- White stripe (6/8 of shield height ≈ middle) -->
+    <rect x="96" y="120" width="320" height="288" fill="#FFFFFF"/>
+    <!-- Red stripe (1/8 of shield height ≈ bottom portion) -->
+    <rect x="96" y="408" width="320" height="48" fill="#D52B1E"/>
+  </g>
+
+  <!-- Shield outline -->
+  <path d="M256 72 C160 72 96 100 96 100 L96 296 C96 376 172 432 256 456 C340 432 416 376 416 296 L416 100 C416 100 352 72 256 72Z"
+        fill="none" stroke="#0a0e1a" stroke-width="6"/>
+
+  <!-- Ukraine trident (tryzub) simplified silhouette, centered in shield -->
+  <g transform="translate(256, 250) scale(0.55)" fill="#0068B7" opacity="0.12">
+    <path d="M0-120 L-8-100 L-8-40 L-24-60 L-32-40 L-32 20 C-32 60-16 80 0 100 C16 80 32 60 32 20 L32-40 L24-60 L8-40 L8-100 Z
+             M-16-80 L-16-20 L-24-35 L-24 15 C-24 45-12 65 0 80 C12 65 24 45 24 15 L24-35 L16-20 L16-80 Z"/>
+  </g>
+
+  <!-- "crimea is ukraine" text arc at bottom -->
+  <text x="256" y="496" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="700" font-size="28" letter-spacing="4" fill="#94a3b8">CRIMEA IS UKRAINE</text>
+</svg>

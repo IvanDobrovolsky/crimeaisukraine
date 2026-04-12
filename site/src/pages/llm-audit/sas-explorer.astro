@@ -48,7 +48,7 @@ const jsonPayload = JSON.stringify(rows);
 
 <Layout title="SAS Explorer — Crimea Sovereignty Audit" lang="en">
   <main class="max-w-6xl mx-auto px-6 py-12">
-    <div class="mb-2"><a href="/#llm-audit" class="text-[#0057b7] hover:underline text-sm">← Back to LLM audit</a></div>
+    <div class="mb-2"><a href="/#llm-audit" class="text-[#0068B7] hover:underline text-sm">← Back to LLM audit</a></div>
 
     <h1 class="text-3xl md:text-4xl font-bold text-[#4c4f69] mb-2">SAS weight explorer</h1>
     <p class="text-[#5c5f77] max-w-3xl mb-6">
@@ -77,7 +77,7 @@ const jsonPayload = JSON.stringify(rows);
       Each model was audited at <span class="font-mono text-[#4c4f69]">temperature=0</span> with
       <span class="font-mono text-[#4c4f69]">seed=42</span> on 1,850 forced-choice queries + 676 open-ended queries across 50 languages and 12 cities.
       D̄ / L̄ / Ī pool across all 50 forced-tier languages; R̄ pools across 13 free-recall languages.
-      Source data: <a class="text-[#0057b7] hover:underline" href="https://github.com/IvanDobrovolsky/crimeaisukraine/blob/main/data/sas_scores.json">data/sas_scores.json</a>,
+      Source data: <a class="text-[#0068B7] hover:underline" href="https://github.com/IvanDobrovolsky/crimeaisukraine/blob/main/data/sas_scores.json">data/sas_scores.json</a>,
       regenerable via <span class="font-mono text-[#4c4f69]">python3 scripts/compute_sas.py</span>.
       Generated <span class="font-mono">{generatedAt.slice(0, 16).replace('T', ' ')}</span>.
     </div>
@@ -234,7 +234,7 @@ const jsonPayload = JSON.stringify(rows);
         It puts 50% of the total weight on the legal-normative tier — the tier that most directly tests alignment with the international-law framework (UN GA Resolution 68/262). A model that answers "Did Russia illegally annex Crimea?" correctly has demonstrably absorbed the normative consensus; a model that fails there cannot be rescued by correct answers on behavioural tiers. The Spearman ρ between Legal-heavy and the alternative Monotonic 1:2:3:4 scheme is <strong class="text-[#40a02b]">0.985</strong> — the two competing theoretical arguments (legal-normative primacy vs RLHF-patchability) converge on almost identical rankings, which is the strongest possible robustness statement.
       </p>
       <p>
-        <strong class="text-[#1e1e2e]">Try to break the top 5.</strong> We could not find any sane weight scheme in which Gemini 2.5 Pro, Claude Opus 4.6, or GPT-5.4 drops out of the top 5. If you find one, <a href="https://github.com/IvanDobrovolsky/crimeaisukraine/issues/new" class="text-[#0057b7] hover:underline">open an issue</a> with the URL of your weight configuration (the URL hash encodes the slider state) and we will add it to the known-counterexamples list.
+        <strong class="text-[#1e1e2e]">Try to break the top 5.</strong> We could not find any sane weight scheme in which Gemini 2.5 Pro, Claude Opus 4.6, or GPT-5.4 drops out of the top 5. If you find one, <a href="https://github.com/IvanDobrovolsky/crimeaisukraine/issues/new" class="text-[#0068B7] hover:underline">open an issue</a> with the URL of your weight configuration (the URL hash encodes the slider state) and we will add it to the known-counterexamples list.
       </p>
     </div>
   </main>
@@ -315,7 +315,7 @@ const jsonPayload = JSON.stringify(rows);
         nameWrap.className = 'flex items-center gap-2 min-w-0';
         const nameEl = document.createElement('a');
         nameEl.href = '/llm-audit/' + r.id;
-        nameEl.className = 'text-xs md:text-sm text-[#0057b7] hover:underline truncate font-medium';
+        nameEl.className = 'text-xs md:text-sm text-[#0068B7] hover:underline truncate font-medium';
         nameEl.textContent = r.name;
         const orgEl = document.createElement('span');
         orgEl.className = 'text-[10px] text-[#6c6f85] hidden md:inline';
@@ -547,7 +547,7 @@ const jsonPayload = JSON.stringify(rows);
             {
               x: 0.28, y: 0.82, xref: 'x', yref: 'y', showarrow: false,
               text: '<b>cached hedging</b><br><span style="font-size:9px">free > forced</span>',
-              font: { color: '#0057b7', size: 11 }, opacity: 0.85, align: 'center',
+              font: { color: '#0068B7', size: 11 }, opacity: 0.85, align: 'center',
             },
             {
               x: 0.93, y: 0.91, xref: 'x', yref: 'y', showarrow: false,

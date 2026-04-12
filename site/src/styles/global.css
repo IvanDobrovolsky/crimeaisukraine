@@ -2,9 +2,12 @@
 
 @layer base {
   :root {
-    /* Catpuccin Latte palette — publication-quality light theme */
-    --ua-blue: #0057b7;
-    --ua-yellow: #df8e1d;
+    /* Crimean flag palette — blue/white/red (ARC flag, ratio 1:6:1) */
+    --crimea-blue: #0068B7;
+    --crimea-white: #FFFFFF;
+    --crimea-red: #D52B1E;
+    --ua-blue: #0068B7;
+    --ua-yellow: #D52B1E;
     --bg-base: #eff1f5;
     --bg-mantle: #e6e9ef;
     --bg-crust: #dce0e8;
