@@ -1,0 +1,288 @@
+{
+  "pipeline": "religious",
+  "version": "1.0",
+  "generated": "2026-04-11T00:00:00+00:00",
+  "method": "curated_research",
+  "summary": {
+    "total_actors": 6,
+    "actors_legitimizing_russian_sovereignty": 3,
+    "actors_challenging_russian_sovereignty": 1,
+    "actors_silent_on_crimea": 2,
+    "ocu_parishes_2014": 46,
+    "ocu_parishes_2024": 0,
+    "crimean_dioceses_annexed_by_roc": 3,
+    "schism_year": 2018,
+    "wcc_expulsion_defeated": true,
+    "havana_declaration_mentions_crimea": false,
+    "chersonesos_area_destroyed_m2": 85000,
+    "chersonesos_artifacts_removed": 4000000,
+    "unesco_inscription_year": 2013,
+    "new_chersonesos_opened": "2024-07"
+  },
+  "findings": [
+    {
+      "id": 1,
+      "actor": "Moscow Patriarchate (ROC)",
+      "category": "ecclesiastical_annexation",
+      "status": "incorrect",
+      "status_icon": "\u274c",
+      "detail": "In June 2022, the ROC Holy Synod unilaterally transferred the Dzhankoy, Simferopol, and Feodosiya dioceses from the Ukrainian Orthodox Church to a newly created 'Metropolitanate of Crimea' under direct Moscow jurisdiction. The UOC has never recognized this transfer. In October 2023, the ROC appointed Putin's spiritual adviser Tikhon (Shevkunov) as Metropolitan of Crimea. The ROC treats Crimea as canonically Russian territory.",
+      "date": "2022-06-07",
+      "sources": [
+        {
+          "title": "HRWF: ROC Annexes Ukrainian Dioceses",
+          "url": "https://hrwf.eu/ukraine-the-russian-orthodox-church-annexes-dioceses-of-the-ukrainian-orthodox-church-in-occupied-territories/"
+        },
+        {
+          "title": "Religion News: Putin's Spiritual Adviser Appointed Metropolitan of Crimea",
+          "url": "https://religionnews.com/2023/10/16/russian-orthodox-church-appoints-putins-spiritual-advisor-metropolitan-of-crimea/"
+        },
+        {
+          "title": "ECFR: Russia, Ukraine, and the Orthodox Church",
+          "url": "https://ecfr.eu/article/russia-ukraine-and-the-orthodox-church-where-religion-meets-geopolitics-and-war/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "actor": "Ecumenical Patriarchate of Constantinople",
+      "category": "autocephaly_schism",
+      "status": "correct",
+      "status_icon": "\u2705",
+      "detail": "The Ecumenical Patriarchate granted autocephaly (independence) to the Orthodox Church of Ukraine on 5 January 2019, recognizing Ukraine's right to an independent church. Moscow broke communion with Constantinople on 15 October 2018 in response -- the largest Orthodox schism since 1054. The break directly challenged Moscow's claim to canonical jurisdiction over Ukrainian (including Crimean) territory.",
+      "date": "2019-01-05",
+      "sources": [
+        {
+          "title": "Wikipedia: 2018 Moscow-Constantinople Schism",
+          "url": "https://en.wikipedia.org/wiki/2018_Moscow%E2%80%93Constantinople_schism"
+        },
+        {
+          "title": "Wikipedia: Autocephaly of the Orthodox Church of Ukraine",
+          "url": "https://en.wikipedia.org/wiki/Autocephaly_of_the_Orthodox_Church_of_Ukraine"
+        },
+        {
+          "title": "ECFR: Defender of the Faith",
+          "url": "https://ecfr.eu/publication/defender_of_the_faith_how_ukraines_orthodox_split_threatens_russia/"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "actor": "World Council of Churches (WCC)",
+      "category": "institutional_silence",
+      "status": "ambiguous",
+      "status_icon": "\u26a0\ufe0f",
+      "detail": "The ROC is the WCC's single largest member church (~100 million adherents). At the 11th Assembly in Karlsruhe (August-September 2022), a proposal to expel the ROC was unanimously defeated. The Assembly's final statement condemned Russia's invasion as 'illegal and unjustifiable' but did not single out Patriarch Kirill by name and has never specifically addressed Crimea's sovereignty. WCC General Secretary Ioan Sauca stated: 'The WCC is a free space for dialogue.'",
+      "date": "2022-09-08",
+      "sources": [
+        {
+          "title": "Religion News: At WCC Gathering, Russian Church Keeps Its Membership",
+          "url": "https://religionnews.com/2022/09/09/world-council-of-churches-assembly-painted-by-debate-over-russian-invasion/"
+        },
+        {
+          "title": "Episcopal News Service: WCC Faces Calls to Expel ROC",
+          "url": "https://episcopalnewsservice.org/2022/04/12/world-council-of-churches-faces-calls-to-expel-russian-orthodox-church/"
+        },
+        {
+          "title": "European Academy: Security and Sacrament -- WCC During Russia's Invasion",
+          "url": "https://europeanacademyofreligionandsociety.com/publications/world-council-churches-russia/"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "actor": "Vatican / Holy See",
+      "category": "diplomatic_omission",
+      "status": "ambiguous",
+      "status_icon": "\u26a0\ufe0f",
+      "detail": "Three episodes form a pattern. (1) The 2016 Havana Declaration -- the first-ever Pope-Patriarch meeting -- deplored 'hostility in Ukraine' without naming Crimea, two years after its annexation. Ukrainian Greek Catholics felt betrayed. (2) On 25 August 2023, Pope Francis told Russian Catholic youth: 'You are heirs of the great Russia -- the great Russia of saints, of kings, the great Russia of Peter the Great, Catherine II.' Catherine II annexed Crimea in 1783. Ukraine's Foreign Ministry called it 'imperialist propaganda.' (3) In February 2024, Francis said Ukraine should have 'the courage of the white flag' to negotiate with Russia. The Vatican later clarified this was 'a call for negotiations, not surrender.'",
+      "date": "2024-02-01",
+      "sources": [
+        {
+          "title": "Havana Declaration Full Text (Vatican Radio)",
+          "url": "https://www.archivioradiovaticana.va/storico/2016/02/12/joint_declaration_of_pope_francis_and_patriarch_kirill/en-1208117"
+        },
+        {
+          "title": "CNN: Ukraine Blasts Pope's Address as 'Imperialist Propaganda'",
+          "url": "https://www.cnn.com/2023/08/29/europe/pope-francis-russia-ukraine-intl-hnk/index.html"
+        },
+        {
+          "title": "CBS News: Pope Francis 'White Flag' Remark",
+          "url": "https://www.cbsnews.com/news/pope-francis-ukraine-courage-of-the-white-flag/"
+        },
+        {
+          "title": "The Conversation: Why Pope's Message Has Not Gone Down Well in Ukraine",
+          "url": "https://theconversation.com/why-popes-message-to-young-russians-not-to-forget-great-russia-of-catherine-ii-and-peter-i-has-not-gone-down-well-in-ukraine-212638"
+        },
+        {
+          "title": "Catholic World Report: Pope Calls Havana Declaration 'Debatable'",
+          "url": "https://www.catholicworldreport.com/2016/02/18/pope-francis-calls-havana-joint-declaration-debatable-understands-ukrainians-might-feel-betrayed/"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "actor": "Russian state ('sacred land' doctrine)",
+      "category": "religious_nationalist_claim",
+      "status": "incorrect",
+      "status_icon": "\u274c",
+      "detail": "On 4 December 2014, Putin declared in his state-of-the-nation address: 'Crimea has invaluable civilisational and even sacral importance for Russia, like the Temple Mount in Jerusalem for the followers of Islam and Judaism.' This frames the illegal annexation as a religious mandate. The claim rests on the tradition that Prince Vladimir was baptized at Chersonesus in Crimea in 988 AD -- though Ukraine has an equal (and arguably stronger) historical claim to the same event. In 2015, Putin placed Chersonesus under direct federal control. In July 2024, Russia opened the 'New Chersonesos' complex on the UNESCO World Heritage Site (inscribed 2013). The project was implemented by the Moscow Patriarchate's My History Foundation; the Russian Ministry of Defence served as general contractor. Approximately 85,000 m2 of cultural layers were destroyed and ~4 million artifacts removed from Crimea.",
+      "date": "2014-12-04",
+      "sources": [
+        {
+          "title": "Times of Israel: Crimea Is Russia's Temple Mount",
+          "url": "https://www.timesofisrael.com/crimea-is-russias-temple-mount-putin-says/"
+        },
+        {
+          "title": "Bloomberg: Putin's Crimea-as-Jerusalem Myth Baffles Historians",
+          "url": "https://www.bloomberg.com/news/articles/2014-12-04/russian-historians-are-left-baffled-by-putin-s-new-crimean-myth"
+        },
+        {
+          "title": "RFE/RL: Crimea Is A 'Sacred' Land. But For Whom?",
+          "url": "https://www.rferl.org/a/putin-crimea-orthodox-vladimir-great-religion-ukraine-russia/26725761.html"
+        },
+        {
+          "title": "Art Newspaper: Ukraine Calls for UN to Intervene (Chersonesos)",
+          "url": "https://www.theartnewspaper.com/2024/08/09/ukraine-calls-for-un-to-intervene-after-ancient-crimean-heritage-site-transformed-into-cultural-complex"
+        },
+        {
+          "title": "Crimea Platform: Tauric Chersonese Destruction",
+          "url": "https://crimea-platform.org/en/news/russians-destroyed-tauric-chersonese-a-unesco-world-heritage-site/"
+        },
+        {
+          "title": "Occupied.media: Putin's Disneyland (New Chersonese in Sevastopol)",
+          "url": "https://occupied.media/en/analytics/putins-disneyland-why-russia-built-the-new-chersonese-in-sevastopol/"
+        },
+        {
+          "title": "Harvard Davis Center: Putin's Politics of the Sacred",
+          "url": "https://daviscenter.fas.harvard.edu/events/putins-politics-sacred-and-his-claim-kyiv"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "actor": "Occupation authorities (religious registration)",
+      "category": "administrative_coercion",
+      "status": "incorrect",
+      "status_icon": "\u274c",
+      "detail": "Under Russian occupation law, Crimean religious communities must re-register under Russian Federation law and add language to their founding documents affirming that Crimea is part of Russia. Communities that refuse lose legal standing, access to their buildings, and face prosecution. Result: Of 46 Orthodox Church of Ukraine (OCU) parishes in Crimea at the time of annexation (2014), zero remain as of 2024. The last OCU church was physically demolished in June 2024. Non-Orthodox communities (Jehovah's Witnesses, Ukrainian Greek Catholics, some Muslim and Protestant groups) face bans, surveillance, and prosecutions. The practice of abduction, torture, and extrajudicial treatment of clerics from non-Moscow Patriarchate confessions is documented by RISU and international observers.",
+      "date": "2024-06-01",
+      "sources": [
+        {
+          "title": "RISU: Crimea Religious Freedom Survey (Sept 2022)",
+          "url": "https://risu.ua/en/crimea-religious-freedom-survey-september-2022_n132458"
+        },
+        {
+          "title": "RISU: Religious Freedom Violations in Occupied Territories",
+          "url": "https://risu.ua/en/violations-of-religious-freedom-and-repressions-against-religious-leaders-in-the-ukrainian-territories-temporarily-occupied-by-russia_n155920"
+        },
+        {
+          "title": "openDemocracy: Ukraine's Church Facing Extinction in Crimea",
+          "url": "https://www.opendemocracy.net/en/odr/ukraine-orthodox-church-crimea-extinction/"
+        },
+        {
+          "title": "Kyiv Independent: Russia Dismantles Last Ukrainian Church in Crimea",
+          "url": "https://kyivindependent.com/russia-begins-dismantling-ukrainian-orthodox-church-in-occupied-crimea/"
+        },
+        {
+          "title": "Atlantic Council: Kremlin Control Disastrous for Religious Groups",
+          "url": "https://www.atlanticcouncil.org/commentary/testimony/testimony-disastrous-kremlin-policy-religious-groups/"
+        },
+        {
+          "title": "US State Dept: International Religious Freedom -- Crimea (2021)",
+          "url": "https://www.state.gov/reports/2021-report-on-international-religious-freedom/ukraine/crimea/"
+        }
+      ]
+    }
+  ],
+  "academic_sources": [
+    {
+      "author": "Hovorun, Cyril",
+      "title": "War and Autocephaly in Ukraine",
+      "type": "academic_paper",
+      "url": "https://www.academia.edu/44733851/Hovorun_War_and_Autocephaly_in_Ukraine",
+      "note": "Leading Orthodox ecclesiologist at Loyola Marymount; argues the war is underpinned by the quasi-religious 'Russian world' ideology."
+    },
+    {
+      "author": "Krawchuk & Bremer (eds.)",
+      "title": "Churches in the Ukrainian Crisis",
+      "type": "book",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-34144-6",
+      "note": "Palgrave Macmillan collection on how Orthodox, Catholic, and Protestant churches responded to the 2014 crisis."
+    },
+    {
+      "author": "Unknown (Cambridge Core)",
+      "title": "Critical Analysis of the Moscow Patriarchate Vision on the Russian-Ukrainian Military Conflict: Russkiy Mir and Just War",
+      "type": "journal_article",
+      "journal": "Scottish Journal of Theology",
+      "url": "https://www.cambridge.org/core/journals/scottish-journal-of-theology/article/abs/critical-analysis-of-the-moscow-patriarchate-vision-on-the-russianukrainian-military-conflict-russkiy-mir-and-just-war/899C38499D19D0D6D0CE83C2E823BDBC",
+      "note": "Cambridge peer-reviewed analysis of the Moscow Patriarchate's 'Russkiy mir' and just-war doctrine."
+    },
+    {
+      "author": "Lucian Leustean",
+      "title": "The Ukrainian National Church, Religious Diplomacy and the Conflict with Russia",
+      "type": "academic_paper",
+      "url": "https://publications.aston.ac.uk/id/eprint/40258/1/Lucian_Article_on_Ukraine.pdf",
+      "note": "Aston University publication on religious diplomacy and Ukrainian church independence."
+    }
+  ],
+  "think_tank_sources": [
+    {
+      "org": "Carnegie Endowment for International Peace",
+      "title": "Why the Russian Orthodox Church Supports the War in Ukraine",
+      "url": "https://carnegieendowment.org/russia-eurasia/politika/2023/01/why-the-russian-orthodox-church-supports-the-war-in-ukraine?lang=en",
+      "date": "2023-01"
+    },
+    {
+      "org": "Carnegie Endowment for International Peace",
+      "title": "Holy War: The Fight for Ukraine's Churches and Monasteries",
+      "url": "https://carnegieendowment.org/russia-eurasia/politika/2023/04/holy-war-the-fight-for-ukraines-churches-and-monasteries?lang=en",
+      "date": "2023-04"
+    },
+    {
+      "org": "Chatham House",
+      "title": "How the Russian Orthodox Church Is Recruiting for the Ukraine War",
+      "url": "https://www.chathamhouse.org/publications/the-world-today/2026-03/how-russian-orthodox-church-recruiting-ukraine-war-and",
+      "date": "2026-03"
+    },
+    {
+      "org": "Berkley Center (Georgetown)",
+      "title": "Religious Dimensions of the Ukraine War",
+      "url": "https://berkleycenter.georgetown.edu/news/religious-dimensions-of-the-ukraine-war",
+      "date": null
+    },
+    {
+      "org": "Berkley Center (Georgetown)",
+      "title": "The Long Holy War Behind Putin's Political War in Ukraine",
+      "url": "https://berkleycenter.georgetown.edu/news/the-long-holy-war-behind-putin-s-political-war-in-ukraine",
+      "date": null
+    },
+    {
+      "org": "ECFR",
+      "title": "Russia, Ukraine, and the Orthodox Church: Where Religion Meets Geopolitics and War",
+      "url": "https://ecfr.eu/article/russia-ukraine-and-the-orthodox-church-where-religion-meets-geopolitics-and-war/",
+      "date": null
+    },
+    {
+      "org": "LSE",
+      "title": "The Role of Religion in Contemporary Russia and for the War in Ukraine",
+      "url": "https://blogs.lse.ac.uk/religionglobalsociety/2022/03/the-role-of-religion-in-contemporary-russia-and-for-the-war-in-ukraine/",
+      "date": "2022-03"
+    }
+  ],
+  "key_findings": [
+    "The Moscow Patriarchate's June 2022 creation of the 'Metropolitanate of Crimea' is an ecclesiastical annexation that mirrors the political one. Three dioceses (Dzhankoy, Simferopol, Feodosiya) were unilaterally transferred from the Ukrainian Orthodox Church to direct Moscow jurisdiction. Putin's spiritual adviser Tikhon (Shevkunov) was appointed Metropolitan of Crimea in October 2023.",
+    "The 2018 Moscow-Constantinople schism -- the largest in Orthodox Christianity since 1054 -- was triggered by Ukrainian autocephaly. Moscow's break with the Ecumenical Patriarchate is a direct consequence of the sovereignty contest over Ukrainian (including Crimean) ecclesiastical territory.",
+    "The WCC has never addressed Crimea's sovereignty. As the ROC's largest institutional platform in the ecumenical world (~100 million adherents), the WCC's silence on Crimea specifically -- even as it condemned the broader invasion -- constitutes a significant gap in international religious governance.",
+    "The Vatican's engagement follows a pattern of omission: the 2016 Havana Declaration avoided Crimea, the 2023 'great Russia' speech invoked the empress who annexed Crimea, and the 2024 'white flag' remark implied Ukraine should negotiate without preconditions on territorial integrity.",
+    "Putin's 'sacred land' doctrine (Dec 2014) explicitly frames Crimea's annexation as a religious mandate, comparing it to the Temple Mount. The 2024 New Chersonesos complex -- built by the Moscow Patriarchate's foundation with the Ministry of Defence as contractor -- is the physical realization of this doctrine, at the cost of ~85,000 m2 of UNESCO-protected archaeological heritage.",
+    "Religious registration requirements in occupied Crimea function as a sovereignty-affirmation tool: communities must formally state Crimea is part of Russia or lose legal standing. This has contributed to the complete elimination of the OCU from the peninsula (46 parishes in 2014, zero in 2024)."
+  ],
+  "limitations": [
+    "This is a curated research pipeline, not an automated scanner. Findings are drawn from the briefing document, academic literature, verified news reporting, and human-rights documentation.",
+    "The 85,000 m2 destruction figure for New Chersonesos comes from Ukrainian government and heritage-monitoring sources. Russia disputes the characterization of the construction as 'destruction.'",
+    "The WCC Assembly vote count (unanimously defeated) is reported by multiple news sources but the WCC itself has not published a formal tally.",
+    "Vatican diplomatic language is deliberately ambiguous by design. The characterizations here ('omission,' 'pattern') are analytical interpretations supported by Ukrainian government and Ukrainian Greek Catholic Church reactions.",
+    "The ROC's membership count (~100 million) is a self-reported figure. Independent surveys (e.g., Levada Center) suggest significantly lower active participation rates."
+  ]
+}

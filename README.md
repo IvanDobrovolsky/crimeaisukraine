@@ -19,6 +19,7 @@
 | 9 | [ip](pipelines/ip/) | **53% UA, 16% RU, 31% other** — geolocation fragments the same territory into three answers. |
 | 10 | [institutions](pipelines/institutions/) | **10/10** institutional registries correct. The law is unanimous; the gap is in the technical layer. |
 | 11 | [tech_infrastructure](pipelines/tech_infrastructure/) | IANA tzdata lists `RU,UA` (Russia first). Google's libphonenumber encodes both UA and RU for `+7978`. |
+| 12 | [religious](pipelines/religious/) | Moscow Patriarchate annexed 3 Crimean dioceses (2022). WCC defeated ROC expulsion; Vatican omitted Crimea. **46 OCU parishes in 2014, zero in 2024.** |
 
 ## Reproduce
 
