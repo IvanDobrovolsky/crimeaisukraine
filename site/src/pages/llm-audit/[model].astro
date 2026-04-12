@@ -25,21 +25,21 @@ const langs = meta.languages;
 const questions = meta.questions;
 
 function colorForPct(pct: number | null): string {
-  if (pct === null || pct === undefined) return '#1e293b';
-  if (pct >= 90) return '#22c55e';
-  if (pct >= 75) return '#84cc16';
-  if (pct >= 50) return '#f59e0b';
-  if (pct >= 25) return '#f97316';
-  return '#ef4444';
+  if (pct === null || pct === undefined) return '#ccd0da';
+  if (pct >= 90) return '#40a02b';
+  if (pct >= 75) return '#40a02b';
+  if (pct >= 50) return '#df8e1d';
+  if (pct >= 25) return '#fe640b';
+  return '#d20f39';
 }
 
 function colorForSas(t: number | null): string {
-  if (t === null || t === undefined) return '#1e293b';
-  if (t >= 0.85) return '#22c55e';
-  if (t >= 0.75) return '#84cc16';
-  if (t >= 0.65) return '#f59e0b';
-  if (t >= 0.55) return '#f97316';
-  return '#ef4444';
+  if (t === null || t === undefined) return '#ccd0da';
+  if (t >= 0.85) return '#40a02b';
+  if (t >= 0.75) return '#40a02b';
+  if (t >= 0.65) return '#df8e1d';
+  if (t >= 0.55) return '#fe640b';
+  return '#d20f39';
 }
 
 function fmt(v: number | null): string {
@@ -54,54 +54,54 @@ const hasSas = sas && sas.sas !== null;
   <main class="max-w-6xl mx-auto px-6 py-12">
     <div class="mb-2"><a href="/" class="text-[#0057b7] hover:underline text-sm">← Back to home</a></div>
 
-    <h1 class="text-3xl font-bold text-white mb-1">{model.display_name}</h1>
-    <p class="text-[#94a3b8] mb-6">{model.org} · {model.access || model.params || ''} · Released {model.release} · {model.type}</p>
+    <h1 class="text-3xl font-bold text-[#4c4f69] mb-1">{model.display_name}</h1>
+    <p class="text-[#6c6f85] mb-6">{model.org} · {model.access || model.params || ''} · Released {model.release} · {model.type}</p>
 
     {hasSas && (
-      <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-6 mb-8">
+      <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-6 mb-8">
         <div class="flex items-baseline justify-between mb-4">
-          <h2 class="text-xl font-bold text-white">Sovereignty Alignment Score (SAS)</h2>
+          <h2 class="text-xl font-bold text-[#4c4f69]">Sovereignty Alignment Score (SAS)</h2>
           <div class="flex gap-3">
-            <a href="/llm-audit/sas-explorer" class="text-xs text-[#ffd700] hover:underline">interactive explorer →</a>
+            <a href="/llm-audit/sas-explorer" class="text-xs text-[#df8e1d] hover:underline">interactive explorer →</a>
             <a href="/#llm-audit" class="text-xs text-[#0057b7] hover:underline">methodology →</a>
           </div>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-4">
-          <div class="md:col-span-2 bg-[#0a0e1a] border rounded-xl p-4" style={`border-color: ${colorForSas(sas.sas)}`}>
-            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1">SAS</div>
+          <div class="md:col-span-2 bg-[#eff1f5] border rounded-xl p-4" style={`border-color: ${colorForSas(sas.sas)}`}>
+            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mb-1">SAS</div>
             <div class="text-4xl font-bold" style={`color: ${colorForSas(sas.sas)}`}>{fmt(sas.sas)}</div>
-            <div class="text-[10px] text-[#64748b] mt-1">primary weights (0.10·D + 0.20·L + 0.30·I + 0.40·R)</div>
+            <div class="text-[10px] text-[#7c7f93] mt-1">primary weights (0.10·D + 0.20·L + 0.30·I + 0.40·R)</div>
           </div>
-          <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
-            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1" title="Direct territorial">D̄</div>
-            <div class="text-2xl font-bold text-white">{fmt(sas.D)}</div>
-            <div class="text-[10px] text-[#64748b] mt-1">direct territorial</div>
+          <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
+            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mb-1" title="Direct territorial">D̄</div>
+            <div class="text-2xl font-bold text-[#4c4f69]">{fmt(sas.D)}</div>
+            <div class="text-[10px] text-[#7c7f93] mt-1">direct territorial</div>
           </div>
-          <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
-            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1" title="Legal-normative">L̄</div>
-            <div class="text-2xl font-bold text-white">{fmt(sas.L)}</div>
-            <div class="text-[10px] text-[#64748b] mt-1">legal-normative</div>
+          <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
+            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mb-1" title="Legal-normative">L̄</div>
+            <div class="text-2xl font-bold text-[#4c4f69]">{fmt(sas.L)}</div>
+            <div class="text-[10px] text-[#7c7f93] mt-1">legal-normative</div>
           </div>
-          <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
-            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1" title="Implicit sovereignty">Ī</div>
-            <div class="text-2xl font-bold text-white">{fmt(sas.I)}</div>
-            <div class="text-[10px] text-[#64748b] mt-1">implicit sovereignty</div>
+          <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
+            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mb-1" title="Implicit sovereignty">Ī</div>
+            <div class="text-2xl font-bold text-[#4c4f69]">{fmt(sas.I)}</div>
+            <div class="text-[10px] text-[#7c7f93] mt-1">implicit sovereignty</div>
           </div>
-          <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
-            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mb-1" title="Free-recall">R̄</div>
-            <div class="text-2xl font-bold text-white">{fmt(sas.R)}</div>
-            <div class="text-[10px] text-[#64748b] mt-1">free-recall</div>
+          <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
+            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mb-1" title="Free-recall">R̄</div>
+            <div class="text-2xl font-bold text-[#4c4f69]">{fmt(sas.R)}</div>
+            <div class="text-[10px] text-[#7c7f93] mt-1">free-recall</div>
           </div>
         </div>
         {sas.rlhf_gap !== null && (
-          <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
+          <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
             <div class="flex items-baseline justify-between mb-1">
-              <div class="text-[10px] text-[#64748b] uppercase tracking-wider">RLHF gap (D̄ − R̄)</div>
-              <div class="text-2xl font-bold" style={`color: ${sas.rlhf_gap >= 0.15 ? '#ef4444' : sas.rlhf_gap >= 0.05 ? '#f59e0b' : sas.rlhf_gap > -0.05 ? '#94a3b8' : sas.rlhf_gap > -0.20 ? '#84cc16' : '#22c55e'}`}>
+              <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider">RLHF gap (D̄ − R̄)</div>
+              <div class="text-2xl font-bold" style={`color: ${sas.rlhf_gap >= 0.15 ? '#d20f39' : sas.rlhf_gap >= 0.05 ? '#df8e1d' : sas.rlhf_gap > -0.05 ? '#6c6f85' : sas.rlhf_gap > -0.20 ? '#40a02b' : '#40a02b'}`}>
                 {sas.rlhf_gap > 0 ? '+' : ''}{sas.rlhf_gap.toFixed(3)}
               </div>
             </div>
-            <div class="text-xs text-[#94a3b8]">
+            <div class="text-xs text-[#6c6f85]">
               {sas.rlhf_gap >= 0.15
                 ? 'Surface-patched: model says the right thing in forced-choice but reverts to inherited bias in free generation. Standard benchmarks systematically overestimate this model.'
                 : sas.rlhf_gap >= 0.05
@@ -118,36 +118,36 @@ const hasSas = sas && sas.sas !== null;
     )}
 
     {!hasData ? (
-      <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-12 text-center">
-        <div class="text-2xl text-[#94a3b8]">{hasSas ? 'Per-question table will appear here once the legacy report is regenerated.' : 'No audit data yet'}</div>
-        <p class="text-[#64748b] mt-2">{hasSas ? 'SAS data above is from the temperature=0 dual-tier audit (April 2026).' : 'Audit is still running for this model.'}</p>
+      <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-12 text-center">
+        <div class="text-2xl text-[#6c6f85]">{hasSas ? 'Per-question table will appear here once the legacy report is regenerated.' : 'No audit data yet'}</div>
+        <p class="text-[#7c7f93] mt-2">{hasSas ? 'SAS data above is from the temperature=0 dual-tier audit (April 2026).' : 'Audit is still running for this model.'}</p>
       </div>
     ) : (
       <div>
         <!-- Stats cards -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-          <div class="bg-[#111827] border border-[#1e293b] rounded-xl p-5">
+          <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-xl p-5">
             <div class="text-3xl font-bold" style={`color: ${colorForPct(audit.correct_pct)}`}>{audit.correct_pct}%</div>
-            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mt-1">Overall correct</div>
+            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mt-1">Overall correct</div>
           </div>
-          <div class="bg-[#111827] border border-[#1e293b] rounded-xl p-5">
-            <div class="text-3xl font-bold text-white">{audit.total.toLocaleString()}</div>
-            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mt-1">Total queries</div>
+          <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-xl p-5">
+            <div class="text-3xl font-bold text-[#4c4f69]">{audit.total.toLocaleString()}</div>
+            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mt-1">Total queries</div>
           </div>
-          <div class="bg-[#111827] border border-[#22c55e]/30 rounded-xl p-5">
-            <div class="text-3xl font-bold text-[#22c55e]">{audit.correct.toLocaleString()}</div>
-            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mt-1">Correct</div>
+          <div class="bg-[#e6e9ef] border border-[#40a02b]/30 rounded-xl p-5">
+            <div class="text-3xl font-bold text-[#40a02b]">{audit.correct.toLocaleString()}</div>
+            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mt-1">Correct</div>
           </div>
-          <div class="bg-[#111827] border border-[#ef4444]/30 rounded-xl p-5">
-            <div class="text-3xl font-bold text-[#ef4444]">{(audit.total - audit.correct).toLocaleString()}</div>
-            <div class="text-[10px] text-[#64748b] uppercase tracking-wider mt-1">Incorrect</div>
+          <div class="bg-[#e6e9ef] border border-[#d20f39]/30 rounded-xl p-5">
+            <div class="text-3xl font-bold text-[#d20f39]">{(audit.total - audit.correct).toLocaleString()}</div>
+            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mt-1">Incorrect</div>
           </div>
         </div>
 
         <!-- Crimea vs Donbas headline -->
-        <div class="bg-[#111827] border border-[#ef4444] rounded-xl p-6 mb-8">
-          <h3 class="text-[#ef4444] font-bold text-lg mb-2">Crimea vs Donbas/South Ukraine gap: <span class="text-white">{audit.crimea_vs_donbas.gap > 0 ? '+' : ''}{audit.crimea_vs_donbas.gap} pts</span></h3>
-          <p class="text-[#e5e5e5] text-sm">
+        <div class="bg-[#e6e9ef] border border-[#d20f39] rounded-xl p-6 mb-8">
+          <h3 class="text-[#d20f39] font-bold text-lg mb-2">Crimea vs Donbas/South Ukraine gap: <span class="text-[#4c4f69] font-semibold">{audit.crimea_vs_donbas.gap > 0 ? '+' : ''}{audit.crimea_vs_donbas.gap} pts</span></h3>
+          <p class="text-[#4c4f69] text-sm">
             {model.display_name} answers {audit.crimea_vs_donbas.crimea.pct}% correctly on Crimean cities (occupied 2014)
             but {audit.crimea_vs_donbas.donbas.pct}% on Donbas cities (claimed 2022).
             {audit.crimea_vs_donbas.gap > 30 && ' Strong evidence of pre-2022 Russian framing baked into training data.'}
@@ -157,20 +157,20 @@ const hasSas = sas && sas.sas !== null;
         </div>
 
         <!-- Table 1: Accuracy by Question -->
-        <h2 class="text-xl font-bold text-white mt-8 mb-2">Accuracy by Question</h2>
-        <p class="text-xs text-[#64748b] mb-3">Each question has Coverage (cities × languages). Templated q1/q13 = 12 × 50 = 600.</p>
-        <div class="bg-[#111827] border border-[#1e293b] rounded-xl overflow-x-auto">
+        <h2 class="text-xl font-bold text-[#4c4f69] mt-8 mb-2">Accuracy by Question</h2>
+        <p class="text-xs text-[#7c7f93] mb-3">Each question has Coverage (cities × languages). Templated q1/q13 = 12 × 50 = 600.</p>
+        <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-xl overflow-x-auto">
           <table class="w-full text-xs">
             <thead>
-              <tr class="bg-[#1e293b]">
-                <th class="p-2 text-left text-[#e5e5e5]">ID</th>
-                <th class="p-2 text-left text-[#e5e5e5]">Question</th>
-                <th class="p-2 text-center text-[#e5e5e5]">Correct<br/>answer</th>
-                <th class="p-2 text-center text-[#e5e5e5]">YES</th>
-                <th class="p-2 text-center text-[#e5e5e5]">NO</th>
-                <th class="p-2 text-center text-[#e5e5e5]">Other</th>
-                <th class="p-2 text-center text-[#e5e5e5]">Correct</th>
-                <th class="p-2 text-center text-[#e5e5e5]">%</th>
+              <tr class="bg-[#ccd0da]">
+                <th class="p-2 text-left text-[#4c4f69]">ID</th>
+                <th class="p-2 text-left text-[#4c4f69]">Question</th>
+                <th class="p-2 text-center text-[#4c4f69]">Correct<br/>answer</th>
+                <th class="p-2 text-center text-[#4c4f69]">YES</th>
+                <th class="p-2 text-center text-[#4c4f69]">NO</th>
+                <th class="p-2 text-center text-[#4c4f69]">Other</th>
+                <th class="p-2 text-center text-[#4c4f69]">Correct</th>
+                <th class="p-2 text-center text-[#4c4f69]">%</th>
               </tr>
             </thead>
             <tbody>
@@ -183,14 +183,14 @@ const hasSas = sas && sas.sas !== null;
                 const expectedYes = qd.expected === 'yes' || qd.expected === 'ukraine';
                 const otherCount = qd.total - yesCount - noCount - (qd.disputed || 0);
                 return (
-                  <tr class="border-t border-[#1e293b]">
-                    <td class="p-2 text-[#94a3b8] font-mono">{q_id}</td>
-                    <td class="p-2 text-[#e5e5e5]">{qd.prompt}</td>
-                    <td class="p-2 text-center text-[#22c55e] font-bold">{qd.expected.toUpperCase()}</td>
-                    <td class="p-2 text-center" style={expectedYes ? 'background:#22c55e;color:#fff;font-weight:600' : 'color:#94a3b8'}>{yesLabel}: {yesCount}</td>
-                    <td class="p-2 text-center" style={!expectedYes ? 'background:#22c55e;color:#fff;font-weight:600' : 'color:#94a3b8'}>{noLabel}: {noCount}</td>
-                    <td class="p-2 text-center text-[#64748b]">{otherCount + (qd.disputed || 0)}</td>
-                    <td class="p-2 text-center text-[#e5e5e5]">{qd.correct}/{qd.total}</td>
+                  <tr class="border-t border-[#ccd0da]">
+                    <td class="p-2 text-[#6c6f85] font-mono">{q_id}</td>
+                    <td class="p-2 text-[#4c4f69]">{qd.prompt}</td>
+                    <td class="p-2 text-center text-[#40a02b] font-bold">{qd.expected.toUpperCase()}</td>
+                    <td class="p-2 text-center" style={expectedYes ? 'background:#40a02b;color:#fff;font-weight:600' : 'color:#6c6f85'}>{yesLabel}: {yesCount}</td>
+                    <td class="p-2 text-center" style={!expectedYes ? 'background:#40a02b;color:#fff;font-weight:600' : 'color:#6c6f85'}>{noLabel}: {noCount}</td>
+                    <td class="p-2 text-center text-[#7c7f93]">{otherCount + (qd.disputed || 0)}</td>
+                    <td class="p-2 text-center text-[#4c4f69]">{qd.correct}/{qd.total}</td>
                     <td class="p-2 text-center font-bold" style={`background:${colorForPct(qd.pct)};color:#fff`}>{qd.pct}%</td>
                   </tr>
                 );
@@ -200,16 +200,16 @@ const hasSas = sas && sas.sas !== null;
         </div>
 
         <!-- Table 2: Accuracy by City -->
-        <h2 class="text-xl font-bold text-white mt-8 mb-2">Accuracy by City</h2>
-        <p class="text-xs text-[#64748b] mb-3">Crimean cities (occupied 2014) vs Donbas/South cities (claimed 2022).</p>
-        <div class="bg-[#111827] border border-[#1e293b] rounded-xl overflow-x-auto">
+        <h2 class="text-xl font-bold text-[#4c4f69] mt-8 mb-2">Accuracy by City</h2>
+        <p class="text-xs text-[#7c7f93] mb-3">Crimean cities (occupied 2014) vs Donbas/South cities (claimed 2022).</p>
+        <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-xl overflow-x-auto">
           <table class="w-full text-xs">
             <thead>
-              <tr class="bg-[#1e293b]">
-                <th class="p-2 text-left text-[#e5e5e5]">City</th>
-                <th class="p-2 text-left text-[#e5e5e5]">Region</th>
-                <th class="p-2 text-center text-[#e5e5e5]">Correct</th>
-                <th class="p-2 text-center text-[#e5e5e5]">%</th>
+              <tr class="bg-[#ccd0da]">
+                <th class="p-2 text-left text-[#4c4f69]">City</th>
+                <th class="p-2 text-left text-[#4c4f69]">Region</th>
+                <th class="p-2 text-center text-[#4c4f69]">Correct</th>
+                <th class="p-2 text-center text-[#4c4f69]">%</th>
               </tr>
             </thead>
             <tbody>
@@ -218,10 +218,10 @@ const hasSas = sas && sas.sas !== null;
                 if (!cd) return null;
                 const isCrimea = cities.crimea.includes(c);
                 return (
-                  <tr class="border-t border-[#1e293b]">
-                    <td class="p-2 text-white font-medium">{c}</td>
+                  <tr class="border-t border-[#ccd0da]">
+                    <td class="p-2 text-[#4c4f69] font-medium">{c}</td>
                     <td class="p-2" style={isCrimea ? 'color:#f87171' : 'color:#fbbf24'}>{isCrimea ? '2014 Crimea' : '2022 claimed'}</td>
-                    <td class="p-2 text-center text-[#e5e5e5]">{cd.correct}/{cd.total}</td>
+                    <td class="p-2 text-center text-[#4c4f69]">{cd.correct}/{cd.total}</td>
                     <td class="p-2 text-center font-bold" style={`background:${colorForPct(cd.pct)};color:#fff`}>{cd.pct}%</td>
                   </tr>
                 );
@@ -231,24 +231,24 @@ const hasSas = sas && sas.sas !== null;
         </div>
 
         <!-- Table 3: Accuracy by Language -->
-        <h2 class="text-xl font-bold text-white mt-8 mb-2">Accuracy by Language</h2>
-        <p class="text-xs text-[#64748b] mb-3">Sorted worst-first to highlight bias.</p>
-        <div class="bg-[#111827] border border-[#1e293b] rounded-xl overflow-x-auto">
+        <h2 class="text-xl font-bold text-[#4c4f69] mt-8 mb-2">Accuracy by Language</h2>
+        <p class="text-xs text-[#7c7f93] mb-3">Sorted worst-first to highlight bias.</p>
+        <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-xl overflow-x-auto">
           <table class="w-full text-xs">
             <thead>
-              <tr class="bg-[#1e293b]">
-                <th class="p-2 text-left text-[#e5e5e5]">Language</th>
-                <th class="p-2 text-left text-[#e5e5e5]">Code</th>
-                <th class="p-2 text-center text-[#e5e5e5]">Correct</th>
-                <th class="p-2 text-center text-[#e5e5e5]">%</th>
+              <tr class="bg-[#ccd0da]">
+                <th class="p-2 text-left text-[#4c4f69]">Language</th>
+                <th class="p-2 text-left text-[#4c4f69]">Code</th>
+                <th class="p-2 text-center text-[#4c4f69]">Correct</th>
+                <th class="p-2 text-center text-[#4c4f69]">%</th>
               </tr>
             </thead>
             <tbody>
               {Object.entries(audit.by_language).sort((a: any, b: any) => (a[1].pct || 0) - (b[1].pct || 0)).map(([code, ld]: [string, any]) => (
-                <tr class="border-t border-[#1e293b]">
-                  <td class="p-2 text-white font-medium">{ld.name}</td>
-                  <td class="p-2 text-[#64748b] font-mono">{code}</td>
-                  <td class="p-2 text-center text-[#e5e5e5]">{ld.correct}/{ld.total}</td>
+                <tr class="border-t border-[#ccd0da]">
+                  <td class="p-2 text-[#4c4f69] font-medium">{ld.name}</td>
+                  <td class="p-2 text-[#7c7f93] font-mono">{code}</td>
+                  <td class="p-2 text-center text-[#4c4f69]">{ld.correct}/{ld.total}</td>
                   <td class="p-2 text-center font-bold" style={`background:${colorForPct(ld.pct)};color:#fff`}>{ld.pct}%</td>
                 </tr>
               ))}
@@ -259,28 +259,28 @@ const hasSas = sas && sas.sas !== null;
         <!-- Sample wrong answers -->
         {audit.wrong_samples.length > 0 && (
           <div>
-            <h2 class="text-xl font-bold text-white mt-8 mb-2">Sample Wrong Answers</h2>
-            <div class="bg-[#111827] border border-[#1e293b] rounded-xl overflow-x-auto">
+            <h2 class="text-xl font-bold text-[#4c4f69] mt-8 mb-2">Sample Wrong Answers</h2>
+            <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-xl overflow-x-auto">
               <table class="w-full text-xs">
                 <thead>
-                  <tr class="bg-[#1e293b]">
-                    <th class="p-2 text-left text-[#e5e5e5]">Question</th>
-                    <th class="p-2 text-left text-[#e5e5e5]">City</th>
-                    <th class="p-2 text-left text-[#e5e5e5]">Language</th>
-                    <th class="p-2 text-left text-[#e5e5e5]">Prompt</th>
-                    <th class="p-2 text-left text-[#e5e5e5]">Model Answer</th>
-                    <th class="p-2 text-left text-[#e5e5e5]">Expected</th>
+                  <tr class="bg-[#ccd0da]">
+                    <th class="p-2 text-left text-[#4c4f69]">Question</th>
+                    <th class="p-2 text-left text-[#4c4f69]">City</th>
+                    <th class="p-2 text-left text-[#4c4f69]">Language</th>
+                    <th class="p-2 text-left text-[#4c4f69]">Prompt</th>
+                    <th class="p-2 text-left text-[#4c4f69]">Model Answer</th>
+                    <th class="p-2 text-left text-[#4c4f69]">Expected</th>
                   </tr>
                 </thead>
                 <tbody>
                   {audit.wrong_samples.slice(0, 30).map((s: any) => (
-                    <tr class="border-t border-[#1e293b]">
-                      <td class="p-2 text-[#94a3b8] font-mono text-[10px]">{s.question_id}</td>
-                      <td class="p-2 text-[#e5e5e5]">{s.city}</td>
-                      <td class="p-2 text-[#e5e5e5]">{s.language_name}</td>
-                      <td class="p-2 text-[#94a3b8] text-[10px]">{s.prompt}</td>
-                      <td class="p-2" style="background:#7f1d1d;color:#fff">{s.answer}</td>
-                      <td class="p-2 text-[#22c55e]">{s.expected}</td>
+                    <tr class="border-t border-[#ccd0da]">
+                      <td class="p-2 text-[#6c6f85] font-mono text-[10px]">{s.question_id}</td>
+                      <td class="p-2 text-[#4c4f69]">{s.city}</td>
+                      <td class="p-2 text-[#4c4f69]">{s.language_name}</td>
+                      <td class="p-2 text-[#6c6f85] text-[10px]">{s.prompt}</td>
+                      <td class="p-2" style="background:#d20f39;color:#fff">{s.answer}</td>
+                      <td class="p-2 text-[#40a02b]">{s.expected}</td>
                     </tr>
                   ))}
                 </tbody>

@@ -50,171 +50,171 @@ const jsonPayload = JSON.stringify(rows);
   <main class="max-w-6xl mx-auto px-6 py-12">
     <div class="mb-2"><a href="/#llm-audit" class="text-[#0057b7] hover:underline text-sm">← Back to LLM audit</a></div>
 
-    <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">SAS weight explorer</h1>
-    <p class="text-[#94a3b8] max-w-3xl mb-6">
-      The <strong class="text-white">Sovereignty Alignment Score</strong> is a weighted composite of four tier means:
+    <h1 class="text-3xl md:text-4xl font-bold text-[#4c4f69] mb-2">SAS weight explorer</h1>
+    <p class="text-[#6c6f85] max-w-3xl mb-6">
+      The <strong class="text-[#1e1e2e]">Sovereignty Alignment Score</strong> is a weighted composite of four tier means:
       direct territorial (D̄), legal-normative (L̄), implicit sovereignty (Ī), and free-recall (R̄). The formula is a
-      dot product, <span class="font-mono text-[#e5e5e5]">SAS = <strong class="text-[#ffd700]">w</strong> · [D̄, L̄, Ī, R̄]</span>,
-      where <strong class="text-white">w</strong> is the weight vector. Our primary report uses the <strong class="text-[#f97316]">Legal-heavy</strong>
-      weight vector <span class="font-mono text-[#ffd700]"><strong>w</strong> = [0.10, 0.50, 0.20, 0.20]</span> — 50% of
+      dot product, <span class="font-mono text-[#4c4f69]">SAS = <strong class="text-[#df8e1d]">w</strong> · [D̄, L̄, Ī, R̄]</span>,
+      where <strong class="text-[#1e1e2e]">w</strong> is the weight vector. Our primary report uses the <strong class="text-[#fe640b]">Legal-heavy</strong>
+      weight vector <span class="font-mono text-[#df8e1d]"><strong>w</strong> = [0.10, 0.50, 0.20, 0.20]</span> — 50% of
       the weight on the legal-normative tier because L directly tests alignment with the international-law framework
       (UN GA 68/262 and ES-11/4). But no fixed weight vector can ever escape the "why these weights?" critique. Move the
-      sliders. Pick any <strong class="text-white">w</strong> you like. Watch the ranking update in real time. The page
+      sliders. Pick any <strong class="text-[#1e1e2e]">w</strong> you like. Watch the ranking update in real time. The page
       loads on the primary Legal-heavy preset; click <em>Monotonic (1:2:3:4)</em> to see the RLHF-patchability alternative.
     </p>
 
     <!-- Notation note -->
-    <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-3 mb-4 text-[11px] text-[#64748b]">
-      <strong class="text-[#e5e5e5]">Notation:</strong> we follow the standard ML-paper convention — <strong class="text-[#e5e5e5]">bold lowercase</strong>
-      for vectors (<strong class="text-[#e5e5e5]">w</strong>, <strong class="text-[#e5e5e5]">x</strong>), regular italic
+    <div class="bg-white border border-[#ccd0da] rounded-xl p-3 mb-4 text-[11px] text-[#7c7f93]">
+      <strong class="text-[#1e1e2e]">Notation:</strong> we follow the standard ML-paper convention — <strong class="text-[#1e1e2e]">bold lowercase</strong>
+      for vectors (<strong class="text-[#1e1e2e]">w</strong>, <strong class="text-[#1e1e2e]">x</strong>), regular italic
       for scalar components (<span class="italic">w<sub>D</sub></span>, <span class="italic">D̄</span>), and square brackets
       <span class="font-mono">[·, ·, ·, ·]</span> for the components of a vector.
     </div>
 
     <!-- Methodology reminder -->
-    <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4 mb-8 text-xs text-[#94a3b8]">
+    <div class="bg-white border border-[#ccd0da] rounded-xl p-4 mb-8 text-xs text-[#6c6f85]">
       Each tier mean is on [0, 1] where 1.0 = Ukraine-aligned, 0.5 = disputed/hedged, 0.0 = Russia-aligned.
-      Each model was audited at <span class="font-mono text-[#e5e5e5]">temperature=0</span> with
-      <span class="font-mono text-[#e5e5e5]">seed=42</span> on 1,850 forced-choice queries + 676 open-ended queries across 50 languages and 12 cities.
+      Each model was audited at <span class="font-mono text-[#4c4f69]">temperature=0</span> with
+      <span class="font-mono text-[#4c4f69]">seed=42</span> on 1,850 forced-choice queries + 676 open-ended queries across 50 languages and 12 cities.
       D̄ / L̄ / Ī pool across all 50 forced-tier languages; R̄ pools across 13 free-recall languages.
       Source data: <a class="text-[#0057b7] hover:underline" href="https://github.com/IvanDobrovolsky/crimeaisukraine/blob/main/data/sas_scores.json">data/sas_scores.json</a>,
-      regenerable via <span class="font-mono text-[#e5e5e5]">python3 scripts/compute_sas.py</span>.
+      regenerable via <span class="font-mono text-[#4c4f69]">python3 scripts/compute_sas.py</span>.
       Generated <span class="font-mono">{generatedAt.slice(0, 16).replace('T', ' ')}</span>.
     </div>
 
     <!-- Sliders -->
-    <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-6 mb-6">
+    <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-6 mb-6">
       <div class="flex items-baseline justify-between mb-4 flex-wrap gap-3">
-        <h2 class="text-lg font-bold text-white">Tier weights</h2>
+        <h2 class="text-lg font-bold text-[#4c4f69]">Tier weights</h2>
         <div class="flex gap-2 flex-wrap">
-          <button data-preset="legal" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#f97316] text-white font-semibold hover:bg-[#ea6511] transition">Primary · Legal-heavy</button>
-          <button data-preset="primary" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#1e293b] text-[#94a3b8] hover:bg-[#334155] hover:text-white transition">Monotonic (1:2:3:4)</button>
-          <button data-preset="uniform" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#1e293b] text-[#94a3b8] hover:bg-[#334155] hover:text-white transition">Uniform</button>
-          <button data-preset="geometric" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#1e293b] text-[#94a3b8] hover:bg-[#334155] hover:text-white transition">Geometric 1:2:4:8</button>
-          <button data-preset="free" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#1e293b] text-[#94a3b8] hover:bg-[#334155] hover:text-white transition">Free only</button>
-          <button data-preset="forced" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#1e293b] text-[#94a3b8] hover:bg-[#334155] hover:text-white transition">Forced only</button>
-          <button id="copy-link-btn" class="text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ffd700]/20 text-[#ffd700] border border-[#ffd700]/40 hover:bg-[#ffd700]/30 transition">Copy my weights</button>
+          <button data-preset="legal" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#fe640b] text-[#4c4f69] font-semibold hover:bg-[#ea6511] transition">Primary · Legal-heavy</button>
+          <button data-preset="primary" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#6c6f85] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Monotonic (1:2:3:4)</button>
+          <button data-preset="uniform" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#6c6f85] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Uniform</button>
+          <button data-preset="geometric" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#6c6f85] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Geometric 1:2:4:8</button>
+          <button data-preset="free" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#6c6f85] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Free only</button>
+          <button data-preset="forced" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#6c6f85] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Forced only</button>
+          <button id="copy-link-btn" class="text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#df8e1d]/20 text-[#df8e1d] border border-[#df8e1d]/40 hover:bg-[#df8e1d]/30 transition">Copy my weights</button>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
         <!-- D slider -->
-        <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
+        <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
           <div class="flex items-baseline justify-between mb-2">
             <div>
-              <div class="text-xs font-mono text-[#e5e5e5]"><span class="italic">w<sub>D</sub></span> · direct territorial</div>
-              <div class="text-[10px] text-[#64748b]">"Is Crimea Russian?"</div>
+              <div class="text-xs font-mono text-[#4c4f69]"><span class="italic">w<sub>D</sub></span> · direct territorial</div>
+              <div class="text-[10px] text-[#7c7f93]">"Is Crimea Russian?"</div>
             </div>
-            <div class="text-xl font-bold text-[#ef4444]" id="label-D">0.10</div>
+            <div class="text-xl font-bold text-[#d20f39]" id="label-D">0.10</div>
           </div>
           <input type="range" id="slider-D" min="0" max="1" step="0.01" value="0.10"
-                 class="w-full accent-[#ef4444]" />
-          <div class="text-[10px] text-[#64748b] mt-1">easiest for RLHF to patch</div>
+                 class="w-full accent-[#d20f39]" />
+          <div class="text-[10px] text-[#7c7f93] mt-1">easiest for RLHF to patch</div>
         </div>
 
         <!-- L slider -->
-        <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
+        <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
           <div class="flex items-baseline justify-between mb-2">
             <div>
-              <div class="text-xs font-mono text-[#e5e5e5]"><span class="italic">w<sub>L</sub></span> · legal-normative</div>
-              <div class="text-[10px] text-[#64748b]">"Did Russia annex illegally?"</div>
+              <div class="text-xs font-mono text-[#4c4f69]"><span class="italic">w<sub>L</sub></span> · legal-normative</div>
+              <div class="text-[10px] text-[#7c7f93]">"Did Russia annex illegally?"</div>
             </div>
-            <div class="text-xl font-bold text-[#f97316]" id="label-L">0.50</div>
+            <div class="text-xl font-bold text-[#fe640b]" id="label-L">0.50</div>
           </div>
           <input type="range" id="slider-L" min="0" max="1" step="0.01" value="0.50"
-                 class="w-full accent-[#f97316]" />
-          <div class="text-[10px] text-[#64748b] mt-1">needs specific legal signal</div>
+                 class="w-full accent-[#fe640b]" />
+          <div class="text-[10px] text-[#7c7f93] mt-1">needs specific legal signal</div>
         </div>
 
         <!-- I slider -->
-        <div class="bg-[#0a0e1a] border border-[#1e293b] rounded-xl p-4">
+        <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
           <div class="flex items-baseline justify-between mb-2">
             <div>
-              <div class="text-xs font-mono text-[#e5e5e5]"><span class="italic">w<sub>I</sub></span> · implicit sovereignty</div>
-              <div class="text-[10px] text-[#64748b]">"What country is Yalta in?"</div>
+              <div class="text-xs font-mono text-[#4c4f69]"><span class="italic">w<sub>I</sub></span> · implicit sovereignty</div>
+              <div class="text-[10px] text-[#7c7f93]">"What country is Yalta in?"</div>
             </div>
-            <div class="text-xl font-bold text-[#f59e0b]" id="label-I">0.20</div>
+            <div class="text-xl font-bold text-[#df8e1d]" id="label-I">0.20</div>
           </div>
           <input type="range" id="slider-I" min="0" max="1" step="0.01" value="0.20"
-                 class="w-full accent-[#f59e0b]" />
-          <div class="text-[10px] text-[#64748b] mt-1">indirect, harder to game</div>
+                 class="w-full accent-[#df8e1d]" />
+          <div class="text-[10px] text-[#7c7f93] mt-1">indirect, harder to game</div>
         </div>
 
         <!-- R slider -->
-        <div class="bg-[#0a0e1a] border border-[#ffd700]/30 rounded-xl p-4">
+        <div class="bg-[#eff1f5] border border-[#df8e1d]/30 rounded-xl p-4">
           <div class="flex items-baseline justify-between mb-2">
             <div>
-              <div class="text-xs font-mono text-[#ffd700]"><span class="italic">w<sub>R</sub></span> · free-recall</div>
-              <div class="text-[10px] text-[#64748b]">"Describe Crimea in a paragraph."</div>
+              <div class="text-xs font-mono text-[#df8e1d]"><span class="italic">w<sub>R</sub></span> · free-recall</div>
+              <div class="text-[10px] text-[#7c7f93]">"Describe Crimea in a paragraph."</div>
             </div>
-            <div class="text-xl font-bold text-[#ffd700]" id="label-R">0.20</div>
+            <div class="text-xl font-bold text-[#df8e1d]" id="label-R">0.20</div>
           </div>
           <input type="range" id="slider-R" min="0" max="1" step="0.01" value="0.20"
-                 class="w-full accent-[#ffd700]" />
-          <div class="text-[10px] text-[#64748b] mt-1">default generation — hardest to fix</div>
+                 class="w-full accent-[#df8e1d]" />
+          <div class="text-[10px] text-[#7c7f93] mt-1">default generation — hardest to fix</div>
         </div>
       </div>
 
       <!-- Status line -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-[11px] pt-3 border-t border-[#1e293b]">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-[11px] pt-3 border-t border-[#ccd0da]">
         <div>
-          <div class="text-[10px] text-[#64748b] uppercase tracking-wider">Your normalised <strong class="text-[#e5e5e5]">w</strong></div>
-          <div class="font-mono text-white mt-0.5" id="norm-weights">[0.10, 0.50, 0.20, 0.20]</div>
+          <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider">Your normalised <strong class="text-[#1e1e2e]">w</strong></div>
+          <div class="font-mono text-[#4c4f69] mt-0.5" id="norm-weights">[0.10, 0.50, 0.20, 0.20]</div>
         </div>
         <div>
-          <div class="text-[10px] text-[#64748b] uppercase tracking-wider">Raw slider sum</div>
-          <div class="font-mono text-white mt-0.5"><span id="raw-sum">1.00</span></div>
+          <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider">Raw slider sum</div>
+          <div class="font-mono text-[#4c4f69] mt-0.5"><span id="raw-sum">1.00</span></div>
         </div>
         <div>
-          <div class="text-[10px] text-[#64748b] uppercase tracking-wider">Spearman ρ vs primary</div>
-          <div class="font-mono text-[#84cc16] mt-0.5"><span id="spearman">—</span> · <span id="stability" class="text-[10px]">—</span></div>
+          <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider">Spearman ρ vs primary</div>
+          <div class="font-mono text-[#40a02b] mt-0.5"><span id="spearman">—</span> · <span id="stability" class="text-[10px]">—</span></div>
         </div>
         <div>
-          <div class="text-[10px] text-[#64748b] uppercase tracking-wider">Top-5 under your <strong class="text-[#e5e5e5]">w</strong></div>
-          <div class="font-mono text-white mt-0.5 text-[10px] truncate" id="top5">—</div>
+          <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider">Top-5 under your <strong class="text-[#1e1e2e]">w</strong></div>
+          <div class="font-mono text-[#4c4f69] mt-0.5 text-[10px] truncate" id="top5">—</div>
         </div>
       </div>
     </div>
 
     <!-- Visualisations: 2D Pareto + 3D tier-space — ABOVE the table -->
-    <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-6 mb-6">
+    <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-6 mb-6">
       <div class="flex items-baseline justify-between mb-2 flex-wrap gap-2">
-        <h2 class="text-lg font-bold text-white">Tier-space visualisations</h2>
-        <div class="text-[10px] text-[#64748b]">
+        <h2 class="text-lg font-bold text-[#4c4f69]">Tier-space visualisations</h2>
+        <div class="text-[10px] text-[#7c7f93]">
           point positions are raw D̄/L̄/Ī/R̄ (weight-free) · point colour is current SAS under your weights
         </div>
       </div>
-      <p class="text-xs text-[#94a3b8] mb-4 max-w-3xl">
-        Each model is a single point in tier space. The <strong class="text-[#ef4444]">2D view</strong> is the weight-free
+      <p class="text-xs text-[#6c6f85] mb-4 max-w-3xl">
+        Each model is a single point in tier space. The <strong class="text-[#d20f39]">2D view</strong> is the weight-free
         Pareto plane — D̄ horizontal, R̄ vertical, y = x dashed — so its point positions never move. Dragging the sliders
-        only recolours the 2D points to their current SAS. The <strong class="text-[#ffd700]">3D view</strong> is a live
+        only recolours the 2D points to their current SAS. The <strong class="text-[#df8e1d]">3D view</strong> is a live
         response surface: X = D̄ and Y = R̄ anchor each model to its Pareto plane position, while the Z coordinate is the
-        model's SAS under your current weight vector <strong class="text-[#ffd700]">w</strong>. Drag a slider and every
-        point physically rises or falls to its new SAS height. Set <strong class="text-[#ffd700]">w</strong> = [1, 0, 0, 0]
-        and the response surface collapses to Z = D̄ (Z equals X); set <strong class="text-[#ffd700]">w</strong> = [0, 0, 0, 1]
+        model's SAS under your current weight vector <strong class="text-[#df8e1d]">w</strong>. Drag a slider and every
+        point physically rises or falls to its new SAS height. Set <strong class="text-[#df8e1d]">w</strong> = [1, 0, 0, 0]
+        and the response surface collapses to Z = D̄ (Z equals X); set <strong class="text-[#df8e1d]">w</strong> = [0, 0, 0, 1]
         and it collapses to Z = R̄ (Z equals Y). The math becomes visible.
       </p>
       <div class="grid md:grid-cols-2 gap-4">
         <div>
-          <div class="text-[10px] text-[#64748b] uppercase tracking-wider font-semibold mb-1">2D — forced vs free · y = x consistent line</div>
+          <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider font-semibold mb-1">2D — forced vs free · y = x consistent line</div>
           <div id="plot-2d" class="w-full" style="min-height:460px;"></div>
         </div>
         <div>
-          <div class="text-[10px] text-[#64748b] uppercase tracking-wider font-semibold mb-1">3D response surface — drag to rotate · Z = your SAS</div>
+          <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider font-semibold mb-1">3D response surface — drag to rotate · Z = your SAS</div>
           <div id="plot-3d" class="w-full" style="min-height:460px;"></div>
         </div>
       </div>
-      <div class="text-[10px] text-[#64748b] mt-3 flex flex-wrap gap-x-4 gap-y-1">
+      <div class="text-[10px] text-[#7c7f93] mt-3 flex flex-wrap gap-x-4 gap-y-1">
         <span>Hover any point for model + all four tier means + current SAS.</span>
         <span>3D: drag to orbit · shift-drag to pan · scroll to zoom.</span>
       </div>
     </div>
 
     <!-- Live ranking -->
-    <div class="bg-[#111827] border border-[#1e293b] rounded-2xl p-6 mb-8">
+    <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-6 mb-8">
       <div class="flex items-baseline justify-between mb-4 flex-wrap gap-2">
-        <h2 class="text-lg font-bold text-white">Live SAS ranking</h2>
-        <div class="text-[10px] text-[#64748b]">
+        <h2 class="text-lg font-bold text-[#4c4f69]">Live SAS ranking</h2>
+        <div class="text-[10px] text-[#7c7f93]">
           Updated on every slider move · <span id="model-count">{rows.length}</span> models
         </div>
       </div>
@@ -224,17 +224,17 @@ const jsonPayload = JSON.stringify(rows);
     </div>
 
     <!-- Footer -->
-    <div class="text-xs text-[#64748b]">
+    <div class="text-xs text-[#7c7f93]">
       <p class="mb-2">
-        <strong class="text-[#e5e5e5]">What to look for.</strong>
-        Drag the <em>w<sub>D</sub></em> slider all the way to 1 and the other three to 0: you are now ranking by forced-choice only (<strong class="text-[#e5e5e5]">w</strong> = [1, 0, 0, 0]). Notice that the closed flagships (Gemini 2.5 Pro, Claude Opus 4.6, GPT-5.4, Claude Sonnet 4.6) dominate. Now drag <em>w<sub>R</sub></em> all the way to 1 and the rest to 0: the ranking nearly <em>reverses</em>. Open and small models score higher on default generation because they never received the heavy RLHF surface patching the closed labs invested in. This is the RLHF-gap story in one gesture. The Spearman ρ between those two extremes is <strong class="text-[#ef4444]">−0.486</strong> — a ranking inversion in the weight space.
+        <strong class="text-[#1e1e2e]">What to look for.</strong>
+        Drag the <em>w<sub>D</sub></em> slider all the way to 1 and the other three to 0: you are now ranking by forced-choice only (<strong class="text-[#1e1e2e]">w</strong> = [1, 0, 0, 0]). Notice that the closed flagships (Gemini 2.5 Pro, Claude Opus 4.6, GPT-5.4, Claude Sonnet 4.6) dominate. Now drag <em>w<sub>R</sub></em> all the way to 1 and the rest to 0: the ranking nearly <em>reverses</em>. Open and small models score higher on default generation because they never received the heavy RLHF surface patching the closed labs invested in. This is the RLHF-gap story in one gesture. The Spearman ρ between those two extremes is <strong class="text-[#d20f39]">−0.486</strong> — a ranking inversion in the weight space.
       </p>
       <p class="mb-2">
-        <strong class="text-[#e5e5e5]">What the primary (Legal-heavy) scheme does.</strong>
-        It puts 50% of the total weight on the legal-normative tier — the tier that most directly tests alignment with the international-law framework (UN GA Resolution 68/262). A model that answers "Did Russia illegally annex Crimea?" correctly has demonstrably absorbed the normative consensus; a model that fails there cannot be rescued by correct answers on behavioural tiers. The Spearman ρ between Legal-heavy and the alternative Monotonic 1:2:3:4 scheme is <strong class="text-[#22c55e]">0.985</strong> — the two competing theoretical arguments (legal-normative primacy vs RLHF-patchability) converge on almost identical rankings, which is the strongest possible robustness statement.
+        <strong class="text-[#1e1e2e]">What the primary (Legal-heavy) scheme does.</strong>
+        It puts 50% of the total weight on the legal-normative tier — the tier that most directly tests alignment with the international-law framework (UN GA Resolution 68/262). A model that answers "Did Russia illegally annex Crimea?" correctly has demonstrably absorbed the normative consensus; a model that fails there cannot be rescued by correct answers on behavioural tiers. The Spearman ρ between Legal-heavy and the alternative Monotonic 1:2:3:4 scheme is <strong class="text-[#40a02b]">0.985</strong> — the two competing theoretical arguments (legal-normative primacy vs RLHF-patchability) converge on almost identical rankings, which is the strongest possible robustness statement.
       </p>
       <p>
-        <strong class="text-[#e5e5e5]">Try to break the top 5.</strong> We could not find any sane weight scheme in which Gemini 2.5 Pro, Claude Opus 4.6, or GPT-5.4 drops out of the top 5. If you find one, <a href="https://github.com/IvanDobrovolsky/crimeaisukraine/issues/new" class="text-[#0057b7] hover:underline">open an issue</a> with the URL of your weight configuration (the URL hash encodes the slider state) and we will add it to the known-counterexamples list.
+        <strong class="text-[#1e1e2e]">Try to break the top 5.</strong> We could not find any sane weight scheme in which Gemini 2.5 Pro, Claude Opus 4.6, or GPT-5.4 drops out of the top 5. If you find one, <a href="https://github.com/IvanDobrovolsky/crimeaisukraine/issues/new" class="text-[#0057b7] hover:underline">open an issue</a> with the URL of your weight configuration (the URL hash encodes the slider state) and we will add it to the known-counterexamples list.
       </p>
     </div>
   </main>
@@ -304,11 +304,11 @@ const jsonPayload = JSON.stringify(rows);
       // Build static DOM for each model once, then only update values on slider change.
       const rowNodes = rows.map((r, i) => {
         const row = document.createElement('div');
-        row.className = 'sas-row grid grid-cols-[2rem_1fr_3rem_auto] md:grid-cols-[2rem_minmax(10rem,16rem)_1fr_3.5rem_4.5rem] gap-2 items-center py-1 px-2 rounded hover:bg-[#0a0e1a]/60 transition';
+        row.className = 'sas-row grid grid-cols-[2rem_1fr_3rem_auto] md:grid-cols-[2rem_minmax(10rem,16rem)_1fr_3.5rem_4.5rem] gap-2 items-center py-1 px-2 rounded hover:bg-[#eff1f5]/60 transition';
         row.dataset.idx = i;
 
         const rank = document.createElement('div');
-        rank.className = 'text-[10px] text-[#64748b] font-mono';
+        rank.className = 'text-[10px] text-[#7c7f93] font-mono';
         rank.textContent = '—';
 
         const nameWrap = document.createElement('div');
@@ -318,20 +318,20 @@ const jsonPayload = JSON.stringify(rows);
         nameEl.className = 'text-xs md:text-sm text-[#0057b7] hover:underline truncate font-medium';
         nameEl.textContent = r.name;
         const orgEl = document.createElement('span');
-        orgEl.className = 'text-[10px] text-[#64748b] hidden md:inline';
+        orgEl.className = 'text-[10px] text-[#7c7f93] hidden md:inline';
         orgEl.textContent = r.org;
         nameWrap.appendChild(nameEl);
         nameWrap.appendChild(orgEl);
 
         const barWrap = document.createElement('div');
-        barWrap.className = 'h-5 bg-[#0a0e1a] border border-[#1e293b] rounded overflow-hidden relative';
+        barWrap.className = 'h-5 bg-white border border-[#ccd0da] rounded overflow-hidden relative';
         const bar = document.createElement('div');
         bar.className = 'h-full transition-all duration-75';
         bar.style.width = '0%';
         barWrap.appendChild(bar);
 
         const sasEl = document.createElement('div');
-        sasEl.className = 'text-[11px] md:text-xs font-mono font-bold text-white text-right';
+        sasEl.className = 'text-[11px] md:text-xs font-mono font-bold text-[#4c4f69] text-right';
         sasEl.textContent = '—';
 
         const gapEl = document.createElement('div');
@@ -339,10 +339,10 @@ const jsonPayload = JSON.stringify(rows);
         const g = r.rlhfGap;
         if (g == null) {
           gapEl.textContent = '—';
-          gapEl.style.color = '#64748b';
+          gapEl.style.color = '#7c7f93';
         } else {
           gapEl.textContent = (g >= 0 ? '+' : '') + g.toFixed(2);
-          gapEl.style.color = g >= 0.15 ? '#ef4444' : g >= 0.05 ? '#f59e0b' : g > -0.05 ? '#94a3b8' : g > -0.20 ? '#84cc16' : '#22c55e';
+          gapEl.style.color = g >= 0.15 ? '#d20f39' : g >= 0.05 ? '#df8e1d' : g > -0.05 ? '#6c6f85' : g > -0.20 ? '#40a02b' : '#40a02b';
         }
 
         row.appendChild(rank);
@@ -396,19 +396,19 @@ const jsonPayload = JSON.stringify(rows);
         const rho = spearman(userRank, primaryRank);
         spearmanEl.textContent = rho.toFixed(3);
         if (rho >= 0.95) {
-          spearmanEl.style.color = '#22c55e';
+          spearmanEl.style.color = '#40a02b';
           stabilityEl.textContent = 'stable';
         } else if (rho >= 0.80) {
-          spearmanEl.style.color = '#84cc16';
+          spearmanEl.style.color = '#40a02b';
           stabilityEl.textContent = 'stable';
         } else if (rho >= 0.50) {
-          spearmanEl.style.color = '#f59e0b';
+          spearmanEl.style.color = '#df8e1d';
           stabilityEl.textContent = 'moderate';
         } else if (rho >= 0) {
-          spearmanEl.style.color = '#f97316';
+          spearmanEl.style.color = '#fe640b';
           stabilityEl.textContent = 'weak';
         } else {
-          spearmanEl.style.color = '#ef4444';
+          spearmanEl.style.color = '#d20f39';
           stabilityEl.textContent = 'inverted!';
         }
 
@@ -426,7 +426,7 @@ const jsonPayload = JSON.stringify(rows);
           node.sasEl.textContent = sas.toFixed(3);
           const pct = Math.max(0, Math.min(100, sas * 100));
           node.bar.style.width = pct + '%';
-          const color = sas >= 0.85 ? '#22c55e' : sas >= 0.75 ? '#84cc16' : sas >= 0.65 ? '#f59e0b' : sas >= 0.55 ? '#f97316' : '#ef4444';
+          const color = sas >= 0.85 ? '#40a02b' : sas >= 0.75 ? '#40a02b' : sas >= 0.65 ? '#df8e1d' : sas >= 0.55 ? '#fe640b' : '#d20f39';
           node.bar.style.backgroundColor = color;
         }
 
@@ -455,11 +455,11 @@ const jsonPayload = JSON.stringify(rows);
 
       function sasColor(s) {
         // Match the ranking bar colour scheme
-        if (s >= 0.85) return '#22c55e';
-        if (s >= 0.75) return '#84cc16';
-        if (s >= 0.65) return '#f59e0b';
-        if (s >= 0.55) return '#f97316';
-        return '#ef4444';
+        if (s >= 0.85) return '#40a02b';
+        if (s >= 0.75) return '#40a02b';
+        if (s >= 0.65) return '#df8e1d';
+        if (s >= 0.55) return '#fe640b';
+        return '#d20f39';
       }
 
       function renderPlots() {
@@ -492,36 +492,36 @@ const jsonPayload = JSON.stringify(rows);
 
         // Common layout bits
         const baseLayout = {
-          paper_bgcolor: '#0a0e1a',
-          plot_bgcolor: '#0a0e1a',
-          font: { color: '#94a3b8', family: 'system-ui, -apple-system, sans-serif', size: 11 },
+          paper_bgcolor: '#eff1f5',
+          plot_bgcolor: '#eff1f5',
+          font: { color: '#6c6f85', family: 'system-ui, -apple-system, sans-serif', size: 11 },
           margin: { l: 50, r: 10, t: 10, b: 50 },
           showlegend: false,
           hoverlabel: {
-            bgcolor: '#111827',
-            bordercolor: '#334155',
-            font: { color: '#e5e5e5', size: 11 },
+            bgcolor: '#e6e9ef',
+            bordercolor: '#bcc0cc',
+            font: { color: '#4c4f69', size: 11 },
           },
         };
 
         // ── 2D: forced (D) vs free (R) scatter ────────────────────────
         const layout2d = Object.assign({}, baseLayout, {
           xaxis: {
-            title: { text: 'D̄ — direct territorial (forced-choice)', font: { color: '#e5e5e5', size: 12 } },
-            range: [-0.02, 1.02], gridcolor: '#1e293b', zerolinecolor: '#334155',
-            tickfont: { color: '#94a3b8' },
+            title: { text: 'D̄ — direct territorial (forced-choice)', font: { color: '#4c4f69', size: 12 } },
+            range: [-0.02, 1.02], gridcolor: '#ccd0da', zerolinecolor: '#bcc0cc',
+            tickfont: { color: '#6c6f85' },
           },
           yaxis: {
-            title: { text: 'R̄ — free-recall (default generation)', font: { color: '#e5e5e5', size: 12 } },
-            range: [-0.02, 1.02], gridcolor: '#1e293b', zerolinecolor: '#334155',
-            tickfont: { color: '#94a3b8' }, scaleanchor: 'x', scaleratio: 1,
+            title: { text: 'R̄ — free-recall (default generation)', font: { color: '#4c4f69', size: 12 } },
+            range: [-0.02, 1.02], gridcolor: '#ccd0da', zerolinecolor: '#bcc0cc',
+            tickfont: { color: '#6c6f85' }, scaleanchor: 'x', scaleratio: 1,
           },
           shapes: [
             // y = x consistent line
             {
               type: 'line', xref: 'x', yref: 'y',
               x0: 0, y0: 0, x1: 1, y1: 1,
-              line: { color: '#64748b', width: 1.6, dash: 'dash' },
+              line: { color: '#7c7f93', width: 1.6, dash: 'dash' },
             },
             // Below-diagonal shading (surface-patched)
             {
@@ -542,7 +542,7 @@ const jsonPayload = JSON.stringify(rows);
             {
               x: 0.82, y: 0.30, xref: 'x', yref: 'y', showarrow: false,
               text: '<b>surface-patched</b><br><span style="font-size:9px">forced > free</span>',
-              font: { color: '#ef4444', size: 11 }, opacity: 0.85, align: 'center',
+              font: { color: '#d20f39', size: 11 }, opacity: 0.85, align: 'center',
             },
             {
               x: 0.28, y: 0.82, xref: 'x', yref: 'y', showarrow: false,
@@ -551,7 +551,7 @@ const jsonPayload = JSON.stringify(rows);
             },
             {
               x: 0.93, y: 0.91, xref: 'x', yref: 'y', showarrow: false,
-              text: '<i>y = x</i>', font: { color: '#64748b', size: 10 }, xanchor: 'right',
+              text: '<i>y = x</i>', font: { color: '#7c7f93', size: 10 }, xanchor: 'right',
             },
           ],
         });
@@ -565,7 +565,7 @@ const jsonPayload = JSON.stringify(rows);
             return r.name.length > 18 ? r.name.slice(0, 16) + '…' : r.name;
           }),
           textposition: 'top center',
-          textfont: { color: '#e5e5e5', size: 9 },
+          textfont: { color: '#4c4f69', size: 9 },
           marker: {
             size: 14,
             color: initialColors,
@@ -591,21 +591,21 @@ const jsonPayload = JSON.stringify(rows);
         const layout3d = Object.assign({}, baseLayout, {
           scene: {
             xaxis: {
-              title: { text: 'D̄  (direct territorial)', font: { color: '#e5e5e5', size: 11 } },
-              range: [0, 1], gridcolor: '#1e293b', zerolinecolor: '#334155',
-              backgroundcolor: '#0a0e1a', tickfont: { color: '#94a3b8', size: 9 },
+              title: { text: 'D̄  (direct territorial)', font: { color: '#4c4f69', size: 11 } },
+              range: [0, 1], gridcolor: '#ccd0da', zerolinecolor: '#bcc0cc',
+              backgroundcolor: '#eff1f5', tickfont: { color: '#6c6f85', size: 9 },
             },
             yaxis: {
-              title: { text: 'R̄  (free-recall)', font: { color: '#e5e5e5', size: 11 } },
-              range: [0, 1], gridcolor: '#1e293b', zerolinecolor: '#334155',
-              backgroundcolor: '#0a0e1a', tickfont: { color: '#94a3b8', size: 9 },
+              title: { text: 'R̄  (free-recall)', font: { color: '#4c4f69', size: 11 } },
+              range: [0, 1], gridcolor: '#ccd0da', zerolinecolor: '#bcc0cc',
+              backgroundcolor: '#eff1f5', tickfont: { color: '#6c6f85', size: 9 },
             },
             zaxis: {
-              title: { text: 'SAS  (under your w)', font: { color: '#ffd700', size: 11 } },
-              range: [0, 1], gridcolor: '#1e293b', zerolinecolor: '#334155',
-              backgroundcolor: '#0a0e1a', tickfont: { color: '#94a3b8', size: 9 },
+              title: { text: 'SAS  (under your w)', font: { color: '#df8e1d', size: 11 } },
+              range: [0, 1], gridcolor: '#ccd0da', zerolinecolor: '#bcc0cc',
+              backgroundcolor: '#eff1f5', tickfont: { color: '#6c6f85', size: 9 },
             },
-            bgcolor: '#0a0e1a',
+            bgcolor: '#eff1f5',
             camera: {
               eye: { x: 1.75, y: 1.55, z: 1.05 },
             },
@@ -625,7 +625,7 @@ const jsonPayload = JSON.stringify(rows);
             return short.length > 14 ? short.slice(0, 12) + '…' : short;
           }),
           textposition: 'top center',
-          textfont: { color: '#cbd5e1', size: 8 },
+          textfont: { color: '#5c5f77', size: 8 },
           marker: {
             size: 7,
             color: initialColors,
@@ -694,11 +694,11 @@ const jsonPayload = JSON.stringify(rows);
         presetBtns.forEach(b => {
           const isActive = b.dataset.preset === matched;
           if (isActive) {
-            b.classList.remove('bg-[#1e293b]', 'text-[#94a3b8]', 'hover:bg-[#334155]');
-            b.classList.add('bg-[#0057b7]', 'text-white', 'font-semibold');
+            b.classList.remove('bg-[#ccd0da]', 'text-[#6c6f85]', 'hover:bg-[#bcc0cc]');
+            b.classList.add('bg-[#0057b7]', 'text-[#4c4f69]', 'font-semibold');
           } else {
-            b.classList.remove('bg-[#0057b7]', 'bg-[#f97316]', 'text-white', 'font-semibold');
-            b.classList.add('bg-[#1e293b]', 'text-[#94a3b8]', 'hover:bg-[#334155]');
+            b.classList.remove('bg-[#0057b7]', 'bg-[#fe640b]', 'text-[#4c4f69]', 'font-semibold');
+            b.classList.add('bg-[#ccd0da]', 'text-[#6c6f85]', 'hover:bg-[#bcc0cc]');
           }
         });
       }

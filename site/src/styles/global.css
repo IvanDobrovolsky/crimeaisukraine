@@ -2,26 +2,38 @@
 
 @layer base {
   :root {
+    /* Catpuccin Latte palette — publication-quality light theme */
     --ua-blue: #0057b7;
-    --ua-yellow: #ffd700;
-    --bg-dark: #0a0e1a;
-    --bg-card: #111827;
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --accent: #3b82f6;
-    --correct: #22c55e;
-    --incorrect: #ef4444;
-    --ambiguous: #f59e0b;
-    --blocked: #8b5cf6;
+    --ua-yellow: #df8e1d;
+    --bg-base: #eff1f5;
+    --bg-mantle: #e6e9ef;
+    --bg-crust: #dce0e8;
+    --bg-surface0: #ccd0da;
+    --bg-surface1: #bcc0cc;
+    --text-primary: #4c4f69;
+    --text-secondary: #6c6f85;
+    --text-subtext: #7c7f93;
+    --accent: #1e66f5;
+    --correct: #40a02b;
+    --incorrect: #d20f39;
+    --ambiguous: #df8e1d;
+    --blocked: #8839ef;
   }
 
   body {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-base);
     color: var(--text-primary);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   h1, h2, h3, h4 {
     font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  /* Cards on light background */
+  .card {
+    background-color: #ffffff;
+    border: 1px solid var(--bg-surface0);
   }
 }
