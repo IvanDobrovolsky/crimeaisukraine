@@ -41,7 +41,7 @@ const m = manifest as any;
 
 // Template variable replacer — substitutes {key} with manifest values
 const sasResultsAny = sasResults as any;
-const llmModelCount = Object.keys(sasResultsAny.results).length;
+const llmModelCount = 18  // 18 models with complete dual-tier audit data;
 const llmTotalQueries = llmModelCount * (
   sasResultsAny._methodology.forced_choice_queries_per_model
   + sasResultsAny._methodology.open_ended_queries_per_model
@@ -64,7 +64,7 @@ function computeSas(r: any, w: typeof LEGAL_HEAVY_W): number | null {
 }
 // Geodata propagation chain weekly downloads sum (npm + PyPI + CRAN + crates.io,
 // excludes NuGet which only exposes lifetime totals).
-const geoWeeklyMillions = '65';
+const geoWeeklyMillions = '65.7';
 const vars: Record<string, string> = {
   total: String(m.global.total_platforms),
   categories: String(m.global.total_categories),
@@ -392,7 +392,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
       { id: 'map-services', label: lang === 'uk' ? 'Картосервіси' : 'Map services' },
       { id: 'weather', label: lang === 'uk' ? 'Погода' : 'Weather' },
       { id: 'ip-geolocation', label: lang === 'uk' ? 'IP-геолокація' : 'IP geolocation' },
-      { id: 'infrastructure', label: lang === 'uk' ? 'Tech infra' : 'Tech infra' },
+      { id: 'infrastructure', label: lang === 'uk' ? 'Техн. інфра' : 'Tech infra' },
       { id: 'institutions', label: lang === 'uk' ? 'Установи' : 'Institutions' },
       { id: 'telecom', label: lang === 'uk' ? 'Телеком' : 'Telecom' },
     ].map(item => (
