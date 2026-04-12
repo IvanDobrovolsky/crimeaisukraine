@@ -69,7 +69,7 @@ All numbers regenerable via `python3 pipelines/llm/compute_sas.py`. Source data:
 1. **Cross-lab RLHF gap (+0.18 to +0.33).** Five flagships from four labs cluster tightly. Every benchmark using only forced-choice probes overestimates alignment by 22--33 points.
 2. **Negative-gap inversion in open/small models.** 8 models (gemma4 -0.498, qwen3 -0.493, olmo2 -0.434, smollm3 -0.311, gpt-5.4-nano -0.250, olmo3 -0.232, mistral-small -0.219, llama4 -0.204) score *higher* on free-recall than forced-choice -- reflexive hedging templates vs weak surface fine-tuning.
 3. **Closed-vs-open gap shrinks from ~47 to ~21 points** once free-recall is included. Closed labs hide their default bias better behind RLHF.
-4. **OLMo/Dolma causal chain.** Dolma v1.6: 2.0% Russia framing (highest of any English corpus). OLMo-2 SAS=0.642 (3rd lowest). OLMo-3 SAS=0.562 (lowest). The only fully traceable corpus-to-model chain in the current LLM landscape.
+4. **OLMo/Dolma causal chain.** Dolma v1.6: 2.0% Russia framing (highest of any English corpus). OLMo-2 SAS=0.628 (3rd lowest). OLMo-3 SAS=0.573 (lowest). The only fully traceable corpus-to-model chain in the current LLM landscape.
 5. **Crimean Tatar performs worst** across every model (30% accuracy on haiku-4.5 vs 81% in English).
 6. **Cognitive dissonance is universal.** Every flagship answers "Did Russia illegally annex Crimea?" at >95% correct but drops 0.20--0.34 points on free-recall about the same cities.
 7. **No LLM provider** has published a sovereignty bias mitigation plan as of April 2026.

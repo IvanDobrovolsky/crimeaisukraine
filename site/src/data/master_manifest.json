@@ -1,5 +1,5 @@
 {
-  "_generated": "2026-04-11T16:00:21",
+  "_generated": "2026-04-11T20:39:58",
   "_description": "Master manifest aggregating all pipeline outputs. Single source of truth for the site.",
   "pipelines": {
     "ip": {
@@ -2964,7 +2964,26 @@
           "Tested from EU/US network endpoints; API behavior from Russian IPs not verified.",
           "temp=0 does not guarantee determinism across all providers; seed=42 used where supported.",
           "Open-ended queries available for subset of models (13 languages); forced-choice covers all 50."
-        ]
+        ],
+        "laboratories": 9,
+        "top_5": {
+          "gemini-2.5-pro": 0.9465,
+          "sonnet-4.6": 0.9137,
+          "opus-4.6": 0.911,
+          "gpt-5.4": 0.9013,
+          "gemini-2.5-flash": 0.8939
+        },
+        "bottom_5": {
+          "olmo3": 0.5734,
+          "deepseek-r1-8b": 0.4716,
+          "llama3.2-1b": 0.3754,
+          "phi3-mini": 0.317,
+          "qwen2.5-3b": 0.2728
+        },
+        "top_model": {
+          "name": "gemini-2.5-pro",
+          "sas": 0.9465
+        }
       },
       "available": true
     },

@@ -2,7 +2,7 @@
   "pipeline": "llm",
   "version": "1.0",
   "generated": "2026-04-11T00:00:00+00:00",
-  "method": "forced_choice_15q + open_ended_8q × 50_languages × 18_models, temp=0, seed=42",
+  "method": "forced_choice_15q + open_ended_8q \u00d7 50_languages \u00d7 18_models, temp=0, seed=42",
   "summary": {
     "models_audited": 18,
     "laboratories": 8,
@@ -20,18 +20,58 @@
     "tier_count": 4
   },
   "top_5_models": [
-    {"model": "gemini-2.5-pro", "lab": "Google", "sas": 0.947},
-    {"model": "sonnet-4.6", "lab": "Anthropic", "sas": 0.914},
-    {"model": "opus-4.6", "lab": "Anthropic", "sas": 0.911},
-    {"model": "gemini-2.5-flash", "lab": "Google", "sas": 0.894},
-    {"model": "gpt-5.4", "lab": "OpenAI", "sas": 0.877}
+    {
+      "model": "gemini-2.5-pro",
+      "lab": "Google",
+      "sas": 0.947
+    },
+    {
+      "model": "sonnet-4.6",
+      "lab": "Anthropic",
+      "sas": 0.914
+    },
+    {
+      "model": "opus-4.6",
+      "lab": "Anthropic",
+      "sas": 0.911
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "lab": "Google",
+      "sas": 0.894
+    },
+    {
+      "model": "gpt-5.4",
+      "lab": "OpenAI",
+      "sas": 0.877
+    }
   ],
   "bottom_5_models": [
-    {"model": "qwen3", "lab": "Alibaba", "sas": 0.580},
-    {"model": "gemma4", "lab": "Google", "sas": 0.631},
-    {"model": "olmo2", "lab": "AI2", "sas": 0.642},
-    {"model": "smollm3", "lab": "HuggingFace", "sas": 0.642},
-    {"model": "olmo3", "lab": "AI2", "sas": 0.562}
+    {
+      "model": "qwen3",
+      "lab": "Alibaba",
+      "sas": 0.58
+    },
+    {
+      "model": "gemma4",
+      "lab": "Google",
+      "sas": 0.631
+    },
+    {
+      "model": "olmo2",
+      "lab": "AI2",
+      "sas": 0.642
+    },
+    {
+      "model": "smollm3",
+      "lab": "HuggingFace",
+      "sas": 0.642
+    },
+    {
+      "model": "olmo3",
+      "lab": "AI2",
+      "sas": 0.562
+    }
   ],
   "data_sources": {
     "sas_scores": "data/sas_scores.json",
@@ -49,5 +89,24 @@
     "Tested from EU/US network endpoints; API behavior from Russian IPs not verified.",
     "temp=0 does not guarantee determinism across all providers; seed=42 used where supported.",
     "Open-ended queries available for subset of models (13 languages); forced-choice covers all 50."
-  ]
+  ],
+  "laboratories": 9,
+  "top_5": {
+    "gemini-2.5-pro": 0.9465,
+    "sonnet-4.6": 0.9137,
+    "opus-4.6": 0.911,
+    "gpt-5.4": 0.9013,
+    "gemini-2.5-flash": 0.8939
+  },
+  "bottom_5": {
+    "olmo3": 0.5734,
+    "deepseek-r1-8b": 0.4716,
+    "llama3.2-1b": 0.3754,
+    "phi3-mini": 0.317,
+    "qwen2.5-3b": 0.2728
+  },
+  "top_model": {
+    "name": "gemini-2.5-pro",
+    "sas": 0.9465
+  }
 }
