@@ -1,8 +1,18 @@
-# Crimea Is Ukraine — Digital Sovereignty Audit
+<p align="center">
+  <img src="site/public/logo-org.svg" alt="Crimea Is Ukraine" width="128"/>
+</p>
+
+<h1 align="center">Crimea Is Ukraine — Digital Sovereignty Audit</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/-Crimean%20flag-0068B7?style=flat&labelColor=0068B7&color=D52B1E" alt="Crimean flag"/>
+  <a href="https://crimeaisukraine.org"><img src="https://img.shields.io/badge/site-crimeaisukraine.org-0068B7" alt="Site"/></a>
+  <a href="https://huggingface.co/CrimeaIsUkraineOrg"><img src="https://img.shields.io/badge/🤗-HuggingFace-0068B7" alt="HuggingFace"/></a>
+</p>
 
 [**UN GA Resolution 68/262**](https://digitallibrary.un.org/record/767565) (adopted 100–11) places Crimea under Ukrainian sovereignty. The software that draws the maps, writes the news, indexes the research, and trains the AI does not.
 
-**[crimeaisukraine.org](https://crimeaisukraine.org)** · [briefing](../crimeaisukraine-paper/docs/Dobrovolskyi_2026_Briefing.docx) · [paper draft](../crimeaisukraine-paper/docs/Dobrovolskyi_2026_Crimea_Digital_Sovereignty_MC_v2.docx)
+**[crimeaisukraine.org](https://crimeaisukraine.org)** · [briefing](../crimeaisukraine-paper/docs/Dobrovolskyi_2026_Briefing.docx) · [paper draft](../crimeaisukraine-paper/docs/Dobrovolskyi_2026_Crimea_Digital_Sovereignty_MC_v2.docx) · [datasets](https://huggingface.co/CrimeaIsUkraineOrg)
 
 ## Pipelines
 

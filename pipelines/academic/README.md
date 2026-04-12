@@ -7,7 +7,7 @@
 ## Pipeline
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0068B7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
 graph TB
     A["OpenAlex API<br/>cursor pagination<br/>5 search queries"] --> B["91,670 papers<br/>2010 to 2026"]
     B --> C["Title + abstract<br/>reconstructed from<br/>inverted index"]
@@ -19,7 +19,7 @@ graph TB
     E -->|"1,439 unclear"| H["Insufficient context"]
     F --> I["Stage 3 -- Manual<br/>publisher + Q1/Q2"]
 
-    style A fill:#111827,stroke:#0057b7,color:#e5e5e5
+    style A fill:#111827,stroke:#0068B7,color:#e5e5e5
     style F fill:#111827,stroke:#ef4444,color:#ef4444
     style G fill:#111827,stroke:#22c55e,color:#22c55e
 ```

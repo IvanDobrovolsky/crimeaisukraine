@@ -5,7 +5,7 @@ Across 153,937 Crimea-mentioning articles indexed by [GDELT](https://www.gdeltpr
 ## Pipeline
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0068B7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
 flowchart TB
     A["BigQuery GDELT<br/>Crimea query 2015--2026"] --> B["153,937 URLs"]
     B --> C["HTTP fetcher<br/>15 parallel threads"]
@@ -16,7 +16,7 @@ flowchart TB
     F -->|"reports / analyzes"| G2["Stage 1 false positive"]
     G1 --> H["Stage 3: manual<br/>per-domain annotation"]
 
-    style A fill:#111827,stroke:#0057b7,color:#e5e5e5
+    style A fill:#111827,stroke:#0068B7,color:#e5e5e5
     style G1 fill:#2d0a0a,stroke:#ef4444,color:#ef4444
     style G2 fill:#052e1a,stroke:#22c55e,color:#22c55e
 ```

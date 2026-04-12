@@ -5,7 +5,7 @@
 ## Propagation chain
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0068B7', 'primaryTextColor': '#e5e5e5', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
 flowchart TB
     subgraph IGNORED["Upstream authorities Natural Earth IGNORES"]
         direction LR
@@ -58,10 +58,10 @@ flowchart TB
     NPM -->|"Highcharts override"| OUT_OK
 
     style IGNORED fill:#0a0e1a,stroke:#22c55e,color:#e5e5e5
-    style ECOSYSTEMS fill:#0a0e1a,stroke:#0057b7,color:#e5e5e5
+    style ECOSYSTEMS fill:#0a0e1a,stroke:#0068B7,color:#e5e5e5
     style DESKTOP fill:#0a0e1a,stroke:#1e293b,color:#e5e5e5
     style NE fill:#2d0a0a,stroke:#ef4444,color:#ef4444
-    style GDAL fill:#1a1f3a,stroke:#0057b7,color:#cbd5e1
+    style GDAL fill:#1a1f3a,stroke:#0068B7,color:#cbd5e1
     style OUT_BAD fill:#2d0a0a,stroke:#ef4444,color:#ef4444
     style OUT_OK fill:#052e1a,stroke:#22c55e,color:#22c55e
 ```

@@ -236,9 +236,9 @@ td {{
 small {{ color: #64748b; }}
 .legend {{ margin: 16px 0; font-size: 12px; color: #94a3b8; }}
 .legend span {{ display: inline-block; padding: 4px 10px; margin-right: 6px; color: #fff; border-radius: 4px; font-weight: 600; }}
-a {{ color: #0057b7; text-decoration: none; }}
+a {{ color: #0068B7; text-decoration: none; }}
 a:hover {{ text-decoration: underline; }}
-.flag-bar {{ display: block; width: 100%; max-width: 200px; height: 4px; background: linear-gradient(to right, #0057b7 50%, #ffd700 50%); border-radius: 2px; margin-bottom: 16px; }}
+.flag-bar {{ display: block; width: 100%; max-width: 200px; height: 4px; background: linear-gradient(to right, #0068B7 33%, #FFFFFF 33%, #FFFFFF 67%, #D52B1E 67%); border-radius: 2px; margin-bottom: 16px; }}
 </style>
 </head>
 <body>

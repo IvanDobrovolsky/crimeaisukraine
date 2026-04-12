@@ -3,7 +3,7 @@
 ## System Overview
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0057b7', 'secondaryColor': '#ffd700', 'primaryTextColor': '#f1f5f9', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0068B7', 'secondaryColor': '#FFFFFF', 'primaryTextColor': '#f1f5f9', 'lineColor': '#64748b', 'primaryBorderColor': '#1e293b'}}}%%
 graph TB
     subgraph Collection["1. Collection"]
         BQ["BigQuery<br/>GDELT 372K URLs"]
@@ -48,8 +48,8 @@ graph TB
     LLM --> JL
     MV --> JL
 
-    style Collection fill:#0a0e1a,stroke:#0057b7
-    style Processing fill:#0a0e1a,stroke:#ffd700
+    style Collection fill:#0a0e1a,stroke:#0068B7
+    style Processing fill:#0a0e1a,stroke:#FFFFFF
     style Classification fill:#0a0e1a,stroke:#22c55e
     style Verification fill:#0a0e1a,stroke:#ef4444
     style Output fill:#0a0e1a,stroke:#94a3b8
