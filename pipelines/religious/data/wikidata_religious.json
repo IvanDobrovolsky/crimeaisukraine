@@ -1,0 +1,102 @@
+{
+  "scan": "wikidata_religious_institutions",
+  "date": "2026-04-12T05:04:37.044598+00:00",
+  "total_institutions": 7,
+  "country_counts": {
+    "Russia": 7
+  },
+  "diocese_affiliation_counts": {
+    "other/unknown": 5,
+    "none": 2
+  },
+  "religion_counts": {
+    "unspecified": 7
+  },
+  "institutions": [
+    {
+      "qid": "Q63893342",
+      "label": "Funa Fortress",
+      "type": "",
+      "country_qid": "Q159",
+      "country": "Russia",
+      "diocese_qid": "Q19908497",
+      "diocese_label": "Готська єпархія",
+      "diocese_affiliation": "other/unknown",
+      "religion_qid": "",
+      "religion_label": ""
+    },
+    {
+      "qid": "Q110762347",
+      "label": "Church of Constantine and Helena",
+      "type": "",
+      "country_qid": "Q159",
+      "country": "Russia",
+      "diocese_qid": "",
+      "diocese_label": "",
+      "diocese_affiliation": "none",
+      "religion_qid": "",
+      "religion_label": ""
+    },
+    {
+      "qid": "Q110832964",
+      "label": "Great Basilica",
+      "type": "",
+      "country_qid": "Q159",
+      "country": "Russia",
+      "diocese_qid": "Q19908497",
+      "diocese_label": "Готська єпархія",
+      "diocese_affiliation": "other/unknown",
+      "religion_qid": "",
+      "religion_label": ""
+    },
+    {
+      "qid": "Q110890492",
+      "label": "Saint George Church",
+      "type": "",
+      "country_qid": "Q159",
+      "country": "Russia",
+      "diocese_qid": "Q19908497",
+      "diocese_label": "Готська єпархія",
+      "diocese_affiliation": "other/unknown",
+      "religion_qid": "",
+      "religion_label": ""
+    },
+    {
+      "qid": "Q110915080",
+      "label": "Octagonal Church",
+      "type": "",
+      "country_qid": "Q159",
+      "country": "Russia",
+      "diocese_qid": "Q19908497",
+      "diocese_label": "Готська єпархія",
+      "diocese_affiliation": "other/unknown",
+      "religion_qid": "",
+      "religion_label": ""
+    },
+    {
+      "qid": "Q111168242",
+      "label": "Church of John the Baptist, Verkhorichchia",
+      "type": "",
+      "country_qid": "Q159",
+      "country": "Russia",
+      "diocese_qid": "Q19908497",
+      "diocese_label": "Готська єпархія",
+      "diocese_affiliation": "other/unknown",
+      "religion_qid": "",
+      "religion_label": ""
+    },
+    {
+      "qid": "Q137438979",
+      "label": "Церковь Святого Николая",
+      "type": "",
+      "country_qid": "Q159",
+      "country": "Russia",
+      "diocese_qid": "",
+      "diocese_label": "",
+      "diocese_affiliation": "none",
+      "religion_qid": "",
+      "religion_label": ""
+    }
+  ],
+  "organizations": []
+}

@@ -25,7 +25,7 @@
       "actor": "Moscow Patriarchate (ROC)",
       "category": "ecclesiastical_annexation",
       "status": "incorrect",
-      "status_icon": "\u274c",
+      "status_icon": "❌",
       "detail": "In June 2022, the ROC Holy Synod unilaterally transferred the Dzhankoy, Simferopol, and Feodosiya dioceses from the Ukrainian Orthodox Church to a newly created 'Metropolitanate of Crimea' under direct Moscow jurisdiction. The UOC has never recognized this transfer. In October 2023, the ROC appointed Putin's spiritual adviser Tikhon (Shevkunov) as Metropolitan of Crimea. The ROC treats Crimea as canonically Russian territory.",
       "date": "2022-06-07",
       "sources": [
@@ -48,7 +48,7 @@
       "actor": "Ecumenical Patriarchate of Constantinople",
       "category": "autocephaly_schism",
       "status": "correct",
-      "status_icon": "\u2705",
+      "status_icon": "✅",
       "detail": "The Ecumenical Patriarchate granted autocephaly (independence) to the Orthodox Church of Ukraine on 5 January 2019, recognizing Ukraine's right to an independent church. Moscow broke communion with Constantinople on 15 October 2018 in response -- the largest Orthodox schism since 1054. The break directly challenged Moscow's claim to canonical jurisdiction over Ukrainian (including Crimean) territory.",
       "date": "2019-01-05",
       "sources": [
@@ -71,7 +71,7 @@
       "actor": "World Council of Churches (WCC)",
       "category": "institutional_silence",
       "status": "ambiguous",
-      "status_icon": "\u26a0\ufe0f",
+      "status_icon": "⚠️",
       "detail": "The ROC is the WCC's single largest member church (~100 million adherents). At the 11th Assembly in Karlsruhe (August-September 2022), a proposal to expel the ROC was unanimously defeated. The Assembly's final statement condemned Russia's invasion as 'illegal and unjustifiable' but did not single out Patriarch Kirill by name and has never specifically addressed Crimea's sovereignty. WCC General Secretary Ioan Sauca stated: 'The WCC is a free space for dialogue.'",
       "date": "2022-09-08",
       "sources": [
@@ -94,7 +94,7 @@
       "actor": "Vatican / Holy See",
       "category": "diplomatic_omission",
       "status": "ambiguous",
-      "status_icon": "\u26a0\ufe0f",
+      "status_icon": "⚠️",
       "detail": "Three episodes form a pattern. (1) The 2016 Havana Declaration -- the first-ever Pope-Patriarch meeting -- deplored 'hostility in Ukraine' without naming Crimea, two years after its annexation. Ukrainian Greek Catholics felt betrayed. (2) On 25 August 2023, Pope Francis told Russian Catholic youth: 'You are heirs of the great Russia -- the great Russia of saints, of kings, the great Russia of Peter the Great, Catherine II.' Catherine II annexed Crimea in 1783. Ukraine's Foreign Ministry called it 'imperialist propaganda.' (3) In February 2024, Francis said Ukraine should have 'the courage of the white flag' to negotiate with Russia. The Vatican later clarified this was 'a call for negotiations, not surrender.'",
       "date": "2024-02-01",
       "sources": [
@@ -125,7 +125,7 @@
       "actor": "Russian state ('sacred land' doctrine)",
       "category": "religious_nationalist_claim",
       "status": "incorrect",
-      "status_icon": "\u274c",
+      "status_icon": "❌",
       "detail": "On 4 December 2014, Putin declared in his state-of-the-nation address: 'Crimea has invaluable civilisational and even sacral importance for Russia, like the Temple Mount in Jerusalem for the followers of Islam and Judaism.' This frames the illegal annexation as a religious mandate. The claim rests on the tradition that Prince Vladimir was baptized at Chersonesus in Crimea in 988 AD -- though Ukraine has an equal (and arguably stronger) historical claim to the same event. In 2015, Putin placed Chersonesus under direct federal control. In July 2024, Russia opened the 'New Chersonesos' complex on the UNESCO World Heritage Site (inscribed 2013). The project was implemented by the Moscow Patriarchate's My History Foundation; the Russian Ministry of Defence served as general contractor. Approximately 85,000 m2 of cultural layers were destroyed and ~4 million artifacts removed from Crimea.",
       "date": "2014-12-04",
       "sources": [
@@ -164,7 +164,7 @@
       "actor": "Occupation authorities (religious registration)",
       "category": "administrative_coercion",
       "status": "incorrect",
-      "status_icon": "\u274c",
+      "status_icon": "❌",
       "detail": "Under Russian occupation law, Crimean religious communities must re-register under Russian Federation law and add language to their founding documents affirming that Crimea is part of Russia. Communities that refuse lose legal standing, access to their buildings, and face prosecution. Result: Of 46 Orthodox Church of Ukraine (OCU) parishes in Crimea at the time of annexation (2014), zero remain as of 2024. The last OCU church was physically demolished in June 2024. Non-Orthodox communities (Jehovah's Witnesses, Ukrainian Greek Catholics, some Muslim and Protestant groups) face bans, surveillance, and prosecutions. The practice of abduction, torture, and extrajudicial treatment of clerics from non-Moscow Patriarchate confessions is documented by RISU and international observers.",
       "date": "2024-06-01",
       "sources": [
@@ -284,5 +284,45 @@
     "The WCC Assembly vote count (unanimously defeated) is reported by multiple news sources but the WCC itself has not published a formal tally.",
     "Vatican diplomatic language is deliberately ambiguous by design. The characterizations here ('omission,' 'pattern') are analytical interpretations supported by Ukrainian government and Ukrainian Greek Catholic Church reactions.",
     "The ROC's membership count (~100 million) is a self-reported figure. Independent surveys (e.g., Levada Center) suggest significantly lower active participation rates."
-  ]
+  ],
+  "computational_scans": {
+    "openalex": {
+      "total_papers": 685,
+      "russia_framing": 21,
+      "ukraine_framing": 106,
+      "neutral": 558,
+      "peak_year": 2021,
+      "peak_count": 73,
+      "source": "pipelines/religious/data/academic_religious.jsonl"
+    },
+    "wikidata": {
+      "institutions_found": 7,
+      "classified_russia": 7,
+      "classified_ukraine": 0,
+      "finding": "100% of Crimean religious institutions with P17 property are classified as Russia",
+      "source": "pipelines/religious/data/wikidata_religious.json"
+    },
+    "gdelt_media": {
+      "articles_with_religious_framing": 21,
+      "pro_russia": 10,
+      "pro_ukraine": 6,
+      "neutral": 5,
+      "sacred_land_narrative": 7,
+      "finding": "Religious sovereignty framing concentrated in Russian state media",
+      "source": "pipelines/religious/data/media_religious.json"
+    },
+    "narrative_tropes": {
+      "baptism_of_rus_papers": 167,
+      "rank_among_6_tropes": 1,
+      "share_of_trope_docs": "31.3%",
+      "pre_2014": 13,
+      "post_2014": 154,
+      "increase_factor": "11.8x",
+      "peak_year": 2020,
+      "peak_count": 23,
+      "academic_vs_web_rate": "2.1x higher in academic",
+      "c4_ru_concentration": "5 of 9 docs, 20 of 24 hits",
+      "source": "pipelines/religious/data/tropes_religious.json"
+    }
+  }
 }

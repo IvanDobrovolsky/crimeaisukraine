@@ -1,0 +1,274 @@
+{
+  "scan": "wikipedia_religious_sites",
+  "date": "2026-04-12T05:04:26.444132+00:00",
+  "languages_checked": [
+    "en",
+    "uk",
+    "ru",
+    "de",
+    "fr"
+  ],
+  "sites": [
+    {
+      "name": "Chersonesus",
+      "qid": "Q184948",
+      "note": "Ancient Greek colony, site of 'baptism of Rus'",
+      "wikidata_countries": [],
+      "wikipedia_checks": [
+        {
+          "lang": "en",
+          "status": "found",
+          "title": "Chersonesus",
+          "description": "Ancient Greek colonial ruins in Sevastopol, Crimea",
+          "extract_snippet": "Chersonesus, contracted in medieval Greek to Cherson (Χερσών), was an ancient Greek colony founded approximately 2,500 years ago in the southwestern part of the Crimean Peninsula. Settlers from Heraclea Pontica in Bithynia established the colony in the 6th century BC.",
+          "framing": "ambiguous",
+          "signal": "mentions Crimea but no country attribution"
+        },
+        {
+          "lang": "uk",
+          "status": "found",
+          "title": "Зейнон",
+          "description": "",
+          "extract_snippet": "Зейнон — індо-скіфський сатрап південного Кашу (Кашмір). Втратив свої володіння в результаті завоювання парфян.",
+          "framing": "no_signal",
+          "signal": ""
+        },
+        {
+          "lang": "ru",
+          "status": "not_found"
+        },
+        {
+          "lang": "de",
+          "status": "found",
+          "title": "Chersonesos",
+          "description": "Wikimedia-Begriffsklärungsseite",
+          "extract_snippet": "Chersonesos, auch Chersones, ist eine Kurzbezeichnung für",
+          "framing": "no_signal",
+          "signal": ""
+        },
+        {
+          "lang": "fr",
+          "status": "not_found"
+        }
+      ]
+    },
+    {
+      "name": "St. Vladimir Cathedral, Sevastopol",
+      "qid": "Q4187523",
+      "note": "Cathedral commemorating baptism of Vladimir",
+      "wikidata_countries": [
+        {
+          "country": "Ukraine",
+          "qid": "Q212",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        }
+      ],
+      "wikipedia_checks": [
+        {
+          "lang": "en",
+          "status": "not_found"
+        },
+        {
+          "lang": "uk",
+          "status": "found",
+          "title": "Зарожненська сільська рада",
+          "description": "сільська рада України",
+          "extract_snippet": "Заро́жненська сільська́ ра́да — адміністративно-територіальна одиниця та орган місцевого самоврядування в Чугуївському районі Харківської області. Адміністративний центр — село Зарожне.",
+          "framing": "ukraine",
+          "signal": "description mentions Ukraine"
+        },
+        {
+          "lang": "ru",
+          "status": "found",
+          "title": "Зарожненский сельский совет (Харьковская область)",
+          "description": "",
+          "extract_snippet": "Зарожненский сельский совет — входит в состав Чугуевского района Харьковской области Украины.",
+          "framing": "no_signal",
+          "signal": ""
+        },
+        {
+          "lang": "de",
+          "status": "not_found"
+        },
+        {
+          "lang": "fr",
+          "status": "not_found"
+        }
+      ]
+    },
+    {
+      "name": "Khan's Palace, Bakhchysarai",
+      "qid": "Q937457",
+      "note": "Crimean Tatar palace, UNESCO tentative list",
+      "wikidata_countries": [],
+      "wikipedia_checks": [
+        {
+          "lang": "en",
+          "status": "found",
+          "title": "Bakhchysarai Palace",
+          "description": "Former residence of the Crimean Khans",
+          "extract_snippet": "The Khan's Palace is located in the town of Bakhchysarai, Crimea. It was built in the 16th century and became home to a succession of Crimean Khans. The walled enclosure contains a mosque, a harem, a cemetery, living quarters and gardens. The palace interior has been decorated to appear lived in and reflects the traditional 16th-century Crimean Tatar style. It is one of the best known Muslim palaces found in Europe, alongside the Sultan palaces of Istanbul and the Alhambra in Spain.",
+          "framing": "ambiguous",
+          "signal": "mentions Crimea but no country attribution"
+        },
+        {
+          "lang": "uk",
+          "status": "not_found"
+        },
+        {
+          "lang": "ru",
+          "status": "not_found"
+        },
+        {
+          "lang": "de",
+          "status": "not_found"
+        },
+        {
+          "lang": "fr",
+          "status": "not_found"
+        }
+      ]
+    },
+    {
+      "name": "Assumption Monastery (Uspensky)",
+      "qid": "Q4018729",
+      "note": "Medieval cave monastery near Bakhchysarai",
+      "wikidata_countries": [],
+      "wikipedia_checks": [
+        {
+          "lang": "en",
+          "status": "not_found"
+        },
+        {
+          "lang": "uk",
+          "status": "not_found"
+        },
+        {
+          "lang": "ru",
+          "status": "not_found"
+        },
+        {
+          "lang": "de",
+          "status": "not_found"
+        },
+        {
+          "lang": "fr",
+          "status": "not_found"
+        }
+      ]
+    },
+    {
+      "name": "New Chersonesos complex",
+      "qid": null,
+      "note": "Russian state/church project on UNESCO site (opened 2024)",
+      "wikidata_countries": [],
+      "wikipedia_checks": []
+    },
+    {
+      "name": "St. Vladimir Cathedral, Chersonesus",
+      "qid": "Q4187522",
+      "note": "Cathedral built on the presumed site of Vladimir's baptism",
+      "wikidata_countries": [],
+      "wikipedia_checks": [
+        {
+          "lang": "en",
+          "status": "not_found"
+        },
+        {
+          "lang": "uk",
+          "status": "not_found"
+        },
+        {
+          "lang": "ru",
+          "status": "not_found"
+        },
+        {
+          "lang": "de",
+          "status": "not_found"
+        },
+        {
+          "lang": "fr",
+          "status": "not_found"
+        }
+      ]
+    },
+    {
+      "name": "Juma-Jami Mosque, Yevpatoria",
+      "qid": "Q4131693",
+      "note": "16th-century mosque by Mimar Sinan",
+      "wikidata_countries": [],
+      "wikipedia_checks": [
+        {
+          "lang": "en",
+          "status": "not_found"
+        },
+        {
+          "lang": "uk",
+          "status": "not_found"
+        },
+        {
+          "lang": "ru",
+          "status": "found",
+          "title": "Газизуллин",
+          "description": "страница значений в проекте Викимедиа",
+          "extract_snippet": "Газизуллин — фамилия татарского происхожденияГазизуллин, Ибрагим Галимович (1919—1944) — Герой Советского Союза.\nГазизуллин, Исмагил Курбанович — российский живописец. Член Союза художников СССР с 1990 года.\nГазизуллин, Фарит Рафикович — член совета директоров ОАО «Газпром», экс-министр имущественных отношений Российской Федерации.",
+          "framing": "russia_in_text",
+          "signal": "first paragraph mentions Russia"
+        },
+        {
+          "lang": "de",
+          "status": "not_found"
+        },
+        {
+          "lang": "fr",
+          "status": "not_found"
+        }
+      ]
+    },
+    {
+      "name": "Kebir-Jami Mosque, Simferopol",
+      "qid": "Q4222427",
+      "note": "Oldest mosque in Simferopol",
+      "wikidata_countries": [],
+      "wikipedia_checks": [
+        {
+          "lang": "en",
+          "status": "not_found"
+        },
+        {
+          "lang": "uk",
+          "status": "not_found"
+        },
+        {
+          "lang": "ru",
+          "status": "not_found"
+        },
+        {
+          "lang": "de",
+          "status": "not_found"
+        },
+        {
+          "lang": "fr",
+          "status": "not_found"
+        }
+      ]
+    }
+  ],
+  "framing_counts": {
+    "ukraine": 1,
+    "russia": 0,
+    "ambiguous": 2,
+    "no_signal": 3,
+    "ukraine_in_text": 0,
+    "russia_in_text": 1,
+    "not_found": 28
+  },
+  "p17_summary": {
+    "Ukraine": 1,
+    "Russia": 0,
+    "other": 0,
+    "none": 7
+  }
+}
