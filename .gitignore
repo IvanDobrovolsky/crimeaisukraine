@@ -51,3 +51,5 @@ c4_sovereignty/data/c4_uk_crimea.jsonl
 c4_sovereignty/data/dolma_*.jsonl
 c4_sovereignty/training_data/ira_tweets_raw.csv
 c4_sovereignty/training_data/euvsdisinfo.csv
+c4_sovereignty/scanner/target/
+/tmp/c4_*
