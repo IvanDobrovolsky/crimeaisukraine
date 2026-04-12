@@ -1,0 +1,104 @@
+{
+  "scan_date": "2026-04-11",
+  "source_files": [
+    "data/narrative_tropes_academic.jsonl",
+    "data/narrative_tropes_training.jsonl",
+    "data/narrative_tropes_academic_summary.json",
+    "data/narrative_tropes_training_summary.json"
+  ],
+  "religious_trope": "baptism_of_rus_chersonesos",
+  "academic": {
+    "total_docs_scanned": 91670,
+    "total_docs_with_any_trope": 534,
+    "docs_with_baptism_trope": 167,
+    "baptism_rate_pct": 0.1822,
+    "baptism_share_of_trope_docs_pct": 31.3,
+    "baptism_is_most_frequent_trope": true,
+    "by_year": {
+      "2010": 4,
+      "2011": 3,
+      "2012": 3,
+      "2013": 3,
+      "2014": 8,
+      "2015": 9,
+      "2016": 7,
+      "2017": 8,
+      "2018": 9,
+      "2019": 15,
+      "2020": 23,
+      "2021": 21,
+      "2022": 13,
+      "2023": 13,
+      "2024": 12,
+      "2025": 14,
+      "2026": 2
+    },
+    "by_sovereignty_label": {
+      "no_signal": 93,
+      "ukraine": 5,
+      "russia": 3,
+      "no_crimea_ref": 66
+    },
+    "top_venues": {
+      "Zenodo (CERN European Organization for Nuclear Research)": 17,
+      "Materials in Archaeology History and Ethnography of Tauria": 10,
+      "unknown": 9,
+      "Античная древность и средние века": 7,
+      "Археология Евразийских степей": 6,
+      "Journal of historical philological and cultural studies": 5,
+      "Scientific Notes of V I Vernadsky Crimean Federal University Historical science": 5,
+      "Hyperboreus": 5,
+      "Краткие сообщения Института археологии (КСИА)": 4,
+      "Archaeopress Publishing Ltd eBooks": 3,
+      "Vestnik Volgogradskogo gosudarstvennogo universiteta Serija 4 Istorija Regionovedenie Mezhdunarodnye otnoshenija": 2,
+      "InterCarto InterGIS": 2,
+      "Istoriya": 2,
+      "Vestnik drevnei istorii": 2,
+      "SHILAP Revista de lepidopterología": 2
+    },
+    "pre_2014_count": 13,
+    "post_2014_count": 154
+  },
+  "training": {
+    "total_docs_scanned": 10539,
+    "total_docs_with_any_trope": 57,
+    "docs_with_baptism_trope": 9,
+    "baptism_rate_pct": 0.0854,
+    "baptism_share_of_trope_docs_pct": 15.8,
+    "by_corpus": {
+      "c4_en": 1,
+      "c4_ru": 5,
+      "fineweb_edu": 2,
+      "dolma": 1
+    },
+    "by_sovereignty_label": {
+      "no_signal": 8,
+      "ukraine": 1
+    },
+    "total_hit_occurrences": 24
+  },
+  "comparison": {
+    "academic_rate_per_10k": 18.22,
+    "training_rate_per_10k": 8.54,
+    "academic_to_training_ratio": 2.1,
+    "note": "Academic literature invokes the Chersonesos/baptism trope at a significantly higher rate than web training corpora, reflecting its role as a scholarly reference point for Russian sovereignty claims."
+  },
+  "all_trope_counts": {
+    "academic": {
+      "baptism_of_rus_chersonesos": 167,
+      "hero_city_sevastopol": 106,
+      "russian_speaking_majority": 96,
+      "black_sea_fleet": 88,
+      "catherine_1783": 74,
+      "khrushchev_1954": 8
+    },
+    "training": {
+      "black_sea_fleet": 25,
+      "baptism_of_rus_chersonesos": 9,
+      "hero_city_sevastopol": 9,
+      "catherine_1783": 8,
+      "russian_speaking_majority": 6,
+      "khrushchev_1954": 1
+    }
+  }
+}

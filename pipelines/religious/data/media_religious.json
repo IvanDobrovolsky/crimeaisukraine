@@ -1,0 +1,282 @@
+{
+  "scan_date": "2026-04-11",
+  "source_files": [
+    "data/media_framing.json",
+    "data/media_russia_endorses.csv"
+  ],
+  "total_gdelt_articles": 2485,
+  "religious_articles_count": 21,
+  "religious_share_pct": 0.8,
+  "by_source_type": {
+    "Russian": 10,
+    "International": 11
+  },
+  "by_domain_top15": {
+    "obozrevatel.com": 5,
+    "news.mail.ru": 2,
+    "tass.ru": 2,
+    "evening-kazan.ru": 1,
+    "mngz.ru": 1,
+    "vesti.ru": 1,
+    "riadagestan.ru": 1,
+    "radonezh.ru": 1,
+    "rv-ryazan.ru": 1,
+    "glavcom.ua": 1,
+    "interfax.com.ua": 1,
+    "espreso.tv": 1,
+    "zaxid.net": 1,
+    "mediacongo.net": 1,
+    "ukrinform.ua": 1
+  },
+  "by_year": {
+    "2026": 21
+  },
+  "by_framing_type": {
+    "general_religious": 13,
+    "sacred_land": 7,
+    "roc_institutional": 2
+  },
+  "by_sovereignty_framing": {
+    "pro_russia": 10,
+    "pro_ukraine": 6,
+    "neutral_critical": 5
+  },
+  "russia_endorses_csv": {
+    "total": 5123,
+    "with_religious_terms": 17
+  },
+  "articles": [
+    {
+      "url": "https://news.mail.ru/society/70199260/",
+      "title": "ФСБ задержала подростка , планировавшего теракт в храме Башкирии",
+      "domain": "news.mail.ru",
+      "source_country": "Russia",
+      "framing": "pro_russia",
+      "seen_date": "20260318T074500Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    },
+    {
+      "url": "https://news.mail.ru/incident/70199252/",
+      "title": "ФСБ задержала школьника из Уфы , планировавшего теракт в храме по заданию радикалов",
+      "domain": "news.mail.ru",
+      "source_country": "Russia",
+      "framing": "pro_russia",
+      "seen_date": "20260318T074500Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    },
+    {
+      "url": "https://www.evening-kazan.ru/obshhestvo/news/minnihanov-poruchil-usilit-bezopasnost-v-mechetyah-na-uraza-bayram",
+      "title": "Минниханов поручил усилить безопасность в мечетях на Ураза - байрам Вечерняя Казань",
+      "domain": "evening-kazan.ru",
+      "source_country": "Russia",
+      "framing": "pro_russia",
+      "seen_date": "20260314T111500Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    },
+    {
+      "url": "https://www.mngz.ru/news/4238430-sotrudniki-gufsin-posetili-prazdnichnyy-koncert-posvyaschennyy-12-y-godovschine-vossoedineniya-respubliki-krym-i-goroda-sevastopolya-s-rossiey.html",
+      "title": "Сотрудники ГУФСИН посетили праздничный концерт , посвященный 12 - й годовщине воссоединения Республики Крым и города Севастополя с Россией » Информационное агентство МАНГАЗЕЯ",
+      "domain": "mngz.ru",
+      "source_country": "Russia",
+      "framing": "pro_russia",
+      "seen_date": "20260319T083000Z",
+      "religious_framing_types": [
+        "sacred_land"
+      ]
+    },
+    {
+      "url": "https://tass.ru/obschestvo/26257945",
+      "title": "Более 5 тыс . крымских учителей прошли курсы , посвященные событиям Крымской весны",
+      "domain": "tass.ru",
+      "source_country": "Russia",
+      "framing": "pro_russia",
+      "seen_date": "20260127T054500Z",
+      "religious_framing_types": [
+        "sacred_land"
+      ]
+    },
+    {
+      "url": "https://www.vesti.ru/ns/novyj-khersones-v-sevastopole-podsvetili-v-cvetakh-rossijskogo-trikolora",
+      "title": "  Новый Херсонес  в Севастополе подсветили в цветах российского триколора",
+      "domain": "vesti.ru",
+      "source_country": "Russia",
+      "framing": "pro_russia",
+      "seen_date": "20260318T203000Z",
+      "religious_framing_types": [
+        "sacred_land"
+      ]
+    },
+    {
+      "url": "https://riadagestan.ru/news/society/bolee_300_dagestanskikh_shkolnikov_i_studentov_stanut_uchastnikami_lektsiy_posvyaschennykh_russkoy_vesne",
+      "title": "Более 300 дагестанских школьников и студентов станут участниками лекций , посвященных Русской весне",
+      "domain": "riadagestan.ru",
+      "source_country": "Russia",
+      "framing": "pro_russia",
+      "seen_date": "20260319T121500Z",
+      "religious_framing_types": [
+        "sacred_land"
+      ]
+    },
+    {
+      "url": "https://radonezh.ru/2026/03/06/v-russkoy-pravoslavnoy-cerkvi-ne-podderzhali-zakonoproekt-o-perenose-dney-voinskoy-slavy",
+      "title": "В Русской Православной Церкви не поддержали законопроект о переносе дней воинской славы",
+      "domain": "radonezh.ru",
+      "source_country": "Russia",
+      "framing": "pro_russia",
+      "seen_date": "20260306T164500Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    },
+    {
+      "url": "https://rv-ryazan.ru/v-ryazani-proshla-konferenciya-posvyashhennaya-12-j-godovshhine-vossoedineniya-kryma-s-rossiej/",
+      "title": "В Рязани прошла конференция , посвященная 12 - й годовщине воссоединения Крыма с Россией",
+      "domain": "rv-ryazan.ru",
+      "source_country": "Russia",
+      "framing": "pro_russia",
+      "seen_date": "20260318T170000Z",
+      "religious_framing_types": [
+        "sacred_land"
+      ]
+    },
+    {
+      "url": "https://tass.ru/kultura/26702575",
+      "title": "В  Артеке  состоялась премьера спектакля , посвященного российскому воинству",
+      "domain": "tass.ru",
+      "source_country": "Russia",
+      "framing": "pro_russia",
+      "seen_date": "20260309T204500Z",
+      "religious_framing_types": [
+        "sacred_land"
+      ]
+    },
+    {
+      "url": "https://glavcom.ua/country/society/kafedralnij-sobor-u-simferopoli-peredano-ptsu-1109087.html",
+      "title": "Кафедральний собор у Сімферополі передано ПЦУ",
+      "domain": "glavcom.ua",
+      "source_country": "Ukraine",
+      "framing": "neutral_critical",
+      "seen_date": "20260320T083000Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    },
+    {
+      "url": "https://interfax.com.ua/news/culture/1153057.html",
+      "title": "Кафедральний собор у Сімферополі юридично передали Кримській єпархії Православної церкви",
+      "domain": "interfax.com.ua",
+      "source_country": "Ukraine",
+      "framing": "neutral_critical",
+      "seen_date": "20260320T084500Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    },
+    {
+      "url": "https://espreso.tv/viyna-z-rosiyeyu-a-vi-znaete-shcho-ya-u-vyaznitsi-ponevoleniy-rosiyanami-svyashchenik-upts-mp-z-tokmaka-zvernuvsya-do-onufriya",
+      "title": "Поневолений росіянами священик УПЦ МП з Токмака звернувся до Онуфрія",
+      "domain": "espreso.tv",
+      "source_country": "Ukraine",
+      "framing": "neutral_critical",
+      "seen_date": "20260201T163000Z",
+      "religious_framing_types": [
+        "roc_institutional",
+        "sacred_land"
+      ]
+    },
+    {
+      "url": "https://zaxid.net/ye_lyudi_yaki_prihodyat_rozrivati_ne_odin_tserkovniy_shlyub_n1630215",
+      "title": "Як розірвати церковний шлюб в УГКЦ . Інтерв  ю з суддею церковного трибуналу",
+      "domain": "zaxid.net",
+      "source_country": "Ukraine",
+      "framing": "neutral_critical",
+      "seen_date": "20260212T190000Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    },
+    {
+      "url": "https://www.mediacongo.net/article-actualite-160022_antechrist_en_soutane_le_patriarche_kirill_s_attaque_aux_eglises_orthodoxes_non_russes.html",
+      "title": " « Antéchrist en soutane » : le patriarche Kirill sattaque aux Églises orthodoxes non - russes",
+      "domain": "mediacongo.net",
+      "source_country": "Democratic Republic of the Congo",
+      "framing": "neutral_critical",
+      "seen_date": "20260131T170000Z",
+      "religious_framing_types": [
+        "roc_institutional"
+      ]
+    },
+    {
+      "url": "https://www.obozrevatel.com/ukr/novosti-obschestvo/yake-svyato-vidznachayut-18-bereznya-vse-pro-tsej-den.htm",
+      "title": "Яке свято 18 березня 2026 - церковний календар",
+      "domain": "obozrevatel.com",
+      "source_country": "Ukraine",
+      "framing": "pro_ukraine",
+      "seen_date": "20260318T034500Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    },
+    {
+      "url": "https://www.obozrevatel.com/novosti-obschestvo/kakoj-prazdnik-otmechayut-18-marta-vse-ob-etom-dne.htm",
+      "title": "Какой праздник 18 марта 2026 - церковный календарь",
+      "domain": "obozrevatel.com",
+      "source_country": "Ukraine",
+      "framing": "pro_ukraine",
+      "seen_date": "20260318T024500Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    },
+    {
+      "url": "https://www.obozrevatel.com/novosti-obschestvo/kakoj-prazdnik-otmechayut-4-fevralya-v-ukraine-tserkovnyij-kalendar.htm",
+      "title": "Какой праздник 4 февраля 2026 - церковный календарь",
+      "domain": "obozrevatel.com",
+      "source_country": "Ukraine",
+      "framing": "pro_ukraine",
+      "seen_date": "20260204T031500Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    },
+    {
+      "url": "https://www.ukrinform.ua/rubric-society/4083026-soborna-ukraina-idea-aku-ne-zmogli-zlamati-imperii.html",
+      "title": "Соборна Україна : ідея , яку не змогли зламати імперії",
+      "domain": "ukrinform.ua",
+      "source_country": "Ukraine",
+      "framing": "pro_ukraine",
+      "seen_date": "20260122T114500Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    },
+    {
+      "url": "https://www.obozrevatel.com/ukr/novosti-obschestvo/yake-svyato-vidznachayut-20-sichnya-v-ukraini-vse-pro-tsej-den.htm",
+      "title": "Яке свято 20 січня - церковний календар",
+      "domain": "obozrevatel.com",
+      "source_country": "Ukraine",
+      "framing": "pro_ukraine",
+      "seen_date": "20260120T023000Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    },
+    {
+      "url": "https://www.obozrevatel.com/novosti-obschestvo/kakoj-prazdnik-otmechayut-20-yanvarya-v-ukraine-vse-ob-etom-dne.htm",
+      "title": "Какой праздник 20 января - церковный календарь",
+      "domain": "obozrevatel.com",
+      "source_country": "Ukraine",
+      "framing": "pro_ukraine",
+      "seen_date": "20260120T024500Z",
+      "religious_framing_types": [
+        "general_religious"
+      ]
+    }
+  ]
+}
