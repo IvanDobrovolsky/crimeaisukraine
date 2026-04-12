@@ -354,32 +354,46 @@ const mediaViolatorsByFilter = mediaViolators as any;
 ---
 
 <!-- Nav -->
-<nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-  <div class="flex items-center gap-3">
-    <div class="w-8 h-4 rounded-sm overflow-hidden flex flex-col">
-      <div class="flex-1 bg-[#1e66f5]"></div>
-      <div class="flex-1 bg-[#df8e1d]"></div>
+<nav class="max-w-6xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex flex-wrap justify-between items-center gap-2">
+  <div class="flex items-center gap-2 sm:gap-3">
+    <!-- Crimean flag (1:6:1 ratio) -->
+    <div class="w-8 h-5 rounded-sm overflow-hidden flex flex-col shrink-0">
+      <div style="flex: 1" class="bg-[#0068B7]"></div>
+      <div style="flex: 6" class="bg-white"></div>
+      <div style="flex: 1" class="bg-[#D52B1E]"></div>
     </div>
     <span class="text-sm font-medium text-[#5c5f77] tracking-wide">{t.siteName}</span>
   </div>
-  <div class="flex items-center gap-3">
-    <a href="https://github.com/IvanDobrovolsky/crimeaisukraine" target="_blank" class="text-sm text-[#6c6f85] hover:text-[#4c4f69] transition flex items-center gap-1.5">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-      GitHub
+  <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+    <!-- Site link -->
+    <a href="https://crimeaisukraine.org" class="hidden sm:flex text-xs text-[#6c6f85] hover:text-[#4c4f69] transition items-center gap-1">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      Site
     </a>
+    <!-- HuggingFace -->
+    <a href="https://huggingface.co/CrimeaIsUkraineOrg" target="_blank" class="text-xs text-[#6c6f85] hover:text-[#4c4f69] transition flex items-center gap-1">
+      <span class="text-sm">&#x1F917;</span>
+      <span class="hidden sm:inline">Datasets</span>
+    </a>
+    <!-- GitHub -->
+    <a href="https://github.com/IvanDobrovolsky/crimeaisukraine" target="_blank" class="text-xs text-[#6c6f85] hover:text-[#4c4f69] transition flex items-center gap-1">
+      <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      <span class="hidden sm:inline">GitHub</span>
+    </a>
+    <!-- Language selector -->
     <div class="relative">
       <select
         id="lang-select"
-        class="text-sm font-medium text-[#4c4f69] bg-white border border-[#bcc0cc] px-3 py-1.5 pr-8 rounded cursor-pointer appearance-none transition hover:border-[#0068B7] focus:outline-none focus:border-[#0068B7]"
-        style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22%3E%3Cpath d=%22M3 5l3 3 3-3%22 stroke=%22%236c6f85%22 fill=%22none%22 stroke-width=%221.5%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 8px center;"
+        class="text-xs sm:text-sm font-medium text-[#4c4f69] bg-white border border-[#bcc0cc] px-2 sm:px-3 py-1 sm:py-1.5 pr-6 sm:pr-8 rounded cursor-pointer appearance-none transition hover:border-[#1e66f5] focus:outline-none focus:border-[#1e66f5]"
+        style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22%3E%3Cpath d=%22M3 5l3 3 3-3%22 stroke=%22%236c6f85%22 fill=%22none%22 stroke-width=%221.5%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 6px center;"
       >
-        <option value="/" selected={lang === 'en'}>EN — English</option>
-        <option value="/uk" selected={lang === 'uk'}>UA — Українська</option>
-        <option value="/crh" selected={lang === 'crh'}>CRH — Qırımtatarca</option>
-        <option value="/de" selected={lang === 'de'}>DE — Deutsch</option>
-        <option value="/es" selected={lang === 'es'}>ES — Español</option>
-        <option value="/fr" selected={lang === 'fr'}>FR — Français</option>
-        <option value="/ru" selected={lang === 'ru'}>RU — Русский</option>
+        <option value="/" selected={lang === 'en'}>EN</option>
+        <option value="/uk" selected={lang === 'uk'}>UA</option>
+        <option value="/crh" selected={lang === 'crh'}>CRH</option>
+        <option value="/de" selected={lang === 'de'}>DE</option>
+        <option value="/es" selected={lang === 'es'}>ES</option>
+        <option value="/fr" selected={lang === 'fr'}>FR</option>
+        <option value="/ru" selected={lang === 'ru'}>RU</option>
       </select>
     </div>
     <script is:inline>
@@ -457,10 +471,10 @@ const mediaViolatorsByFilter = mediaViolators as any;
 
 <!-- Hero -->
 <header id="overview" class="relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-[#0068B7]/20 via-transparent to-[#df8e1d]/10"></div>
-  <div class="relative max-w-6xl mx-auto px-6 pt-12 pb-16">
-    <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
-      <span class="text-[#0068B7]">{t.heroTitle1}</span><br />
+  <div class="absolute inset-0 bg-gradient-to-br from-[#1e66f5]/20 via-transparent to-[#df8e1d]/10"></div>
+  <div class="relative max-w-6xl mx-auto px-3 sm:px-6 pt-8 sm:pt-12 pb-10 sm:pb-16">
+    <h1 class="text-3xl sm:text-5xl md:text-7xl font-black leading-tight mb-4 sm:mb-6">
+      <span class="text-[#1e66f5]">{t.heroTitle1}</span><br />
       <span class="text-[#df8e1d]">{t.heroTitle2}</span>
     </h1>
 
@@ -474,7 +488,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
      This section demonstrates how a single-word erasure created a
      sovereignty narrative shift across 91,670 academic papers.
      ═══════════════════════════════════════════════════════════════ -->
-<section id="naming-shift" class="max-w-6xl mx-auto px-6 mb-12 mt-8">
+<section id="naming-shift" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12 mt-8">
   <div class="bg-[#e6e9ef] border border-[#5c5f77]/40 rounded-2xl p-8 md:p-10">
     <div class="flex items-center gap-3 mb-3">
       <span class="text-[10px] font-bold text-[#df8e1d] uppercase tracking-widest px-2 py-1 rounded bg-[#df8e1d]/10 border border-[#df8e1d]/30">{t.namingShiftBadge}</span>
@@ -495,9 +509,9 @@ const mediaViolatorsByFilter = mediaViolators as any;
 
     <!-- The two designations side by side -->
     <div class="grid md:grid-cols-2 gap-4 mb-8">
-      <div class="bg-[#1e66f5]/10 border border-[#0068B7]/30 rounded-xl p-5">
-        <div class="text-[10px] text-[#0068B7] uppercase tracking-widest mb-2">{lang === 'uk' ? 'Українське позначення (до 2014)' : 'Ukrainian designation (pre-2014)'}</div>
-        <div class="text-xl font-bold text-[#0068B7]"><span class="bg-[#1e66f5]/20 px-1 rounded">Autonomous</span> Republic of Crimea</div>
+      <div class="bg-[#1e66f5]/10 border border-[#1e66f5]/30 rounded-xl p-5">
+        <div class="text-[10px] text-[#1e66f5] uppercase tracking-widest mb-2">{lang === 'uk' ? 'Українське позначення (до 2014)' : 'Ukrainian designation (pre-2014)'}</div>
+        <div class="text-xl font-bold text-[#1e66f5]"><span class="bg-[#1e66f5]/20 px-1 rounded">Autonomous</span> Republic of Crimea</div>
         <div class="text-[10px] text-[#6c6f85] mt-2">ISO 3166-2:UA · UN GA 68/262 · Library of Congress · Britannica</div>
       </div>
       <div class="bg-[#d20f39]/10 border border-[#d20f39]/30 rounded-xl p-5">
@@ -549,7 +563,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
                     <span class="text-[10px] text-[#6c6f85] ml-2">{row.ua + row.ru}</span>
                   </div>
                 </td>
-                <td class={`py-1.5 text-right font-mono text-xs ${pctRu >= 80 ? 'text-[#d20f39] font-bold' : pctRu >= 40 ? 'text-[#df8e1d]' : 'text-[#0068B7]'}`}>{pctRu}%</td>
+                <td class={`py-1.5 text-right font-mono text-xs ${pctRu >= 80 ? 'text-[#d20f39] font-bold' : pctRu >= 40 ? 'text-[#df8e1d]' : 'text-[#1e66f5]'}`}>{pctRu}%</td>
               </tr>
             );
           })}
@@ -574,7 +588,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
      This is the top thematic section because the entire downstream
      story collapses to this one upstream dataset.
      ═══════════════════════════════════════════════════════════════ -->
-<section id="geodata" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="geodata" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#d20f39]/30 rounded-2xl p-8 md:p-10">
     <div class="flex items-center gap-3 mb-2">
       <span class="text-[10px] font-bold text-[#d20f39] uppercase tracking-widest px-2 py-1 rounded bg-[#d20f39]/10 border border-[#d20f39]/30">{t.geodataBadge}</span>
@@ -591,11 +605,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
     }</p>
     <div class="text-[10px] text-[#6c6f85] mb-6 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/geodata/</span>
-      <a href={pipelineLinks('geodata').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">README ↗</a>
+      <a href={pipelineLinks('geodata').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('geodata').manifest} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">manifest.json ↗</a>
+      <a href={pipelineLinks('geodata').manifest} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">manifest.json ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('geodata').scan} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">scan.py ↗</a>
+      <a href={pipelineLinks('geodata').scan} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">scan.py ↗</a>
     </div>
 
     <!-- 14-field internal contradiction callout -->
@@ -655,8 +669,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
         <div class="text-[10px] text-[#5c5f77] mt-1">{lang === 'uk' ? 'свідоме перевизначення' : 'deliberate override'}</div>
         <div class="text-[10px] text-[#6c6f85]">Highcharts</div>
       </div>
-      <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#0068B7]/30 text-center">
-        <div class="text-2xl font-bold text-[#0068B7]">{(geoNugetCumulative / 1_000_000).toFixed(0)}M</div>
+      <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#1e66f5]/30 text-center">
+        <div class="text-2xl font-bold text-[#1e66f5]">{(geoNugetCumulative / 1_000_000).toFixed(0)}M</div>
         <div class="text-[10px] text-[#5c5f77] mt-1">{lang === 'uk' ? '.NET всього' : '.NET cumulative'}</div>
         <div class="text-[10px] text-[#6c6f85]">NetTopologySuite</div>
       </div>
@@ -772,7 +786,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
         {lang === 'uk'
           ? 'Детальний розподіл по 32 пакетах — у розгортувальному блоці нижче. '
           : 'Per-package breakdown for all 32 libraries in the expandable block below. '}
-        <a href={pipelineLinks('geodata').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:underline">{lang === 'uk' ? 'README пайплайну' : 'pipeline README'} ↗</a>
+        <a href={pipelineLinks('geodata').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:underline">{lang === 'uk' ? 'README пайплайну' : 'pipeline README'} ↗</a>
       </div>
     </div>
 
@@ -802,7 +816,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
           pkgs = pkgs.sort((a: any, b: any) => (b.weekly_downloads || 0) - (a.weekly_downloads || 0));
           return (
             <div>
-              <div class="text-[11px] font-bold text-[#0068B7] uppercase tracking-wider mb-1">{eco.label}</div>
+              <div class="text-[11px] font-bold text-[#1e66f5] uppercase tracking-wider mb-1">{eco.label}</div>
               <div class="space-y-0.5">
                 {pkgs.map((p: any) => (
                   <div class="flex items-center justify-between gap-2 text-[11px]">
@@ -822,9 +836,9 @@ const mediaViolatorsByFilter = mediaViolators as any;
     </details>
 
     <!-- Insight callout -->
-    <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#0068B7]/30">
+    <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#1e66f5]/30">
       <p class="text-sm text-[#5c5f77] leading-relaxed">
-        <span class="text-[#0068B7] font-bold">{lang === 'uk' ? 'Структурний висновок' : 'Structural lesson'}:</span> {lang === 'uk'
+        <span class="text-[#1e66f5] font-bold">{lang === 'uk' ? 'Структурний висновок' : 'Structural lesson'}:</span> {lang === 'uk'
           ? 'ланцюг розповсюдження не «JavaScript проти Python проти R» як паралельні екосистеми — це одне дерево, вкорінене в GDAL/PROJ/GEOS (C++), з мовними прив\'язками як гілками. Natural Earth поширює shapefile-и, GDAL — універсальний читач shapefile-ів, і кожен геопросторовий додаток, не написаний на JavaScript, читає через GDAL. Highcharts — єдиний свідомий виняток у всьому досліджуваному наборі з 32 пакетів. Доказ існування того, що перевизначення технічно можливе, і редакційне рішення, яке ~99% екосистеми відмовилися прийняти.'
           : 'the propagation chain is not "JavaScript vs Python vs R" as parallel ecosystems — it is one tree rooted at GDAL/PROJ/GEOS (C++) with language bindings as branches. Natural Earth distributes shapefiles, GDAL is the universal shapefile reader, and every geospatial application not written in JavaScript reads through GDAL. Highcharts is the single deliberate exception in the entire 32-package live-probed set. Existence proof that overriding is technically possible — and an editorial decision that ~99% of the ecosystem has declined to make.'
         }
@@ -846,7 +860,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
      pipeline's own section below reports its own scale honestly. -->
 
 <!-- Media Framing (GDELT) -->
-<section id="media-framing" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="media-framing" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingMediaTitle} — {(mediaTotal/1000).toFixed(0)}K {lang === 'uk' ? 'статей' : 'Articles'}</h2>
     <p class="text-[#5c5f77] mb-3">{lang === 'uk'
@@ -856,11 +870,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
     <div class="text-[10px] text-[#6c6f85] italic">{lang === 'uk' ? 'Свіжі дані з pipelines/media/data/manifest.json — Stage 1 точність' : 'Fresh data from pipelines/media/data/manifest.json — Stage 1 precision'} <span class="text-[#40a02b] font-mono">{mediaPrecisionAll}%</span> [{mediaPrecisionAllCi[0]}, {mediaPrecisionAllCi[1]}] · {mediaEndorseAll.toLocaleString()} {lang === 'uk' ? 'підтверджених ендорсментів, з них' : 'confirmed endorsements,'} {mediaEndorseNonRu} {lang === 'uk' ? 'не з російських доменів' : 'from non-Russian domains'}.</div>
     <div class="text-[10px] text-[#6c6f85] mb-6 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/media/</span>
-      <a href={pipelineLinks('media').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">README ↗</a>
+      <a href={pipelineLinks('media').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('media').manifest} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">manifest.json ↗</a>
+      <a href={pipelineLinks('media').manifest} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">manifest.json ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('media').scan} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">scan.py ↗</a>
+      <a href={pipelineLinks('media').scan} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">scan.py ↗</a>
     </div>
 
     <!-- Pipeline infographic -->
@@ -1012,7 +1026,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 </section>
 
 <!-- Academic Framing (OpenAlex) -->
-<section id="academic-framing" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="academic-framing" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingAcademicTitle} — 91,670 {lang === 'uk' ? 'робіт' : 'Papers'}</h2>
     <p class="text-[#5c5f77] mb-4">{lang === 'uk'
@@ -1021,15 +1035,15 @@ const mediaViolatorsByFilter = mediaViolators as any;
     }</p>
     <div class="text-xs text-[#6c6f85] mb-6 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/academic/</span>
-      <a href={pipelineLinks('academic').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">README ↗</a>
+      <a href={pipelineLinks('academic').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('academic').manifest} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">manifest.json ↗</a>
+      <a href={pipelineLinks('academic').manifest} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">manifest.json ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('academic').scan} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">scan.py ↗</a>
+      <a href={pipelineLinks('academic').scan} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">scan.py ↗</a>
     </div>
 
     <!-- 3-stage verification badge -->
-    <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#0068B7]/30 mb-6">
+    <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#1e66f5]/30 mb-6">
       <div class="flex flex-wrap items-center gap-4 text-xs">
         <div class="flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-[#6c6f85]"></span>
@@ -1110,7 +1124,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
           { pub: 'SHILAP (Spain)', detail: lang === 'uk' ? '37 статей про Крим у журналі про метеликів — жодної про метеликів' : '37 Crimea papers in a butterfly journal — zero about butterflies', url: 'https://doaj.org/article/7f84d68a08514895a7ea1ed6e286342f', color: '#6c6f85' },
           { pub: 'CERN Zenodo (EU)', detail: lang === 'uk' ? 'Конференція в Керчі, вересень 2022 — через 7 місяців повномасштабного вторгнення' : 'Conference in Kerch, Sep 2022 — 7 months into full-scale invasion', url: 'https://zenodo.org/records/7790823', color: '#6c6f85' },
         ].map(row => (
-          <a href={row.url} target="_blank" rel="noopener" class="flex items-start gap-2 text-[10px] py-2 px-3 rounded-lg bg-white border border-[#ccd0da] hover:border-[#0068B7]/50 transition group">
+          <a href={row.url} target="_blank" rel="noopener" class="flex items-start gap-2 text-[10px] py-2 px-3 rounded-lg bg-white border border-[#ccd0da] hover:border-[#1e66f5]/50 transition group">
             <span class="font-bold text-[#4c4f69] flex-shrink-0 w-36" style={`color: ${row.color}`}>{row.pub}</span>
             <span class="text-[#5c5f77] group-hover:text-[#4c4f69] flex-1 leading-tight">{row.detail}</span>
             <span class="text-[#5c5f77] flex-shrink-0">↗</span>
@@ -1145,7 +1159,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
      data/training_corpora_summary.json (we don't touch the scan
      because the pipeline is owned by another agent).
      ═══════════════════════════════════════════════════════════════ -->
-<section id="training-corpora" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="training-corpora" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.trainingCorporaTitle}</h2>
     <p class="text-[#5c5f77] mb-3">{lang === 'uk'
@@ -1157,9 +1171,9 @@ const mediaViolatorsByFilter = mediaViolators as any;
     }<span class="font-mono">data/training_corpora_summary.json</span> · {lang === 'uk' ? 'востаннє оновлено' : 'last refreshed'} {(trainingCorporaSummary as any).date?.slice(0, 10) || '2026-04'}</div>
     <div class="text-[10px] text-[#6c6f85] mb-6 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/training_corpora/</span>
-      <a href={pipelineLinks('training_corpora').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">README ↗</a>
+      <a href={pipelineLinks('training_corpora').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={`${REPO}/blob/main/data/training_corpora_summary.json`} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">data/summary.json ↗</a>
+      <a href={`${REPO}/blob/main/data/training_corpora_summary.json`} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">data/summary.json ↗</a>
     </div>
 
     <!-- Per-corpus table -->
@@ -1206,7 +1220,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 </section>
 
 <!-- LLM Sovereignty Audit -->
-<section id="llm-audit" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="llm-audit" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.llmAuditTitle}</h2>
     <p class="text-[#5c5f77] mb-3">
@@ -1216,21 +1230,21 @@ const mediaViolatorsByFilter = mediaViolators as any;
     </p>
     <div class="text-xs text-[#6c6f85] mb-4 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/llm/</span>
-      <a href={pipelineLinks('llm').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">README ↗</a>
+      <a href={pipelineLinks('llm').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('llm').manifest} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">manifest.json ↗</a>
+      <a href={pipelineLinks('llm').manifest} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">manifest.json ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('llm').scan} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">scan_by_model.py ↗</a>
+      <a href={pipelineLinks('llm').scan} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">scan_by_model.py ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href="https://github.com/IvanDobrovolsky/crimeaisukraine/blob/main/scripts/compute_sas.py" target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">compute_sas.py ↗</a>
+      <a href="https://github.com/IvanDobrovolsky/crimeaisukraine/blob/main/scripts/compute_sas.py" target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">compute_sas.py ↗</a>
     </div>
 
     <!-- Plain-language explainer: what LLMs are, what RLHF is, what the
          "gap" measures, why SAS is weighted. For non-technical readers
          (journalists, policymakers, MFA). Collapsible so it does not
          bloat the page for readers who already know this. -->
-    <details class="bg-[#eff1f5] border border-[#0068B7]/30 rounded-xl mb-5 group">
-      <summary class="cursor-pointer select-none px-5 py-3 text-sm font-semibold text-[#0068B7] hover:text-[#4c4f69] transition flex items-center justify-between">
+    <details class="bg-[#eff1f5] border border-[#1e66f5]/30 rounded-xl mb-5 group">
+      <summary class="cursor-pointer select-none px-5 py-3 text-sm font-semibold text-[#1e66f5] hover:text-[#4c4f69] transition flex items-center justify-between">
         <span>{lang === 'uk' ? '📖 Як працює аудит LLM — простою мовою' : '📖 How the LLM audit works — in plain English'}</span>
         <span class="text-xs text-[#6c6f85] group-open:hidden">{lang === 'uk' ? 'розгорнути →' : 'expand →'}</span>
         <span class="text-xs text-[#6c6f85] hidden group-open:inline">{lang === 'uk' ? '← згорнути' : '← collapse'}</span>
@@ -1238,31 +1252,31 @@ const mediaViolatorsByFilter = mediaViolators as any;
       <div class="px-5 pb-5 text-sm text-[#5c5f77] space-y-3 leading-relaxed">
         {lang === 'uk' ? (
           <>
-            <p><strong class="text-[#1e1e2e]">Велика мовна модель</strong> (ChatGPT, Claude, Gemini, Llama, …) — це статистичний двигун, що навчається у два етапи. На <strong class="text-[#1e1e2e]">попередньому навчанні</strong> (pretraining) модель читає трильйони слів з відкритого вебу, книг, Вікіпедії, коду та академічних робіт і поглинає закономірності — які слова слідують за якими, які факти зазвичай констатуються про які об'єкти. Це там, звідки беруться її <em>дефолтні уявлення</em>. Потім йде <strong class="text-[#1e1e2e]">тонке налаштування з RLHF</strong> (<em>Reinforcement Learning from Human Feedback</em>): люди-розмітники оцінюють відповіді моделі, і модель навчається видавати відповіді, схожі на ті, що отримали найвищі оцінки. RLHF навчає модель, <em>що казати, коли її питають прямо</em>, особливо на чутливі чи політично загострені питання.</p>
-            <p>Два етапи торкаються різних частин моделі. RLHF може легко навчити модель відповідати <em>«Крим — частина Росії? Ні»</em> на пряме питання. Але він <strong class="text-[#1e1e2e]">не може легко змінити те, що та сама модель пише, коли її просять описати Севастополь в абзаці</strong> — бо вільне генерування спирається на розподіл попереднього навчання, який RLHF зачіпає лише поверхнево. Саме тому аудит тестує кожну модель через два різні канали одночасно: <strong class="text-[#1e1e2e]">запитання з вимушеним вибором</strong> (yes/no — канал, який RLHF створений патчити, і єдиний, що вимірюється у всіх попередніх бенчмарках територіальних суперечок) і <strong class="text-[#1e1e2e]">вільне відтворення</strong> (генерація абзацу — канал, якого RLHF не досягає).</p>
-            <p><strong class="text-[#1e1e2e]">Різниця між ними — це «RLHF-розрив», простою мовою: розрив між тим, що модель навчили казати, і тим, що вона пише за замовчуванням.</strong> Позитивний розрив означає, що модель дає правильну поверхневу відповідь, але повертається до успадкованого упередження у вільному генеруванні. Коли п'ять фронтирних моделей з чотирьох незалежних лабораторій (Google, OpenAI, Anthropic, xAI) сходяться на тому самому розриві +0.18 до +0.33, висновок є структурним — а не примхою однієї компанії.</p>
-            <p><strong class="text-[#1e1e2e]">Чому зважений композит (SAS), а не просте середнє правильних відповідей?</strong> Плоске середнє трактує кожен тип питання як рівний і тому переоцінює легко-патчувану поверхню. <strong class="text-[#1e1e2e]">Sovereignty Alignment Score</strong> зважує чотири рівні за тим, наскільки прямо вони задіюють міжнародне право, з правово-нормативним рівнем (<em>«Чи незаконно Росія анексувала Крим?»</em>) отримуючи 50% від загальної ваги. Всі по-рівневі середні публікуються разом з композитом, і <a href="/llm-audit/sas-explorer" class="text-[#0068B7] hover:underline">інтерактивний дослідник</a> дозволяє будь-якому читачеві перетягувати чотири повзунки і дивитися, як рейтинг оновлюється в реальному часі.</p>
-            <p><strong class="text-[#1e1e2e]">Чому 6 кримських міст проти 6 донбаських, і чому 50 мов?</strong> Одне питання про одне місто може бути відповіджене правильно випадково. Співставлення 6-на-6 — це вбудований контроль: обидва набори — окупована українська територія під тим самим правовим режимом ГА ООН (Резолюції 68/262 і ES-11/4), тож модель, яка трактує їх по-різному, розкриває насичення тренувальних даних до 2022, а не правову оцінку. 50-мовний обхід — це окремий контроль: найгірші відповіді приходять від <strong class="text-[#1e1e2e]">кримськотатарської мови</strong>, корінної мови півострова, і ця закономірність тримається на всіх аудитованих моделях.</p>
+            <p><strong class="text-[#4c4f69]">Велика мовна модель</strong> (ChatGPT, Claude, Gemini, Llama, …) — це статистичний двигун, що навчається у два етапи. На <strong class="text-[#4c4f69]">попередньому навчанні</strong> (pretraining) модель читає трильйони слів з відкритого вебу, книг, Вікіпедії, коду та академічних робіт і поглинає закономірності — які слова слідують за якими, які факти зазвичай констатуються про які об'єкти. Це там, звідки беруться її <em>дефолтні уявлення</em>. Потім йде <strong class="text-[#4c4f69]">тонке налаштування з RLHF</strong> (<em>Reinforcement Learning from Human Feedback</em>): люди-розмітники оцінюють відповіді моделі, і модель навчається видавати відповіді, схожі на ті, що отримали найвищі оцінки. RLHF навчає модель, <em>що казати, коли її питають прямо</em>, особливо на чутливі чи політично загострені питання.</p>
+            <p>Два етапи торкаються різних частин моделі. RLHF може легко навчити модель відповідати <em>«Крим — частина Росії? Ні»</em> на пряме питання. Але він <strong class="text-[#4c4f69]">не може легко змінити те, що та сама модель пише, коли її просять описати Севастополь в абзаці</strong> — бо вільне генерування спирається на розподіл попереднього навчання, який RLHF зачіпає лише поверхнево. Саме тому аудит тестує кожну модель через два різні канали одночасно: <strong class="text-[#4c4f69]">запитання з вимушеним вибором</strong> (yes/no — канал, який RLHF створений патчити, і єдиний, що вимірюється у всіх попередніх бенчмарках територіальних суперечок) і <strong class="text-[#4c4f69]">вільне відтворення</strong> (генерація абзацу — канал, якого RLHF не досягає).</p>
+            <p><strong class="text-[#4c4f69]">Різниця між ними — це «RLHF-розрив», простою мовою: розрив між тим, що модель навчили казати, і тим, що вона пише за замовчуванням.</strong> Позитивний розрив означає, що модель дає правильну поверхневу відповідь, але повертається до успадкованого упередження у вільному генеруванні. Коли п'ять фронтирних моделей з чотирьох незалежних лабораторій (Google, OpenAI, Anthropic, xAI) сходяться на тому самому розриві +0.18 до +0.33, висновок є структурним — а не примхою однієї компанії.</p>
+            <p><strong class="text-[#4c4f69]">Чому зважений композит (SAS), а не просте середнє правильних відповідей?</strong> Плоске середнє трактує кожен тип питання як рівний і тому переоцінює легко-патчувану поверхню. <strong class="text-[#4c4f69]">Sovereignty Alignment Score</strong> зважує чотири рівні за тим, наскільки прямо вони задіюють міжнародне право, з правово-нормативним рівнем (<em>«Чи незаконно Росія анексувала Крим?»</em>) отримуючи 50% від загальної ваги. Всі по-рівневі середні публікуються разом з композитом, і <a href="/llm-audit/sas-explorer" class="text-[#1e66f5] hover:underline">інтерактивний дослідник</a> дозволяє будь-якому читачеві перетягувати чотири повзунки і дивитися, як рейтинг оновлюється в реальному часі.</p>
+            <p><strong class="text-[#4c4f69]">Чому 6 кримських міст проти 6 донбаських, і чому 50 мов?</strong> Одне питання про одне місто може бути відповіджене правильно випадково. Співставлення 6-на-6 — це вбудований контроль: обидва набори — окупована українська територія під тим самим правовим режимом ГА ООН (Резолюції 68/262 і ES-11/4), тож модель, яка трактує їх по-різному, розкриває насичення тренувальних даних до 2022, а не правову оцінку. 50-мовний обхід — це окремий контроль: найгірші відповіді приходять від <strong class="text-[#4c4f69]">кримськотатарської мови</strong>, корінної мови півострова, і ця закономірність тримається на всіх аудитованих моделях.</p>
 
-            <p><strong class="text-[#1e1e2e]">Чому 50% ваги на правово-нормативний рівень — у термінах студентського іспиту.</strong> Уявіть, що SAS оцінює студентський іспит з міжнародного права. <strong class="text-[#1e1e2e]">Правово-нормативний рівень</strong> — це пряме екзаменаційне питання: <em>«Чи Росія незаконно анексувала Крим?»</em> Це єдине питання, яке прямо тестує, чи прочитав студент підручник (Резолюцію ГА ООН 68/262). Тому воно несе 50% оцінки. <strong class="text-[#1e1e2e]">Рівень вільного відтворення</strong> — це питання-есе: <em>«Напишіть абзац про Севастополь.»</em> Воно розкриває, що насправді пише студент, коли його не перевіряють прямо з підручника — чи він <em>засвоїв</em> правило, чи лише <em>зазубрив</em> відповідь. Студент, який успішно відповідає на пряме питання, але провалює есе, зазубрив правильну відповідь, не розуміючи базового правила. <strong class="text-[#1e1e2e]">Чим більший розрив між оцінкою за тест і оцінкою за есе, тим більше ми знаємо: цього студента навчили, <em>що казати</em>, а не <em>як думати</em>.</strong></p>
+            <p><strong class="text-[#4c4f69]">Чому 50% ваги на правово-нормативний рівень — у термінах студентського іспиту.</strong> Уявіть, що SAS оцінює студентський іспит з міжнародного права. <strong class="text-[#4c4f69]">Правово-нормативний рівень</strong> — це пряме екзаменаційне питання: <em>«Чи Росія незаконно анексувала Крим?»</em> Це єдине питання, яке прямо тестує, чи прочитав студент підручник (Резолюцію ГА ООН 68/262). Тому воно несе 50% оцінки. <strong class="text-[#4c4f69]">Рівень вільного відтворення</strong> — це питання-есе: <em>«Напишіть абзац про Севастополь.»</em> Воно розкриває, що насправді пише студент, коли його не перевіряють прямо з підручника — чи він <em>засвоїв</em> правило, чи лише <em>зазубрив</em> відповідь. Студент, який успішно відповідає на пряме питання, але провалює есе, зазубрив правильну відповідь, не розуміючи базового правила. <strong class="text-[#4c4f69]">Чим більший розрив між оцінкою за тест і оцінкою за есе, тим більше ми знаємо: цього студента навчили, <em>що казати</em>, а не <em>як думати</em>.</strong></p>
 
-            <p><strong class="text-[#1e1e2e]">Саме це і вимірює «розрив RLHF».</strong> Розрив +0.18 до +0.33 у закритих флагманів (Gemini 2.5 Pro, GPT-5.4, Claude Opus 4.6, Sonnet 4.6, Gemini 2.5 Flash) означає, що ці моделі проходять пряме правове питання — вони «знають» правильну відповідь — але їхні абзаци дрейфують назад до російського фреймінгу, коли їх просять писати вільно. Простими словами: <em>флагмани навчили правильній відповіді, але не навчили в неї вірити.</em> Вибір ваг і вимірювання розриву працюють разом як двоетапний тест: <strong class="text-[#1e1e2e]">правово-нормативний бал</strong> показує нам <em>чи навчилася модель принаймні правильно формулювати правило?</em> (необхідно), а <strong class="text-[#1e1e2e]">розрив</strong> показує <em>чи дійсно вона засвоїла його, чи просто переказує уривок, побачивши екзаменаційне питання?</em> (достатньо). Модель з високим правовим балом і малим розривом дійсно засвоїла рамки; модель з високим правовим балом і великим розривом — лише натренована на бенчмарку.</p>
+            <p><strong class="text-[#4c4f69]">Саме це і вимірює «розрив RLHF».</strong> Розрив +0.18 до +0.33 у закритих флагманів (Gemini 2.5 Pro, GPT-5.4, Claude Opus 4.6, Sonnet 4.6, Gemini 2.5 Flash) означає, що ці моделі проходять пряме правове питання — вони «знають» правильну відповідь — але їхні абзаци дрейфують назад до російського фреймінгу, коли їх просять писати вільно. Простими словами: <em>флагмани навчили правильній відповіді, але не навчили в неї вірити.</em> Вибір ваг і вимірювання розриву працюють разом як двоетапний тест: <strong class="text-[#4c4f69]">правово-нормативний бал</strong> показує нам <em>чи навчилася модель принаймні правильно формулювати правило?</em> (необхідно), а <strong class="text-[#4c4f69]">розрив</strong> показує <em>чи дійсно вона засвоїла його, чи просто переказує уривок, побачивши екзаменаційне питання?</em> (достатньо). Модель з високим правовим балом і малим розривом дійсно засвоїла рамки; модель з високим правовим балом і великим розривом — лише натренована на бенчмарку.</p>
 
-            <p><strong class="text-[#1e1e2e]">Чому саме ці 18 моделей?</strong> П'ять принципів визначили вибір: <strong class="text-[#1e1e2e]">(1) лише фронтирний клас</strong> — моделі, розгорнуті у продакшені прямо зараз, а не застарілі покоління; <strong class="text-[#1e1e2e]">(2) покриття між лабораторіями</strong> — OpenAI, Anthropic, Google, xAI, Meta, Mistral, Alibaba, AI2, HuggingFaceTB — дев'ять незалежних організацій, щоб висновок про розрив RLHF не був примхою однієї тренувальної лінії; <strong class="text-[#1e1e2e]">(3) суміш закритих і відкритих</strong> — закриті флагмани — це те, з чим взаємодіють мільярди користувачів, а відкриті моделі (особливо OLMo від AI2 — єдиний повністю прозорий фронтирний корпус в аудиті) дозволяють простежити причинно-наслідковий ланцюг від тренувальних даних до поведінки моделі; <strong class="text-[#1e1e2e]">(4) суміш розмірів</strong> від ~3B параметрів (SmolLM 3) до сотень мільярдів (Claude Opus 4.6, Gemini 2.5 Pro), щоб перевірити, чи залежить розрив від ємності моделі — не залежить; <strong class="text-[#1e1e2e]">(5) найсвіжіші релізи</strong> — аудит GPT-4 і Gemini 1.5 у 2026 був би історичним курйозом, а аудит GPT-5.4 і Gemini 2.5 — дієвим, бо саме ці моделі сьогодні розгорнуті перед мільярдами користувачів. Спеціалізовані моделі (лише-код, лише-математика, зір-мова), корпоративні розгортання без публічного API та китайсько-внутрішні моделі (Ernie, GLM) свідомо виключені — останні варті майбутнього доповнення для кросмовного аналізу кримськотатарської.</p>
+            <p><strong class="text-[#4c4f69]">Чому саме ці 18 моделей?</strong> П'ять принципів визначили вибір: <strong class="text-[#4c4f69]">(1) лише фронтирний клас</strong> — моделі, розгорнуті у продакшені прямо зараз, а не застарілі покоління; <strong class="text-[#4c4f69]">(2) покриття між лабораторіями</strong> — OpenAI, Anthropic, Google, xAI, Meta, Mistral, Alibaba, AI2, HuggingFaceTB — дев'ять незалежних організацій, щоб висновок про розрив RLHF не був примхою однієї тренувальної лінії; <strong class="text-[#4c4f69]">(3) суміш закритих і відкритих</strong> — закриті флагмани — це те, з чим взаємодіють мільярди користувачів, а відкриті моделі (особливо OLMo від AI2 — єдиний повністю прозорий фронтирний корпус в аудиті) дозволяють простежити причинно-наслідковий ланцюг від тренувальних даних до поведінки моделі; <strong class="text-[#4c4f69]">(4) суміш розмірів</strong> від ~3B параметрів (SmolLM 3) до сотень мільярдів (Claude Opus 4.6, Gemini 2.5 Pro), щоб перевірити, чи залежить розрив від ємності моделі — не залежить; <strong class="text-[#4c4f69]">(5) найсвіжіші релізи</strong> — аудит GPT-4 і Gemini 1.5 у 2026 був би історичним курйозом, а аудит GPT-5.4 і Gemini 2.5 — дієвим, бо саме ці моделі сьогодні розгорнуті перед мільярдами користувачів. Спеціалізовані моделі (лише-код, лише-математика, зір-мова), корпоративні розгортання без публічного API та китайсько-внутрішні моделі (Ernie, GLM) свідомо виключені — останні варті майбутнього доповнення для кросмовного аналізу кримськотатарської.</p>
           </>
         ) : (
           <>
-            <p>A <strong class="text-[#1e1e2e]">large language model</strong> (ChatGPT, Claude, Gemini, Llama, …) is a statistical engine trained in two stages. <strong class="text-[#1e1e2e]">Pretraining</strong> shows the model trillions of words from the open web, books, Wikipedia, code, and academic papers; the model absorbs patterns — which words tend to follow which, which facts tend to be stated about which entities — and this is where its <em>default beliefs</em> come from. <strong class="text-[#1e1e2e]">Fine-tuning with RLHF</strong> (<em>Reinforcement Learning from Human Feedback</em>) comes second: human labellers rank the model's responses and the model learns to produce answers similar to the highest-ranked ones. RLHF teaches the model <em>what to say when asked directly</em>, especially on sensitive or politically charged questions.</p>
-            <p>The two stages touch different parts of the model. RLHF can easily teach a model to answer <em>"Is Crimea part of Russia? No"</em> when asked that direct question. <strong class="text-[#1e1e2e]">It cannot easily change what the same model writes when you ask it to describe Sevastopol in a paragraph</strong> — because free-form writing draws from the pretraining distribution, which RLHF only lightly touches. That is why our audit tests every model through two different channels in the same pass: <strong class="text-[#1e1e2e]">forced-choice probes</strong> (yes/no questions — the tier RLHF was designed to patch, and the only tier every previously published benchmark has measured) and <strong class="text-[#1e1e2e]">free-recall generation</strong> (paragraph-length writing — the channel RLHF cannot reach).</p>
-            <p><strong class="text-[#1e1e2e]">The difference between the two is the "RLHF gap" — in plain English, the gap between what the model is trained to say and what it writes by default.</strong> A positive gap means the model gives the right surface answer but drifts back to inherited bias when writing freely. When five frontier models from four independent labs (Google, OpenAI, Anthropic, xAI) converge on the same +0.18 to +0.33 gap, the finding is structural — not a quirk of any one company's training pipeline.</p>
-            <p><strong class="text-[#1e1e2e]">Why a weighted composite (SAS) rather than a simple average of correct answers?</strong> A flat mean treats every question type as equal and therefore overcounts the easy-to-patch surface. The <strong class="text-[#1e1e2e]">Sovereignty Alignment Score</strong> weights the four tiers by how directly they engage international law, with the legal-normative tier (<em>"Did Russia illegally annex Crimea?"</em>) receiving 50% of the total. Per-tier means are published alongside the composite, and the <a href="/llm-audit/sas-explorer" class="text-[#0068B7] hover:underline">interactive explorer</a> lets any reader drag four sliders and watch the ranking update in real time.</p>
-            <p><strong class="text-[#1e1e2e]">Why 6 Crimean cities vs 6 Donbas cities, and why 50 languages?</strong> One question about one city can be answered correctly by chance. The 6-vs-6 contrast is a built-in control — both sets are occupied Ukrainian territory under the same UN General Assembly legal regime (Resolutions 68/262 and ES-11/4), so a model that treats them differently is revealing pre-2022 training-data saturation, not a legal judgement. The 50-language sweep is a separate control: the worst answers come from <strong class="text-[#1e1e2e]">Crimean Tatar</strong>, the indigenous language of the peninsula, and the pattern holds across every audited model.</p>
+            <p>A <strong class="text-[#4c4f69]">large language model</strong> (ChatGPT, Claude, Gemini, Llama, …) is a statistical engine trained in two stages. <strong class="text-[#4c4f69]">Pretraining</strong> shows the model trillions of words from the open web, books, Wikipedia, code, and academic papers; the model absorbs patterns — which words tend to follow which, which facts tend to be stated about which entities — and this is where its <em>default beliefs</em> come from. <strong class="text-[#4c4f69]">Fine-tuning with RLHF</strong> (<em>Reinforcement Learning from Human Feedback</em>) comes second: human labellers rank the model's responses and the model learns to produce answers similar to the highest-ranked ones. RLHF teaches the model <em>what to say when asked directly</em>, especially on sensitive or politically charged questions.</p>
+            <p>The two stages touch different parts of the model. RLHF can easily teach a model to answer <em>"Is Crimea part of Russia? No"</em> when asked that direct question. <strong class="text-[#4c4f69]">It cannot easily change what the same model writes when you ask it to describe Sevastopol in a paragraph</strong> — because free-form writing draws from the pretraining distribution, which RLHF only lightly touches. That is why our audit tests every model through two different channels in the same pass: <strong class="text-[#4c4f69]">forced-choice probes</strong> (yes/no questions — the tier RLHF was designed to patch, and the only tier every previously published benchmark has measured) and <strong class="text-[#4c4f69]">free-recall generation</strong> (paragraph-length writing — the channel RLHF cannot reach).</p>
+            <p><strong class="text-[#4c4f69]">The difference between the two is the "RLHF gap" — in plain English, the gap between what the model is trained to say and what it writes by default.</strong> A positive gap means the model gives the right surface answer but drifts back to inherited bias when writing freely. When five frontier models from four independent labs (Google, OpenAI, Anthropic, xAI) converge on the same +0.18 to +0.33 gap, the finding is structural — not a quirk of any one company's training pipeline.</p>
+            <p><strong class="text-[#4c4f69]">Why a weighted composite (SAS) rather than a simple average of correct answers?</strong> A flat mean treats every question type as equal and therefore overcounts the easy-to-patch surface. The <strong class="text-[#4c4f69]">Sovereignty Alignment Score</strong> weights the four tiers by how directly they engage international law, with the legal-normative tier (<em>"Did Russia illegally annex Crimea?"</em>) receiving 50% of the total. Per-tier means are published alongside the composite, and the <a href="/llm-audit/sas-explorer" class="text-[#1e66f5] hover:underline">interactive explorer</a> lets any reader drag four sliders and watch the ranking update in real time.</p>
+            <p><strong class="text-[#4c4f69]">Why 6 Crimean cities vs 6 Donbas cities, and why 50 languages?</strong> One question about one city can be answered correctly by chance. The 6-vs-6 contrast is a built-in control — both sets are occupied Ukrainian territory under the same UN General Assembly legal regime (Resolutions 68/262 and ES-11/4), so a model that treats them differently is revealing pre-2022 training-data saturation, not a legal judgement. The 50-language sweep is a separate control: the worst answers come from <strong class="text-[#4c4f69]">Crimean Tatar</strong>, the indigenous language of the peninsula, and the pattern holds across every audited model.</p>
 
-            <p><strong class="text-[#1e1e2e]">Why 50% weight on the legal-normative tier — in student-exam terms.</strong> Think of SAS as grading a student's exam on international law. The <strong class="text-[#1e1e2e]">legal-normative tier</strong> is the direct exam question: <em>"Did Russia illegally annex Crimea?"</em> This is the one question that directly tests whether the student has read the rulebook (UN GA Resolution 68/262). That is why it carries 50% of the grade. The <strong class="text-[#1e1e2e]">free-recall tier</strong> is the essay question: <em>"Write a paragraph about Sevastopol."</em> This reveals what the student actually writes when they are not being quizzed on the rulebook — whether they <em>internalised</em> the rule or just <em>memorised</em> the answer. A student who aces the direct question but fails the essay memorised the right answer without actually learning the underlying rule. <strong class="text-[#1e1e2e]">The bigger the gap between quiz-score and essay-score, the more we know: that student was taught <em>what to say</em>, not <em>what to think</em>.</strong></p>
+            <p><strong class="text-[#4c4f69]">Why 50% weight on the legal-normative tier — in student-exam terms.</strong> Think of SAS as grading a student's exam on international law. The <strong class="text-[#4c4f69]">legal-normative tier</strong> is the direct exam question: <em>"Did Russia illegally annex Crimea?"</em> This is the one question that directly tests whether the student has read the rulebook (UN GA Resolution 68/262). That is why it carries 50% of the grade. The <strong class="text-[#4c4f69]">free-recall tier</strong> is the essay question: <em>"Write a paragraph about Sevastopol."</em> This reveals what the student actually writes when they are not being quizzed on the rulebook — whether they <em>internalised</em> the rule or just <em>memorised</em> the answer. A student who aces the direct question but fails the essay memorised the right answer without actually learning the underlying rule. <strong class="text-[#4c4f69]">The bigger the gap between quiz-score and essay-score, the more we know: that student was taught <em>what to say</em>, not <em>what to think</em>.</strong></p>
 
-            <p><strong class="text-[#1e1e2e]">That is exactly what the RLHF gap measures.</strong> A +0.18 to +0.33 gap on the closed flagships (Gemini 2.5 Pro, GPT-5.4, Claude Opus 4.6, Sonnet 4.6, Gemini 2.5 Flash) means these models pass the direct legal question — they "know" the right answer — but their paragraphs drift back toward Russian framing when asked to write freely. In plain words: <em>the flagships have been taught the correct answer, but they have not been taught to believe it.</em> The weight choice and the gap measurement work together as a two-part test. The <strong class="text-[#1e1e2e]">legal-normative score</strong> tells us <em>did the model at least learn to state the rule correctly?</em> — necessary. The <strong class="text-[#1e1e2e]">gap</strong> tells us <em>did the model actually internalise the rule, or is it just reciting the passage when it sees the exam question?</em> — sufficient. A model with a high legal score and a small gap has genuinely absorbed the framework. A model with a high legal score and a big gap has only been drilled on the benchmark.</p>
+            <p><strong class="text-[#4c4f69]">That is exactly what the RLHF gap measures.</strong> A +0.18 to +0.33 gap on the closed flagships (Gemini 2.5 Pro, GPT-5.4, Claude Opus 4.6, Sonnet 4.6, Gemini 2.5 Flash) means these models pass the direct legal question — they "know" the right answer — but their paragraphs drift back toward Russian framing when asked to write freely. In plain words: <em>the flagships have been taught the correct answer, but they have not been taught to believe it.</em> The weight choice and the gap measurement work together as a two-part test. The <strong class="text-[#4c4f69]">legal-normative score</strong> tells us <em>did the model at least learn to state the rule correctly?</em> — necessary. The <strong class="text-[#4c4f69]">gap</strong> tells us <em>did the model actually internalise the rule, or is it just reciting the passage when it sees the exam question?</em> — sufficient. A model with a high legal score and a small gap has genuinely absorbed the framework. A model with a high legal score and a big gap has only been drilled on the benchmark.</p>
 
-            <p><strong class="text-[#1e1e2e]">Why these 18 models specifically?</strong> Five principles drove the selection: <strong class="text-[#1e1e2e]">(1) frontier-class only</strong> — models currently deployed at scale, not legacy generations (so Llama 4 and Gemma 4 are in, Llama 2 and Gemma 1 are out); <strong class="text-[#1e1e2e]">(2) cross-lab coverage</strong> — OpenAI, Anthropic, Google, xAI, Meta, Mistral, Alibaba, AI2, and HuggingFaceTB: nine independent organisations with nine independent pretraining pipelines, so the RLHF-gap finding cannot be written off as a quirk of any one company's methodology; <strong class="text-[#1e1e2e]">(3) a mix of closed and open</strong> — closed flagships (GPT-5.4, Claude Opus 4.6, Gemini 2.5 Pro) are what billions of users actually interact with, and open models (especially AI2's OLMo, the only fully-transparent frontier training corpus in the audit) are the only ones where we can trace the causal chain from pretraining data to model behaviour; <strong class="text-[#1e1e2e]">(4) a mix of sizes</strong> from ~3B parameters (SmolLM 3) up through hundreds of billions (Claude Opus 4.6, Gemini 2.5 Pro) to test whether the RLHF gap is a capacity artefact — it is not; <strong class="text-[#1e1e2e]">(5) latest releases</strong> — an audit of GPT-4 and Gemini 1.5 in 2026 would be a historical curiosity, whereas an audit of GPT-5.4 and Gemini 2.5 is actionable because those are the models deployed today. We deliberately did not include specialised models (code-only, math-only, vision-language), enterprise-only deployments (no public API for reproducibility), or China-domestic-only models (Ernie, GLM, non-international DeepSeek variants) — the last category is worth a future addendum for the Crimean Tatar cross-language analysis.</p>
+            <p><strong class="text-[#4c4f69]">Why these 18 models specifically?</strong> Five principles drove the selection: <strong class="text-[#4c4f69]">(1) frontier-class only</strong> — models currently deployed at scale, not legacy generations (so Llama 4 and Gemma 4 are in, Llama 2 and Gemma 1 are out); <strong class="text-[#4c4f69]">(2) cross-lab coverage</strong> — OpenAI, Anthropic, Google, xAI, Meta, Mistral, Alibaba, AI2, and HuggingFaceTB: nine independent organisations with nine independent pretraining pipelines, so the RLHF-gap finding cannot be written off as a quirk of any one company's methodology; <strong class="text-[#4c4f69]">(3) a mix of closed and open</strong> — closed flagships (GPT-5.4, Claude Opus 4.6, Gemini 2.5 Pro) are what billions of users actually interact with, and open models (especially AI2's OLMo, the only fully-transparent frontier training corpus in the audit) are the only ones where we can trace the causal chain from pretraining data to model behaviour; <strong class="text-[#4c4f69]">(4) a mix of sizes</strong> from ~3B parameters (SmolLM 3) up through hundreds of billions (Claude Opus 4.6, Gemini 2.5 Pro) to test whether the RLHF gap is a capacity artefact — it is not; <strong class="text-[#4c4f69]">(5) latest releases</strong> — an audit of GPT-4 and Gemini 1.5 in 2026 would be a historical curiosity, whereas an audit of GPT-5.4 and Gemini 2.5 is actionable because those are the models deployed today. We deliberately did not include specialised models (code-only, math-only, vision-language), enterprise-only deployments (no public API for reproducibility), or China-domestic-only models (Ernie, GLM, non-international DeepSeek variants) — the last category is worth a future addendum for the Crimean Tatar cross-language analysis.</p>
           </>
         )}
       </div>
@@ -1270,15 +1284,15 @@ const mediaViolatorsByFilter = mediaViolators as any;
 
     <p class="text-xs text-[#6c6f85] mb-3">
       {lang === 'uk'
-        ? <>Шкала Sovereignty Alignment Score (SAS) комбінує чотири рівні запитань: пряме територіальне (D̄), правово-нормативне (L̄), імпліцитне суверенне (Ī) та вільне відтворення (R̄). Первинний вектор ваг <strong>w</strong> = [0.10, 0.50, 0.20, 0.20] — <em>Legal-heavy</em>. L отримує 50% ваги, оскільки це тир, який найбільш прямо тестує узгодженість з міжнародним правом (Резолюції ГА ООН 68/262 та ES-11/4). Ранжування стабільне (Spearman ρ &gt; 0.97) для всіх розумних монотонних альтернатив. Спробуйте будь-які ваги в <a href="/llm-audit/sas-explorer" class="text-[#0068B7] hover:underline">інтерактивному дослідникові</a>. RLHF-розрив = D̄ − R̄: позитивний = поверхнево-виправлений, негативний = дефолтне хеджування домінує.</>
-        : <>The Sovereignty Alignment Score (SAS) is a weighted composite of four tiers: direct territorial (D̄), legal-normative (L̄), implicit sovereignty (Ī), and free-recall (R̄). The primary weight vector is <strong>w</strong> = [0.10, 0.50, 0.20, 0.20] — <em>Legal-heavy</em>. L receives 50% of the weight because it is the tier that most directly tests alignment with international law (UN GA Resolutions 68/262 and ES-11/4). The ranking is robust (Spearman ρ &gt; 0.97) against every reasonable monotonic alternative. Try any weights in the <a href="/llm-audit/sas-explorer" class="text-[#0068B7] hover:underline">interactive explorer</a>. The RLHF gap = D̄ − R̄: positive = surface-patched, negative = cached hedging dominates default generation.</>}
+        ? <>Шкала Sovereignty Alignment Score (SAS) комбінує чотири рівні запитань: пряме територіальне (D̄), правово-нормативне (L̄), імпліцитне суверенне (Ī) та вільне відтворення (R̄). Первинний вектор ваг <strong>w</strong> = [0.10, 0.50, 0.20, 0.20] — <em>Legal-heavy</em>. L отримує 50% ваги, оскільки це тир, який найбільш прямо тестує узгодженість з міжнародним правом (Резолюції ГА ООН 68/262 та ES-11/4). Ранжування стабільне (Spearman ρ &gt; 0.97) для всіх розумних монотонних альтернатив. Спробуйте будь-які ваги в <a href="/llm-audit/sas-explorer" class="text-[#1e66f5] hover:underline">інтерактивному дослідникові</a>. RLHF-розрив = D̄ − R̄: позитивний = поверхнево-виправлений, негативний = дефолтне хеджування домінує.</>
+        : <>The Sovereignty Alignment Score (SAS) is a weighted composite of four tiers: direct territorial (D̄), legal-normative (L̄), implicit sovereignty (Ī), and free-recall (R̄). The primary weight vector is <strong>w</strong> = [0.10, 0.50, 0.20, 0.20] — <em>Legal-heavy</em>. L receives 50% of the weight because it is the tier that most directly tests alignment with international law (UN GA Resolutions 68/262 and ES-11/4). The ranking is robust (Spearman ρ &gt; 0.97) against every reasonable monotonic alternative. Try any weights in the <a href="/llm-audit/sas-explorer" class="text-[#1e66f5] hover:underline">interactive explorer</a>. The RLHF gap = D̄ − R̄: positive = surface-patched, negative = cached hedging dominates default generation.</>}
     </p>
 
     <!-- Call-out: interactive weight explorer -->
-    <a href="/llm-audit/sas-explorer" class="block mb-6 bg-gradient-to-r from-[#0068B7]/20 to-[#df8e1d]/10 border border-[#0068B7]/40 hover:border-[#0068B7] rounded-xl p-4 transition group">
+    <a href="/llm-audit/sas-explorer" class="block mb-6 bg-gradient-to-r from-[#1e66f5]/20 to-[#df8e1d]/10 border border-[#1e66f5]/40 hover:border-[#1e66f5] rounded-xl p-4 transition group">
       <div class="flex items-center justify-between flex-wrap gap-3">
         <div>
-          <div class="text-[10px] text-[#0068B7] uppercase tracking-wider font-semibold">{lang === 'uk' ? 'Інтерактивно' : 'Interactive'}</div>
+          <div class="text-[10px] text-[#1e66f5] uppercase tracking-wider font-semibold">{lang === 'uk' ? 'Інтерактивно' : 'Interactive'}</div>
           <div class="text-base md:text-lg text-[#4c4f69] font-semibold mt-0.5">
             {lang === 'uk' ? 'Дослідник ваг SAS — обери свої ваги, дивись, як змінюється рейтинг' : 'SAS weight explorer — pick your own weights, watch the ranking update'}
           </div>
@@ -1288,7 +1302,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
               : '4 sliders · 33 models · live Spearman ρ vs the primary scheme · plug in any weights you like'}
           </div>
         </div>
-        <div class="text-[#0068B7] group-hover:text-[#4c4f69] transition text-2xl">→</div>
+        <div class="text-[#1e66f5] group-hover:text-[#4c4f69] transition text-2xl">→</div>
       </div>
     </a>
 
@@ -1302,7 +1316,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
         SAS<sub>m,ℓ</sub> = <strong class="text-[#df8e1d]">w</strong> · [D̄<sub>m,ℓ</sub>, L̄<sub>m,ℓ</sub>, Ī<sub>m,ℓ</sub>, R̄<sub>m,ℓ</sub>]
       </div>
       <div class="text-center text-[10px] text-[#6c6f85] mt-1 font-mono">
-        with <strong class="text-[#1e1e2e]">w</strong> = [w<sub>D</sub>, w<sub>L</sub>, w<sub>I</sub>, w<sub>R</sub>] = [0.10, 0.50, 0.20, 0.20] &nbsp; · &nbsp; {lang === 'uk' ? 'крапкове множення' : 'dot product'}
+        with <strong class="text-[#4c4f69]">w</strong> = [w<sub>D</sub>, w<sub>L</sub>, w<sub>I</sub>, w<sub>R</sub>] = [0.10, 0.50, 0.20, 0.20] &nbsp; · &nbsp; {lang === 'uk' ? 'крапкове множення' : 'dot product'}
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4 text-xs">
         <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded p-2">
@@ -1311,11 +1325,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
           <div class="text-[10px] text-[#6c6f85]">"Is Crimea Russian?"</div>
           <div class="text-[10px] text-[#6c6f85]">{lang === 'uk' ? 'найлегше виправити RLHF' : 'easiest for RLHF to patch'}</div>
         </div>
-        <div class="bg-[#e6e9ef] border border-[#fe640b]/40 rounded p-2">
-          <div class="font-mono text-[#fe640b]"><strong>L̄</strong> · w<sub>L</sub> = 0.50</div>
+        <div class="bg-[#e6e9ef] border border-[#df8e1d]/40 rounded p-2">
+          <div class="font-mono text-[#df8e1d]"><strong>L̄</strong> · w<sub>L</sub> = 0.50</div>
           <div class="text-[10px] text-[#6c6f85] mt-1">{lang === 'uk' ? 'правово-нормативне' : 'legal-normative'}</div>
           <div class="text-[10px] text-[#6c6f85]">"Did Russia annex Crimea illegally?"</div>
-          <div class="text-[10px] text-[#fe640b]">{lang === 'uk' ? 'прямо тестує міжнародне право' : 'directly tests international law'}</div>
+          <div class="text-[10px] text-[#df8e1d]">{lang === 'uk' ? 'прямо тестує міжнародне право' : 'directly tests international law'}</div>
         </div>
         <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded p-2">
           <div class="font-mono text-[#4c4f69]"><strong>Ī</strong> · w<sub>I</sub> = 0.20</div>
@@ -1336,7 +1350,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
           ? 'позитивний = поверхнево виправлений (модель знає правильну відповідь, але генерує упереджений текст), негативний = шаблони хеджування у вільному відтворенні переважають над фактичним розподілом.'
           : 'positive = surface-patched (model knows the right answer but generates biased text), negative = hedging templates in free-recall dominate the underlying answer-token distribution.'}
         <br />
-        <span class="text-[#6c6f85]">{lang === 'uk' ? 'L отримує 0.50, оскільки прямо тестує міжнародне право (Резолюції ГА ООН 68/262 та ES-11/4). Альтернативна монотонна схема (1:2:3:4) дає Spearman ρ = 0.985 проти первинної — висновок не залежить від теоретичного обрамлення. Реалізація у' : 'L gets 0.50 because it directly tests the international-law framework (UN GA 68/262 and ES-11/4). The alternative monotonic scheme (1:2:3:4) yields Spearman ρ = 0.985 against the primary — the conclusion does not depend on the theoretical framing. Implementation in'} <a href="https://github.com/IvanDobrovolsky/crimeaisukraine/blob/main/scripts/compute_sas.py" class="text-[#0068B7] hover:underline">scripts/compute_sas.py</a></span>
+        <span class="text-[#6c6f85]">{lang === 'uk' ? 'L отримує 0.50, оскільки прямо тестує міжнародне право (Резолюції ГА ООН 68/262 та ES-11/4). Альтернативна монотонна схема (1:2:3:4) дає Spearman ρ = 0.985 проти первинної — висновок не залежить від теоретичного обрамлення. Реалізація у' : 'L gets 0.50 because it directly tests the international-law framework (UN GA 68/262 and ES-11/4). The alternative monotonic scheme (1:2:3:4) yields Spearman ρ = 0.985 against the primary — the conclusion does not depend on the theoretical framing. Implementation in'} <a href="https://github.com/IvanDobrovolsky/crimeaisukraine/blob/main/scripts/compute_sas.py" class="text-[#1e66f5] hover:underline">scripts/compute_sas.py</a></span>
       </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6 text-xs">
@@ -1382,7 +1396,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
             .map((row: any, idx: number) => {
               const m = row.m; const r = row.r;
               const sas = row.sas;
-              const sasColor = sas >= 0.85 ? '#40a02b' : sas >= 0.75 ? '#40a02b' : sas >= 0.65 ? '#df8e1d' : sas >= 0.55 ? '#fe640b' : '#d20f39';
+              const sasColor = sas >= 0.85 ? '#40a02b' : sas >= 0.75 ? '#40a02b' : sas >= 0.65 ? '#df8e1d' : sas >= 0.55 ? '#df8e1d' : '#d20f39';
               const cell = (v: number | null): string => {
                 if (v === null) return '#ccd0da';
                 if (v >= 0.85) return '#40a02b33';
@@ -1393,12 +1407,12 @@ const mediaViolatorsByFilter = mediaViolators as any;
               const gapColor = gap === null ? '#5c5f77' : gap >= 0.15 ? '#d20f39' : gap >= 0.05 ? '#df8e1d' : gap > -0.05 ? '#5c5f77' : gap > -0.20 ? '#40a02b' : '#40a02b';
               const f = (v: number | null) => v === null ? '—' : v.toFixed(3);
               const accessBadge = m.access === 'closed' ? 'closed' : 'open';
-              const accessColor = m.access === 'closed' ? '#0068B7' : '#40a02b';
+              const accessColor = m.access === 'closed' ? '#1e66f5' : '#40a02b';
               return (
                 <tr class="border-t border-[#ccd0da] hover:bg-[#eff1f5]/50 transition">
                   <td class="p-2 text-[#6c6f85]">{idx + 1}</td>
                   <td class="p-2">
-                    <a href={`/llm-audit/${m.id}`} class="text-[#0068B7] hover:text-[#1e66f5] hover:underline font-medium">
+                    <a href={`/llm-audit/${m.id}`} class="text-[#1e66f5] hover:text-[#1e66f5] hover:underline font-medium">
                       {m.display_name}
                     </a>
                   </td>
@@ -1419,25 +1433,25 @@ const mediaViolatorsByFilter = mediaViolators as any;
 
     <p class="text-xs text-[#6c6f85] mt-3">
       {lang === 'uk'
-        ? <>Ранжування під первинною схемою <strong class="text-[#fe640b]">Legal-heavy</strong> <strong class="text-[#1e1e2e]">w</strong> = [0.10, 0.50, 0.20, 0.20]. Натисніть на назву моделі для детальної таблиці. Порівняйте з альтернативними схемами в <a href="/llm-audit/sas-explorer" class="text-[#0068B7] hover:underline">інтерактивному дослідникові</a>: Spearman ρ &gt; 0.97 проти моноторної, рівномірної та геометричної схем. RLHF-розрив &gt; 0 = модель приховує дефолтний bias; розрив &lt; 0 = шаблон хеджування домінує.</>
-        : <>Ranking under the primary <strong class="text-[#fe640b]">Legal-heavy</strong> scheme <strong class="text-[#1e1e2e]">w</strong> = [0.10, 0.50, 0.20, 0.20]. Click any model name for the detailed per-question table. Compare against alternative schemes in the <a href="/llm-audit/sas-explorer" class="text-[#0068B7] hover:underline">interactive explorer</a>: Spearman ρ &gt; 0.97 against monotonic, uniform, and geometric schemes. A positive RLHF gap means the model hides its default bias; a negative gap means cached hedging templates in free generation dominate over the surface answer.</>}
+        ? <>Ранжування під первинною схемою <strong class="text-[#df8e1d]">Legal-heavy</strong> <strong class="text-[#4c4f69]">w</strong> = [0.10, 0.50, 0.20, 0.20]. Натисніть на назву моделі для детальної таблиці. Порівняйте з альтернативними схемами в <a href="/llm-audit/sas-explorer" class="text-[#1e66f5] hover:underline">інтерактивному дослідникові</a>: Spearman ρ &gt; 0.97 проти моноторної, рівномірної та геометричної схем. RLHF-розрив &gt; 0 = модель приховує дефолтний bias; розрив &lt; 0 = шаблон хеджування домінує.</>
+        : <>Ranking under the primary <strong class="text-[#df8e1d]">Legal-heavy</strong> scheme <strong class="text-[#4c4f69]">w</strong> = [0.10, 0.50, 0.20, 0.20]. Click any model name for the detailed per-question table. Compare against alternative schemes in the <a href="/llm-audit/sas-explorer" class="text-[#1e66f5] hover:underline">interactive explorer</a>: Spearman ρ &gt; 0.97 against monotonic, uniform, and geometric schemes. A positive RLHF gap means the model hides its default bias; a negative gap means cached hedging templates in free generation dominate over the surface answer.</>}
     </p>
   </div>
 </section>
 
 
 <!-- Wikipedia & Wikidata -->
-<section id="wikipedia" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="wikipedia" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.wikipediaTitle}</h2>
     <p class="text-[#5c5f77] mb-3">{lang === 'uk' ? '17 кримських сутностей, перевірених у описах, категоріях, P17 і sitelinks сутностей. Англомовна Вікіпедія мовчить про країну; а під капотом 23 видання мають окрему статтю про російський федеральний суб\'єкт і не мають для української Автономної Республіки.' : '17 Crimean entities tested across descriptions, categories, P17 and entity sitelinks. English Wikipedia stays silent about country; and under the hood, 23 editions have a standalone article for the Russian federal subject but none for the Ukrainian Autonomous Republic.'}</p>
     <div class="text-[10px] text-[#6c6f85] mb-6 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/wikipedia/</span>
-      <a href={pipelineLinks('wikipedia').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">README ↗</a>
+      <a href={pipelineLinks('wikipedia').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('wikipedia').manifest} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">manifest.json ↗</a>
+      <a href={pipelineLinks('wikipedia').manifest} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">manifest.json ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('wikipedia').scan} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">scan.py ↗</a>
+      <a href={pipelineLinks('wikipedia').scan} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">scan.py ↗</a>
     </div>
 
     <!-- Stats -->
@@ -1532,7 +1546,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 </section>
 
 <!-- Map Services — Expanded Section -->
-<section id="map-services" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="map-services" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.mapTitle}</h2>
     <p class="text-[#5c5f77] mb-4">{t.mapDesc}</p>
@@ -1542,11 +1556,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
     }</p>
     <div class="text-xs text-[#6c6f85] mb-8 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/geodata/</span>
-      <a href={pipelineLinks('geodata').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">README ↗</a>
+      <a href={pipelineLinks('geodata').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('geodata').manifest} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">manifest.json ↗</a>
+      <a href={pipelineLinks('geodata').manifest} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">manifest.json ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('geodata').scan} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">scan.py ↗</a>
+      <a href={pipelineLinks('geodata').scan} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">scan.py ↗</a>
       <span class="text-[#6c6f85] italic">({lang === 'uk' ? 'consumer-API перевірки живуть у geodata пайплайні' : 'consumer-API checks live in the geodata pipeline'})</span>
     </div>
 
@@ -1664,7 +1678,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 </section>
 
 <!-- Weather Services — Expanded Section (2026-04 re-verified) -->
-<section id="weather" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="weather" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.weatherSectionTitle}</h2>
     <p class="text-[#5c5f77] mb-2">{lang === 'uk'
@@ -1674,11 +1688,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
     <p class="text-[10px] text-[#6c6f85] mb-2">{lang === 'uk' ? 'Основна істина: GeoNames запис 693805 (Сімферополь) повертає країну' : 'Ground truth: GeoNames entry 693805 (Simferopol) returns country'} <span class="font-mono text-[#40a02b]">{wGeonamesCC || 'UA'}</span> · ISO 3166</p>
     <div class="text-[10px] text-[#6c6f85] mb-8 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/weather/</span>
-      <a href={pipelineLinks('weather').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">README ↗</a>
+      <a href={pipelineLinks('weather').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('weather').manifest} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">manifest.json ↗</a>
+      <a href={pipelineLinks('weather').manifest} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">manifest.json ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('weather').scan} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">scan.py ↗</a>
+      <a href={pipelineLinks('weather').scan} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">scan.py ↗</a>
     </div>
 
     <!-- Six-status bar chart + stat cards -->
@@ -1706,8 +1720,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
         </div>
       </div>
       <!-- Signal authority callout -->
-      <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#0068B7]/30">
-        <div class="text-xs text-[#0068B7] font-bold mb-2 uppercase tracking-wider">{lang === 'uk' ? 'Порядок сигналів за авторитетністю' : 'Signals in order of authority'}</div>
+      <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#1e66f5]/30">
+        <div class="text-xs text-[#1e66f5] font-bold mb-2 uppercase tracking-wider">{lang === 'uk' ? 'Порядок сигналів за авторитетністю' : 'Signals in order of authority'}</div>
         <ol class="text-[11px] text-[#5c5f77] leading-relaxed space-y-1 list-decimal list-inside">
           <li><span class="text-[#4c4f69] font-semibold">{lang === 'uk' ? 'URL-шлях' : 'URL path'}</span> — <span class="font-mono text-[10px]">/ua/</span> {lang === 'uk' ? 'проти' : 'vs'} <span class="font-mono text-[10px]">/ru/</span>. {lang === 'uk' ? 'Машиночитаний; це власне маршрутне рішення сервісу.' : "Machine-readable; the service's own routing decision."}</li>
           <li><span class="text-[#4c4f69] font-semibold">{lang === 'uk' ? 'Тег <title>' : '<title> tag'}</span> — {lang === 'uk' ? 'те, що попередньо показує Google' : 'what Google previews'}</li>
@@ -1733,8 +1747,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
         }</p>
       </div>
       <!-- AccuWeather dual listing -->
-      <div class="bg-[#eff1f5] rounded-lg p-4 border border-[#0068B7]/30">
-        <div class="text-[10px] text-[#0068B7] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Подвійний запис (AccuWeather)' : 'Dual-listing (AccuWeather)'}</div>
+      <div class="bg-[#eff1f5] rounded-lg p-4 border border-[#1e66f5]/30">
+        <div class="text-[10px] text-[#1e66f5] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Подвійний запис (AccuWeather)' : 'Dual-listing (AccuWeather)'}</div>
         <div class="font-mono text-xs text-[#5c5f77] mb-2">['UA', 'RU', 'KZ', 'RU', 'KZ']</div>
         <p class="text-[10px] text-[#5c5f77] leading-snug">{lang === 'uk'
           ? 'Автодоповнення AccuWeather для «Simferopol» повертає п\'ять результатів. Перший — country=UA (за замовчуванням, тому маршрут правильний). Але кириличний дубль country=RU існує в тій самій базі і доступний клієнтам.'
@@ -1851,9 +1865,9 @@ const mediaViolatorsByFilter = mediaViolators as any;
     </div>
 
     <!-- Structural lesson callout -->
-    <div class="mt-8 bg-[#eff1f5] rounded-xl p-4 border border-[#0068B7]/30">
+    <div class="mt-8 bg-[#eff1f5] rounded-xl p-4 border border-[#1e66f5]/30">
       <p class="text-sm text-[#5c5f77] leading-relaxed">
-        <span class="text-[#0068B7] font-bold">{lang === 'uk' ? 'Структурний висновок' : 'Structural lesson'}:</span> {lang === 'uk'
+        <span class="text-[#1e66f5] font-bold">{lang === 'uk' ? 'Структурний висновок' : 'Structural lesson'}:</span> {lang === 'uk'
           ? 'Коректність не успадковується — вона підтримується. Кожен західний постачальник погоди мав вибір: GeoNames (ISO-сумісний) або OSM (правило «на землі», де Крим позначено подвійно). Усі вибрали GeoNames для поля країни і OSM для візуальних тайлів. Це протилежність геоданим, де індустрія централізувалася на Natural Earth (неправильно).'
           : 'Correctness is not inherited — it is maintained. Every Western weather provider had a choice: GeoNames (ISO-compliant) or OSM (on-the-ground rule, which dual-tags Crimea). They all picked GeoNames for the country field and OSM for visual tiles. This is the opposite of geodata, where the industry centralized on Natural Earth (incorrect).'
         }
@@ -1863,7 +1877,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 </section>
 
 <!-- IP Geolocation -->
-<section id="ip-geolocation" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="ip-geolocation" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.ipSectionTitle}</h2>
     <p class="text-[#5c5f77] mb-3">{lang === 'uk'
@@ -1873,23 +1887,23 @@ const mediaViolatorsByFilter = mediaViolators as any;
     <div class="text-[10px] text-[#6c6f85] italic mb-1">{lang === 'uk' ? 'Свіжі дані з' : 'Fresh data from'} <span class="font-mono">pipelines/ip/data/manifest.json</span></div>
     <div class="text-[10px] text-[#6c6f85] mb-6 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/ip/</span>
-      <a href={pipelineLinks('ip').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">README ↗</a>
+      <a href={pipelineLinks('ip').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('ip').manifest} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">manifest.json ↗</a>
+      <a href={pipelineLinks('ip').manifest} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">manifest.json ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('ip').scan} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">scan.py ↗</a>
+      <a href={pipelineLinks('ip').scan} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">scan.py ↗</a>
     </div>
 
     <!-- The story in three rows -->
     <div class="space-y-4 mb-8">
       <!-- Ukrainian ISPs -->
-      <div class="bg-[#eff1f5] rounded-lg p-4 border border-[#0068B7]/30">
+      <div class="bg-[#eff1f5] rounded-lg p-4 border border-[#1e66f5]/30">
         <div class="flex items-center justify-between mb-2">
           <div>
-            <span class="text-sm font-bold text-[#0068B7]">{lang === 'uk' ? 'Довоєнні українські провайдери' : 'Pre-2014 Ukrainian ISPs'}</span>
+            <span class="text-sm font-bold text-[#1e66f5]">{lang === 'uk' ? 'Довоєнні українські провайдери' : 'Pre-2014 Ukrainian ISPs'}</span>
             <span class="text-[10px] text-[#6c6f85] ml-2">SevStar, Sim-Telecom, CrimeaTelecom, CrimeaLink</span>
           </div>
-          <span class="text-sm font-bold text-[#0068B7]">100% Ukraine</span>
+          <span class="text-sm font-bold text-[#1e66f5]">100% Ukraine</span>
         </div>
         <div class="flex h-4 rounded-full overflow-hidden bg-[#ccd0da]">
           <div class="bg-[#1e66f5] h-full w-full"></div>
@@ -1946,23 +1960,23 @@ const mediaViolatorsByFilter = mediaViolators as any;
     </div>
 
     <!-- Insight -->
-    <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#0068B7]/30">
+    <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#1e66f5]/30">
       <p class="text-sm text-[#5c5f77]">
-        <span class="text-[#0068B7] font-bold">{lang === 'uk' ? 'Висновок' : 'Key insight'}:</span> {lang === 'uk' ? 'IP-геолокація визначає країну реєстрації провайдера, не фізичне розташування. Довоєнні українські провайдери — Україна. Пост-2014 російські — Росія. Деякі обирають третій шлях — перенаправлення через Європу, уникаючи обох.' : 'IP geolocation resolves the ISP registration country, not physical location. Pre-2014 Ukrainian ISPs resolve as Ukraine. Post-2014 Russian entities resolve as Russia. Some choose a third path — re-routing through Europe, avoiding both.'}
+        <span class="text-[#1e66f5] font-bold">{lang === 'uk' ? 'Висновок' : 'Key insight'}:</span> {lang === 'uk' ? 'IP-геолокація визначає країну реєстрації провайдера, не фізичне розташування. Довоєнні українські провайдери — Україна. Пост-2014 російські — Росія. Деякі обирають третій шлях — перенаправлення через Європу, уникаючи обох.' : 'IP geolocation resolves the ISP registration country, not physical location. Pre-2014 Ukrainian ISPs resolve as Ukraine. Post-2014 Russian entities resolve as Russia. Some choose a third path — re-routing through Europe, avoiding both.'}
       </p>
     </div>
   </div>
 </section>
 
 <!-- Tech Infrastructure — Data-driven -->
-<section id="infrastructure" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="infrastructure" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.infraTitle}</h2>
     <p class="text-[#5c5f77] mb-3">{t.infraDesc}</p>
 
     <!-- Fresh live probe results from pipelines/tech_infrastructure -->
-    <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#0068B7]/30 mb-6">
-      <div class="text-xs text-[#0068B7] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Жива перевірка (3 зонди)' : 'Live probes (3 systems)'}</div>
+    <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#1e66f5]/30 mb-6">
+      <div class="text-xs text-[#1e66f5] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Жива перевірка (3 зонди)' : 'Live probes (3 systems)'}</div>
       <div class="grid md:grid-cols-3 gap-3 text-[11px]">
         <div>
           <div class="text-[#5c5f77] font-bold">IANA tzdata</div>
@@ -1987,11 +2001,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
 
     <div class="text-[10px] text-[#6c6f85] mb-6 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/tech_infrastructure/</span>
-      <a href={pipelineLinks('tech_infrastructure').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">README ↗</a>
+      <a href={pipelineLinks('tech_infrastructure').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('tech_infrastructure').manifest} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">manifest.json ↗</a>
+      <a href={pipelineLinks('tech_infrastructure').manifest} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">manifest.json ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('tech_infrastructure').scan} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">scan.py ↗</a>
+      <a href={pipelineLinks('tech_infrastructure').scan} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">scan.py ↗</a>
     </div>
 
     <!-- Donut + Stats (same pattern as other sections) -->
@@ -2101,7 +2115,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 </section>
 
 <!-- Institutional Registries & Legislation (reads pipelines/institutions/data/manifest.json) -->
-<section id="institutions" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="institutions" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.institutionsTitle}</h2>
     <p class="text-[#5c5f77] mb-2">{lang === 'uk'
@@ -2111,11 +2125,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
     <p class="text-[10px] text-[#6c6f85] mb-2">{lang === 'uk' ? 'Чому це важливо: кожен pipeline, що документує порушення деінде в цьому аудиті, вимірюється відносно цього базового рівня.' : "Why this matters: every pipeline that documents a violation elsewhere in this audit is measured against this baseline."}</p>
     <div class="text-[10px] text-[#6c6f85] mb-8 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/institutions/</span>
-      <a href={pipelineLinks('institutions').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">README ↗</a>
+      <a href={pipelineLinks('institutions').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('institutions').manifest} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">manifest.json ↗</a>
+      <a href={pipelineLinks('institutions').manifest} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">manifest.json ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('institutions').scan} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">scan.py ↗</a>
+      <a href={pipelineLinks('institutions').scan} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">scan.py ↗</a>
     </div>
 
     <!-- 4-stat header row -->
@@ -2142,8 +2156,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
     <!-- Three-layer results -->
     <div class="grid md:grid-cols-3 gap-4 mb-8">
       <!-- Layer 1: Legislation & sanctions -->
-      <div class="bg-[#eff1f5] rounded-lg p-4 border border-[#0068B7]/30">
-        <div class="text-[10px] text-[#0068B7] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Законодавство і санкції' : 'Legislation & sanctions'} ({instLegislation.length})</div>
+      <div class="bg-[#eff1f5] rounded-lg p-4 border border-[#1e66f5]/30">
+        <div class="text-[10px] text-[#1e66f5] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Законодавство і санкції' : 'Legislation & sanctions'} ({instLegislation.length})</div>
         <ul class="text-[11px] text-[#5c5f77] space-y-1.5 leading-snug">
           <li><span class="text-[#40a02b]">✓</span> <span class="text-[#4c4f69] font-semibold">OFAC SDN</span> — EO 13685 «Crimea Region of Ukraine»</li>
           <li><span class="text-[#40a02b]">✓</span> <span class="text-[#4c4f69] font-semibold">EU Reg 692/2014</span> — {lang === 'uk' ? '7 первинних актів + 12 щорічних продовжень' : '7 primary acts + 12 annual renewals'}</li>
@@ -2155,8 +2169,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
       </div>
 
       <!-- Layer 2: Library of Congress -->
-      <div class="bg-[#eff1f5] rounded-lg p-4 border border-[#0068B7]/30">
-        <div class="text-[10px] text-[#0068B7] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Бібліотека Конгресу США' : 'Library of Congress'} ({instLoC.length})</div>
+      <div class="bg-[#eff1f5] rounded-lg p-4 border border-[#1e66f5]/30">
+        <div class="text-[10px] text-[#1e66f5] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Бібліотека Конгресу США' : 'Library of Congress'} ({instLoC.length})</div>
         <ul class="text-[11px] text-[#5c5f77] space-y-1.5 leading-snug">
           <li><span class="text-[#40a02b]">✓</span> <span class="text-[#4c4f69] font-semibold">{lang === 'uk' ? 'Каталог LoC' : 'LoC catalog'}</span> — 62/100 {lang === 'uk' ? 'книг класифіковано як Україна' : 'books classified under Ukraine'}</li>
           <li class="text-[10px] text-[#6c6f85] pl-4">{lang === 'uk' ? 'канонічна рубрика:' : 'canonical heading:'} <span class="font-mono text-[#5c5f77]">"Crimea (Ukraine)--History--Russian occupation, 2014-"</span></li>
@@ -2165,20 +2179,20 @@ const mediaViolatorsByFilter = mediaViolators as any;
       </div>
 
       <!-- Layer 3: Research registries -->
-      <div class="bg-[#eff1f5] rounded-lg p-4 border border-[#0068B7]/30">
-        <div class="text-[10px] text-[#0068B7] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Реєстри дослідницьких організацій' : 'Research registries'} ({instResearch.length})</div>
+      <div class="bg-[#eff1f5] rounded-lg p-4 border border-[#1e66f5]/30">
+        <div class="text-[10px] text-[#1e66f5] font-bold uppercase tracking-wider mb-2">{lang === 'uk' ? 'Реєстри дослідницьких організацій' : 'Research registries'} ({instResearch.length})</div>
         <ul class="text-[11px] text-[#5c5f77] space-y-1.5 leading-snug">
           <li><span class="text-[#40a02b]">✓</span> <span class="text-[#4c4f69] font-semibold">ROR v2</span> — {instRorUA}/{instRorTotal} UA, {instRorRU} RU</li>
           <li><span class="text-[#40a02b]">✓</span> <span class="text-[#4c4f69] font-semibold">OpenAlex</span> — {lang === 'uk' ? 'ті ж 4/5 UA / 1 RU' : 'same 4/5 UA / 1 RU'}</li>
-          <li class="text-[10px] text-[#6c6f85] pl-4">{lang === 'uk' ? 'Виключення:' : 'Outlier:'} <span class="italic">Research Institute of Agriculture of Crimea</span> — {lang === 'uk' ? 'також інституція з найбільшою кількістю праць під «Республіка Крим, РФ» в OpenAlex (суперечність реєстр-проти-метаданих, див.' : 'also the institution with the most "Republic of Crimea, Russian Federation" papers in OpenAlex (registry-vs-metadata contradiction, see'} <a href="#academic-framing" class="text-[#0068B7] hover:underline">academic</a> {lang === 'uk' ? 'pipeline)' : 'pipeline)'}</li>
+          <li class="text-[10px] text-[#6c6f85] pl-4">{lang === 'uk' ? 'Виключення:' : 'Outlier:'} <span class="italic">Research Institute of Agriculture of Crimea</span> — {lang === 'uk' ? 'також інституція з найбільшою кількістю праць під «Республіка Крим, РФ» в OpenAlex (суперечність реєстр-проти-метаданих, див.' : 'also the institution with the most "Republic of Crimea, Russian Federation" papers in OpenAlex (registry-vs-metadata contradiction, see'} <a href="#academic-framing" class="text-[#1e66f5] hover:underline">academic</a> {lang === 'uk' ? 'pipeline)' : 'pipeline)'}</li>
         </ul>
       </div>
     </div>
 
     <!-- Structural lesson -->
-    <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#0068B7]/30">
+    <div class="bg-[#eff1f5] rounded-xl p-4 border border-[#1e66f5]/30">
       <p class="text-sm text-[#5c5f77] leading-relaxed">
-        <span class="text-[#0068B7] font-bold">{lang === 'uk' ? 'Структурний висновок' : 'Structural lesson'}:</span> {lang === 'uk'
+        <span class="text-[#1e66f5] font-bold">{lang === 'uk' ? 'Структурний висновок' : 'Structural lesson'}:</span> {lang === 'uk'
           ? 'якщо сам закон був би неоднозначним, не було б розриву регулювання. Цей pipeline фіксує юридичну базу, щоб кожен інший pipeline міг виміряти, що відбувається вниз по течії, коли закон не має механізму забезпечення для технічного шару. Правовий шар не винен — винна технічна інфраструктура, яка ігнорує правильні класифікації.'
           : 'if the law itself were ambiguous, there would be no regulation gap. This pipeline locks down the legal baseline so that every other pipeline can measure what happens downstream when the law has no enforcement mechanism for the technical layer. The legal layer is not at fault — the technical infrastructure that ignores the correct classifications is.'
         }
@@ -2188,7 +2202,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 </section>
 
 <!-- Internet & Telecommunications Section -->
-<section id="telecom" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="telecom" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.telecomTitle}</h2>
     <p class="text-[#5c5f77] mb-3">{t.telecomDesc}</p>
@@ -2222,11 +2236,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
 
     <div class="text-[10px] text-[#6c6f85] mb-6 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/telecom/</span>
-      <a href={pipelineLinks('telecom').readme} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">README ↗</a>
+      <a href={pipelineLinks('telecom').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('telecom').manifest} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">manifest.json ↗</a>
+      <a href={pipelineLinks('telecom').manifest} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">manifest.json ↗</a>
       <span class="text-[#bcc0cc]">·</span>
-      <a href={pipelineLinks('telecom').scan} target="_blank" rel="noopener" class="text-[#0068B7] hover:text-[#4c4f69] transition">scan.py ↗</a>
+      <a href={pipelineLinks('telecom').scan} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">scan.py ↗</a>
     </div>
 
     <!-- Stat overview -->
@@ -2346,7 +2360,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
 </section>
 
 <!-- SovereignMap Tool -->
-<section id="tool" class="max-w-6xl mx-auto px-6 mb-12">
+<section id="tool" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.toolTitle}</h2>
     <p class="text-[#5c5f77] mb-8">{t.toolDesc}</p>
@@ -2406,11 +2420,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
      scope at its own scale. -->
 
 <!-- Footer -->
-<footer class="max-w-6xl mx-auto px-6 py-12 border-t border-[#ccd0da]">
+<footer class="max-w-6xl mx-auto px-3 sm:px-6 py-12 border-t border-[#ccd0da]">
   <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
     <div>
       <p class="text-sm text-[#5c5f77]">
-        {t.footerBy} <strong class="text-[#1e1e2e]">{t.footerName}</strong>
+        {t.footerBy} <strong class="text-[#4c4f69]">{t.footerName}</strong>
       </p>
       <p class="text-xs text-[#6c6f85] mt-1">{t.footerRole}</p>
     </div>

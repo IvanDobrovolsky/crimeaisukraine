@@ -2,25 +2,34 @@
 
 @layer base {
   :root {
-    /* Crimean flag palette — blue/white/red (ARC flag, ratio 1:6:1) */
-    --crimea-blue: #0068B7;
-    --crimea-white: #FFFFFF;
-    --crimea-red: #D52B1E;
-    --ua-blue: #0068B7;
-    --ua-yellow: #D52B1E;
-    --bg-base: #eff1f5;
-    --bg-mantle: #e6e9ef;
-    --bg-crust: #dce0e8;
+    /* Catppuccin Latte — canonical academic palette
+       https://github.com/catppuccin/catppuccin */
+
+    /* Surfaces */
+    --bg-base:     #eff1f5;
+    --bg-mantle:   #e6e9ef;
+    --bg-crust:    #dce0e8;
     --bg-surface0: #ccd0da;
     --bg-surface1: #bcc0cc;
-    --text-primary: #4c4f69;
-    --text-secondary: #5c5f77;
-    --text-subtext: #6c6f85;
+
+    /* Text */
+    --text-primary:   #4c4f69;  /* Text */
+    --text-secondary: #5c5f77;  /* Subtext1 */
+    --text-subtext:   #6c6f85;  /* Subtext0 */
+
+    /* Accent — Catppuccin Latte Blue */
     --accent: #1e66f5;
-    --correct: #40a02b;
-    --incorrect: #d20f39;
-    --ambiguous: #df8e1d;
-    --blocked: #8839ef;
+
+    /* Semantic status (Catppuccin Latte) */
+    --correct:   #40a02b;  /* Green */
+    --incorrect: #d20f39;  /* Red */
+    --ambiguous: #df8e1d;  /* Yellow */
+    --blocked:   #8839ef;  /* Mauve */
+
+    /* Crimean flag — only for flag/logo elements, not UI */
+    --crimea-blue:  #0068B7;
+    --crimea-white: #FFFFFF;
+    --crimea-red:   #D52B1E;
   }
 
   body {
@@ -34,7 +43,6 @@
     color: var(--text-primary);
   }
 
-  /* Cards on light background */
   .card {
     background-color: #ffffff;
     border: 1px solid var(--bg-surface0);
