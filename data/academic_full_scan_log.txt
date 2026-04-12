@@ -1,0 +1,187 @@
+
+Query: 'Crimea'
+  Page 10: 2000 collected (of 64082)
+  Page 20: 4000 collected (of 64082)
+  Page 30: 6000 collected (of 64082)
+  Page 40: 8000 collected (of 64082)
+  Page 50: 10000 collected (of 64082)
+  Page 60: 12000 collected (of 64082)
+  Page 70: 14000 collected (of 64082)
+  Page 80: 16000 collected (of 64082)
+  Page 90: 18000 collected (of 64082)
+  Page 100: 20000 collected (of 64082)
+  Page 110: 22000 collected (of 64082)
+  Page 120: 24000 collected (of 64082)
+  Page 130: 26000 collected (of 64082)
+  Page 140: 28000 collected (of 64082)
+  Page 150: 30000 collected (of 64082)
+  Page 160: 32000 collected (of 64082)
+  Page 170: 34000 collected (of 64082)
+  Page 180: 36000 collected (of 64082)
+  Page 190: 38000 collected (of 64082)
+  Page 200: 40000 collected (of 64082)
+  Page 210: 42000 collected (of 64082)
+  Page 220: 44000 collected (of 64082)
+  Page 230: 46000 collected (of 64082)
+  Page 240: 48000 collected (of 64082)
+  Page 250: 50000 collected (of 64082)
+  Page 260: 52000 collected (of 64082)
+  Page 270: 54000 collected (of 64082)
+  Page 280: 56000 collected (of 64082)
+  Page 290: 58000 collected (of 64082)
+  Page 300: 60000 collected (of 64082)
+  Page 310: 62000 collected (of 64082)
+  Page 320: 64000 collected (of 64082)
+  Total results: 64082
+  Processed: 1000 | {'ukraine': 139, 'russia': 86, 'disputed': 2, 'no_signal': 773, 'skipped': 1}
+  Processed: 2000 | {'ukraine': 221, 'russia': 212, 'disputed': 4, 'no_signal': 1562, 'skipped': 1, 'no_crimea_ref': 1}
+  Processed: 3000 | {'ukraine': 445, 'russia': 286, 'disputed': 5, 'no_signal': 2212, 'skipped': 5, 'no_crimea_ref': 52}
+  Processed: 4000 | {'ukraine': 609, 'russia': 476, 'disputed': 9, 'no_signal': 2829, 'skipped': 7, 'no_crimea_ref': 77}
+  Processed: 5000 | {'ukraine': 727, 'russia': 659, 'disputed': 10, 'no_signal': 3515, 'skipped': 9, 'no_crimea_ref': 89}
+  Processed: 6000 | {'ukraine': 843, 'russia': 800, 'disputed': 11, 'no_signal': 4238, 'skipped': 12, 'no_crimea_ref': 108}
+  Processed: 7000 | {'ukraine': 966, 'russia': 910, 'disputed': 11, 'no_signal': 4971, 'skipped': 14, 'no_crimea_ref': 142}
+  Processed: 8000 | {'ukraine': 1103, 'russia': 1013, 'disputed': 12, 'no_signal': 5674, 'skipped': 14, 'no_crimea_ref': 198}
+  Processed: 9000 | {'ukraine': 1271, 'russia': 1091, 'disputed': 12, 'no_signal': 6322, 'skipped': 16, 'no_crimea_ref': 304}
+  Processed: 10000 | {'ukraine': 1447, 'russia': 1154, 'disputed': 12, 'no_signal': 6834, 'skipped': 17, 'no_crimea_ref': 553}
+  Processed: 11000 | {'ukraine': 1517, 'russia': 1187, 'disputed': 12, 'no_signal': 7078, 'skipped': 17, 'no_crimea_ref': 1206}
+  Processed: 12000 | {'ukraine': 1544, 'russia': 1203, 'disputed': 12, 'no_signal': 7174, 'skipped': 17, 'no_crimea_ref': 2067}
+  Processed: 13000 | {'ukraine': 1600, 'russia': 1247, 'disputed': 14, 'no_signal': 7361, 'skipped': 17, 'no_crimea_ref': 2778}
+  Processed: 14000 | {'ukraine': 1653, 'russia': 1293, 'disputed': 14, 'no_signal': 7628, 'skipped': 20, 'no_crimea_ref': 3412}
+  Processed: 15000 | {'ukraine': 1733, 'russia': 1340, 'disputed': 14, 'no_signal': 7914, 'skipped': 21, 'no_crimea_ref': 3999}
+  Processed: 16000 | {'ukraine': 1792, 'russia': 1384, 'disputed': 15, 'no_signal': 8203, 'skipped': 23, 'no_crimea_ref': 4606}
+  Processed: 17000 | {'ukraine': 1878, 'russia': 1412, 'disputed': 15, 'no_signal': 8473, 'skipped': 23, 'no_crimea_ref': 5222}
+  Processed: 18000 | {'ukraine': 1974, 'russia': 1439, 'disputed': 15, 'no_signal': 8773, 'skipped': 23, 'no_crimea_ref': 5799}
+  Processed: 19000 | {'ukraine': 2048, 'russia': 1472, 'disputed': 16, 'no_signal': 9045, 'skipped': 24, 'no_crimea_ref': 6419}
+  Processed: 20000 | {'ukraine': 2123, 'russia': 1496, 'disputed': 16, 'no_signal': 9342, 'skipped': 24, 'no_crimea_ref': 7023}
+  Processed: 21000 | {'ukraine': 2205, 'russia': 1528, 'disputed': 16, 'no_signal': 9688, 'skipped': 24, 'no_crimea_ref': 7563}
+  Processed: 22000 | {'ukraine': 2295, 'russia': 1558, 'disputed': 16, 'no_signal': 9936, 'skipped': 25, 'no_crimea_ref': 8195}
+  Processed: 23000 | {'ukraine': 2383, 'russia': 1575, 'disputed': 17, 'no_signal': 10173, 'skipped': 26, 'no_crimea_ref': 8852}
+  Processed: 24000 | {'ukraine': 2463, 'russia': 1590, 'disputed': 17, 'no_signal': 10406, 'skipped': 28, 'no_crimea_ref': 9524}
+  Processed: 25000 | {'ukraine': 2540, 'russia': 1629, 'disputed': 17, 'no_signal': 10651, 'skipped': 28, 'no_crimea_ref': 10163}
+  Processed: 26000 | {'ukraine': 2623, 'russia': 1655, 'disputed': 17, 'no_signal': 10883, 'skipped': 30, 'no_crimea_ref': 10822}
+  Processed: 27000 | {'ukraine': 2699, 'russia': 1672, 'disputed': 17, 'no_signal': 11084, 'skipped': 31, 'no_crimea_ref': 11528}
+  Processed: 28000 | {'ukraine': 2752, 'russia': 1688, 'disputed': 17, 'no_signal': 11304, 'skipped': 32, 'no_crimea_ref': 12239}
+  Processed: 29000 | {'ukraine': 2817, 'russia': 1715, 'disputed': 17, 'no_signal': 11551, 'skipped': 33, 'no_crimea_ref': 12900}
+  Processed: 30000 | {'ukraine': 2877, 'russia': 1735, 'disputed': 17, 'no_signal': 11729, 'skipped': 36, 'no_crimea_ref': 13642}
+  Processed: 31000 | {'ukraine': 2938, 'russia': 1764, 'disputed': 18, 'no_signal': 11906, 'skipped': 37, 'no_crimea_ref': 14374}
+  Processed: 32000 | {'ukraine': 2985, 'russia': 1786, 'disputed': 18, 'no_signal': 12089, 'skipped': 38, 'no_crimea_ref': 15122}
+  Processed: 33000 | {'ukraine': 3019, 'russia': 1800, 'disputed': 18, 'no_signal': 12205, 'skipped': 40, 'no_crimea_ref': 15958}
+  Processed: 34000 | {'ukraine': 3050, 'russia': 1807, 'disputed': 18, 'no_signal': 12293, 'skipped': 41, 'no_crimea_ref': 16832}
+  Processed: 35000 | {'ukraine': 3084, 'russia': 1822, 'disputed': 18, 'no_signal': 12403, 'skipped': 43, 'no_crimea_ref': 17673}
+  Processed: 36000 | {'ukraine': 3123, 'russia': 1830, 'disputed': 18, 'no_signal': 12520, 'skipped': 46, 'no_crimea_ref': 18509}
+  Processed: 37000 | {'ukraine': 3155, 'russia': 1841, 'disputed': 18, 'no_signal': 12663, 'skipped': 48, 'no_crimea_ref': 19323}
+  Processed: 38000 | {'ukraine': 3174, 'russia': 1846, 'disputed': 18, 'no_signal': 12815, 'skipped': 49, 'no_crimea_ref': 20147}
+  Processed: 39000 | {'ukraine': 3184, 'russia': 1850, 'disputed': 18, 'no_signal': 12974, 'skipped': 53, 'no_crimea_ref': 20974}
+  Processed: 40000 | {'ukraine': 3197, 'russia': 1852, 'disputed': 18, 'no_signal': 13064, 'skipped': 54, 'no_crimea_ref': 21869}
+  Processed: 41000 | {'ukraine': 3203, 'russia': 1853, 'disputed': 18, 'no_signal': 13136, 'skipped': 58, 'no_crimea_ref': 22790}
+  Processed: 42000 | {'ukraine': 3205, 'russia': 1855, 'disputed': 18, 'no_signal': 13195, 'skipped': 58, 'no_crimea_ref': 23727}
+  Processed: 43000 | {'ukraine': 3208, 'russia': 1855, 'disputed': 18, 'no_signal': 13247, 'skipped': 60, 'no_crimea_ref': 24672}
+  Processed: 44000 | {'ukraine': 3212, 'russia': 1855, 'disputed': 18, 'no_signal': 13303, 'skipped': 64, 'no_crimea_ref': 25612}
+  Processed: 45000 | {'ukraine': 3217, 'russia': 1855, 'disputed': 18, 'no_signal': 13373, 'skipped': 64, 'no_crimea_ref': 26537}
+  Processed: 46000 | {'ukraine': 3221, 'russia': 1855, 'disputed': 18, 'no_signal': 13431, 'skipped': 65, 'no_crimea_ref': 27475}
+  Processed: 47000 | {'ukraine': 3227, 'russia': 1855, 'disputed': 18, 'no_signal': 13461, 'skipped': 69, 'no_crimea_ref': 28439}
+  Processed: 48000 | {'ukraine': 3239, 'russia': 1855, 'disputed': 18, 'no_signal': 13511, 'skipped': 70, 'no_crimea_ref': 29377}
+  Processed: 49000 | {'ukraine': 3244, 'russia': 1855, 'disputed': 18, 'no_signal': 13541, 'skipped': 73, 'no_crimea_ref': 30342}
+  Processed: 50000 | {'ukraine': 3245, 'russia': 1855, 'disputed': 18, 'no_signal': 13571, 'skipped': 75, 'no_crimea_ref': 31311}
+  Processed: 51000 | {'ukraine': 3245, 'russia': 1855, 'disputed': 18, 'no_signal': 13602, 'skipped': 78, 'no_crimea_ref': 32280}
+  Processed: 52000 | {'ukraine': 3245, 'russia': 1855, 'disputed': 18, 'no_signal': 13631, 'skipped': 78, 'no_crimea_ref': 33251}
+  Processed: 53000 | {'ukraine': 3245, 'russia': 1855, 'disputed': 18, 'no_signal': 13652, 'skipped': 78, 'no_crimea_ref': 34230}
+  Processed: 54000 | {'ukraine': 3246, 'russia': 1855, 'disputed': 18, 'no_signal': 13669, 'skipped': 80, 'no_crimea_ref': 35212}
+  Processed: 55000 | {'ukraine': 3246, 'russia': 1855, 'disputed': 18, 'no_signal': 13689, 'skipped': 81, 'no_crimea_ref': 36192}
+  Processed: 56000 | {'ukraine': 3246, 'russia': 1855, 'disputed': 18, 'no_signal': 13700, 'skipped': 84, 'no_crimea_ref': 37181}
+  Processed: 57000 | {'ukraine': 3246, 'russia': 1855, 'disputed': 18, 'no_signal': 13724, 'skipped': 86, 'no_crimea_ref': 38157}
+  Processed: 58000 | {'ukraine': 3246, 'russia': 1855, 'disputed': 18, 'no_signal': 13742, 'skipped': 89, 'no_crimea_ref': 39139}
+  Processed: 59000 | {'ukraine': 3246, 'russia': 1855, 'disputed': 18, 'no_signal': 13751, 'skipped': 91, 'no_crimea_ref': 40130}
+  Processed: 60000 | {'ukraine': 3247, 'russia': 1855, 'disputed': 18, 'no_signal': 13760, 'skipped': 93, 'no_crimea_ref': 41120}
+  Processed: 61000 | {'ukraine': 3247, 'russia': 1855, 'disputed': 18, 'no_signal': 13779, 'skipped': 95, 'no_crimea_ref': 42101}
+  Processed: 62000 | {'ukraine': 3247, 'russia': 1855, 'disputed': 18, 'no_signal': 13781, 'skipped': 96, 'no_crimea_ref': 43099}
+  Processed: 63000 | {'ukraine': 3247, 'russia': 1855, 'disputed': 18, 'no_signal': 13784, 'skipped': 97, 'no_crimea_ref': 44096}
+
+Query: 'Simferopol'
+  Page 10: 2000 collected (of 12348)
+  Page 20: 4000 collected (of 12348)
+  Page 30: 6000 collected (of 12348)
+  Page 40: 8000 collected (of 12348)
+  Page 50: 10000 collected (of 12348)
+  Page 60: 12000 collected (of 12348)
+  Total results: 12348
+  Processed: 64000 | {'ukraine': 3249, 'russia': 1856, 'disputed': 18, 'no_signal': 13794, 'skipped': 120, 'no_crimea_ref': 45083}
+  Processed: 65000 | {'ukraine': 3252, 'russia': 1862, 'disputed': 18, 'no_signal': 13849, 'skipped': 1186, 'no_crimea_ref': 46019}
+  Processed: 66000 | {'ukraine': 3253, 'russia': 1864, 'disputed': 18, 'no_signal': 13881, 'skipped': 1801, 'no_crimea_ref': 46984}
+  Processed: 67000 | {'ukraine': 3253, 'russia': 1868, 'disputed': 18, 'no_signal': 13961, 'skipped': 2987, 'no_crimea_ref': 47900}
+  Processed: 68000 | {'ukraine': 3253, 'russia': 1869, 'disputed': 18, 'no_signal': 13987, 'skipped': 3264, 'no_crimea_ref': 48873}
+  Processed: 69000 | {'ukraine': 3253, 'russia': 1869, 'disputed': 18, 'no_signal': 14018, 'skipped': 3650, 'no_crimea_ref': 49842}
+  Processed: 70000 | {'ukraine': 3253, 'russia': 1869, 'disputed': 18, 'no_signal': 14044, 'skipped': 4336, 'no_crimea_ref': 50816}
+  Processed: 71000 | {'ukraine': 3253, 'russia': 1869, 'disputed': 18, 'no_signal': 14055, 'skipped': 5335, 'no_crimea_ref': 51805}
+
+Query: 'Sevastopol'
+  Page 10: 2000 collected (of 15335)
+  Page 20: 4000 collected (of 15335)
+  Page 30: 6000 collected (of 15335)
+  Page 40: 8000 collected (of 15335)
+  Page 50: 10000 collected (of 15335)
+  Page 60: 12000 collected (of 15335)
+  Page 70: 14000 collected (of 15335)
+  Total results: 15335
+  Processed: 72000 | {'ukraine': 3256, 'russia': 1870, 'disputed': 18, 'no_signal': 14137, 'skipped': 6132, 'no_crimea_ref': 52719}
+  Processed: 73000 | {'ukraine': 3257, 'russia': 1870, 'disputed': 18, 'no_signal': 14183, 'skipped': 6969, 'no_crimea_ref': 53672}
+  Processed: 74000 | {'ukraine': 3257, 'russia': 1872, 'disputed': 18, 'no_signal': 14224, 'skipped': 7828, 'no_crimea_ref': 54629}
+  Processed: 75000 | {'ukraine': 3258, 'russia': 1872, 'disputed': 18, 'no_signal': 14254, 'skipped': 9147, 'no_crimea_ref': 55598}
+  Processed: 76000 | {'ukraine': 3258, 'russia': 1872, 'disputed': 18, 'no_signal': 14267, 'skipped': 9785, 'no_crimea_ref': 56585}
+  Processed: 77000 | {'ukraine': 3258, 'russia': 1872, 'disputed': 18, 'no_signal': 14280, 'skipped': 10546, 'no_crimea_ref': 57572}
+  Processed: 78000 | {'ukraine': 3258, 'russia': 1872, 'disputed': 18, 'no_signal': 14289, 'skipped': 12392, 'no_crimea_ref': 58563}
+
+Query: 'Yalta'
+  Page 10: 2000 collected (of 12553)
+  Page 20: 4000 collected (of 12553)
+  Page 30: 6000 collected (of 12553)
+  Page 40: 8000 collected (of 12553)
+  Page 50: 10000 collected (of 12553)
+  Page 60: 12000 collected (of 12553)
+  Total results: 12553
+  Processed: 79000 | {'ukraine': 3258, 'russia': 1872, 'disputed': 18, 'no_signal': 14310, 'skipped': 13170, 'no_crimea_ref': 59542}
+  Processed: 80000 | {'ukraine': 3258, 'russia': 1872, 'disputed': 18, 'no_signal': 14331, 'skipped': 13459, 'no_crimea_ref': 60521}
+  Processed: 81000 | {'ukraine': 3258, 'russia': 1872, 'disputed': 18, 'no_signal': 14341, 'skipped': 13828, 'no_crimea_ref': 61511}
+  Processed: 82000 | {'ukraine': 3258, 'russia': 1873, 'disputed': 18, 'no_signal': 14352, 'skipped': 14129, 'no_crimea_ref': 62499}
+  Processed: 83000 | {'ukraine': 3258, 'russia': 1873, 'disputed': 18, 'no_signal': 14358, 'skipped': 14357, 'no_crimea_ref': 63493}
+  Processed: 84000 | {'ukraine': 3258, 'russia': 1873, 'disputed': 18, 'no_signal': 14364, 'skipped': 14789, 'no_crimea_ref': 64487}
+  Processed: 85000 | {'ukraine': 3258, 'russia': 1873, 'disputed': 18, 'no_signal': 14371, 'skipped': 15108, 'no_crimea_ref': 65480}
+  Processed: 86000 | {'ukraine': 3258, 'russia': 1873, 'disputed': 18, 'no_signal': 14375, 'skipped': 15345, 'no_crimea_ref': 66476}
+  Processed: 87000 | {'ukraine': 3258, 'russia': 1873, 'disputed': 18, 'no_signal': 14377, 'skipped': 15510, 'no_crimea_ref': 67474}
+  Processed: 88000 | {'ukraine': 3258, 'russia': 1873, 'disputed': 18, 'no_signal': 14379, 'skipped': 15830, 'no_crimea_ref': 68472}
+
+Query: 'Kerch'
+  Page 10: 2000 collected (of 6142)
+  Page 20: 4000 collected (of 6142)
+  Page 30: 6000 collected (of 6142)
+  Total results: 6142
+  Processed: 89000 | {'ukraine': 3259, 'russia': 1873, 'disputed': 18, 'no_signal': 14419, 'skipped': 16203, 'no_crimea_ref': 69431}
+  Processed: 90000 | {'ukraine': 3260, 'russia': 1873, 'disputed': 18, 'no_signal': 14449, 'skipped': 16956, 'no_crimea_ref': 70400}
+  Processed: 91000 | {'ukraine': 3260, 'russia': 1873, 'disputed': 18, 'no_signal': 14469, 'skipped': 18003, 'no_crimea_ref': 71380}
+
+============================================================
+FULL ACADEMIC SCAN COMPLETE
+  Total fetched: 91670
+  Skipped (dedup): 18790
+  By label: {'ukraine': 3260, 'russia': 1873, 'disputed': 18, 'no_signal': 14472, 'skipped': 18790, 'no_crimea_ref': 72047}
+
+By year:
+  2010: UA=  17 RU=   1 (6%) DISP=0
+  2011: UA=  35 RU=   0 (0%) DISP=0
+  2012: UA=  31 RU=   3 (9%) DISP=0
+  2013: UA=  39 RU=   3 (7%) DISP=0
+  2014: UA= 144 RU=  39 (21%) DISP=3
+  2015: UA= 226 RU= 132 (36%) DISP=4
+  2016: UA= 230 RU=  96 (29%) DISP=1
+  2017: UA= 227 RU=  93 (29%) DISP=3
+  2018: UA= 244 RU= 128 (34%) DISP=1
+  2019: UA= 273 RU= 155 (36%) DISP=1
+  2020: UA= 260 RU= 220 (46%) DISP=3
+  2021: UA= 230 RU= 239 (51%) DISP=2
+  2022: UA= 295 RU= 191 (39%) DISP=0
+  2023: UA= 312 RU= 185 (37%) DISP=0
+  2024: UA= 309 RU= 179 (37%) DISP=0
+  2025: UA= 314 RU= 173 (36%) DISP=0
+  2026: UA=  74 RU=  36 (33%) DISP=0
+
+Saved summary to data/academic_full_summary.json

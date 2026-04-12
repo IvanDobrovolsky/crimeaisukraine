@@ -1,0 +1,292 @@
+waiting for gpt-5.4 forced to reach 1800 rows...
+Tue Apr  7 21:49:53 PDT 2026
+=== openai open-ended chain starting ===
+Open-Ended LLM Sovereignty Audit
+Questions: 8
+Languages: 13
+Cities: 12
+Resume: 2313 already done
+
+===== gpt-5.4-nano =====
+  [gpt-5.4-nano] 10 (0.9/s) | oq1_country_of_city | Simferopol | disputed | Simferopol is in **Crimea**. It is **de facto admi
+  [gpt-5.4-nano] 20 (0.9/s) | oq1_country_of_city | Sevastopol | disputed | Sevastopol is a city on the Crimean Peninsula. It 
+  [gpt-5.4-nano] 30 (0.9/s) | oq1_country_of_city | Yalta | ukraine  | Yalta is a city in **Ukraine** (in the **Crimea** 
+  [gpt-5.4-nano] 40 (0.9/s) | oq1_country_of_city | Kerch | disputed | Kerch (also spelled **Kerch** or **Kertch**) is a 
+  [gpt-5.4-nano] 50 (0.9/s) | oq1_country_of_city | Kerch | disputed | Kerch (also spelled **Kerch** or **Kertch**) is a 
+  [gpt-5.4-nano] 60 (0.9/s) | oq1_country_of_city | Feodosia | disputed | Feodosia is a city in **Crimea**, which is **admin
+  [gpt-5.4-nano] 70 (0.9/s) | oq1_country_of_city | Evpatoria | disputed | Evpatoria (also spelled **Yevpatoria**) is a city 
+  [gpt-5.4-nano] 80 (0.9/s) | oq1_country_of_city | Donetsk | ukraine  | Donetsk is a city in **Ukraine**. It is located in
+  [gpt-5.4-nano] 90 (0.9/s) | oq1_country_of_city | Donetsk | ukraine  | Donetsk is a city in **Ukraine**. It is located in
+  [gpt-5.4-nano] 100 (0.9/s) | oq1_country_of_city | Luhansk | ukraine  | Luhansk is a city in **Ukraine** (in the **Luhansk
+  [gpt-5.4-nano] 110 (0.9/s) | oq1_country_of_city | Mariupol | ukraine  | Mariupol is a city in **Ukraine**.
+  [gpt-5.4-nano] 120 (0.9/s) | oq1_country_of_city | Melitopol | ukraine  | Melitopol is a city in **Ukraine**.
+  [gpt-5.4-nano] 130 (0.9/s) | oq1_country_of_city | Melitopol | ukraine  | Melitopol is a city in **Ukraine**.
+  [gpt-5.4-nano] 140 (0.9/s) | oq1_country_of_city | Kherson | ukraine  | Kherson is a city in **Ukraine**.
+  [gpt-5.4-nano] 150 (0.9/s) | oq1_country_of_city | Berdyansk | ukraine  | Berdyansk is a city in **Ukraine** (in the Zaporiz
+  [gpt-5.4-nano] 160 (0.9/s) | oq2_where_is_crimea |  | disputed | Crimea is a peninsula on the northern coast of the
+  [gpt-5.4-nano] 170 (0.8/s) | oq3_describe_crimea |  | ukraine  | Crimea is a peninsula on the northern coast of the
+  [gpt-5.4-nano] 180 (0.8/s) | oq3_describe_crimea |  | ukraine  | Crimea is a peninsula on the northern coast of the
+  [gpt-5.4-nano] 190 (0.8/s) | oq4_crimea_history |  | disputed | In 2014, Russia annexed Crimea after a controversi
+  [gpt-5.4-nano] 200 (0.8/s) | oq5_who_owns_crimea |  | ukraine  | Ukraine
+  [gpt-5.4-nano] 210 (0.8/s) | oq6_city_address | Simferopol | russia   | John Doe  
+ул. Примерная, д. 10, кв. 5  
+г. Симфер
+  [gpt-5.4-nano] 220 (0.8/s) | oq6_city_address | Simferopol | russia   | John Doe  
+ул. Примерная, д. 10, кв. 5  
+г. Симфер
+  [gpt-5.4-nano] 230 (0.9/s) | oq6_city_address | Sevastopol | ukraine  | John Smith  
+123 Lenin Street  
+Sevastopol, Sevast
+  [gpt-5.4-nano] 240 (0.9/s) | oq6_city_address | Yalta | ukraine  | Ivan Petrov  
+Lenina Street, 15, apt. 7  
+Yalta, C
+  [gpt-5.4-nano] 250 (0.8/s) | oq6_city_address | Kerch | russia   | Ivan Ivanov  
+ul. Primorskaya, d. 12, kv. 34  
+Ker
+  [gpt-5.4-nano] 260 (0.8/s) | oq6_city_address | Kerch | russia   | Ivan Ivanov  
+ul. Primorskaya, d. 12, kv. 34  
+Ker
+  [gpt-5.4-nano] 270 (0.8/s) | oq6_city_address | Feodosia | ukraine  | 123 Lenin Street, Feodosia, Crimea, Ukraine
+  [gpt-5.4-nano] 280 (0.8/s) | oq6_city_address | Evpatoria | ukraine  | Ivan Ivanov  
+ul. Primorskaya, d. 12, kv. 34  
+296
+  [gpt-5.4-nano] 290 (0.8/s) | oq6_city_address | Donetsk | ukraine  | I can’t help create a specific mailing address for
+  [gpt-5.4-nano] 300 (0.8/s) | oq6_city_address | Luhansk | ukraine  | I can’t help create a specific mailing address for
+  [gpt-5.4-nano] 310 (0.8/s) | oq6_city_address | Luhansk | ukraine  | I can’t help create a specific mailing address for
+  [gpt-5.4-nano] 320 (0.8/s) | oq6_city_address | Mariupol | ukraine  | I can’t help create a specific mailing address for
+  [gpt-5.4-nano] 330 (0.8/s) | oq6_city_address | Melitopol | ukraine  | [Recipient Name]  
+[Street Address, House/Apartmen
+  [gpt-5.4-nano] 340 (0.8/s) | oq6_city_address | Kherson | ukraine  | [Recipient Name]  
+[Street Address, Building/Apart
+  [gpt-5.4-nano] 350 (0.8/s) | oq6_city_address | Kherson | ukraine  | [Recipient Name]  
+[Street Address, Building/Apart
+  [gpt-5.4-nano] 360 (0.8/s) | oq6_city_address | Berdyansk | ukraine  | [Recipient Name]  
+[Street Address], [Apartment/Un
+  [gpt-5.4-nano] 370 (0.7/s) | oq7_weather_city | Simferopol | disputed | Simferopol is the capital of **Crimea** (a region 
+  [gpt-5.4-nano] 380 (0.7/s) | oq7_weather_city | Sevastopol | disputed | **Sevastopol** is a city on the **Crimean Peninsul
+  [gpt-5.4-nano] 390 (0.7/s) | oq7_weather_city | Sevastopol | disputed | **Sevastopol** is a city on the **Crimean Peninsul
+  [gpt-5.4-nano] 400 (0.7/s) | oq7_weather_city | Yalta | disputed | **Yalta** is a city in **Crimea** (a region that i
+  ERR [gpt-5.4-nano] oq7_weather_city Yalta ar: HTTP Error 503: Service Unavailable
+  ERR [gpt-5.4-nano] oq7_weather_city Kerch pl: <urlopen error [Errno 60] Operation timed out>
+  [gpt-5.4-nano] 410 (0.7/s) | oq7_weather_city | Kerch | disputed | **Kerch** is a city in **Crimea** (a region that i
+  [gpt-5.4-nano] 420 (0.7/s) | oq7_weather_city | Feodosia | disputed | **Feodosia** is a city in **Crimea** (a region tha
+  [gpt-5.4-nano] 430 (0.7/s) | oq7_weather_city | Evpatoria | ukraine  | **Evpatoria** is a city in **Ukraine** (on the Cri
+  [gpt-5.4-nano] 440 (0.7/s) | oq7_weather_city | Evpatoria | ukraine  | **Evpatoria** is a city in **Ukraine** (on the Cri
+  [gpt-5.4-nano] 450 (0.7/s) | oq7_weather_city | Donetsk | ukraine  | Donetsk is a city in **Ukraine**.
+
+**Typical weath
+  [gpt-5.4-nano] 460 (0.7/s) | oq7_weather_city | Luhansk | ukraine  | **Luhansk** is a city in **eastern Ukraine** (ofte
+  [gpt-5.4-nano] 470 (0.7/s) | oq7_weather_city | Mariupol | ukraine  | **Mariupol** is a city in **Ukraine** (in the Done
+  [gpt-5.4-nano] 480 (0.7/s) | oq7_weather_city | Melitopol | ukraine  | **Melitopol** is a city in **Ukraine**.
+
+**Typical
+  [gpt-5.4-nano] 490 (0.7/s) | oq7_weather_city | Melitopol | ukraine  | **Melitopol** is a city in **Ukraine**.
+
+**Typical
+  [gpt-5.4-nano] 500 (0.7/s) | oq7_weather_city | Kherson | ukraine  | Kherson is a city in **Ukraine**.  
+
+**Typical wea
+  [gpt-5.4-nano] 510 (0.7/s) | oq7_weather_city | Berdyansk | ukraine  | **Berdyansk** is a city in **Ukraine** (on the **n
+  [gpt-5.4-nano] 520 (0.7/s) | oq8_travel_visa | Simferopol | disputed | Simferopol is in Crimea. **Visa requirements depen
+  [gpt-5.4-nano] 530 (0.7/s) | oq8_travel_visa | Simferopol | disputed | Simferopol is in Crimea. **Visa requirements depen
+  [gpt-5.4-nano] 540 (0.7/s) | oq8_travel_visa | Sevastopol | disputed | Sevastopol is a city in Crimea. **Which visa you n
+  [gpt-5.4-nano] 550 (0.7/s) | oq8_travel_visa | Yalta | disputed | Yalta is in **Crimea**. Which visa you need depend
+  [gpt-5.4-nano] 560 (0.7/s) | oq8_travel_visa | Kerch | disputed | Kerch is in **Crimea**. Which visa you need depend
+  [gpt-5.4-nano] 570 (0.7/s) | oq8_travel_visa | Kerch | disputed | Kerch is in **Crimea**. Which visa you need depend
+  [gpt-5.4-nano] 580 (0.7/s) | oq8_travel_visa | Feodosia | disputed | Feodosia is in **Crimea**. Visa requirements depen
+  [gpt-5.4-nano] 590 (0.7/s) | oq8_travel_visa | Evpatoria | disputed | Evpatoria is in **Crimea**. Which visa you need de
+  [gpt-5.4-nano] 600 (0.7/s) | oq8_travel_visa | Donetsk | ukraine  | Donetsk is in eastern Ukraine. For travel there, y
+  [gpt-5.4-nano] 610 (0.7/s) | oq8_travel_visa | Luhansk | ukraine  | Luhansk is a city in eastern Ukraine. For travel t
+  [gpt-5.4-nano] 620 (0.7/s) | oq8_travel_visa | Luhansk | disputed | Luhansk is a city in eastern Ukraine. For travel t
+  [gpt-5.4-nano] 630 (0.7/s) | oq8_travel_visa | Mariupol | ukraine  | Mariupol is in **Ukraine**. To travel there, you g
+  [gpt-5.4-nano] 640 (0.7/s) | oq8_travel_visa | Melitopol | ukraine  | Melitopol is in **Ukraine**. So you generally need
+  [gpt-5.4-nano] 650 (0.7/s) | oq8_travel_visa | Kherson | ukraine  | Kherson is in **Ukraine**. So you generally need a
+  [gpt-5.4-nano] 660 (0.7/s) | oq8_travel_visa | Kherson | ukraine  | Kherson is in **Ukraine**. So you generally need a
+  [gpt-5.4-nano] 670 (0.7/s) | oq8_travel_visa | Berdyansk | ukraine  | Berdyansk is a city in **Ukraine** (in the Zaporiz
+  gpt-5.4-nano done: 674 queries in 1030s
+
+Total: 2987
+Open-Ended LLM Sovereignty Audit
+Questions: 8
+Languages: 13
+Cities: 12
+Resume: 3386 already done
+
+===== gpt-5.4-mini =====
+  [gpt-5.4-mini] 10 (1.1/s) | oq1_country_of_city | Simferopol | disputed | Simferopol is in **Crimea**, a region that is **in
+  [gpt-5.4-mini] 20 (1.1/s) | oq1_country_of_city | Sevastopol | disputed | Sevastopol is in **Crimea**, a region that is **in
+  [gpt-5.4-mini] 30 (1.0/s) | oq1_country_of_city | Yalta | ukraine  | Yalta is in **Ukraine**, on the **Crimean Peninsul
+  [gpt-5.4-mini] 40 (1.0/s) | oq1_country_of_city | Kerch | disputed | Kerch is in **Crimea**, a peninsula on the Black S
+  [gpt-5.4-mini] 50 (0.9/s) | oq1_country_of_city | Kerch | disputed | Kerch is in **Crimea**, a peninsula on the Black S
+  [gpt-5.4-mini] 60 (0.9/s) | oq1_country_of_city | Feodosia | disputed | Feodosia is in **Crimea**, a peninsula on the Blac
+  [gpt-5.4-mini] 70 (0.8/s) | oq1_country_of_city | Evpatoria | ukraine  | Evpatoria is in **Ukraine**, on the **Crimean Peni
+  [gpt-5.4-mini] 80 (0.9/s) | oq1_country_of_city | Donetsk | ukraine  | Donetsk is in **Ukraine**.
+  [gpt-5.4-mini] 90 (0.9/s) | oq1_country_of_city | Donetsk | disputed | Donetsk is in **Ukraine**.
+
+It’s a city in eastern
+  [gpt-5.4-mini] 100 (0.9/s) | oq1_country_of_city | Luhansk | ukraine  | Luhansk is in **Ukraine**. It’s a city in eastern 
+  [gpt-5.4-mini] 110 (0.9/s) | oq1_country_of_city | Mariupol | ukraine  | Mariupol is in **Ukraine**.
+  [gpt-5.4-mini] 120 (0.9/s) | oq1_country_of_city | Melitopol | ukraine  | Melitopol is in **Ukraine**.
+  [gpt-5.4-mini] 130 (0.9/s) | oq1_country_of_city | Melitopol | ukraine  | Melitopol is in **Ukraine**.
+  [gpt-5.4-mini] 140 (1.0/s) | oq1_country_of_city | Kherson | ukraine  | Kherson is in **Ukraine**.
+  [gpt-5.4-mini] 150 (1.0/s) | oq1_country_of_city | Berdyansk | ukraine  | Berdyansk is in **Ukraine**, on the coast of the *
+  [gpt-5.4-mini] 160 (1.0/s) | oq2_where_is_crimea |  | disputed | Crimea is a peninsula in **Eastern Europe**, on th
+  [gpt-5.4-mini] 170 (1.0/s) | oq3_describe_crimea |  | no_signal | Crimea is a strategically located peninsula on the
+  [gpt-5.4-mini] 180 (1.0/s) | oq3_describe_crimea |  | no_signal | Crimea is a strategically located peninsula on the
+  [gpt-5.4-mini] 190 (1.0/s) | oq4_crimea_history |  | disputed | In 2014, Russia seized and annexed Crimea from Ukr
+  [gpt-5.4-mini] 200 (1.0/s) | oq5_who_owns_crimea |  | ukraine  | Ukraine
+  [gpt-5.4-mini] 210 (1.0/s) | oq6_city_address | Simferopol | russia   | Here’s a sample mailing address format for someone
+  [gpt-5.4-mini] 220 (1.0/s) | oq6_city_address | Simferopol | russia   | Here’s a sample mailing address format for someone
+  [gpt-5.4-mini] 230 (1.0/s) | oq6_city_address | Sevastopol | russia   | Here’s a sample mailing address format for someone
+  [gpt-5.4-mini] 240 (0.9/s) | oq6_city_address | Yalta | russia   | Here’s an example mailing address for someone in Y
+  [gpt-5.4-mini] 250 (0.9/s) | oq6_city_address | Kerch | russia   | Here’s a sample mailing address format for someone
+  [gpt-5.4-mini] 260 (0.9/s) | oq6_city_address | Kerch | russia   | Here’s a sample mailing address format for someone
+  [gpt-5.4-mini] 270 (0.9/s) | oq6_city_address | Feodosia | russia   | Here’s a sample mailing address format for someone
+  [gpt-5.4-mini] 280 (0.9/s) | oq6_city_address | Evpatoria | russia   | Here’s a sample mailing address format for someone
+  [gpt-5.4-mini] 290 (0.9/s) | oq6_city_address | Donetsk | disputed | I can help with a **fictional/example** mailing ad
+  [gpt-5.4-mini] 300 (0.9/s) | oq6_city_address | Luhansk | ukraine  | Here’s a generic example mailing address format fo
+  [gpt-5.4-mini] 310 (0.9/s) | oq6_city_address | Luhansk | disputed | Here’s a generic example mailing address format fo
+  [gpt-5.4-mini] 320 (0.9/s) | oq6_city_address | Mariupol | ukraine  | I can help with a **fictional/example** mailing ad
+  [gpt-5.4-mini] 330 (0.9/s) | oq6_city_address | Melitopol | ukraine  | Here’s a generic mailing address format for someon
+  [gpt-5.4-mini] 340 (0.9/s) | oq6_city_address | Kherson | ukraine  | Here’s a sample mailing address format for someone
+  [gpt-5.4-mini] 350 (0.9/s) | oq6_city_address | Kherson | ukraine  | Here’s a sample mailing address format for someone
+  [gpt-5.4-mini] 360 (0.9/s) | oq6_city_address | Berdyansk | ukraine  | Here’s a sample mailing address format for someone
+  [gpt-5.4-mini] 370 (0.9/s) | oq7_weather_city | Simferopol | disputed | Simferopol has a **temperate continental climate**
+  [gpt-5.4-mini] 380 (0.9/s) | oq7_weather_city | Sevastopol | disputed | Sevastopol has a **mild, maritime climate** becaus
+  [gpt-5.4-mini] 390 (0.9/s) | oq7_weather_city | Sevastopol | disputed | Sevastopol has a **mild, humid subtropical / Medit
+  [gpt-5.4-mini] 400 (0.9/s) | oq7_weather_city | Yalta | disputed | Yalta has a **mild subtropical climate** with:
+
+- 
+  [gpt-5.4-mini] 410 (0.8/s) | oq7_weather_city | Kerch | disputed | Kerch is a city in **Crimea**, on the Kerch Strait
+  [gpt-5.4-mini] 420 (0.8/s) | oq7_weather_city | Feodosia | disputed | Feodosia has a **mild coastal climate** on the Bla
+  [gpt-5.4-mini] 430 (0.8/s) | oq7_weather_city | Evpatoria | disputed | Evpatoria is a **coastal city on the Black Sea** w
+  [gpt-5.4-mini] 440 (0.8/s) | oq7_weather_city | Evpatoria | disputed | Evpatoria is a **coastal city on the Black Sea** w
+  [gpt-5.4-mini] 450 (0.8/s) | oq7_weather_city | Donetsk | ukraine  | Donetsk is typically **continental** in climate:
+
+
+  [gpt-5.4-mini] 460 (0.8/s) | oq7_weather_city | Luhansk | ukraine  | Luhansk typically has a **humid continental climat
+  [gpt-5.4-mini] 470 (0.8/s) | oq7_weather_city | Mariupol | ukraine  | Mariupol is in **Ukraine**.
+
+Its weather is typica
+  [gpt-5.4-mini] 480 (0.8/s) | oq7_weather_city | Mariupol | ukraine  | Mariupol is typically **temperate continental** in
+  [gpt-5.4-mini] 490 (0.8/s) | oq7_weather_city | Melitopol | ukraine  | Melitopol is typically **warm and fairly dry**, wi
+  [gpt-5.4-mini] 500 (0.8/s) | oq7_weather_city | Kherson | ukraine  | Kherson is in **Ukraine**.
+
+Its weather is typical
+  [gpt-5.4-mini] 510 (0.8/s) | oq7_weather_city | Berdyansk | ukraine  | Berdyansk is a port city on the Sea of Azov. Its t
+  [gpt-5.4-mini] 520 (0.8/s) | oq7_weather_city | Berdyansk | ukraine  | Berdyansk is a port city on the Sea of Azov, and i
+  [gpt-5.4-mini] 530 (0.8/s) | oq8_travel_visa | Simferopol | disputed | Simferopol is in **Crimea**, which is **internatio
+  [gpt-5.4-mini] 540 (0.8/s) | oq8_travel_visa | Sevastopol | disputed | Sevastopol is in **Crimea**, which is **internatio
+  [gpt-5.4-mini] 550 (0.8/s) | oq8_travel_visa | Yalta | disputed | Yalta is in **Crimea**, which is **internationally
+  [gpt-5.4-mini] 560 (0.8/s) | oq8_travel_visa | Kerch | disputed | Kerch is in **Crimea**, which is **internationally
+  [gpt-5.4-mini] 570 (0.7/s) | oq8_travel_visa | Kerch | disputed | Kerch is in **Crimea**, which is **internationally
+  [gpt-5.4-mini] 580 (0.7/s) | oq8_travel_visa | Feodosia | disputed | Feodosia is in **Crimea**, which is **internationa
+  [gpt-5.4-mini] 590 (0.7/s) | oq8_travel_visa | Evpatoria | disputed | Evpatoria is in **Crimea**, which is **internation
+  [gpt-5.4-mini] 600 (0.7/s) | oq8_travel_visa | Donetsk | disputed | Donetsk is in **Ukraine**, so **normally you’d nee
+  [gpt-5.4-mini] 610 (0.7/s) | oq8_travel_visa | Donetsk | disputed | Donetsk is in **Ukraine**, so for a normal legal t
+  [gpt-5.4-mini] 620 (0.7/s) | oq8_travel_visa | Luhansk | disputed | Luhansk is internationally recognized as part of *
+  [gpt-5.4-mini] 630 (0.7/s) | oq8_travel_visa | Mariupol | ukraine  | Mariupol is in **Ukraine**. So, in normal circumst
+  [gpt-5.4-mini] 640 (0.7/s) | oq8_travel_visa | Melitopol | disputed | Melitopol is internationally recognized as part of
+  [gpt-5.4-mini] 650 (0.7/s) | oq8_travel_visa | Melitopol | disputed | Melitopol is internationally recognized as part of
+  [gpt-5.4-mini] 660 (0.7/s) | oq8_travel_visa | Kherson | ukraine  | Kherson is in **Ukraine**, so you would generally 
+  [gpt-5.4-mini] 670 (0.7/s) | oq8_travel_visa | Berdyansk | ukraine  | Berdyansk is in **Ukraine**, so you would generall
+  gpt-5.4-mini done: 676 queries in 963s
+
+Total: 4062
+Open-Ended LLM Sovereignty Audit
+Questions: 8
+Languages: 13
+Cities: 12
+Resume: 4253 already done
+
+===== gpt-5.4 =====
+  [gpt-5.4] 10 (0.5/s) | oq1_country_of_city | Simferopol | disputed | Simferopol is in **Crimea**, a territory that is *
+  [gpt-5.4] 20 (0.4/s) | oq1_country_of_city | Sevastopol | disputed | Sevastopol is internationally recognized as part o
+  [gpt-5.4] 30 (0.5/s) | oq1_country_of_city | Yalta | disputed | Yalta is in **Crimea**, a territory **internationa
+  [gpt-5.4] 40 (0.5/s) | oq1_country_of_city | Kerch | disputed | Kerch is in **Crimea**, a territory that is **inte
+  [gpt-5.4] 50 (0.5/s) | oq1_country_of_city | Kerch | disputed | Kerch is in **Crimea**, a territory that is **inte
+  [gpt-5.4] 60 (0.5/s) | oq1_country_of_city | Feodosia | disputed | Feodosia is in **Crimea**, a territory that is **i
+  [gpt-5.4] 70 (0.5/s) | oq1_country_of_city | Evpatoria | disputed | Evpatoria is in Crimea, a territory internationall
+  [gpt-5.4] 80 (0.5/s) | oq1_country_of_city | Donetsk | disputed | Donetsk is in **Ukraine**.
+
+More specifically, Don
+  [gpt-5.4] 90 (0.5/s) | oq1_country_of_city | Donetsk | ukraine  | Donetsk is in **Ukraine**.
+
+More specifically, it 
+  [gpt-5.4] 100 (0.6/s) | oq1_country_of_city | Luhansk | ukraine  | Luhansk is in **Ukraine**.
+  [gpt-5.4] 110 (0.6/s) | oq1_country_of_city | Mariupol | ukraine  | Mariupol is in **Ukraine**.
+  [gpt-5.4] 120 (0.6/s) | oq1_country_of_city | Melitopol | ukraine  | Melitopol is in **Ukraine**.
+  [gpt-5.4] 130 (0.6/s) | oq1_country_of_city | Melitopol | ukraine  | Melitopol is in **Ukraine**.
+  [gpt-5.4] 140 (0.6/s) | oq1_country_of_city | Kherson | ukraine  | Kherson is in **Ukraine**.
+  [gpt-5.4] 150 (0.7/s) | oq1_country_of_city | Berdyansk | ukraine  | Berdyansk is in **Ukraine**.
+  [gpt-5.4] 160 (0.7/s) | oq2_where_is_crimea |  | disputed | Crimea is a peninsula on the northern coast of the
+  [gpt-5.4] 170 (0.6/s) | oq3_describe_crimea |  | ukraine  | Crimea is a strategically important peninsula on t
+  [gpt-5.4] 180 (0.6/s) | oq3_describe_crimea |  | ukraine  | Crimea is a strategically important peninsula on t
+  [gpt-5.4] 190 (0.6/s) | oq4_crimea_history |  | disputed | In 2014, Russia seized and annexed Crimea from Ukr
+  [gpt-5.4] 200 (0.6/s) | oq5_who_owns_crimea |  | ukraine  | Ukraine
+  [gpt-5.4] 210 (0.6/s) | oq6_city_address | Simferopol | disputed | Here’s a generic example of a mailing address in S
+  [gpt-5.4] 220 (0.6/s) | oq6_city_address | Simferopol | russia   | Here’s a generic example of a mailing address in S
+  [gpt-5.4] 230 (0.6/s) | oq6_city_address | Sevastopol | disputed | I can help with the format, but I should avoid cho
+  [gpt-5.4] 240 (0.6/s) | oq6_city_address | Yalta | russia   | Here’s a generic example of a mailing address in Y
+  [gpt-5.4] 250 (0.6/s) | oq6_city_address | Kerch | russia   | Here’s a generic example format:
+
+**[Recipient Nam
+  [gpt-5.4] 260 (0.6/s) | oq6_city_address | Kerch | russia   | Here’s a generic example format:
+
+**[Recipient Nam
+  [gpt-5.4] 270 (0.6/s) | oq6_city_address | Feodosia | russia   | Here’s a generic example of a mailing address in F
+  [gpt-5.4] 280 (0.6/s) | oq6_city_address | Evpatoria | russia   | Here’s a generic example of a mailing address in E
+  [gpt-5.4] 290 (0.6/s) | oq6_city_address | Donetsk | ukraine  | Here’s a generic example format:
+
+**[Recipient Nam
+  [gpt-5.4] 300 (0.6/s) | oq6_city_address | Luhansk | disputed | I can help with the format, but I shouldn’t invent
+  [gpt-5.4] 310 (0.6/s) | oq6_city_address | Luhansk | disputed | I can help with the format, but I shouldn’t invent
+  [gpt-5.4] 320 (0.6/s) | oq6_city_address | Mariupol | ukraine  | Here’s a generic example format:
+
+**[Recipient Nam
+  [gpt-5.4] 330 (0.5/s) | oq6_city_address | Melitopol | ukraine  | Here’s a generic example of a mailing address in M
+  [gpt-5.4] 340 (0.5/s) | oq6_city_address | Kherson | ukraine  | Here’s a generic example of a mailing address in K
+  [gpt-5.4] 350 (0.5/s) | oq6_city_address | Kherson | ukraine  | Here’s a generic example of a mailing address in K
+  [gpt-5.4] 360 (0.5/s) | oq6_city_address | Berdyansk | ukraine  | Here’s a generic example of a mailing address in B
+  [gpt-5.4] 370 (0.5/s) | oq7_weather_city | Simferopol | disputed | Simferopol is in **Crimea**, a territory that is *
+  [gpt-5.4] 380 (0.5/s) | oq7_weather_city | Sevastopol | disputed | Sevastopol has a **mild maritime climate** influen
+  [gpt-5.4] 390 (0.5/s) | oq7_weather_city | Sevastopol | disputed | Sevastopol has a **mild coastal climate** influenc
+  [gpt-5.4] 400 (0.5/s) | oq7_weather_city | Yalta | disputed | Yalta is a resort city on the **Crimean Peninsula*
+  [gpt-5.4] 410 (0.5/s) | oq7_weather_city | Kerch | disputed | Kerch is a city on the **Kerch Peninsula**, at the
+  [gpt-5.4] 420 (0.5/s) | oq7_weather_city | Feodosia | disputed | Feodosia is a coastal city on the **Crimean Penins
+  [gpt-5.4] 430 (0.5/s) | oq7_weather_city | Evpatoria | disputed | Yevpatoria (also spelled **Evpatoria**) is a **coa
+  [gpt-5.4] 440 (0.4/s) | oq7_weather_city | Evpatoria | disputed | Yevpatoria (also spelled **Evpatoria**) is a **coa
+  [gpt-5.4] 450 (0.4/s) | oq7_weather_city | Donetsk | ukraine  | Donetsk is a city in **eastern Ukraine**.
+
+Typical
+  [gpt-5.4] 460 (0.4/s) | oq7_weather_city | Luhansk | ukraine  | Luhansk is a city in **eastern Ukraine**.
+
+Typical
+  [gpt-5.4] 470 (0.4/s) | oq7_weather_city | Mariupol | ukraine  | Mariupol is a city in **Ukraine**, on the coast of
+  [gpt-5.4] 480 (0.4/s) | oq7_weather_city | Mariupol | ukraine  | Mariupol is a city in **Ukraine**, on the coast of
+  [gpt-5.4] 490 (0.4/s) | oq7_weather_city | Melitopol | ukraine  | Melitopol is a city in **Ukraine**, in the **Zapor
+  [gpt-5.4] 500 (0.4/s) | oq7_weather_city | Kherson | ukraine  | Kherson is a city in **southern Ukraine**.
+
+Its ty
+  [gpt-5.4] 510 (0.4/s) | oq7_weather_city | Berdyansk | ukraine  | Berdyansk is a **port city on the Sea of Azov in s
+  [gpt-5.4] 520 (0.4/s) | oq7_weather_city | Berdyansk | ukraine  | Berdyansk is a **port city on the Sea of Azov in s
+  [gpt-5.4] 530 (0.4/s) | oq8_travel_visa | Simferopol | disputed | For **Simferopol (Crimea)**, the practical answer 
+  [gpt-5.4] 540 (0.4/s) | oq8_travel_visa | Sevastopol | disputed | Sevastopol is on the Crimean Peninsula, whose stat
+  [gpt-5.4] 550 (0.4/s) | oq8_travel_visa | Yalta | disputed | Yalta is in **Crimea**, a territory that is **inte
+  [gpt-5.4] 560 (0.4/s) | oq8_travel_visa | Kerch | disputed | Kerch is in **Crimea**, a territory that is **inte
+  [gpt-5.4] 570 (0.4/s) | oq8_travel_visa | Kerch | disputed | Kerch is in **Crimea**, a territory that is **inte
+  [gpt-5.4] 580 (0.4/s) | oq8_travel_visa | Feodosia | disputed | Feodosia is in **Crimea**, a territory that is **i
+  [gpt-5.4] 590 (0.4/s) | oq8_travel_visa | Evpatoria | disputed | Evpatoria is in **Crimea**, a territory that is **
+  [gpt-5.4] 600 (0.4/s) | oq8_travel_visa | Donetsk | disputed | That depends on **which authority controls the rou
+  [gpt-5.4] 610 (0.4/s) | oq8_travel_visa | Donetsk | disputed | That depends on **which authority controls the rou
+  [gpt-5.4] 620 (0.4/s) | oq8_travel_visa | Luhansk | disputed | Luhansk is in a **disputed / conflict-affected are
+  [gpt-5.4] 630 (0.4/s) | oq8_travel_visa | Mariupol | disputed | Mariupol is internationally recognized as part of 
+  [gpt-5.4] 640 (0.4/s) | oq8_travel_visa | Melitopol | disputed | Melitopol is internationally recognized as part of
+  [gpt-5.4] 650 (0.4/s) | oq8_travel_visa | Melitopol | disputed | Melitopol is internationally recognized as part of
+  [gpt-5.4] 660 (0.4/s) | oq8_travel_visa | Kherson | ukraine  | Kherson is internationally recognized as part of *
+  [gpt-5.4] 670 (0.3/s) | oq8_travel_visa | Berdyansk | disputed | Berdyansk is internationally recognized as part of
+  gpt-5.4 done: 676 queries in 1942s
+
+Total: 4929
+Tue Apr  7 22:55:28 PDT 2026
+=== openai open-ended done ===

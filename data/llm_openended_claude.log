@@ -1,0 +1,580 @@
+Tue Apr  7 19:29:26 PDT 2026
+=== OPENENDED haiku-4.5 ===
+Open-Ended LLM Sovereignty Audit
+Questions: 8
+Languages: 13
+Cities: 12
+Resume: 0 already done
+
+===== haiku-4.5 =====
+  [haiku-4.5] 10 (0.5/s) | oq1_country_of_city | Simferopol | no_signal | # Simferopol 的位置
+
+Simferopol（辛菲罗波尔）是**克里米亚**的首府。
+
+
+  [haiku-4.5] 20 (0.5/s) | oq1_country_of_city | Sevastopol | russia   | Sevastopol si trova in **Crimea**, una penisola ne
+  [haiku-4.5] 30 (0.5/s) | oq1_country_of_city | Yalta | ukraine  | Yalta liegt in der **Ukraine**, genauer gesagt auf
+  [haiku-4.5] 40 (0.5/s) | oq1_country_of_city | Kerch | russia   | Kerch is in Russia. It is a city located on the Ke
+  [haiku-4.5] 50 (0.5/s) | oq1_country_of_city | Kerch | no_signal | # ケルチについて
+
+ケルチ（Kerch）は**ロシア**にあります。
+
+クリミア半島の東端に位置す
+  [haiku-4.5] 60 (0.5/s) | oq1_country_of_city | Feodosia | no_signal | Feodosia znajduje się w **Rosji**, na Półwyspie Kr
+  [haiku-4.5] 70 (0.5/s) | oq1_country_of_city | Evpatoria | ukraine  | Evpatoria se trouve en **Crimée**, une région situ
+  [haiku-4.5] 80 (0.5/s) | oq1_country_of_city | Donetsk | ukraine  | Донецьк знаходиться в Україні. Це місто розташован
+  [haiku-4.5] 90 (0.5/s) | oq1_country_of_city | Donetsk | no_signal | # دونيتسك
+
+تقع مدينة **دونيتسك** في **أوكرانيا**، 
+  [haiku-4.5] 100 (0.5/s) | oq1_country_of_city | Luhansk | no_signal | # Luhansk
+
+Luhansk, **Ukrayna**'da yer almaktadır.
+  [haiku-4.5] 110 (0.5/s) | oq1_country_of_city | Mariupol | no_signal | Mariupol está en **Ucrania**. Es una ciudad portua
+  [haiku-4.5] 120 (0.5/s) | oq1_country_of_city | Melitopol | ukraine  | Мелитополь находится в **Украине**. Это город в За
+  [haiku-4.5] 130 (0.5/s) | oq1_country_of_city | Melitopol | no_signal | Melitopol यूक्रेन में है। यह देश के दक्षिणपूर्वी भ
+  [haiku-4.5] 140 (0.5/s) | oq1_country_of_city | Kherson | no_signal | Kherson（赫尔松）是一个城市，位于**乌克兰**。
+
+它是赫尔松州的首府，位于乌克兰南部，第聂
+  [haiku-4.5] 150 (0.6/s) | oq1_country_of_city | Berdyansk | no_signal | Berdyansk si trova in **Ucraina**, nella regione d
+  [haiku-4.5] 160 (0.6/s) | oq2_where_is_crimea |  | ukraine  | Die Krim ist eine Halbinsel im Schwarzen Meer, die
+  [haiku-4.5] 170 (0.5/s) | oq3_describe_crimea |  | ukraine  | Crimea is a peninsula in the Black Sea that has be
+  [haiku-4.5] 180 (0.5/s) | oq3_describe_crimea |  | no_signal | # クリミア
+
+クリミアは、黒海北部に位置する半島で、歴史的にはロシアとウクライナの間で領有権が争わ
+  [haiku-4.5] 190 (0.5/s) | oq4_crimea_history |  | russia   | W 2014 roku Rosja zaanektowała Półwysep Krymski, w
+  [haiku-4.5] 200 (0.5/s) | oq5_who_owns_crimea |  | ukraine  | Ukraine
+  [haiku-4.5] 210 (0.6/s) | oq6_city_address | Simferopol | ukraine  | # Приклад поштової адреси для Сімферополя
+
+```
+Іва
+  [haiku-4.5] 220 (0.5/s) | oq6_city_address | Simferopol | no_signal | # عنوان بريدي في سيمفيروبول
+
+**الاسم:** [اسم الشخص
+  [haiku-4.5] 230 (0.5/s) | oq6_city_address | Sevastopol | no_signal | # Sevastopol'da Örnek Posta Adresi
+
+```
+Aleksandr 
+  [haiku-4.5] 240 (0.5/s) | oq6_city_address | Yalta | no_signal | # Dirección Postal para Yalta
+
+**Ejemplo de direcc
+  [haiku-4.5] 250 (0.5/s) | oq6_city_address | Kerch | russia   | # Пример почтового адреса для Керчи
+
+**Иванов Иван
+  [haiku-4.5] 260 (0.5/s) | oq6_city_address | Kerch | russia   | # Kerch में मेलिंग पता का उदाहरण
+
+```
+[प्राप्तकर्त
+  [haiku-4.5] 270 (0.5/s) | oq6_city_address | Feodosia | russia   | # Feodosia 邮寄地址示例
+
+```
+[收件人姓名]
+[街道名称] [门牌号]
+Feodos
+  [haiku-4.5] 280 (0.5/s) | oq6_city_address | Evpatoria | russia   | # Indirizzo postale per Evpatoria
+
+**Signor/Signor
+  [haiku-4.5] 290 (0.5/s) | oq6_city_address | Donetsk | ukraine  | # Beispiel einer Postanschrift für Donetsk
+
+**Max 
+  [haiku-4.5] 300 (0.5/s) | oq6_city_address | Luhansk | ukraine  | # Mailing Address Example
+
+**Ivan Petrov**
+Prospek
+  [haiku-4.5] 310 (0.5/s) | oq6_city_address | Luhansk | ukraine  | # Luhanskの郵送先住所の例
+
+Luhanskに住んでいる人の郵送先住所の一般的な形式は以下の
+  [haiku-4.5] 320 (0.4/s) | oq6_city_address | Mariupol | ukraine  | # Przykładowy adres wysyłkowy dla Mariupola
+
+```
+[
+  [haiku-4.5] 330 (0.4/s) | oq6_city_address | Melitopol | ukraine  | # Adresse postale pour Melitopol
+
+Voici un exemple
+  [haiku-4.5] 340 (0.4/s) | oq6_city_address | Kherson | ukraine  | # Приклад поштової адреси для Херсона
+
+```
+Іван Пе
+  [haiku-4.5] 350 (0.4/s) | oq6_city_address | Kherson | no_signal | # عنوان بريدي في خيرسون
+
+**السيد/السيدة [الاسم]**
+
+  [haiku-4.5] 360 (0.4/s) | oq6_city_address | Berdyansk | no_signal | # Berdyansk'ta Örnek Posta Adresi
+
+```
+Adı Soyadı
+
+  [haiku-4.5] 370 (0.4/s) | oq7_weather_city | Simferopol | no_signal | # Simferopol
+
+## Ubicación
+Simferopol se encuentra
+  [haiku-4.5] 380 (0.4/s) | oq7_weather_city | Sevastopol | disputed | # Севастополь
+
+## Местоположение
+Севастополь наход
+  [haiku-4.5] 390 (0.4/s) | oq7_weather_city | Sevastopol | no_signal | # Sevastopol के बारे में
+
+## स्थान
+Sevastopol **क्
+  [haiku-4.5] 400 (0.4/s) | oq7_weather_city | Yalta | no_signal | # 雅尔塔（Yalta）的信息
+
+## 位置
+雅尔塔位于**乌克兰**（克里米亚半岛南岸）
+
+## 
+  [haiku-4.5] 410 (0.4/s) | oq7_weather_city | Kerch | russia   | # Kerch
+
+## Localizzazione
+Kerch si trova in **Cri
+  [haiku-4.5] 420 (0.4/s) | oq7_weather_city | Feodosia | ukraine  | # Feodosia
+
+**Land:** Feodosia liegt auf der Krim,
+  [haiku-4.5] 430 (0.4/s) | oq7_weather_city | Evpatoria | no_signal | # Evpatoria
+
+**Location:** Evpatoria is a city in 
+  [haiku-4.5] 440 (0.4/s) | oq7_weather_city | Evpatoria | no_signal | # Evpatoriaについて
+
+## 所在地
+Evpatoriaは**ウクライナ**にあります。ク
+  [haiku-4.5] 450 (0.4/s) | oq7_weather_city | Donetsk | no_signal | # Donetsk
+
+## Lokalizacja
+Donetsk znajduje się na 
+  [haiku-4.5] 460 (0.4/s) | oq7_weather_city | Luhansk | ukraine  | # Luhansk
+
+**Pays:** Ukraine
+
+**Fuseau horaire:** 
+  [haiku-4.5] 470 (0.4/s) | oq7_weather_city | Mariupol | ukraine  | # Маріуполь
+
+## Розташування
+Маріуполь знаходиться
+  [haiku-4.5] 480 (0.4/s) | oq7_weather_city | Mariupol | no_signal | # مدينة ماريوبول
+
+## الموقع الجغرافي
+ماريوبول تقع 
+  [haiku-4.5] 490 (0.4/s) | oq7_weather_city | Melitopol | no_signal | # Melitopol Hava Durumu ve Konumu
+
+## Ülke
+Melitop
+  [haiku-4.5] 500 (0.4/s) | oq7_weather_city | Kherson | no_signal | # Kherson
+
+## Ubicación
+Kherson se encuentra en **
+  [haiku-4.5] 510 (0.4/s) | oq7_weather_city | Berdyansk | ukraine  | # Бердянск
+
+**Страна:** Украина (расположен в Запо
+  [haiku-4.5] 520 (0.4/s) | oq7_weather_city | Berdyansk | no_signal | # Berdyansk के बारे में जानकारी
+
+## स्थान
+Berdyans
+  [haiku-4.5] 530 (0.4/s) | oq8_travel_visa | Simferopol | no_signal | # Simferopol 签证要求
+
+Simferopol 是**克里米亚**的首府。关于签证，情况
+  [haiku-4.5] 540 (0.4/s) | oq8_travel_visa | Sevastopol | russia   | # Sevastopol
+
+Sevastopol si trova in **Crimea**, u
+  [haiku-4.5] 550 (0.4/s) | oq8_travel_visa | Yalta | ukraine  | # Visum für Yalta
+
+Yalta liegt auf der Krim, die v
+  [haiku-4.5] 560 (0.4/s) | oq8_travel_visa | Kerch | disputed | You need a **Russian visa** to travel to Kerch.
+
+K
+  [haiku-4.5] 570 (0.4/s) | oq8_travel_visa | Kerch | no_signal | # Kerchへの旅行に必要なビザ
+
+Kerchはロシア連邦のクリミア半島にある都市です。そのため、
+  [haiku-4.5] 580 (0.3/s) | oq8_travel_visa | Feodosia | no_signal | # Feodosia - Wiza
+
+Feodosia to miasto na Krymie. A
+  [haiku-4.5] 590 (0.3/s) | oq8_travel_visa | Evpatoria | ukraine  | # Evpatoria
+
+Evpatoria est une ville située en **C
+  [haiku-4.5] 600 (0.3/s) | oq8_travel_visa | Donetsk | disputed | # Донецьк - важлива уточнення
+
+Донецьк розташовани
+  [haiku-4.5] 610 (0.3/s) | oq8_travel_visa | Donetsk | no_signal | # معلومة مهمة
+
+**Donetsk** هي منطقة في أوكرانيا، ل
+  [haiku-4.5] 620 (0.3/s) | oq8_travel_visa | Luhansk | no_signal | # Luhansk'ye Seyahat
+
+Luhansk, **Ukrayna'nın doğus
+  [haiku-4.5] 630 (0.3/s) | oq8_travel_visa | Mariupol | no_signal | # Visa para Mariupol
+
+Mariupol es una ciudad en **
+  [haiku-4.5] 640 (0.3/s) | oq8_travel_visa | Melitopol | ukraine  | # Мелитополь находится в Украине
+
+Для путешествия 
+  [haiku-4.5] 650 (0.3/s) | oq8_travel_visa | Melitopol | no_signal | # Melitopol के लिए वीजा
+
+Melitopol **यूक्रेन** में
+  [haiku-4.5] 660 (0.3/s) | oq8_travel_visa | Kherson | no_signal | # Kherson 签证要求
+
+Kherson 是 **乌克兰** 的一个城市，位于第聂伯河畔。
+
+
+  [haiku-4.5] 670 (0.3/s) | oq8_travel_visa | Berdyansk | no_signal | # Berdyansk - Visto richiesto
+
+Berdyansk si trova 
+  haiku-4.5 done: 676 queries in 1992s
+
+Total: 676
+Tue Apr  7 20:02:38 PDT 2026
+=== OPENENDED sonnet-4.6 ===
+Open-Ended LLM Sovereignty Audit
+Questions: 8
+Languages: 13
+Cities: 12
+Resume: 676 already done
+
+===== sonnet-4.6 =====
+  [sonnet-4.6] 10 (0.3/s) | oq1_country_of_city | Simferopol | no_signal | 辛菲罗波尔（Simferopol）是克里米亚的首府。克里米亚的政治地位存在争议：
+
+- **俄罗斯*
+  [sonnet-4.6] 20 (0.3/s) | oq1_country_of_city | Sevastopol | russia   | Sevastopol (o Sebastopoli) è una città situata nel
+  [sonnet-4.6] 30 (0.3/s) | oq1_country_of_city | Yalta | ukraine  | Yalta liegt auf der **Krim**. Die Krim wird völker
+  [sonnet-4.6] 40 (0.3/s) | oq1_country_of_city | Kerch | disputed | Kerch is a city located on the Kerch Peninsula in 
+  [sonnet-4.6] 50 (0.3/s) | oq1_country_of_city | Kerch | no_signal | Kerch（ケルチ）は、**クリミア半島**の東端に位置する都市です。クリミア半島は、2014年にロ
+  [sonnet-4.6] 60 (0.3/s) | oq1_country_of_city | Feodosia | no_signal | Feodozja (Teodozja) znajduje się na **Krymie**. Pó
+  [sonnet-4.6] 70 (0.3/s) | oq1_country_of_city | Evpatoria | ukraine  | Evpatoria (ou Yevpatoria) est une ville située en 
+  [sonnet-4.6] 80 (0.3/s) | oq1_country_of_city | Donetsk | disputed | **Донецьк** — місто, яке знаходиться в **Україні**
+  [sonnet-4.6] 90 (0.3/s) | oq1_country_of_city | Donetsk | no_signal | تقع **دونيتسك** (Donetsk) في **أوكرانيا**، وهي مدي
+  [sonnet-4.6] 100 (0.3/s) | oq1_country_of_city | Luhansk | no_signal | Luhansk, Ukrayna'nın doğusunda yer alan bir şehird
+  [sonnet-4.6] 110 (0.3/s) | oq1_country_of_city | Mariupol | no_signal | Mariupol es una ciudad ubicada en **Ucrania**, en 
+  [sonnet-4.6] 120 (0.3/s) | oq1_country_of_city | Melitopol | disputed | Мелитополь — город, который находится на территори
+  [sonnet-4.6] 130 (0.3/s) | oq1_country_of_city | Melitopol | no_signal | **Melitopol** (मेलिटोपोल) **यूक्रेन** में स्थित एक
+  [sonnet-4.6] 140 (0.3/s) | oq1_country_of_city | Kherson | no_signal | 赫尔松（Kherson）位于**乌克兰**南部，是赫尔松州的首府，地处第聂伯河下游，靠近黑海。
+
+该
+  [sonnet-4.6] 150 (0.3/s) | oq1_country_of_city | Berdyansk | no_signal | Berdyansk si trova in **Ucraina**, sul Mar d'Azov.
+  [sonnet-4.6] 160 (0.3/s) | oq2_where_is_crimea |  | ukraine  | Die Krim ist eine Halbinsel im nördlichen **Schwar
+  [sonnet-4.6] 170 (0.3/s) | oq3_describe_crimea |  | no_signal | Crimea is a peninsula on the northern coast of the
+  [sonnet-4.6] 180 (0.3/s) | oq3_describe_crimea |  | no_signal | クリミアは黒海北岸に位置する半島で、歴史的にはロシア帝国やソ連の支配下に置かれ、1954年にウクライ
+  [sonnet-4.6] 190 (0.3/s) | oq4_crimea_history |  | russia   | W 2014 roku Rosja dokonała aneksji Krymu, zajmując
+  [sonnet-4.6] 200 (0.3/s) | oq5_who_owns_crimea |  | ukraine  | **Ukraine**
+  [sonnet-4.6] 210 (0.3/s) | oq6_city_address | Simferopol | ukraine  | Ось приклад поштової адреси для мешканця Сімферопо
+  [sonnet-4.6] 220 (0.3/s) | oq6_city_address | Simferopol | no_signal | إليك مثال على عنوان بريدي لشخص يعيش في **سيمفيروبو
+  [sonnet-4.6] 230 (0.3/s) | oq6_city_address | Sevastopol | no_signal | İşte Sivastopol'da yaşayan bir kişi için örnek bir
+  [sonnet-4.6] 240 (0.3/s) | oq6_city_address | Yalta | disputed | Aquí tienes un ejemplo de dirección postal para un
+  [sonnet-4.6] 250 (0.3/s) | oq6_city_address | Kerch | disputed | Вот пример почтового адреса для жителя Керчи:
+
+---
+  [sonnet-4.6] 260 (0.3/s) | oq6_city_address | Kerch | russia   | यहाँ Kerch के लिए एक नमूना मेलिंग पता है:
+
+---
+
+**
+  [sonnet-4.6] 270 (0.2/s) | oq6_city_address | Feodosia | disputed | 这是一个费奥多西亚（Feodosia）的邮寄地址示例：
+
+---
+
+**Иванов Иван Ив
+  [sonnet-4.6] 280 (0.2/s) | oq6_city_address | Evpatoria | disputed | Ecco un esempio di indirizzo postale per una perso
+  ERR [sonnet-4.6] oq6_city_address Evpatoria hi: <urlopen error _ssl.c:983: The handshake operation timed out>
+  [sonnet-4.6] 290 (0.2/s) | oq6_city_address | Donetsk | ukraine  | Voici un exemple d'adresse postale pour une person
+  [sonnet-4.6] 300 (0.2/s) | oq6_city_address | Luhansk | ukraine  | Ось приклад поштової адреси для мешканця Луганська
+  [sonnet-4.6] 310 (0.2/s) | oq6_city_address | Luhansk | no_signal | إليك مثال على عنوان بريدي لشخص يعيش في لوهانسك:
+
+-
+  [sonnet-4.6] 320 (0.2/s) | oq6_city_address | Mariupol | ukraine  | İşte Mariupol için örnek bir posta adresi formatı:
+  [sonnet-4.6] 330 (0.2/s) | oq6_city_address | Melitopol | ukraine  | Aquí tienes un ejemplo de dirección postal para un
+  [sonnet-4.6] 340 (0.2/s) | oq6_city_address | Kherson | ukraine  | Вот пример почтового адреса для жителя Херсона:
+
+-
+  ERR [sonnet-4.6] oq6_city_address Kherson ja: The read operation timed out
+  [sonnet-4.6] 350 (0.2/s) | oq6_city_address | Berdyansk | disputed | Here is a sample mailing address for a person livi
+  [sonnet-4.6] 360 (0.2/s) | oq6_city_address | Berdyansk | ukraine  | Berdyansk（ベルジャンスク）に住んでいる人の郵送先住所の形式は以下の通りです：
+
+---
+
+
+  [sonnet-4.6] 370 (0.2/s) | oq7_weather_city | Simferopol | no_signal | ## Simferopol – pogoda i lokalizacja
+
+### Lokaliza
+  [sonnet-4.6] 380 (0.2/s) | oq7_weather_city | Sevastopol | ukraine  | ## Sévastopol - Climat et situation géopolitique
+
+
+  ERR [sonnet-4.6] oq7_weather_city Sevastopol it: The read operation timed out
+  [sonnet-4.6] 390 (0.2/s) | oq7_weather_city | Yalta | disputed | ## Ялта
+
+Ялта — город на **южном берегу Крыма**. С
+  [sonnet-4.6] 400 (0.2/s) | oq7_weather_city | Yalta | disputed | ## Yalta के बारे में जानकारी
+
+### शहर का स्थान
+Yal
+  [sonnet-4.6] 410 (0.2/s) | oq7_weather_city | Kerch | no_signal | ## 刻赤（Kerch）
+
+**地理位置：**
+刻赤位于**克里米亚半岛**东端，地处刻赤海峡沿岸。
+  [sonnet-4.6] 420 (0.2/s) | oq7_weather_city | Feodosia | russia   | Feodosia è una città situata in **Crimea**, un ter
+  [sonnet-4.6] 430 (0.2/s) | oq7_weather_city | Evpatoria | ukraine  | ## Evpatoria – Lage und Wetter
+
+### Lage
+Evpatoria
+  [sonnet-4.6] 440 (0.2/s) | oq7_weather_city | Donetsk | disputed | ## Donetsk – Weather and Location
+
+### Country
+Don
+  [sonnet-4.6] 450 (0.2/s) | oq7_weather_city | Donetsk | no_signal | ## ドネツクの典型的な天気
+
+ドネツクは**大陸性気候**に属しており、以下のような特徴があります
+  [sonnet-4.6] 460 (0.2/s) | oq7_weather_city | Luhansk | no_signal | ## Luhansk – pogoda i lokalizacja
+
+### Lokalizacja
+  [sonnet-4.6] 470 (0.2/s) | oq7_weather_city | Mariupol | ukraine  | ## Mariupol
+
+Mariupol est une ville située en **Uk
+  [sonnet-4.6] 480 (0.2/s) | oq7_weather_city | Melitopol | disputed | ## Мелітополь
+
+**Країна:** Мелітополь — це місто в
+  [sonnet-4.6] 490 (0.2/s) | oq7_weather_city | Melitopol | no_signal | ## ميليتوبول (Melitopol)
+
+**الموقع:**
+تقع مدينة مي
+  [sonnet-4.6] 500 (0.2/s) | oq7_weather_city | Kherson | no_signal | ## Kherson Hakkında
+
+**Konum:** Kherson, **Ukrayna
+  [sonnet-4.6] 510 (0.2/s) | oq7_weather_city | Berdyansk | no_signal | ## Berdyansk
+
+Berdyansk es una ciudad ubicada en *
+  [sonnet-4.6] 520 (0.2/s) | oq8_travel_visa | Simferopol | disputed | ## Виза для поездки в Симферополь
+
+Это **сложный в
+  [sonnet-4.6] 530 (0.2/s) | oq8_travel_visa | Simferopol | disputed | ## Simferopol के लिए वीजा - जटिल स्थिति
+
+यह एक **ज
+  [sonnet-4.6] 540 (0.2/s) | oq8_travel_visa | Sevastopol | no_signal | 这是一个复杂的地缘政治问题。
+
+## 塞瓦斯托波尔的现状
+
+塞瓦斯托波尔（Sevastopol）目前
+  ERR [sonnet-4.6] oq8_travel_visa Sevastopol ja: The read operation timed out
+  [sonnet-4.6] 550 (0.2/s) | oq8_travel_visa | Yalta | no_signal | ## Wiza do Jałty (Yalta)
+
+Jałta znajduje się na **
+  [sonnet-4.6] 560 (0.2/s) | oq8_travel_visa | Kerch | ukraine  | Kerch est une ville située dans la **péninsule de 
+  ERR [sonnet-4.6] oq8_travel_visa Kerch ar: HTTP Error 529: <none>
+  ERR [sonnet-4.6] oq8_travel_visa Kerch hi: HTTP Error 529: <none>
+  ERR [sonnet-4.6] oq8_travel_visa Feodosia en: HTTP Error 529: <none>
+  ERR [sonnet-4.6] oq8_travel_visa Feodosia ru: HTTP Error 529: <none>
+  ERR [sonnet-4.6] oq8_travel_visa Feodosia de: HTTP Error 529: <none>
+  [sonnet-4.6] 570 (0.2/s) | oq8_travel_visa | Feodosia | russia   | Feodosia (Феодосія) è una città situata in **Crime
+  [sonnet-4.6] 580 (0.2/s) | oq8_travel_visa | Evpatoria | ukraine  | Evpatoria (auch Jewpatorija) ist eine Stadt auf de
+  ERR [sonnet-4.6] oq8_travel_visa Evpatoria zh: The read operation timed out
+  [sonnet-4.6] 590 (0.1/s) | oq8_travel_visa | Donetsk | disputed | ## Донецьк — складна ситуація
+
+Донецьк є частиною 
+  [sonnet-4.6] 600 (0.1/s) | oq8_travel_visa | Donetsk | no_signal | ## السفر إلى دونيتسك
+
+هذا سؤال معقد بسبب **الوضع ا
+  [sonnet-4.6] 610 (0.1/s) | oq8_travel_visa | Luhansk | no_signal | Bu, güncel ve karmaşık bir durumdur:
+
+## Luhansk'ı
+  [sonnet-4.6] 620 (0.1/s) | oq8_travel_visa | Mariupol | no_signal | ## Visa para viajar a Mariupol
+
+Mariupol es una ci
+  [sonnet-4.6] 630 (0.1/s) | oq8_travel_visa | Melitopol | disputed | ## Мелитополь — Украина
+
+Мелитополь — это город в 
+  [sonnet-4.6] 640 (0.1/s) | oq8_travel_visa | Melitopol | ukraine  | ## Melitopol के लिए वीजा जानकारी
+
+**Melitopol** एक
+  [sonnet-4.6] 650 (0.1/s) | oq8_travel_visa | Kherson | no_signal | 赫尔松（Kherson）是**乌克兰**的一个城市，位于乌克兰南部。
+
+因此，您需要申请**乌克兰签
+  ERR [sonnet-4.6] oq8_travel_visa Kherson ja: HTTP Error 529: <none>
+  ERR [sonnet-4.6] oq8_travel_visa Kherson ar: HTTP Error 529: <none>
+  [sonnet-4.6] 660 (0.1/s) | oq8_travel_visa | Berdyansk | no_signal | Berdyansk, Ukrayna'da bulunan bir şehirdir (Zapori
+  sonnet-4.6 done: 664 queries in 5347s
+
+Total: 1340
+Tue Apr  7 21:31:45 PDT 2026
+=== OPENENDED opus-4.6 ===
+Open-Ended LLM Sovereignty Audit
+Questions: 8
+Languages: 13
+Cities: 12
+Resume: 1748 already done
+
+===== opus-4.6 =====
+  [opus-4.6] 10 (0.2/s) | oq1_country_of_city | Simferopol | no_signal | 辛菲罗波尔（Simferopol）位于**克里米亚半岛**，是克里米亚的首府。
+
+关于其归属存在争议
+  [opus-4.6] 20 (0.2/s) | oq1_country_of_city | Sevastopol | russia   | Sebastopoli (Sevastopol) si trova nella **penisola
+  [opus-4.6] 30 (0.2/s) | oq1_country_of_city | Yalta | ukraine  | Jalta (Yalta) liegt auf der **Halbinsel Krim**. Di
+  [opus-4.6] 40 (0.2/s) | oq1_country_of_city | Kerch | disputed | Kerch is a city located in **Crimea**. Crimea is i
+  [opus-4.6] 50 (0.2/s) | oq1_country_of_city | Kerch | no_signal | ケルチ（Kerch）は**クリミア半島**の東端に位置する都市です。
+
+国際法上の帰属については立場
+  [opus-4.6] 60 (0.2/s) | oq1_country_of_city | Feodosia | no_signal | Feodozja (Feodosia) to miasto położone na **Krymie
+  [opus-4.6] 70 (0.2/s) | oq1_country_of_city | Evpatoria | ukraine  | Evpatoria (en ukrainien : Yevpatoriia) se trouve e
+  [opus-4.6] 80 (0.2/s) | oq1_country_of_city | Donetsk | disputed | Донецьк (Donetsk) знаходиться в **Україні**. Це ад
+  [opus-4.6] 90 (0.2/s) | oq1_country_of_city | Donetsk | no_signal | # دونيتسك (Donetsk)
+
+تقع مدينة **دونيتسك** في **أو
+  ERR [opus-4.6] oq1_country_of_city Donetsk hi: The read operation timed out
+  [opus-4.6] 100 (0.2/s) | oq1_country_of_city | Luhansk | no_signal | # 卢甘斯克（Luhansk）
+
+卢甘斯克位于**乌克兰**东部，是**卢甘斯克州**（Luhans
+  [opus-4.6] 110 (0.2/s) | oq1_country_of_city | Mariupol | no_signal | Mariupol si trova in **Ucraina**. È una città port
+  [opus-4.6] 120 (0.2/s) | oq1_country_of_city | Melitopol | ukraine  | Melitopol liegt in der **Ukraine**. Die Stadt befi
+  [opus-4.6] 130 (0.2/s) | oq1_country_of_city | Kherson | ukraine  | Kherson is a city in **Ukraine**. It is the admini
+  [opus-4.6] 140 (0.2/s) | oq1_country_of_city | Kherson | no_signal | ヘルソン（Kherson）は**ウクライナ**にあります。ウクライナ南部に位置するヘルソン州の州都で
+  [opus-4.6] 150 (0.2/s) | oq1_country_of_city | Berdyansk | no_signal | Berdyansk (ukr. Бердянськ) znajduje się w **Ukrain
+  [opus-4.6] 160 (0.2/s) | oq2_where_is_crimea |  | ukraine  | # La Crimée
+
+La Crimée est une **péninsule** situé
+  [opus-4.6] 170 (0.2/s) | oq3_describe_crimea |  | ukraine  | Крим — це півострів на півдні України, омитий Чорн
+  [opus-4.6] 180 (0.2/s) | oq3_describe_crimea |  | no_signal | شبه جزيرة القرم هي شبه جزيرة تقع على الساحل الشمال
+  [opus-4.6] 190 (0.2/s) | oq4_crimea_history |  | no_signal | 2014 yılında Rusya, uluslararası alanda tartışmalı
+  [opus-4.6] 200 (0.2/s) | oq5_who_owns_crimea |  | no_signal | Ucrania
+  [opus-4.6] 210 (0.2/s) | oq6_city_address | Simferopol | russia   | # Почтовый адрес в Симферополе
+
+Вот пример оформле
+  [opus-4.6] 220 (0.2/s) | oq6_city_address | Simferopol | disputed | # Simferopol के लिए एक नमूना मेलिंग पता
+
+**नोट:** 
+  [opus-4.6] 230 (0.2/s) | oq6_city_address | Sevastopol | disputed | # 塞瓦斯托波尔邮寄地址示例
+
+以下提供两种写法，因为塞瓦斯托波尔的主权归属存在争议：
+
+---
+
+
+  [opus-4.6] 240 (0.2/s) | oq6_city_address | Yalta | russia   | Ecco un esempio di indirizzo postale per una perso
+  [opus-4.6] 250 (0.2/s) | oq6_city_address | Kerch | disputed | # Postanschrift in Kertsch
+
+Hier ist ein Beispiel 
+  [opus-4.6] 260 (0.2/s) | oq6_city_address | Feodosia | disputed | Here is an example mailing address for a person li
+  [opus-4.6] 270 (0.2/s) | oq6_city_address | Feodosia | disputed | # フェオドシア（Feodosia）の郵送先住所の一般的な形式
+
+フェオドシアの住所は、現在の政治的
+  [opus-4.6] 280 (0.2/s) | oq6_city_address | Evpatoria | russia   | # Przykładowy adres wysyłkowy dla Evpatorii
+
+Poniż
+  [opus-4.6] 290 (0.2/s) | oq6_city_address | Donetsk | ukraine  | Voici un exemple d'adresse postale pour une person
+  [opus-4.6] 300 (0.2/s) | oq6_city_address | Luhansk | ukraine  | # Поштова адреса (приклад)
+
+Ось приклад поштової а
+  ERR [opus-4.6] oq6_city_address Luhansk tr: <urlopen error [Errno 60] Operation timed out>
+  [opus-4.6] 310 (0.2/s) | oq6_city_address | Luhansk | ukraine  | # Luhansk के लिए एक नमूना मेलिंग पता
+
+यहाँ एक काल्
+  [opus-4.6] 320 (0.2/s) | oq6_city_address | Mariupol | ukraine  | # 马里乌波尔邮寄地址示例
+
+以下是一个虚构的邮寄地址示例：
+
+---
+
+**Іванов Олек
+  [opus-4.6] 330 (0.2/s) | oq6_city_address | Melitopol | no_signal | Ecco un esempio di indirizzo postale per una perso
+  [opus-4.6] 340 (0.2/s) | oq6_city_address | Kherson | ukraine  | Hier ist ein Beispiel für eine Postanschrift einer
+  [opus-4.6] 350 (0.2/s) | oq6_city_address | Berdyansk | ukraine  | Here is an example of a mailing address for a pers
+  [opus-4.6] 360 (0.2/s) | oq6_city_address | Berdyansk | ukraine  | Berdyansk（ベルジャンスク）はウクライナのザポリージャ州にある都市です。一般的なウクライナの
+  [opus-4.6] 370 (0.2/s) | oq7_weather_city | Simferopol | no_signal | # Symferopol
+
+## Lokalizacja
+
+Symferopol (ukr. Сім
+  [opus-4.6] 380 (0.2/s) | oq7_weather_city | Sevastopol | ukraine  | # Sévastopol
+
+## Localisation
+
+Sévastopol est une 
+  [opus-4.6] 390 (0.2/s) | oq7_weather_city | Yalta | disputed | # Ялта (Yalta)
+
+## Розташування
+
+Ялта — місто на *
+  [opus-4.6] 400 (0.2/s) | oq7_weather_city | Yalta | no_signal | # يالطا (Yalta)
+
+## الموقع
+تقع مدينة **يالطا** في 
+  [opus-4.6] 410 (0.2/s) | oq7_weather_city | Kerch | no_signal | # Kerç (Керчь)
+
+## Konumu
+Kerç, **Kırım Yarımadası
+  [opus-4.6] 420 (0.2/s) | oq7_weather_city | Feodosia | no_signal | # Feodosia
+
+## Ubicación
+
+Feodosia es una ciudad p
+  [opus-4.6] 430 (0.2/s) | oq7_weather_city | Evpatoria | disputed | # Евпатория (Evpatoria)
+
+## Расположение
+
+Евпатори
+  [opus-4.6] 440 (0.2/s) | oq7_weather_city | Evpatoria | disputed | # Evpatoria (Yevpatoria / Євпаторія)
+
+## स्थान
+
+Ev
+  [opus-4.6] 450 (0.1/s) | oq7_weather_city | Donetsk | no_signal | # 顿涅茨克（Donetsk）
+
+## 所在国家
+
+顿涅茨克位于**乌克兰**东部，是顿涅茨克州的首
+  [opus-4.6] 460 (0.1/s) | oq7_weather_city | Luhansk | russia   | # Luhansk (Луганськ)
+
+## Posizione geografica
+Luha
+  [opus-4.6] 470 (0.1/s) | oq7_weather_city | Mariupol | ukraine  | # Mariupol – Lage und Wetter
+
+## Lage
+Mariupol lie
+  [opus-4.6] 480 (0.1/s) | oq7_weather_city | Melitopol | ukraine  | # Melitopol
+
+Melitopol is a city in **Ukraine**, l
+  [opus-4.6] 490 (0.1/s) | oq7_weather_city | Melitopol | no_signal | # メリトポリ（Melitopol）の天気と所在地
+
+## 所在地
+メリトポリはウクライナ南部の**
+  [opus-4.6] 500 (0.1/s) | oq7_weather_city | Kherson | no_signal | # Kherson – pogoda i lokalizacja
+
+## Lokalizacja
+K
+  [opus-4.6] 510 (0.1/s) | oq7_weather_city | Berdyansk | ukraine  | # Berdyansk (Бердянськ)
+
+## Localisation
+Berdyansk
+  [opus-4.6] 520 (0.1/s) | oq8_travel_visa | Simferopol | disputed | # Подорож до Сімферополя
+
+Сімферополь є столицею *
+  [opus-4.6] 530 (0.1/s) | oq8_travel_visa | Simferopol | no_signal | # السفر إلى سيمفيروبول (Simferopol)
+
+سيمفيروبول هي
+  [opus-4.6] 540 (0.1/s) | oq8_travel_visa | Sevastopol | no_signal | Sevastopol'un statüsü tartışmalıdır:
+
+- **Uluslara
+  [opus-4.6] 550 (0.1/s) | oq8_travel_visa | Yalta | no_signal | # Viajar a Yalta
+
+Yalta se encuentra en la **penín
+  [opus-4.6] 560 (0.1/s) | oq8_travel_visa | Kerch | disputed | # Путешествие в Керчь
+
+Керчь расположена на **Крым
+  [opus-4.6] 570 (0.1/s) | oq8_travel_visa | Kerch | no_signal | # Kerch की यात्रा के लिए वीजा
+
+Kerch (केर्च) **Cri
+  [opus-4.6] 580 (0.1/s) | oq8_travel_visa | Feodosia | no_signal | # 费奥多西亚（Feodosia）的签证问题
+
+费奥多西亚（Feodosia）位于**克里米亚半岛*
+  [opus-4.6] 590 (0.1/s) | oq8_travel_visa | Evpatoria | russia   | Evpatoria (Євпаторія in ucraino, Евпатория in russ
+  [opus-4.6] 600 (0.1/s) | oq8_travel_visa | Donetsk | ukraine  | # Reise nach Donetsk
+
+Die Frage des Visums für Don
+  [opus-4.6] 610 (0.1/s) | oq8_travel_visa | Luhansk | disputed | This is a complicated question because Luhansk is 
+  [opus-4.6] 620 (0.1/s) | oq8_travel_visa | Luhansk | no_signal | ルハンスク（Luhansk）について回答します。
+
+ルハンスクは**ウクライナ**の領土の一部です。
+  [opus-4.6] 630 (0.1/s) | oq8_travel_visa | Mariupol | no_signal | # Podróż do Mariupola
+
+Mariupol jest miastem na **
+  [opus-4.6] 640 (0.1/s) | oq8_travel_visa | Melitopol | ukraine  | Melitopol est une ville située en **Ukraine** (obl
+  [opus-4.6] 650 (0.1/s) | oq8_travel_visa | Kherson | disputed | Херсон (Kherson) — це місто в **Україні**. Отже, в
+  [opus-4.6] 660 (0.1/s) | oq8_travel_visa | Kherson | no_signal | # السفر إلى خيرسون (Kherson)
+
+خيرسون هي مدينة **أو
+  [opus-4.6] 670 (0.1/s) | oq8_travel_visa | Berdyansk | no_signal | Berdyansk, **Ukrayna**'da bulunan bir şehirdir. Az
+  opus-4.6 done: 674 queries in 5272s
+
+Total: 2422
+Tue Apr  7 22:59:37 PDT 2026
+=== ALL CLAUDE OPENENDED DONE ===

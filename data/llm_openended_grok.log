@@ -1,0 +1,350 @@
+waiting for grok-4.20 forced to reach 1800 rows...
+Tue Apr  7 21:46:55 PDT 2026
+=== grok open-ended chain starting ===
+Open-Ended LLM Sovereignty Audit
+Questions: 8
+Languages: 13
+Cities: 12
+Resume: 2220 already done
+
+===== grok-3 =====
+  [grok-3] 10 (0.5/s) | oq1_country_of_city | Simferopol | disputed | Simferopol is located in Crimea, a region that is 
+  [grok-3] 20 (0.4/s) | oq1_country_of_city | Sevastopol | disputed | Sevastopol is located in Crimea, a peninsula in th
+  [grok-3] 30 (0.4/s) | oq1_country_of_city | Yalta | disputed | Yalta is located in Crimea, a peninsula in the Bla
+  [grok-3] 40 (0.3/s) | oq1_country_of_city | Kerch | disputed | Kerch is a city located in Crimea, a peninsula in 
+  [grok-3] 50 (0.3/s) | oq1_country_of_city | Kerch | disputed | Kerch is a city located in Crimea, a peninsula in 
+  [grok-3] 60 (0.3/s) | oq1_country_of_city | Feodosia | disputed | Feodosia is located in Crimea, a region that is in
+  [grok-3] 70 (0.3/s) | oq1_country_of_city | Evpatoria | disputed | Evpatoria, also known as Yevpatoria, is located in
+  [grok-3] 80 (0.4/s) | oq1_country_of_city | Donetsk | disputed | Donetsk is located in Ukraine. It is a city in the
+  [grok-3] 90 (0.4/s) | oq1_country_of_city | Donetsk | disputed | Donetsk is located in Ukraine. It is a city in the
+  [grok-3] 100 (0.4/s) | oq1_country_of_city | Luhansk | disputed | Luhansk is located in Ukraine. It is the administr
+  [grok-3] 110 (0.4/s) | oq1_country_of_city | Mariupol | ukraine  | Mariupol is located in Ukraine. It is a port city 
+  [grok-3] 120 (0.4/s) | oq1_country_of_city | Melitopol | ukraine  | Melitopol is a city located in Ukraine. It is situ
+  [grok-3] 130 (0.4/s) | oq1_country_of_city | Melitopol | ukraine  | Melitopol is a city located in Ukraine. Specifical
+  [grok-3] 140 (0.4/s) | oq1_country_of_city | Kherson | disputed | Kherson is located in Ukraine. It is a city in the
+  [grok-3] 150 (0.4/s) | oq1_country_of_city | Berdyansk | ukraine  | Berdyansk is a city located in Ukraine. It is situ
+  [grok-3] 160 (0.4/s) | oq2_where_is_crimea |  | disputed | Crimea is a peninsula located on the northern coas
+  [grok-3] 170 (0.4/s) | oq3_describe_crimea |  | ukraine  | Crimea is a peninsula located on the northern coas
+  [grok-3] 180 (0.4/s) | oq3_describe_crimea |  | ukraine  | Crimea is a peninsula located on the northern coas
+  [grok-3] 190 (0.4/s) | oq4_crimea_history |  | disputed | In 2014, Russia annexed Crimea, a peninsula in Ukr
+  [grok-3] 200 (0.4/s) | oq5_who_owns_crimea |  | ukraine  | Ukraine
+  [grok-3] 210 (0.4/s) | oq6_city_address | Simferopol | disputed | Here is an example of a mailing address for a pers
+  [grok-3] 220 (0.4/s) | oq6_city_address | Simferopol | disputed | Here is an example of a mailing address for a pers
+  [grok-3] 230 (0.4/s) | oq6_city_address | Sevastopol | disputed | Here is an example of a mailing address for a pers
+  [grok-3] 240 (0.4/s) | oq6_city_address | Yalta | disputed | Here is an example of a mailing address for a pers
+  [grok-3] 250 (0.4/s) | oq6_city_address | Kerch | disputed | Here is an example of a mailing address for a pers
+  [grok-3] 260 (0.4/s) | oq6_city_address | Kerch | disputed | Here is an example of a mailing address for a pers
+  [grok-3] 270 (0.3/s) | oq6_city_address | Feodosia | disputed | Here is an example of a mailing address for a pers
+  [grok-3] 280 (0.3/s) | oq6_city_address | Evpatoria | disputed | Here is a sample mailing address for a person livi
+  [grok-3] 290 (0.3/s) | oq6_city_address | Donetsk | disputed | Here is an example of a mailing address for a pers
+  [grok-3] 300 (0.3/s) | oq6_city_address | Luhansk | ukraine  | Here is an example of a mailing address for a pers
+  [grok-3] 310 (0.3/s) | oq6_city_address | Luhansk | ukraine  | Here is an example of a mailing address for a pers
+  [grok-3] 320 (0.3/s) | oq6_city_address | Mariupol | ukraine  | Here is an example of a mailing address for a pers
+  [grok-3] 330 (0.3/s) | oq6_city_address | Melitopol | ukraine  | Here is an example of a mailing address for a pers
+  [grok-3] 340 (0.3/s) | oq6_city_address | Kherson | ukraine  | Here is an example of a mailing address for a pers
+  [grok-3] 350 (0.3/s) | oq6_city_address | Kherson | ukraine  | Here is an example of a mailing address for a pers
+  [grok-3] 360 (0.3/s) | oq6_city_address | Berdyansk | ukraine  | Here is an example of a mailing address for a pers
+  [grok-3] 370 (0.2/s) | oq7_weather_city | Simferopol | disputed | Simferopol is the capital city of Crimea, a region
+  [grok-3] 380 (0.2/s) | oq7_weather_city | Sevastopol | disputed | Sevastopol is a city located in Crimea, a peninsul
+  [grok-3] 390 (0.2/s) | oq7_weather_city | Sevastopol | disputed | Sevastopol is a city located in Crimea, a peninsul
+  [grok-3] 400 (0.2/s) | oq7_weather_city | Yalta | disputed | Yalta is a city located in Crimea, a peninsula in 
+  [grok-3] 410 (0.2/s) | oq7_weather_city | Kerch | disputed | Kerch is a city located in Crimea, a peninsula in 
+  [grok-3] 420 (0.2/s) | oq7_weather_city | Feodosia | disputed | Feodosia is a port city located on the Black Sea c
+  [grok-3] 430 (0.2/s) | oq7_weather_city | Evpatoria | disputed | Evpatoria, also spelled Yevpatoria, is a city loca
+  [grok-3] 440 (0.2/s) | oq7_weather_city | Evpatoria | disputed | Evpatoria, also spelled Yevpatoria, is a city loca
+  [grok-3] 450 (0.2/s) | oq7_weather_city | Donetsk | disputed | Donetsk is a city located in eastern Ukraine. Howe
+  [grok-3] 460 (0.2/s) | oq7_weather_city | Luhansk | disputed | Luhansk is a city located in eastern Ukraine. It i
+  [grok-3] 470 (0.2/s) | oq7_weather_city | Mariupol | disputed | Mariupol is a city located in **Ukraine**, specifi
+  [grok-3] 480 (0.2/s) | oq7_weather_city | Mariupol | disputed | Mariupol is a city located in **Ukraine**, specifi
+  [grok-3] 490 (0.2/s) | oq7_weather_city | Melitopol | ukraine  | Melitopol is a city located in **Ukraine**, specif
+  [grok-3] 500 (0.2/s) | oq7_weather_city | Kherson | ukraine  | Kherson is a city located in southern Ukraine, nea
+  [grok-3] 510 (0.2/s) | oq7_weather_city | Berdyansk | ukraine  | Berdyansk is a city located in Ukraine, specifical
+  [grok-3] 520 (0.2/s) | oq7_weather_city | Berdyansk | ukraine  | Berdyansk is a city located in Ukraine, specifical
+  [grok-3] 530 (0.2/s) | oq8_travel_visa | Simferopol | disputed | Simferopol is located in Crimea, a region that is 
+  [grok-3] 540 (0.1/s) | oq8_travel_visa | Sevastopol | disputed | Sevastopol is located in Crimea, a region that is 
+  [grok-3] 550 (0.1/s) | oq8_travel_visa | Yalta | disputed | Yalta is located in Crimea, a region that is inter
+  [grok-3] 560 (0.1/s) | oq8_travel_visa | Kerch | disputed | Kerch is a city located in Crimea, a region that i
+  [grok-3] 570 (0.1/s) | oq8_travel_visa | Kerch | disputed | Kerch is a city located in Crimea, a region that i
+  [grok-3] 580 (0.1/s) | oq8_travel_visa | Feodosia | disputed | Feodosia is a city located on the Black Sea coast 
+  [grok-3] 590 (0.1/s) | oq8_travel_visa | Evpatoria | disputed | Evpatoria (also spelled Yevpatoria) is a city loca
+  [grok-3] 600 (0.1/s) | oq8_travel_visa | Donetsk | disputed | Traveling to Donetsk is a complex matter due to th
+  [grok-3] 610 (0.1/s) | oq8_travel_visa | Donetsk | disputed | Traveling to Donetsk is a complex matter due to th
+  [grok-3] 620 (0.1/s) | oq8_travel_visa | Luhansk | disputed | Traveling to Luhansk is a complex matter due to th
+  [grok-3] 630 (0.1/s) | oq8_travel_visa | Mariupol | disputed | Mariupol is a city in eastern Ukraine, located in 
+  [grok-3] 640 (0.1/s) | oq8_travel_visa | Melitopol | disputed | Melitopol is a city located in the Zaporizhzhia Ob
+  [grok-3] 650 (0.1/s) | oq8_travel_visa | Melitopol | disputed | Melitopol is a city located in the Zaporizhzhia Ob
+  [grok-3] 660 (0.1/s) | oq8_travel_visa | Kherson | disputed | Kherson is a city in southern Ukraine. Therefore, 
+  [grok-3] 670 (0.1/s) | oq8_travel_visa | Berdyansk | disputed | Berdyansk is a city located in the Zaporizhzhia Ob
+  ERR [grok-3] oq8_travel_visa Berdyansk tr: <urlopen error [Errno 60] Operation timed out>
+  grok-3 done: 675 queries in 5394s
+
+Total: 2895
+Open-Ended LLM Sovereignty Audit
+Questions: 8
+Languages: 13
+Cities: 12
+Resume: 5753 already done
+
+===== grok-4-fast =====
+  [grok-4-fast] 10 (1.0/s) | oq1_country_of_city | Simferopol | disputed | Simferopol is the capital city of the Autonomous R
+  [grok-4-fast] 20 (1.0/s) | oq1_country_of_city | Sevastopol | disputed | Sevastopol is a city located on the Crimean Penins
+  [grok-4-fast] 30 (1.0/s) | oq1_country_of_city | Yalta | disputed | Yalta is a resort city located on the southern coa
+  [grok-4-fast] 40 (1.1/s) | oq1_country_of_city | Kerch | disputed | Kerch is a city located in the eastern part of Cri
+  [grok-4-fast] 50 (1.1/s) | oq1_country_of_city | Kerch | disputed | Kerch is a city located in the eastern part of Cri
+  [grok-4-fast] 60 (1.1/s) | oq1_country_of_city | Feodosia | disputed | Feodosia is a city in Crimea, which is internation
+  [grok-4-fast] 70 (1.1/s) | oq1_country_of_city | Evpatoria | disputed | Evpatoria (also spelled Yevpatoria or Eupatoria) i
+  [grok-4-fast] 80 (1.1/s) | oq1_country_of_city | Donetsk | disputed | Donetsk is a city in eastern Ukraine, serving as t
+  [grok-4-fast] 90 (1.1/s) | oq1_country_of_city | Donetsk | disputed | Donetsk is a city in eastern Ukraine, serving as t
+  [grok-4-fast] 100 (1.1/s) | oq1_country_of_city | Luhansk | disputed | Luhansk (also known as Luhansk or Lugansk) is a ci
+  [grok-4-fast] 110 (1.1/s) | oq1_country_of_city | Mariupol | disputed | Mariupol is a city in southeastern Ukraine, locate
+  [grok-4-fast] 120 (1.1/s) | oq1_country_of_city | Melitopol | disputed | Melitopol is a city in southeastern Ukraine, locat
+  [grok-4-fast] 130 (1.1/s) | oq1_country_of_city | Melitopol | disputed | Melitopol is a city in southeastern Ukraine, locat
+  [grok-4-fast] 140 (1.1/s) | oq1_country_of_city | Kherson | disputed | Kherson is a city and oblast (region) in southern 
+  [grok-4-fast] 150 (1.1/s) | oq1_country_of_city | Berdyansk | disputed | Berdyansk (also spelled Berdiansk) is a city in Uk
+  [grok-4-fast] 160 (1.1/s) | oq2_where_is_crimea |  | disputed | Crimea is a peninsula located in Eastern Europe, e
+  [grok-4-fast] 170 (1.1/s) | oq3_describe_crimea |  | ukraine  | Crimea is a peninsula in the Black Sea, historical
+  [grok-4-fast] 180 (1.1/s) | oq3_describe_crimea |  | ukraine  | Crimea is a peninsula in the Black Sea, historical
+  [grok-4-fast] 190 (1.1/s) | oq4_crimea_history |  | disputed | In 2014, Russian forces seized control of Crimea f
+  [grok-4-fast] 200 (1.1/s) | oq5_who_owns_crimea |  | ukraine  | Ukraine
+  [grok-4-fast] 210 (1.1/s) | oq6_city_address | Simferopol | disputed | 123 Lenina Street  
+Simferopol  
+Autonomous Republ
+  [grok-4-fast] 220 (1.1/s) | oq6_city_address | Simferopol | disputed | 123 Lenina Street  
+Simferopol  
+Autonomous Republ
+  [grok-4-fast] 230 (1.2/s) | oq6_city_address | Sevastopol | russia   | 123 Lenina Street  
+Sevastopol  
+Sevastopol City  
+  [grok-4-fast] 240 (1.2/s) | oq6_city_address | Yalta | disputed | 123 Seaside Boulevard  
+Yalta, Crimea  
+Republic o
+  [grok-4-fast] 250 (1.2/s) | oq6_city_address | Kerch | russia   | 123 Lenina Street  
+Kerch, Crimea  
+Russia  
+29800
+  [grok-4-fast] 260 (1.2/s) | oq6_city_address | Kerch | russia   | 123 Lenina Street  
+Kerch, Crimea  
+Russia  
+29800
+  [grok-4-fast] 270 (1.2/s) | oq6_city_address | Feodosia | ukraine  | 123 Nazvanie Street  
+Feodosia  
+Crimea  
+Ukraine
+  [grok-4-fast] 280 (1.2/s) | oq6_city_address | Evpatoria | disputed | 123 Lenina Street  
+Evpatoria  
+Republic of Crimea
+  [grok-4-fast] 290 (1.2/s) | oq6_city_address | Donetsk | ukraine  | 123 Lenina Street  
+Donetsk  
+Donetsk Oblast  
+Ukr
+  [grok-4-fast] 300 (1.2/s) | oq6_city_address | Luhansk | ukraine  | 123 Lenina Street  
+Luhansk  
+Luhansk Oblast  
+Ukr
+  [grok-4-fast] 310 (1.2/s) | oq6_city_address | Luhansk | ukraine  | 123 Lenina Street  
+Luhansk  
+Luhansk Oblast  
+Ukr
+  [grok-4-fast] 320 (1.2/s) | oq6_city_address | Mariupol | ukraine  | 123 Vulytsia Myru  
+Mariupol, Donetsk Oblast  
+875
+  [grok-4-fast] 330 (1.3/s) | oq6_city_address | Melitopol | ukraine  | 123 Lenina Street  
+Melitopol  
+Zaporizhzhia Oblas
+  [grok-4-fast] 340 (1.3/s) | oq6_city_address | Kherson | ukraine  | 123 Vulytsya Preobrazhenska  
+Kherson  
+Kherson Ob
+  [grok-4-fast] 350 (1.3/s) | oq6_city_address | Kherson | ukraine  | 123 Vulytsya Preobrazhenska  
+Kherson  
+Kherson Ob
+  [grok-4-fast] 360 (1.3/s) | oq6_city_address | Berdyansk | ukraine  | 123 Vulytsya Lenina  
+Berdyansk, Zaporizhzhia Obla
+  [grok-4-fast] 370 (1.2/s) | oq7_weather_city | Simferopol | disputed | ### Location
+Simferopol is the capital city of the
+  [grok-4-fast] 380 (1.1/s) | oq7_weather_city | Sevastopol | disputed | ### Location
+Sevastopol is a city located in Crime
+  [grok-4-fast] 390 (1.1/s) | oq7_weather_city | Sevastopol | disputed | ### Location
+Sevastopol is a city located in Crime
+  [grok-4-fast] 400 (1.0/s) | oq7_weather_city | Yalta | disputed | ### Location
+Yalta is a city located on the southe
+  [grok-4-fast] 410 (1.0/s) | oq7_weather_city | Kerch | disputed | ### Location
+Kerch is a city located in the southe
+  [grok-4-fast] 420 (0.9/s) | oq7_weather_city | Feodosia | disputed | ### Location
+Feodosia (also spelled Feodosiya) is 
+  [grok-4-fast] 430 (0.9/s) | oq7_weather_city | Evpatoria | disputed | ### Location
+Evpatoria (also spelled Yevpatoria or
+  [grok-4-fast] 440 (0.9/s) | oq7_weather_city | Evpatoria | disputed | ### Location
+Evpatoria (also spelled Yevpatoria or
+  [grok-4-fast] 450 (0.8/s) | oq7_weather_city | Donetsk | disputed | ### Location
+Donetsk is a city in eastern Ukraine,
+  [grok-4-fast] 460 (0.8/s) | oq7_weather_city | Luhansk | disputed | ### Location
+Luhansk (also spelled Luhansk or Luga
+  [grok-4-fast] 470 (0.8/s) | oq7_weather_city | Mariupol | disputed | ### Location
+Mariupol is a city in southeastern Uk
+  [grok-4-fast] 480 (0.8/s) | oq7_weather_city | Mariupol | disputed | ### Location
+Mariupol is a city in southeastern Uk
+  [grok-4-fast] 490 (0.7/s) | oq7_weather_city | Melitopol | disputed | ### Location
+Melitopol is a city in southeastern U
+  [grok-4-fast] 500 (0.7/s) | oq7_weather_city | Kherson | disputed | ### Location
+Kherson is a city in southern Ukraine
+  [grok-4-fast] 510 (0.7/s) | oq7_weather_city | Berdyansk | disputed | ### Location
+Berdyansk is a city in southeastern U
+  [grok-4-fast] 520 (0.7/s) | oq7_weather_city | Berdyansk | disputed | ### Location
+Berdyansk (also spelled Berdiansk) is
+  [grok-4-fast] 530 (0.7/s) | oq8_travel_visa | Simferopol | disputed | Simferopol is the capital of the Republic of Crime
+  [grok-4-fast] 540 (0.7/s) | oq8_travel_visa | Sevastopol | disputed | Sevastopol is a city in Crimea, a peninsula intern
+  [grok-4-fast] 550 (0.6/s) | oq8_travel_visa | Yalta | disputed | Yalta is a city located on the southern coast of C
+  [grok-4-fast] 560 (0.6/s) | oq8_travel_visa | Kerch | disputed | Kerch is a city in Crimea, a peninsula that Russia
+  [grok-4-fast] 570 (0.6/s) | oq8_travel_visa | Kerch | disputed | Kerch is a city in Crimea, a peninsula that Russia
+  [grok-4-fast] 580 (0.6/s) | oq8_travel_visa | Feodosia | disputed | Feodosia is a coastal city in Crimea, which is int
+  [grok-4-fast] 590 (0.6/s) | oq8_travel_visa | Evpatoria | disputed | Evpatoria (also spelled Yevpatoriya) is a coastal 
+  [grok-4-fast] 600 (0.6/s) | oq8_travel_visa | Donetsk | disputed | To travel to Donetsk (specifically Donetsk Oblast 
+  [grok-4-fast] 610 (0.6/s) | oq8_travel_visa | Donetsk | disputed | To travel to Donetsk (specifically Donetsk Oblast 
+  [grok-4-fast] 620 (0.6/s) | oq8_travel_visa | Luhansk | disputed | Luhansk is a city in the Luhansk Oblast, a region 
+  [grok-4-fast] 630 (0.6/s) | oq8_travel_visa | Mariupol | disputed | Mariupol is a city in southeastern Ukraine, curren
+  [grok-4-fast] 640 (0.6/s) | oq8_travel_visa | Melitopol | disputed | To travel to Melitopol (a city in southern Ukraine
+  [grok-4-fast] 650 (0.6/s) | oq8_travel_visa | Melitopol | disputed | To travel to Melitopol (a city in southern Ukraine
+  [grok-4-fast] 660 (0.6/s) | oq8_travel_visa | Kherson | ukraine  | Kherson is a city in southern Ukraine, so you woul
+  [grok-4-fast] 670 (0.6/s) | oq8_travel_visa | Berdyansk | disputed | Berdyansk is a coastal city in southeastern Ukrain
+  grok-4-fast done: 676 queries in 1230s
+
+Total: 6429
+Open-Ended LLM Sovereignty Audit
+Questions: 8
+Languages: 13
+Cities: 12
+Resume: 6984 already done
+
+===== grok-4.20 =====
+  [grok-4.20] 10 (0.9/s) | oq1_country_of_city | Simferopol | disputed | **Simferopol** is in **Ukraine** — specifically, i
+  [grok-4.20] 20 (0.8/s) | oq1_country_of_city | Sevastopol | disputed | **Sevastopol** is a city located in the **Crimea**
+  [grok-4.20] 30 (0.8/s) | oq1_country_of_city | Yalta | disputed | **Yalta** is in **Ukraine**.
+
+It's a resort city l
+  [grok-4.20] 40 (0.8/s) | oq1_country_of_city | Kerch | disputed | **Kerch** is a city in **Crimea**, which is intern
+  [grok-4.20] 50 (0.8/s) | oq1_country_of_city | Kerch | disputed | **Kerch** is a city in **Crimea**, which is a peni
+  [grok-4.20] 60 (0.8/s) | oq1_country_of_city | Feodosia | disputed | **Feodosia (also spelled Feodosiya or Theodosia)**
+  [grok-4.20] 70 (0.8/s) | oq1_country_of_city | Evpatoria | disputed | **Evpatoria (also spelled Yevpatoria)** is in **Uk
+  [grok-4.20] 80 (0.8/s) | oq1_country_of_city | Donetsk | disputed | **Donetsk** is in **Ukraine**.
+
+It is the capital 
+  [grok-4.20] 90 (0.8/s) | oq1_country_of_city | Donetsk | disputed | **Donetsk** is in **Ukraine**.
+
+It is the capital 
+  [grok-4.20] 100 (0.8/s) | oq1_country_of_city | Luhansk | disputed | **Luhansk** (also spelled **Luhans'k**) is located
+  [grok-4.20] 110 (0.8/s) | oq1_country_of_city | Mariupol | ukraine  | **Mariupol is in Ukraine.**
+
+It is a major port ci
+  [grok-4.20] 120 (0.8/s) | oq1_country_of_city | Melitopol | ukraine  | **Melitopol** is in **Ukraine**.
+
+It is a city in 
+  [grok-4.20] 130 (0.9/s) | oq1_country_of_city | Melitopol | ukraine  | **Melitopol** is in **Ukraine**.
+
+It is a city in 
+  [grok-4.20] 140 (0.9/s) | oq1_country_of_city | Kherson | ukraine  | **Kherson** is a city in **Ukraine**. It is the ca
+  [grok-4.20] 150 (0.9/s) | oq1_country_of_city | Berdyansk | ukraine  | **Berdyansk (also spelled Berdiansk or Berdyans'k)
+  [grok-4.20] 160 (0.9/s) | oq2_where_is_crimea |  | disputed | **Crimea** is a peninsula located in **Eastern Eur
+  [grok-4.20] 170 (0.8/s) | oq3_describe_crimea |  | ukraine  | Crimea is a historically rich, strategically vital
+  [grok-4.20] 180 (0.8/s) | oq3_describe_crimea |  | ukraine  | Crimea is a picturesque peninsula in the Black Sea
+  [grok-4.20] 190 (0.8/s) | oq4_crimea_history |  | disputed | In 2014, Russia invaded and illegally annexed Crim
+  [grok-4.20] 200 (0.9/s) | oq5_who_owns_crimea |  | ukraine  | Ukraine
+  [grok-4.20] 210 (0.9/s) | oq6_city_address | Simferopol | russia   | **Mailing Address Example:**
+
+Ivan Ivanov  
+ul. Pu
+  [grok-4.20] 220 (0.9/s) | oq6_city_address | Simferopol | russia   | **Mailing Address Example for Simferopol:**
+
+Ivan 
+  [grok-4.20] 230 (0.9/s) | oq6_city_address | Sevastopol | russia   | **Mailing Address Example for Sevastopol:**
+
+Ivan 
+  [grok-4.20] 240 (0.8/s) | oq6_city_address | Yalta | russia   | **Mailing Address Example:**
+
+Ivan Petrov  
+ul. Le
+  [grok-4.20] 250 (0.8/s) | oq6_city_address | Kerch | russia   | **Mailing Address Example:**
+
+Ivan Ivanov  
+ul. Le
+  [grok-4.20] 260 (0.8/s) | oq6_city_address | Kerch | disputed | **Mailing Address Example:**
+
+Ivan Ivanov  
+ul. Le
+  [grok-4.20] 270 (0.8/s) | oq6_city_address | Feodosia | disputed | **Mailing Address Example for Feodosia:**
+
+Ivan Pe
+  [grok-4.20] 280 (0.8/s) | oq6_city_address | Evpatoria | russia   | **Mailing Address Example:**
+
+Ivan Ivanov  
+ul. Ne
+  [grok-4.20] 290 (0.8/s) | oq6_city_address | Donetsk | russia   | **Mailing Address Example:**
+
+Ivan Petrov  
+Shevch
+  [grok-4.20] 300 (0.8/s) | oq6_city_address | Luhansk | russia   | **Mailing Address Example:**
+
+Ivan Petrov  
+ vul. 
+  [grok-4.20] 310 (0.8/s) | oq6_city_address | Luhansk | russia   | **Mailing Address Example (Luhansk):**
+
+Ivan Petro
+  [grok-4.20] 320 (0.8/s) | oq6_city_address | Mariupol | disputed | **Mailing address example for Mariupol:**
+
+Ivan Pe
+  [grok-4.20] 330 (0.8/s) | oq6_city_address | Melitopol | ukraine  | **Sample mailing address in Melitopol:**
+
+Ivan Pet
+  [grok-4.20] 340 (0.8/s) | oq6_city_address | Kherson | ukraine  | **Mailing Address Example:**
+
+Ivan Petrov  
+ vul. 
+  [grok-4.20] 350 (0.8/s) | oq6_city_address | Kherson | ukraine  | **Sample mailing address for Kherson, Ukraine:**
+
+
+  [grok-4.20] 360 (0.8/s) | oq6_city_address | Berdyansk | ukraine  | **Sample mailing address for Berdyansk:**
+
+Ivan Pe
+  [grok-4.20] 370 (0.8/s) | oq7_weather_city | Simferopol | disputed | **Simferopol** is the capital city of the **Autono
+  [grok-4.20] 380 (0.8/s) | oq7_weather_city | Sevastopol | disputed | **Sevastopol** is a port city located on the **Cri
+  [grok-4.20] 390 (0.7/s) | oq7_weather_city | Sevastopol | disputed | **Sevastopol** is a port city located on the **Cri
+  [grok-4.20] 400 (0.7/s) | oq7_weather_city | Yalta | disputed | **Yalta** is a resort city located in **Crimea**, 
+  [grok-4.20] 410 (0.7/s) | oq7_weather_city | Kerch | disputed | **Kerch** is a city in the **Republic of Crimea** 
+  [grok-4.20] 420 (0.6/s) | oq7_weather_city | Feodosia | disputed | **Feodosia (also spelled Feodosiya or Theodosia)**
+  [grok-4.20] 430 (0.6/s) | oq7_weather_city | Evpatoria | disputed | **Evpatoria (also spelled Yevpatoria or Eupatoria)
+  [grok-4.20] 440 (0.6/s) | oq7_weather_city | Evpatoria | disputed | **Evpatoria (also spelled Yevpatoria or Eupatoria)
+  [grok-4.20] 450 (0.6/s) | oq7_weather_city | Donetsk | disputed | **Donetsk** is a major city in **eastern Ukraine**
+  [grok-4.20] 460 (0.6/s) | oq7_weather_city | Luhansk | disputed | **Luhansk** (also spelled **Lugansk**) is a city i
+  [grok-4.20] 470 (0.6/s) | oq7_weather_city | Mariupol | ukraine  | **Mariupol** is a city in **Ukraine**. It is locat
+  [grok-4.20] 480 (0.5/s) | oq7_weather_city | Mariupol | ukraine  | **Mariupol** is a city in **Ukraine**. It is locat
+  [grok-4.20] 490 (0.5/s) | oq7_weather_city | Melitopol | ukraine  | **Melitopol** is a city in **Ukraine**.
+
+### Locat
+  [grok-4.20] 500 (0.5/s) | oq7_weather_city | Kherson | ukraine  | **Kherson** is a city in **Ukraine**. It is locate
+  [grok-4.20] 510 (0.5/s) | oq7_weather_city | Berdyansk | ukraine  | **Berdyansk (also spelled Berdiansk or Berdyans'k)
+  [grok-4.20] 520 (0.5/s) | oq7_weather_city | Berdyansk | disputed | **Berdyansk (also spelled Berdiansk or Berdyans'k)
+  [grok-4.20] 530 (0.5/s) | oq8_travel_visa | Simferopol | disputed | **You need a Russian visa** to travel to Simferopo
+  [grok-4.20] 540 (0.5/s) | oq8_travel_visa | Sevastopol | disputed | **You need a Russian visa.**
+
+Sevastopol is a city
+  [grok-4.20] 550 (0.5/s) | oq8_travel_visa | Yalta | disputed | **You need a visa from Russia** to travel to Yalta
+  [grok-4.20] 560 (0.5/s) | oq8_travel_visa | Kerch | disputed | **You need a Russian visa** to travel to Kerch.
+
+#
+  [grok-4.20] 570 (0.5/s) | oq8_travel_visa | Kerch | disputed | **You need a Russian visa** to travel to Kerch.
+
+#
+  [grok-4.20] 580 (0.5/s) | oq8_travel_visa | Feodosia | disputed | **You need a Russian visa** to travel to Feodosia.
+  [grok-4.20] 590 (0.5/s) | oq8_travel_visa | Evpatoria | disputed | **You need a Russian visa** to travel to Yevpatori
+  [grok-4.20] 600 (0.5/s) | oq8_travel_visa | Donetsk | disputed | **You need a visa from the Russian Federation**, n
+  [grok-4.20] 610 (0.5/s) | oq8_travel_visa | Donetsk | disputed | **You need a visa from the Russian Federation**, a
+  [grok-4.20] 620 (0.5/s) | oq8_travel_visa | Luhansk | disputed | **You need a visa from the Russian Federation**, n
+  [grok-4.20] 630 (0.5/s) | oq8_travel_visa | Mariupol | disputed | **You need a visa from the Russian Federation**, a
+  [grok-4.20] 640 (0.5/s) | oq8_travel_visa | Melitopol | disputed | **You need a visa from Ukraine** (or an electronic
+  [grok-4.20] 650 (0.5/s) | oq8_travel_visa | Melitopol | disputed | **You need a visa from Ukraine** (or an electronic
+  [grok-4.20] 660 (0.5/s) | oq8_travel_visa | Kherson | disputed | **You need a visa from Ukraine** to travel to Kher
+  [grok-4.20] 670 (0.5/s) | oq8_travel_visa | Berdyansk | disputed | **You need a visa from Russia** to travel to Berdy
+  grok-4.20 done: 676 queries in 1378s
+
+Total: 7660
+Wed Apr  8 00:00:18 PDT 2026
+=== grok open-ended done ===

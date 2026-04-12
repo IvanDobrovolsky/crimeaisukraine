@@ -55,7 +55,7 @@ const hasSas = sas && sas.sas !== null;
     <div class="mb-2"><a href="/" class="text-[#0057b7] hover:underline text-sm">← Back to home</a></div>
 
     <h1 class="text-3xl font-bold text-[#4c4f69] mb-1">{model.display_name}</h1>
-    <p class="text-[#6c6f85] mb-6">{model.org} · {model.access || model.params || ''} · Released {model.release} · {model.type}</p>
+    <p class="text-[#5c5f77] mb-6">{model.org} · {model.access || model.params || ''} · Released {model.release} · {model.type}</p>
 
     {hasSas && (
       <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-6 mb-8">
@@ -68,40 +68,40 @@ const hasSas = sas && sas.sas !== null;
         </div>
         <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-4">
           <div class="md:col-span-2 bg-[#eff1f5] border rounded-xl p-4" style={`border-color: ${colorForSas(sas.sas)}`}>
-            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mb-1">SAS</div>
+            <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mb-1">SAS</div>
             <div class="text-4xl font-bold" style={`color: ${colorForSas(sas.sas)}`}>{fmt(sas.sas)}</div>
-            <div class="text-[10px] text-[#7c7f93] mt-1">primary weights (0.10·D + 0.20·L + 0.30·I + 0.40·R)</div>
+            <div class="text-[10px] text-[#6c6f85] mt-1">primary weights (0.10·D + 0.20·L + 0.30·I + 0.40·R)</div>
           </div>
           <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
-            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mb-1" title="Direct territorial">D̄</div>
+            <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mb-1" title="Direct territorial">D̄</div>
             <div class="text-2xl font-bold text-[#4c4f69]">{fmt(sas.D)}</div>
-            <div class="text-[10px] text-[#7c7f93] mt-1">direct territorial</div>
+            <div class="text-[10px] text-[#6c6f85] mt-1">direct territorial</div>
           </div>
           <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
-            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mb-1" title="Legal-normative">L̄</div>
+            <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mb-1" title="Legal-normative">L̄</div>
             <div class="text-2xl font-bold text-[#4c4f69]">{fmt(sas.L)}</div>
-            <div class="text-[10px] text-[#7c7f93] mt-1">legal-normative</div>
+            <div class="text-[10px] text-[#6c6f85] mt-1">legal-normative</div>
           </div>
           <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
-            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mb-1" title="Implicit sovereignty">Ī</div>
+            <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mb-1" title="Implicit sovereignty">Ī</div>
             <div class="text-2xl font-bold text-[#4c4f69]">{fmt(sas.I)}</div>
-            <div class="text-[10px] text-[#7c7f93] mt-1">implicit sovereignty</div>
+            <div class="text-[10px] text-[#6c6f85] mt-1">implicit sovereignty</div>
           </div>
           <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
-            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mb-1" title="Free-recall">R̄</div>
+            <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mb-1" title="Free-recall">R̄</div>
             <div class="text-2xl font-bold text-[#4c4f69]">{fmt(sas.R)}</div>
-            <div class="text-[10px] text-[#7c7f93] mt-1">free-recall</div>
+            <div class="text-[10px] text-[#6c6f85] mt-1">free-recall</div>
           </div>
         </div>
         {sas.rlhf_gap !== null && (
           <div class="bg-white border border-[#ccd0da] rounded-xl p-4">
             <div class="flex items-baseline justify-between mb-1">
-              <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider">RLHF gap (D̄ − R̄)</div>
-              <div class="text-2xl font-bold" style={`color: ${sas.rlhf_gap >= 0.15 ? '#d20f39' : sas.rlhf_gap >= 0.05 ? '#df8e1d' : sas.rlhf_gap > -0.05 ? '#6c6f85' : sas.rlhf_gap > -0.20 ? '#40a02b' : '#40a02b'}`}>
+              <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider">RLHF gap (D̄ − R̄)</div>
+              <div class="text-2xl font-bold" style={`color: ${sas.rlhf_gap >= 0.15 ? '#d20f39' : sas.rlhf_gap >= 0.05 ? '#df8e1d' : sas.rlhf_gap > -0.05 ? '#5c5f77' : sas.rlhf_gap > -0.20 ? '#40a02b' : '#40a02b'}`}>
                 {sas.rlhf_gap > 0 ? '+' : ''}{sas.rlhf_gap.toFixed(3)}
               </div>
             </div>
-            <div class="text-xs text-[#6c6f85]">
+            <div class="text-xs text-[#5c5f77]">
               {sas.rlhf_gap >= 0.15
                 ? 'Surface-patched: model says the right thing in forced-choice but reverts to inherited bias in free generation. Standard benchmarks systematically overestimate this model.'
                 : sas.rlhf_gap >= 0.05
@@ -119,8 +119,8 @@ const hasSas = sas && sas.sas !== null;
 
     {!hasData ? (
       <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-12 text-center">
-        <div class="text-2xl text-[#6c6f85]">{hasSas ? 'Per-question table will appear here once the legacy report is regenerated.' : 'No audit data yet'}</div>
-        <p class="text-[#7c7f93] mt-2">{hasSas ? 'SAS data above is from the temperature=0 dual-tier audit (April 2026).' : 'Audit is still running for this model.'}</p>
+        <div class="text-2xl text-[#5c5f77]">{hasSas ? 'Per-question table will appear here once the legacy report is regenerated.' : 'No audit data yet'}</div>
+        <p class="text-[#6c6f85] mt-2">{hasSas ? 'SAS data above is from the temperature=0 dual-tier audit (April 2026).' : 'Audit is still running for this model.'}</p>
       </div>
     ) : (
       <div>
@@ -128,19 +128,19 @@ const hasSas = sas && sas.sas !== null;
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
           <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-xl p-5">
             <div class="text-3xl font-bold" style={`color: ${colorForPct(audit.correct_pct)}`}>{audit.correct_pct}%</div>
-            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mt-1">Overall correct</div>
+            <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mt-1">Overall correct</div>
           </div>
           <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-xl p-5">
             <div class="text-3xl font-bold text-[#4c4f69]">{audit.total.toLocaleString()}</div>
-            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mt-1">Total queries</div>
+            <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mt-1">Total queries</div>
           </div>
           <div class="bg-[#e6e9ef] border border-[#40a02b]/30 rounded-xl p-5">
             <div class="text-3xl font-bold text-[#40a02b]">{audit.correct.toLocaleString()}</div>
-            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mt-1">Correct</div>
+            <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mt-1">Correct</div>
           </div>
           <div class="bg-[#e6e9ef] border border-[#d20f39]/30 rounded-xl p-5">
             <div class="text-3xl font-bold text-[#d20f39]">{(audit.total - audit.correct).toLocaleString()}</div>
-            <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider mt-1">Incorrect</div>
+            <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mt-1">Incorrect</div>
           </div>
         </div>
 
@@ -158,7 +158,7 @@ const hasSas = sas && sas.sas !== null;
 
         <!-- Table 1: Accuracy by Question -->
         <h2 class="text-xl font-bold text-[#4c4f69] mt-8 mb-2">Accuracy by Question</h2>
-        <p class="text-xs text-[#7c7f93] mb-3">Each question has Coverage (cities × languages). Templated q1/q13 = 12 × 50 = 600.</p>
+        <p class="text-xs text-[#6c6f85] mb-3">Each question has Coverage (cities × languages). Templated q1/q13 = 12 × 50 = 600.</p>
         <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-xl overflow-x-auto">
           <table class="w-full text-xs">
             <thead>
@@ -184,12 +184,12 @@ const hasSas = sas && sas.sas !== null;
                 const otherCount = qd.total - yesCount - noCount - (qd.disputed || 0);
                 return (
                   <tr class="border-t border-[#ccd0da]">
-                    <td class="p-2 text-[#6c6f85] font-mono">{q_id}</td>
+                    <td class="p-2 text-[#5c5f77] font-mono">{q_id}</td>
                     <td class="p-2 text-[#4c4f69]">{qd.prompt}</td>
                     <td class="p-2 text-center text-[#40a02b] font-bold">{qd.expected.toUpperCase()}</td>
-                    <td class="p-2 text-center" style={expectedYes ? 'background:#40a02b;color:#fff;font-weight:600' : 'color:#6c6f85'}>{yesLabel}: {yesCount}</td>
-                    <td class="p-2 text-center" style={!expectedYes ? 'background:#40a02b;color:#fff;font-weight:600' : 'color:#6c6f85'}>{noLabel}: {noCount}</td>
-                    <td class="p-2 text-center text-[#7c7f93]">{otherCount + (qd.disputed || 0)}</td>
+                    <td class="p-2 text-center" style={expectedYes ? 'background:#40a02b;color:#fff;font-weight:600' : 'color:#5c5f77'}>{yesLabel}: {yesCount}</td>
+                    <td class="p-2 text-center" style={!expectedYes ? 'background:#40a02b;color:#fff;font-weight:600' : 'color:#5c5f77'}>{noLabel}: {noCount}</td>
+                    <td class="p-2 text-center text-[#6c6f85]">{otherCount + (qd.disputed || 0)}</td>
                     <td class="p-2 text-center text-[#4c4f69]">{qd.correct}/{qd.total}</td>
                     <td class="p-2 text-center font-bold" style={`background:${colorForPct(qd.pct)};color:#fff`}>{qd.pct}%</td>
                   </tr>
@@ -201,7 +201,7 @@ const hasSas = sas && sas.sas !== null;
 
         <!-- Table 2: Accuracy by City -->
         <h2 class="text-xl font-bold text-[#4c4f69] mt-8 mb-2">Accuracy by City</h2>
-        <p class="text-xs text-[#7c7f93] mb-3">Crimean cities (occupied 2014) vs Donbas/South cities (claimed 2022).</p>
+        <p class="text-xs text-[#6c6f85] mb-3">Crimean cities (occupied 2014) vs Donbas/South cities (claimed 2022).</p>
         <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-xl overflow-x-auto">
           <table class="w-full text-xs">
             <thead>
@@ -232,7 +232,7 @@ const hasSas = sas && sas.sas !== null;
 
         <!-- Table 3: Accuracy by Language -->
         <h2 class="text-xl font-bold text-[#4c4f69] mt-8 mb-2">Accuracy by Language</h2>
-        <p class="text-xs text-[#7c7f93] mb-3">Sorted worst-first to highlight bias.</p>
+        <p class="text-xs text-[#6c6f85] mb-3">Sorted worst-first to highlight bias.</p>
         <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-xl overflow-x-auto">
           <table class="w-full text-xs">
             <thead>
@@ -247,7 +247,7 @@ const hasSas = sas && sas.sas !== null;
               {Object.entries(audit.by_language).sort((a: any, b: any) => (a[1].pct || 0) - (b[1].pct || 0)).map(([code, ld]: [string, any]) => (
                 <tr class="border-t border-[#ccd0da]">
                   <td class="p-2 text-[#4c4f69] font-medium">{ld.name}</td>
-                  <td class="p-2 text-[#7c7f93] font-mono">{code}</td>
+                  <td class="p-2 text-[#6c6f85] font-mono">{code}</td>
                   <td class="p-2 text-center text-[#4c4f69]">{ld.correct}/{ld.total}</td>
                   <td class="p-2 text-center font-bold" style={`background:${colorForPct(ld.pct)};color:#fff`}>{ld.pct}%</td>
                 </tr>
@@ -275,10 +275,10 @@ const hasSas = sas && sas.sas !== null;
                 <tbody>
                   {audit.wrong_samples.slice(0, 30).map((s: any) => (
                     <tr class="border-t border-[#ccd0da]">
-                      <td class="p-2 text-[#6c6f85] font-mono text-[10px]">{s.question_id}</td>
+                      <td class="p-2 text-[#5c5f77] font-mono text-[10px]">{s.question_id}</td>
                       <td class="p-2 text-[#4c4f69]">{s.city}</td>
                       <td class="p-2 text-[#4c4f69]">{s.language_name}</td>
-                      <td class="p-2 text-[#6c6f85] text-[10px]">{s.prompt}</td>
+                      <td class="p-2 text-[#5c5f77] text-[10px]">{s.prompt}</td>
                       <td class="p-2" style="background:#d20f39;color:#fff">{s.answer}</td>
                       <td class="p-2 text-[#40a02b]">{s.expected}</td>
                     </tr>

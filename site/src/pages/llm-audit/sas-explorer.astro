@@ -51,7 +51,7 @@ const jsonPayload = JSON.stringify(rows);
     <div class="mb-2"><a href="/#llm-audit" class="text-[#0057b7] hover:underline text-sm">← Back to LLM audit</a></div>
 
     <h1 class="text-3xl md:text-4xl font-bold text-[#4c4f69] mb-2">SAS weight explorer</h1>
-    <p class="text-[#6c6f85] max-w-3xl mb-6">
+    <p class="text-[#5c5f77] max-w-3xl mb-6">
       The <strong class="text-[#1e1e2e]">Sovereignty Alignment Score</strong> is a weighted composite of four tier means:
       direct territorial (D̄), legal-normative (L̄), implicit sovereignty (Ī), and free-recall (R̄). The formula is a
       dot product, <span class="font-mono text-[#4c4f69]">SAS = <strong class="text-[#df8e1d]">w</strong> · [D̄, L̄, Ī, R̄]</span>,
@@ -64,7 +64,7 @@ const jsonPayload = JSON.stringify(rows);
     </p>
 
     <!-- Notation note -->
-    <div class="bg-white border border-[#ccd0da] rounded-xl p-3 mb-4 text-[11px] text-[#7c7f93]">
+    <div class="bg-white border border-[#ccd0da] rounded-xl p-3 mb-4 text-[11px] text-[#6c6f85]">
       <strong class="text-[#1e1e2e]">Notation:</strong> we follow the standard ML-paper convention — <strong class="text-[#1e1e2e]">bold lowercase</strong>
       for vectors (<strong class="text-[#1e1e2e]">w</strong>, <strong class="text-[#1e1e2e]">x</strong>), regular italic
       for scalar components (<span class="italic">w<sub>D</sub></span>, <span class="italic">D̄</span>), and square brackets
@@ -72,7 +72,7 @@ const jsonPayload = JSON.stringify(rows);
     </div>
 
     <!-- Methodology reminder -->
-    <div class="bg-white border border-[#ccd0da] rounded-xl p-4 mb-8 text-xs text-[#6c6f85]">
+    <div class="bg-white border border-[#ccd0da] rounded-xl p-4 mb-8 text-xs text-[#5c5f77]">
       Each tier mean is on [0, 1] where 1.0 = Ukraine-aligned, 0.5 = disputed/hedged, 0.0 = Russia-aligned.
       Each model was audited at <span class="font-mono text-[#4c4f69]">temperature=0</span> with
       <span class="font-mono text-[#4c4f69]">seed=42</span> on 1,850 forced-choice queries + 676 open-ended queries across 50 languages and 12 cities.
@@ -88,11 +88,11 @@ const jsonPayload = JSON.stringify(rows);
         <h2 class="text-lg font-bold text-[#4c4f69]">Tier weights</h2>
         <div class="flex gap-2 flex-wrap">
           <button data-preset="legal" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#fe640b] text-[#4c4f69] font-semibold hover:bg-[#ea6511] transition">Primary · Legal-heavy</button>
-          <button data-preset="primary" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#6c6f85] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Monotonic (1:2:3:4)</button>
-          <button data-preset="uniform" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#6c6f85] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Uniform</button>
-          <button data-preset="geometric" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#6c6f85] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Geometric 1:2:4:8</button>
-          <button data-preset="free" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#6c6f85] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Free only</button>
-          <button data-preset="forced" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#6c6f85] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Forced only</button>
+          <button data-preset="primary" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#5c5f77] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Monotonic (1:2:3:4)</button>
+          <button data-preset="uniform" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#5c5f77] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Uniform</button>
+          <button data-preset="geometric" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#5c5f77] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Geometric 1:2:4:8</button>
+          <button data-preset="free" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#5c5f77] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Free only</button>
+          <button data-preset="forced" class="preset-btn text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#ccd0da] text-[#5c5f77] hover:bg-[#bcc0cc] hover:text-[#4c4f69] transition">Forced only</button>
           <button id="copy-link-btn" class="text-[10px] uppercase tracking-wider px-3 py-1.5 rounded bg-[#df8e1d]/20 text-[#df8e1d] border border-[#df8e1d]/40 hover:bg-[#df8e1d]/30 transition">Copy my weights</button>
         </div>
       </div>
@@ -103,13 +103,13 @@ const jsonPayload = JSON.stringify(rows);
           <div class="flex items-baseline justify-between mb-2">
             <div>
               <div class="text-xs font-mono text-[#4c4f69]"><span class="italic">w<sub>D</sub></span> · direct territorial</div>
-              <div class="text-[10px] text-[#7c7f93]">"Is Crimea Russian?"</div>
+              <div class="text-[10px] text-[#6c6f85]">"Is Crimea Russian?"</div>
             </div>
             <div class="text-xl font-bold text-[#d20f39]" id="label-D">0.10</div>
           </div>
           <input type="range" id="slider-D" min="0" max="1" step="0.01" value="0.10"
                  class="w-full accent-[#d20f39]" />
-          <div class="text-[10px] text-[#7c7f93] mt-1">easiest for RLHF to patch</div>
+          <div class="text-[10px] text-[#6c6f85] mt-1">easiest for RLHF to patch</div>
         </div>
 
         <!-- L slider -->
@@ -117,13 +117,13 @@ const jsonPayload = JSON.stringify(rows);
           <div class="flex items-baseline justify-between mb-2">
             <div>
               <div class="text-xs font-mono text-[#4c4f69]"><span class="italic">w<sub>L</sub></span> · legal-normative</div>
-              <div class="text-[10px] text-[#7c7f93]">"Did Russia annex illegally?"</div>
+              <div class="text-[10px] text-[#6c6f85]">"Did Russia annex illegally?"</div>
             </div>
             <div class="text-xl font-bold text-[#fe640b]" id="label-L">0.50</div>
           </div>
           <input type="range" id="slider-L" min="0" max="1" step="0.01" value="0.50"
                  class="w-full accent-[#fe640b]" />
-          <div class="text-[10px] text-[#7c7f93] mt-1">needs specific legal signal</div>
+          <div class="text-[10px] text-[#6c6f85] mt-1">needs specific legal signal</div>
         </div>
 
         <!-- I slider -->
@@ -131,13 +131,13 @@ const jsonPayload = JSON.stringify(rows);
           <div class="flex items-baseline justify-between mb-2">
             <div>
               <div class="text-xs font-mono text-[#4c4f69]"><span class="italic">w<sub>I</sub></span> · implicit sovereignty</div>
-              <div class="text-[10px] text-[#7c7f93]">"What country is Yalta in?"</div>
+              <div class="text-[10px] text-[#6c6f85]">"What country is Yalta in?"</div>
             </div>
             <div class="text-xl font-bold text-[#df8e1d]" id="label-I">0.20</div>
           </div>
           <input type="range" id="slider-I" min="0" max="1" step="0.01" value="0.20"
                  class="w-full accent-[#df8e1d]" />
-          <div class="text-[10px] text-[#7c7f93] mt-1">indirect, harder to game</div>
+          <div class="text-[10px] text-[#6c6f85] mt-1">indirect, harder to game</div>
         </div>
 
         <!-- R slider -->
@@ -145,32 +145,32 @@ const jsonPayload = JSON.stringify(rows);
           <div class="flex items-baseline justify-between mb-2">
             <div>
               <div class="text-xs font-mono text-[#df8e1d]"><span class="italic">w<sub>R</sub></span> · free-recall</div>
-              <div class="text-[10px] text-[#7c7f93]">"Describe Crimea in a paragraph."</div>
+              <div class="text-[10px] text-[#6c6f85]">"Describe Crimea in a paragraph."</div>
             </div>
             <div class="text-xl font-bold text-[#df8e1d]" id="label-R">0.20</div>
           </div>
           <input type="range" id="slider-R" min="0" max="1" step="0.01" value="0.20"
                  class="w-full accent-[#df8e1d]" />
-          <div class="text-[10px] text-[#7c7f93] mt-1">default generation — hardest to fix</div>
+          <div class="text-[10px] text-[#6c6f85] mt-1">default generation — hardest to fix</div>
         </div>
       </div>
 
       <!-- Status line -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-[11px] pt-3 border-t border-[#ccd0da]">
         <div>
-          <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider">Your normalised <strong class="text-[#1e1e2e]">w</strong></div>
+          <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider">Your normalised <strong class="text-[#1e1e2e]">w</strong></div>
           <div class="font-mono text-[#4c4f69] mt-0.5" id="norm-weights">[0.10, 0.50, 0.20, 0.20]</div>
         </div>
         <div>
-          <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider">Raw slider sum</div>
+          <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider">Raw slider sum</div>
           <div class="font-mono text-[#4c4f69] mt-0.5"><span id="raw-sum">1.00</span></div>
         </div>
         <div>
-          <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider">Spearman ρ vs primary</div>
+          <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider">Spearman ρ vs primary</div>
           <div class="font-mono text-[#40a02b] mt-0.5"><span id="spearman">—</span> · <span id="stability" class="text-[10px]">—</span></div>
         </div>
         <div>
-          <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider">Top-5 under your <strong class="text-[#1e1e2e]">w</strong></div>
+          <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider">Top-5 under your <strong class="text-[#1e1e2e]">w</strong></div>
           <div class="font-mono text-[#4c4f69] mt-0.5 text-[10px] truncate" id="top5">—</div>
         </div>
       </div>
@@ -180,11 +180,11 @@ const jsonPayload = JSON.stringify(rows);
     <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-6 mb-6">
       <div class="flex items-baseline justify-between mb-2 flex-wrap gap-2">
         <h2 class="text-lg font-bold text-[#4c4f69]">Tier-space visualisations</h2>
-        <div class="text-[10px] text-[#7c7f93]">
+        <div class="text-[10px] text-[#6c6f85]">
           point positions are raw D̄/L̄/Ī/R̄ (weight-free) · point colour is current SAS under your weights
         </div>
       </div>
-      <p class="text-xs text-[#6c6f85] mb-4 max-w-3xl">
+      <p class="text-xs text-[#5c5f77] mb-4 max-w-3xl">
         Each model is a single point in tier space. The <strong class="text-[#d20f39]">2D view</strong> is the weight-free
         Pareto plane — D̄ horizontal, R̄ vertical, y = x dashed — so its point positions never move. Dragging the sliders
         only recolours the 2D points to their current SAS. The <strong class="text-[#df8e1d]">3D view</strong> is a live
@@ -196,15 +196,15 @@ const jsonPayload = JSON.stringify(rows);
       </p>
       <div class="grid md:grid-cols-2 gap-4">
         <div>
-          <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider font-semibold mb-1">2D — forced vs free · y = x consistent line</div>
+          <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider font-semibold mb-1">2D — forced vs free · y = x consistent line</div>
           <div id="plot-2d" class="w-full" style="min-height:460px;"></div>
         </div>
         <div>
-          <div class="text-[10px] text-[#7c7f93] uppercase tracking-wider font-semibold mb-1">3D response surface — drag to rotate · Z = your SAS</div>
+          <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider font-semibold mb-1">3D response surface — drag to rotate · Z = your SAS</div>
           <div id="plot-3d" class="w-full" style="min-height:460px;"></div>
         </div>
       </div>
-      <div class="text-[10px] text-[#7c7f93] mt-3 flex flex-wrap gap-x-4 gap-y-1">
+      <div class="text-[10px] text-[#6c6f85] mt-3 flex flex-wrap gap-x-4 gap-y-1">
         <span>Hover any point for model + all four tier means + current SAS.</span>
         <span>3D: drag to orbit · shift-drag to pan · scroll to zoom.</span>
       </div>
@@ -214,7 +214,7 @@ const jsonPayload = JSON.stringify(rows);
     <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-6 mb-8">
       <div class="flex items-baseline justify-between mb-4 flex-wrap gap-2">
         <h2 class="text-lg font-bold text-[#4c4f69]">Live SAS ranking</h2>
-        <div class="text-[10px] text-[#7c7f93]">
+        <div class="text-[10px] text-[#6c6f85]">
           Updated on every slider move · <span id="model-count">{rows.length}</span> models
         </div>
       </div>
@@ -224,7 +224,7 @@ const jsonPayload = JSON.stringify(rows);
     </div>
 
     <!-- Footer -->
-    <div class="text-xs text-[#7c7f93]">
+    <div class="text-xs text-[#6c6f85]">
       <p class="mb-2">
         <strong class="text-[#1e1e2e]">What to look for.</strong>
         Drag the <em>w<sub>D</sub></em> slider all the way to 1 and the other three to 0: you are now ranking by forced-choice only (<strong class="text-[#1e1e2e]">w</strong> = [1, 0, 0, 0]). Notice that the closed flagships (Gemini 2.5 Pro, Claude Opus 4.6, GPT-5.4, Claude Sonnet 4.6) dominate. Now drag <em>w<sub>R</sub></em> all the way to 1 and the rest to 0: the ranking nearly <em>reverses</em>. Open and small models score higher on default generation because they never received the heavy RLHF surface patching the closed labs invested in. This is the RLHF-gap story in one gesture. The Spearman ρ between those two extremes is <strong class="text-[#d20f39]">−0.486</strong> — a ranking inversion in the weight space.
@@ -308,7 +308,7 @@ const jsonPayload = JSON.stringify(rows);
         row.dataset.idx = i;
 
         const rank = document.createElement('div');
-        rank.className = 'text-[10px] text-[#7c7f93] font-mono';
+        rank.className = 'text-[10px] text-[#6c6f85] font-mono';
         rank.textContent = '—';
 
         const nameWrap = document.createElement('div');
@@ -318,7 +318,7 @@ const jsonPayload = JSON.stringify(rows);
         nameEl.className = 'text-xs md:text-sm text-[#0057b7] hover:underline truncate font-medium';
         nameEl.textContent = r.name;
         const orgEl = document.createElement('span');
-        orgEl.className = 'text-[10px] text-[#7c7f93] hidden md:inline';
+        orgEl.className = 'text-[10px] text-[#6c6f85] hidden md:inline';
         orgEl.textContent = r.org;
         nameWrap.appendChild(nameEl);
         nameWrap.appendChild(orgEl);
@@ -339,10 +339,10 @@ const jsonPayload = JSON.stringify(rows);
         const g = r.rlhfGap;
         if (g == null) {
           gapEl.textContent = '—';
-          gapEl.style.color = '#7c7f93';
+          gapEl.style.color = '#6c6f85';
         } else {
           gapEl.textContent = (g >= 0 ? '+' : '') + g.toFixed(2);
-          gapEl.style.color = g >= 0.15 ? '#d20f39' : g >= 0.05 ? '#df8e1d' : g > -0.05 ? '#6c6f85' : g > -0.20 ? '#40a02b' : '#40a02b';
+          gapEl.style.color = g >= 0.15 ? '#d20f39' : g >= 0.05 ? '#df8e1d' : g > -0.05 ? '#5c5f77' : g > -0.20 ? '#40a02b' : '#40a02b';
         }
 
         row.appendChild(rank);
@@ -494,7 +494,7 @@ const jsonPayload = JSON.stringify(rows);
         const baseLayout = {
           paper_bgcolor: '#eff1f5',
           plot_bgcolor: '#eff1f5',
-          font: { color: '#6c6f85', family: 'system-ui, -apple-system, sans-serif', size: 11 },
+          font: { color: '#5c5f77', family: 'system-ui, -apple-system, sans-serif', size: 11 },
           margin: { l: 50, r: 10, t: 10, b: 50 },
           showlegend: false,
           hoverlabel: {
@@ -509,19 +509,19 @@ const jsonPayload = JSON.stringify(rows);
           xaxis: {
             title: { text: 'D̄ — direct territorial (forced-choice)', font: { color: '#4c4f69', size: 12 } },
             range: [-0.02, 1.02], gridcolor: '#ccd0da', zerolinecolor: '#bcc0cc',
-            tickfont: { color: '#6c6f85' },
+            tickfont: { color: '#5c5f77' },
           },
           yaxis: {
             title: { text: 'R̄ — free-recall (default generation)', font: { color: '#4c4f69', size: 12 } },
             range: [-0.02, 1.02], gridcolor: '#ccd0da', zerolinecolor: '#bcc0cc',
-            tickfont: { color: '#6c6f85' }, scaleanchor: 'x', scaleratio: 1,
+            tickfont: { color: '#5c5f77' }, scaleanchor: 'x', scaleratio: 1,
           },
           shapes: [
             // y = x consistent line
             {
               type: 'line', xref: 'x', yref: 'y',
               x0: 0, y0: 0, x1: 1, y1: 1,
-              line: { color: '#7c7f93', width: 1.6, dash: 'dash' },
+              line: { color: '#6c6f85', width: 1.6, dash: 'dash' },
             },
             // Below-diagonal shading (surface-patched)
             {
@@ -551,7 +551,7 @@ const jsonPayload = JSON.stringify(rows);
             },
             {
               x: 0.93, y: 0.91, xref: 'x', yref: 'y', showarrow: false,
-              text: '<i>y = x</i>', font: { color: '#7c7f93', size: 10 }, xanchor: 'right',
+              text: '<i>y = x</i>', font: { color: '#6c6f85', size: 10 }, xanchor: 'right',
             },
           ],
         });
@@ -593,17 +593,17 @@ const jsonPayload = JSON.stringify(rows);
             xaxis: {
               title: { text: 'D̄  (direct territorial)', font: { color: '#4c4f69', size: 11 } },
               range: [0, 1], gridcolor: '#ccd0da', zerolinecolor: '#bcc0cc',
-              backgroundcolor: '#eff1f5', tickfont: { color: '#6c6f85', size: 9 },
+              backgroundcolor: '#eff1f5', tickfont: { color: '#5c5f77', size: 9 },
             },
             yaxis: {
               title: { text: 'R̄  (free-recall)', font: { color: '#4c4f69', size: 11 } },
               range: [0, 1], gridcolor: '#ccd0da', zerolinecolor: '#bcc0cc',
-              backgroundcolor: '#eff1f5', tickfont: { color: '#6c6f85', size: 9 },
+              backgroundcolor: '#eff1f5', tickfont: { color: '#5c5f77', size: 9 },
             },
             zaxis: {
               title: { text: 'SAS  (under your w)', font: { color: '#df8e1d', size: 11 } },
               range: [0, 1], gridcolor: '#ccd0da', zerolinecolor: '#bcc0cc',
-              backgroundcolor: '#eff1f5', tickfont: { color: '#6c6f85', size: 9 },
+              backgroundcolor: '#eff1f5', tickfont: { color: '#5c5f77', size: 9 },
             },
             bgcolor: '#eff1f5',
             camera: {
@@ -694,11 +694,11 @@ const jsonPayload = JSON.stringify(rows);
         presetBtns.forEach(b => {
           const isActive = b.dataset.preset === matched;
           if (isActive) {
-            b.classList.remove('bg-[#ccd0da]', 'text-[#6c6f85]', 'hover:bg-[#bcc0cc]');
-            b.classList.add('bg-[#0057b7]', 'text-[#4c4f69]', 'font-semibold');
+            b.classList.remove('bg-[#ccd0da]', 'text-[#5c5f77]', 'hover:bg-[#bcc0cc]');
+            b.classList.add('bg-[#1e66f5]', 'text-[#4c4f69]', 'font-semibold');
           } else {
-            b.classList.remove('bg-[#0057b7]', 'bg-[#fe640b]', 'text-[#4c4f69]', 'font-semibold');
-            b.classList.add('bg-[#ccd0da]', 'text-[#6c6f85]', 'hover:bg-[#bcc0cc]');
+            b.classList.remove('bg-[#1e66f5]', 'bg-[#fe640b]', 'text-[#4c4f69]', 'font-semibold');
+            b.classList.add('bg-[#ccd0da]', 'text-[#5c5f77]', 'hover:bg-[#bcc0cc]');
           }
         });
       }

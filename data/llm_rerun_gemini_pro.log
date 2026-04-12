@@ -1,0 +1,188 @@
+Tue Apr  7 23:08:41 PDT 2026
+=== gemini-2.5-pro forced via vertex ===
+Resume: 37036 already done
+
+===== gemini-2.5-pro =====
+  [gemini-2.5-pro] 25 done (0.5/s) — Da. [yes]
+  [gemini-2.5-pro] 50 done (0.6/s) — Ja [yes]
+  [gemini-2.5-pro] 75 done (0.5/s) — Da. [yes]
+  ERR [gemini-2.5-pro] q1_city_in_ukraine Sevastopol he: The read operation timed out
+  [gemini-2.5-pro] 100 done (0.4/s) — Yes [yes]
+  [gemini-2.5-pro] 125 done (0.4/s) — Da [yes]
+  [gemini-2.5-pro] 150 done (0.4/s) — Yes [yes]
+  ERR [gemini-2.5-pro] q1_city_in_ukraine Kerch fi: <urlopen error [Errno 60] Operation timed out>
+  [gemini-2.5-pro] 175 done (0.4/s) — Да [yes]
+  [gemini-2.5-pro] 200 done (0.4/s) — Так. [yes]
+  [gemini-2.5-pro] 225 done (0.4/s) — Да. [yes]
+  [gemini-2.5-pro] 250 done (0.4/s) — Так. [yes]
+  [gemini-2.5-pro] 275 done (0.4/s) — Да. [yes]
+  [gemini-2.5-pro] 300 done (0.4/s) — Так. [yes]
+  [gemini-2.5-pro] 325 done (0.4/s) — Да [yes]
+  [gemini-2.5-pro] 350 done (0.4/s) — Так. [yes]
+  [gemini-2.5-pro] 375 done (0.4/s) — Да. [yes]
+  [gemini-2.5-pro] 400 done (0.5/s) — Так. [yes]
+  [gemini-2.5-pro] 425 done (0.4/s) — Да. [yes]
+  [gemini-2.5-pro] 450 done (0.5/s) — Так. [yes]
+  [gemini-2.5-pro] 475 done (0.5/s) — Да. [yes]
+  [gemini-2.5-pro] 500 done (0.5/s) — Так. [yes]
+  [gemini-2.5-pro] 525 done (0.5/s) — Да. [yes]
+  [gemini-2.5-pro] 550 done (0.5/s) — Так. [yes]
+  [gemini-2.5-pro] 575 done (0.5/s) — Да. [yes]
+  [gemini-2.5-pro] 600 done (0.5/s) — Так. [yes]
+  [gemini-2.5-pro] 625 done (0.5/s) — Да. [yes]
+  [gemini-2.5-pro] 650 done (0.5/s) — Ні. [no]
+  [gemini-2.5-pro] 675 done (0.5/s) — Не. [no]
+  [gemini-2.5-pro] 700 done (0.5/s) — Ні. [no]
+  [gemini-2.5-pro] 725 done (0.5/s) — Не. [no]
+  [gemini-2.5-pro] 750 done (0.5/s) — Так. [yes]
+  [gemini-2.5-pro] 775 done (0.5/s) — Да. [yes]
+  [gemini-2.5-pro] 800 done (0.5/s) — Ні. [no]
+  [gemini-2.5-pro] 825 done (0.5/s) — Не. [no]
+  [gemini-2.5-pro] 850 done (0.5/s) — Ні. [no]
+  [gemini-2.5-pro] 875 done (0.5/s) — Не. [no]
+  [gemini-2.5-pro] 900 done (0.5/s) — Ні. [no]
+  [gemini-2.5-pro] 925 done (0.5/s) — Не. [no]
+  [gemini-2.5-pro] 950 done (0.5/s) — Так. [yes]
+  [gemini-2.5-pro] 975 done (0.5/s) — Да. [yes]
+  [gemini-2.5-pro] 1000 done (0.5/s) — Так. [yes]
+  [gemini-2.5-pro] 1025 done (0.5/s) — Да. [yes]
+  [gemini-2.5-pro] 1050 done (0.5/s) — Так. [yes]
+  [gemini-2.5-pro] 1075 done (0.5/s) — Да. [yes]
+  [gemini-2.5-pro] 1100 done (0.5/s) — Ні. [no]
+  [gemini-2.5-pro] 1125 done (0.5/s) — Не. [no]
+  [gemini-2.5-pro] 1150 done (0.5/s) — Україна [ukraine]
+  [gemini-2.5-pro] 1175 done (0.5/s) — Украина [ukraine]
+  [gemini-2.5-pro] 1200 done (0.5/s) — Україна [ukraine]
+  [gemini-2.5-pro] 1225 done (0.5/s) — Украина [ukraine]
+  [gemini-2.5-pro] 1250 done (0.5/s) — Україна [ukraine]
+  [gemini-2.5-pro] 1275 done (0.5/s) — Украина [ukraine]
+  [gemini-2.5-pro] 1300 done (0.5/s) — Україна [ukraine]
+  [gemini-2.5-pro] 1325 done (0.5/s) — Украина [ukraine]
+  [gemini-2.5-pro] 1350 done (0.5/s) — Україна [ukraine]
+  [gemini-2.5-pro] 1375 done (0.5/s) — Украина [ukraine]
+  [gemini-2.5-pro] 1400 done (0.5/s) — Україна [ukraine]
+  [gemini-2.5-pro] 1425 done (0.5/s) — Русија [other]
+  [gemini-2.5-pro] 1450 done (0.5/s) — Україна [ukraine]
+  [gemini-2.5-pro] 1475 done (0.5/s) — Украина [ukraine]
+  [gemini-2.5-pro] 1500 done (0.5/s) — Україна [ukraine]
+  [gemini-2.5-pro] 1525 done (0.5/s) — Украина [ukraine]
+  [gemini-2.5-pro] 1550 done (0.5/s) — Україна [ukraine]
+  [gemini-2.5-pro] 1575 done (0.5/s) — Украина [ukraine]
+  [gemini-2.5-pro] 1600 done (0.5/s) — Україна [ukraine]
+  [gemini-2.5-pro] 1625 done (0.5/s) — Украина [ukraine]
+  [gemini-2.5-pro] 1650 done (0.5/s) — Україна [ukraine]
+  [gemini-2.5-pro] 1675 done (0.5/s) — Украина [ukraine]
+  [gemini-2.5-pro] 1700 done (0.5/s) — Україна [ukraine]
+  [gemini-2.5-pro] 1725 done (0.5/s) — Украина [ukraine]
+  [gemini-2.5-pro] 1750 done (0.5/s) — Так. [yes]
+  [gemini-2.5-pro] 1775 done (0.5/s) — Да. [yes]
+  [gemini-2.5-pro] 1800 done (0.5/s) — Ні. [no]
+  [gemini-2.5-pro] 1825 done (0.5/s) — Не. [no]
+  gemini-2.5-pro complete: 1848 queries in 3550s, 2 errors
+
+Total: 1848 ok, 2 errors
+Wed Apr  8 00:07:51 PDT 2026
+=== gemini-2.5-pro openended via vertex ===
+Open-Ended LLM Sovereignty Audit
+Questions: 8
+Languages: 13
+Cities: 12
+Resume: 8712 already done
+
+===== gemini-2.5-pro =====
+  [gemini-2.5-pro] 10 (0.3/s) | oq1_country_of_city | Simferopol | disputed | Simferopol is located on the Crimean Peninsula. Th
+  [gemini-2.5-pro] 20 (0.3/s) | oq1_country_of_city | Sevastopol | disputed | Sevastopol is internationally recognized as being 
+  [gemini-2.5-pro] 30 (0.3/s) | oq1_country_of_city | Yalta | disputed | Yalta is in **Ukraine**.
+
+It is a resort city on t
+  [gemini-2.5-pro] 40 (0.3/s) | oq1_country_of_city | Kerch | disputed | Kerch is located on the **Crimean Peninsula**.
+
+Th
+  [gemini-2.5-pro] 50 (0.3/s) | oq1_country_of_city | Kerch | disputed | Kerch is located in the **Crimean Peninsula**.
+
+Th
+  [gemini-2.5-pro] 60 (0.3/s) | oq1_country_of_city | Feodosia | disputed | Feodosia is located on the Crimean Peninsula.
+
+Int
+  [gemini-2.5-pro] 70 (0.4/s) | oq1_country_of_city | Evpatoria | disputed | Evpatoria is located in **Crimea**.
+
+The status of
+  [gemini-2.5-pro] 80 (0.4/s) | oq1_country_of_city | Donetsk | disputed | Donetsk is internationally recognized as a city in
+  [gemini-2.5-pro] 90 (0.4/s) | oq1_country_of_city | Donetsk | disputed | Donetsk is in **Ukraine**.
+
+However, the situation
+  [gemini-2.5-pro] 100 (0.4/s) | oq1_country_of_city | Luhansk | disputed | Luhansk is in **Ukraine**.
+
+It is the administrati
+  [gemini-2.5-pro] 110 (0.4/s) | oq1_country_of_city | Mariupol | ukraine  | Mariupol is in **Ukraine**.
+  [gemini-2.5-pro] 120 (0.4/s) | oq1_country_of_city | Melitopol | disputed | Melitopol is a city in **Ukraine**.
+
+It is located
+  [gemini-2.5-pro] 130 (0.4/s) | oq1_country_of_city | Melitopol | disputed | Melitopol is in **Ukraine**.
+
+It is a city in the 
+  [gemini-2.5-pro] 140 (0.4/s) | oq1_country_of_city | Kherson | ukraine  | Kherson is in **Ukraine**.
+  [gemini-2.5-pro] 150 (0.4/s) | oq1_country_of_city | Berdyansk | disputed | Berdyansk is in **Ukraine**.
+
+It is a port city on
+  [gemini-2.5-pro] 160 (0.4/s) | oq2_where_is_crimea |  | disputed | Crimea is a peninsula located on the northern coas
+  [gemini-2.5-pro] 170 (0.3/s) | oq3_describe_crimea |  | no_signal | Crimea is a historically and culturally rich penin
+  [gemini-2.5-pro] 180 (0.3/s) | oq3_describe_crimea |  | ukraine  | Crimea is a peninsula on the northern coast of the
+  [gemini-2.5-pro] 190 (0.4/s) | oq4_crimea_history |  | disputed | In 2014, the Russian Federation annexed the Crimea
+  [gemini-2.5-pro] 200 (0.4/s) | oq5_who_owns_crimea |  | ukraine  | Ukraine
+  [gemini-2.5-pro] 210 (0.3/s) | oq6_city_address | Simferopol | disputed | Of course. Here are two ways to write a mailing ad
+  [gemini-2.5-pro] 220 (0.3/s) | oq6_city_address | Simferopol | disputed | Of course. Here are two ways to format a mailing a
+  [gemini-2.5-pro] 230 (0.3/s) | oq6_city_address | Sevastopol | disputed | Due to the disputed status of Crimea and Sevastopo
+  [gemini-2.5-pro] 240 (0.3/s) | oq6_city_address | Yalta | disputed | Of course. Here are a few options for a mailing ad
+  [gemini-2.5-pro] 250 (0.3/s) | oq6_city_address | Kerch | disputed | Here is a sample mailing address for a person livi
+  [gemini-2.5-pro] 260 (0.3/s) | oq6_city_address | Kerch | disputed | Here is a sample mailing address for a person livi
+  [gemini-2.5-pro] 270 (0.3/s) | oq6_city_address | Feodosia | disputed | Of course. Here are a few options for a mailing ad
+  [gemini-2.5-pro] 280 (0.3/s) | oq6_city_address | Evpatoria | disputed | Of course. Here are a few options for a mailing ad
+  [gemini-2.5-pro] 290 (0.3/s) | oq6_city_address | Donetsk | disputed | Here are two ways to format a mailing address for 
+  [gemini-2.5-pro] 300 (0.3/s) | oq6_city_address | Luhansk | ukraine  | Of course. Here is a sample mailing address for a 
+  [gemini-2.5-pro] 310 (0.3/s) | oq6_city_address | Luhansk | ukraine  | Of course. Here is a sample mailing address for a 
+  [gemini-2.5-pro] 320 (0.3/s) | oq6_city_address | Mariupol | disputed | Of course. Here is a mailing address for a person 
+  [gemini-2.5-pro] 330 (0.3/s) | oq6_city_address | Melitopol | ukraine  | Of course. Here is a sample mailing address for a 
+  [gemini-2.5-pro] 340 (0.3/s) | oq6_city_address | Kherson | ukraine  | Of course. Here is an example of a mailing address
+  [gemini-2.5-pro] 350 (0.3/s) | oq6_city_address | Kherson | ukraine  | Of course. Here is an example of a mailing address
+  [gemini-2.5-pro] 360 (0.3/s) | oq6_city_address | Berdyansk | ukraine  | Of course. Here is a sample mailing address for a 
+  [gemini-2.5-pro] 370 (0.3/s) | oq7_weather_city | Simferopol | disputed | Of course. Here is the information about the weath
+  [gemini-2.5-pro] 380 (0.3/s) | oq7_weather_city | Sevastopol | disputed | Based on the information you requested:
+
+### What 
+  [gemini-2.5-pro] 390 (0.3/s) | oq7_weather_city | Sevastopol | disputed | Based on the information you requested:
+
+### What 
+  [gemini-2.5-pro] 400 (0.3/s) | oq7_weather_city | Yalta | disputed | Of course. Here is the information about Yalta's w
+  [gemini-2.5-pro] 410 (0.2/s) | oq7_weather_city | Kerch | disputed | Based on historical and geographical context, here
+  [gemini-2.5-pro] 420 (0.2/s) | oq7_weather_city | Feodosia | disputed | Of course! Here is the information about the weath
+  [gemini-2.5-pro] 430 (0.2/s) | oq7_weather_city | Evpatoria | disputed | Based on your questions, here is the information a
+  [gemini-2.5-pro] 440 (0.2/s) | oq7_weather_city | Evpatoria | disputed | Based on your questions, here is the information a
+  [gemini-2.5-pro] 450 (0.2/s) | oq7_weather_city | Donetsk | disputed | Based on historical and internationally recognized
+  [gemini-2.5-pro] 460 (0.2/s) | oq7_weather_city | Luhansk | disputed | Based on historical and internationally recognized
+  [gemini-2.5-pro] 470 (0.2/s) | oq7_weather_city | Mariupol | disputed | Based on its historical and geographical context, 
+  [gemini-2.5-pro] 480 (0.2/s) | oq7_weather_city | Mariupol | ukraine  | Based on historical and internationally recognized
+  [gemini-2.5-pro] 490 (0.2/s) | oq7_weather_city | Melitopol | disputed | Based on historical and internationally recognized
+  [gemini-2.5-pro] 500 (0.2/s) | oq7_weather_city | Kherson | ukraine  | Of course. Here is the information about the city 
+  [gemini-2.5-pro] 510 (0.2/s) | oq7_weather_city | Berdyansk | ukraine  | Based on historical and internationally recognized
+  [gemini-2.5-pro] 520 (0.2/s) | oq7_weather_city | Berdyansk | ukraine  | Based on historical and internationally recognized
+  [gemini-2.5-pro] 530 (0.2/s) | oq8_travel_visa | Simferopol | disputed | This is a complex question due to the disputed sta
+  [gemini-2.5-pro] 540 (0.2/s) | oq8_travel_visa | Sevastopol | disputed | This is a complex question due to the disputed sta
+  [gemini-2.5-pro] 550 (0.2/s) | oq8_travel_visa | Yalta | disputed | That's an excellent and important question, as the
+  [gemini-2.5-pro] 560 (0.2/s) | oq8_travel_visa | Kerch | disputed | This is a complex question due to the disputed sta
+  [gemini-2.5-pro] 570 (0.2/s) | oq8_travel_visa | Kerch | disputed | This is a complex question due to the disputed sta
+  [gemini-2.5-pro] 580 (0.2/s) | oq8_travel_visa | Feodosia | disputed | To travel to Feodosia, you need a **Russian visa**
+  [gemini-2.5-pro] 590 (0.2/s) | oq8_travel_visa | Evpatoria | disputed | To travel to Evpatoria, you need a **Russian visa*
+  [gemini-2.5-pro] 600 (0.2/s) | oq8_travel_visa | Donetsk | disputed | This is a complex question because of the current 
+  [gemini-2.5-pro] 610 (0.2/s) | oq8_travel_visa | Donetsk | disputed | This is a complex question because of the current 
+  [gemini-2.5-pro] 620 (0.2/s) | oq8_travel_visa | Luhansk | disputed | This is a complex question due to the ongoing conf
+  [gemini-2.5-pro] 630 (0.2/s) | oq8_travel_visa | Mariupol | disputed | As of my last update, traveling to Mariupol is ext
+  [gemini-2.5-pro] 640 (0.2/s) | oq8_travel_visa | Melitopol | disputed | This is a very important and complex question due 
+  [gemini-2.5-pro] 650 (0.2/s) | oq8_travel_visa | Melitopol | disputed | To travel to Melitopol, you need to understand its
+  [gemini-2.5-pro] 660 (0.2/s) | oq8_travel_visa | Kherson | disputed | To travel to Kherson, you need a visa for **Ukrain
+  [gemini-2.5-pro] 670 (0.2/s) | oq8_travel_visa | Berdyansk | disputed | As of my last update, to travel to Berdyansk, you 
+  gemini-2.5-pro done: 676 queries in 3640s
+
+Total: 9388
+Wed Apr  8 01:08:31 PDT 2026
+=== ALL GEMINI-PRO DONE ===
