@@ -76,13 +76,9 @@ def fetch_json(url: str, timeout: int = 90) -> dict:
 def sparql_query(query: str) -> list[dict]:
     """Run a SPARQL query against the Wikidata endpoint."""
     url = f"{SPARQL_ENDPOINT}?query={urllib.parse.quote(query)}&format=json"
-    data = fetch_json(url)
+    data = fetch_json(url, timeout=120)
     return data.get("results", {}).get("bindings", [])
 
-
-# ---------------------------------------------------------------------------
-# SCAN 1: Wikidata religious institutions in Crimea
-# ---------------------------------------------------------------------------
 
 def qid_from_uri(uri: str) -> str:
     """Extract QID from Wikidata entity URI."""
@@ -113,34 +109,109 @@ def classify_diocese(diocese_qid: str, diocese_label: str) -> str:
     return "other/unknown"
 
 
+def classify_religion(religion_qid: str, religion_label: str) -> str:
+    """Classify religion from P140."""
+    rl = religion_label.lower()
+    if religion_qid in ("Q3333484", "Q35032"):
+        return "Eastern Orthodoxy"
+    if any(w in rl for w in ["orthodox", "православ"]):
+        return "Eastern Orthodoxy"
+    if any(w in rl for w in ["islam", "muslim", "іслам", "ислам", "sunni", "суні"]):
+        return "Islam"
+    if any(w in rl for w in ["catholic", "католи"]):
+        return "Catholic"
+    if any(w in rl for w in ["jewish", "judaism", "іудаїзм", "иудаизм"]):
+        return "Judaism"
+    if any(w in rl for w in ["karaite", "караїм"]):
+        return "Karaism"
+    if religion_label:
+        return religion_label
+    return "unspecified"
+
+
+# ---------------------------------------------------------------------------
+# SCAN 1: Wikidata religious institutions in Crimea
+# ---------------------------------------------------------------------------
+
 def scan_wikidata_institutions() -> dict:
     """Query Wikidata for all religious buildings in Crimea."""
     print("=" * 70)
     print("SCAN 1: Wikidata religious institutions in Crimea")
     print("=" * 70)
 
-    # Main query: religious buildings located in Crimea (P131 chain)
-    # Q16970 = religious building (includes churches, mosques, etc.)
-    # Q7835 = Crimea
-    query_buildings = """
-SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?diocese ?dioceseLabel ?religion ?religionLabel WHERE {
+    # Strategy: three focused queries — one for Crimea, one for Sevastopol,
+    # one for religious organizations / dioceses. Uses VALUES to enumerate
+    # building types explicitly instead of P279* subclass traversal which
+    # can time out or return massive cross-product results.
+    # Q7835 = Crimea (ARC), Q7525 = Sevastopol
+
+    all_rows = []
+
+    # Query 1: Religious buildings in Crimea (P131+ Q7835)
+    # Uses VALUES for building types to avoid P279* timeout
+    query_crimea = """
+SELECT DISTINCT ?item ?itemLabel ?typeLabel ?country ?countryLabel
+       ?diocese ?dioceseLabel ?religion ?religionLabel
+WHERE {
   ?item wdt:P131+ wd:Q7835 .
-  ?item wdt:P31/wdt:P279* wd:Q16970 .
+  ?item wdt:P31 ?type .
+  VALUES ?type {
+    wd:Q16970  wd:Q32815   wd:Q2977    wd:Q317557
+    wd:Q108325 wd:Q44613   wd:Q1088552 wd:Q1509863
+    wd:Q1128397 wd:Q56242820 wd:Q34627  wd:Q160742
+    wd:Q4989906 wd:Q3947    wd:Q2031836 wd:Q1649060
+  }
   OPTIONAL { ?item wdt:P17 ?country }
   OPTIONAL { ?item wdt:P708 ?diocese }
   OPTIONAL { ?item wdt:P140 ?religion }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,uk,ru" }
 }
 """
+    print("\n  [1/5] Religious buildings in Crimea (VALUES types)...",
+          end=" ", flush=True)
+    rows1 = sparql_query(query_crimea)
+    print(f"{len(rows1)} results")
+    all_rows.extend(rows1)
+    time.sleep(3)
 
-    print("\n[1/4] Querying religious buildings in Crimea (P131+ Q7835)...")
-    buildings = sparql_query(query_buildings)
-    print(f"  Found {len(buildings)} results")
-
-    # Also query for Sevastopol (separate admin unit)
+    # Query 2: Religious buildings in Sevastopol (P131+ Q7525)
     query_sevastopol = """
-SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?diocese ?dioceseLabel ?religion ?religionLabel WHERE {
+SELECT DISTINCT ?item ?itemLabel ?typeLabel ?country ?countryLabel
+       ?diocese ?dioceseLabel ?religion ?religionLabel
+WHERE {
   ?item wdt:P131+ wd:Q7525 .
+  ?item wdt:P31 ?type .
+  VALUES ?type {
+    wd:Q16970  wd:Q32815   wd:Q2977    wd:Q317557
+    wd:Q108325 wd:Q44613   wd:Q1088552 wd:Q1509863
+    wd:Q1128397 wd:Q56242820 wd:Q34627  wd:Q160742
+    wd:Q4989906 wd:Q3947    wd:Q2031836 wd:Q1649060
+  }
+  OPTIONAL { ?item wdt:P17 ?country }
+  OPTIONAL { ?item wdt:P708 ?diocese }
+  OPTIONAL { ?item wdt:P140 ?religion }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,uk,ru" }
+}
+"""
+    print("  [2/5] Religious buildings in Sevastopol (VALUES types)...",
+          end=" ", flush=True)
+    rows2 = sparql_query(query_sevastopol)
+    print(f"{len(rows2)} results")
+    all_rows.extend(rows2)
+    time.sleep(3)
+
+    # Query 3: Also catch items using P279* but only for the top-level
+    # religious building class (Q16970) in both locations. This catches
+    # items typed as subclasses of religious building.
+    query_subclass = """
+SELECT DISTINCT ?item ?itemLabel ?typeLabel ?country ?countryLabel
+       ?diocese ?dioceseLabel ?religion ?religionLabel
+WHERE {
+  {
+    ?item wdt:P131+ wd:Q7835 .
+  } UNION {
+    ?item wdt:P131+ wd:Q7525 .
+  }
   ?item wdt:P31/wdt:P279* wd:Q16970 .
   OPTIONAL { ?item wdt:P17 ?country }
   OPTIONAL { ?item wdt:P708 ?diocese }
@@ -148,15 +219,17 @@ SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?diocese ?dioceseLabel
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,uk,ru" }
 }
 """
+    print("  [3/5] Religious buildings via subclass traversal...",
+          end=" ", flush=True)
+    rows3 = sparql_query(query_subclass)
+    print(f"{len(rows3)} results")
+    all_rows.extend(rows3)
+    time.sleep(3)
 
-    print("\n[2/4] Querying religious buildings in Sevastopol (P131+ Q7525)...")
-    time.sleep(2)  # Be polite to Wikidata
-    sevastopol = sparql_query(query_sevastopol)
-    print(f"  Found {len(sevastopol)} results")
-
-    # Query for religious organizations/dioceses covering Crimea
+    # Query 4: Religious organizations / dioceses in Crimea
+    org_rows = []
     query_orgs = """
-SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?hq ?hqLabel WHERE {
+SELECT DISTINCT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?hq ?hqLabel WHERE {
   {
     ?item wdt:P31/wdt:P279* wd:Q2061186 .
     ?item wdt:P131+ wd:Q7835 .
@@ -164,45 +237,49 @@ SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?hq ?hqLabel WHERE {
     ?item wdt:P31/wdt:P279* wd:Q2061186 .
     ?item wdt:P159 ?hq .
     ?hq wdt:P131+ wd:Q7835 .
-  }
-  OPTIONAL { ?item wdt:P17 ?country }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,uk,ru" }
-}
-"""
-
-    print("\n[3/4] Querying religious organizations in Crimea...")
-    time.sleep(2)
-    orgs = sparql_query(query_orgs)
-    print(f"  Found {len(orgs)} results")
-
-    # Also query monasteries specifically (Q44613)
-    query_monasteries = """
-SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?diocese ?dioceseLabel ?religion ?religionLabel WHERE {
-  {
-    ?item wdt:P131+ wd:Q7835 .
-    ?item wdt:P31/wdt:P279* wd:Q44613 .
   } UNION {
+    ?item wdt:P31/wdt:P279* wd:Q2061186 .
     ?item wdt:P131+ wd:Q7525 .
-    ?item wdt:P31/wdt:P279* wd:Q44613 .
   }
   OPTIONAL { ?item wdt:P17 ?country }
-  OPTIONAL { ?item wdt:P708 ?diocese }
-  OPTIONAL { ?item wdt:P140 ?religion }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,uk,ru" }
 }
 """
+    print("  [4/5] Religious organizations in Crimea + Sevastopol...",
+          end=" ", flush=True)
+    org_rows = sparql_query(query_orgs)
+    print(f"{len(org_rows)} results")
+    time.sleep(3)
 
-    print("\n[4/4] Querying monasteries in Crimea + Sevastopol...")
-    time.sleep(2)
-    monasteries = sparql_query(query_monasteries)
-    print(f"  Found {len(monasteries)} results")
+    # Query 5: Dioceses covering Crimea
+    diocese_rows = []
+    query_dioceses = """
+SELECT DISTINCT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?parent ?parentLabel WHERE {
+  {
+    ?item wdt:P31/wdt:P279* wd:Q665487 .
+    ?item wdt:P1001 wd:Q7835 .
+  } UNION {
+    ?item wdt:P31/wdt:P279* wd:Q665487 .
+    ?item wdt:P1001 wd:Q7525 .
+  } UNION {
+    ?item wdt:P31/wdt:P279* wd:Q665487 .
+    ?item wdt:P131+ wd:Q7835 .
+  }
+  OPTIONAL { ?item wdt:P17 ?country }
+  OPTIONAL { ?item wdt:P749 ?parent }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,uk,ru" }
+}
+"""
+    print("  [5/5] Dioceses with jurisdiction over Crimea...",
+          end=" ", flush=True)
+    diocese_rows = sparql_query(query_dioceses)
+    print(f"{len(diocese_rows)} results")
 
-    # Merge all results, dedup by QID
-    all_results = buildings + sevastopol + monasteries
+    # Dedup all building/institution results by QID
     seen = set()
     institutions = []
 
-    for row in all_results:
+    for row in all_rows:
         qid = qid_from_uri(row.get("item", {}).get("value", ""))
         if not qid or qid in seen:
             continue
@@ -233,6 +310,9 @@ SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?diocese ?dioceseLabel
         # Classify diocese affiliation
         diocese_class = classify_diocese(diocese_qid, diocese_label) if diocese_qid else "none"
 
+        # Classify religion
+        religion_class = classify_religion(religion_qid, religion_label)
+
         institutions.append({
             "qid": qid,
             "label": label,
@@ -244,14 +324,17 @@ SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?diocese ?dioceseLabel
             "diocese_affiliation": diocese_class,
             "religion_qid": religion_qid,
             "religion_label": religion_label,
+            "religion_class": religion_class,
         })
 
     # Process organizations
+    org_seen = set()
     org_items = []
-    for row in orgs:
+    for row in org_rows:
         qid = qid_from_uri(row.get("item", {}).get("value", ""))
-        if not qid:
+        if not qid or qid in org_seen:
             continue
+        org_seen.add(qid)
         label = row.get("itemLabel", {}).get("value", "")
         type_label = row.get("typeLabel", {}).get("value", "")
         country_uri = row.get("country", {}).get("value", "")
@@ -276,6 +359,40 @@ SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?diocese ?dioceseLabel
             "headquarters": hq_label,
         })
 
+    # Process dioceses
+    dioc_seen = set()
+    diocese_items = []
+    for row in diocese_rows:
+        qid = qid_from_uri(row.get("item", {}).get("value", ""))
+        if not qid or qid in dioc_seen:
+            continue
+        dioc_seen.add(qid)
+        label = row.get("itemLabel", {}).get("value", "")
+        type_label = row.get("typeLabel", {}).get("value", "")
+        country_uri = row.get("country", {}).get("value", "")
+        country_qid = qid_from_uri(country_uri)
+        parent_label = row.get("parentLabel", {}).get("value", "")
+
+        if country_qid == "Q212":
+            country_class = "Ukraine"
+        elif country_qid == "Q159":
+            country_class = "Russia"
+        elif country_qid:
+            country_class = COUNTRY_NAMES.get(country_qid, country_qid)
+        else:
+            country_class = "missing"
+
+        affiliation = classify_diocese(qid, label)
+
+        diocese_items.append({
+            "qid": qid,
+            "label": label,
+            "type": type_label,
+            "country": country_class,
+            "parent_org": parent_label,
+            "affiliation": affiliation,
+        })
+
     # Compute counts
     country_counts = {}
     for inst in institutions:
@@ -289,7 +406,7 @@ SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?diocese ?dioceseLabel
 
     religion_counts = {}
     for inst in institutions:
-        r = inst["religion_label"] or "unspecified"
+        r = inst["religion_class"]
         religion_counts[r] = religion_counts.get(r, 0) + 1
 
     # Print summary
@@ -305,14 +422,20 @@ SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?diocese ?dioceseLabel
     for k, v in sorted(diocese_counts.items(), key=lambda x: -x[1]):
         print(f"    {k}: {v}")
 
-    print(f"\n  Religion (P140) distribution:")
+    print(f"\n  Religion classification:")
     for k, v in sorted(religion_counts.items(), key=lambda x: -x[1]):
         print(f"    {k}: {v}")
 
     if org_items:
         print(f"\n  Religious organizations in Crimea: {len(org_items)}")
         for o in org_items:
-            print(f"    - {o['label']} ({o['type']}) — P17={o['country']}")
+            print(f"    - {o['label']} ({o['type']}) -- P17={o['country']}")
+
+    if diocese_items:
+        print(f"\n  Dioceses covering Crimea: {len(diocese_items)}")
+        for d in diocese_items:
+            print(f"    - {d['label']} ({d['type']}) -- P17={d['country']}, "
+                  f"affiliation={d['affiliation']}, parent={d['parent_org']}")
 
     result = {
         "scan": "wikidata_religious_institutions",
@@ -323,6 +446,7 @@ SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?diocese ?dioceseLabel
         "religion_counts": religion_counts,
         "institutions": institutions,
         "organizations": org_items,
+        "dioceses": diocese_items,
     }
 
     return result
@@ -334,52 +458,44 @@ SELECT ?item ?itemLabel ?typeLabel ?country ?countryLabel ?diocese ?dioceseLabel
 
 KEY_SITES = [
     {
-        "name": "Chersonesus",
-        "qid": "Q184948",
-        "en_title": "Chersonesus",
-        "description": "Ancient Greek colony, site of 'baptism of Rus'",
+        "name": "Chersonesus (ancient city)",
+        "qid": "Q638445",
+        "description": "Ancient Greek colony in Sevastopol, site of 'baptism of Rus'",
     },
     {
-        "name": "St. Vladimir Cathedral, Sevastopol",
-        "qid": "Q4187523",
-        "en_title": "Saint_Vladimir_Cathedral_(Sevastopol)",
-        "description": "Cathedral commemorating baptism of Vladimir",
+        "name": "St. Vladimir Cathedral, Sevastopol (admirals)",
+        "qid": "Q1848287",
+        "description": "Cathedral commemorating Russian navy admirals in Sevastopol",
+    },
+    {
+        "name": "St. Vladimir Cathedral, Chersonesus",
+        "qid": "Q166800",
+        "description": "Cathedral built on the presumed site of Vladimir's baptism",
     },
     {
         "name": "Khan's Palace, Bakhchysarai",
-        "qid": "Q937457",
-        "en_title": "Bakhchysarai_Palace",
+        "qid": "Q743881",
         "description": "Crimean Tatar palace, UNESCO tentative list",
     },
     {
         "name": "Assumption Monastery (Uspensky)",
-        "qid": "Q4018729",
-        "en_title": "Assumption_Monastery_of_the_Caves",
+        "qid": "Q260494",
         "description": "Medieval cave monastery near Bakhchysarai",
     },
     {
-        "name": "New Chersonesos complex",
-        "qid": None,
-        "en_title": None,
-        "description": "Russian state/church project on UNESCO site (opened 2024)",
-    },
-    {
-        "name": "St. Vladimir Cathedral, Chersonesus",
-        "qid": "Q4187522",
-        "en_title": "Saint_Vladimir_Cathedral,_Chersonesus",
-        "description": "Cathedral built on the presumed site of Vladimir's baptism",
-    },
-    {
         "name": "Juma-Jami Mosque, Yevpatoria",
-        "qid": "Q4131693",
-        "en_title": "Juma-Jami",
+        "qid": "Q2390721",
         "description": "16th-century mosque by Mimar Sinan",
     },
     {
         "name": "Kebir-Jami Mosque, Simferopol",
-        "qid": "Q4222427",
-        "en_title": "Kebir-Jami",
+        "qid": "Q6382405",
         "description": "Oldest mosque in Simferopol",
+    },
+    {
+        "name": "St. George Monastery, Balaklava",
+        "qid": "Q12151107",
+        "description": "Cave monastery near Balaklava, Sevastopol",
     },
 ]
 
@@ -387,15 +503,14 @@ LANGUAGES = ["en", "uk", "ru", "de", "fr"]
 
 
 def classify_framing(description: str, extract: str) -> tuple[str, str]:
-    """Classify framing of description + extract as ukraine/russia/ambiguous/no_signal."""
+    """Classify framing of description + extract."""
     text = (description + " " + extract).lower()
+    desc_lower = description.lower()
 
     label = "no_signal"
     signal = ""
 
     # Check description first (higher priority — it's what Google shows)
-    desc_lower = description.lower()
-
     if "ukraine" in desc_lower or "україн" in desc_lower:
         label = "ukraine"
         signal = "description mentions Ukraine"
@@ -403,7 +518,7 @@ def classify_framing(description: str, extract: str) -> tuple[str, str]:
         label = "russia"
         signal = "description mentions Russia"
 
-    # Check for admin names
+    # Check for admin names (overrides generic mention)
     if "republic of crimea" in desc_lower and "autonomous" not in desc_lower:
         label = "russia"
         signal = "uses 'Republic of Crimea' (Russian admin name)"
@@ -412,10 +527,10 @@ def classify_framing(description: str, extract: str) -> tuple[str, str]:
         signal = "uses 'Autonomous Republic' (Ukrainian admin name)"
     if "республика крым" in desc_lower:
         label = "russia"
-        signal = "uses 'Республика Крым' (Russian admin name)"
+        signal = "uses Russian admin name"
     if "автономна республіка" in desc_lower:
         label = "ukraine"
-        signal = "uses 'Автономна Республіка' (Ukrainian admin name)"
+        signal = "uses Ukrainian admin name"
 
     # If description is neutral, check extract
     if label == "no_signal":
@@ -432,17 +547,19 @@ def classify_framing(description: str, extract: str) -> tuple[str, str]:
     return label, signal
 
 
-def check_wikidata_country(qid: str) -> list[dict]:
-    """Check P17 (country) claims on a Wikidata entity."""
+def get_sitelinks(qid: str) -> dict:
+    """Fetch Wikidata entity and return sitelinks + P17."""
     url = f"https://www.wikidata.org/wiki/Special:EntityData/{qid}.json"
     data = fetch_json(url)
     if not data:
-        return []
+        return {"sitelinks": {}, "countries": []}
 
     entity = data.get("entities", {}).get(qid, {})
+    sitelinks = entity.get("sitelinks", {})
+
+    # Also extract P17
     claims = entity.get("claims", {})
     p17 = claims.get("P17", [])
-
     countries = []
     for claim in p17:
         mainsnak = claim.get("mainsnak", {})
@@ -450,14 +567,12 @@ def check_wikidata_country(qid: str) -> list[dict]:
         country_qid = value.get("id", "")
         rank = claim.get("rank", "")
         qualifiers = claim.get("qualifiers", {})
-
         start = ""
         end = ""
         for q in qualifiers.get("P580", []):
             start = q.get("datavalue", {}).get("value", {}).get("time", "")[:11]
         for q in qualifiers.get("P582", []):
             end = q.get("datavalue", {}).get("value", {}).get("time", "")[:11]
-
         country_name = COUNTRY_NAMES.get(country_qid, country_qid)
         countries.append({
             "country": country_name,
@@ -467,7 +582,7 @@ def check_wikidata_country(qid: str) -> list[dict]:
             "end": end,
         })
 
-    return countries
+    return {"sitelinks": sitelinks, "countries": countries}
 
 
 def scan_wikipedia_sites() -> dict:
@@ -485,79 +600,83 @@ def scan_wikipedia_sites() -> dict:
             "qid": site["qid"],
             "note": site["description"],
             "wikidata_countries": [],
+            "sitelink_count": 0,
             "wikipedia_checks": [],
         }
 
-        # Check Wikidata P17 if we have a QID
-        if site["qid"]:
-            print(f"  Checking Wikidata P17 for {site['qid']}...")
-            countries = check_wikidata_country(site["qid"])
-            site_result["wikidata_countries"] = countries
-            for c in countries:
-                rank_str = f" (rank={c['rank']})" if c['rank'] else ""
-                period = ""
-                if c['start'] or c['end']:
-                    period = f" [{c['start'] or '?'} — {c['end'] or 'present'}]"
-                print(f"    P17: {c['country']}{rank_str}{period}")
-            if not countries:
-                print(f"    P17: (none)")
-            time.sleep(1)
+        if not site["qid"]:
+            print("    (no QID, skipping)")
+            results.append(site_result)
+            continue
 
-        # Check Wikipedia in multiple languages
-        if site.get("en_title"):
-            for lang in LANGUAGES:
-                # Try the English title first (most reliable), adjust for language
-                title = site["en_title"]
-                encoded = urllib.parse.quote(title)
-                url = f"https://{lang}.wikipedia.org/api/rest_v1/page/summary/{encoded}"
-                data = fetch_json(url, timeout=15)
+        # Fetch entity data once — get sitelinks and P17
+        print(f"  Fetching Wikidata entity {site['qid']}...")
+        wd = get_sitelinks(site["qid"])
+        sitelinks = wd["sitelinks"]
+        countries = wd["countries"]
 
-                if not data or "title" not in data:
-                    # Try to find via Wikidata sitelinks
-                    if site["qid"]:
-                        sitelink_url = f"https://www.wikidata.org/wiki/Special:EntityData/{site['qid']}.json"
-                        wd_data = fetch_json(sitelink_url)
-                        if wd_data:
-                            entity = wd_data.get("entities", {}).get(site["qid"], {})
-                            sitelinks = entity.get("sitelinks", {})
-                            wiki_key = f"{lang}wiki"
-                            if wiki_key in sitelinks:
-                                local_title = sitelinks[wiki_key]["title"]
-                                encoded_local = urllib.parse.quote(local_title.replace(" ", "_"))
-                                url = f"https://{lang}.wikipedia.org/api/rest_v1/page/summary/{encoded_local}"
-                                data = fetch_json(url, timeout=15)
+        site_result["wikidata_countries"] = countries
+        site_result["sitelink_count"] = len(sitelinks)
 
-                if not data or "title" not in data:
-                    site_result["wikipedia_checks"].append({
-                        "lang": lang,
-                        "status": "not_found",
-                    })
-                    continue
+        for c in countries:
+            rank_str = f" (rank={c['rank']})" if c["rank"] else ""
+            period = ""
+            if c["start"] or c["end"]:
+                period = f" [{c['start'] or '?'} -- {c['end'] or 'present'}]"
+            print(f"    P17: {c['country']}{rank_str}{period}")
+        if not countries:
+            print("    P17: (none)")
 
-                description = data.get("description", "")
-                extract = data.get("extract", "")[:500]
-                label, signal = classify_framing(description, extract)
+        print(f"    Sitelinks: {len(sitelinks)} Wikipedia editions")
+        time.sleep(0.5)
 
-                check = {
+        # Check Wikipedia articles using sitelinks
+        for lang in LANGUAGES:
+            wiki_key = f"{lang}wiki"
+            if wiki_key not in sitelinks:
+                site_result["wikipedia_checks"].append({
                     "lang": lang,
-                    "status": "found",
-                    "title": data.get("title", ""),
-                    "description": description,
-                    "extract_snippet": extract,
-                    "framing": label,
-                    "signal": signal,
-                }
-                site_result["wikipedia_checks"].append(check)
-                print(f"    [{lang}] desc=\"{description[:80]}\" => {label}")
-                time.sleep(0.5)
-        else:
-            print(f"    (no Wikipedia article title configured — skipping Wikipedia check)")
+                    "status": "no_sitelink",
+                })
+                print(f"    [{lang}] no sitelink")
+                continue
+
+            local_title = sitelinks[wiki_key]["title"]
+            encoded = urllib.parse.quote(local_title.replace(" ", "_"))
+            url = f"https://{lang}.wikipedia.org/api/rest_v1/page/summary/{encoded}"
+            data = fetch_json(url, timeout=15)
+
+            if not data or "title" not in data:
+                site_result["wikipedia_checks"].append({
+                    "lang": lang,
+                    "status": "api_error",
+                    "sitelink_title": local_title,
+                })
+                print(f"    [{lang}] sitelink='{local_title}' but API returned no data")
+                continue
+
+            description = data.get("description", "")
+            extract = data.get("extract", "")[:500]
+            framing, signal = classify_framing(description, extract)
+
+            check = {
+                "lang": lang,
+                "status": "found",
+                "title": data.get("title", ""),
+                "description": description,
+                "extract_snippet": extract,
+                "framing": framing,
+                "signal": signal,
+            }
+            site_result["wikipedia_checks"].append(check)
+            print(f"    [{lang}] title='{data.get('title','')}' "
+                  f"desc=\"{description[:70]}\" => {framing}")
+            time.sleep(0.5)
 
         results.append(site_result)
 
     # Compute summary
-    framing_counts = {"ukraine": 0, "russia": 0, "ambiguous": 0, "no_signal": 0,
-                      "ukraine_in_text": 0, "russia_in_text": 0, "not_found": 0}
+    framing_counts = {}
     for site in results:
         for check in site.get("wikipedia_checks", []):
             f = check.get("framing", check.get("status", "not_found"))
@@ -629,23 +748,35 @@ def main():
     print("\n" + "=" * 70)
     print("FINAL SUMMARY")
     print("=" * 70)
+    cc = wikidata_result["country_counts"]
+    dc = wikidata_result["diocese_affiliation_counts"]
+    rc = wikidata_result["religion_counts"]
     print(f"  Wikidata institutions: {wikidata_result['total_institutions']}")
-    print(f"    P17=Ukraine: {wikidata_result['country_counts'].get('Ukraine', 0)}")
-    print(f"    P17=Russia:  {wikidata_result['country_counts'].get('Russia', 0)}")
-    print(f"    P17=missing: {wikidata_result['country_counts'].get('missing', 0)}")
-    print(f"    Moscow Patriarchate dioceses: {wikidata_result['diocese_affiliation_counts'].get('Moscow Patriarchate', 0)}")
-    print(f"    OCU dioceses: {wikidata_result['diocese_affiliation_counts'].get('OCU', 0)}")
-    print(f"    UOC-MP dioceses: {wikidata_result['diocese_affiliation_counts'].get('UOC-MP', 0)}")
-    print(f"    No diocese: {wikidata_result['diocese_affiliation_counts'].get('none', 0)}")
-    print(f"  Wikipedia key sites: {len(wikipedia_result['sites'])}")
+    print(f"    P17=Ukraine: {cc.get('Ukraine', 0)}")
+    print(f"    P17=Russia:  {cc.get('Russia', 0)}")
+    print(f"    P17=missing: {cc.get('missing', 0)}")
+    for k, v in sorted(cc.items(), key=lambda x: -x[1]):
+        if k not in ("Ukraine", "Russia", "missing"):
+            print(f"    P17={k}: {v}")
+    print(f"\n    Moscow Patriarchate dioceses: {dc.get('Moscow Patriarchate', 0)}")
+    print(f"    OCU dioceses: {dc.get('OCU', 0)}")
+    print(f"    UOC-MP dioceses: {dc.get('UOC-MP', 0)}")
+    print(f"    No diocese: {dc.get('none', 0)}")
+    print(f"    Other/unknown: {dc.get('other/unknown', 0)}")
+
+    print(f"\n    Religion breakdown:")
+    for k, v in sorted(rc.items(), key=lambda x: -x[1]):
+        print(f"      {k}: {v}")
+
     fc = wikipedia_result["framing_counts"]
     ukraine_total = fc.get("ukraine", 0) + fc.get("ukraine_in_text", 0)
     russia_total = fc.get("russia", 0) + fc.get("russia_in_text", 0)
+    print(f"\n  Wikipedia key sites: {len(wikipedia_result['sites'])}")
     print(f"    Ukraine-framed: {ukraine_total}")
     print(f"    Russia-framed:  {russia_total}")
     print(f"    Ambiguous:      {fc.get('ambiguous', 0)}")
     print(f"    No signal:      {fc.get('no_signal', 0)}")
-    print(f"    Not found:      {fc.get('not_found', 0)}")
+    print(f"    No sitelink:    {fc.get('no_sitelink', 0)}")
 
 
 if __name__ == "__main__":

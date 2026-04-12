@@ -1,6 +1,6 @@
 {
   "scan": "wikipedia_religious_sites",
-  "date": "2026-04-12T05:11:31.399474+00:00",
+  "date": "2026-04-12T06:59:23.984748+00:00",
   "languages_checked": [
     "en",
     "uk",
@@ -10,10 +10,47 @@
   ],
   "sites": [
     {
-      "name": "Chersonesus",
-      "qid": "Q184948",
-      "note": "Ancient Greek colony, site of 'baptism of Rus'",
-      "wikidata_countries": [],
+      "name": "Chersonesus (ancient city)",
+      "qid": "Q638445",
+      "note": "Ancient Greek colony in Sevastopol, site of 'baptism of Rus'",
+      "wikidata_countries": [
+        {
+          "country": "Russia",
+          "qid": "Q159",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Ukraine",
+          "qid": "Q212",
+          "rank": "preferred",
+          "start": "+1991-08-27",
+          "end": ""
+        },
+        {
+          "country": "Q321371",
+          "qid": "Q321371",
+          "rank": "normal",
+          "start": "-0102-00-00",
+          "end": "+0060-00-00"
+        },
+        {
+          "country": "Q2277",
+          "qid": "Q2277",
+          "rank": "normal",
+          "start": "+0060-00-00",
+          "end": "+0400-00-00"
+        },
+        {
+          "country": "Russian Empire",
+          "qid": "Q12544",
+          "rank": "normal",
+          "start": "+0400-00-00",
+          "end": ""
+        }
+      ],
+      "sitelink_count": 60,
       "wikipedia_checks": [
         {
           "lang": "en",
@@ -27,82 +64,249 @@
         {
           "lang": "uk",
           "status": "found",
-          "title": "Зейнон",
-          "description": "",
-          "extract_snippet": "Зейнон — індо-скіфський сатрап південного Кашу (Кашмір). Втратив свої володіння в результаті завоювання парфян.",
-          "framing": "no_signal",
-          "signal": ""
+          "title": "Херсонес Таврійський",
+          "description": "Античне місто-держава",
+          "extract_snippet": "Херсоне́с Таврі́йський — античне і візантійське місто-держава в південно-західній частині Криму.",
+          "framing": "ambiguous",
+          "signal": "mentions Crimea but no country attribution"
         },
         {
           "lang": "ru",
-          "status": "not_found"
+          "status": "found",
+          "title": "Херсонес Таврический",
+          "description": "полис, основанный древними греками на Гераклейском полуострове (Крым)",
+          "extract_snippet": "Херсоне́с Таври́ческий, или просто Херсоне́с — полис, основанный древними греками на Гераклейском полуострове на юго-западном побережье Крыма. Расположен на территории современного Севастополя,\nаннексированного Россией в 2014 году.",
+          "framing": "russia_in_text",
+          "signal": "first paragraph mentions Russia"
         },
         {
           "lang": "de",
           "status": "found",
-          "title": "Chersonesos",
-          "description": "Wikimedia-Begriffsklärungsseite",
-          "extract_snippet": "Chersonesos, auch Chersones, ist eine Kurzbezeichnung für",
-          "framing": "no_signal",
-          "signal": ""
+          "title": "Chersones (Stadt)",
+          "description": "archäologische Stätte in der Ukraine",
+          "extract_snippet": "Die antike Stadt Chersones oder Chersonesos, anfangs Herakleia, dann zur Abhebung von anderen gleichnamigen Siedlungen auch Taurische Chersonesos, in byzantinischer Zeit schließlich Cherson genannt, liegt am Südufer der größten der insgesamt 38 Buchten von Sewastopol (Sewastopol’skaja buchta), geschützt hinter einigen Hügeln, am äußersten Südwestzipfel der Halbinsel Krim am Schwarzen Meer. In unmittelbarer Nachbarschaft zu Chersones wurde 1783 die heutige Großstadt Sewastopol gegründet.",
+          "framing": "ukraine",
+          "signal": "description mentions Ukraine"
         },
         {
           "lang": "fr",
-          "status": "not_found"
+          "status": "found",
+          "title": "Chersonèse (cité grecque)",
+          "description": "ville antique dans le Sébastopol d'aujourd'hui, Crimée",
+          "extract_snippet": "Chersonèse est une cité grecque antique de Tauride, dont les ruines se trouvent au bord de la mer Noire, dans la ville de Sébastopol, en Crimée.",
+          "framing": "no_signal",
+          "signal": ""
         }
       ]
     },
     {
-      "name": "St. Vladimir Cathedral, Sevastopol",
-      "qid": "Q4187523",
-      "note": "Cathedral commemorating baptism of Vladimir",
+      "name": "St. Vladimir Cathedral, Sevastopol (admirals)",
+      "qid": "Q1848287",
+      "note": "Cathedral commemorating Russian navy admirals in Sevastopol",
       "wikidata_countries": [
+        {
+          "country": "Russia",
+          "qid": "Q159",
+          "rank": "preferred",
+          "start": "",
+          "end": ""
+        },
         {
           "country": "Ukraine",
           "qid": "Q212",
+          "rank": "preferred",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Q34266",
+          "qid": "Q34266",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Soviet Union",
+          "qid": "Q15180",
           "rank": "normal",
           "start": "",
           "end": ""
         }
       ],
+      "sitelink_count": 15,
       "wikipedia_checks": [
         {
           "lang": "en",
-          "status": "not_found"
+          "status": "found",
+          "title": "St. Vladimir's Cathedral, Sevastopol",
+          "description": "Russian Orthodox church",
+          "extract_snippet": "St. Vladimir's Cathedral is an Orthodox church in Sevastopol which was built in the aftermath of the Crimean War as a memorial to the heroes of the Siege of Sevastopol (1854–1855).",
+          "framing": "russia",
+          "signal": "description mentions Russia"
         },
         {
           "lang": "uk",
           "status": "found",
-          "title": "Зарожненська сільська рада",
-          "description": "сільська рада України",
-          "extract_snippet": "Заро́жненська сільська́ ра́да — адміністративно-територіальна одиниця та орган місцевого самоврядування в Чугуївському районі Харківської області. Адміністративний центр — село Зарожне.",
-          "framing": "ukraine",
-          "signal": "description mentions Ukraine"
+          "title": "Володимирський собор (Севастополь)",
+          "description": "",
+          "extract_snippet": "Собо́р Свято́го Рівноапо́стольного київського кня́зя Володимира в Севастополі — православна церква, місце поховання адміралів і морських офіцерів, пам'ятка архітектури і історії. Собор розташований по вулиці Суворова, № 3, на Центральному міському пагорбі, звідки його добре видно з інших частин міста. Щоб відрізняти від Володимирського собору в Херсонесі, у Севастополі зазвичай називається «Володимирський собор ». Побудований в неовізантійському стилі.",
+          "framing": "no_signal",
+          "signal": ""
         },
         {
           "lang": "ru",
           "status": "found",
-          "title": "Зарожненский сельский совет (Харьковская область)",
+          "title": "Владимирский собор (Севастополь)",
           "description": "",
-          "extract_snippet": "Зарожненский сельский совет — входит в состав Чугуевского района Харьковской области Украины.",
+          "extract_snippet": "Влади́мирский собо́р — православный храм в Севастополе, место захоронения русских адмиралов и морских офицеров, памятник архитектуры и истории. Собор расположен на Центральном городском холме, откуда его хорошо видно из других частей города.",
           "framing": "no_signal",
           "signal": ""
         },
         {
           "lang": "de",
-          "status": "not_found"
+          "status": "found",
+          "title": "Wladimirkathedrale (Sewastopol)",
+          "description": "russisch-orthodoxes Kirchengebäude in Sewastopol, Ukraine",
+          "extract_snippet": "Die Wladimirkathedrale in Sewastopol befindet sich an der Suworow-Straße auf einem der höchsten Hügel in der Stadt. Diese russisch-orthodoxe Kirche wurde im 19. Jahrhundert erbaut. Nach der Zerstörung im Zweiten Weltkrieg ließ die Sowjetunion sie 1966 komplett neu aufbauen. In ihr sind vier namhafte russische Admiräle beigesetzt, auf die Gedenktafeln an der Fassade hinweisen.",
+          "framing": "ukraine",
+          "signal": "description mentions Ukraine"
         },
         {
           "lang": "fr",
-          "status": "not_found"
+          "status": "found",
+          "title": "Cathédrale Saint-Vladimir de Sébastopol",
+          "description": "",
+          "extract_snippet": "La cathédrale Saint-Vladimir est une collégiale orthodoxe construite à Sébastopol, en mémoire des combattants tombés au siège de Sébastopol (1854-1855). Elle est de style néobyzantin.",
+          "framing": "no_signal",
+          "signal": ""
+        }
+      ]
+    },
+    {
+      "name": "St. Vladimir Cathedral, Chersonesus",
+      "qid": "Q166800",
+      "note": "Cathedral built on the presumed site of Vladimir's baptism",
+      "wikidata_countries": [
+        {
+          "country": "Ukraine",
+          "qid": "Q212",
+          "rank": "preferred",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Russia",
+          "qid": "Q159",
+          "rank": "preferred",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Q34266",
+          "qid": "Q34266",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Soviet Union",
+          "qid": "Q15180",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        }
+      ],
+      "sitelink_count": 18,
+      "wikipedia_checks": [
+        {
+          "lang": "en",
+          "status": "found",
+          "title": "Chersonesus Cathedral",
+          "description": "Neo-Byzantine Russian Orthodox cathedral on the Crimean Peninsula",
+          "extract_snippet": "The Saint Vladimir Cathedral or Saint Volodymyr Cathedral is a Neo-Byzantine Russian Orthodox cathedral on the site of Chersonesos Taurica on the outskirts of Sevastopol, on the Crimean Peninsula. It commemorates the presumed place of St. Vladimir's baptism.",
+          "framing": "russia",
+          "signal": "description mentions Russia"
+        },
+        {
+          "lang": "uk",
+          "status": "found",
+          "title": "Володимирський собор (Херсонес)",
+          "description": "собор у Херсонесі",
+          "extract_snippet": "Володимирський собор — православний собор на території Херсонесу Таврійського.",
+          "framing": "no_signal",
+          "signal": ""
+        },
+        {
+          "lang": "ru",
+          "status": "found",
+          "title": "Свято-Владимирский собор в Херсонесе",
+          "description": "православный храм в Севастополе",
+          "extract_snippet": "Свято-Влади́мирский собо́р в Херсоне́се — православный храм в Севастополе, третий кафедральный собор Симферопольской и Крымской епархии Русской православной церкви. Построен по проекту Давида Гримма в месте, которое считается одним из тех, где в 987 году был крещён великий князь Владимир. Освящён в 1891 году; восстановлен из полуразрушенного состояния в 1990-х — начале 2000-х годов. Ныне располагается на территории музея-заповедника «Херсонес Таврический».",
+          "framing": "no_signal",
+          "signal": ""
+        },
+        {
+          "lang": "de",
+          "status": "found",
+          "title": "Wladimirkathedrale (Chersones)",
+          "description": "Kathedrale in der Ukraine",
+          "extract_snippet": "Die Wladimirkathedrale in Chersones im Außen-Stadtbereich von Sewastopol wurde 1892 an jener Stelle eröffnet, an der sich der Legende nach Fürst Wladimir von der Kiewer Rus 900 Jahre zuvor zum orthodoxen Christentum bekannt haben soll. Nach schwersten Zerstörungen im Zweiten Weltkrieg und folgenden Jahrzehnten der Vernachlässigung wurde das Bauwerk um die Jahrtausendwende weitgehend originalgetreu rekonstruiert. Sie gehört heute der russisch-orthodoxen Kirche.",
+          "framing": "ukraine",
+          "signal": "description mentions Ukraine"
+        },
+        {
+          "lang": "fr",
+          "status": "found",
+          "title": "Cathédrale Saint-Vladimir de Chersonèse",
+          "description": "",
+          "extract_snippet": "La cathédrale Saint-Vladimir est une cathédrale orthodoxe située à Cherson de Tauride, faisant aujourd'hui partie de l'agglomération de Sébastopol dans le quartier Gagarine.",
+          "framing": "no_signal",
+          "signal": ""
         }
       ]
     },
     {
       "name": "Khan's Palace, Bakhchysarai",
-      "qid": "Q937457",
+      "qid": "Q743881",
       "note": "Crimean Tatar palace, UNESCO tentative list",
-      "wikidata_countries": [],
+      "wikidata_countries": [
+        {
+          "country": "Ukraine",
+          "qid": "Q212",
+          "rank": "preferred",
+          "start": "+1991-00-00",
+          "end": ""
+        },
+        {
+          "country": "Russia",
+          "qid": "Q159",
+          "rank": "normal",
+          "start": "+2014-00-00",
+          "end": ""
+        },
+        {
+          "country": "Q34266",
+          "qid": "Q34266",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Soviet Union",
+          "qid": "Q15180",
+          "rank": "normal",
+          "start": "+1922-12-29",
+          "end": "+1991-02-12"
+        },
+        {
+          "country": "Ottoman Empire",
+          "qid": "Q12560",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        }
+      ],
+      "sitelink_count": 37,
       "wikipedia_checks": [
         {
           "lang": "en",
@@ -115,160 +319,374 @@
         },
         {
           "lang": "uk",
-          "status": "not_found"
+          "status": "found",
+          "title": "Ханський палац (Бахчисарай)",
+          "description": "музей, родова резиденція правителів Кримського ханства",
+          "extract_snippet": "Ханський палац у Бахчисараї — єдиний у світі зразок кримськотатарської палацової архітектури, у 1532—1783 рр. родова резиденція правителів Кримського ханства — династії Ґераїв. Палацово-парковий ансамбль включає у себе три частини: культову, адміністративну та побутову. Центр політичного, духовного й культурного життя кримських татар. Засновником Хансарая був Сахіб I Ґерай.",
+          "framing": "ambiguous",
+          "signal": "mentions Crimea but no country attribution"
         },
         {
           "lang": "ru",
-          "status": "not_found"
+          "status": "found",
+          "title": "Ханский дворец (Бахчисарай)",
+          "description": "бывшая резиденция крымских ханов в Бахчисарае",
+          "extract_snippet": "Ханский дворец в Бахчисарае или Хан-Сарай — бывшая резиденция крымских ханов, единственный в мире образец крымскотатарской дворцовой архитектуры. Находится в центре Бахчисарая на берегу речки Чурук-Су. Строительство дворца относят к началу XVI века. Комплекс неоднократно перестраивался, подвергался пожарам и разрушениям, в том числе значительным в ходе похода Б. Миниха в русско-турецкую войну в 1736 году. Первый музей на базе дворцового комплекса открыт в 1917 году. С 1955 года - Бахчисарайский ",
+          "framing": "no_signal",
+          "signal": ""
         },
         {
           "lang": "de",
-          "status": "not_found"
+          "status": "found",
+          "title": "Khanpalast von Bachtschyssaraj",
+          "description": "Schloss in der Ukraine",
+          "extract_snippet": "Der Khanpalast von Bachtschyssaraj war der Sitz der Herrscher über das Khanat der Krim und stammt in seinen ältesten Bestandteilen aus dem 16. Jahrhundert. Heute befindet sich in dem nationalen Heiligtum der Krimtataren ein Museum. Der Name „Bachtschyssaraj“ kommt aus dem Türkischen und bedeutet „Gartenpalast“. Dieser Name bezeichnete ursprünglich alleine den Khanpalast, ging später jedoch auf die gesamte Stadt über.",
+          "framing": "ukraine",
+          "signal": "description mentions Ukraine"
         },
         {
           "lang": "fr",
-          "status": "not_found"
+          "status": "found",
+          "title": "Hansaray",
+          "description": "",
+          "extract_snippet": "Le Hansaray, ou Khan-Saraï ou encore « palais du khan », est situé dans la ville de Bakhtchissaraï en Crimée. Il fut construit au XVIe siècle, en partie par l'architecte Alosius le Jeune, et devint la résidence principale des khans de Crimée. À l'intérieur des murailles se trouvent la grande mosquée, un harem, un cimetière, un musée, une bibliothèque, des quartiers de vie et des jardins. L'intérieur du palais reflète le style tatar traditionnel du XVIe siècle.",
+          "framing": "no_signal",
+          "signal": ""
         }
       ]
     },
     {
       "name": "Assumption Monastery (Uspensky)",
-      "qid": "Q4018729",
+      "qid": "Q260494",
       "note": "Medieval cave monastery near Bakhchysarai",
-      "wikidata_countries": [],
-      "wikipedia_checks": [
+      "wikidata_countries": [
         {
-          "lang": "en",
-          "status": "not_found"
+          "country": "Ukraine",
+          "qid": "Q212",
+          "rank": "normal",
+          "start": "",
+          "end": ""
         },
         {
-          "lang": "uk",
-          "status": "not_found"
+          "country": "Russia",
+          "qid": "Q159",
+          "rank": "preferred",
+          "start": "",
+          "end": ""
         },
         {
-          "lang": "ru",
-          "status": "not_found"
+          "country": "Q34266",
+          "qid": "Q34266",
+          "rank": "normal",
+          "start": "",
+          "end": ""
         },
         {
-          "lang": "de",
-          "status": "not_found"
+          "country": "Soviet Union",
+          "qid": "Q15180",
+          "rank": "normal",
+          "start": "",
+          "end": ""
         },
         {
-          "lang": "fr",
-          "status": "not_found"
+          "country": "Ottoman Empire",
+          "qid": "Q12560",
+          "rank": "normal",
+          "start": "",
+          "end": ""
         }
-      ]
-    },
-    {
-      "name": "New Chersonesos complex",
-      "qid": null,
-      "note": "Russian state/church project on UNESCO site (opened 2024)",
-      "wikidata_countries": [],
-      "wikipedia_checks": []
-    },
-    {
-      "name": "St. Vladimir Cathedral, Chersonesus",
-      "qid": "Q4187522",
-      "note": "Cathedral built on the presumed site of Vladimir's baptism",
-      "wikidata_countries": [],
+      ],
+      "sitelink_count": 9,
       "wikipedia_checks": [
         {
           "lang": "en",
-          "status": "not_found"
+          "status": "found",
+          "title": "Bakhchysarai Cave Monastery",
+          "description": "Place in Crimea",
+          "extract_snippet": "The Dormition Monastery of the Caves, otherwise known as Bakhchysarai Cave Monastery, or Uspensky Cave Monastery is located in Crimea, near the town of Bakhchysarai. It is a cave monastery carved out of a cliff, thought to have been founded in the 8th century.",
+          "framing": "ambiguous",
+          "signal": "mentions Crimea but no country attribution"
         },
         {
           "lang": "uk",
-          "status": "not_found"
+          "status": "found",
+          "title": "Успенський монастир (Бахчисарай)",
+          "description": "",
+          "extract_snippet": "Успе́нський монасти́р, зараз Успенський Анастасіївський чоловічий монастир УПЦ (МП) — діючий монастир поблизу Бахчисарая, на шляху від останнього до Чуфут-Кале. Монастир розташований на вертикальній кам'яній стіні.",
+          "framing": "no_signal",
+          "signal": ""
         },
         {
           "lang": "ru",
-          "status": "not_found"
+          "status": "found",
+          "title": "Бахчисарайский Успенский монастырь",
+          "description": "православный монастырь в Крыму, вблизи Бахчисарая, часть построек в искусственных пещерах",
+          "extract_snippet": "Бахчисарайский Успе́нский пещерный монасты́рь — мужской монастырь Симферопольской епархии Русской православной церкви, расположенный в урочище Мариам-Дере вблизи Бахчисарая. Кроме монастырского комплекса, на прилегающей территории находится кладбище воинов, павших во время Крымской войны, захоронение героев Великой Отечественной войны.",
+          "framing": "no_signal",
+          "signal": ""
         },
         {
           "lang": "de",
-          "status": "not_found"
+          "status": "no_sitelink"
         },
         {
           "lang": "fr",
-          "status": "not_found"
+          "status": "found",
+          "title": "Monastère troglodyte de Bakhtchyssaraï",
+          "description": "édifice religieux en Crimée",
+          "extract_snippet": "Le monastère troglodyte de Bakhtchyssaraï ou monastère des grottes d'Ouspensky, est un bâtiment religieux en Crimée. Fondé au XVe siècle il se trouve à Bakhtchissaraï. Il appartient à l'Église orthodoxe ukrainienne de Crimée.",
+          "framing": "no_signal",
+          "signal": ""
         }
       ]
     },
     {
       "name": "Juma-Jami Mosque, Yevpatoria",
-      "qid": "Q4131693",
+      "qid": "Q2390721",
       "note": "16th-century mosque by Mimar Sinan",
-      "wikidata_countries": [],
+      "wikidata_countries": [
+        {
+          "country": "Ukraine",
+          "qid": "Q212",
+          "rank": "preferred",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Q34266",
+          "qid": "Q34266",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Soviet Union",
+          "qid": "Q15180",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Ottoman Empire",
+          "qid": "Q12560",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Russia",
+          "qid": "Q159",
+          "rank": "preferred",
+          "start": "",
+          "end": ""
+        }
+      ],
+      "sitelink_count": 25,
       "wikipedia_checks": [
         {
           "lang": "en",
-          "status": "not_found"
+          "status": "found",
+          "title": "Juma-Jami Mosque",
+          "description": "Sunni mosque in Yevpatoria, Crimea",
+          "extract_snippet": "The Juma-Jami Mosque, also known as the Friday Mosque, is located in Yevpatoria, Crimea. Built between 1552 and 1564, it is a mosque designed by the Ottoman architect Mimar Sinan.",
+          "framing": "ambiguous",
+          "signal": "mentions Crimea but no country attribution"
         },
         {
           "lang": "uk",
-          "status": "not_found"
+          "status": "found",
+          "title": "Джума-Джамі",
+          "description": "сторінка значень у проєкті Вікімедіа",
+          "extract_snippet": "Джума́-Джамі́, або Хан-Джамі́ — соборна мечеть у Кезлеві (Євпаторія), Автономна Республіка Крим.",
+          "framing": "ambiguous",
+          "signal": "mentions Crimea but no country attribution"
         },
         {
           "lang": "ru",
           "status": "found",
-          "title": "Газизуллин",
-          "description": "страница значений в проекте Викимедиа",
-          "extract_snippet": "Газизуллин — фамилия татарского происхожденияГазизуллин, Ибрагим Галимович (1919—1944) — Герой Советского Союза.\nГазизуллин, Исмагил Курбанович — российский живописец. Член Союза художников СССР с 1990 года.\nГазизуллин, Фарит Рафикович — член совета директоров ОАО «Газпром», экс-министр имущественных отношений Российской Федерации.",
+          "title": "Джума-Джами",
+          "description": "мечеть в Евпатории",
+          "extract_snippet": "Джума́-Джами́, она же Хан-Джами́, также Мечеть Татар-хана — соборная пятничная мечеть в Евпатории, главная мечеть города. Мечеть расположена в районе парка им. Караева; возвышаясь над прилегающей застройкой, она хорошо видна и с моря и с берега. В 2014 году Россия захватила и аннексировала входящий в состав Украины Крым. В Украине, в пределах признанных большинством государств — членов ООН\n границ которой находится объект, является памятником культурного наследия национального значения; в России",
           "framing": "russia_in_text",
           "signal": "first paragraph mentions Russia"
         },
         {
           "lang": "de",
-          "status": "not_found"
+          "status": "found",
+          "title": "Dschuma-Dschami-Moschee (Jewpatorija)",
+          "description": "Moschee in Jewpatorija, Ukraine",
+          "extract_snippet": "Die Dschuma-Dschami-Moschee oder Freitagsmoschee ist eine Moschee in Jewpatorija auf der Halbinsel Krim.",
+          "framing": "ukraine",
+          "signal": "description mentions Ukraine"
         },
         {
           "lang": "fr",
-          "status": "not_found"
+          "status": "found",
+          "title": "Mosquée Djouma-Djami",
+          "description": "",
+          "extract_snippet": "La mosquée Djouma-Djami, ou mosquée du Vendredi ou encore mosquée du khan tatar, est une mosquée située à Eupatoria, en Crimée. Elle a été fondée par le khan Devlet Ier et construite entre 1552 et 1564, peut-être selon les plans de l'architecte turc Sinan, à l'époque où la contrée était vassale de l'Empire ottoman.",
+          "framing": "no_signal",
+          "signal": ""
         }
       ]
     },
     {
       "name": "Kebir-Jami Mosque, Simferopol",
-      "qid": "Q4222427",
+      "qid": "Q6382405",
       "note": "Oldest mosque in Simferopol",
-      "wikidata_countries": [],
+      "wikidata_countries": [
+        {
+          "country": "Ukraine",
+          "qid": "Q212",
+          "rank": "preferred",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Russia",
+          "qid": "Q159",
+          "rank": "preferred",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Q34266",
+          "qid": "Q34266",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Soviet Union",
+          "qid": "Q15180",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Ottoman Empire",
+          "qid": "Q12560",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        }
+      ],
+      "sitelink_count": 18,
       "wikipedia_checks": [
         {
           "lang": "en",
-          "status": "not_found"
+          "status": "found",
+          "title": "Kebir Mosque, Simferopol",
+          "description": "Sunni mosque in Simferopol, Crimea",
+          "extract_snippet": "The Kebir Mosque is located in Simferopol, Crimea. The Kebir Mosque is a prominent architectural monument in Simferopol and the oldest building in the city.",
+          "framing": "ambiguous",
+          "signal": "mentions Crimea but no country attribution"
         },
         {
           "lang": "uk",
-          "status": "not_found"
+          "status": "found",
+          "title": "Кебір-Джамі",
+          "description": "соборна мечеть у Акмесджиті (Сімферополі)",
+          "extract_snippet": "Кебір-Джамі, або Акмєсджит  — соборна мечеть у Сімферополі (Крим) у Київському районі, пам'ятка архітектури XVI століття. Найстаріша будівля міста.",
+          "framing": "ambiguous",
+          "signal": "mentions Crimea but no country attribution"
         },
         {
           "lang": "ru",
-          "status": "not_found"
+          "status": "found",
+          "title": "Кебир-Джами",
+          "description": "соборная мечеть Симферополя",
+          "extract_snippet": "Кеби́р-Джами́ — соборная пятничная мечеть в Симферополе. Является главной пятничной мечетью Крыма, резиденцией муфтия и Духовного управления мусульман Крыма. Мечеть расположена на улице Курчатова. Является старейшим зданием Симферополя.",
+          "framing": "no_signal",
+          "signal": ""
         },
         {
           "lang": "de",
-          "status": "not_found"
+          "status": "no_sitelink"
         },
         {
           "lang": "fr",
-          "status": "not_found"
+          "status": "found",
+          "title": "Mosquée Kebir-Djami de Simferopol",
+          "description": "bâtiment religieux en république de Crimée",
+          "extract_snippet": "La  mosquée Kebir-Djami est un bâtiment religieux à Simferopol en Crimée. Dédicacée en 1508 pour la grandeur de Mengli Ier Giray comme mosquée blanche.",
+          "framing": "no_signal",
+          "signal": ""
+        }
+      ]
+    },
+    {
+      "name": "St. George Monastery, Balaklava",
+      "qid": "Q12151107",
+      "note": "Cave monastery near Balaklava, Sevastopol",
+      "wikidata_countries": [
+        {
+          "country": "Ukraine",
+          "qid": "Q212",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        },
+        {
+          "country": "Russia",
+          "qid": "Q159",
+          "rank": "normal",
+          "start": "",
+          "end": ""
+        }
+      ],
+      "sitelink_count": 3,
+      "wikipedia_checks": [
+        {
+          "lang": "en",
+          "status": "no_sitelink"
+        },
+        {
+          "lang": "uk",
+          "status": "found",
+          "title": "Георгіївський Балаклавський чоловічий монастир",
+          "description": "",
+          "extract_snippet": "Свя́то-Гео́ргіївський монасти́р, зараз Георгіївський Балаклавський чоловічий монастир УПЦ (МП) — монастир в південно-західній частині Кримського півострова на мисі Фіолент, в Бахчисарайському районі Автономної Республіки Крим, біля західного початку Зовнішнього пасма Кримських гір.",
+          "framing": "ambiguous",
+          "signal": "mentions Crimea but no country attribution"
+        },
+        {
+          "lang": "ru",
+          "status": "found",
+          "title": "Георгиевский монастырь (Балаклава)",
+          "description": "",
+          "extract_snippet": "Балакла́вский Гео́ргиевский монасты́рь — православный мужской монастырь Симферопольской епархии Русской православной церкви, расположенный в Балаклавском районе Севастополя у побережья Чёрного моря, рядом с мысом Фиолент.",
+          "framing": "no_signal",
+          "signal": ""
+        },
+        {
+          "lang": "de",
+          "status": "no_sitelink"
+        },
+        {
+          "lang": "fr",
+          "status": "found",
+          "title": "Monastère Saint-Georges de Balaklava",
+          "description": "monastère orthodoxe en Crimée fondé au IXe siècle",
+          "extract_snippet": "Le monastère Saint-Georges de Balaklava est un monastère orthodoxe d'hommes dépendant de l'éparchie de Simféropol de l'Église orthodoxe russe. Il se trouve à Balaklava, quartier dépendant de la municipalité de Sébastopol en Crimée. Il est à flanc de falaise dominant la mer Noire, près du cap Fiolent.",
+          "framing": "no_signal",
+          "signal": ""
         }
       ]
     }
   ],
   "framing_counts": {
-    "ukraine": 1,
-    "russia": 0,
-    "ambiguous": 2,
-    "no_signal": 3,
-    "ukraine_in_text": 0,
-    "russia_in_text": 1,
-    "not_found": 28
+    "ambiguous": 10,
+    "russia_in_text": 2,
+    "ukraine": 5,
+    "no_signal": 17,
+    "russia": 2,
+    "no_sitelink": 4
   },
   "p17_summary": {
-    "Ukraine": 1,
-    "Russia": 0,
-    "other": 0,
-    "none": 7
+    "Ukraine": 8,
+    "Russia": 8,
+    "other": 19,
+    "none": 0
   }
 }

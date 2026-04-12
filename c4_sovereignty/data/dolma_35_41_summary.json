@@ -1,0 +1,8 @@
+{
+  "shards": "35-41",
+  "total_docs": 784713,
+  "crimea_docs": 843,
+  "russia": 6,
+  "ukraine": 13,
+  "elapsed_hours": 0.02
+}

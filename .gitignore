@@ -45,3 +45,9 @@ docs/media.md
 docs/PAPER_STRUCTURE.md
 crimealens/templates/.cache/
 crimealens/.venv/
+c4_sovereignty/data/c4en_full/*.jsonl
+c4_sovereignty/data/c4_ru_crimea.jsonl
+c4_sovereignty/data/c4_uk_crimea.jsonl
+c4_sovereignty/data/dolma_*.jsonl
+c4_sovereignty/training_data/ira_tweets_raw.csv
+c4_sovereignty/training_data/euvsdisinfo.csv
