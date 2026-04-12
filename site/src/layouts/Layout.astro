@@ -15,6 +15,28 @@ const {
 
 const siteUrl = 'https://crimeaisukraine.org';
 const ogImage = `${siteUrl}/og.png`;
+
+const langPaths: Record<string, string> = {
+  en: '',
+  uk: '/uk',
+  es: '/es',
+  de: '/de',
+  fr: '/fr',
+  ru: '/ru',
+  crh: '/crh',
+};
+
+const ogLocales: Record<string, string> = {
+  en: 'en_US',
+  uk: 'uk_UA',
+  es: 'es_ES',
+  de: 'de_DE',
+  fr: 'fr_FR',
+  ru: 'ru_RU',
+  crh: 'crh',
+};
+
+const canonicalUrl = lang === 'en' ? siteUrl : `${siteUrl}${langPaths[lang]}`;
 ---
 
 <!doctype html>
@@ -26,17 +48,18 @@ const ogImage = `${siteUrl}/og.png`;
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Ivan Dobrovolskyi" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Crimea Is Ukraine — 91,670 papers scanned, 1,581 Russia-framing confirmed, 18 LLMs audited. Digital sovereignty research." />
-    <meta property="og:locale" content={lang === 'uk' ? 'uk_UA' : 'en_US'} />
+    <meta property="og:image:alt" content="Crimea Is Ukraine — 91,670 papers scanned, 1,581 Russia-framing confirmed, 18 LLMs audited." />
+    <meta property="og:locale" content={ogLocales[lang] || 'en_US'} />
     <meta property="og:site_name" content="Crimea Is Ukraine" />
 
     <!-- Twitter Card -->
@@ -44,12 +67,14 @@ const ogImage = `${siteUrl}/og.png`;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content="Crimea Is Ukraine — automated digital sovereignty audit" />
+    <meta name="twitter:image:alt" content="Crimea Is Ukraine — digital sovereignty audit" />
 
-    <!-- Canonical + Language alternates -->
-    <link rel="canonical" href={lang === 'uk' ? `${siteUrl}/uk` : siteUrl} />
-    <link rel="alternate" hreflang="en" href={siteUrl} />
-    <link rel="alternate" hreflang="uk" href={`${siteUrl}/uk`} />
+    <!-- Canonical + Language alternates (all 7 languages) -->
+    <link rel="canonical" href={canonicalUrl} />
+    {Object.entries(langPaths).map(([l, path]) => (
+      <link rel="alternate" hreflang={l} href={`${siteUrl}${path}`} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={siteUrl} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
