@@ -207,24 +207,20 @@ fn build_signals() -> Vec<Signal> {
 
 fn build_quotation_markers() -> Vec<Regex> {
     let patterns = [
-        // English
-        r"(?i)(?:russia|moscow|kremlin|putin|lavrov)\s+(?:says?|claims?|calls?|argues?|insists?|maintains?|considers?|declared?|stated?)",
-        r"(?i)according\s+to\s+(?:russia|moscow|kremlin|putin)",
-        r"(?i)what\s+(?:russia|moscow|kremlin)\s+calls?",
-        r"(?i)so[\s-]called\s+(?:reunif|referendum|accession|republic\s+of\s+crimea)",
-        r"(?i)(?:self[\s-])?proclaimed\s+(?:republic|referendum)",
-        r"(?i)(?:sham|illegal|illegitimate)\s+referendum",
-        r#"(?i)["\u{201c}\u{ab}](?:reunif\w+|accession|rejoined|returned?\s+to\s+russia)["\u{201d}\u{bb}]"#,
-        // Russian
+        // English — ONLY genuine attribution (not skepticism/debunking)
+        r"(?i)(?:russia|moscow|kremlin)\s+(?:says?|claims?|calls?\s+it|argues?|insists?|maintains?|considers?)",
+        r"(?i)(?:putin|lavrov)\s+(?:says?|said|claims?|claimed|declared?|stated?|called)",
+        r"(?i)according\s+to\s+(?:russia|moscow|the\s+kremlin|putin)",
+        r"(?i)what\s+(?:russia|moscow|the\s+kremlin)\s+calls?",
+        r#"(?i)["\u{201c}\u{ab}](?:reunif\w+|accession\s+of\s+crimea|rejoined?\s+russia)["\u{201d}\u{bb}]"#,
+        // Russian — genuine attribution
         r"(?i)(?:россия|кремль|москва|путин)\s+(?:считает|называет|утверждает|заявляет)",
         r"(?i)по\s+(?:мнению|версии|заявлению)\s+(?:россии|кремля|москвы|путина)",
-        r"(?i)так\s+называем\w+\s+(?:воссоединени|присоединени|референдум|республик)",
-        r"(?i)[\u{ab}\u{201c}](?:воссоединени|присоединени|вхождени|референдум)\w*[\u{bb}\u{201d}]",
-        // Ukrainian
+        r"(?i)[\u{ab}\u{201c}](?:воссоединени|присоединени)\w*[\u{bb}\u{201d}]",
+        // Ukrainian — genuine attribution
         r"(?i)(?:росія|кремль|москва|путін)\s+(?:вважає|називає|стверджує|заявляє)",
         r"(?i)за\s+(?:версією|заявою)\s+(?:росії|кремля|москви|путіна)",
-        r"(?i)так\s+зван\w+\s+(?:возз'?єднання|приєднання|референдум|республік)",
-        r"(?i)[\u{ab}\u{201c}](?:возз'?єднанн|приєднанн|референдум)\w*[\u{bb}\u{201d}]",
+        r"(?i)[\u{ab}\u{201c}](?:возз'?єднанн|приєднанн)\w*[\u{bb}\u{201d}]",
     ];
     patterns.iter().map(|p| Regex::new(p).unwrap()).collect()
 }

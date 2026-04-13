@@ -274,36 +274,30 @@ def classify_source(url: str) -> str:
 # LLMs cannot distinguish these — both produce the same token patterns.
 
 QUOTATION_EN = [
-    # Direct attribution to Russian sources
-    r'(?:russia|moscow|kremlin|putin|lavrov)\s+(?:says?|claims?|calls?|argues?|insists?|maintains?|considers?|declared?|stated?)',
-    r'according\s+to\s+(?:russia|moscow|kremlin|putin)',
-    r'what\s+(?:russia|moscow|kremlin)\s+calls?',
-    # Skepticism / distancing markers
-    r'so[\s-]called\s+(?:reunif|referendum|accession|republic\s+of\s+crimea)',
-    r'(?:self[\s-])?proclaimed\s+(?:republic|referendum)',
-    r'(?:sham|illegal|illegitimate)\s+referendum',
-    # Quotation marks around Russian-narrative terms
-    r'["\u201c\u00ab](?:reunif\w+|accession|rejoined|returned?\s+to\s+russia)["\u201d\u00bb]',
+    # ONLY genuine attribution — someone reporting what Russia SAYS
+    # NOT skepticism/debunking (that's Ukraine-framing, not quotation)
+    r'(?:russia|moscow|kremlin)\s+(?:says?|claims?|calls?\s+it|argues?|insists?|maintains?|considers?)',
+    r'(?:putin|lavrov)\s+(?:says?|said|claims?|claimed|declared?|stated?|called)',
+    r'according\s+to\s+(?:russia|moscow|the\s+kremlin|putin)',
+    r'what\s+(?:russia|moscow|the\s+kremlin)\s+calls?',
+    # Quotation marks around SPECIFIC Russian-narrative terms (not general skepticism)
+    r'["\u201c\u00ab](?:reunif\w+|accession\s+of\s+crimea|rejoined?\s+russia)["\u201d\u00bb]',
 ]
 
 QUOTATION_RU = [
-    # Attribution to Russian sources in Russian text
+    # Genuine attribution in Russian text
     r'(?:россия|кремль|москва|путин)\s+(?:считает|называет|утверждает|заявляет)',
     r'по\s+(?:мнению|версии|заявлению)\s+(?:россии|кремля|москвы|путина)',
-    # Skepticism markers
-    r'так\s+называем\w+\s+(?:воссоединени|присоединени|референдум|республик)',
     # Quotation marks around Russian-narrative terms
-    r'[\u00ab\u201c](?:воссоединени|присоединени|вхождени|референдум)\w*[\u00bb\u201d]',
+    r'[\u00ab\u201c](?:воссоединени|присоединени)\w*[\u00bb\u201d]',
 ]
 
 QUOTATION_UK = [
-    # Attribution to Russian sources in Ukrainian text
+    # Genuine attribution in Ukrainian text
     r'(?:росія|кремль|москва|путін)\s+(?:вважає|називає|стверджує|заявляє)',
     r'за\s+(?:версією|заявою)\s+(?:росії|кремля|москви|путіна)',
-    # Skepticism markers
-    r'так\s+зван\w+\s+(?:возз\'?єднання|приєднання|референдум|республік)',
     # Quotation marks
-    r'[\u00ab\u201c](?:возз\'?єднанн|приєднанн|референдум)\w*[\u00bb\u201d]',
+    r'[\u00ab\u201c](?:возз\'?єднанн|приєднанн)\w*[\u00bb\u201d]',
 ]
 
 QUOTATION_MARKERS = [re.compile(p, re.IGNORECASE) for p in
