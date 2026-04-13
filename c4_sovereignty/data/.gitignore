@@ -1,0 +1,12 @@
+# Large census files (too big for git, stored locally)
+c4_en_full_census.jsonl
+c4_uk_full_census.jsonl
+c4_ru_*.jsonl
+c4_*_crimea.jsonl
+classified_c4_*_rust.jsonl
+classified_c4_en.jsonl
+classified_c4_uk.jsonl
+doi_all_*.jsonl
+academic_contamination_*.jsonl
+academic_c4_*.jsonl
+c4_parquet/

@@ -111,6 +111,8 @@ RU_RUSSIA = [
     (r'крым\s+—?\s+(?:это|е)\s+росси', 2.0, 'ru_framing'),
     (r'крым\s+вернулся\s+в\s+росси', 1.5, 'ru_framing'),
     (r'крым\s+стал\s+(?:частью|регионом)\s+росси', 2.0, 'ru_framing'),
+    (r'крым\s+(?:это\s+)?часть\s+росси', 2.0, 'ru_framing'),
+    (r'крым\s+(?:является|стал)\s+субъект', 1.5, 'ru_framing'),
     (r'референдум\w*\s+(?:в\s+)?крым\w*.*(?:присоединени|воссоединени)', 1.5, 'ru_framing'),
 ]
 
@@ -140,11 +142,21 @@ UK_UKRAINE = [
 
 UK_RUSSIA = [
     # Location labels
-    (r'(?:сімферополь|севастополь|ялта|керч)\s*[,\-]\s*(?:крим\s*[,\-]\s*)?росі', 2.0, 'uk_location_label'),
+    (r'(?:сімферополь|севастополь|ялта|керч|феодосія|євпаторія)\s*[,\-]\s*(?:крим\s*[,\-]\s*)?росі', 2.0, 'uk_location_label'),
+    (r'крим\s*[,\-]\s*росі', 2.0, 'uk_location_label'),
 
-    # Framing — Russian narrative in Ukrainian text (rare but exists)
+    # Admin names — Russian Federation designations in Ukrainian text
+    (r'(?<!автономна\s)республіка\s+крим', 1.5, 'uk_admin_name'),
+    (r'кримський\s+федеральний\s+округ', 1.5, 'uk_admin_name'),
+
+    # Framing — Russian narrative in Ukrainian text
     (r'возз\'?єднанн\w+\s+крим', 1.5, 'uk_framing'),
     (r'приєднанн\w+\s+крим\w*\s+до\s+росі', 1.5, 'uk_framing'),
+    (r'крим\s+у\s+складі\s+росі', 2.0, 'uk_framing'),
+    (r'крим\s+став\s+(?:частиною|регіоном)\s+росі', 2.0, 'uk_framing'),
+    (r'крим\s+—?\s+це\s+росі', 2.0, 'uk_framing'),
+    (r'крим\s+повернувся\s+(?:до|в)\s+росі', 1.5, 'uk_framing'),
+    (r'крим\s+наш', 2.0, 'uk_framing'),
 ]
 
 # =====================================================================
@@ -171,6 +183,131 @@ CRIMEA_REFERENCE = re.compile(
     r'crimea|крим[уіа]?|крым[ауе]?|krim|kırım|crimée|krimea',
     re.IGNORECASE
 )
+
+# =====================================================================
+# PROPAGANDA SOURCE DOMAINS
+# =====================================================================
+# Tiered list of Russian state-controlled/state-adjacent media domains.
+# Used to classify the SOURCE of Russia-framing documents.
+# Sources: GEC (2020), EU sanctions, EUvsDisinfo, DFRLab/CheckFirst.
+
+# Tier 1: Direct state-owned / state-funded
+STATE_MEDIA_T1 = [
+    # Rossiya Segodnya group
+    "ria.ru", "sputniknews.com", "sputnikglobe.com", "inosmi.ru", "ukraina.ru",
+    "baltnews.ee", "baltnews.lt", "baltnews.lv",
+    # TASS
+    "tass.com", "tass.ru",
+    # RT (TV-Novosti)
+    "rt.com", "russian.rt.com", "arabic.rt.com", "actualidad.rt.com",
+    "rtarabic.com", "ruptly.tv",
+    # RT clone/mirror domains (post-EU-sanctions)
+    "freedert.online", "dert.online", "rtde.live", "swentr.site", "rurtnews.com",
+    # Broadcasters
+    "iz.ru", "rg.ru", "tvzvezda.ru", "ntv.ru", "vesti.ru",
+    "1tv.ru", "5-tv.ru",
+]
+
+# Tier 2: GEC-identified proxy outlets
+STATE_MEDIA_T2 = [
+    "strategic-culture.org",   # SVR-linked
+    "globalresearch.ca",       # Conspiracy, amplifies Russian narratives
+    "journal-neo.org",         # New Eastern Outlook, Russian Academy of Sciences
+    "news-front.info",         # Based in occupied Crimea
+    "southfront.org",          # US-sanctioned, Crimea-based
+    "katehon.com",             # Moscow quasi-think-tank
+    "geopolitica.ru",          # Dugin-linked
+]
+
+# Tier 3: Pravda Network (Portal Kombat) — pravda-branded domains
+# Source: American Sunlight Project PK Database, DFRLab/CheckFirst
+PRAVDA_NETWORK = [
+    "news-pravda.com",         # Main hub (country subdomains) — Portal Kombat / TigerWeb
+    "dnr-pravda.ru",           # DNR variant
+    # NOTE: pravda.ru = old Soviet newspaper, now in STATE_ADJ_T4 (NOT Portal Kombat)
+    # NOTE: pravda.com.ua = Ukrainska Pravda = legitimate Ukrainian outlet, NOT included
+]
+
+# Tier 4: Russian domestic state-adjacent / sanctioned
+STATE_MEDIA_T4 = [
+    "lenta.ru", "aif.ru", "ng.ru", "mk.ru", "kp.ru", "kommersant.ru",
+    "gazeta.ru", "tsargrad.tv", "riafan.ru", "anna-news.info",
+    "rusvesna.su", "novoeizdanie.com", "sevastopol.su", "e-crimea.info",
+    "voiceofeurope.com",       # EU-sanctioned
+    "pravda.ru",               # Old Soviet Pravda newspaper (NOT Portal Kombat)
+    "pravda-tv.com",
+]
+
+# All domains flattened for fast lookup
+ALL_PROPAGANDA_DOMAINS = set(
+    STATE_MEDIA_T1 + STATE_MEDIA_T2 + PRAVDA_NETWORK + STATE_MEDIA_T4
+)
+
+def classify_source(url: str) -> str:
+    """Classify a URL's domain against known propaganda tiers.
+    Returns: 'state_t1', 'proxy_t2', 'pravda', 'state_adj_t4', or 'independent'.
+    """
+    if not url:
+        return "independent"
+    url_lower = url.lower()
+    # Extract domain-ish substring (handles full URLs and bare domains)
+    for d in STATE_MEDIA_T1:
+        if d in url_lower:
+            return "state_t1"
+    for d in STATE_MEDIA_T2:
+        if d in url_lower:
+            return "proxy_t2"
+    for d in PRAVDA_NETWORK:
+        if d in url_lower:
+            return "pravda"
+    for d in STATE_MEDIA_T4:
+        if d in url_lower:
+            return "state_adj_t4"
+    return "independent"
+
+# =====================================================================
+# QUOTATION / ATTRIBUTION MARKERS
+# =====================================================================
+# These detect when Russia-framing appears as a QUOTATION (attributed to
+# a source) rather than as a factual ASSERTION. A BBC article saying
+# 'what Russia calls "reunification"' is quoting, not asserting.
+# LLMs cannot distinguish these — both produce the same token patterns.
+
+QUOTATION_EN = [
+    # Direct attribution to Russian sources
+    r'(?:russia|moscow|kremlin|putin|lavrov)\s+(?:says?|claims?|calls?|argues?|insists?|maintains?|considers?|declared?|stated?)',
+    r'according\s+to\s+(?:russia|moscow|kremlin|putin)',
+    r'what\s+(?:russia|moscow|kremlin)\s+calls?',
+    # Skepticism / distancing markers
+    r'so[\s-]called\s+(?:reunif|referendum|accession|republic\s+of\s+crimea)',
+    r'(?:self[\s-])?proclaimed\s+(?:republic|referendum)',
+    r'(?:sham|illegal|illegitimate)\s+referendum',
+    # Quotation marks around Russian-narrative terms
+    r'["\u201c\u00ab](?:reunif\w+|accession|rejoined|returned?\s+to\s+russia)["\u201d\u00bb]',
+]
+
+QUOTATION_RU = [
+    # Attribution to Russian sources in Russian text
+    r'(?:россия|кремль|москва|путин)\s+(?:считает|называет|утверждает|заявляет)',
+    r'по\s+(?:мнению|версии|заявлению)\s+(?:россии|кремля|москвы|путина)',
+    # Skepticism markers
+    r'так\s+называем\w+\s+(?:воссоединени|присоединени|референдум|республик)',
+    # Quotation marks around Russian-narrative terms
+    r'[\u00ab\u201c](?:воссоединени|присоединени|вхождени|референдум)\w*[\u00bb\u201d]',
+]
+
+QUOTATION_UK = [
+    # Attribution to Russian sources in Ukrainian text
+    r'(?:росія|кремль|москва|путін)\s+(?:вважає|називає|стверджує|заявляє)',
+    r'за\s+(?:версією|заявою)\s+(?:росії|кремля|москви|путіна)',
+    # Skepticism markers
+    r'так\s+зван\w+\s+(?:возз\'?єднання|приєднання|референдум|республік)',
+    # Quotation marks
+    r'[\u00ab\u201c](?:возз\'?єднанн|приєднанн|референдум)\w*[\u00bb\u201d]',
+]
+
+QUOTATION_MARKERS = [re.compile(p, re.IGNORECASE) for p in
+                     QUOTATION_EN + QUOTATION_RU + QUOTATION_UK]
 
 # =====================================================================
 # COMPILED SIGNAL GROUPS

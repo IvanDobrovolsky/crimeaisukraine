@@ -1,0 +1,87 @@
+{
+  "generated_utc": "2026-04-13T04:26:55Z",
+  "uk": {
+    "total_lines": 3650217,
+    "crimea_mentions": 2405852,
+    "labels": {
+      "no_signal": 2192881,
+      "ukraine": 207783,
+      "russia": 4904,
+      "disputed": 284
+    },
+    "russia_asserted": 4778,
+    "russia_quoted": 126,
+    "source_types": {
+      "independent": 2403711,
+      "state_t1": 1941,
+      "state_adj_t4": 197,
+      "proxy_t2": 2,
+      "pravda": 1
+    },
+    "cross_tab": {
+      "independent": {
+        "no_signal": 2190824,
+        "ukraine": 207704,
+        "russia": 4899,
+        "disputed": 284
+      },
+      "state_t1": {
+        "no_signal": 1863,
+        "ukraine": 73,
+        "russia": 5
+      },
+      "state_adj_t4": {
+        "no_signal": 191,
+        "ukraine": 6
+      },
+      "proxy_t2": {
+        "no_signal": 2
+      },
+      "pravda": {
+        "no_signal": 1
+      }
+    }
+  },
+  "total": {
+    "total_lines": 3650217,
+    "crimea_mentions": 2405852,
+    "labels": {
+      "no_signal": 2192881,
+      "ukraine": 207783,
+      "russia": 4904,
+      "disputed": 284
+    },
+    "russia_asserted": 4778,
+    "russia_quoted": 126,
+    "source_types": {
+      "independent": 2403711,
+      "state_t1": 1941,
+      "state_adj_t4": 197,
+      "proxy_t2": 2,
+      "pravda": 1
+    },
+    "cross_tab": {
+      "independent": {
+        "no_signal": 2190824,
+        "ukraine": 207704,
+        "russia": 4899,
+        "disputed": 284
+      },
+      "state_t1": {
+        "no_signal": 1863,
+        "ukraine": 73,
+        "russia": 5
+      },
+      "state_adj_t4": {
+        "no_signal": 191,
+        "ukraine": 6
+      },
+      "proxy_t2": {
+        "no_signal": 2
+      },
+      "pravda": {
+        "no_signal": 1
+      }
+    }
+  }
+}

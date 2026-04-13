@@ -13,7 +13,7 @@ Usage:
 import re
 from dataclasses import dataclass, field
 
-from sovereignty_signals import ALL_SIGNALS, CRIMEA_REFERENCE
+from sovereignty_signals import ALL_SIGNALS, CRIMEA_REFERENCE, QUOTATION_MARKERS, classify_source
 
 
 @dataclass
@@ -33,9 +33,11 @@ class ClassificationResult:
     signals: list[Signal] = field(default_factory=list)
     ua_score: float = 0.0
     ru_score: float = 0.0
+    is_quoted: bool = False  # True if Russia-framing appears as quotation/attribution
+    source_type: str = ""    # 'state_t1', 'proxy_t2', 'pravda', 'state_adj_t4', 'independent'
 
     def to_dict(self) -> dict:
-        return {
+        d = {
             "label": self.label,
             "confidence": round(self.confidence, 3),
             "ua_score": round(self.ua_score, 3),
@@ -47,20 +49,35 @@ class ClassificationResult:
                 for s in self.signals
             ],
         }
+        if self.label == "russia":
+            d["is_quoted"] = self.is_quoted
+        if self.source_type:
+            d["source_type"] = self.source_type
+        return d
 
 
 class SovereigntyClassifier:
-    """Classifies text for Crimea sovereignty framing using 81 signals in 3 languages."""
+    """Classifies text for Crimea sovereignty framing with quotation detection."""
 
     def __init__(self):
         self._signals = ALL_SIGNALS
+        self._quotation_markers = QUOTATION_MARKERS
 
     def has_crimea_reference(self, text: str) -> bool:
         """Quick check: does the text mention Crimea?"""
         return bool(CRIMEA_REFERENCE.search(text))
 
-    def classify(self, text: str) -> ClassificationResult:
-        """Classify text for sovereignty framing."""
+    def _detect_quotation(self, text: str) -> bool:
+        """Check if Russia-framing text contains quotation/attribution markers."""
+        return any(m.search(text) for m in self._quotation_markers)
+
+    def classify(self, text: str, url: str = "") -> ClassificationResult:
+        """Classify text for sovereignty framing.
+
+        Args:
+            text: Document text (or window around Crimea mention).
+            url: Document source URL — used for propaganda source detection.
+        """
         signals = []
 
         for regex, direction, weight, sig_type in self._signals:
@@ -75,24 +92,31 @@ class SovereigntyClassifier:
                     context=text[start:end].strip(),
                 ))
 
+        source_type = classify_source(url) if url else ""
+
         if not signals:
-            return ClassificationResult("no_signal", 0.0)
+            return ClassificationResult("no_signal", 0.0, source_type=source_type)
 
         ua_score = sum(s.weight for s in signals if s.direction == "ukraine")
         ru_score = sum(s.weight for s in signals if s.direction == "russia")
         total = ua_score + ru_score
 
         if total == 0:
-            return ClassificationResult("no_signal", 0.0, signals, ua_score, ru_score)
+            return ClassificationResult("no_signal", 0.0, signals, ua_score, ru_score,
+                                        source_type=source_type)
 
         if ua_score > ru_score:
             confidence = min(0.95, ua_score / total)
-            return ClassificationResult("ukraine", confidence, signals, ua_score, ru_score)
+            return ClassificationResult("ukraine", confidence, signals, ua_score, ru_score,
+                                        source_type=source_type)
         elif ru_score > ua_score:
             confidence = min(0.95, ru_score / total)
-            return ClassificationResult("russia", confidence, signals, ua_score, ru_score)
+            is_quoted = self._detect_quotation(text)
+            return ClassificationResult("russia", confidence, signals, ua_score, ru_score,
+                                        is_quoted, source_type)
         else:
-            return ClassificationResult("disputed", 0.5, signals, ua_score, ru_score)
+            return ClassificationResult("disputed", 0.5, signals, ua_score, ru_score,
+                                        source_type=source_type)
 
 
 if __name__ == "__main__":
