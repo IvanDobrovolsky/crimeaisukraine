@@ -18,11 +18,6 @@ import ipPipeline from '../../../pipelines/ip/data/manifest.json';
 import mediaPipeline from '../../../pipelines/media/data/manifest.json';
 import techInfraPipeline from '../../../pipelines/tech_infrastructure/data/manifest.json';
 import wikipediaPipeline from '../../../pipelines/wikipedia/data/manifest.json';
-// Training corpora display data — read-only, owned by another agent's pipeline.
-// We render raw numbers from the latest summary; conclusions about model
-// behaviour live in the LLM audit section, not here.
-import trainingCorporaSummary from '../../../data/training_corpora_summary.json';
-
 // GitHub source links for each pipeline — used in section banners
 const REPO = 'https://github.com/IvanDobrovolsky/crimeaisukraine';
 const pipelineLinks = (name: string) => ({
@@ -417,7 +412,6 @@ const mediaViolatorsByFilter = mediaViolators as any;
       { id: 'geodata', label: t.navGeodata },
       { id: 'media-framing', label: t.navMediaFraming },
       { id: 'academic-framing', label: t.navAcademicFraming },
-      { id: 'training-corpora', label: t.navTrainingCorpora },
       { id: 'llm-audit', label: t.navLlmAudit },
       { id: 'wikipedia', label: t.navWikipedia },
       { id: 'map-services', label: t.navMapServices },
@@ -1152,73 +1146,6 @@ const mediaViolatorsByFilter = mediaViolators as any;
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════════════════
-     Training corpora — raw numbers only, no conclusions. The
-     conclusions about model output behaviour live in the LLM audit
-     section below. This is a display layer over the existing
-     data/training_corpora_summary.json (we don't touch the scan
-     because the pipeline is owned by another agent).
-     ═══════════════════════════════════════════════════════════════ -->
-<section id="training-corpora" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
-  <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.trainingCorporaTitle}</h2>
-    <p class="text-[#5c5f77] mb-3">{lang === 'uk'
-      ? 'Що відкриті моделі "бачили" в своєму навчальному корпусі для терміна "Crimea". Ми відсканували 7 публічно доступних корпусів — сирі підрахунки без висновків. Висновки про поведінку моделей дивіться в розділі "LLM аудит" нижче — корпуси і поведінка моделі є дві різні речі, і їх треба читати разом.'
-      : 'What open-source models "saw" about Crimea in their training data. We scanned 7 publicly accessible corpora — raw counts, no conclusions. DOI-level trace: 95.7% of the 1,581 human-confirmed Russia-framing papers are indexed in Semantic Scholar (S2ORC), which feeds Dolma\'s academic tier — that tier shows 18.5% Russia-framing vs 12.2% in web tier. Conclusions about model output behaviour live in the LLM audit section below; training data and model output are two different things and should be read together.'
-    }</p>
-    <div class="text-[10px] text-[#6c6f85] mb-2 italic">{lang === 'uk'
-      ? 'Джерело: ' : 'Source: '
-    }<span class="font-mono">data/training_corpora_summary.json</span> · {lang === 'uk' ? 'востаннє оновлено' : 'last refreshed'} {(trainingCorporaSummary as any).date?.slice(0, 10) || '2026-04'}</div>
-    <div class="text-[10px] text-[#6c6f85] mb-6 flex flex-wrap items-center gap-2">
-      <span class="text-[#5c5f77]">📂 pipelines/training_corpora/</span>
-      <a href={pipelineLinks('training_corpora').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
-      <span class="text-[#bcc0cc]">·</span>
-      <a href={`${REPO}/blob/main/data/training_corpora_summary.json`} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">data/summary.json ↗</a>
-    </div>
-
-    <!-- Per-corpus table -->
-    <div class="overflow-x-auto">
-      <table class="w-full text-xs">
-        <thead>
-          <tr class="text-[10px] uppercase tracking-wider text-[#6c6f85] border-b border-[#ccd0da]">
-            <th class="text-left p-2">{lang === 'uk' ? 'Корпус' : 'Corpus'}</th>
-            <th class="text-left p-2">{lang === 'uk' ? 'Моделі' : 'Models'}</th>
-            <th class="text-right p-2">{lang === 'uk' ? 'Всього скан.' : 'Total scanned'}</th>
-            <th class="text-right p-2">{lang === 'uk' ? 'Згадок Криму' : 'Crimea mentions'}</th>
-            <th class="text-right p-2"><span class="text-[#40a02b]">UA frame</span></th>
-            <th class="text-right p-2"><span class="text-[#d20f39]">RU frame</span></th>
-            <th class="text-right p-2"><span class="text-[#df8e1d]">disp.</span></th>
-            <th class="text-right p-2">{lang === 'uk' ? 'без сигн.' : 'no sig.'}</th>
-            <th class="text-right p-2">UA %</th>
-            <th class="text-right p-2">RU %</th>
-          </tr>
-        </thead>
-        <tbody>
-          {((trainingCorporaSummary as any).results || []).map((r: any) => (
-            <tr class="border-b border-[#ccd0da] hover:bg-[#eff1f5]">
-              <td class="p-2 font-mono text-[#4c4f69]">{r.corpus}</td>
-              <td class="p-2 text-[10px] text-[#6c6f85]">{(r.models_using || []).join(', ') || '—'}</td>
-              <td class="p-2 text-right font-mono text-[#5c5f77]">{(r.total_scanned || 0).toLocaleString()}</td>
-              <td class="p-2 text-right font-mono text-[#5c5f77]">{(r.crimea_mentions || 0).toLocaleString()}</td>
-              <td class="p-2 text-right font-mono text-[#40a02b]">{r.ukraine_frame || 0}</td>
-              <td class="p-2 text-right font-mono text-[#d20f39]">{r.russia_frame || 0}</td>
-              <td class="p-2 text-right font-mono text-[#df8e1d]">{r.disputed || 0}</td>
-              <td class="p-2 text-right font-mono text-[#6c6f85]">{r.no_signal || 0}</td>
-              <td class="p-2 text-right font-mono text-[#40a02b]">{r.ukraine_pct ?? 0}%</td>
-              <td class="p-2 text-right font-mono text-[#d20f39]">{r.russia_pct ?? 0}%</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-
-    <div class="mt-4 text-[10px] text-[#6c6f85] italic">{lang === 'uk'
-      ? '«UA frame» і «RU frame» — кількість документів з сигналами Україна-framing vs Росія-framing у вибірці документів, що згадують Крим. «no signal» — документи без явних сигналів (типово новини/дані, які згадують місто, але без політичного контексту). Відсотки обчислюються на підмножині документів з будь-яким сигналом. Інтерпретація цих чисел щодо поведінки моделі знаходиться в розділі LLM аудит нижче.'
-      : '"UA frame" and "RU frame" are counts of documents with Ukraine-framing vs Russia-framing signals within the Crimea-mentioning sample. "no signal" covers documents that mention a Crimean place without a political frame (typical of news / data). Percentages are computed on the subset of documents with any signal. Interpretation of these numbers with respect to model behaviour lives in the LLM audit section below.'
-    }</div>
-  </div>
-</section>
-
 <!-- LLM Sovereignty Audit -->
 <section id="llm-audit" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
@@ -1361,10 +1288,6 @@ const mediaViolatorsByFilter = mediaViolators as any;
       <div class="bg-white border border-[#ccd0da] rounded-lg p-3">
         <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Інверсія малих моделей' : 'Open / small inversion'}</div>
         <div class="text-base text-[#4c4f69]"><strong>−0.08 to −0.49</strong> on 10 models. Smaller / open models leak hedging templates ("internationally recognized as Ukraine") in free-recall.</div>
-      </div>
-      <div class="bg-white border border-[#ccd0da] rounded-lg p-3">
-        <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Каузальний ланцюг Dolma → OLMo' : 'Dolma → OLMo causal chain'}</div>
-        <div class="text-base text-[#4c4f69]">Dolma v1.6 = <strong>2.0%</strong> RU framing → OLMo-2 SAS <strong>0.663</strong>, OLMo-3 SAS <strong>0.574</strong>. The only fully reproducible corpus→model trace in the audit. DOI-level proof: 95.7% of the 1,581 confirmed Russia-framing papers are indexed in S2ORC, which feeds Dolma's academic tier (18.5% RU framing vs 12.2% in web tier).</div>
       </div>
     </div>
 

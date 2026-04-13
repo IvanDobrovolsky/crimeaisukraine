@@ -12,7 +12,7 @@ DATA := data
 SITE_DATA := site/src/data
 
 PIPELINE_NAMES := ip telecom tech_infrastructure geodata weather media \
-                  academic wikipedia institutions llm training_corpora
+                  academic wikipedia institutions llm
 
 .PHONY: help all install audit audit-core audit-extended audit-ip \
         export site clean \
@@ -58,10 +58,6 @@ pipeline-institutions: ## Run institutional registries pipeline (OFAC, EU, UK, I
 
 pipeline-llm: ## Run LLM sovereignty audit (20+ models × 50 langs × 12 cities)
 	cd $(PIPELINES)/llm && uv sync && uv run scan.py
-	$(PYTHON) $(SHARED)/build_master_manifest.py
-
-pipeline-training_corpora: ## Run training corpora scan (C4, Dolma, Pile, FineWeb)
-	cd $(PIPELINES)/training_corpora && uv sync && uv run scan.py
 	$(PYTHON) $(SHARED)/build_master_manifest.py
 
 pipelines-all: $(addprefix pipeline-,$(PIPELINE_NAMES)) ## Run all pipelines sequentially

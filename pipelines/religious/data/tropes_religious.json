@@ -68,8 +68,7 @@
     "by_corpus": {
       "c4_en": 1,
       "c4_ru": 5,
-      "fineweb_edu": 2,
-      "dolma": 1
+      "fineweb_edu": 2
     },
     "by_sovereignty_label": {
       "no_signal": 8,

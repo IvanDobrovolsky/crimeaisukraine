@@ -81,3 +81,5 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
   File 0974: 277 Crimea (tot:21756 RU=228 UA=2138 28,149,065docs 3474s)
   File 0975: 266 Crimea (tot:22022 RU=232 UA=2166 28,505,383docs 3522s)
   File 0976: 299 Crimea (tot:22321 RU=237 UA=2194 28,861,700docs 3561s)
+/opt/anaconda3/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

@@ -48,9 +48,8 @@ OLLAMA_MODELS = [
     {"id": "gemma4", "name": "gemma4", "provider": "ollama"},
     {"id": "qwen3", "name": "qwen3", "provider": "ollama"},
     {"id": "mistral-small", "name": "mistral-small", "provider": "ollama"},
-    # Open training data — directly auditable (causal chain to corpus)
-    {"id": "olmo2", "name": "olmo2", "provider": "ollama"},      # AI2, Dolma v1.6 corpus
-    {"id": "olmo3", "name": "olmo3", "provider": "ollama"},      # AI2, Dolma3 corpus (newer)
+    {"id": "olmo2", "name": "olmo2", "provider": "ollama"},
+    {"id": "olmo3", "name": "olmo3", "provider": "ollama"},
     {"id": "smollm3", "name": "smollm3", "provider": "ollama"},  # HuggingFaceTB, FineWeb-Edu corpus
 ]
 OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434/v1")

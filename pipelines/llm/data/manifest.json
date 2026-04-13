@@ -82,7 +82,6 @@
   "key_findings": [
     "Cross-lab RLHF gap: all 8 flagship models show positive D-R gap (+0.05 to +0.33), meaning forced-choice sovereignty alignment exceeds free-recall alignment. Strongest gap: gemini-2.5-pro (+0.33), gpt-5.4 (+0.27).",
     "Negative-gap inversion on 10 open/small models: open-ended recall is more Ukraine-aligned than forced-choice answers, suggesting RLHF training overcorrects toward neutrality.",
-    "OLMo/Dolma causal chain: OLMo2 and OLMo3 (trained on Dolma corpus) rank in bottom 5, consistent with Dolma's 12.2% Russia-framing rate measured in the training_corpora pipeline.",
     "4-tier SAS (Sovereignty Alignment Score) with 6 weight schemes shows rank-order stability (Spearman > 0.9 across schemes)."
   ],
   "limitations": [

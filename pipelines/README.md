@@ -16,7 +16,6 @@ Each subdirectory is an **independent pipeline** that audits one aspect of how d
 | [**wikipedia**](wikipedia/README.md) | 17 entities × 30 language editions + Wikidata · erasure by omission | ✓ stable |
 | [**institutions**](institutions/README.md) | LoC, ROR, OFAC, EUR-Lex, ICAO, ITU, ISO · 6/6 unanimous | ✓ stable |
 | [**llm**](llm/README.md) | 20+ LLMs × 50 languages × 12 cities × 15 questions · cognitive dissonance + training cutoff bias | 🔄 running |
-| [**training_corpora**](training_corpora/README.md) | C4, Dolma, Pile, FineWeb, OSCAR · C4 Russian is 58.7% Russia-framed | 🔄 running |
 
 ## Standard layout per pipeline
 

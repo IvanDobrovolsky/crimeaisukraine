@@ -121,6 +121,8 @@ fn build_signals() -> Vec<Signal> {
     ];
 
     // --- RUSSIAN RUSSIA (16) ---
+    // NOTE: "республика крым" must NOT match "автономная республика крым" (Ukrainian designation)
+    // Since Rust regex has no lookbehinds, we handle this in the scoring logic below
     let ru_ru: &[(&str, f32)] = &[
         (r"(?i)(?:симферополь|севастополь|ялта|керчь|феодосия|евпатория)\s*[,\-]\s*(?:крым\s*[,\-]\s*)?росси", 2.0),
         (r"(?i)крым\s*[,\-]\s*росси", 2.0),
@@ -320,6 +322,7 @@ impl Classifier {
 
     fn classify(&self, text: &str, url: &str) -> OutputDoc {
         let window = extract_window(text, 1000);
+        let lower_window = window.to_lowercase();
         let mut ua_score: f32 = 0.0;
         let mut ru_score: f32 = 0.0;
 
@@ -332,6 +335,36 @@ impl Classifier {
                 }
             }
         }
+
+        // FALSE POSITIVE CORRECTION: "автономная республика крым" is UKRAINIAN,
+        // not Russian. If the Russia score includes "республика крым" but the text
+        // actually says "автономная республика крым", subtract the false match and
+        // add to Ukraine score instead.
+        // Same for English "autonomous republic of crimea" and Ukrainian "автономна республіка крим"
+        let has_auto_ru = lower_window.contains("автономная республика крым")
+            || lower_window.contains("автономна республика крым");
+        let has_auto_en = lower_window.contains("autonomous republic of crimea");
+        let has_auto_uk = lower_window.contains("автономна республіка крим");
+        let has_bare_republic_ru = lower_window.contains("республика крым")
+            && !has_auto_ru;
+        let has_bare_republic_en = lower_window.contains("republic of crimea")
+            && !has_auto_en;
+        let has_bare_republic_uk = lower_window.contains("республіка крим")
+            && !has_auto_uk;
+
+        if has_auto_ru && !has_bare_republic_ru {
+            ru_score -= 1.5;  // remove false Russia signal
+            ua_score += 1.5;  // add correct Ukraine signal
+        }
+        if has_auto_en && !has_bare_republic_en {
+            ru_score -= 1.5;
+            ua_score += 1.5;
+        }
+        if has_auto_uk && !has_bare_republic_uk {
+            ru_score -= 1.5;
+            ua_score += 1.5;
+        }
+        if ru_score < 0.0 { ru_score = 0.0; }
 
         let source_type = classify_source(url);
 

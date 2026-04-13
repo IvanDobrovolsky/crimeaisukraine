@@ -1,6 +1,6 @@
 # Academic Framing: How DOIs Make Sovereignty Claims Permanent
 
-1,581 peer-reviewed papers published by major Western publishers (Wiley, IOP, EDP Sciences, Elsevier SSRN, CERN Zenodo) list authors' affiliations as "Republic of Crimea, Russian Federation." Each has a permanent DOI. None will be corrected. All are now part of LLM training data through academic corpora like [peS2o](https://github.com/allenai/peS2o), [S2ORC](https://github.com/allenai/s2orc), and [arXiv](https://arxiv.org/) -- the corpora that feed [Dolma](../training_corpora/README.md), which trains [OLMo-2](https://allenai.org/olmo2).
+1,581 peer-reviewed papers published by major Western publishers (Wiley, IOP, EDP Sciences, Elsevier SSRN, CERN Zenodo) list authors' affiliations as "Republic of Crimea, Russian Federation." Each has a permanent DOI. None will be corrected. All are now part of LLM training data through academic corpora like [peS2o](https://github.com/allenai/peS2o), [S2ORC](https://github.com/allenai/s2orc), and [arXiv](https://arxiv.org/).
 
 **Novelty:** First systematic scan of academic metadata for sovereignty framing at scale. **91,670 papers scanned, 5,151 sovereignty-signaled, 1,581 LLM-confirmed Russia-framed.**
 
@@ -73,7 +73,6 @@ ROR codes 13 of 14 Crimean academic institutions as Ukraine. But papers publishe
 3. **No academic indexing service** (CrossRef, Scopus, Web of Science, Google Scholar) validates sovereignty claims in metadata
 4. **DOIs are permanent** -- no mechanism for retroactive correction
 5. **Structural anonymity** is the core gap: CrossRef disclaims metadata accuracy, Scopus evaluates journals not papers, Google Scholar crawls everything
-6. **Direct LLM training-data bridge**: Dolma exhibits 12.2% conditional Russia framing via the academic tier (peS2o/S2ORC)
 
 ## Limitations
 
@@ -86,4 +85,4 @@ ROR codes 13 of 14 Crimean academic institutions as Ukraine. But papers publishe
 - [OpenAlex](https://openalex.org/) | [CrossRef](https://www.crossref.org/) | [ROR](https://ror.org/)
 - [EU Reg 692/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692)
 - [Research Professional News (2025)](https://www.researchprofessionalnews.com/rr-news-world-2025-3-major-journals-publishing-papers-from-russian-controlled-ukraine/)
-- Related: [Training corpora](../training_corpora/README.md) | [LLM pipeline](../llm/README.md)
+- Related: [LLM pipeline](../llm/README.md)

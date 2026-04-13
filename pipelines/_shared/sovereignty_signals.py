@@ -82,7 +82,8 @@ RU_UKRAINE = [
     (r'крым\s*[,\-]\s*украин', 2.0, 'ru_location_label'),
 
     # Admin names
-    (r'автономна\s+республ[іи]ка?\s+крим', 1.5, 'ru_admin_name'),
+    (r'автономна\w?\s+республ[іи]ка?\s+крым', 1.5, 'ru_admin_name'),
+    (r'автономна\s+республіка\s+крим', 1.5, 'ru_admin_name'),
 
     # Framing
     (r'аннекс[ия]\w*\s+крым', 2.0, 'ru_framing'),
@@ -98,7 +99,8 @@ RU_RUSSIA = [
     (r'крым\s*[,\-]\s*росси', 2.0, 'ru_location_label'),
 
     # Admin names — Russian Federation
-    (r'республика\s+крым', 1.5, 'ru_admin_name'),
+    # MUST NOT match "автономная республика крым" which is UKRAINIAN designation
+    (r'(?<!автономная\s)(?<!автономна\s)республика\s+крым', 1.5, 'ru_admin_name'),
     (r'крымский\s+федеральный\s+округ', 1.5, 'ru_admin_name'),
     (r'субъект\w*\s+(?:российской\s+)?федерации.*крым', 1.5, 'ru_admin_name'),
 

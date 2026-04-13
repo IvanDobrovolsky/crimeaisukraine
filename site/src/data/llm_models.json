@@ -173,7 +173,7 @@
       "org": "AI2",
       "access": "open",
       "type": "Ollama",
-      "training_data": "Dolma v1.6",
+      "training_data": "AI2 open corpus",
       "release": "2024-11",
       "tier": "frontier",
       "url": "https://allenai.org/olmo"
@@ -184,7 +184,7 @@
       "org": "AI2",
       "access": "open",
       "type": "Ollama",
-      "training_data": "Dolma 3",
+      "training_data": "AI2 open corpus v3",
       "release": "2025-10",
       "tier": "frontier",
       "url": "https://allenai.org/olmo"

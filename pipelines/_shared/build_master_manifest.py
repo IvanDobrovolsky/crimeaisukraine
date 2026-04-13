@@ -24,7 +24,7 @@ OUTPUT = SITE_DATA / "master_manifest.json"
 
 PIPELINE_NAMES = [
     "ip", "telecom", "tech_infrastructure", "geodata", "weather",
-    "media", "academic", "wikipedia", "institutions", "llm", "training_corpora",
+    "media", "academic", "wikipedia", "institutions", "llm",
 ]
 
 

@@ -456,7 +456,7 @@ size_categories:
 
 # Crimea Digital Sovereignty: Training Corpora Sovereignty Framing
 
-Analysis of how LLM training corpora (C4, Dolma, RedPajama) frame Crimea's sovereignty.
+Analysis of how LLM training corpora (C4, RedPajama) frame Crimea's sovereignty.
 
 ## Description
 
@@ -470,10 +470,8 @@ Documents from major LLM training corpora that mention Crimea, classified by sov
 ## Key Findings
 
 - C4-Russian: 58.7% Russia-framed
-- Dolma: 12.2% Russia-framed
 - C4-English: 10.0% Russia-framed
 - Models trained on higher Russia-framing corpora produce more incorrect sovereignty answers
-- OLMo (trained on Dolma) → lowest SAS scores, demonstrating the causal chain
 
 ## Citation
 

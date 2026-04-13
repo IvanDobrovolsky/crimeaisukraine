@@ -2,7 +2,7 @@
 
 18 frontier-class models from 9 labs audited at `temperature=0` on 15 questions x 50 languages x 12 cities. Every frontier flagship gives a Ukraine-aligned answer on forced-choice but reverts to Russia-aligned framing on free-recall. The RLHF gap is **+0.18 to +0.33** across four independent labs and is invisible to every previously published LLM benchmark, all of which use forced-choice only.
 
-**Novelty:** Largest deterministic dual-tier LLM audit on any disputed territory. Extends [Li & Haider (NAACL 2024)](https://aclanthology.org/2024.naacl-long.213/) with 18 newer models, **Crimean Tatar**, free-recall generation alongside forced-choice ([TruthfulQA argument](https://aclanthology.org/2022.acl-long.229/)), the **Sovereignty Alignment Score (SAS)** with sensitivity analysis, and a direct corpus-to-model causal measurement for OLMo-2 via the public [Dolma corpus](https://allenai.github.io/dolma/).
+**Novelty:** Largest deterministic dual-tier LLM audit on any disputed territory. Extends [Li & Haider (NAACL 2024)](https://aclanthology.org/2024.naacl-long.213/) with 18 newer models, **Crimean Tatar**, free-recall generation alongside forced-choice ([TruthfulQA argument](https://aclanthology.org/2022.acl-long.229/)), and the **Sovereignty Alignment Score (SAS)** with sensitivity analysis.
 
 ## Sampling parameters
 
@@ -69,10 +69,9 @@ All numbers regenerable via `python3 pipelines/llm/compute_sas.py`. Source data:
 1. **Cross-lab RLHF gap (+0.18 to +0.33).** Five flagships from four labs cluster tightly. Every benchmark using only forced-choice probes overestimates alignment by 22--33 points.
 2. **Negative-gap inversion in open/small models.** 8 models (gemma4 -0.498, qwen3 -0.493, olmo2 -0.434, smollm3 -0.311, gpt-5.4-nano -0.250, olmo3 -0.232, mistral-small -0.219, llama4 -0.204) score *higher* on free-recall than forced-choice -- reflexive hedging templates vs weak surface fine-tuning.
 3. **Closed-vs-open gap shrinks from ~47 to ~21 points** once free-recall is included. Closed labs hide their default bias better behind RLHF.
-4. **OLMo/Dolma causal chain.** Dolma v1.6: 2.0% Russia framing (highest of any English corpus). OLMo-2 SAS=0.628 (3rd lowest). OLMo-3 SAS=0.573 (lowest). The only fully traceable corpus-to-model chain in the current LLM landscape.
-5. **Crimean Tatar performs worst** across every model (30% accuracy on haiku-4.5 vs 81% in English).
-6. **Cognitive dissonance is universal.** Every flagship answers "Did Russia illegally annex Crimea?" at >95% correct but drops 0.20--0.34 points on free-recall about the same cities.
-7. **No LLM provider** has published a sovereignty bias mitigation plan as of April 2026.
+4. **Crimean Tatar performs worst** across every model (30% accuracy on haiku-4.5 vs 81% in English).
+5. **Cognitive dissonance is universal.** Every flagship answers "Did Russia illegally annex Crimea?" at >95% correct but drops 0.20--0.34 points on free-recall about the same cities.
+6. **No LLM provider** has published a sovereignty bias mitigation plan as of April 2026.
 
 ## Method limitations
 
@@ -88,6 +87,5 @@ All numbers regenerable via `python3 pipelines/llm/compute_sas.py`. Source data:
 - [Castillo-Eslava et al. (2023)](https://arxiv.org/abs/2304.06030) -- ChatGPT sovereignty recognition
 - [Lin et al. (ACL 2022)](https://aclanthology.org/2022.acl-long.229/) -- TruthfulQA
 - [Bender et al. (2021)](https://dl.acm.org/doi/10.1145/3442188.3445922) -- Stochastic Parrots
-- [Dolma / OLMo-2 (AI2)](https://allenai.github.io/dolma/)
 - [EU AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) | [EU DSA Art 34](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2065) | [EU Reg 692/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0692)
-- Related: [Training corpora](../training_corpora/README.md) | [Academic framing](../academic/README.md)
+- Related: [Academic framing](../academic/README.md)

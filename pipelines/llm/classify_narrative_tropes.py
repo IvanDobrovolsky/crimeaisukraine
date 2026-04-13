@@ -28,7 +28,6 @@ This script can run on three separate data sources:
 
   --source academic      data/academic_full.jsonl  (91,670 papers with abstracts)
   --source media         data/crimea_full.jsonl    (GDELT media articles)
-  --source training      data/training_corpora_scan.jsonl  (LLM corpora snippets)
 
 Outputs
 -------
@@ -244,38 +243,12 @@ def iter_media(limit: int | None):
             }
 
 
-def iter_training(limit: int | None):
-    path = DATA / "training_corpora_scan.jsonl"
-    if not path.exists():
-        print(f"[warn] {path} not found — skipping training", file=sys.stderr)
-        return
-    print(f"[load] {path}")
-    with open(path, encoding="utf-8", errors="replace") as f:
-        for i, line in enumerate(f):
-            if limit and i >= limit:
-                break
-            try:
-                r = json.loads(line)
-            except json.JSONDecodeError:
-                continue
-            yield {
-                "id": f"training_{r.get('corpus', 'unknown')}_{r.get('doc_idx', i)}",
-                "title": "",
-                "text": r.get("snippet", "") or "",
-                "corpus": r.get("corpus", ""),
-                "source_url": r.get("source", ""),
-                "language": "",  # corpus_scan doesn't record per-doc language
-                "stage1_label": r.get("label", ""),
-            }
-
-
 # ─── Main scan ──────────────────────────────────────────────────────
 
 def scan(source: str, limit: int | None):
     loaders = {
         "academic": iter_academic,
         "media": iter_media,
-        "training": iter_training,
     }
     if source not in loaders:
         print(f"Unknown source: {source}", file=sys.stderr)
