@@ -19,7 +19,7 @@
   <text x="80" y="270" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="72" fill="#FFFFFF">Ukraine</text>
 
   <!-- Subtitle -->
-  <text x="80" y="330" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="24" fill="#94a3b8">Automated Digital Sovereignty Audit</text>
+  <text x="80" y="330" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="24" fill="#94a3b8">A Computational Audit of Crimea's Sovereignty Framing in LLMs</text>
 
   <!-- Stats row -->
   <rect x="80" y="380" width="200" height="80" rx="12" fill="#111827" stroke="#1e293b" stroke-width="1"/>

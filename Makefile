@@ -1,4 +1,4 @@
-# CrimeaIsUkraine — Digital Sovereignty Audit
+# Digital Annexation: A Computational Audit of Crimea's Sovereignty Framing in Large Language Models
 # Run `make` to see all available targets.
 # Run `make all` to execute the full automated pipeline.
 # Run `make pipeline-NAME` to execute one pipeline (e.g. `make pipeline-ip`).

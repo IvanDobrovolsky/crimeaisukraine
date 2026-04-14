@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 130" font-family="'Inter', 'Helvetica Neue', sans-serif">
+  <defs>
+    <marker id="a" markerWidth="5" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0,5 2,0 4" fill="#9ca0b0"/>
+    </marker>
+  </defs>
+
+  <rect width="420" height="130" fill="#eff1f5" rx="6"/>
+
+  <rect x="14" y="10" width="392" height="28" rx="5" fill="#eff1f5" stroke="#ccd0da"/>
+  <rect x="14" y="10" width="4" height="28" rx="2" fill="#d20f39"/>
+  <text x="30" y="29" font-size="11" font-weight="600" fill="#4c4f69">Pre-training and cross-lingual transfer</text>
+
+  <line x1="210" y1="38" x2="210" y2="48" stroke="#9ca0b0" stroke-width="1" marker-end="url(#a)"/>
+
+  <rect x="14" y="52" width="392" height="28" rx="5" fill="#eff1f5" stroke="#ccd0da"/>
+  <rect x="14" y="52" width="4" height="28" rx="2" fill="#df8e1d"/>
+  <text x="30" y="71" font-size="11" font-weight="600" fill="#4c4f69">Reinforcement Learning from Human Feedback (RLHF)</text>
+
+  <line x1="210" y1="80" x2="210" y2="90" stroke="#9ca0b0" stroke-width="1" marker-end="url(#a)"/>
+
+  <rect x="14" y="94" width="392" height="28" rx="5" fill="#eff1f5" stroke="#ccd0da"/>
+  <rect x="14" y="94" width="4" height="28" rx="2" fill="#8839ef"/>
+  <text x="30" y="113" font-size="11" font-weight="600" fill="#4c4f69">Grounding</text>
+</svg>

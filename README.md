@@ -2,7 +2,7 @@
   <img src="site/public/logo-org.svg" alt="Crimea Is Ukraine" width="128"/>
 </p>
 
-<h1 align="center">Crimea Is Ukraine — Digital Sovereignty Audit</h1>
+<h1 align="center">Digital Annexation: A Computational Audit of Crimea's Sovereignty Framing in Large Language Models</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/-Crimean%20flag-0068B7?style=flat&labelColor=0068B7&color=D52B1E" alt="Crimean flag"/>

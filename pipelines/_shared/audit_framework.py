@@ -1,5 +1,5 @@
 """
-Crimea Digital Sovereignty Audit Framework
+Digital Annexation: A Computational Audit of Crimea's Sovereignty Framing in Large Language Models
 
 Systematic classification of how digital platforms represent Crimea's sovereignty.
 Each finding is stored as a structured record with reproducibility metadata.
@@ -93,7 +93,7 @@ class AuditDatabase:
         else:
             self.data = {
                 "metadata": {
-                    "project": "Crimea Digital Sovereignty Audit",
+                    "project": "Digital Annexation: A Computational Audit of Crimea's Sovereignty Framing in Large Language Models",
                     "author": "Ivan Dobrovolsky",
                     "created": AUDIT_DATE,
                     "last_updated": AUDIT_DATE,
