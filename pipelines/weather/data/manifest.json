@@ -1,7 +1,7 @@
 {
   "pipeline": "weather",
   "version": "2.0",
-  "generated": "2026-04-08T03:45:52+00:00",
+  "generated": "2026-04-14T18:01:30+00:00",
   "method": "live_http_probe + geonames_ground_truth",
   "summary": {
     "total_services": 25,
@@ -26,7 +26,7 @@
       "status": "correct",
       "origin_country": "US",
       "url": "https://www.accuweather.com/web-api/autocomplete?query=Simferopol&language=en-us",
-      "detail": "JSON geocoding API: first result country=UA (default); full ordered list=['UA', 'RU', 'KZ', 'RU', 'KZ'] — note dual-listing with RU entry",
+      "detail": "JSON geocoding API: first result country=UA (default); full ordered list=['UA', 'RU', 'KZ', 'RU', 'RU', 'KZ'] — note dual-listing with RU entry",
       "evidence": "",
       "final_url": "https://www.accuweather.com/web-api/autocomplete?query=Simferopol&language=en-us",
       "prior_status": "correct",
@@ -39,7 +39,7 @@
         "title_mentions_russia": false,
         "title_mentions_crimea": false,
         "body_ua_hits": 2,
-        "body_ru_hits": 2,
+        "body_ru_hits": 3,
         "tz_simferopol": false,
         "tz_moscow": false
       }
@@ -266,7 +266,7 @@
       "status": "correct",
       "origin_country": "Norway",
       "url": "https://www.yr.no/en/forecast/daily-table/2-703448/Ukraine/Autonomous%20Republic%20of%20Crimea/Simferopol/Simferopol",
-      "detail": "URL path=ua; title neutral; body UA/RU hits=25/0",
+      "detail": "URL path=ua; title neutral; body UA/RU hits=26/0",
       "evidence": "Yr - Kyiv - Long term forecast",
       "final_url": "https://www.yr.no/en/forecast/daily-table/2-703448/Ukraine/Kyiv%20City/Kyiv",
       "prior_status": "correct",
@@ -278,7 +278,7 @@
         "title_mentions_ukraine": false,
         "title_mentions_russia": false,
         "title_mentions_crimea": false,
-        "body_ua_hits": 25,
+        "body_ua_hits": 26,
         "body_ru_hits": 0,
         "tz_simferopol": false,
         "tz_moscow": false
@@ -410,7 +410,7 @@
       "status": "incorrect",
       "origin_country": "Russia",
       "url": "https://yandex.com/weather/simferopol",
-      "detail": "RU-origin service (legally compelled to represent Crimea as Russian under Russian territorial integrity law); url_signal=None, body UA/RU hits=0/3",
+      "detail": "RU-origin service (legally compelled to represent Crimea as Russian under Russian territorial integrity law); url_signal=None, body UA/RU hits=0/0",
       "evidence": "Weather in Simferopol — Weather forecast in Simferopol, Republic of Crimea",
       "final_url": "https://yandex.com/weather/en/simferopol",
       "prior_status": "incorrect",
@@ -423,7 +423,7 @@
         "title_mentions_russia": false,
         "title_mentions_crimea": true,
         "body_ua_hits": 0,
-        "body_ru_hits": 3,
+        "body_ru_hits": 0,
         "tz_simferopol": false,
         "tz_moscow": false
       }
@@ -482,7 +482,7 @@
       "status": "incorrect",
       "origin_country": "Russia",
       "url": "https://pogoda.mail.ru/prognoz/simferopol/",
-      "detail": "RU-origin service (legally compelled to represent Crimea as Russian under Russian territorial integrity law); url_signal=None, body UA/RU hits=0/20",
+      "detail": "RU-origin service (legally compelled to represent Crimea as Russian under Russian territorial integrity law); url_signal=None, body UA/RU hits=0/19",
       "evidence": "Погода Mail: прогноз погоды в Симферополе на сегодня, завтра и ближайшие дни, погода в вашем регионе, на курортах",
       "final_url": "https://pogoda.mail.ru/prognoz/simferopol/",
       "prior_status": "incorrect",
@@ -495,7 +495,7 @@
         "title_mentions_russia": false,
         "title_mentions_crimea": false,
         "body_ua_hits": 0,
-        "body_ru_hits": 20,
+        "body_ru_hits": 19,
         "tz_simferopol": false,
         "tz_moscow": false
       }
@@ -531,7 +531,7 @@
       "origin_country": "US",
       "url": "https://www.msn.com/en-us/weather/forecast/in-Simferopol",
       "detail": "Neither URL path nor title carry a clear signal; body UA/RU hits=0/0 below threshold=5",
-      "evidence": "Simferopol Weather Forecast | MSN Weather",
+      "evidence": "MSN",
       "final_url": "https://www.msn.com/en-us/weather/forecast/in-Simferopol",
       "prior_status": "ambiguous",
       "agrees_with_prior": true,
