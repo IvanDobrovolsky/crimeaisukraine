@@ -1,0 +1,85 @@
+{
+  "pipeline": "grounding",
+  "version": "2.0",
+  "generated": "2026-04-15",
+  "method": "multi_model_grounding_audit \u2014 4 models \u00d7 25 queries \u00d7 10 languages, citations classified by source origin",
+  "models": [
+    "gpt-4o",
+    "claude-sonnet",
+    "gemini-2.5-flash",
+    "perplexity-sonar"
+  ],
+  "languages": [
+    "en",
+    "uk",
+    "ru",
+    "de",
+    "fr",
+    "es",
+    "pl",
+    "tr",
+    "it",
+    "nl"
+  ],
+  "query_count": 25,
+  "response_count": 1000,
+  "total_citations": 5974,
+  "classification_method": {
+    "sanctioned": "Domain match against US OFAC SDN CSV (treasury.gov/ofac/downloads/sdn.csv), EU Consolidated Financial Sanctions CSV (webgate.ec.europa.eu), UK OFSI CSV (ofsistorage.blob.core.windows.net). Financial sanctions only \u2014 EU broadcast bans excluded.",
+    "government": ".gov.ru TLD + known government domains (mid.ru and subdomains, kremlin.ru, cbr.ru, studyinrussia.ru)",
+    "russian_origin": ".ru / .su TLD",
+    "international": "All other domains"
+  },
+  "results": {
+    "sanctioned_citations": 5,
+    "sanctioned_pct": 0.1,
+    "government_citations": 67,
+    "government_pct": 1.1,
+    "russian_nongovernment_citations": 382,
+    "russian_nongovernment_pct": 6.4,
+    "international_citations": 5520,
+    "international_pct": 92.4,
+    "russian_origin_total": 454,
+    "russian_origin_pct": 7.6
+  },
+  "by_model": {
+    "gpt-4o": {
+      "citations": 95,
+      "russian_origin": 16,
+      "russian_pct": 16.8
+    },
+    "claude-sonnet": {
+      "citations": 2016,
+      "russian_origin": 87,
+      "russian_pct": 4.3
+    },
+    "gemini-2.5-flash": {
+      "citations": 2059,
+      "russian_origin": 152,
+      "russian_pct": 7.4
+    },
+    "perplexity-sonar": {
+      "citations": 1804,
+      "russian_origin": 199,
+      "russian_pct": 11.0
+    }
+  },
+  "sanctions_sources": {
+    "us_ofac": "https://www.treasury.gov/ofac/downloads/sdn.csv",
+    "eu_consolidated": "https://webgate.ec.europa.eu/fsd/fsf/public/files/csvFullSanctionsList/content",
+    "uk_ofsi": "https://ofsistorage.blob.core.windows.net/publishlive/2022format/ConList.csv",
+    "gec_report": "https://2017-2021.state.gov/russias-pillars-of-disinformation-and-propaganda-report/"
+  },
+  "data_file": "grounding_audit.jsonl",
+  "key_findings": [
+    "Sanctioned media contamination rate is 0.1% (5 citations, all RIA Novosti via Perplexity).",
+    "7.6% of all grounding citations route through Russian-origin (.ru/.su) sources.",
+    "Russian government domains (mid.ru, cbr.ru, .gov.ru) account for 1.1% of citations.",
+    "Perplexity has highest Russian-origin rate (11.0%), followed by GPT-4o (16.8%, small sample), Gemini (7.4%), Claude (4.3%).",
+    "GEC-documented proxy sites accessible when searched by name (74 citations in targeted probes) but not in neutral queries.",
+    "The contamination pathway is institutional, not propagandistic: universities (cfuv.ru), banks (cbr.ru), telecom guides normalize Crimea as Russian through infrastructure, not narrative."
+  ],
+  "notes": [
+    "Gemini 2.5 Flash returns vertexaisearch.cloud.google.com redirect URLs that were resolved via HTTP 302 to get actual source domains."
+  ]
+}
