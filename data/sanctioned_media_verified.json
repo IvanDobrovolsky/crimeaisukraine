@@ -1,0 +1,335 @@
+{
+  "generated": "2026-04-14",
+  "sources": {
+    "eu": {
+      "url": "https://webgate.ec.europa.eu/fsd/fsf/public/files/csvFullSanctionsList/content",
+      "description": "EU Consolidated Financial Sanctions List (CSV)",
+      "entities_found": 9
+    },
+    "uk": {
+      "url": "https://ofsistorage.blob.core.windows.net/publishlive/2022format/ConList.csv",
+      "description": "UK OFSI Consolidated List",
+      "entities_found": 46
+    },
+    "us": {
+      "url": "https://www.treasury.gov/ofac/downloads/sdn.csv",
+      "description": "US OFAC SDN List",
+      "entities_found": 37
+    }
+  },
+  "method": "Downloaded official government sanctions lists from US Treasury (OFAC SDN), EU Financial Sanctions, and UK OFSI. Searched for media entity names. All entity IDs traceable to source CSV.",
+  "eu_entities": {
+    "147070": {
+      "names": [
+        "Roskomnadzor"
+      ],
+      "regulations": [
+        "2024/2455 (OJ L13092024)"
+      ]
+    },
+    "147222": {
+      "names": [
+        "",
+        "VGTRK"
+      ],
+      "regulations": [
+        "2023/1765 (OJ L226)"
+      ]
+    },
+    "147229": {
+      "names": [
+        "JSC National Media Group"
+      ],
+      "regulations": [
+        "2024/2455 (OJ L13092024)"
+      ]
+    },
+    "147241": {
+      "names": [
+        "Strategic Culture Foundation"
+      ],
+      "regulations": [
+        "2023/1765 (OJ L226)"
+      ]
+    },
+    "147247": {
+      "names": [
+        "ANO TV-Novosti"
+      ],
+      "regulations": [
+        "2024/2455 (OJ L13092024)"
+      ]
+    },
+    "147623": {
+      "names": [
+        "SBK ART LLC"
+      ],
+      "regulations": [
+        "2024/2455 (OJ L13092024)"
+      ]
+    },
+    "150172": {
+      "names": [
+        "Patriot Media Group"
+      ],
+      "regulations": [
+        "2025/527 (OJ L202500527)"
+      ]
+    },
+    "150180": {
+      "names": [
+        "Empresa Pública Unitária  Federal ”Rossiya Segodnya  International Information  Agency\"",
+        "Federal State Unitary Enterprise Rossiya Segodnya International Information Agency",
+        "federalne państwowe przedsiębiorstwo unitarne „Rossiya Segodnya” Międzynarodowa Agencja Informacyjna",
+        "Staatsinformatieagentschap Rossiya Segodnya"
+      ],
+      "regulations": [
+        "2023/429 (OJ L59 I)"
+      ]
+    },
+    "152077": {
+      "names": [
+        "Federal News Agency LLC",
+        "RIA FAN"
+      ],
+      "regulations": [
+        "2023/755 (OJ L100 I)"
+      ]
+    }
+  },
+  "uk_entities": [
+    "ALL-RUSSIA STATE TELEVISION AND RADIO BROADCASTING COMPANY (VGTRK)",
+    "ALL-RUSSIAN PUBLIC ORGANIZATION SOCIETY FOR THE PROMOTION OF RUSSIAN HISTORICAL DEVELOPMENT TSARGRAD",
+    "ANALITICHESKII TSENTR KATEKHON OOO",
+    "ANISIMOV",
+    "ARESHEV",
+    "ASKER-ZADE",
+    "BESPALOV",
+    "BUBNOVA",
+    "CHUGULEVA",
+    "DOBRODEEV",
+    "DOBRODEYEV",
+    "DOROKHOVA",
+    "DOUBLE HEADED EAGLE SOCIETY",
+    "FEDIN",
+    "GLOTOV",
+    "ILYASHENKO",
+    "INFOROS",
+    "KATEHON",
+    "KATEKHON",
+    "KIRILLOVA",
+    "KISELEV",
+    "KISELYOV",
+    "KNYRIK",
+    "KRANS",
+    "KRASOVSKIY",
+    "MAKSIMENKO",
+    "MAMAKOVA",
+    "MAMAKOWA",
+    "MAXIMENKO",
+    "NEW EASTERN OUTLOOK",
+    "ORIENTAL REVIEW",
+    "PROKOFYEV",
+    "ROSSIYA SEGODNYA",
+    "SAENKO",
+    "SIMONYAN",
+    "SINELIN",
+    "SKOROKHODOVA",
+    "SOUTHFRONT",
+    "SOUTHFRONT: ANALYSIS AND INTELLIGENCE",
+    "STRATEGIC CULTURE FOUNDATION",
+    "TATARCHENKO",
+    "TSARGRAD",
+    "TSARGRAD OOO",
+    "TSARGRAD SOCIETY",
+    "TV-NOVOSTI",
+    "TYURINA"
+  ],
+  "us_entities": {
+    "26232": {
+      "name": "FEDERAL NEWS AGENCY LLC",
+      "type": "-0- ",
+      "program": "-0- "
+    },
+    "26234": {
+      "name": "USA REALLY",
+      "type": "-0- ",
+      "program": "-0- "
+    },
+    "31169": {
+      "name": "INFOROS, OOO",
+      "type": "-0- ",
+      "program": "-0- "
+    },
+    "31170": {
+      "name": "IA INFOROS, OOO",
+      "type": "-0- ",
+      "program": "-0- "
+    },
+    "31212": {
+      "name": "SOUTHFRONT",
+      "type": "-0- ",
+      "program": "-0- "
+    },
+    "31213": {
+      "name": "THE STRATEGIC CULTURE FOUNDATION",
+      "type": "-0- ",
+      "program": "-0- "
+    },
+    "31451": {
+      "name": "NEWSFRONT",
+      "type": "-0- ",
+      "program": "-0- "
+    },
+    "34817": {
+      "name": "ODNA RODYNA",
+      "type": "-0- ",
+      "program": "-0- "
+    },
+    "34818": {
+      "name": "RHYTHM OF EURASIA",
+      "type": "-0- ",
+      "program": "-0- "
+    },
+    "34819": {
+      "name": "JOURNAL KAMERTON",
+      "type": "-0- ",
+      "program": "-0- "
+    },
+    "34821": {
+      "name": "NEW EASTERN OUTLOOK",
+      "type": "-0- ",
+      "program": "-0- "
+    },
+    "34824": {
+      "name": "KNYRIK, Konstantin Sergeyevich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "34827": {
+      "name": "FEDIN, Yuriy Sergeyevich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "34836": {
+      "name": "MAMAKOVA, Aelita Leonidovna",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "34843": {
+      "name": "PROKOFYEV, Yuriy Anatolyevich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "34848": {
+      "name": "KRASOVSKIY, Maksim Borisovich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "34896": {
+      "name": "SKOROKHODOVA, Natalya Petrovna",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35116": {
+      "name": "TATARCHENKO, Denis Sergeyevich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35118": {
+      "name": "POGREBENKOV, Valeriy Ivanovich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35119": {
+      "name": "SAENKO, Sergei Ivanovich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35120": {
+      "name": "BUBNOVA, Irina Sergeyevna",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35121": {
+      "name": "KRANS, Maksim Iosifovich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35122": {
+      "name": "BESPALOV, Anton Sergeyevich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35123": {
+      "name": "KIRILLOVA, Anastasiya Sergeyevna",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35124": {
+      "name": "MAKSIMENKO, Vladimir Ilich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35125": {
+      "name": "KAMYSHANOVA, Aleksandra Aleksandrovna",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35126": {
+      "name": "NEZHDANOVA, Yevgeniya Vitalyevna",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35128": {
+      "name": "ILYASHENKO, Andrey Vitalyevich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35129": {
+      "name": "DOROKHOVA, Nina Viktorovna",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35130": {
+      "name": "GAFNER, Denis Yakovlevich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35131": {
+      "name": "CHUGULEVA, Aleyona Anatolyevna",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35132": {
+      "name": "SINELIN, Mikhail Anatolyevich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35133": {
+      "name": "KALABAYEVA, Valeriya",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35134": {
+      "name": "GLOTOV, Yevgeniy Eduardovich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "35135": {
+      "name": "ARESHEV, Andrey Grigoryevich",
+      "type": "individual",
+      "program": "-0- "
+    },
+    "50690": {
+      "name": "FEDERAL STATE UNITARY ENTERPRISE INTERNATIONAL INFORMATION AGENCY ROSSIYA SEGODNYA",
+      "type": "-0- ",
+      "program": "-0- "
+    },
+    "50691": {
+      "name": "KISELEV, Dmitry Konstantinovich",
+      "type": "individual",
+      "program": "-0- "
+    }
+  }
+}

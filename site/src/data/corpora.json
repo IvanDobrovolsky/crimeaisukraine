@@ -1,0 +1,20 @@
+{
+  "pipeline": "corpora",
+  "title": "Training Corpora Census (C4)",
+  "subtitle": "30.4M documents scanned for sovereignty framing in Google's C4 training corpus",
+  "method": "Rust classifier (91 signals, 3 languages) applied to full C4 English, Russian, and Ukrainian splits",
+  "summary": {
+    "documents_scanned": 30400000,
+    "russia_framing": 382000,
+    "state_media": 775000,
+    "russia_framing_dois": 51,
+    "quoted_examples": 1241
+  },
+  "key_findings": [
+    "382K documents in C4 contain Russia-framing of Crimea",
+    "775K documents from Russian state media domains",
+    "51 academic DOIs with Russia-framing found in C4",
+    "1,241 quoted examples where framing appears in quotation context",
+    "Geodata bridge proven: Natural Earth/OSM/weather pages literally in C4"
+  ]
+}

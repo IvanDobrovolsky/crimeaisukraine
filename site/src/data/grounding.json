@@ -1,0 +1,131 @@
+{
+  "pipeline": "grounding",
+  "title": "LLM Web Search Contamination",
+  "subtitle": "Do AI chatbots cite sanctioned or state-propaganda sources? 5,974 citations audited across 4 models.",
+  "method": "4 models x 25 queries x 10 languages = 1,000 web-search-augmented responses. Citations classified by domain origin against US OFAC SDN, EU Consolidated Sanctions, UK OFSI, and US State Dept GEC proxy site list.",
+  "models": [
+    "GPT-4o",
+    "Claude Sonnet",
+    "Gemini 2.5 Flash",
+    "Perplexity Sonar"
+  ],
+  "languages": [
+    "en",
+    "uk",
+    "ru",
+    "de",
+    "fr",
+    "es",
+    "pl",
+    "tr",
+    "it",
+    "nl"
+  ],
+  "total_responses": 1000,
+  "total_citations": 5974,
+  "results": {
+    "sanctioned": {
+      "count": 5,
+      "pct": 0.1,
+      "label": "Sanctioned (OFAC/EU/UK)"
+    },
+    "government": {
+      "count": 67,
+      "pct": 1.1,
+      "label": "Russian government (.gov.ru)"
+    },
+    "russian_other": {
+      "count": 382,
+      "pct": 6.4,
+      "label": "Russian non-gov (.ru/.su)"
+    },
+    "international": {
+      "count": 5520,
+      "pct": 92.4,
+      "label": "International"
+    },
+    "russian_total": {
+      "count": 454,
+      "pct": 7.6,
+      "label": "Russian-origin total"
+    }
+  },
+  "by_model": {
+    "gpt-4o": {
+      "citations": 95,
+      "ru_origin": 16,
+      "ru_pct": 16.8,
+      "sanctioned": 0
+    },
+    "claude-sonnet": {
+      "citations": 2016,
+      "ru_origin": 87,
+      "ru_pct": 4.3,
+      "sanctioned": 0
+    },
+    "gemini-2.5-flash": {
+      "citations": 2059,
+      "ru_origin": 152,
+      "ru_pct": 7.4,
+      "sanctioned": 0
+    },
+    "perplexity-sonar": {
+      "citations": 1804,
+      "ru_origin": 199,
+      "ru_pct": 11.0,
+      "sanctioned": 5
+    }
+  },
+  "proxy_probes": {
+    "total_queries": 35,
+    "total_calls": 140,
+    "proxy_citations": 74,
+    "sites_surfaced": [
+      {
+        "name": "Global Research",
+        "domain": "globalresearch.ca",
+        "citations": 31,
+        "gec_link": "7 GRU false personas, 108 articles"
+      },
+      {
+        "name": "SouthFront",
+        "domain": "southfront.press",
+        "citations": 18,
+        "gec_link": "Ex-Crimean Front, Moscow-registered"
+      },
+      {
+        "name": "New Eastern Outlook",
+        "domain": "journal-neo.org",
+        "citations": 13,
+        "gec_link": "Russian Academy of Sciences"
+      },
+      {
+        "name": "Strategic Culture Foundation",
+        "domain": "strategic-culture.org",
+        "citations": 6,
+        "gec_link": "Directed by SVR"
+      },
+      {
+        "name": "Katehon",
+        "domain": "katehon.com",
+        "citations": 6,
+        "gec_link": "Sanctioned Malofeyev, SVR/FSB board"
+      }
+    ]
+  },
+  "key_findings": [
+    "7.6% of web search citations originate from Russian domains.",
+    "5 sanctioned media citations (all RIA Novosti, all Perplexity).",
+    "5 of 7 US State Dept GEC-documented proxy sites accessible through LLM web search.",
+    "Google Search content policy has no category for sanctions or state propaganda.",
+    "EU Digital Services Act does not require search engines to filter state propaganda."
+  ],
+  "sources": {
+    "ofac": "https://www.treasury.gov/ofac/downloads/sdn.csv",
+    "eu_sanctions": "https://webgate.ec.europa.eu/fsd/fsf/public/files/csvFullSanctionsList/content",
+    "uk_ofsi": "https://ofsistorage.blob.core.windows.net/publishlive/2022format/ConList.csv",
+    "gec_report": "https://2017-2021.state.gov/russias-pillars-of-disinformation-and-propaganda-report/",
+    "google_policy": "https://support.google.com/websearch/answer/10622781",
+    "eu_dsa": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2065"
+  }
+}
