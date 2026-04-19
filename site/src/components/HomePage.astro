@@ -1368,14 +1368,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
 <!-- Web Search / Grounding Contamination -->
 <section id="grounding" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">
-      {lang === 'uk' ? 'Веб-пошук / Grounding — Контамінація' : 'Web Search / Grounding Contamination'}
-    </h2>
-    <p class="text-[#5c5f77] mb-3">
-      {lang === 'uk'
-        ? '4 моделі × 25 запитань × 10 мов = 1000 відповідей з веб-пошуком. 5 974 цитувань класифіковано за походженням домену. Санкційні джерела перевірено за офіційними CSV OFAC/EU/UK.'
-        : '4 models × 25 queries × 10 languages = 1,000 web-search-augmented responses. 5,974 citations classified by domain origin. Sanctioned sources checked against official OFAC/EU/UK CSVs.'}
-    </p>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.groundingTitle}</h2>
+    <p class="text-[#5c5f77] mb-3">{t.groundingDesc}</p>
     <div class="text-xs text-[#6c6f85] mb-4 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 pipelines/grounding/</span>
       <a href={pipelineLinks('grounding').readme} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">README ↗</a>
@@ -1385,45 +1379,39 @@ const mediaViolatorsByFilter = mediaViolators as any;
       <a href={pipelineLinks('grounding').scan} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">scan.py ↗</a>
     </div>
 
-    <!-- Results grid -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
         <div class="text-2xl font-bold text-[#4c4f69]">5,974</div>
-        <div class="text-xs text-[#6c6f85]">{lang === 'uk' ? 'Цитувань' : 'Citations'}</div>
+        <div class="text-xs text-[#6c6f85]">{t.groundingCitations}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
         <div class="text-2xl font-bold text-[#d20f39]">7.6%</div>
-        <div class="text-xs text-[#6c6f85]">{lang === 'uk' ? 'Рос. походження' : 'Russian-origin'}</div>
+        <div class="text-xs text-[#6c6f85]">{t.groundingRuOrigin}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
         <div class="text-2xl font-bold text-[#d20f39]">5</div>
-        <div class="text-xs text-[#6c6f85]">{lang === 'uk' ? 'Санкційних' : 'Sanctioned'}</div>
+        <div class="text-xs text-[#6c6f85]">{t.groundingSanctioned}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
         <div class="text-2xl font-bold text-[#df8e1d]">5/7</div>
-        <div class="text-xs text-[#6c6f85]">{lang === 'uk' ? 'Проксі GEC доступні' : 'GEC proxies accessible'}</div>
+        <div class="text-xs text-[#6c6f85]">{t.groundingGecProxies}</div>
       </div>
     </div>
 
-    <!-- Source breakdown -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
       <div class="bg-[#eff1f5] rounded-xl p-5">
-        <h3 class="text-xs font-bold text-[#6c6f85] uppercase tracking-wider mb-3">
-          {lang === 'uk' ? 'За категорією джерела' : 'By Source Category'}
-        </h3>
+        <h3 class="text-xs font-bold text-[#6c6f85] uppercase tracking-wider mb-3">{t.groundingBySource}</h3>
         <div class="space-y-2 text-sm">
-          <div class="flex justify-between"><span>{lang === 'uk' ? 'Санкційні (OFAC/EU/UK)' : 'Sanctioned (OFAC/EU/UK)'}</span><span class="font-bold text-[#d20f39]">5 (0.1%)</span></div>
-          <div class="flex justify-between"><span>{lang === 'uk' ? 'Уряд РФ (.gov.ru)' : 'Russian government (.gov.ru)'}</span><span class="font-bold text-[#d20f39]">67 (1.1%)</span></div>
-          <div class="flex justify-between"><span>{lang === 'uk' ? 'Рос. не-уряд (.ru/.su)' : 'Russian non-gov (.ru/.su)'}</span><span class="font-bold text-[#df8e1d]">382 (6.4%)</span></div>
-          <div class="flex justify-between"><span>{lang === 'uk' ? 'Міжнародні' : 'International'}</span><span class="font-bold text-[#40a02b]">5,520 (92.4%)</span></div>
+          <div class="flex justify-between"><span>{t.groundingSanctionedLabel}</span><span class="font-bold text-[#d20f39]">5 (0.1%)</span></div>
+          <div class="flex justify-between"><span>{t.groundingGovLabel}</span><span class="font-bold text-[#d20f39]">67 (1.1%)</span></div>
+          <div class="flex justify-between"><span>{t.groundingRuLabel}</span><span class="font-bold text-[#df8e1d]">382 (6.4%)</span></div>
+          <div class="flex justify-between"><span>{t.groundingIntlLabel}</span><span class="font-bold text-[#40a02b]">5,520 (92.4%)</span></div>
         </div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-5">
-        <h3 class="text-xs font-bold text-[#6c6f85] uppercase tracking-wider mb-3">
-          {lang === 'uk' ? 'За моделлю (% рос. джерел)' : 'By Model (% Russian-origin)'}
-        </h3>
+        <h3 class="text-xs font-bold text-[#6c6f85] uppercase tracking-wider mb-3">{t.groundingByModel}</h3>
         <div class="space-y-2 text-sm">
-          <div class="flex justify-between"><span>GPT-4o</span><span class="font-bold">16.8% <span class="text-[#6c6f85] text-xs">(95 citations)</span></span></div>
+          <div class="flex justify-between"><span>GPT-4o</span><span class="font-bold">16.8% <span class="text-[#6c6f85] text-xs">(95)</span></span></div>
           <div class="flex justify-between"><span>Perplexity Sonar</span><span class="font-bold text-[#d20f39]">11.0% <span class="text-[#6c6f85] text-xs">(1,804)</span></span></div>
           <div class="flex justify-between"><span>Gemini 2.5 Flash</span><span class="font-bold">7.4% <span class="text-[#6c6f85] text-xs">(2,059)</span></span></div>
           <div class="flex justify-between"><span>Claude Sonnet</span><span class="font-bold text-[#40a02b]">4.3% <span class="text-[#6c6f85] text-xs">(2,016)</span></span></div>
@@ -1431,72 +1419,51 @@ const mediaViolatorsByFilter = mediaViolators as any;
       </div>
     </div>
 
-    <!-- Key finding -->
     <div class="bg-[#d20f39]/10 border border-[#d20f39]/30 rounded-xl p-4 mb-4">
       <p class="text-sm text-[#4c4f69]">
-        <strong class="text-[#d20f39]">{lang === 'uk' ? 'Ключове:' : 'Key finding:'}</strong>
-        {lang === 'uk'
-          ? ' 5 із 7 проксі-сайтів, задокументованих Держдепом США (GEC), залишаються доступними через веб-пошук LLM. 74 цитування при цільовому тестуванні. Це сайти, керовані СЗР, що публікують контент фальшивих персон ГРУ. Соцмережі їх заблокували. Пошукові системи — ні.'
-          : ' 5 of 7 US State Dept GEC-documented proxy sites remain accessible through LLM web search. 74 citations in targeted probes. These are SVR-directed sites hosting GRU false persona content. Social media blocked them. Search engines did not.'}
+        <strong class="text-[#d20f39]">{t.groundingKeyFinding}</strong> {t.groundingKeyText}
       </p>
     </div>
-
-    <!-- Regulatory gap -->
-    <p class="text-xs text-[#6c6f85]">
-      {lang === 'uk'
-        ? 'Політика Google щодо контенту в Пошуку (support.google.com/websearch/answer/10622781) не містить категорії для санкційного контролю чи державної пропаганди. Закон ЄС про цифрові послуги (Регламент 2022/2065) не вимагає від пошукових систем фільтрувати державну пропаганду.'
-        : 'Google\'s Search content policy (support.google.com/websearch/answer/10622781) has no category for sanctions compliance or state propaganda. The EU Digital Services Act (Reg 2022/2065) does not require search engines to filter state propaganda.'}
-    </p>
+    <p class="text-xs text-[#6c6f85]">{t.groundingGap}</p>
   </div>
 </section>
 
 <!-- C4 Training Corpora Census -->
 <section id="corpora" class="max-w-6xl mx-auto px-3 sm:px-6 mb-12">
   <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded-2xl p-8 md:p-10">
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">
-      {lang === 'uk' ? 'Аналіз навчальних корпусів (C4)' : 'Training Corpora Analysis (C4)'}
-    </h2>
-    <p class="text-[#5c5f77] mb-3">
-      {lang === 'uk'
-        ? '30.4M документів відскановано у корпусі Google C4 (en/ru/uk) за допомогою Rust-класифікатора з 91 сигналом на 3 мовах.'
-        : '30.4M documents scanned in Google\'s C4 corpus (en/ru/uk) using a Rust classifier with 91 signals across 3 languages.'}
-    </p>
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.corporaTitle}</h2>
+    <p class="text-[#5c5f77] mb-3">{t.corporaDesc}</p>
     <div class="text-xs text-[#6c6f85] mb-4 flex flex-wrap items-center gap-2">
       <span class="text-[#5c5f77]">📂 c4_sovereignty/</span>
       <a href={`${REPO}/blob/main/c4_sovereignty/scanner/src/classify.rs`} target="_blank" rel="noopener" class="text-[#1e66f5] hover:text-[#4c4f69] transition">classify.rs ↗</a>
     </div>
 
-    <!-- Stats grid -->
     <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
         <div class="text-xl font-bold text-[#4c4f69]">30.4M</div>
-        <div class="text-xs text-[#6c6f85]">{lang === 'uk' ? 'Документів' : 'Documents'}</div>
+        <div class="text-xs text-[#6c6f85]">{t.corporaDocs}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
         <div class="text-xl font-bold text-[#d20f39]">382K</div>
-        <div class="text-xs text-[#6c6f85]">{lang === 'uk' ? 'Рос. фреймінг' : 'Russia-framing'}</div>
+        <div class="text-xs text-[#6c6f85]">{t.corporaRuFraming}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
         <div class="text-xl font-bold text-[#df8e1d]">775K</div>
-        <div class="text-xs text-[#6c6f85]">{lang === 'uk' ? 'Держ. ЗМІ' : 'State media'}</div>
+        <div class="text-xs text-[#6c6f85]">{t.corporaStateMedia}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
         <div class="text-xl font-bold text-[#4c4f69]">51</div>
-        <div class="text-xs text-[#6c6f85]">{lang === 'uk' ? 'DOI з рос. фреймінгом' : 'Russia-framing DOIs'}</div>
+        <div class="text-xs text-[#6c6f85]">{t.corporaDois}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
         <div class="text-xl font-bold text-[#4c4f69]">1,241</div>
-        <div class="text-xs text-[#6c6f85]">{lang === 'uk' ? 'Цитованих прикладів' : 'Quoted examples'}</div>
+        <div class="text-xs text-[#6c6f85]">{t.corporaQuoted}</div>
       </div>
     </div>
 
-    <!-- Key findings -->
     <div class="bg-[#d20f39]/10 border border-[#d20f39]/30 rounded-xl p-4">
       <p class="text-sm text-[#4c4f69]">
-        <strong class="text-[#d20f39]">{lang === 'uk' ? 'Геодані → навчальні дані:' : 'Geodata → training data:'}</strong>
-        {lang === 'uk'
-          ? ' Natural Earth, OSM та сторінки погодних/туристичних сервісів знайдено безпосередньо у C4 — карти дослівно стають навчальними даними. Обговорення правила OSM "on the ground" присутнє у корпусі.'
-          : ' Natural Earth, OSM, and weather/travel service pages found directly in C4 — map data literally becomes training data. The OSM "on the ground" rule discussion is present in the corpus.'}
+        <strong class="text-[#d20f39]">{t.corporaKeyFinding}</strong> {t.corporaKeyText}
       </p>
     </div>
   </div>
