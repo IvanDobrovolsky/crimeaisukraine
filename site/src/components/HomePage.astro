@@ -206,6 +206,29 @@ const geoCrossEcoTotal = geoSummary.cross_ecosystem_total_weekly_downloads;
 // Propagation chain is now a static HTML layered diagram in the geodata section;
 // the old buildPropagationGraph helper + d3-sankey lazy loader have been removed.
 
+// ── Grounding pipeline — single source of truth from grounding.json ──
+const grM = (groundingData as any);
+const grTotal = grM.total_citations;
+const grSanc = grM.results.sanctioned;
+const grGov = grM.results.government;
+const grRu = grM.results.russian_other;
+const grIntl = grM.results.international;
+const grRuTotal = grM.results.russian_total;
+const grModels = grM.by_model;
+const grProxy = grM.proxy_probes;
+const fmt = (n: number) => n.toLocaleString();
+
+// ── Corpora pipeline — single source of truth from corpora.json ──
+const corpM = (corporaData as any);
+const corpDocs = corpM.summary.documents_scanned;
+const corpRuFraming = corpM.summary.russia_framing;
+const corpStateMedia = corpM.summary.state_media;
+const corpDois = corpM.summary.russia_framing_dois;
+const corpQuoted = corpM.summary.quoted_examples;
+const corpDocsLabel = (corpDocs / 1e6).toFixed(1) + 'M';
+const corpRuLabel = (corpRuFraming / 1e3).toFixed(0) + 'K';
+const corpMediaLabel = (corpStateMedia / 1e3).toFixed(0) + 'K';
+
 
 // ── Pipeline manifests for the rewired sections ───────────────
 const tcMani = (telecomPipeline as any);
@@ -1383,19 +1406,19 @@ const mediaViolatorsByFilter = mediaViolators as any;
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
-        <div class="text-2xl font-bold text-[#4c4f69]">5,974</div>
+        <div class="text-2xl font-bold text-[#4c4f69]">{fmt(grTotal)}</div>
         <div class="text-xs text-[#6c6f85]">{t.groundingCitations}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
-        <div class="text-2xl font-bold text-[#d20f39]">7.6%</div>
+        <div class="text-2xl font-bold text-[#d20f39]">{grRuTotal.pct}%</div>
         <div class="text-xs text-[#6c6f85]">{t.groundingRuOrigin}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
-        <div class="text-2xl font-bold text-[#d20f39]">5</div>
+        <div class="text-2xl font-bold text-[#d20f39]">{grSanc.count}</div>
         <div class="text-xs text-[#6c6f85]">{t.groundingSanctioned}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
-        <div class="text-2xl font-bold text-[#df8e1d]">5/7</div>
+        <div class="text-2xl font-bold text-[#df8e1d]">{grProxy.sites_surfaced.length}/7</div>
         <div class="text-xs text-[#6c6f85]">{t.groundingGecProxies}</div>
       </div>
     </div>
@@ -1404,19 +1427,19 @@ const mediaViolatorsByFilter = mediaViolators as any;
       <div class="bg-[#eff1f5] rounded-xl p-5">
         <h3 class="text-xs font-bold text-[#6c6f85] uppercase tracking-wider mb-3">{t.groundingBySource}</h3>
         <div class="space-y-2 text-sm">
-          <div class="flex justify-between"><span>{t.groundingSanctionedLabel}</span><span class="font-bold text-[#d20f39]">5 (0.1%)</span></div>
-          <div class="flex justify-between"><span>{t.groundingGovLabel}</span><span class="font-bold text-[#d20f39]">67 (1.1%)</span></div>
-          <div class="flex justify-between"><span>{t.groundingRuLabel}</span><span class="font-bold text-[#df8e1d]">382 (6.4%)</span></div>
-          <div class="flex justify-between"><span>{t.groundingIntlLabel}</span><span class="font-bold text-[#40a02b]">5,520 (92.4%)</span></div>
+          <div class="flex justify-between"><span>{t.groundingSanctionedLabel}</span><span class="font-bold text-[#d20f39]">{grSanc.count} ({grSanc.pct}%)</span></div>
+          <div class="flex justify-between"><span>{t.groundingGovLabel}</span><span class="font-bold text-[#d20f39]">{grGov.count} ({grGov.pct}%)</span></div>
+          <div class="flex justify-between"><span>{t.groundingRuLabel}</span><span class="font-bold text-[#df8e1d]">{fmt(grRu.count)} ({grRu.pct}%)</span></div>
+          <div class="flex justify-between"><span>{t.groundingIntlLabel}</span><span class="font-bold text-[#40a02b]">{fmt(grIntl.count)} ({grIntl.pct}%)</span></div>
         </div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-5">
         <h3 class="text-xs font-bold text-[#6c6f85] uppercase tracking-wider mb-3">{t.groundingByModel}</h3>
         <div class="space-y-2 text-sm">
-          <div class="flex justify-between"><span>GPT-4o</span><span class="font-bold">16.8% <span class="text-[#6c6f85] text-xs">(95)</span></span></div>
-          <div class="flex justify-between"><span>Perplexity Sonar</span><span class="font-bold text-[#d20f39]">11.0% <span class="text-[#6c6f85] text-xs">(1,804)</span></span></div>
-          <div class="flex justify-between"><span>Gemini 2.5 Flash</span><span class="font-bold">7.4% <span class="text-[#6c6f85] text-xs">(2,059)</span></span></div>
-          <div class="flex justify-between"><span>Claude Sonnet</span><span class="font-bold text-[#40a02b]">4.3% <span class="text-[#6c6f85] text-xs">(2,016)</span></span></div>
+          <div class="flex justify-between"><span>GPT-4o</span><span class="font-bold">{grModels['gpt-4o'].ru_pct}% <span class="text-[#6c6f85] text-xs">({fmt(grModels['gpt-4o'].citations)})</span></span></div>
+          <div class="flex justify-between"><span>Perplexity Sonar</span><span class="font-bold text-[#d20f39]">{grModels['perplexity-sonar'].ru_pct}% <span class="text-[#6c6f85] text-xs">({fmt(grModels['perplexity-sonar'].citations)})</span></span></div>
+          <div class="flex justify-between"><span>Gemini 2.5 Flash</span><span class="font-bold">{grModels['gemini-2.5-flash'].ru_pct}% <span class="text-[#6c6f85] text-xs">({fmt(grModels['gemini-2.5-flash'].citations)})</span></span></div>
+          <div class="flex justify-between"><span>Claude Sonnet</span><span class="font-bold text-[#40a02b]">{grModels['claude-sonnet'].ru_pct}% <span class="text-[#6c6f85] text-xs">({fmt(grModels['claude-sonnet'].citations)})</span></span></div>
         </div>
       </div>
     </div>
@@ -1442,23 +1465,23 @@ const mediaViolatorsByFilter = mediaViolators as any;
 
     <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
-        <div class="text-xl font-bold text-[#4c4f69]">34.6M</div>
+        <div class="text-xl font-bold text-[#4c4f69]">{corpDocsLabel}</div>
         <div class="text-xs text-[#6c6f85]">{t.corporaDocs}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
-        <div class="text-xl font-bold text-[#d20f39]">507K</div>
+        <div class="text-xl font-bold text-[#d20f39]">{corpRuLabel}</div>
         <div class="text-xs text-[#6c6f85]">{t.corporaRuFraming}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
-        <div class="text-xl font-bold text-[#df8e1d]">775K</div>
+        <div class="text-xl font-bold text-[#df8e1d]">{corpMediaLabel}</div>
         <div class="text-xs text-[#6c6f85]">{t.corporaStateMedia}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
-        <div class="text-xl font-bold text-[#4c4f69]">51</div>
+        <div class="text-xl font-bold text-[#4c4f69]">{corpDois}</div>
         <div class="text-xs text-[#6c6f85]">{t.corporaDois}</div>
       </div>
       <div class="bg-[#eff1f5] rounded-xl p-4 text-center">
-        <div class="text-xl font-bold text-[#4c4f69]">1,241</div>
+        <div class="text-xl font-bold text-[#4c4f69]">{fmt(corpQuoted)}</div>
         <div class="text-xs text-[#6c6f85]">{t.corporaQuoted}</div>
       </div>
     </div>
