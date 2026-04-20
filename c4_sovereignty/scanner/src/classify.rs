@@ -44,9 +44,12 @@ struct OutputDoc {
     url: String,
     label: String,
     is_quoted: bool,
+    framing_type: String,    // "assertive_structured", "assertive_pure", "reportage_news", "reportage_attribution", "" (non-russia)
     source_type: String,
     ua_score: f32,
     ru_score: f32,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    text_preview: Option<String>,
 }
 
 // =========================================================================
@@ -209,22 +212,84 @@ fn build_signals() -> Vec<Signal> {
 
 fn build_quotation_markers() -> Vec<Regex> {
     let patterns = [
-        // English — ONLY genuine attribution (not skepticism/debunking)
+        // English — explicit attribution to Russia/someone
         r"(?i)(?:russia|moscow|kremlin)\s+(?:says?|claims?|calls?\s+it|argues?|insists?|maintains?|considers?)",
         r"(?i)(?:putin|lavrov)\s+(?:says?|said|claims?|claimed|declared?|stated?|called)",
-        r"(?i)according\s+to\s+(?:russia|moscow|the\s+kremlin|putin)",
+        r"(?i)according\s+to\b",
         r"(?i)what\s+(?:russia|moscow|the\s+kremlin)\s+calls?",
-        r#"(?i)["\u{201c}\u{ab}](?:reunif\w+|accession\s+of\s+crimea|rejoined?\s+russia)["\u{201d}\u{bb}]"#,
-        // Russian — genuine attribution
+        r"(?i)\b(?:he|she|they|officials?|authorities|spokesperson)\s+(?:said|says?|claimed|stated|declared|announced|argued)",
+        // English — scare quotes around Russia-framing terms
+        r#"(?i)["\u{201c}\u{ab}](?:reunif\w+|accession\s+of\s+crimea|rejoined?\s+russia|republic\s+of\s+crimea)["\u{201d}\u{bb}]"#,
+        // English — explicit skepticism markers ONLY
+        r"(?i)\b(?:so-called|self-proclaimed)\b",
+        // Russian — explicit attribution (someone said/claims)
         r"(?i)(?:россия|кремль|москва|путин)\s+(?:считает|называет|утверждает|заявляет)",
-        r"(?i)по\s+(?:мнению|версии|заявлению)\s+(?:россии|кремля|москвы|путина)",
-        r"(?i)[\u{ab}\u{201c}](?:воссоединени|присоединени)\w*[\u{bb}\u{201d}]",
-        // Ukrainian — genuine attribution
+        r"(?i)по\s+(?:мнению|версии|заявлению|словам)\s+(?:россии|кремля|москвы|путина)",
+        r"(?i)(?:заявил[аио]?|утверждает|по\s+словам|сообщи[лт])\s+(?:что|о\s)",
+        // Russian — scare quotes around Russia-framing terms
+        r"(?i)[\u{ab}\u{201c}](?:воссоединени|присоединени|республика\s+крым)\w*[\u{bb}\u{201d}]",
+        // Russian — explicit skepticism ONLY
+        r"(?i)\bтак\s+называем\w+\b",
+        r"(?i)\bсамопровозглашённ\w+\b",
+        // Ukrainian — explicit attribution
         r"(?i)(?:росія|кремль|москва|путін)\s+(?:вважає|називає|стверджує|заявляє)",
-        r"(?i)за\s+(?:версією|заявою)\s+(?:росії|кремля|москви|путіна)",
-        r"(?i)[\u{ab}\u{201c}](?:возз'?єднанн|приєднанн)\w*[\u{bb}\u{201d}]",
+        r"(?i)за\s+(?:версією|заявою|словами)\s+(?:росії|кремля|москви|путіна)",
+        r"(?i)(?:заявив|стверджує|за\s+словами|повідомив)\s+(?:що|про\s)",
+        // Ukrainian — scare quotes
+        r"(?i)[\u{ab}\u{201c}](?:возз'?єднанн|приєднанн|республіка\s+крим)\w*[\u{bb}\u{201d}]",
+        // Ukrainian — explicit skepticism ONLY
+        r"(?i)\bтак\s+зван\w+\b",
+    ];
+    // REMOVED: оккупац, аннекси, присоедин, непризнанн, де-факто, annexed, occupation, occupied,
+    // disputed, contested, temporarily occupied — these are sovereignty-loaded words that appear
+    // on BOTH sides (Russian celebrating "accession", Ukrainian condemning "occupation").
+    // They are NOT attribution markers.
+    patterns.iter().map(|p| Regex::new(p).unwrap()).collect()
+}
+
+// =========================================================================
+// Structured data markers (addresses, listings, catalogs)
+// =========================================================================
+
+fn build_structured_markers() -> Vec<Regex> {
+    let patterns = [
+        r"(?i)ул\.\s*\S",
+        r"(?i)пр\.\s*\S|просп\.\s*\S",
+        r"(?i)д\.\s*\d",
+        r"(?i)кв\.\s*\d",
+        r"(?i)индекс\s*:?\s*\d{5,6}",
+        r"(?i)почтовый\s+индекс",
+        r"(?i)тел\.\s*[\+\d\(]",
+        r"(?i)ИНН\s*:?\s*\d{10}",
+        r"(?i)ОГРН\s*:?\s*\d{13}",
+        r"(?i)КПП\s*:?\s*\d{9}",
+        r"(?i)купить|продам|аренда|объявлени|доставк",
+        r"(?i)postal\s+code|zip\s+code|phone:|fax:|address:",
     ];
     patterns.iter().map(|p| Regex::new(p).unwrap()).collect()
+}
+
+// =========================================================================
+// News domain detection
+// =========================================================================
+
+const NEWS_DOMAINS: &[&str] = &[
+    "bbc.com", "bbc.co.uk", "reuters.com", "apnews.com", "cnn.com", "nytimes.com",
+    "washingtonpost.com", "theguardian.com", "ft.com", "bloomberg.com", "aljazeera.com",
+    "dw.com", "france24.com", "euronews.com", "politico.eu", "politico.com",
+    "foreignpolicy.com", "foreignaffairs.com", "theatlantic.com", "economist.com",
+    "independent.co.uk", "telegraph.co.uk", "spiegel.de", "lemonde.fr", "elpais.com",
+    "time.com", "newsweek.com", "npr.org", "pbs.org", "abc.net.au", "cbc.ca",
+    "ukrinform.net", "ukrinform.ua", "pravda.com.ua", "unian.info", "unian.ua",
+    "liga.net", "zn.ua", "slovoidilo.ua", "hromadske.ua", "nv.ua",
+    "krymr.com", "rferl.org", "interfax.com.ua", "rbc.ua", "focus.ua",
+    "gordonua.com", "brookings.edu", "rand.org", "chathamhouse.org", "csis.org",
+    "cfr.org", "carnegieendowment.org", "wilsoncenter.org",
+];
+
+fn is_news_domain(url: &str) -> bool {
+    let u = url.to_lowercase();
+    NEWS_DOMAINS.iter().any(|d| u.contains(d))
 }
 
 // =========================================================================
@@ -310,6 +375,7 @@ fn extract_window(text: &str, half: usize) -> &str {
 struct Classifier {
     signals: Vec<Signal>,
     quotation: Vec<Regex>,
+    structured: Vec<Regex>,
 }
 
 impl Classifier {
@@ -317,6 +383,7 @@ impl Classifier {
         Classifier {
             signals: build_signals(),
             quotation: build_quotation_markers(),
+            structured: build_structured_markers(),
         }
     }
 
@@ -325,6 +392,7 @@ impl Classifier {
         let lower_window = window.to_lowercase();
         let mut ua_score: f32 = 0.0;
         let mut ru_score: f32 = 0.0;
+        let full_text = text; // keep reference for framing analysis
 
         for sig in &self.signals {
             if sig.regex.is_match(window) {
@@ -368,24 +436,46 @@ impl Classifier {
 
         let source_type = classify_source(url);
 
-        let (label, is_quoted) = if ua_score == 0.0 && ru_score == 0.0 {
-            ("no_signal", false)
+        let (label, is_quoted, framing_type, text_preview) = if ua_score == 0.0 && ru_score == 0.0 {
+            ("no_signal", false, String::new(), None)
         } else if ua_score > ru_score {
-            ("ukraine", false)
+            ("ukraine", false, String::new(), None)
         } else if ru_score > ua_score {
-            let quoted = self.quotation.iter().any(|q| q.is_match(window));
-            ("russia", quoted)
+            let quoted = self.quotation.iter().any(|q| q.is_match(full_text));
+            let is_news = is_news_domain(url);
+            let is_structured = self.structured.iter().any(|s| s.is_match(full_text));
+
+            let ft = if is_news {
+                "reportage_news".to_string()
+            } else if quoted {
+                "reportage_attribution".to_string()
+            } else if is_structured {
+                "assertive_structured".to_string()
+            } else {
+                "assertive_pure".to_string()
+            };
+
+            // Text preview: first 300 chars, cleaned
+            let preview = {
+                let mut end = full_text.len().min(300);
+                while end > 0 && !full_text.is_char_boundary(end) { end -= 1; }
+                full_text[..end].replace('\n', " ").replace('\r', "")
+            };
+
+            ("russia", quoted || is_news, ft, Some(preview))
         } else {
-            ("disputed", false)
+            ("disputed", false, String::new(), None)
         };
 
         OutputDoc {
             url: url.to_string(),
             label: label.to_string(),
             is_quoted,
+            framing_type,
             source_type: source_type.to_string(),
             ua_score,
             ru_score,
+            text_preview,
         }
     }
 }
@@ -419,6 +509,10 @@ fn main() {
     let disputed_count = AtomicU64::new(0);
     let no_signal_count = AtomicU64::new(0);
     let quoted_count = AtomicU64::new(0);
+    let assertive_structured_count = AtomicU64::new(0);
+    let assertive_pure_count = AtomicU64::new(0);
+    let reportage_news_count = AtomicU64::new(0);
+    let reportage_attrib_count = AtomicU64::new(0);
     let state_t1_count = AtomicU64::new(0);
     let proxy_t2_count = AtomicU64::new(0);
     let pravda_count = AtomicU64::new(0);
@@ -453,6 +547,10 @@ fn main() {
         let mut local_disp: u64 = 0;
         let mut local_nosig: u64 = 0;
         let mut local_quoted: u64 = 0;
+        let mut local_assert_struct: u64 = 0;
+        let mut local_assert_pure: u64 = 0;
+        let mut local_report_news: u64 = 0;
+        let mut local_report_attrib: u64 = 0;
         let mut local_t1: u64 = 0;
         let mut local_t2: u64 = 0;
         let mut local_pravda: u64 = 0;
@@ -476,6 +574,13 @@ fn main() {
                 "russia" => {
                     local_ru += 1;
                     if result.is_quoted { local_quoted += 1; }
+                    match result.framing_type.as_str() {
+                        "assertive_structured" => local_assert_struct += 1,
+                        "assertive_pure" => local_assert_pure += 1,
+                        "reportage_news" => local_report_news += 1,
+                        "reportage_attribution" => local_report_attrib += 1,
+                        _ => {}
+                    }
                 }
                 "ukraine" => local_ua += 1,
                 "disputed" => local_disp += 1,
@@ -516,6 +621,10 @@ fn main() {
         disputed_count.fetch_add(local_disp, Ordering::Relaxed);
         no_signal_count.fetch_add(local_nosig, Ordering::Relaxed);
         quoted_count.fetch_add(local_quoted, Ordering::Relaxed);
+        assertive_structured_count.fetch_add(local_assert_struct, Ordering::Relaxed);
+        assertive_pure_count.fetch_add(local_assert_pure, Ordering::Relaxed);
+        reportage_news_count.fetch_add(local_report_news, Ordering::Relaxed);
+        reportage_attrib_count.fetch_add(local_report_attrib, Ordering::Relaxed);
         state_t1_count.fetch_add(local_t1, Ordering::Relaxed);
         proxy_t2_count.fetch_add(local_t2, Ordering::Relaxed);
         pravda_count.fetch_add(local_pravda, Ordering::Relaxed);
@@ -533,6 +642,10 @@ fn main() {
     let disp = disputed_count.load(Ordering::Relaxed);
     let nosig = no_signal_count.load(Ordering::Relaxed);
     let quot = quoted_count.load(Ordering::Relaxed);
+    let a_struct = assertive_structured_count.load(Ordering::Relaxed);
+    let a_pure = assertive_pure_count.load(Ordering::Relaxed);
+    let r_news = reportage_news_count.load(Ordering::Relaxed);
+    let r_attrib = reportage_attrib_count.load(Ordering::Relaxed);
     let t1 = state_t1_count.load(Ordering::Relaxed);
     let t2 = proxy_t2_count.load(Ordering::Relaxed);
     let prav = pravda_count.load(Ordering::Relaxed);
@@ -543,8 +656,15 @@ fn main() {
     eprintln!("{}", "=".repeat(72));
     eprintln!("  Total docs:      {:>12}", tot);
     eprintln!("  Russia-framing:  {:>12} ({:.1}%)", ru, ru as f64 / tot as f64 * 100.0);
-    eprintln!("    - asserted:    {:>12}", ru - quot);
-    eprintln!("    - quoted:      {:>12}", quot);
+    let assertive_total = a_struct + a_pure;
+    let reportage_total = r_news + r_attrib;
+    eprintln!("    ASSERTIVE:     {:>12} ({:.1}%)", assertive_total, assertive_total as f64 / ru as f64 * 100.0);
+    eprintln!("      structured:  {:>12}", a_struct);
+    eprintln!("      pure:        {:>12}", a_pure);
+    eprintln!("    REPORTAGE:     {:>12} ({:.1}%)", reportage_total, reportage_total as f64 / ru as f64 * 100.0);
+    eprintln!("      news_domain: {:>12}", r_news);
+    eprintln!("      attribution: {:>12}", r_attrib);
+    eprintln!("    (legacy quoted:{:>12})", quot);
     eprintln!("  Ukraine-framing: {:>12} ({:.1}%)", ua, ua as f64 / tot as f64 * 100.0);
     eprintln!("  Disputed:        {:>12} ({:.1}%)", disp, disp as f64 / tot as f64 * 100.0);
     eprintln!("  No signal:       {:>12} ({:.1}%)", nosig, nosig as f64 / tot as f64 * 100.0);

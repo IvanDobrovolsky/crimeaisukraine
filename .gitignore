@@ -53,3 +53,11 @@ c4_sovereignty/training_data/ira_tweets_raw.csv
 c4_sovereignty/training_data/euvsdisinfo.csv
 c4_sovereignty/scanner/target/
 /tmp/c4_*
+
+# Large C4 classified output files (on HuggingFace)
+c4_sovereignty/data/classified_v3_*.jsonl
+c4_sovereignty/data/c4_ru_*.jsonl
+c4_sovereignty/data/c4_uk_*.jsonl
+c4_sovereignty/data/c4_en_*.jsonl
+c4_sovereignty/data/doi_all_*.jsonl
+c4_sovereignty/data/academic_*.jsonl
