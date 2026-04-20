@@ -1,8 +1,8 @@
 {
   "pipeline": "academic",
-  "version": "1.0",
-  "generated": "2026-04-11T00:00:00+00:00",
-  "method": "openalex_cursor_pagination + llm_verification (Claude Haiku) + manual_annotation",
+  "version": "2.0",
+  "generated": "2026-04-19",
+  "method": "openalex_cursor_pagination + llm_verification (Claude Haiku) + manual_annotation + crossref_publisher_verification",
   "summary": {
     "papers_scanned": 91670,
     "stage1_signaled": 5151,
@@ -10,8 +10,9 @@
     "stage3_annotated": 1605,
     "stage3_confirmed": 1581,
     "precision_pct": 98.3,
-    "q1_confirmed": 12,
-    "q2_confirmed": 46,
+    "western_publisher_raw": 168,
+    "western_publisher_verified": 161,
+    "western_publisher_note": "168 papers from Western/international publishers identified via CrossRef API doi-prefix matching. 7 removed as false positives during manual review with screenshots. The verified 161 are documented in western_publisher_russia_framing_verified.docx.",
     "ukraine_llm": 2131,
     "russia_llm": 1581,
     "signal_rate_pct": 5.6
@@ -19,17 +20,19 @@
   "data_sources": {
     "openalex_scan": "data/academic_framing_results.json",
     "llm_results": "data/llm_academic_results.jsonl",
+    "crossref_enrichment": "data/academic_russia_crossref.jsonl",
     "framing_summary": "site/src/data/framing.json"
   },
   "key_findings": [
     "91,670 papers scanned via OpenAlex cursor pagination (2010-2026). 5,151 (5.6%) contain sovereignty-relevant signals.",
     "LLM verification (Claude Haiku) classified 1,581 as Russia-framing, 2,131 as Ukraine-framing out of the signaled set.",
     "Manual Stage 3 annotation of 1,605 papers confirmed 1,581 Russia-framing verdicts, yielding 98.3% LLM precision.",
-    "12 confirmed Q1 journals and 46 Q2 journals carry Russia-sovereignty framing for Crimea."
+    "161 papers from Western/international publishers verified via CrossRef API (168 raw, 7 false positives removed during manual review).",
+    "Publisher identity verified by DOI prefix, not LLM-guessed journal quartiles. Old Q1=12/Q2=46 numbers were based on unreliable LLM classification and are withdrawn."
   ],
   "limitations": [
     "OpenAlex coverage depends on publisher metadata availability; some journals may be under-represented.",
     "LLM verification uses abstract text only; full-text framing may differ.",
-    "Q1/Q2 journal rankings are based on Scimago Journal Rank at time of annotation."
+    "Original Q1/Q2 journal rankings were LLM-guessed (Sonnet) and contained misidentifications (e.g. Russian journal matched to Wiley Prenatal Diagnosis). CrossRef publisher verification replaced this approach."
   ]
 }

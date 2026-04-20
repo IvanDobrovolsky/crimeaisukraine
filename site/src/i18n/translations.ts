@@ -184,7 +184,7 @@ export const translations = {
     groundingKeyText: '5 of 7 US State Dept GEC-documented proxy sites remain accessible through LLM web search. 74 citations in targeted probes. These are SVR-directed sites hosting GRU false persona content. Social media blocked them. Search engines did not.',
     groundingGap: 'Google\'s Search content policy (support.google.com/websearch/answer/10622781) has no category for sanctions compliance or state propaganda. The EU Digital Services Act (Reg 2022/2065) does not require search engines to filter state propaganda.',
     corporaTitle: 'Training Corpora Analysis (C4)',
-    corporaDesc: '30.4M documents scanned in Google\'s C4 corpus (en/ru/uk) using a Rust classifier with 91 signals across 3 languages.',
+    corporaDesc: '34.6M documents scanned in Google\'s C4 corpus (en/ru/uk) using a Rust classifier with 91 signals across 3 languages.',
     corporaDocs: 'Documents',
     corporaRuFraming: 'Russia-framing',
     corporaStateMedia: 'State media',
@@ -375,7 +375,7 @@ export const translations = {
     groundingKeyText: '5 із 7 проксі-сайтів, задокументованих Держдепом США (GEC), залишаються доступними через веб-пошук LLM. 74 цитування при цільовому тестуванні. Це сайти, керовані СЗР, що публікують контент фальшивих персон ГРУ. Соцмережі їх заблокували. Пошукові системи — ні.',
     groundingGap: 'Політика Google щодо контенту в Пошуку (support.google.com/websearch/answer/10622781) не містить категорії для санкційного контролю чи державної пропаганди. Закон ЄС про цифрові послуги (Регламент 2022/2065) не вимагає від пошукових систем фільтрувати державну пропаганду.',
     corporaTitle: 'Аналіз навчальних корпусів (C4)',
-    corporaDesc: '30,4M документів відскановано у корпусі Google C4 (en/ru/uk) за допомогою Rust-класифікатора з 91 сигналом на 3 мовах.',
+    corporaDesc: '34,6M документів відскановано у корпусі Google C4 (en/ru/uk) за допомогою Rust-класифікатора з 91 сигналом на 3 мовах.',
     corporaDocs: 'Документів',
     corporaRuFraming: 'Рос. фреймінг',
     corporaStateMedia: 'Держ. ЗМІ',
@@ -573,7 +573,7 @@ export const translations = {
     groundingTitle: 'Contaminación en búsqueda web / Grounding',
     groundingDesc: '4 modelos × 25 consultas × 10 idiomas = 1.000 respuestas con búsqueda web. 5.974 citas clasificadas por origen de dominio.',
     corporaTitle: 'Análisis de corpus de entrenamiento (C4)',
-    corporaDesc: '30,4M documentos escaneados en el corpus C4 de Google (en/ru/uk) con un clasificador Rust de 91 señales en 3 idiomas.',
+    corporaDesc: '34,6M documentos escaneados en el corpus C4 de Google (en/ru/uk) con un clasificador Rust de 91 señales en 3 idiomas.',
   },
   de: {
     lang: 'de',
@@ -764,7 +764,7 @@ export const translations = {
     groundingTitle: 'Websuche / Grounding-Kontamination',
     groundingDesc: '4 Modelle × 25 Anfragen × 10 Sprachen = 1.000 websuchgestützte Antworten. 5.974 Zitate nach Domain-Herkunft klassifiziert.',
     corporaTitle: 'Trainingskorpus-Analyse (C4)',
-    corporaDesc: '30,4M Dokumente im Google C4-Korpus (en/ru/uk) gescannt mit einem Rust-Klassifikator mit 91 Signalen in 3 Sprachen.',
+    corporaDesc: '34,6M Dokumente im Google C4-Korpus (en/ru/uk) gescannt mit einem Rust-Klassifikator mit 91 Signalen in 3 Sprachen.',
   },
   fr: {
     lang: 'fr',
@@ -955,7 +955,7 @@ export const translations = {
     groundingTitle: 'Contamination de la recherche web / Grounding',
     groundingDesc: '4 modèles × 25 requêtes × 10 langues = 1 000 réponses avec recherche web. 5 974 citations classées par origine de domaine.',
     corporaTitle: 'Analyse des corpus d\'entraînement (C4)',
-    corporaDesc: '30,4M documents scannés dans le corpus C4 de Google (en/ru/uk) avec un classifieur Rust à 91 signaux en 3 langues.',
+    corporaDesc: '34,6M documents scannés dans le corpus C4 de Google (en/ru/uk) avec un classifieur Rust à 91 signaux en 3 langues.',
   },
   ru: {
     lang: 'ru',
@@ -1146,7 +1146,7 @@ export const translations = {
     groundingTitle: 'Контаминация веб-поиска / Grounding',
     groundingDesc: '4 модели × 25 запросов × 10 языков = 1000 ответов с веб-поиском. 5 974 цитирования классифицированы по происхождению домена.',
     corporaTitle: 'Анализ обучающих корпусов (C4)',
-    corporaDesc: '30,4M документов просканировано в корпусе Google C4 (en/ru/uk) с помощью Rust-классификатора с 91 сигналом на 3 языках.',
+    corporaDesc: '34,6M документов просканировано в корпусе Google C4 (en/ru/uk) с помощью Rust-классификатора с 91 сигналом на 3 языках.',
   },
   crh: {
     lang: 'crh',
@@ -1337,7 +1337,7 @@ export const translations = {
     groundingTitle: 'Veb-qıdıruv / Grounding kontaminatsiyası',
     groundingDesc: '4 model × 25 sorav × 10 til = 1000 veb-qıdıruv cavapları. 5 974 sitata domen menşeine köre tasniflengen.',
     corporaTitle: 'Ögretüv korpusları tahlili (C4)',
-    corporaDesc: '30,4M sened Google C4 korpusında (en/ru/uk) tarandı — 3 tilde 91 signallı Rust tasnifleyicisi ile.',
+    corporaDesc: '34,6M sened Google C4 korpusında (en/ru/uk) tarandı — 3 tilde 91 signallı Rust tasnifleyicisi ile.',
   }
 } as const;
 
