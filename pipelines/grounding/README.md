@@ -16,10 +16,12 @@ Each cited URL checked against US OFAC SDN, EU Consolidated Financial Sanctions,
 | Source | Citations | % |
 |---|---:|---:|
 | Sanctioned (OFAC/EU/UK) | 5 | 0.1% |
-| Russian government (.gov.ru) | 37 | 0.9% |
-| Russian non-gov (.ru/.su) | 259 | 6.6% |
-| International | 3,617 | 92.3% |
-| **Russian-origin total** | **301** | **7.7%** |
+| Russian government (.gov.ru) | 67 | 1.1% |
+| Russian non-gov (.ru/.su) | 382 | 6.4% |
+| International | 5,520 | 92.4% |
+| **Russian-origin total** | **454** | **7.6%** |
+
+Total citations: 5,974 (after resolving Gemini vertexaisearch redirect URLs via HTTP 302).
 
 GEC-documented proxy sites: 0 citations in baseline audit, but 74 citations when searched by name (aggressive probes).
 

@@ -66,7 +66,7 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent.parent.parent
 DATA = PROJECT / "data"
 SITE_DATA = PROJECT / "site" / "src" / "data"
 FORCED_PATH = DATA / "llm_sovereignty_full.jsonl"
@@ -508,9 +508,9 @@ def main():
         "_description": "Sovereignty Alignment Score (SAS) per model from the deterministic audit",
         "_methodology": {
             "forced_choice_queries_per_model": 1850,
-            "open_ended_queries_per_model": 676,
+            "open_ended_queries_per_model": 2600,
             "forced_languages": 50,
-            "open_ended_languages": 13,
+            "open_ended_languages": 50,
             "cities": 12,
             "temperature": 0.0,
             "sas_weights": WEIGHT_SCHEMES["primary"],

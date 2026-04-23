@@ -25,12 +25,12 @@ from datetime import datetime
 sys.path.insert(0, str(Path(__file__).parent))
 from audit_llm_sovereignty_full import (
     MODELS, OLLAMA_MODELS, LANGS, CITIES,
-    query_ollama, query_claude, query_gemini, query_openai, query_xai,
+    query_ollama, query_claude, query_gemini, query_openai, query_xai, query_sambanova,
     load_translation_cache,
     OLLAMA_BASE_URL,
 )
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent.parent.parent
 DATA = PROJECT / "data"
 OUTPUT_PATH = DATA / "llm_openended_audit.jsonl"
 TRANSLATIONS_PATH = DATA / "llm_openended_translations.json"
@@ -83,9 +83,8 @@ OPENENDED_QUESTIONS = {
     },
 }
 
-# We'll use a smaller language subset for open-ended to control costs
-# The forced-choice audit covers 50 languages; open-ended: core languages
-OPENENDED_LANGS = ["en", "uk", "ru", "de", "fr", "es", "it", "pl", "tr", "zh", "ja", "ar", "hi"]
+# Use the same 50 languages as the forced-choice audit for apples-to-apples RLHF gap
+OPENENDED_LANGS = list(LANGS.keys())
 
 
 def translate_with_claude(english_text, target_lang_name, api_key):
@@ -190,23 +189,137 @@ def classify_openended(answer, q_data, lang):
     return {"label": label, "hedged": is_hedged, "has_ua": has_ua, "has_ru": has_ru}
 
 
+import threading
+import fcntl
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+
+# Thread-safe JSONL writer
+class SafeWriter:
+    def __init__(self, path):
+        self._f = open(path, "a")
+        self._lock = threading.Lock()
+        self.count = 0
+
+    def write_row(self, row):
+        line = json.dumps(row, ensure_ascii=False) + "\n"
+        with self._lock:
+            self._f.write(line)
+            self._f.flush()
+            self.count += 1
+
+    def close(self):
+        self._f.close()
+
+
+def run_model(model, translations, done, writer, api_key, google_key, openai_key, xai_key, sambanova_key=""):
+    """Run all queries for a single model. Called from thread pool."""
+    model_name = model["name"]
+    provider = model.get("provider")
+    model_done = 0
+    model_errors = 0
+    model_start = time.time()
+
+    for q_id, q_data in OPENENDED_QUESTIONS.items():
+        is_template = q_data.get("template", False)
+        cities_to_test = CITIES if is_template else [""]
+
+        for city in cities_to_test:
+            for lang_code in OPENENDED_LANGS:
+                key = (model_name, q_id, city, lang_code)
+                if key in done:
+                    continue
+
+                prompt_template = translations.get(q_id, {}).get(lang_code, q_data["en"])
+                prompt = prompt_template.replace("{city}", city) if city else prompt_template
+
+                for attempt in range(4):
+                  try:
+                    reasoning = ""
+                    if provider == "ollama":
+                        raw, reasoning = query_ollama(prompt, model["id"], max_tokens=500)
+                    elif provider == "google":
+                        raw = query_gemini(prompt, google_key, model["id"], max_tokens=500)
+                    elif provider == "openai":
+                        raw = query_openai(prompt, openai_key, model["id"], max_tokens=500)
+                    elif provider == "xai":
+                        raw = query_xai(prompt, xai_key, model["id"], max_tokens=500)
+                    elif provider == "sambanova":
+                        raw = query_sambanova(prompt, sambanova_key, model["id"], max_tokens=500)
+                    else:
+                        raw = query_claude(prompt, api_key, model["id"], max_tokens=500)
+
+                    classification = classify_openended(raw, q_data, lang_code)
+
+                    row = {
+                        "model": model_name,
+                        "question_id": q_id,
+                        "city": city,
+                        "language": lang_code,
+                        "prompt": prompt,
+                        "raw_answer": raw,
+                        "reasoning": reasoning[:1000] if reasoning else "",
+                        "label": classification["label"],
+                        "hedged": classification["hedged"],
+                        "has_ua": classification["has_ua"],
+                        "has_ru": classification["has_ru"],
+                        "timestamp": datetime.now().isoformat()[:19],
+                    }
+                    writer.write_row(row)
+                    model_done += 1
+
+                    if model_done % 20 == 0:
+                        elapsed = time.time() - model_start
+                        rate = model_done / max(elapsed, 0.1)
+                        print(f"  [{model_name}] {model_done} ({rate:.1f}/s) | {q_id} | {city} | {lang_code} | {classification['label']:8s}")
+                    break  # success, exit retry loop
+
+                  except Exception as e:
+                    if "429" in str(e) and attempt < 3:
+                        wait = 2 ** (attempt + 1)
+                        time.sleep(wait)
+                        continue
+                    model_errors += 1
+                    if model_errors <= 5 or model_errors % 20 == 0:
+                        print(f"  ERR [{model_name}] {q_id} {city} {lang_code}: {str(e)[:80]}")
+                    break  # non-retryable or exhausted retries
+
+                if provider != "ollama":
+                    time.sleep(0.15)
+
+    elapsed = time.time() - model_start
+    print(f"  ===== {model_name} DONE: {model_done} queries, {model_errors} errors in {elapsed:.0f}s =====")
+    return model_name, model_done, model_errors
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", help="Only run this model")
+    parser.add_argument("--workers", type=int, default=11, help="Max parallel models (default: 11)")
+    parser.add_argument("--api-only", action="store_true", help="Skip Ollama models")
     args = parser.parse_args()
 
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
     google_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY", "")
     openai_key = os.environ.get("OPENAI_API_KEY", "")
     xai_key = os.environ.get("XAI_API_KEY", "")
+    sambanova_key = os.environ.get("OPENROUTER_API_KEY") or os.environ.get("SAMBANOVA_API_KEY", "")
 
-    print("Open-Ended LLM Sovereignty Audit")
+    print("Open-Ended LLM Sovereignty Audit (PARALLEL)")
     print(f"Questions: {len(OPENENDED_QUESTIONS)}")
     print(f"Languages: {len(OPENENDED_LANGS)}")
     print(f"Cities: {len(CITIES)}")
 
-    # Translations
-    translations = build_translations(api_key) if api_key else {q: {"en": d["en"]} for q, d in OPENENDED_QUESTIONS.items()}
+    # Translations — load cache if exists, build only if missing
+    if TRANSLATIONS_PATH.exists():
+        with open(TRANSLATIONS_PATH) as f:
+            translations = json.load(f)
+        print(f"Loaded translations cache ({len(translations)} questions)")
+    elif api_key:
+        translations = build_translations(api_key)
+    else:
+        print("WARNING: No translations cache and no ANTHROPIC_API_KEY — using English only")
+        translations = {q: {"en": d["en"]} for q, d in OPENENDED_QUESTIONS.items()}
 
     # Load done set for resume
     done = set()
@@ -223,83 +336,42 @@ def main():
                     pass
     print(f"Resume: {len(done)} already done")
 
-    all_models = MODELS + OLLAMA_MODELS
+    # Select models
+    all_models = MODELS if args.api_only else MODELS + OLLAMA_MODELS
     if args.model:
         all_models = [m for m in all_models if m["name"] == args.model]
 
-    outf = open(OUTPUT_PATH, "a")
-    total_done = len(done)
-
-    for model in all_models:
-        model_name = model["name"]
-        print(f"\n===== {model_name} =====")
-        model_start = time.time()
-        model_done = 0
-
+    # Count remaining work per model
+    for m in all_models:
+        remaining = 0
         for q_id, q_data in OPENENDED_QUESTIONS.items():
-            is_template = q_data.get("template", False)
-            cities_to_test = CITIES if is_template else [""]
+            cities = CITIES if q_data.get("template", False) else [""]
+            for city in cities:
+                for lang in OPENENDED_LANGS:
+                    if (m["name"], q_id, city, lang) not in done:
+                        remaining += 1
+        print(f"  {m['name']}: {remaining} remaining")
 
-            for city in cities_to_test:
-                for lang_code in OPENENDED_LANGS:
-                    key = (model_name, q_id, city, lang_code)
-                    if key in done:
-                        continue
+    writer = SafeWriter(OUTPUT_PATH)
+    workers = min(args.workers, len(all_models))
+    print(f"\nLaunching {len(all_models)} models across {workers} threads...")
 
-                    prompt_template = translations.get(q_id, {}).get(lang_code, q_data["en"])
-                    prompt = prompt_template.replace("{city}", city) if city else prompt_template
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {
+            pool.submit(run_model, m, translations, done, writer, api_key, google_key, openai_key, xai_key, sambanova_key): m["name"]
+            for m in all_models
+        }
+        for future in as_completed(futures):
+            name = futures[future]
+            try:
+                _, count, errors = future.result()
+                print(f"FINISHED {name}: {count} new, {errors} errors")
+            except Exception as e:
+                print(f"CRASHED {name}: {e}")
 
-                    try:
-                        reasoning = ""
-                        provider = model.get("provider")
-                        if provider == "ollama":
-                            raw, reasoning = query_ollama(prompt, model["id"], max_tokens=500)
-                        elif provider == "google":
-                            raw = query_gemini(prompt, google_key, model["id"], max_tokens=500)
-                        elif provider == "openai":
-                            raw = query_openai(prompt, openai_key, model["id"], max_tokens=500)
-                        elif provider == "xai":
-                            raw = query_xai(prompt, xai_key, model["id"], max_tokens=500)
-                        else:
-                            raw = query_claude(prompt, api_key, model["id"], max_tokens=500)
-
-                        classification = classify_openended(raw, q_data, lang_code)
-
-                        row = {
-                            "model": model_name,
-                            "question_id": q_id,
-                            "city": city,
-                            "language": lang_code,
-                            "prompt": prompt,
-                            "raw_answer": raw,
-                            "reasoning": reasoning[:1000] if reasoning else "",
-                            "label": classification["label"],
-                            "hedged": classification["hedged"],
-                            "has_ua": classification["has_ua"],
-                            "has_ru": classification["has_ru"],
-                            "timestamp": datetime.now().isoformat()[:19],
-                        }
-                        outf.write(json.dumps(row, ensure_ascii=False) + "\n")
-                        outf.flush()
-                        model_done += 1
-                        total_done += 1
-
-                        if model_done % 10 == 0:
-                            elapsed = time.time() - model_start
-                            rate = model_done / max(elapsed, 0.1)
-                            print(f"  [{model_name}] {model_done} ({rate:.1f}/s) | {q_id} | {city} | {classification['label']:8s} | {raw[:50]}")
-
-                    except Exception as e:
-                        print(f"  ERR [{model_name}] {q_id} {city} {lang_code}: {str(e)[:80]}")
-
-                    if model.get("provider") != "ollama":
-                        time.sleep(0.2)
-
-        elapsed = time.time() - model_start
-        print(f"  {model_name} done: {model_done} queries in {elapsed:.0f}s")
-
-    outf.close()
-    print(f"\nTotal: {total_done}")
+    writer.close()
+    print(f"\nTotal rows written this session: {writer.count}")
+    print(f"Total rows in file: {sum(1 for _ in open(OUTPUT_PATH))}")
 
 
 if __name__ == "__main__":

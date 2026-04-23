@@ -1,78 +1,41 @@
 {
   "pipeline": "llm",
-  "version": "1.0",
-  "generated": "2026-04-11T00:00:00+00:00",
-  "method": "forced_choice_15q + open_ended_8q \u00d7 50_languages \u00d7 18_models, temp=0, seed=42",
+  "version": "3.0",
+  "generated": "2026-04-23T00:00:00+00:00",
+  "method": "forced_choice_15q + open_ended_8q × 50_languages × 16_models, temp=0, seed=42",
   "summary": {
-    "models_audited": 18,
-    "laboratories": 8,
-    "total_queries_forced": 33300,
-    "total_queries_approx": 45500,
+    "models_audited": 16,
+    "laboratories": 9,
+    "total_queries_forced": 29600,
+    "total_queries_open_ended": 41600,
+    "total_queries_approx": 71200,
     "languages": 50,
     "questions_forced": 15,
     "questions_open_ended": 8,
     "top_model": "gemini-2.5-pro",
-    "top_model_sas": 0.947,
-    "rlhf_gap_range": "+0.05 to +0.33",
-    "positive_gap_models": 8,
-    "negative_gap_models": 10,
+    "top_model_sas": 0.902,
+    "rlhf_gap_range": "+0.04 to +0.27",
+    "positive_gap_models": 7,
+    "negative_gap_models": 9,
     "weight_schemes_tested": 6,
     "tier_count": 4
   },
   "top_5_models": [
-    {
-      "model": "gemini-2.5-pro",
-      "lab": "Google",
-      "sas": 0.947
-    },
-    {
-      "model": "sonnet-4.6",
-      "lab": "Anthropic",
-      "sas": 0.914
-    },
-    {
-      "model": "opus-4.6",
-      "lab": "Anthropic",
-      "sas": 0.911
-    },
-    {
-      "model": "gemini-2.5-flash",
-      "lab": "Google",
-      "sas": 0.894
-    },
-    {
-      "model": "gpt-5.4",
-      "lab": "OpenAI",
-      "sas": 0.877
-    }
+    {"model": "gemini-2.5-pro", "lab": "Google", "sas": 0.902},
+    {"model": "opus-4.6", "lab": "Anthropic", "sas": 0.894},
+    {"model": "sonnet-4.6", "lab": "Anthropic", "sas": 0.894},
+    {"model": "gpt-5.4", "lab": "OpenAI", "sas": 0.868},
+    {"model": "gemini-2.5-flash", "lab": "Google", "sas": 0.856}
   ],
   "bottom_5_models": [
-    {
-      "model": "qwen3",
-      "lab": "Alibaba",
-      "sas": 0.58
-    },
-    {
-      "model": "gemma4",
-      "lab": "Google",
-      "sas": 0.631
-    },
-    {
-      "model": "olmo2",
-      "lab": "AI2",
-      "sas": 0.642
-    },
-    {
-      "model": "smollm3",
-      "lab": "HuggingFace",
-      "sas": 0.642
-    },
-    {
-      "model": "olmo3",
-      "lab": "AI2",
-      "sas": 0.562
-    }
+    {"model": "qwen3", "lab": "Alibaba", "sas": 0.652},
+    {"model": "olmo2", "lab": "AI2", "sas": 0.656},
+    {"model": "gemma4", "lab": "Google", "sas": 0.684},
+    {"model": "mistral-small", "lab": "Mistral", "sas": 0.715},
+    {"model": "gpt-5.4-nano", "lab": "OpenAI", "sas": 0.737}
   ],
+  "models_dropped": ["olmo3", "smollm3"],
+  "drop_reason": "Original open-weight model files unavailable for reproducible open-ended rerun at 50 languages",
   "data_sources": {
     "sas_scores": "data/sas_scores.json",
     "audit_results": "site/src/data/llm_audit_results.json",
@@ -80,32 +43,14 @@
     "open_ended": "data/llm_openended_audit.jsonl"
   },
   "key_findings": [
-    "Cross-lab RLHF gap: all 8 flagship models show positive D-R gap (+0.05 to +0.33), meaning forced-choice sovereignty alignment exceeds free-recall alignment. Strongest gap: gemini-2.5-pro (+0.33), gpt-5.4 (+0.27).",
-    "Negative-gap inversion on 10 open/small models: open-ended recall is more Ukraine-aligned than forced-choice answers, suggesting RLHF training overcorrects toward neutrality.",
-    "4-tier SAS (Sovereignty Alignment Score) with 6 weight schemes shows rank-order stability (Spearman > 0.9 across schemes)."
+    "Cross-lab RLHF gap: 7 flagship models show positive D-R gap (+0.04 to +0.27), meaning forced-choice sovereignty alignment exceeds free-recall alignment. Strongest gap: gemini-2.5-pro (+0.27), gpt-5.4 (+0.20).",
+    "Negative-gap inversion on 9 open/small models: open-ended recall is more Ukraine-aligned than forced-choice answers.",
+    "4-tier SAS (Sovereignty Alignment Score) with 6 weight schemes shows rank-order stability (Spearman > 0.96 across monotonic, uniform, forced-only schemes)."
   ],
   "limitations": [
     "Tested from EU/US network endpoints; API behavior from Russian IPs not verified.",
     "temp=0 does not guarantee determinism across all providers; seed=42 used where supported.",
-    "Open-ended queries available for subset of models (13 languages); forced-choice covers all 50."
+    "2 open-weight models (OLMo-3, SmolLM-3) dropped due to model file irreproducibility. Llama 4 rerun via OpenRouter (Scout)."
   ],
-  "laboratories": 9,
-  "top_5": {
-    "gemini-2.5-pro": 0.9465,
-    "sonnet-4.6": 0.9137,
-    "opus-4.6": 0.911,
-    "gpt-5.4": 0.9013,
-    "gemini-2.5-flash": 0.8939
-  },
-  "bottom_5": {
-    "olmo3": 0.5734,
-    "deepseek-r1-8b": 0.4716,
-    "llama3.2-1b": 0.3754,
-    "phi3-mini": 0.317,
-    "qwen2.5-3b": 0.2728
-  },
-  "top_model": {
-    "name": "gemini-2.5-pro",
-    "sas": 0.9465
-  }
+  "laboratories": 9
 }

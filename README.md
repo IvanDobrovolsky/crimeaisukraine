@@ -20,13 +20,13 @@
 |--:|----------|-----------------|
 | 1 | [geodata](pipelines/geodata/) | Natural Earth assigns `SOVEREIGNT='Russia'` to Crimea — **65.7M weekly downloads** inherit it. 30/31 worldviews in its own data say Ukraine; only Russia's says Russia. |
 | 2 | [academic](pipelines/academic/) | **91,670 papers** scanned, **1,581 Russia-framing** confirmed (98.3% precision). 12 Q1 journals including Oxford, Max Planck, IEEE. |
-| 3 | [llm](pipelines/llm/) | **18 models, 9 labs.** RLHF gap **+0.18 to +0.33** on 5 flagships. GPT-5.4 says "yes" to "Is Sevastopol in Ukraine?" but writes "Kerch, Republic of Crimea, Russia" in free recall. |
+| 3 | [llm](pipelines/llm/) | **16 models, 9 labs.** RLHF gap **+0.04 to +0.27** on 7 flagships. GPT-5.4 says "yes" to "Is Sevastopol in Ukraine?" but writes "Kerch, Republic of Crimea, Russia" in free recall. |
 | 4 | [media](pipelines/media/) | **154K articles** scanned. Zero endorsements from top-10 international outlets. Advocacy works where editorial accountability exists. |
 | 5 | [wikipedia](pipelines/wikipedia/) | English Wikipedia erases the country for **11/14** Crimean cities. Only **1 of 577** Crimean-born people has a recorded post-2014 citizenship transition. |
 | 6 | [weather](pipelines/weather/) | **12/25** services correct. Weather.com displays "Simferopol, Simferopol" — the city without a country. |
 | 7 | [telecom](pipelines/telecom/) | **8/9 ASNs** reassigned without sovereignty review under RIPE `ripe-733`. |
 | 8 | [ip](pipelines/ip/) | **53% UA, 16% RU, 31% other** — geolocation fragments the same territory into three answers. |
-| 9 | [institutions](pipelines/institutions/) | **10/10** institutional registries correct. The law is unanimous; the gap is in the technical layer. |
+| 9 | [institutions](pipelines/institutions/) | **9/10** institutional registries correct, 1 ambiguous (LoC LCSH). The law is unanimous; the gap is in the technical layer. |
 | 10 | [tech_infrastructure](pipelines/tech_infrastructure/) | IANA tzdata lists `RU,UA` (Russia first). Google's libphonenumber encodes both UA and RU for `+7978`. |
 | 11 | [religious](pipelines/religious/) | Moscow Patriarchate annexed 3 Crimean dioceses (2022). WCC defeated ROC expulsion; Vatican omitted Crimea. **46 OCU parishes in 2014, zero in 2024.** |
 

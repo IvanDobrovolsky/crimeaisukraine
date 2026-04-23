@@ -18,7 +18,7 @@ import urllib.request
 from pathlib import Path
 from datetime import datetime
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent.parent.parent
 DATA = PROJECT / "data"
 
 # =====================================================================
@@ -39,12 +39,14 @@ MODELS = [
     {"id": "grok-4.20-0309-non-reasoning", "name": "grok-4.20", "provider": "xai"},
     {"id": "grok-4-fast-non-reasoning", "name": "grok-4-fast", "provider": "xai"},
     {"id": "grok-3", "name": "grok-3", "provider": "xai"},
+    # Meta Llama 4 Maverick via SambaNova API
+    {"id": "meta-llama/llama-4-scout", "name": "llama4", "provider": "sambanova"},
 ]
 
 # Open-source models via Ollama (vast.ai GPU, tunnel on localhost:11434)
 OLLAMA_MODELS = [
     # Latest only — open-source models from major labs
-    {"id": "llama4", "name": "llama4", "provider": "ollama"},
+    # llama4 moved to MODELS via SambaNova API
     {"id": "gemma4", "name": "gemma4", "provider": "ollama"},
     {"id": "qwen3", "name": "qwen3", "provider": "ollama"},
     {"id": "mistral-small", "name": "mistral-small", "provider": "ollama"},
@@ -498,6 +500,27 @@ def query_xai(prompt, api_key, model_id, max_tokens=10, temperature=0.0):
         return ""
 
 
+def query_sambanova(prompt, api_key, model_id, max_tokens=10, temperature=0.0):
+    """Query OpenRouter/SambaNova via OpenAI-compatible endpoint."""
+    body = json.dumps({
+        "model": model_id,
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": max_tokens,
+        "temperature": temperature,
+    }).encode()
+    req = urllib.request.Request("https://openrouter.ai/api/v1/chat/completions",
+                                 data=body, headers={
+                                     "Content-Type": "application/json",
+                                     "Authorization": f"Bearer {api_key}",
+                                 })
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        data = json.loads(resp.read().decode())
+    try:
+        return (data["choices"][0]["message"].get("content") or "").strip()
+    except (KeyError, IndexError):
+        return ""
+
+
 def query_ollama(prompt, model_id, base_url=OLLAMA_BASE_URL, max_tokens=500, temperature=0.0, seed=42):
     """Query Ollama via native /api/chat. Deterministic by default.
 
@@ -546,6 +569,10 @@ def query_ollama(prompt, model_id, base_url=OLLAMA_BASE_URL, max_tokens=500, tem
 
 def main():
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    google_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY", "")
+    openai_key = os.environ.get("OPENAI_API_KEY", "")
+    xai_key = os.environ.get("XAI_API_KEY", "")
+    sambanova_key = os.environ.get("OPENROUTER_API_KEY") or os.environ.get("SAMBANOVA_API_KEY", "")
     if not api_key:
         print("ERROR: Set ANTHROPIC_API_KEY")
         return
@@ -609,8 +636,17 @@ def main():
 
                     try:
                         reasoning = ""
-                        if model.get("provider") == "ollama":
+                        provider = model.get("provider")
+                        if provider == "ollama":
                             raw, reasoning = query_ollama(prompt, model["id"])
+                        elif provider == "google":
+                            raw = query_gemini(prompt, google_key, model["id"])
+                        elif provider == "openai":
+                            raw = query_openai(prompt, openai_key, model["id"])
+                        elif provider == "xai":
+                            raw = query_xai(prompt, xai_key, model["id"])
+                        elif provider == "sambanova":
+                            raw = query_sambanova(prompt, sambanova_key, model["id"])
                         else:
                             raw = query_claude(prompt, api_key, model["id"])
                         classified = classify(raw, lang_code, q_type)
