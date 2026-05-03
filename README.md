@@ -12,17 +12,19 @@
 
 [**UN GA Resolution 68/262**](https://digitallibrary.un.org/record/767565) (adopted 100–11) places Crimea under Ukrainian sovereignty. The software that draws the maps, writes the news, indexes the research, and trains the AI does not.
 
-**[crimeaisukraine.org](https://crimeaisukraine.org)** · [briefing](../crimeaisukraine-paper/docs/Dobrovolskyi_2026_Briefing.docx) · [paper draft](../crimeaisukraine-paper/docs/Dobrovolskyi_2026_Crimea_Digital_Sovereignty_MC_v2.docx) · [datasets](https://huggingface.co/CrimeaIsUkraineOrg)
+**[crimeaisukraine.org](https://crimeaisukraine.org)** · [datasets](https://huggingface.co/CrimeaIsUkraineOrg)
 
 ## Pipelines
 
 | # | Pipeline | Headline finding |
 |--:|----------|-----------------|
 | 1 | [geodata](pipelines/geodata/) | Natural Earth assigns `SOVEREIGNT='Russia'` to Crimea — **65.7M weekly downloads** inherit it. 30/31 worldviews in its own data say Ukraine; only Russia's says Russia. |
-| 2 | [academic](pipelines/academic/) | **91,670 papers** scanned, **1,581 Russia-framing** confirmed (98.3% precision). 12 Q1 journals including Oxford, Max Planck, IEEE. |
-| 3 | [llm](pipelines/llm/) | **16 models, 9 labs.** RLHF gap **+0.04 to +0.27** on 7 flagships. GPT-5.4 says "yes" to "Is Sevastopol in Ukraine?" but writes "Kerch, Republic of Crimea, Russia" in free recall. |
-| 4 | [media](pipelines/media/) | **154K articles** scanned. Zero endorsements from top-10 international outlets. Advocacy works where editorial accountability exists. |
-| 5 | [wikipedia](pipelines/wikipedia/) | English Wikipedia erases the country for **11/14** Crimean cities. Only **1 of 577** Crimean-born people has a recorded post-2014 citizenship transition. |
+| 2 | [c4_sovereignty](c4_sovereignty/) | **34.1M documents** in C4 scanned. **894,645 Russia-framing** (90% assertive). 95.3% from mundane internet — only 2.8% from state/sanctioned sources. 86 domains verified against OFAC/EU/GEC. |
+| 3 | [academic](pipelines/academic/) | **91,670 papers** scanned, **1,581 Russia-framing** confirmed (98.3% precision). 161 Western publishers. 59 DOIs found directly in C4. |
+| 4 | [llm](pipelines/llm/) | **16 models, 8 labs.** Declarative-generative gap **+0.04 to +0.27** on flagships. Manual validation: κ = 0.94, precision 90.6% (95% CI: 83.1–95.0%). |
+| 5 | [media](pipelines/media/) | **154K articles** scanned via Rust classifier. Zero endorsements from top-10 international outlets. |
+| 6 | [grounding](pipelines/grounding/) | **5,974 citations** from 4 chatbots. 7.6% Russian-origin. 5/7 GEC proxy sites accessible via web search. |
+| 7 | [wikipedia](pipelines/wikipedia/) | English Wikipedia erases the country for **11/14** Crimean cities. Only **1 of 577** Crimean-born people has a recorded post-2014 citizenship transition. |
 | 6 | [weather](pipelines/weather/) | **12/25** services correct. Weather.com displays "Simferopol, Simferopol" — the city without a country. |
 | 7 | [telecom](pipelines/telecom/) | **8/9 ASNs** reassigned without sovereignty review under RIPE `ripe-733`. |
 | 8 | [ip](pipelines/ip/) | **53% UA, 16% RU, 31% other** — geolocation fragments the same territory into three answers. |

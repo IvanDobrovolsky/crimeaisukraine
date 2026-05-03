@@ -1,0 +1,535 @@
+[
+  {
+    "name": "TASS",
+    "domains": [
+      "tass.com",
+      "tass.ru"
+    ],
+    "us_ofac": {
+      "id": "NK-dYSzeekQRGKV5BcMvyXAVE",
+      "caption": "Mu'tassim Yahya 'Ali al-Rumaysh",
+      "schema": "Person",
+      "programs": [],
+      "websites": []
+    },
+    "eu_sanctions": {
+      "id": "NK-k837moN9ssPZedvkRUrexG",
+      "caption": "TASSOS",
+      "schema": "Vessel",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": {
+      "id": "NK-a7Eq38m6kGYm4uEJzVG4wy",
+      "caption": "Tianjin Huaying Haitai Science and Technology Development Co. Ltd",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": [
+        "http://huayinghaitai.com/"
+      ]
+    },
+    "jurisdiction_count": 3
+  },
+  {
+    "name": "SouthFront",
+    "domains": [
+      "southfront.org"
+    ],
+    "us_ofac": {
+      "id": "NK-daRK4sJPKpppNFqsSbcqja",
+      "caption": "SOUTHFRONT",
+      "schema": "Organization",
+      "programs": [],
+      "websites": [
+        "http://southfront.org/",
+        "http://maps.southfront.org/"
+      ]
+    },
+    "eu_sanctions": {
+      "id": "NK-daRK4sJPKpppNFqsSbcqja",
+      "caption": "SouthFront",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": {
+      "id": "NK-daRK4sJPKpppNFqsSbcqja",
+      "caption": "SOUTHFRONT",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": [
+        "https://southfront.org/"
+      ]
+    },
+    "jurisdiction_count": 3
+  },
+  {
+    "name": "Strategic Culture Foundation",
+    "domains": [
+      "strategic-culture.org"
+    ],
+    "us_ofac": {
+      "id": "NK-AGEDhLMf3JTjo5joaM2N7g",
+      "caption": "The Strategic Culture Foundation",
+      "schema": "Organization",
+      "programs": [],
+      "websites": [
+        "http://strategic-culture.org/"
+      ]
+    },
+    "eu_sanctions": {
+      "id": "NK-AGEDhLMf3JTjo5joaM2N7g",
+      "caption": "Strategic Culture Foundation",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": {
+      "id": "NK-AGEDhLMf3JTjo5joaM2N7g",
+      "caption": "STRATEGIC CULTURE FOUNDATION",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": [
+        "http://(1) http://www.fondsk.ru/ (2) https://www.strategic-culture.org/"
+      ]
+    },
+    "jurisdiction_count": 3
+  },
+  {
+    "name": "New Eastern Outlook",
+    "domains": [
+      "journal-neo.org"
+    ],
+    "us_ofac": {
+      "id": "NK-KuowZnSPUYEUwkYUSXZwgg",
+      "caption": "New Eastern Outlook",
+      "schema": "Organization",
+      "programs": [],
+      "websites": [
+        "http://journal-neo.org/"
+      ]
+    },
+    "eu_sanctions": {
+      "id": "NK-KuowZnSPUYEUwkYUSXZwgg",
+      "caption": "New Eastern Outlook",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": {
+      "id": "NK-KuowZnSPUYEUwkYUSXZwgg",
+      "caption": "NEW EASTERN OUTLOOK",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": [
+        "https://ru.journal-neo.org/"
+      ]
+    },
+    "jurisdiction_count": 3
+  },
+  {
+    "name": "Tsargrad",
+    "domains": [
+      "tsargrad.tv"
+    ],
+    "us_ofac": {
+      "id": "NK-AP4ZWuvn3aMK6kqXMKwZJG",
+      "caption": "Kurort Tsargrad Spas-Teshilovo OOO",
+      "schema": "Organization",
+      "programs": [],
+      "websites": []
+    },
+    "eu_sanctions": {
+      "id": "NK-amDXeENgjpWYSnDQ8dokeN",
+      "caption": "Tsargrad",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": {
+      "id": "NK-NmbVe2rjBGdaiemxriYJpg",
+      "caption": "OOO Imenie TSARGRAD",
+      "schema": "Company",
+      "programs": [],
+      "websites": []
+    },
+    "jurisdiction_count": 3
+  },
+  {
+    "name": "Katehon",
+    "domains": [
+      "katehon.com"
+    ],
+    "us_ofac": {
+      "id": "NK-fAnmWiiqpidM7C9Cbbhs7z",
+      "caption": "Analiticheski Tsentr Katekhon OOO",
+      "schema": "Organization",
+      "programs": [],
+      "websites": []
+    },
+    "eu_sanctions": {
+      "id": "NK-fAnmWiiqpidM7C9Cbbhs7z",
+      "caption": "Katehon",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": {
+      "id": "NK-fAnmWiiqpidM7C9Cbbhs7z",
+      "caption": "Analiticheskii Tsentr Katekhon OOO",
+      "schema": "Company",
+      "programs": [],
+      "websites": [
+        "https://katehon.com/"
+      ]
+    },
+    "jurisdiction_count": 3
+  },
+  {
+    "name": "RT / TV-Novosti",
+    "domains": [
+      "rt.com",
+      "russian.rt.com"
+    ],
+    "us_ofac": {
+      "id": "NK-DnycvrZMeJzUBjcoE6zWZD",
+      "caption": "STATE ENTERPRISE KERCH SEA COMMERCIAL PORT",
+      "schema": "Organization",
+      "programs": [],
+      "websites": [
+        "http://www.ukrport.org.ua/",
+        "http://www.kerchport.com/"
+      ]
+    },
+    "eu_sanctions": null,
+    "uk_sanctions": {
+      "id": "NK-dkQmcSJrkupFYhtqjYvcx3",
+      "caption": "State Unitary Enterprise of the Crimean Republic 'Crimean Sea Ports'",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": [
+        "http://http:/crimeaport.com/"
+      ]
+    },
+    "jurisdiction_count": 2
+  },
+  {
+    "name": "NTV",
+    "domains": [
+      "ntv.ru"
+    ],
+    "us_ofac": {
+      "id": "NK-W2NLhJy8PwrWPtC4D6TSo2",
+      "caption": "Joint Stock Company NTV Broadcasting Company",
+      "schema": "Organization",
+      "programs": [],
+      "websites": []
+    },
+    "eu_sanctions": {
+      "id": "NK-W2NLhJy8PwrWPtC4D6TSo2",
+      "caption": "NTV/NTV Mir",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": null,
+    "jurisdiction_count": 2
+  },
+  {
+    "name": "Rossiyskaya Gazeta",
+    "domains": [
+      "rg.ru"
+    ],
+    "us_ofac": {
+      "id": "NK-JXDfZvkKiFKtJ2fD7gAQwH",
+      "caption": "Obshchestvo S Ogranichennoi Otvetstvennostyu Rusmedtorg",
+      "schema": "Organization",
+      "programs": [],
+      "websites": [
+        "http://rusmedtorg.ru/"
+      ]
+    },
+    "eu_sanctions": null,
+    "uk_sanctions": {
+      "id": "NK-KqVJqgZw78gzPjBVZeiTgX",
+      "caption": "State Corporation Deposit Insurance Agency (DIA)",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": [
+        "http://Asv.org.ru/"
+      ]
+    },
+    "jurisdiction_count": 2
+  },
+  {
+    "name": "NewsFront",
+    "domains": [
+      "news-front.info"
+    ],
+    "us_ofac": {
+      "id": "NK-KGQpmXA7E4nGdHXmBUnZsE",
+      "caption": "NEWSFRONT",
+      "schema": "Organization",
+      "programs": [],
+      "websites": [
+        "http://news-front.info/"
+      ]
+    },
+    "eu_sanctions": {
+      "id": "NK-KGQpmXA7E4nGdHXmBUnZsE",
+      "caption": "NewsFront",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": null,
+    "jurisdiction_count": 2
+  },
+  {
+    "name": "InfoRos",
+    "domains": [
+      "inforos.ru"
+    ],
+    "us_ofac": {
+      "id": "NK-FQkaf2WXzfiA2g2QMnLZTd",
+      "caption": "IA InfoRos, OOO",
+      "schema": "Organization",
+      "programs": [],
+      "websites": [
+        "http://inforos.ru/"
+      ]
+    },
+    "eu_sanctions": null,
+    "uk_sanctions": {
+      "id": "NK-FQkaf2WXzfiA2g2QMnLZTd",
+      "caption": "INFOROS",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": [
+        "http://inforos.ru/"
+      ]
+    },
+    "jurisdiction_count": 2
+  },
+  {
+    "name": "Fondsk",
+    "domains": [
+      "fondsk.ru"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": {
+      "id": "NK-79NmeL7677kxp6i7itTc4U",
+      "caption": "Fondsk",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": {
+      "id": "NK-AGEDhLMf3JTjo5joaM2N7g",
+      "caption": "STRATEGIC CULTURE FOUNDATION",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": [
+        "http://(1) http://www.fondsk.ru/ (2) https://www.strategic-culture.org/"
+      ]
+    },
+    "jurisdiction_count": 2
+  },
+  {
+    "name": "Channel One Russia",
+    "domains": [
+      "1tv.ru"
+    ],
+    "us_ofac": {
+      "id": "NK-4TAo3sMMLRhrZPioxA9wTs",
+      "caption": "JOINT STOCK COMPANY CHANNEL ONE RUSSIA",
+      "schema": "Organization",
+      "programs": [],
+      "websites": []
+    },
+    "eu_sanctions": null,
+    "uk_sanctions": null,
+    "jurisdiction_count": 1
+  },
+  {
+    "name": "Voice of Europe",
+    "domains": [
+      "voiceofeurope.com"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": {
+      "id": "NK-2yL7TM7nRMQZuMN5CHPWWa",
+      "caption": "Voice of Europe",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": null,
+    "jurisdiction_count": 1
+  },
+  {
+    "name": "Krasnaya Zvezda / Tvzvezda",
+    "domains": [
+      "tvzvezda.ru"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": {
+      "id": "NK-RuC4KLqod5FExjFFHAxfKa",
+      "caption": "Krasnaya Zvezda / Tvzvezda",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": null,
+    "jurisdiction_count": 1
+  },
+  {
+    "name": "Eurasia Daily",
+    "domains": [
+      "eadaily.com"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": {
+      "id": "NK-CVqFCcArjL5GaH9Uj2c6Hq",
+      "caption": "EADaily / Eurasia Daily",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": null,
+    "jurisdiction_count": 1
+  },
+  {
+    "name": "RuBaltic",
+    "domains": [
+      "rubaltic.ru"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": {
+      "id": "NK-5cmQwVY8KSGjXu95aJC6Kz",
+      "caption": "RuBaltic",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": null,
+    "jurisdiction_count": 1
+  },
+  {
+    "name": "REN TV",
+    "domains": [
+      "ren.tv"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": {
+      "id": "NK-mgZKpF45Xfn74ubhzvb3do",
+      "caption": "REN TV",
+      "schema": "LegalEntity",
+      "programs": [],
+      "websites": []
+    },
+    "uk_sanctions": null,
+    "jurisdiction_count": 1
+  },
+  {
+    "name": "Rossiya Segodnya / RIA Novosti",
+    "domains": [
+      "ria.ru",
+      "sputniknews.com"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": null,
+    "uk_sanctions": null,
+    "jurisdiction_count": 0
+  },
+  {
+    "name": "VGTRK / Vesti",
+    "domains": [
+      "vesti.ru"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": null,
+    "uk_sanctions": null,
+    "jurisdiction_count": 0
+  },
+  {
+    "name": "Izvestia",
+    "domains": [
+      "iz.ru"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": null,
+    "uk_sanctions": null,
+    "jurisdiction_count": 0
+  },
+  {
+    "name": "Lenta.ru",
+    "domains": [
+      "lenta.ru"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": null,
+    "uk_sanctions": null,
+    "jurisdiction_count": 0
+  },
+  {
+    "name": "Komsomolskaya Pravda",
+    "domains": [
+      "kp.ru"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": null,
+    "uk_sanctions": null,
+    "jurisdiction_count": 0
+  },
+  {
+    "name": "Gazeta.ru",
+    "domains": [
+      "gazeta.ru"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": null,
+    "uk_sanctions": null,
+    "jurisdiction_count": 0
+  },
+  {
+    "name": "RIAFAN / FAN",
+    "domains": [
+      "riafan.ru"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": null,
+    "uk_sanctions": null,
+    "jurisdiction_count": 0
+  },
+  {
+    "name": "Pravda.ru",
+    "domains": [
+      "pravda.ru"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": null,
+    "uk_sanctions": null,
+    "jurisdiction_count": 0
+  },
+  {
+    "name": "Regnum",
+    "domains": [
+      "regnum.ru"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": null,
+    "uk_sanctions": null,
+    "jurisdiction_count": 0
+  },
+  {
+    "name": "Zvezda / MoD TV",
+    "domains": [
+      "zvezdanews.ru"
+    ],
+    "us_ofac": null,
+    "eu_sanctions": null,
+    "uk_sanctions": null,
+    "jurisdiction_count": 0
+  }
+]

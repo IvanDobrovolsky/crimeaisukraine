@@ -179,12 +179,12 @@ fn build_signals() -> Vec<Signal> {
     // --- STRUCTURAL (3+3) ---
     let struct_ua: &[(&str, f32)] = &[
         (r#"(?i)country_code["\s:=]+ua\b"#, 1.5),
-        (r#"(?i)country["\s:=]+ukraine"#, 1.5),
+        (r#"(?i)country["=:]\s*ukraine"#, 1.5),
         (r"(?i)/ukraine/crimea|/ukraine/simferopol", 1.0),
     ];
     let struct_ru: &[(&str, f32)] = &[
         (r#"(?i)country_code["\s:=]+ru\b"#, 1.5),
-        (r#"(?i)country["\s:=]+russia"#, 1.5),
+        (r#"(?i)country["=:]\s*russia"#, 1.5),
         (r"(?i)/russia/crimea|/russia/simferopol", 1.0),
     ];
 
@@ -296,40 +296,121 @@ fn is_news_domain(url: &str) -> bool {
 // Propaganda source domains (55)
 // =========================================================================
 
-const STATE_T1: &[&str] = &[
-    "ria.ru", "sputniknews.com", "sputnikglobe.com", "inosmi.ru", "ukraina.ru",
-    "baltnews.ee", "baltnews.lt", "baltnews.lv",
-    "tass.com", "tass.ru",
-    "rt.com", "russian.rt.com", "arabic.rt.com", "actualidad.rt.com",
-    "rtarabic.com", "ruptly.tv",
-    "freedert.online", "dert.online", "rtde.live", "swentr.site", "rurtnews.com",
-    "iz.ru", "rg.ru", "tvzvezda.ru", "ntv.ru", "vesti.ru", "1tv.ru", "5-tv.ru",
+// Source: data/russian_state_domains.json — each domain has verifiable legal provenance
+// See SIGNAL_SOURCES.md for full citations (OFAC SDN, EU regulations, GEC report, EGRUL)
+
+const GOVERNMENT: &[&str] = &[
+    "kremlin.ru", "government.ru", "mid.ru", "mil.ru",
+    "duma.gov.ru", "council.gov.ru", "fsb.ru", "mos.ru",
+    ".gov.ru",          // All Russian federal/regional government domains
+    "sevproc.ru",       // Sevastopol occupation prosecutor
 ];
 
-const PROXY_T2: &[&str] = &[
-    "strategic-culture.org", "globalresearch.ca", "journal-neo.org",
-    "news-front.info", "southfront.org", "katehon.com", "geopolitica.ru",
+const STATE_T1: &[&str] = &[
+    // Rossiya Segodnya group (100% federal, Presidential Decree No. 894/2013)
+    "ria.ru", "sputniknews.com", "sputnikglobe.com", "inosmi.ru", "ukraina.ru",
+    "baltnews.ee", "baltnews.lt", "baltnews.lv", "ruptly.tv",
+    // RT / TV-Novosti (federal budget, OFAC SDN #50692)
+    "rt.com", "russian.rt.com", "arabic.rt.com", "actualidad.rt.com",
+    "rtarabic.com", "freedert.online", "dert.online", "rtde.live", "swentr.site", "rurtnews.com",
+    // TASS (100% FGUP, EU Package 16)
+    "tass.com", "tass.ru",
+    // VGTRK (100% federal, EU Package 6)
+    "vesti.ru", "rtr-planeta.com",
+    // Channel One (51% federal, EU Package 9)
+    "1tv.ru",
+    // TV Zvezda (100% MoD, EU Package 16)
+    "tvzvezda.ru", "redstar.ru",
+    // Rossiyskaya Gazeta (government budgetary institution, EU Package 14)
+    "rg.ru",
+];
+
+const STATE_T2: &[&str] = &[
+    // National Media Group (Kovalchuk, Kremlin-aligned)
+    "iz.ru", "izvestia.ru",  // EU Package 14
+    "ren.tv",                // EU Package 9
+    "5-tv.ru",
+    // Gazprom Media (Gazprom = 50%+ federal)
+    "ntv.ru",                // EU Package 9
+    "rutube.ru",
+    // Moscow city government
+    "tvc.ru",                // EU Package 6
+    "m24.ru",
+    // CIS Interstate
+    "mir24.tv",
+    // Russian Orthodox Church
+    "spastv.ru",             // EU Package 12
+];
+
+const SANCTIONED_PROXY: &[&str] = &[
+    // GEC 'Pillars' 2020 — 7 proxy sites
+    "strategic-culture.org", "strategic-culture.su",  // SVR-directed, OFAC + EU Pkg 16
+    "globalresearch.ca",                               // GEC-documented proxy
+    "journal-neo.org",                                 // RAS, OFAC + EU Pkg 11
+    "southfront.org",                                  // GRU-linked, OFAC CYBER2 + EU Pkg 16
+    "news-front.info", "news-front.su",                // FSB-linked, OFAC + EU Pkg 16
+    "katehon.com",                                     // Malofeev, EU Pkg 11
+    "geopolitica.ru",                                  // Dugin, OFAC EO14024
+    // OFAC-designated (March 2022, EO14024)
+    "inforos.ru",                                      // GRU Unit 54777
+    "orientalreview.org", "orientalreview.su",         // OFAC + EU Pkg 11
+    "webkamerton.ru",                                  // OFAC EO14024
+    "odnarodyna.org",                                  // OFAC EO14024
+    "unitedworldint.com", "uwidata.com",               // Prigozhin-linked
+    "ritmeurasia.org",                                 // OFAC EO14024
+    "usareally.com",                                   // IRA-linked, OFAC EO13694
+    "riafan.ru",                                       // Prigozhin/IRA, OFAC CYBER2
+    // EU-sanctioned (various packages)
+    "tsargrad.tv",                                     // Malofeev, EU Pkg 11
+    "voiceofeurope.com",                               // EU Pkg 14
+    "eadaily.com",                                     // EU Pkg 16
+    "fondsk.ru",                                       // SVR-linked, EU Pkg 16
+    "rubaltic.ru",                                     // EU Pkg 16
+    // Doppelganger (DOJ seizure Sept 2024)
+    "rrn.media",                                       // OFAC EO14024
+    "waronfakes.com",                                  // OFAC EO14024
 ];
 
 const PRAVDA: &[&str] = &[
+    // Portal Kombat network (VIGINUM/SGDSN report Feb 2024, 224 domains)
     "news-pravda.com", "dnr-pravda.ru",
-    // pravda.ru = old Soviet newspaper, in STATE_ADJ_T4 (NOT Portal Kombat)
 ];
 
-const STATE_ADJ_T4: &[&str] = &[
-    "lenta.ru", "aif.ru", "ng.ru", "mk.ru", "kp.ru", "kommersant.ru",
-    "gazeta.ru", "tsargrad.tv", "riafan.ru", "anna-news.info",
-    "rusvesna.su", "novoeizdanie.com", "sevastopol.su", "e-crimea.info",
-    "voiceofeurope.com",
+const STATE_ADJ: &[&str] = &[
+    // Sberbank-owned (state-controlled since 2020)
+    "lenta.ru",           // EU Pkg 16
+    "gazeta.ru",
+    "rambler.ru",         // Sberbank-owned (same as lenta/gazeta)
+    // Moscow city government-owned
+    "aif.ru",
+    // Oligarch-owned, editorially aligned
+    "kp.ru", "mk.ru", "ng.ru", "kommersant.ru",
+    // Pro-Russian / occupation media
+    "anna-news.info", "rusvesna.su", "sevastopol.su", "e-crimea.info",
+    // Old Pravda brand (NOT Portal Kombat)
     "pravda.ru", "pravda-tv.com",
 ];
 
+fn domain_matches(url: &str, domain: &str) -> bool {
+    // Match domain with proper boundary: must be preceded by '/', '.', or '//' (start of host)
+    if let Some(idx) = url.find(domain) {
+        if idx == 0 { return true; }
+        let prev = url.as_bytes()[idx - 1];
+        // Valid domain boundary: after '/' or '.' or '@'
+        prev == b'/' || prev == b'.' || prev == b'@'
+    } else {
+        false
+    }
+}
+
 fn classify_source(url: &str) -> &'static str {
     let u = url.to_lowercase();
-    for d in STATE_T1 { if u.contains(d) { return "state_t1"; } }
-    for d in PROXY_T2 { if u.contains(d) { return "proxy_t2"; } }
-    for d in PRAVDA { if u.contains(d) { return "pravda"; } }
-    for d in STATE_ADJ_T4 { if u.contains(d) { return "state_adj_t4"; } }
+    for d in GOVERNMENT { if domain_matches(&u, d) { return "government"; } }
+    for d in STATE_T1 { if domain_matches(&u, d) { return "state_t1"; } }
+    for d in STATE_T2 { if domain_matches(&u, d) { return "state_t2"; } }
+    for d in SANCTIONED_PROXY { if domain_matches(&u, d) { return "sanctioned_proxy"; } }
+    for d in PRAVDA { if domain_matches(&u, d) { return "pravda"; } }
+    for d in STATE_ADJ { if domain_matches(&u, d) { return "state_adj"; } }
     "independent"
 }
 
@@ -388,7 +469,7 @@ impl Classifier {
     }
 
     fn classify(&self, text: &str, url: &str) -> OutputDoc {
-        let window = extract_window(text, 1000);
+        let window = text;  // Use full text, not windowed
         let lower_window = window.to_lowercase();
         let mut ua_score: f32 = 0.0;
         let mut ru_score: f32 = 0.0;
@@ -525,116 +606,141 @@ fn main() {
         ),
     );
 
-    // Process files in parallel, lines within each file sequentially
-    // but multiple files at once via rayon
-    files.par_iter().for_each(|path| {
-        let clf = Classifier::new();
-
+    // Process all files: read lines, then classify in parallel chunks
+    for path in &files {
         let file = match File::open(path) {
             Ok(f) => f,
             Err(e) => {
                 eprintln!("  ERROR {:?}: {}", path, e);
-                return;
+                continue;
             }
         };
-        let reader = BufReader::with_capacity(512 * 1024, file);
+        let reader = BufReader::with_capacity(4 * 1024 * 1024, file);
         let fname = path.file_name().unwrap_or_default().to_string_lossy().to_string();
 
-        let mut local_results: Vec<OutputDoc> = Vec::with_capacity(100_000);
-        let mut local_total: u64 = 0;
-        let mut local_ru: u64 = 0;
-        let mut local_ua: u64 = 0;
-        let mut local_disp: u64 = 0;
-        let mut local_nosig: u64 = 0;
-        let mut local_quoted: u64 = 0;
-        let mut local_assert_struct: u64 = 0;
-        let mut local_assert_pure: u64 = 0;
-        let mut local_report_news: u64 = 0;
-        let mut local_report_attrib: u64 = 0;
-        let mut local_t1: u64 = 0;
-        let mut local_t2: u64 = 0;
-        let mut local_pravda: u64 = 0;
-        let mut local_t4: u64 = 0;
+        // Process in chunks of 500K lines for memory efficiency + parallelism
+        let chunk_size = 500_000;
+        let mut chunk: Vec<String> = Vec::with_capacity(chunk_size);
+        let mut file_total: u64 = 0;
+        let mut file_ru: u64 = 0;
+        let mut file_ua: u64 = 0;
+        let mut file_nosig: u64 = 0;
 
         for line in reader.lines() {
             let line = match line {
                 Ok(l) => l,
                 Err(_) => continue,
             };
-            local_total += 1;
+            chunk.push(line);
 
-            let doc: InputDoc = match serde_json::from_str(&line) {
-                Ok(d) => d,
-                Err(_) => continue,
-            };
+            if chunk.len() >= chunk_size {
+                // Classify chunk in parallel
+                let results: Vec<OutputDoc> = chunk.par_chunks(1000).flat_map(|sub| {
+                    let clf = Classifier::new();
+                    sub.iter().filter_map(|line| {
+                        let doc: InputDoc = serde_json::from_str(line).ok()?;
+                        Some(clf.classify(&doc.text, &doc.url))
+                    }).collect::<Vec<_>>()
+                }).collect();
 
-            let result = clf.classify(&doc.text, &doc.url);
-
-            match result.label.as_str() {
-                "russia" => {
-                    local_ru += 1;
-                    if result.is_quoted { local_quoted += 1; }
-                    match result.framing_type.as_str() {
-                        "assertive_structured" => local_assert_struct += 1,
-                        "assertive_pure" => local_assert_pure += 1,
-                        "reportage_news" => local_report_news += 1,
-                        "reportage_attribution" => local_report_attrib += 1,
-                        _ => {}
+                // Update counters and write output
+                let mut out = output.lock().unwrap();
+                for r in &results {
+                    match r.label.as_str() {
+                        "russia" => {
+                            file_ru += 1;
+                            ru_count.fetch_add(1, Ordering::Relaxed);
+                            if r.is_quoted { quoted_count.fetch_add(1, Ordering::Relaxed); }
+                            match r.framing_type.as_str() {
+                                "assertive_structured" => assertive_structured_count.fetch_add(1, Ordering::Relaxed),
+                                "assertive_pure" => assertive_pure_count.fetch_add(1, Ordering::Relaxed),
+                                "reportage_news" => reportage_news_count.fetch_add(1, Ordering::Relaxed),
+                                "reportage_attribution" => reportage_attrib_count.fetch_add(1, Ordering::Relaxed),
+                                _ => 0,
+                            };
+                            match r.source_type.as_str() {
+                                "state_t1" => state_t1_count.fetch_add(1, Ordering::Relaxed),
+                                "sanctioned_proxy" => proxy_t2_count.fetch_add(1, Ordering::Relaxed),
+                                "pravda" => pravda_count.fetch_add(1, Ordering::Relaxed),
+                                "state_adj" => state_adj_count.fetch_add(1, Ordering::Relaxed),
+                                _ => 0,
+                            };
+                        }
+                        "ukraine" => { file_ua += 1; ua_count.fetch_add(1, Ordering::Relaxed); }
+                        "disputed" => { disputed_count.fetch_add(1, Ordering::Relaxed); }
+                        _ => { file_nosig += 1; }
                     }
+                    serde_json::to_writer(&mut *out, r).unwrap();
+                    out.write_all(b"\n").unwrap();
                 }
-                "ukraine" => local_ua += 1,
-                "disputed" => local_disp += 1,
-                _ => local_nosig += 1,
-            }
-            match result.source_type.as_str() {
-                "state_t1" => local_t1 += 1,
-                "proxy_t2" => local_t2 += 1,
-                "pravda" => local_pravda += 1,
-                "state_adj_t4" => local_t4 += 1,
-                _ => {}
-            }
+                drop(out);
 
-            local_results.push(result);
+                file_total += chunk.len() as u64;
+                total_lines.fetch_add(chunk.len() as u64, Ordering::Relaxed);
 
-            if local_total % 500_000 == 0 {
-                eprintln!(
-                    "  [{}] {} lines, ru={} ua={} nosig={}",
-                    fname, local_total, local_ru, local_ua, local_nosig
-                );
+                if file_total % (chunk_size as u64 * 2) == 0 {
+                    eprintln!(
+                        "  [{}] {} lines, ru={} ua={} nosig={}",
+                        fname, file_total, file_ru, file_ua, file_nosig
+                    );
+                }
+
+                chunk.clear();
             }
         }
 
-        // Flush results to output
-        {
+        // Process remaining lines
+        if !chunk.is_empty() {
+            let results: Vec<OutputDoc> = chunk.par_chunks(1000).flat_map(|sub| {
+                let clf = Classifier::new();
+                sub.iter().filter_map(|line| {
+                    let doc: InputDoc = serde_json::from_str(line).ok()?;
+                    Some(clf.classify(&doc.text, &doc.url))
+                }).collect::<Vec<_>>()
+            }).collect();
+
             let mut out = output.lock().unwrap();
-            for doc in &local_results {
-                serde_json::to_writer(&mut *out, doc).unwrap();
+            for r in &results {
+                match r.label.as_str() {
+                    "russia" => {
+                        file_ru += 1;
+                        ru_count.fetch_add(1, Ordering::Relaxed);
+                        if r.is_quoted { quoted_count.fetch_add(1, Ordering::Relaxed); }
+                        match r.framing_type.as_str() {
+                            "assertive_structured" => assertive_structured_count.fetch_add(1, Ordering::Relaxed),
+                            "assertive_pure" => assertive_pure_count.fetch_add(1, Ordering::Relaxed),
+                            "reportage_news" => reportage_news_count.fetch_add(1, Ordering::Relaxed),
+                            "reportage_attribution" => reportage_attrib_count.fetch_add(1, Ordering::Relaxed),
+                            _ => 0,
+                        };
+                        match r.source_type.as_str() {
+                            "state_t1" => state_t1_count.fetch_add(1, Ordering::Relaxed),
+                            "sanctioned_proxy" => proxy_t2_count.fetch_add(1, Ordering::Relaxed),
+                            "pravda" => pravda_count.fetch_add(1, Ordering::Relaxed),
+                            "state_adj" => state_adj_count.fetch_add(1, Ordering::Relaxed),
+                            _ => 0,
+                        };
+                    }
+                    "ukraine" => { file_ua += 1; ua_count.fetch_add(1, Ordering::Relaxed); }
+                    "disputed" => { disputed_count.fetch_add(1, Ordering::Relaxed); }
+                    _ => { file_nosig += 1; }
+                }
+                serde_json::to_writer(&mut *out, r).unwrap();
                 out.write_all(b"\n").unwrap();
             }
-        }
+            drop(out);
 
-        // Update global counters
-        total_lines.fetch_add(local_total, Ordering::Relaxed);
-        classified.fetch_add(local_results.len() as u64, Ordering::Relaxed);
-        ru_count.fetch_add(local_ru, Ordering::Relaxed);
-        ua_count.fetch_add(local_ua, Ordering::Relaxed);
-        disputed_count.fetch_add(local_disp, Ordering::Relaxed);
-        no_signal_count.fetch_add(local_nosig, Ordering::Relaxed);
-        quoted_count.fetch_add(local_quoted, Ordering::Relaxed);
-        assertive_structured_count.fetch_add(local_assert_struct, Ordering::Relaxed);
-        assertive_pure_count.fetch_add(local_assert_pure, Ordering::Relaxed);
-        reportage_news_count.fetch_add(local_report_news, Ordering::Relaxed);
-        reportage_attrib_count.fetch_add(local_report_attrib, Ordering::Relaxed);
-        state_t1_count.fetch_add(local_t1, Ordering::Relaxed);
-        proxy_t2_count.fetch_add(local_t2, Ordering::Relaxed);
-        pravda_count.fetch_add(local_pravda, Ordering::Relaxed);
-        state_adj_count.fetch_add(local_t4, Ordering::Relaxed);
+            file_total += chunk.len() as u64;
+            total_lines.fetch_add(chunk.len() as u64, Ordering::Relaxed);
+        }
 
         eprintln!(
             "  DONE [{}] {} lines → ru={} ua={} disp={} nosig={}",
-            fname, local_total, local_ru, local_ua, local_disp, local_nosig
+            fname, file_total, file_ru, file_ua,
+            disputed_count.load(Ordering::Relaxed), file_nosig
         );
-    });
+
+    }
 
     let tot = total_lines.load(Ordering::Relaxed);
     let ru = ru_count.load(Ordering::Relaxed);

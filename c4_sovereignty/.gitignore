@@ -1,0 +1,5 @@
+# Large filtered/classified data files (on SSD, not in git)
+data/c4_*_crimea_filtered.jsonl
+data/c4_*_classified.jsonl
+data/c4_ru_*
+data/c4_en_crimea.jsonl

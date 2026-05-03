@@ -36,6 +36,10 @@ struct Args {
     #[arg(long)]
     shard_end: Option<usize>,
 
+    /// Comma-separated list of specific shard indices to scan
+    #[arg(long)]
+    shard_list: Option<String>,
+
     /// HuggingFace token for authenticated downloads
     #[arg(long)]
     token: Option<String>,
@@ -114,7 +118,7 @@ fn scan_gz_reader<R: std::io::Read>(reader: R, fname: &str) -> (Vec<OutputDoc>, 
         if has_crimea_mention(&doc.text) {
             crimea += 1;
             matches.push(OutputDoc {
-                text: truncate_utf8(&doc.text, 3000).to_string(),
+                text: doc.text.clone(),
                 url: doc.url,
                 file: fname.to_string(),
             });
@@ -230,7 +234,13 @@ fn main() {
     let crimea_docs = AtomicU64::new(0);
     let processed = AtomicU64::new(0);
     let output = Mutex::new(
-        std::io::BufWriter::new(File::create(&args.output).expect("Cannot create output")),
+        std::io::BufWriter::new(
+            std::fs::OpenOptions::new()
+                .create(true)
+                .append(true)
+                .open(&args.output)
+                .expect("Cannot open output"),
+        ),
     );
 
     if let Some(ref glob_pattern) = args.input {
@@ -276,8 +286,15 @@ fn main() {
             lang, n, args.threads
         );
 
-        let shard_end = args.shard_end.unwrap_or(n - 1);
-        let shard_indices: Vec<usize> = (args.shard_start..=shard_end).collect();
+        let shard_indices: Vec<usize> = if let Some(ref list) = args.shard_list {
+            // --shard-list "0,5,10,200" for specific shards only
+            list.split(',')
+                .filter_map(|s| s.trim().parse().ok())
+                .collect()
+        } else {
+            let shard_end = args.shard_end.unwrap_or(n - 1);
+            (args.shard_start..=shard_end).collect()
+        };
 
         shard_indices.par_iter().for_each(|&shard| {
             let (matches, total, crimea) =

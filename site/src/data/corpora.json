@@ -1,14 +1,18 @@
 {
   "pipeline": "corpora",
   "title": "Training Corpora Census (C4)",
-  "subtitle": "34.6M documents scanned for sovereignty framing in Google C4 training corpus",
+  "subtitle": "34.1M documents scanned for sovereignty framing in Google C4 training corpus",
   "method": "Rust classifier (91 signals, 3 languages) applied to full C4 English, Russian, and Ukrainian splits",
   "summary": {
-    "documents_scanned": 34600000,
-    "russia_framing": 507344,
-    "sanctioned_media": 6856,
-    "russia_framing_dois": 59,
-    "quoted_examples": 1241
+    "documents_scanned": 34118474,
+    "russia_framing": 894645,
+    "ukraine_framing": 1142854,
+    "sanctioned_and_state": 24984,
+    "sanctioned_and_state_pct": 2.79,
+    "independent_pct": 95.3,
+    "assertive_pct": 90.0,
+    "reportage_pct": 10.0,
+    "russia_framing_dois": 59
   },
   "key_findings": [
     "507K documents in C4 contain Russia-framing of Crimea",

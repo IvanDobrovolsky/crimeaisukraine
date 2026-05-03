@@ -20,7 +20,7 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent.parent.parent
 DATA = PROJECT / "data"
 SITE_DATA = PROJECT / "site" / "src" / "data"
 

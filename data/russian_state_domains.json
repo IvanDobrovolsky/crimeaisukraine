@@ -1,0 +1,626 @@
+{
+  "_description": "Russian state-controlled and sanctioned media/government domains with verifiable legal provenance",
+  "_generated": "2026-04-25",
+  "_methodology": "Each entry requires at least one of: (1) sanctions designation with regulation number, (2) verified government ownership via Russian federal law, (3) documented state ownership via EGRUL corporate registry or Roskomnadzor media registry. No domain is included based on editorial assessment alone.",
+  "_categories": {
+    "government": "Russian federal/regional government body established by law",
+    "state_media_t1": "Media outlet directly owned by Russian state (100% federal/state budget or state corporation)",
+    "state_media_t2": "Media outlet owned by state-controlled corporation (Gazprom Media, NMG via Kremlin-aligned shareholders)",
+    "sanctioned_proxy": "Entity sanctioned as disinformation proxy (OFAC, EU, GEC-documented)",
+    "state_adjacent": "Editorially aligned, ownership changed to state-friendly, but no direct state ownership proven"
+  },
+  "domains": [
+    {
+      "domain": "kremlin.ru",
+      "entity": "Administration of the President of Russia",
+      "category": "government",
+      "ownership": "Federal government",
+      "legal_basis": "Russian Constitution Art. 80; Federal Law No. 32-FZ (2004)",
+      "sanctions": []
+    },
+    {
+      "domain": "government.ru",
+      "entity": "Government of the Russian Federation",
+      "category": "government",
+      "ownership": "Federal government",
+      "legal_basis": "Russian Constitution Art. 110; Federal Constitutional Law No. 2-FKZ (1997)",
+      "sanctions": []
+    },
+    {
+      "domain": "mid.ru",
+      "entity": "Ministry of Foreign Affairs",
+      "category": "government",
+      "ownership": "Federal government",
+      "legal_basis": "Presidential Decree No. 865 (2004)",
+      "sanctions": []
+    },
+    {
+      "domain": "mil.ru",
+      "entity": "Ministry of Defence",
+      "category": "government",
+      "ownership": "Federal government",
+      "legal_basis": "Presidential Decree No. 1082 (2004)",
+      "sanctions": []
+    },
+    {
+      "domain": "duma.gov.ru",
+      "entity": "State Duma",
+      "category": "government",
+      "ownership": "Federal government",
+      "legal_basis": "Russian Constitution Art. 95",
+      "sanctions": []
+    },
+    {
+      "domain": "council.gov.ru",
+      "entity": "Federation Council",
+      "category": "government",
+      "ownership": "Federal government",
+      "legal_basis": "Russian Constitution Art. 95",
+      "sanctions": []
+    },
+    {
+      "domain": "fsb.ru",
+      "entity": "Federal Security Service",
+      "category": "government",
+      "ownership": "Federal government",
+      "legal_basis": "Federal Law No. 40-FZ (1995)",
+      "sanctions": []
+    },
+    {
+      "domain": "mos.ru",
+      "entity": "Moscow City Government",
+      "category": "government",
+      "ownership": "Moscow city government",
+      "legal_basis": "Moscow City Charter (1995)",
+      "sanctions": []
+    },
+    {
+      "domain": "tass.com",
+      "entity": "TASS (ITAR-TASS)",
+      "alt_domains": ["tass.ru"],
+      "category": "state_media_t1",
+      "ownership": "100% federal government (FGUP)",
+      "legal_basis": "Government Resolution No. 505 (2014); EGRUL OGRN 1037739393475",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2025/395", "date": "2025-02-24", "package": 16},
+        {"authority": "UK", "designation": "RUS1387 (director Mikhailov only)", "date": "2022-05-04"}
+      ],
+      "notes": "NOT on US OFAC SDN list as of April 2026"
+    },
+    {
+      "domain": "ria.ru",
+      "entity": "RIA Novosti / Rossiya Segodnya",
+      "category": "state_media_t1",
+      "ownership": "100% federal government (Rossiya Segodnya FGUP)",
+      "legal_basis": "Presidential Decree No. 894 (2013); EGRUL OGRN 1137799014078",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "sdn_id": 50690, "date": "2024-09-13"},
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2024/1428", "date": "2024-06-24", "package": 14}
+      ]
+    },
+    {
+      "domain": "sputniknews.com",
+      "entity": "Sputnik (Rossiya Segodnya subsidiary)",
+      "alt_domains": ["sputnikglobe.com"],
+      "category": "state_media_t1",
+      "ownership": "Rossiya Segodnya (100% federal)",
+      "legal_basis": "Subsidiary of Rossiya Segodnya; Presidential Decree No. 894 (2013)",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "sdn_id": 50690, "date": "2024-09-13"},
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2022/350", "date": "2022-03-02", "package": 1}
+      ]
+    },
+    {
+      "domain": "rt.com",
+      "entity": "RT / TV-Novosti",
+      "alt_domains": ["russian.rt.com", "arabic.rt.com", "actualidad.rt.com", "rtarabic.com", "freedert.online", "dert.online", "rtde.live", "swentr.site", "rurtnews.com"],
+      "category": "state_media_t1",
+      "ownership": "ANO TV-Novosti (federal budget funded)",
+      "legal_basis": "Government Resolution No. 519-r (2005)",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "sdn_id": 50692, "date": "2024-09-13"},
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2022/350", "date": "2022-03-02", "package": 1}
+      ]
+    },
+    {
+      "domain": "ruptly.tv",
+      "entity": "Ruptly (Rossiya Segodnya subsidiary)",
+      "category": "state_media_t1",
+      "ownership": "Rossiya Segodnya (100% federal)",
+      "legal_basis": "Subsidiary of Rossiya Segodnya",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "sdn_id": 50690, "date": "2024-09-13"}
+      ]
+    },
+    {
+      "domain": "inosmi.ru",
+      "entity": "InoSMI (Rossiya Segodnya project)",
+      "category": "state_media_t1",
+      "ownership": "Rossiya Segodnya (100% federal)",
+      "legal_basis": "Project of Rossiya Segodnya",
+      "sanctions": []
+    },
+    {
+      "domain": "ukraina.ru",
+      "entity": "Ukraina.ru (Rossiya Segodnya project)",
+      "category": "state_media_t1",
+      "ownership": "Rossiya Segodnya (100% federal)",
+      "legal_basis": "Project of Rossiya Segodnya",
+      "sanctions": []
+    },
+    {
+      "domain": "baltnews.ee",
+      "entity": "Baltnews (Rossiya Segodnya project)",
+      "alt_domains": ["baltnews.lt", "baltnews.lv"],
+      "category": "state_media_t1",
+      "ownership": "Rossiya Segodnya (100% federal)",
+      "legal_basis": "Project of Rossiya Segodnya",
+      "sanctions": []
+    },
+    {
+      "domain": "vesti.ru",
+      "entity": "VGTRK / Rossiya 1 / Rossiya 24",
+      "alt_domains": ["rtr-planeta.com"],
+      "category": "state_media_t1",
+      "ownership": "100% federal government (FGUP VGTRK)",
+      "legal_basis": "Presidential Decree No. 511 (1998); EGRUL OGRN 1027700310076",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2022/879", "date": "2022-06-03", "package": 6}
+      ]
+    },
+    {
+      "domain": "1tv.ru",
+      "entity": "Channel One Russia (Pervyi Kanal)",
+      "category": "state_media_t1",
+      "ownership": "51% federal government + VTB (state bank)",
+      "legal_basis": "Government Resolution No. 479 (1995); EGRUL OGRN 1027700153460",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2022/2474", "date": "2022-12-16", "package": 9}
+      ]
+    },
+    {
+      "domain": "tvzvezda.ru",
+      "entity": "TV Zvezda (Ministry of Defence)",
+      "alt_domains": ["redstar.ru"],
+      "category": "state_media_t1",
+      "ownership": "100% Ministry of Defence",
+      "legal_basis": "MoD order; Roskomnadzor media registry",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2025/395", "date": "2025-02-24", "package": 16}
+      ]
+    },
+    {
+      "domain": "rg.ru",
+      "entity": "Rossiyskaya Gazeta",
+      "category": "state_media_t1",
+      "ownership": "Government of Russia (budgetary institution)",
+      "legal_basis": "Government Resolution No. 490 (1993)",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2024/1428", "date": "2024-06-24", "package": 14}
+      ]
+    },
+    {
+      "domain": "iz.ru",
+      "entity": "Izvestia",
+      "alt_domains": ["izvestia.ru"],
+      "category": "state_media_t2",
+      "ownership": "National Media Group (Kovalchuk family, Kremlin-aligned)",
+      "legal_basis": "NMG corporate filings; EGRUL",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2024/1428", "date": "2024-06-24", "package": 14}
+      ]
+    },
+    {
+      "domain": "ntv.ru",
+      "entity": "NTV",
+      "category": "state_media_t2",
+      "ownership": "86.5% Gazprom Media (Gazprom = 50%+ federal)",
+      "legal_basis": "Gazprom Media corporate filings; EGRUL",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2022/2474", "date": "2022-12-16", "package": 9}
+      ]
+    },
+    {
+      "domain": "ren.tv",
+      "entity": "REN TV",
+      "category": "state_media_t2",
+      "ownership": "82% National Media Group",
+      "legal_basis": "NMG corporate filings",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2022/2474", "date": "2022-12-16", "package": 9}
+      ]
+    },
+    {
+      "domain": "5-tv.ru",
+      "entity": "Pyatyi Kanal (Channel 5)",
+      "category": "state_media_t2",
+      "ownership": "73.4% National Media Group",
+      "legal_basis": "NMG corporate filings",
+      "sanctions": []
+    },
+    {
+      "domain": "tvc.ru",
+      "entity": "TV Centre International",
+      "category": "state_media_t2",
+      "ownership": "81.3% Moscow city government",
+      "legal_basis": "Moscow city government corporate filings",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2022/879", "date": "2022-06-03", "package": 6}
+      ]
+    },
+    {
+      "domain": "rutube.ru",
+      "entity": "RuTube",
+      "category": "state_media_t2",
+      "ownership": "100% Gazprom Media",
+      "legal_basis": "Gazprom Media corporate filings",
+      "sanctions": []
+    },
+    {
+      "domain": "m24.ru",
+      "entity": "Moskva 24",
+      "category": "state_media_t2",
+      "ownership": "Moscow city government",
+      "legal_basis": "Moscow city government media holdings",
+      "sanctions": []
+    },
+    {
+      "domain": "mir24.tv",
+      "entity": "MIR TV (CIS Interstate)",
+      "category": "state_media_t2",
+      "ownership": "CIS Interstate Television and Radio Company",
+      "legal_basis": "CIS Agreement on Interstate TV (1992)",
+      "sanctions": []
+    },
+    {
+      "domain": "spastv.ru",
+      "entity": "Spas TV Channel",
+      "category": "state_media_t2",
+      "ownership": "Russian Orthodox Church (Moscow Patriarchate)",
+      "legal_basis": "Roskomnadzor media registry",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2023/2878", "date": "2023-12-18", "package": 12}
+      ]
+    },
+    {
+      "domain": "strategic-culture.org",
+      "entity": "Strategic Culture Foundation",
+      "alt_domains": ["strategic-culture.su"],
+      "category": "sanctioned_proxy",
+      "ownership": "SVR-directed (per GEC 2020, US Treasury)",
+      "legal_basis": "GEC 'Pillars' report (2020); US Treasury OFAC designation",
+      "sanctions": [
+        {"authority": "US", "program": "ELECTION-EO13848", "date": "2021-04-15"},
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2025/395", "date": "2025-02-24", "package": 16}
+      ]
+    },
+    {
+      "domain": "globalresearch.ca",
+      "entity": "Centre for Research on Globalization / Global Research",
+      "category": "sanctioned_proxy",
+      "ownership": "Michel Chossudovsky (GEC-documented as Russian proxy amplifier)",
+      "legal_basis": "GEC 'Pillars' report (2020)",
+      "sanctions": [],
+      "notes": "Not formally sanctioned but GEC-documented as key node in Russian disinformation ecosystem"
+    },
+    {
+      "domain": "journal-neo.org",
+      "entity": "New Eastern Outlook",
+      "category": "sanctioned_proxy",
+      "ownership": "Institute of Oriental Studies, Russian Academy of Sciences",
+      "legal_basis": "GEC 'Pillars' report (2020); OFAC designation",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "date": "2022-03-03"},
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2023/1214", "date": "2023-06-23", "package": 11}
+      ]
+    },
+    {
+      "domain": "southfront.org",
+      "entity": "SouthFront",
+      "category": "sanctioned_proxy",
+      "ownership": "GRU-linked (per GEC, OFAC)",
+      "legal_basis": "GEC 'Pillars' report (2020); OFAC CYBER2 designation",
+      "sanctions": [
+        {"authority": "US", "program": "CYBER2", "date": "2021-04-15"},
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2025/395", "date": "2025-02-24", "package": 16}
+      ]
+    },
+    {
+      "domain": "news-front.info",
+      "entity": "NewsFront",
+      "alt_domains": ["news-front.su"],
+      "category": "sanctioned_proxy",
+      "ownership": "Crimea-based, FSB-linked (per US Treasury)",
+      "legal_basis": "OFAC designation; EU Package 16",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "date": "2022-03-03"},
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2025/395", "date": "2025-02-24", "package": 16}
+      ]
+    },
+    {
+      "domain": "katehon.com",
+      "entity": "Katehon",
+      "category": "sanctioned_proxy",
+      "ownership": "Konstantin Malofeev (US-sanctioned oligarch)",
+      "legal_basis": "GEC 'Pillars' report (2020); OFAC via Malofeev",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2023/1214", "date": "2023-06-23", "package": 11}
+      ]
+    },
+    {
+      "domain": "geopolitica.ru",
+      "entity": "Geopolitica.ru (Aleksandr Dugin)",
+      "category": "sanctioned_proxy",
+      "ownership": "Dugin-linked",
+      "legal_basis": "GEC 'Pillars' report (2020); OFAC EO14024",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "date": "2022-03-03"}
+      ]
+    },
+    {
+      "domain": "inforos.ru",
+      "entity": "InfoRos (GRU Unit 54777)",
+      "category": "sanctioned_proxy",
+      "ownership": "GRU military intelligence",
+      "legal_basis": "OFAC CYBER2/NPWMD designation; DOJ indictment",
+      "sanctions": [
+        {"authority": "US", "program": "CYBER2", "date": "2021-04-15"}
+      ]
+    },
+    {
+      "domain": "orientalreview.org",
+      "entity": "Oriental Review",
+      "alt_domains": ["orientalreview.su"],
+      "category": "sanctioned_proxy",
+      "ownership": "Linked to Russian intelligence services (per OFAC)",
+      "legal_basis": "OFAC EO14024; EU Package 11",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "date": "2022-03-03"},
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2023/1214", "date": "2023-06-23", "package": 11}
+      ]
+    },
+    {
+      "domain": "webkamerton.ru",
+      "entity": "Journal Kamerton",
+      "category": "sanctioned_proxy",
+      "ownership": "OFAC-designated disinformation outlet",
+      "legal_basis": "OFAC EO14024",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "date": "2022-03-03"}
+      ]
+    },
+    {
+      "domain": "odnarodyna.org",
+      "entity": "Odna Rodyna",
+      "category": "sanctioned_proxy",
+      "ownership": "OFAC-designated disinformation outlet",
+      "legal_basis": "OFAC EO14024",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "date": "2022-03-03"}
+      ]
+    },
+    {
+      "domain": "unitedworldint.com",
+      "entity": "United World International",
+      "alt_domains": ["uwidata.com"],
+      "category": "sanctioned_proxy",
+      "ownership": "Prigozhin-linked (per OFAC)",
+      "legal_basis": "OFAC EO14024",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "date": "2022-03-03"}
+      ]
+    },
+    {
+      "domain": "ritmeurasia.org",
+      "entity": "Rhythm of Eurasia",
+      "category": "sanctioned_proxy",
+      "ownership": "OFAC-designated disinformation outlet",
+      "legal_basis": "OFAC EO14024",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "date": "2022-03-03"}
+      ]
+    },
+    {
+      "domain": "usareally.com",
+      "entity": "USA Really",
+      "category": "sanctioned_proxy",
+      "ownership": "IRA / Prigozhin-linked",
+      "legal_basis": "OFAC EO13694",
+      "sanctions": [
+        {"authority": "US", "program": "ELECTION-EO13694", "date": "2019-09-30"}
+      ]
+    },
+    {
+      "domain": "riafan.ru",
+      "entity": "Federal News Agency (FAN)",
+      "category": "sanctioned_proxy",
+      "ownership": "Prigozhin-linked (Internet Research Agency)",
+      "legal_basis": "OFAC CYBER2 designation; DOJ indictment (Feb 2018)",
+      "sanctions": [
+        {"authority": "US", "program": "CYBER2", "date": "2018-03-15"}
+      ]
+    },
+    {
+      "domain": "eadaily.com",
+      "entity": "EADaily / Eurasia Daily",
+      "category": "sanctioned_proxy",
+      "ownership": "EU-designated propaganda outlet",
+      "legal_basis": "EU Package 16",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2025/395", "date": "2025-02-24", "package": 16}
+      ]
+    },
+    {
+      "domain": "fondsk.ru",
+      "entity": "Foundation for Strategic Culture (Fondsk)",
+      "category": "sanctioned_proxy",
+      "ownership": "SVR-linked (same entity as Strategic Culture Foundation)",
+      "legal_basis": "EU Package 16",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2025/395", "date": "2025-02-24", "package": 16}
+      ]
+    },
+    {
+      "domain": "rubaltic.ru",
+      "entity": "RuBaltic",
+      "category": "sanctioned_proxy",
+      "ownership": "EU-designated propaganda outlet",
+      "legal_basis": "EU Package 16",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2025/395", "date": "2025-02-24", "package": 16}
+      ]
+    },
+    {
+      "domain": "voiceofeurope.com",
+      "entity": "Voice of Europe",
+      "category": "sanctioned_proxy",
+      "ownership": "Russian-funded influence operation (Czech intelligence exposed)",
+      "legal_basis": "EU Package 14; Czech BIS intelligence report (2024)",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2024/1428", "date": "2024-06-24", "package": 14}
+      ]
+    },
+    {
+      "domain": "tsargrad.tv",
+      "entity": "Tsargrad TV",
+      "category": "sanctioned_proxy",
+      "ownership": "Konstantin Malofeev (US-sanctioned oligarch)",
+      "legal_basis": "EU Package 11; Malofeev OFAC SDN",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2023/1214", "date": "2023-06-23", "package": 11}
+      ]
+    },
+    {
+      "domain": "rrn.media",
+      "entity": "RRN / Reliable Recent News (Doppelganger)",
+      "category": "sanctioned_proxy",
+      "ownership": "Russian government (Doppelganger operation)",
+      "legal_basis": "DOJ domain seizure (Sept 2024); OFAC designation",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "date": "2024-09-04"}
+      ]
+    },
+    {
+      "domain": "waronfakes.com",
+      "entity": "War on Fakes (Doppelganger)",
+      "category": "sanctioned_proxy",
+      "ownership": "Russian government (Doppelganger operation)",
+      "legal_basis": "OFAC designation (Sept 2024)",
+      "sanctions": [
+        {"authority": "US", "program": "RUSSIA-EO14024", "date": "2024-09-04"}
+      ]
+    },
+    {
+      "domain": "lenta.ru",
+      "entity": "Lenta",
+      "category": "state_adjacent",
+      "ownership": "Rambler Group (Sberbank → state-controlled since 2020)",
+      "legal_basis": "EU Package 16; Sberbank 50%+ federal ownership",
+      "sanctions": [
+        {"authority": "EU", "regulation": "Council Regulation (EU) 2025/395", "date": "2025-02-24", "package": 16}
+      ],
+      "notes": "Editorial independence ended 2014 when editor Galina Timchenko was fired after covering Ukraine"
+    },
+    {
+      "domain": "gazeta.ru",
+      "entity": "Gazeta.ru",
+      "category": "state_adjacent",
+      "ownership": "Rambler Group (Sberbank)",
+      "legal_basis": "Sberbank corporate filings",
+      "sanctions": []
+    },
+    {
+      "domain": "aif.ru",
+      "entity": "Argumenty i Fakty",
+      "category": "state_adjacent",
+      "ownership": "Moscow city government (since 2014)",
+      "legal_basis": "Moscow city government acquisition (2014)",
+      "sanctions": []
+    },
+    {
+      "domain": "kp.ru",
+      "entity": "Komsomolskaya Pravda",
+      "category": "state_adjacent",
+      "ownership": "ESN Group (Grigory Berezkin, Kremlin-aligned)",
+      "legal_basis": "ESN Group corporate filings",
+      "sanctions": []
+    },
+    {
+      "domain": "mk.ru",
+      "entity": "Moskovskiy Komsomolets",
+      "category": "state_adjacent",
+      "ownership": "ZAO Redaktsiya gazety MK (privately held, editorially aligned)",
+      "legal_basis": "Roskomnadzor media registry",
+      "sanctions": []
+    },
+    {
+      "domain": "kommersant.ru",
+      "entity": "Kommersant",
+      "category": "state_adjacent",
+      "ownership": "Alisher Usmanov (EU-sanctioned oligarch)",
+      "legal_basis": "Usmanov EU sanctions (Council Regulation 2022/336)",
+      "sanctions": [],
+      "notes": "Owner sanctioned but outlet itself not designated"
+    },
+    {
+      "domain": "ng.ru",
+      "entity": "Nezavisimaya Gazeta",
+      "category": "state_adjacent",
+      "ownership": "Konstantin Remchukov (editor-owner)",
+      "legal_basis": "Roskomnadzor media registry",
+      "sanctions": []
+    },
+    {
+      "domain": "anna-news.info",
+      "entity": "ANNA News",
+      "category": "state_adjacent",
+      "ownership": "Pro-Russian military correspondents network",
+      "legal_basis": "Documented by Bellingcat, DFRLab",
+      "sanctions": []
+    },
+    {
+      "domain": "rusvesna.su",
+      "entity": "Russkaya Vesna",
+      "category": "state_adjacent",
+      "ownership": "Pro-Russian separatist media",
+      "legal_basis": "SBU blocked list (Ukraine)",
+      "sanctions": []
+    },
+    {
+      "domain": "sevastopol.su",
+      "entity": "Sevastopol.su news portal",
+      "category": "state_adjacent",
+      "ownership": "Crimea-based occupation media",
+      "legal_basis": "Operating under Russian occupation administration",
+      "sanctions": []
+    },
+    {
+      "domain": "e-crimea.info",
+      "entity": "E-Crimea",
+      "category": "state_adjacent",
+      "ownership": "Crimea-based occupation media",
+      "legal_basis": "Operating under Russian occupation administration",
+      "sanctions": []
+    },
+    {
+      "domain": "pravda.ru",
+      "entity": "Pravda.ru",
+      "alt_domains": ["pravda-tv.com"],
+      "category": "state_adjacent",
+      "ownership": "Private (not related to Portal Kombat Pravda network)",
+      "legal_basis": "Roskomnadzor media registry",
+      "sanctions": [],
+      "notes": "Soviet-era newspaper brand. NOT part of VIGINUM-documented Portal Kombat Pravda network (news-pravda.com)"
+    },
+    {
+      "domain": "news-pravda.com",
+      "entity": "Pravda Network (Portal Kombat)",
+      "alt_domains": ["dnr-pravda.ru"],
+      "category": "sanctioned_proxy",
+      "ownership": "Russian military intelligence operation",
+      "legal_basis": "VIGINUM/SGDSN 'Portal Kombat' report (Feb 2024); DFRLab investigation",
+      "sanctions": [],
+      "notes": "224 domains across 83 countries identified by French VIGINUM. Network includes country-code subdomains (eu.news-pravda.com, france.news-pravda.com, etc.)"
+    }
+  ]
+}

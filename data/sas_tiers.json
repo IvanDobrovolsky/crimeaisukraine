@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "description": "Per-model per-tier mean scores for the SAS interactive explorer",
-  "generated": "2026-04-23T09:41:11",
+  "generated": "2026-04-26T22:51:40",
   "default_weights": {
     "D": 0.1,
     "L": 0.5,

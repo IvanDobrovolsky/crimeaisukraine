@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" font-family="'Inter', 'Helvetica Neue', sans-serif">
+  <defs>
+    <marker id="a" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <polygon points="0 0,6 2,0 4" fill="#8c8fa1"/>
+    </marker>
+    <filter id="s">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.05"/>
+    </filter>
+  </defs>
+
+  <!-- Catppuccin Latte background -->
+  <rect width="720" height="480" fill="#eff1f5" rx="8"/>
+
+  <!-- ═══ SOURCE ═══ -->
+  <rect x="240" y="16" width="240" height="40" rx="8" fill="#d20f39" fill-opacity="0.12" stroke="#d20f39" stroke-opacity="0.3" filter="url(#s)"/>
+  <text x="360" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#d20f39">Natural Earth</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="56" x2="360" y2="78" stroke="#8c8fa1" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <!-- ═══ TOPOJSON LAYER ═══ -->
+  <rect x="200" y="82" width="320" height="36" rx="6" fill="#eff1f5" stroke="#ccd0da" filter="url(#s)"/>
+  <text x="360" y="105" text-anchor="middle" font-size="11" font-weight="600" fill="#4c4f69">world-atlas TopoJSON</text>
+  <text x="540" y="105" font-size="8.5" fill="#8c8fa1">349K/mo</text>
+
+  <!-- Arrow splits into 4 -->
+  <line x1="360" y1="118" x2="360" y2="134" stroke="#8c8fa1" stroke-width="1" marker-end="url(#a)"/>
+
+  <!-- ═══ LIBRARIES ROW ═══ -->
+  <!-- D3.js -->
+  <rect x="28" y="140" width="130" height="50" rx="6" fill="#1e66f5" fill-opacity="0.08" stroke="#1e66f5" stroke-opacity="0.25" filter="url(#s)"/>
+  <text x="93" y="160" text-anchor="middle" font-size="11" font-weight="600" fill="#1e66f5">D3.js</text>
+  <text x="93" y="176" text-anchor="middle" font-size="8.5" fill="#6c6f85">13.1M weekly</text>
+
+  <!-- Leaflet -->
+  <rect x="176" y="140" width="130" height="50" rx="6" fill="#40a02b" fill-opacity="0.08" stroke="#40a02b" stroke-opacity="0.25" filter="url(#s)"/>
+  <text x="241" y="160" text-anchor="middle" font-size="11" font-weight="600" fill="#40a02b">Leaflet</text>
+  <text x="241" y="176" text-anchor="middle" font-size="8.5" fill="#6c6f85">3.8M weekly</text>
+
+  <!-- Chart.js Geo -->
+  <rect x="324" y="140" width="130" height="50" rx="6" fill="#df8e1d" fill-opacity="0.08" stroke="#df8e1d" stroke-opacity="0.25" filter="url(#s)"/>
+  <text x="389" y="160" text-anchor="middle" font-size="11" font-weight="600" fill="#df8e1d">ECharts</text>
+  <text x="389" y="176" text-anchor="middle" font-size="8.5" fill="#6c6f85">2.2M weekly</text>
+
+  <!-- Plotly (corrected) -->
+  <rect x="472" y="140" width="130" height="50" rx="6" fill="#8839ef" fill-opacity="0.08" stroke="#8839ef" stroke-opacity="0.25" filter="url(#s)"/>
+  <text x="537" y="160" text-anchor="middle" font-size="11" font-weight="600" fill="#8839ef">Plotly.js</text>
+  <text x="537" y="176" text-anchor="middle" font-size="8.5" fill="#6c6f85">958K weekly</text>
+
+  <!-- Connection lines from TopoJSON to libraries -->
+  <line x1="360" y1="134" x2="93" y2="140" stroke="#8c8fa1" stroke-width="0.8"/>
+  <line x1="360" y1="134" x2="241" y2="140" stroke="#8c8fa1" stroke-width="0.8"/>
+  <line x1="360" y1="134" x2="389" y2="140" stroke="#8c8fa1" stroke-width="0.8"/>
+  <line x1="360" y1="134" x2="537" y2="140" stroke="#8c8fa1" stroke-width="0.8"/>
+
+  <!-- ═══ PYTHON / R / RUST ROW ═══ -->
+  <!-- GeoPandas -->
+  <rect x="28" y="210" width="130" height="50" rx="6" fill="#179299" fill-opacity="0.08" stroke="#179299" stroke-opacity="0.25" filter="url(#s)"/>
+  <text x="93" y="230" text-anchor="middle" font-size="11" font-weight="600" fill="#179299">GeoPandas</text>
+  <text x="93" y="246" text-anchor="middle" font-size="8.5" fill="#6c6f85">4.8M weekly</text>
+
+  <!-- Shapely -->
+  <rect x="176" y="210" width="130" height="50" rx="6" fill="#179299" fill-opacity="0.08" stroke="#179299" stroke-opacity="0.25" filter="url(#s)"/>
+  <text x="241" y="230" text-anchor="middle" font-size="11" font-weight="600" fill="#179299">Shapely</text>
+  <text x="241" y="246" text-anchor="middle" font-size="8.5" fill="#6c6f85">15.2M weekly</text>
+
+  <!-- rnaturalearth -->
+  <rect x="324" y="210" width="130" height="50" rx="6" fill="#e64553" fill-opacity="0.08" stroke="#e64553" stroke-opacity="0.25" filter="url(#s)"/>
+  <text x="389" y="230" text-anchor="middle" font-size="11" font-weight="600" fill="#e64553">rnaturalearth</text>
+  <text x="389" y="246" text-anchor="middle" font-size="8.5" fill="#6c6f85">R · 8.7K weekly</text>
+
+  <!-- GDAL -->
+  <rect x="472" y="210" width="130" height="50" rx="6" fill="#fe640b" fill-opacity="0.08" stroke="#fe640b" stroke-opacity="0.25" filter="url(#s)"/>
+  <text x="537" y="230" text-anchor="middle" font-size="11" font-weight="600" fill="#fe640b">GDAL</text>
+  <text x="537" y="246" text-anchor="middle" font-size="8.5" fill="#6c6f85">C++ · all ecosystems</text>
+
+  <!-- Connection lines from source -->
+  <path d="M 240 56 C 160 70 93 120 93 140" fill="none" stroke="#8c8fa1" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <path d="M 240 56 C 160 70 93 190 93 210" fill="none" stroke="#8c8fa1" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <path d="M 480 56 C 560 70 537 120 537 140" fill="none" stroke="#8c8fa1" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <path d="M 480 56 C 560 70 537 190 537 210" fill="none" stroke="#8c8fa1" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <line x1="360" y1="118" x2="241" y2="210" stroke="#8c8fa1" stroke-width="0.6" stroke-dasharray="3,2"/>
+  <line x1="360" y1="118" x2="389" y2="210" stroke="#8c8fa1" stroke-width="0.6" stroke-dasharray="3,2"/>
+
+  <!-- ═══ DOWNSTREAM PRODUCTS ═══ -->
+  <line x1="360" y1="260" x2="360" y2="282" stroke="#8c8fa1" stroke-width="1" marker-end="url(#a)"/>
+
+  <!-- Row of downstream products -->
+  <rect x="28" y="286" width="96" height="42" rx="5" fill="#eff1f5" stroke="#ccd0da"/>
+  <text x="76" y="304" text-anchor="middle" font-size="9.5" font-weight="600" fill="#4c4f69">Weather</text>
+  <text x="76" y="318" text-anchor="middle" font-size="8" fill="#8c8fa1">services</text>
+
+  <rect x="140" y="286" width="96" height="42" rx="5" fill="#eff1f5" stroke="#ccd0da"/>
+  <text x="188" y="304" text-anchor="middle" font-size="9.5" font-weight="600" fill="#4c4f69">Travel</text>
+  <text x="188" y="318" text-anchor="middle" font-size="8" fill="#8c8fa1">platforms</text>
+
+  <rect x="252" y="286" width="96" height="42" rx="5" fill="#eff1f5" stroke="#ccd0da"/>
+  <text x="300" y="304" text-anchor="middle" font-size="9.5" font-weight="600" fill="#4c4f69">Dashboards</text>
+  <text x="300" y="318" text-anchor="middle" font-size="8" fill="#8c8fa1">and BI tools</text>
+
+  <rect x="364" y="286" width="96" height="42" rx="5" fill="#eff1f5" stroke="#ccd0da"/>
+  <text x="412" y="304" text-anchor="middle" font-size="9.5" font-weight="600" fill="#4c4f69">Academic</text>
+  <text x="412" y="318" text-anchor="middle" font-size="8" fill="#8c8fa1">papers</text>
+
+  <rect x="476" y="286" width="96" height="42" rx="5" fill="#eff1f5" stroke="#ccd0da"/>
+  <text x="524" y="304" text-anchor="middle" font-size="9.5" font-weight="600" fill="#4c4f69">News</text>
+  <text x="524" y="318" text-anchor="middle" font-size="8" fill="#8c8fa1">media</text>
+
+  <rect x="588" y="286" width="104" height="42" rx="5" fill="#eff1f5" stroke="#ccd0da"/>
+  <text x="640" y="304" text-anchor="middle" font-size="9.5" font-weight="600" fill="#4c4f69">AI coding</text>
+  <text x="640" y="318" text-anchor="middle" font-size="8" fill="#8c8fa1">assistants</text>
+
+  <!-- Connection lines -->
+  <line x1="93" y1="260" x2="76" y2="286" stroke="#8c8fa1" stroke-width="0.6"/>
+  <line x1="241" y1="260" x2="188" y2="286" stroke="#8c8fa1" stroke-width="0.6"/>
+  <line x1="360" y1="260" x2="300" y2="286" stroke="#8c8fa1" stroke-width="0.6"/>
+  <line x1="389" y1="260" x2="412" y2="286" stroke="#8c8fa1" stroke-width="0.6"/>
+  <line x1="537" y1="260" x2="524" y2="286" stroke="#8c8fa1" stroke-width="0.6"/>
+  <line x1="537" y1="260" x2="640" y2="286" stroke="#8c8fa1" stroke-width="0.6"/>
+
+  <!-- ═══ WEB PAGES ═══ -->
+  <line x1="360" y1="328" x2="360" y2="350" stroke="#8c8fa1" stroke-width="1" marker-end="url(#a)"/>
+
+  <rect x="140" y="354" width="440" height="36" rx="6" fill="#df8e1d" fill-opacity="0.08" stroke="#df8e1d" stroke-opacity="0.25" filter="url(#s)"/>
+  <text x="360" y="377" text-anchor="middle" font-size="11" font-weight="600" fill="#df8e1d">Web pages: "Simferopol, Russia" · "Republic of Crimea"</text>
+
+  <!-- ═══ ARROW TO CRAWL ═══ -->
+  <line x1="360" y1="390" x2="360" y2="412" stroke="#8c8fa1" stroke-width="1" marker-end="url(#a)"/>
+
+  <!-- ═══ TRAINING DATA + GROUNDING ═══ -->
+  <rect x="60" y="416" width="260" height="40" rx="6" fill="#d20f39" fill-opacity="0.1" stroke="#d20f39" stroke-opacity="0.3" filter="url(#s)"/>
+  <text x="190" y="441" text-anchor="middle" font-size="11" font-weight="600" fill="#d20f39">C4 training data</text>
+
+  <rect x="400" y="416" width="260" height="40" rx="6" fill="#8839ef" fill-opacity="0.1" stroke="#8839ef" stroke-opacity="0.3" filter="url(#s)"/>
+  <text x="530" y="441" text-anchor="middle" font-size="11" font-weight="600" fill="#8839ef">Live search index</text>
+
+  <!-- Split arrows -->
+  <line x1="300" y1="390" x2="190" y2="416" stroke="#d20f39" stroke-opacity="0.4" stroke-width="1" marker-end="url(#a)"/>
+  <line x1="420" y1="390" x2="530" y2="416" stroke="#8839ef" stroke-opacity="0.4" stroke-width="1" marker-end="url(#a)"/>
+
+  <!-- Labels on arrows -->
+  <text x="200" y="408" font-size="8" fill="#d20f39">crawled</text>
+  <text x="480" y="408" font-size="8" fill="#8839ef">indexed</text>
+
+  <!-- ═══ TOTAL BADGE ═══ -->
+  <rect x="600" y="16" width="100" height="40" rx="6" fill="#d20f39" fill-opacity="0.08" stroke="#d20f39" stroke-opacity="0.2"/>
+  <text x="650" y="34" text-anchor="middle" font-size="9" font-weight="600" fill="#d20f39">65.7M</text>
+  <text x="650" y="46" text-anchor="middle" font-size="7.5" fill="#6c6f85">weekly downloads</text>
+</svg>

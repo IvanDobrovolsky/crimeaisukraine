@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "description": "Sovereignty Alignment Score (SAS) for Crimea — 4-tier composite over 18+ LLMs",
-  "generated": "2026-04-23T09:41:11",
+  "generated": "2026-04-26T22:51:40",
   "renamed_from": "TAS (Toponymic Alignment Score) — superseded by SAS with weights 1:2:3:4",
   "tier_assignments": {
     "D_direct_territorial": [

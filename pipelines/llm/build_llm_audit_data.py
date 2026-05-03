@@ -32,7 +32,7 @@ from pathlib import Path
 from collections import defaultdict
 from datetime import datetime
 
-PROJECT = Path(__file__).parent.parent
+PROJECT = Path(__file__).parent.parent.parent
 DATA = PROJECT / "data"
 OUT = PROJECT / "site/src/data/llm_audit_results.json"
 

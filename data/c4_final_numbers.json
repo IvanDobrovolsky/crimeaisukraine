@@ -1,0 +1,73 @@
+{
+  "generated": "2026-04-27",
+  "classifier": "Rust crimea-classify, full text, 91 signals, domain boundary fix, structural signal fix",
+  "total_docs": 34118474,
+  "total_russia_framing": 894645,
+  "total_ukraine_framing": 1142854,
+  "assertive_pct": 90.0,
+  "reportage_pct": 10.0,
+  "source_breakdown": {
+    "independent": 852894,
+    "government": 3155,
+    "state_t1": 14404,
+    "sanctioned_proxy": 4926,
+    "state_adj": 16767,
+    "state_t2": 2470,
+    "pravda": 29
+  },
+  "state_sanctioned_total": 24984,
+  "state_sanctioned_pct": 2.79,
+  "independent_pct": 95.33,
+  "per_split": {
+    "en": {
+      "total": 286117,
+      "ru": 3686,
+      "ua": 30163,
+      "assert": 1783,
+      "report": 1903,
+      "sources": {
+        "independent": 3097,
+        "government": 69,
+        "state_t1": 364,
+        "sanctioned_proxy": 154,
+        "state_adj": 2
+      }
+    },
+    "uk": {
+      "total": 3639461,
+      "ru": 9684,
+      "ua": 344396,
+      "assert": 7023,
+      "report": 2661,
+      "sources": {
+        "independent": 9684
+      }
+    },
+    "ru": {
+      "total": 30192896,
+      "ru": 881275,
+      "ua": 768295,
+      "assert": 796796,
+      "report": 84479,
+      "sources": {
+        "state_adj": 16765,
+        "independent": 840113,
+        "state_t1": 14040,
+        "sanctioned_proxy": 4772,
+        "state_t2": 2470,
+        "government": 3086,
+        "pravda": 29
+      }
+    }
+  },
+  "manual_validation": {
+    "samples": 100,
+    "annotators": 2,
+    "cohens_kappa": 0.942,
+    "consensus_precision": 90.6,
+    "wilson_ci_95": [
+      83.1,
+      95.0
+    ]
+  }
+}
