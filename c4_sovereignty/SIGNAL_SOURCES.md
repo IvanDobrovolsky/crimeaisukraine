@@ -177,7 +177,7 @@ Attribution cues classify each Russia-framing document as **assertive** or **rep
 Assertive cues: direct use of designation without distancing language
 Reportage cues: "said that," "claimed that," "according to," "allegedly," "debunked," "conspiracy theory," "disinformation," etc.
 
-**Result:** 94.9% of Russia-framing documents are assertive, 5.1% are reportage.
+**Result:** 90.0% of Russia-framing documents are assertive, 10.0% are reportage.
 
 ---
 
