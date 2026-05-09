@@ -12,7 +12,9 @@
     "independent_pct": 95.3,
     "assertive_pct": 90.0,
     "reportage_pct": 10.0,
-    "russia_framing_dois": 59
+    "russia_framing_dois": 59,
+    "state_media": 24984,
+    "quoted_examples": 1241
   },
   "key_findings": [
     "895K documents in C4 contain Russia-framing of Crimea",

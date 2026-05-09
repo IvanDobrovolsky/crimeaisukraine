@@ -1263,14 +1263,15 @@ const mediaViolatorsByFilter = mediaViolators as any;
     <!-- SAS formula box -->
     <div class="bg-white border border-[#ccd0da] rounded-xl p-5 mb-6">
       <div class="flex items-baseline justify-between mb-3 flex-wrap gap-2">
-        <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider font-semibold">{lang === 'uk' ? 'Sovereignty Alignment Score — формула (первинні ваги · Legal-heavy)' : 'Sovereignty Alignment Score — formula (primary weights · Legal-heavy)'}</div>
-        <div class="text-[10px] text-[#6c6f85]">x ∈ [0, 1] · 1 = Ukraine-aligned · 0 = Russia-aligned · 0.5 = disputed</div>
+        <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider font-semibold">Sovereignty Alignment Score</div>
+        <div class="text-[10px] text-[#6c6f85]">SAS ∈ [0, 1] · 1 = Ukraine · 0 = Russia</div>
       </div>
-      <div class="font-mono text-center text-[#4c4f69] text-base md:text-lg leading-relaxed py-2 overflow-x-auto">
-        SAS<sub>m,ℓ</sub> = <strong class="text-[#df8e1d]">w</strong> · [D̄<sub>m,ℓ</sub>, L̄<sub>m,ℓ</sub>, Ī<sub>m,ℓ</sub>, R̄<sub>m,ℓ</sub>]
+      <div class="font-mono text-center text-[#4c4f69] text-lg md:text-xl leading-relaxed py-3 overflow-x-auto">
+        SAS<sub>m,ℓ</sub> = <strong class="text-[#df8e1d]">w</strong><sup>⊤</sup> <strong class="text-[#4c4f69]">s</strong><sub>m,ℓ</sub>
       </div>
-      <div class="text-center text-[10px] text-[#6c6f85] mt-1 font-mono">
-        with <strong class="text-[#4c4f69]">w</strong> = [w<sub>D</sub>, w<sub>L</sub>, w<sub>I</sub>, w<sub>R</sub>] = [0.10, 0.50, 0.20, 0.20] &nbsp; · &nbsp; {lang === 'uk' ? 'крапкове множення' : 'dot product'}
+      <div class="text-center text-xs text-[#5c5f77] mt-2 font-mono space-y-1">
+        <div><strong class="text-[#df8e1d]">w</strong> = <span class="text-[#6c6f85]">[</span>0.10, 0.50, 0.20, 0.20<span class="text-[#6c6f85]">]</span><sup>⊤</sup> ∈ ℝ<sup>4</sup></div>
+        <div><strong class="text-[#4c4f69]">s</strong><sub>m,ℓ</sub> = <span class="text-[#6c6f85]">[</span>D̄, L̄, Ī, R̄<span class="text-[#6c6f85]">]</span><sup>⊤</sup><sub>m,ℓ</sub> ∈ [0,1]<sup>4</sup></div>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4 text-xs">
         <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded p-2">
@@ -1310,11 +1311,11 @@ const mediaViolatorsByFilter = mediaViolators as any;
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6 text-xs">
       <div class="bg-white border border-[#ccd0da] rounded-lg p-3">
         <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Розрив RLHF на флагманах' : 'Cross-lab flagship RLHF gap'}</div>
-        <div class="text-base text-[#4c4f69]"><strong>+0.04 to +0.27</strong> across 4 labs (Anthropic, Google, OpenAI, xAI). 18–33 pt overestimation by forced-choice benchmarks. At temperature 0, GPT-5.4 answers "yes" when asked "Is Sevastopol a city in Ukraine?" but writes "Kerch, Republic of Crimea, Russia" when asked to generate a mailing address — same model, same session.</div>
+        <div class="text-base text-[#4c4f69]"><strong>+0.04 to +0.27</strong> {lang === 'uk' ? 'у 7 моделей з 5 лабораторій. GPT-5.4 при temperature=0 відповідає «так» на «Чи Севастополь місто в Україні?», але пише «Керч, Республіка Крим, Росія» у генерованій адресі.' : 'across 7 models from 5 labs. GPT-5.4 at temperature=0 answers "yes" to "Is Sevastopol in Ukraine?" but writes "Kerch, Republic of Crimea, Russia" in a generated address.'}</div>
       </div>
       <div class="bg-white border border-[#ccd0da] rounded-lg p-3">
         <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider mb-1">{lang === 'uk' ? 'Інверсія малих моделей' : 'Open / small inversion'}</div>
-        <div class="text-base text-[#4c4f69]"><strong>−0.08 to −0.49</strong> on 10 models. Smaller / open models leak hedging templates ("internationally recognized as Ukraine") in free-recall.</div>
+        <div class="text-base text-[#4c4f69]"><strong>−0.02 to −0.55</strong> {lang === 'uk' ? 'у 9 моделей. Менші моделі вставляють шаблони хеджування у вільному відтворенні.' : 'on 9 models. Smaller / open models leak hedging templates in free-recall.'}</div>
       </div>
     </div>
 
