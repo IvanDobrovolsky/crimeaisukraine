@@ -1266,12 +1266,35 @@ const mediaViolatorsByFilter = mediaViolators as any;
         <div class="text-[10px] text-[#6c6f85] uppercase tracking-wider font-semibold">Sovereignty Alignment Score</div>
         <div class="text-[10px] text-[#6c6f85]">SAS ∈ [0, 1] · 1 = Ukraine · 0 = Russia</div>
       </div>
+      <!-- Main formula -->
       <div class="font-mono text-center text-[#4c4f69] text-lg md:text-xl leading-relaxed py-3 overflow-x-auto">
-        SAS<sub>m,ℓ</sub> = <strong class="text-[#df8e1d]">w</strong><sup>⊤</sup> <strong class="text-[#4c4f69]">s</strong><sub>m,ℓ</sub>
+        SAS<sub>m,ℓ</sub> &nbsp;=&nbsp; <strong class="text-[#df8e1d]">w</strong><sup>⊤</sup><strong class="text-[#4c4f69]">s</strong><sub>m,ℓ</sub>
       </div>
-      <div class="text-center text-xs text-[#5c5f77] mt-2 font-mono space-y-1">
-        <div><strong class="text-[#df8e1d]">w</strong> = <span class="text-[#6c6f85]">[</span>0.10, 0.50, 0.20, 0.20<span class="text-[#6c6f85]">]</span><sup>⊤</sup> ∈ ℝ<sup>4</sup></div>
-        <div><strong class="text-[#4c4f69]">s</strong><sub>m,ℓ</sub> = <span class="text-[#6c6f85]">[</span>D̄, L̄, Ī, R̄<span class="text-[#6c6f85]">]</span><sup>⊤</sup><sub>m,ℓ</sub> ∈ [0,1]<sup>4</sup></div>
+      <!-- Column vectors rendered vertically -->
+      <div class="flex items-center justify-center gap-4 md:gap-8 font-mono text-sm py-3 overflow-x-auto">
+        <!-- w vector -->
+        <div class="flex items-center gap-1">
+          <strong class="text-[#df8e1d]">w</strong><span class="text-[#6c6f85]">&nbsp;=</span>
+          <div class="flex items-center">
+            <div class="border-l-2 border-t-2 border-b-2 border-[#6c6f85] w-1.5 self-stretch rounded-l-sm"></div>
+            <div class="flex flex-col items-end px-1.5 py-0.5 leading-tight text-[#4c4f69]">
+              <span>0.10</span><span class="text-[#df8e1d] font-bold">0.50</span><span>0.20</span><span>0.20</span>
+            </div>
+            <div class="border-r-2 border-t-2 border-b-2 border-[#6c6f85] w-1.5 self-stretch rounded-r-sm"></div>
+          </div>
+        </div>
+        <!-- s vector -->
+        <div class="flex items-center gap-1">
+          <strong class="text-[#4c4f69]">s</strong><sub class="text-[#6c6f85]">m,ℓ</sub><span class="text-[#6c6f85]">&nbsp;=</span>
+          <div class="flex items-center">
+            <div class="border-l-2 border-t-2 border-b-2 border-[#6c6f85] w-1.5 self-stretch rounded-l-sm"></div>
+            <div class="flex flex-col items-center px-1.5 py-0.5 leading-tight text-[#4c4f69]">
+              <span>D̄<sub>m,ℓ</sub></span><span>L̄<sub>m,ℓ</sub></span><span>Ī<sub>m,ℓ</sub></span><span>R̄<sub>m,ℓ</sub></span>
+            </div>
+            <div class="border-r-2 border-t-2 border-b-2 border-[#6c6f85] w-1.5 self-stretch rounded-r-sm"></div>
+          </div>
+          <span class="text-[#6c6f85] text-xs ml-1">∈ [0,1]<sup>4</sup></span>
+        </div>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4 text-xs">
         <div class="bg-[#e6e9ef] border border-[#ccd0da] rounded p-2">
