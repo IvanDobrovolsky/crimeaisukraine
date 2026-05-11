@@ -10,8 +10,7 @@
     "sanctioned_and_state": 24984,
     "sanctioned_and_state_pct": 2.79,
     "independent_pct": 95.3,
-    "assertive_pct": 90.0,
-    "reportage_pct": 10.0,
+    "note": "assertive/reportage distinction dropped — tokenization erases authorial intent",
     "russia_framing_dois": 59,
     "state_media": 24984,
     "quoted_examples": 1241
