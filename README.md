@@ -19,7 +19,7 @@
 | # | Pipeline | Headline finding |
 |--:|----------|-----------------|
 | 1 | [geodata](pipelines/geodata/) | Natural Earth assigns `SOVEREIGNT='Russia'` to Crimea — **65.7M weekly downloads** inherit it. 30/31 worldviews in its own data say Ukraine; only Russia's says Russia. |
-| 2 | [c4_sovereignty](c4_sovereignty/) | **34.1M documents** in C4 scanned. **894,645 Russia-framing** (90% assertive). 95.3% from mundane internet — only 2.8% from state/sanctioned sources. 86 domains verified against OFAC/EU/GEC. |
+| 2 | [c4_sovereignty](c4_sovereignty/) | **34.1M documents** in C4 scanned. **894,645 Russia-framing**. 95.3% from mundane internet — only 2.8% from state/sanctioned sources. 86 domains verified against OFAC/EU/GEC. |
 | 3 | [academic](pipelines/academic/) | **91,670 papers** scanned, **1,581 Russia-framing** confirmed (98.3% precision). 161 Western publishers. 59 DOIs found directly in C4. |
 | 4 | [llm](pipelines/llm/) | **16 models, 8 labs.** Declarative-generative gap **+0.04 to +0.27** on flagships. Manual validation: κ = 0.94, precision 90.6% (95% CI: 83.1–95.0%). |
 | 5 | [media](pipelines/media/) | **154K articles** scanned via Rust classifier. Zero endorsements from top-10 international outlets. |

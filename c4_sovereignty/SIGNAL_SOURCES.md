@@ -166,7 +166,7 @@ Russia's administrative designations for Crimea are artifacts of this illegal ac
 
 ## Attribution Detection (PARC 3.0)
 
-Attribution cues classify each Russia-framing document as **assertive** or **reportage**:
+Attribution cues are retained as classifier metadata but are **not used in the analysis** — tokenization erases authorial intent. Reference sources:
 
 | Source | Reference | What it provides |
 |---|---|---|
@@ -174,10 +174,7 @@ Attribution cues classify each Russia-framing document as **assertive** or **rep
 | **Thompson & Ye** | Thompson, G. & Ye, Y. (1991). Evaluation in the reporting verbs used in academic papers. Applied Linguistics, 12(4). | Factive/non-factive/counter-factive verb taxonomy: "claimed" = distancing, "proved" = endorsing |
 | **BioScope** | Vincze, V. et al. (2008). The BioScope corpus. BMC Bioinformatics, 9(S11). | Validated hedging markers, used in CoNLL-2010 shared task |
 
-Assertive cues: direct use of designation without distancing language
-Reportage cues: "said that," "claimed that," "according to," "allegedly," "debunked," "conspiracy theory," "disinformation," etc.
-
-**Note:** The assertive/reportage distinction is retained as classifier metadata but is not used in the analysis. Tokenization erases authorial intent — quoted and asserted framing produce identical token distributions in model training.
+The classifier detects reporting verbs, scare quotes, and skepticism markers near sovereignty signals. This metadata is retained in output but not used in headline numbers — separating misinformation from reportage in training corpora remains an open computational problem.
 
 ---
 
