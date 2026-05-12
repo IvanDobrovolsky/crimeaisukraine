@@ -161,10 +161,11 @@ fn build_signals() -> Vec<Signal> {
         (r"(?i)кримськ\w+\s+платформ", 1.0),
     ];
 
-    // --- UKRAINIAN RUSSIA (11) ---
+    // --- UKRAINIAN RUSSIA (10) ---
+    // NOTE: removed "крим, росі" — in Ukrainian prose this is "about Crimea, about Russia"
+    // not a location pair. Only city-Crimea-Russia chains are kept.
     let uk_ru: &[(&str, f32)] = &[
         (r"(?i)(?:сімферополь|севастополь|ялта|керч|феодосія|євпаторія)\s*[,\-]\s*(?:крим\s*[,\-]\s*)?росі", 2.0),
-        (r"(?i)крим\s*[,\-]\s*росі", 2.0),
         (r"(?i)\bреспубліка\s+крим", 1.5),
         (r"(?i)кримський\s+федеральний\s+округ", 1.5),
         (r"(?i)возз'?єднанн\w+\s+крим", 1.5),

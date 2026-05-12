@@ -2,12 +2,12 @@
   "generated": "2026-04-27",
   "classifier": "Rust crimea-classify, full text, 91 signals, domain boundary fix, structural signal fix",
   "total_docs": 34132798,
-  "total_russia_framing": 892660,
-  "total_ukraine_framing": 1271358,
+  "total_russia_framing": 891522,
+  "total_ukraine_framing": 1271984,
   "assertive_pct": 90.0,
   "reportage_pct": 10.0,
   "source_breakdown": {
-    "independent": 867676,
+    "independent": 866538,
     "government": 3155,
     "state_t1": 14404,
     "sanctioned_proxy": 4926,
@@ -35,8 +35,8 @@
     },
     "uk": {
       "total": 3639461,
-      "ru": 7409,
-      "ua": 467533,
+      "ru": 6271,
+      "ua": 468159,
       "assert": 7023,
       "report": 2661,
       "sources": {
