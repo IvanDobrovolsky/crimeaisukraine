@@ -51,17 +51,18 @@ make site                    # build the site
 ## Citation
 
 ```bibtex
-@misc{dobrovolskyi2026digital,
+@article{dobrovolskyi2026digital,
   author = {Dobrovolskyi, Ivan},
   title = {Digital Annexation: A Computational Audit of Crimea's
            Sovereignty Framing in Large Language Models},
   year = {2026},
+  journal = {Harvard Kennedy School Misinformation Review},
   url = {https://crimeaisukraine.org}
 }
 ```
 
 ## Author
 
-**Ivan Dobrovolskyi** · [dobrovolsky94@gmail.com](mailto:dobrovolsky94@gmail.com)
+**Ivan Dobrovolskyi**
 
 MIT (code) · CC-BY-4.0 (text)
