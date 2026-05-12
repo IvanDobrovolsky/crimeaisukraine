@@ -149,7 +149,7 @@ fn build_signals() -> Vec<Signal> {
     let uk_ua: &[(&str, f32)] = &[
         (r"(?i)(?:сімферополь|севастополь|ялта|керч|феодосія|євпаторія)\s*[,\-]\s*(?:крим\s*[,\-]\s*)?україн", 2.0),
         (r"(?i)крим\s*[,\-]\s*україн", 2.0),
-        (r"(?i)автономна\s+республіка\s+крим", 1.5),
+        (r"(?i)автономн\w+\s+республік\w+\s+крим", 1.5),
         (r"(?i)анекс\w*\s+крим", 2.0),
         (r"(?i)окупац[ія]\w*\s+крим", 1.5),
         (r"(?i)окупован\w+\s+крим", 1.0),
@@ -457,6 +457,12 @@ struct Classifier {
     signals: Vec<Signal>,
     quotation: Vec<Regex>,
     structured: Vec<Regex>,
+    auto_ru_re: Regex,
+    auto_uk_re: Regex,
+    tag_re: Regex,
+    strong_ru_tag_re: Regex,
+    hist_re: Regex,
+    strong_ru_hist_re: Regex,
 }
 
 impl Classifier {
@@ -465,6 +471,12 @@ impl Classifier {
             signals: build_signals(),
             quotation: build_quotation_markers(),
             structured: build_structured_markers(),
+            auto_ru_re: Regex::new(r"(?i)автономн\w+\s+республик\w+\s+крым").unwrap(),
+            auto_uk_re: Regex::new(r"(?i)автономн\w+\s+республік\w+\s+крим").unwrap(),
+            tag_re: Regex::new(r"(?i)(?:теги|тег[иі]|tags?|теми|ключов\w+ слов)\s*[:：]\s*[^.]{0,200}(?:крим|crimea)").unwrap(),
+            strong_ru_tag_re: Regex::new(r"(?i)(?:республіка\s+крим|федеральний\s+округ|у\s+складі\s+росі|частиною\s+росі|це\s+росі|крим\s+наш)").unwrap(),
+            hist_re: Regex::new(r"(?i)(?:XVIII|XVII\w*|178\d|Катерин\w+|ханств\w+|Запорізьк\w+\s+Січ\w*|заселення\s+(?:Південної|Новоросі))").unwrap(),
+            strong_ru_hist_re: Regex::new(r"(?i)(?:республіка\s+крим|федеральний\s+округ|у\s+складі\s+росі|частиною\s+росі|це\s+росі|крим\s+наш|2014|референдум)").unwrap(),
         }
     }
 
@@ -490,10 +502,9 @@ impl Classifier {
         // actually says "автономная республика крым", subtract the false match and
         // add to Ukraine score instead.
         // Same for English "autonomous republic of crimea" and Ukrainian "автономна республіка крим"
-        let has_auto_ru = lower_window.contains("автономная республика крым")
-            || lower_window.contains("автономна республика крым");
+        let has_auto_ru = self.auto_ru_re.is_match(&lower_window);
         let has_auto_en = lower_window.contains("autonomous republic of crimea");
-        let has_auto_uk = lower_window.contains("автономна республіка крим");
+        let has_auto_uk = self.auto_uk_re.is_match(&lower_window);
         let has_bare_republic_ru = lower_window.contains("республика крым")
             && !has_auto_ru;
         let has_bare_republic_en = lower_window.contains("republic of crimea")
@@ -513,6 +524,20 @@ impl Classifier {
             ru_score -= 1.5;
             ua_score += 1.5;
         }
+        // TAG FALSE POSITIVE: "Теги: Крим, Росія" — tag/keyword lists
+        if self.tag_re.is_match(&lower_window) && ru_score <= 2.0 && ru_score > 0.0 {
+            if !self.strong_ru_tag_re.is_match(&lower_window) {
+                ru_score = 0.0;
+            }
+        }
+
+        // HISTORICAL FALSE POSITIVE: 18th century annexation (not 2014)
+        if self.hist_re.is_match(&lower_window) && ru_score <= 2.0 && ru_score > 0.0 {
+            if !self.strong_ru_hist_re.is_match(&lower_window) {
+                ru_score = 0.0;
+            }
+        }
+
         if ru_score < 0.0 { ru_score = 0.0; }
 
         let source_type = classify_source(url);
