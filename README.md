@@ -17,7 +17,7 @@
 | What | Result |
 |------|--------|
 | Geodata | Natural Earth `SOVEREIGNT="Russia"` → **65.7M weekly downloads** |
-| Training data (C4) | **34.1M** documents scanned, **894,645** Russia-framing |
+| Training data (C4) | **34.1M** documents scanned, **895,062** Russia-framing |
 | Academic metadata | **1,581** papers with Russian designations (98.3% precision) |
 | LLM audit | **16 models**, 8 labs, RLHF gap **+0.04 to +0.27** |
 | Web search | **5,974** citations, 7.6% Russian-origin, 5/7 GEC proxies accessible |
@@ -27,7 +27,7 @@
 | # | Pipeline | Finding |
 |--:|----------|---------|
 | 1 | [geodata](pipelines/geodata/) | 65.7M weekly downloads inherit `SOVEREIGNT="Russia"` |
-| 2 | [c4_sovereignty](c4_sovereignty/) | 894,645 Russia-framing in 34.1M C4 docs |
+| 2 | [c4_sovereignty](c4_sovereignty/) | 895,062 Russia-framing in 34.1M C4 docs |
 | 3 | [academic](pipelines/academic/) | 1,581 papers, 161 Western publishers, 59 DOIs in C4 |
 | 4 | [llm](pipelines/llm/) | 16 models, declarative-generative gap on all flagships |
 | 5 | [media](pipelines/media/) | 154K articles, zero endorsements from top-10 outlets |

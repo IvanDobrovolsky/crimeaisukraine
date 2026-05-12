@@ -4,13 +4,13 @@
   "subtitle": "34.1M documents scanned for sovereignty framing in Google C4 training corpus",
   "method": "Rust classifier (91 signals, 3 languages) applied to full C4 English, Russian, and Ukrainian splits",
   "summary": {
-    "documents_scanned": 34118474,
-    "russia_framing": 894645,
-    "ukraine_framing": 1142854,
+    "documents_scanned": 34132798,
+    "russia_framing": 895062,
+    "ukraine_framing": 1143161,
     "sanctioned_and_state": 24984,
     "sanctioned_and_state_pct": 2.79,
     "independent_pct": 95.3,
-    "note": "assertive/reportage distinction dropped — tokenization erases authorial intent",
+    "note": "assertive/reportage distinction dropped \u2014 tokenization erases authorial intent",
     "russia_framing_dois": 59,
     "state_media": 24984,
     "quoted_examples": 1241
