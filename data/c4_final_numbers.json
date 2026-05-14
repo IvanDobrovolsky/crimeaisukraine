@@ -7,17 +7,17 @@
   "assertive_pct": 90.0,
   "reportage_pct": 10.0,
   "source_breakdown": {
-    "independent": 866538,
-    "government": 3155,
-    "state_t1": 14404,
-    "sanctioned_proxy": 4926,
-    "state_adj": 16767,
+    "independent": 849761,
+    "government": 3156,
+    "state_t1": 14406,
+    "sanctioned_proxy": 4928,
+    "state_adj": 16772,
     "state_t2": 2470,
     "pravda": 29
   },
-  "state_sanctioned_total": 24984,
-  "state_sanctioned_pct": 2.8,
-  "independent_pct": 97.2,
+  "state_sanctioned_total": 41761,
+  "state_sanctioned_pct": 4.68,
+  "independent_pct": 95.32,
   "per_split": {
     "en": {
       "total": 286117,

@@ -7,12 +7,12 @@
     "documents_scanned": 34132798,
     "russia_framing": 891522,
     "ukraine_framing": 1271984,
-    "sanctioned_and_state": 24984,
-    "sanctioned_and_state_pct": 2.79,
-    "independent_pct": 95.3,
+    "sanctioned_and_state": 41761,
+    "sanctioned_and_state_pct": 4.68,
+    "independent_pct": 95.32,
     "note": "assertive/reportage distinction dropped \u2014 tokenization erases authorial intent",
     "russia_framing_dois": 59,
-    "state_media": 24984,
+    "state_media": 41761,
     "quoted_examples": 1241
   },
   "key_findings": [
