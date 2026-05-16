@@ -2,29 +2,29 @@
 
 @layer base {
   :root {
-    /* Catppuccin Latte — canonical academic palette
-       https://github.com/catppuccin/catppuccin */
+    /* HKS Misinformation Review palette
+       Minimal, professional, publication-grade */
 
     /* Surfaces */
-    --bg-base:     #eff1f5;
-    --bg-mantle:   #e6e9ef;
-    --bg-crust:    #dce0e8;
-    --bg-surface0: #ccd0da;
-    --bg-surface1: #bcc0cc;
+    --bg-base:     #FFFFFF;
+    --bg-mantle:   #F7F7F7;
+    --bg-crust:    #F0F0F0;
+    --bg-surface0: #E5E5E5;
+    --bg-surface1: #D4D4D4;
 
     /* Text */
-    --text-primary:   #4c4f69;  /* Text */
-    --text-secondary: #5c5f77;  /* Subtext1 */
-    --text-subtext:   #6c6f85;  /* Subtext0 */
+    --text-primary:   #333333;
+    --text-secondary: #555555;
+    --text-subtext:   #777777;
 
-    /* Accent — Catppuccin Latte Blue */
-    --accent: #1e66f5;
+    /* Accent — HKS Red */
+    --accent: #CD2E4A;
 
-    /* Semantic status (Catppuccin Latte) */
-    --correct:   #40a02b;  /* Green */
-    --incorrect: #d20f39;  /* Red */
-    --ambiguous: #df8e1d;  /* Yellow */
-    --blocked:   #8839ef;  /* Mauve */
+    /* Semantic status */
+    --correct:   #2D8A4E;  /* Dark green */
+    --incorrect: #CD2E4A;  /* HKS Red */
+    --ambiguous: #D4860B;  /* Warm amber */
+    --blocked:   #777777;  /* Gray */
 
     /* Crimean flag — only for flag/logo elements, not UI */
     --crimea-blue:  #0068B7;
