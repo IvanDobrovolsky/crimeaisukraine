@@ -2,7 +2,7 @@
   "pipeline": "llm",
   "version": "3.0",
   "generated": "2026-04-24T00:30:00+00:00",
-  "method": "forced_choice_15q + open_ended_8q \u00d7 50_languages \u00d7 16_models, temp=0, seed=42",
+  "method": "forced_choice_15q + open_ended_8q × 50_languages × 16_models, temp=0, seed=42",
   "summary": {
     "models_audited": 16,
     "laboratories": 8,
@@ -13,10 +13,10 @@
     "questions_forced": 15,
     "questions_open_ended": 8,
     "top_model": "gemini-2.5-pro",
-    "top_model_sas": 0.887,
-    "rlhf_gap_range": "+0.07 to +0.35",
-    "positive_gap_models": 9,
-    "negative_gap_models": 7,
+    "top_model_sas": 0.902,
+    "rlhf_gap_range": "+0.04 to +0.27",
+    "positive_gap_models": 7,
+    "negative_gap_models": 9,
     "weight_schemes_tested": 6,
     "tier_count": 4
   },
@@ -24,54 +24,54 @@
     {
       "model": "gemini-2.5-pro",
       "lab": "Google",
-      "sas": 0.887
-    },
-    {
-      "model": "sonnet-4.6",
-      "lab": "Anthropic",
-      "sas": 0.866
+      "sas": 0.902
     },
     {
       "model": "opus-4.6",
       "lab": "Anthropic",
-      "sas": 0.862
+      "sas": 0.894
+    },
+    {
+      "model": "sonnet-4.6",
+      "lab": "Anthropic",
+      "sas": 0.894
     },
     {
       "model": "gpt-5.4",
       "lab": "OpenAI",
-      "sas": 0.848
+      "sas": 0.868
     },
     {
       "model": "gemini-2.5-flash",
       "lab": "Google",
-      "sas": 0.847
+      "sas": 0.856
     }
   ],
   "bottom_5_models": [
     {
       "model": "qwen3",
       "lab": "Alibaba",
-      "sas": 0.622
+      "sas": 0.652
     },
     {
       "model": "olmo2",
       "lab": "AI2",
-      "sas": 0.626
+      "sas": 0.656
     },
     {
       "model": "gemma4",
       "lab": "Google",
-      "sas": 0.649
+      "sas": 0.684
     },
     {
       "model": "mistral-small",
       "lab": "Mistral",
-      "sas": 0.697
+      "sas": 0.715
     },
     {
       "model": "gpt-5.4-nano",
       "lab": "OpenAI",
-      "sas": 0.734
+      "sas": 0.737
     }
   ],
   "models_dropped": [
@@ -86,9 +86,9 @@
     "open_ended": "data/llm_openended_audit.jsonl"
   },
   "key_findings": [
-    "Declarative-generative gap: 9 models show positive gap (forced-choice alignment exceeds free-form alignment), 7 show negative. All 5 commercial flagships positive; all 5 open-weight models negative.",
-    "Gap direction splits perfectly by model type: commercial flagships avg +0.31, open-weight avg -0.20. If question format caused the gap, all models would go the same direction.",
-    "SAS ranking stable across recomputed R-bar (Spearman > 0.99 vs prior formula). Top 5 and bottom 5 unchanged."
+    "Declarative-generative gap: 7 models show positive gap (+0.04 to +0.27), 9 show negative.",
+    "Instruct comparison: d improves 3/4, r decreases all 4 (avg -8.2pp).",
+    "SAS ranking stable across weight schemes (Spearman rho >= 0.97)."
   ],
   "limitations": [
     "Tested from EU/US network endpoints; API behavior from Russian IPs not verified.",

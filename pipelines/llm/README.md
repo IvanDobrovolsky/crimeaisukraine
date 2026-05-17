@@ -64,7 +64,7 @@ All numbers regenerable via `python3 pipelines/llm/compute_sas.py`. Source data:
 
 ## Key findings
 
-1. **Cross-lab declarative-generative gap (+0.04 to +0.27).** Seven models from five labs show positive gaps. Every benchmark using only forced-choice probes overestimates alignment.
+1. **Cross-lab declarative-generative gap (+0.04 to +0.27).** Seven models from four labs show positive gaps. Every benchmark using only forced-choice probes overestimates alignment.
 2. **Negative-gap inversion in open/small models.** 9 models (qwen3 -0.552, gemma4 -0.481, olmo2 -0.461, mistral-small -0.305, llama4 -0.291, gpt-5.4-nano -0.260, grok-3 -0.163, haiku-4.5 -0.116, gpt-5.4-mini -0.016) score *higher* on free-recall than forced-choice -- reflexive hedging templates vs weak surface fine-tuning.
 3. **Closed-vs-open gap shrinks** once free-recall is included. Closed labs hide their default bias better behind RLHF.
 4. **Crimean Tatar performs worst** across every model (30% accuracy on haiku-4.5 vs 81% in English).
