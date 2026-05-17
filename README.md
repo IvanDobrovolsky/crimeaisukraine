@@ -6,63 +6,88 @@
 <p align="center">A Computational Audit of Crimea's Sovereignty Framing in Large Language Models</p>
 
 <p align="center">
-  <a href="https://crimeaisukraine.org"><img src="https://img.shields.io/badge/site-crimeaisukraine.org-0068B7" alt="Site"/></a>
-  <a href="https://huggingface.co/CrimeaIsUkraineOrg"><img src="https://img.shields.io/badge/🤗-datasets-0068B7" alt="HuggingFace"/></a>
+  <a href="https://crimeaisukraine.org"><img src="https://img.shields.io/badge/site-crimeaisukraine.org-CD2E4A" alt="Site"/></a>
+  <a href="https://huggingface.co/CrimeaIsUkraineOrg"><img src="https://img.shields.io/badge/🤗-datasets-CD2E4A" alt="HuggingFace"/></a>
 </p>
 
-[**UN GA Resolution 68/262**](https://digitallibrary.un.org/record/767565) (100–11) places Crimea under Ukrainian sovereignty. The maps, training data, and language models do not.
+[**UN GA Resolution 68/262**](https://digitallibrary.un.org/record/767565) (100-11) affirms Crimea as Ukrainian territory. The maps, training data, and language models do not.
 
-## Key Numbers
+## Results
 
-| What | Result |
-|------|--------|
-| Geodata | Natural Earth `SOVEREIGNT="Russia"` → **65.7M weekly downloads** |
-| Training data (C4) | **34.1M** documents scanned, **891,522** Russia-framing |
-| Academic metadata | **1,581** papers with Russian designations (98.3% precision) |
-| LLM audit | **16 models**, 8 labs, declarative-generative gap **+0.04 to +0.27** |
-| Web search | **5,974** citations, 7.6% Russian-origin, 5/7 GEC proxies accessible |
+| Layer | Finding |
+|-------|---------|
+| Geodata | Natural Earth `SOVEREIGNT="Russia"` propagates to 65.7M weekly downloads |
+| Training data | 891,522 / 34.1M Crimea-mentioning C4 docs contain Russian designations (2.61%). 95.3% from non-sanctioned sources |
+| Academic | 1,581 papers with Russian affiliations confirmed (98.3% precision). 161 Western publishers |
+| LLM behavior | 16 models, 50 languages. Declarative-generative gap +0.04 to +0.27 on 7 flagships |
+| Instruct comparison | Instruction tuning improves forced-choice in 3/4 models, worsens free-recall in all 4 |
+| Web search | 5,974 citations, 7.6% Russian-origin. 5/7 GEC proxy sites accessible |
 
 ## Pipelines
 
-| # | Pipeline | Finding |
-|--:|----------|---------|
-| 1 | [geodata](pipelines/geodata/) | 65.7M weekly downloads inherit `SOVEREIGNT="Russia"` |
-| 2 | [c4_sovereignty](c4_sovereignty/) | 891,522 Russia-framing in 34.1M C4 docs |
-| 3 | [academic](pipelines/academic/) | 1,581 papers, 161 Western publishers, 59 DOIs in C4 |
-| 4 | [llm](pipelines/llm/) | 16 models, declarative-generative gap on all flagships |
-| 5 | [media](pipelines/media/) | 154K articles, zero endorsements from top-10 outlets |
-| 6 | [grounding](pipelines/grounding/) | 5,974 citations, 5/7 GEC proxy sites accessible |
-| 7 | [wikipedia](pipelines/wikipedia/) | 11/14 Crimean cities — country erased |
-| 8 | [weather](pipelines/weather/) | 12/25 correct |
-| 9 | [telecom](pipelines/telecom/) | 8/9 ASNs reassigned without sovereignty review |
-| 10 | [ip](pipelines/ip/) | 53% UA, 16% RU, 31% other |
-| 11 | [institutions](pipelines/institutions/) | 9/10 registries correct |
-| 12 | [tech_infrastructure](pipelines/tech_infrastructure/) | IANA, libphonenumber split |
-| 13 | [religious](pipelines/religious/) | 46 OCU parishes in 2014, zero in 2024 |
+Each pipeline is self-contained with its own data, scripts, and manifest.
+
+```
+pipelines/
+  geodata/       # Natural Earth propagation chain
+  llm/           # 16+4 model sovereignty audit (forced-choice + free-recall)
+  academic/      # 91,670 OpenAlex papers, 3-stage classification
+  grounding/     # Web search citation audit (4 chatbots x 10 languages)
+  media/         # GDELT framing analysis (154K articles)
+  wikipedia/     # Crimean city sitelink audit
+  weather/       # Weather platform sovereignty check
+  telecom/       # ASN reassignment audit
+  ip/            # IP geolocation audit
+  institutions/  # Domain registry audit
+  religious/     # OCU parish tracking
+c4_sovereignty/  # Rust classifier (90 signals, 3 languages)
+```
 
 ## Reproduce
 
 ```bash
-make pipeline-geodata        # single pipeline
-make pipelines-all           # all pipelines
-make site                    # build the site
+# LLM audit (requires Ollama or API keys)
+python pipelines/llm/audit_llm_sovereignty_full.py   # forced-choice
+python pipelines/llm/audit_llm_openended.py           # free-recall
+python pipelines/llm/compute_sas.py                    # SAS scores
+
+# C4 classifier (requires C4 corpus access)
+cd c4_sovereignty/scanner && cargo build --release
+./target/release/crimea-classify --input data/*.jsonl --output classified.jsonl
+
+# Tokenizer demo (local, no GPU needed)
+python pipelines/llm/tokenizer_demo.py
+
+# Site
+cd site && npm install && npm run dev
 ```
+
+## Data
+
+All datasets on [HuggingFace](https://huggingface.co/CrimeaIsUkraineOrg):
+
+| Dataset | Records | Format |
+|---------|---------|--------|
+| `crimea-sovereignty-llm` | 43,826 forced-choice + 52,000 free-recall | parquet |
+| `crimea-sovereignty-c4-analysis` | 891,522 classified + 90 signals | parquet |
+| `crimea-sovereignty-academic` | 91,670 scanned | parquet |
+| `crimea-sovereignty-grounding` | 5,974 citations | parquet |
+| `crimea-sovereignty-validation` | 300 blind annotations | parquet |
 
 ## Citation
 
 ```bibtex
-@article{dobrovolskyi2026digital,
+@misc{dobrovolskyi2026digital,
   author = {Dobrovolskyi, Ivan},
   title = {Digital Annexation: A Computational Audit of Crimea's
            Sovereignty Framing in Large Language Models},
   year = {2026},
-  journal = {Harvard Kennedy School Misinformation Review},
   url = {https://crimeaisukraine.org}
 }
 ```
 
 ## Author
 
-**Ivan Dobrovolskyi**
+**Ivan Dobrovolskyi** — ivan@crimeaisukraine.org
 
-MIT (code) · CC-BY-4.0 (text)
+MIT (code) / CC-BY-4.0 (text and data)
