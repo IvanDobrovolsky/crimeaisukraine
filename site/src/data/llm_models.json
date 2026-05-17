@@ -1,6 +1,6 @@
 {
   "_generated": "2026-04-09T00:15:00",
-  "_description": "18-model LLM sovereignty audit roster (deterministic temp=0 dual-tier)",
+  "_description": "16-model LLM sovereignty audit roster",
   "models": [
     {
       "id": "opus-4.6",
@@ -177,28 +177,6 @@
       "release": "2024-11",
       "tier": "frontier",
       "url": "https://allenai.org/olmo"
-    },
-    {
-      "id": "olmo3",
-      "display_name": "OLMo 3",
-      "org": "AI2",
-      "access": "open",
-      "type": "Ollama",
-      "training_data": "AI2 open corpus v3",
-      "release": "2025-10",
-      "tier": "frontier",
-      "url": "https://allenai.org/olmo"
-    },
-    {
-      "id": "smollm3",
-      "display_name": "SmolLM 3",
-      "org": "HuggingFaceTB",
-      "access": "open",
-      "type": "Ollama",
-      "training_data": "FineWeb-Edu",
-      "release": "2025-07",
-      "tier": "smaller",
-      "url": "https://huggingface.co/HuggingFaceTB/SmolLM3-3B"
     }
   ]
 }
