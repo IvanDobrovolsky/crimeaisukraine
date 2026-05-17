@@ -178,6 +178,6 @@ The classifier detects reporting verbs, scare quotes, and skepticism markers nea
 
 ---
 
-## Total: 91 signals (44 Ukraine-framing + 47 Russia-framing) across 3 languages + 6 structural
+## Total: 90 signals (44 Ukraine-framing + 47 Russia-framing) across 3 languages + 6 structural
 
 Every signal traces to a specific legal instrument. No signal is ad hoc.

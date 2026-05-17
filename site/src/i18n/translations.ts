@@ -1337,7 +1337,7 @@ export const translations = {
     groundingTitle: 'Veb-qıdıruv / Grounding kontaminatsiyası',
     groundingDesc: '4 model × 25 sorav × 10 til = 1000 veb-qıdıruv cavapları. 5 974 sitata domen menşeine köre tasniflengen.',
     corporaTitle: 'Ögretüv korpusları tahlili (C4)',
-    corporaDesc: '34,1M sened Google C4 korpusında (en/ru/uk) tarandı — 3 tilde 91 signallı Rust tasnifleyicisi ile.',
+    corporaDesc: '34,1M sened Google C4 korpusında (en/ru/uk) tarandı — 3 tilde 90 signallı Rust tasnifleyicisi ile.',
   }
 } as const;
 
