@@ -27,21 +27,20 @@
 
 Each pipeline is self-contained with its own data, scripts, and manifest.
 
-```
-pipelines/
-  geodata/       # Natural Earth propagation chain
-  llm/           # 16+4 model sovereignty audit (forced-choice + free-recall)
-  academic/      # 91,670 OpenAlex papers, 3-stage classification
-  grounding/     # Web search citation audit (4 chatbots x 10 languages)
-  media/         # GDELT framing analysis (154K articles)
-  wikipedia/     # Crimean city sitelink audit
-  weather/       # Weather platform sovereignty check
-  telecom/       # ASN reassignment audit
-  ip/            # IP geolocation audit
-  institutions/  # Domain registry audit
-  religious/     # OCU parish tracking
-c4_sovereignty/  # Rust classifier (90 signals, 3 languages)
-```
+| Pipeline | Description |
+|----------|-------------|
+| [geodata](pipelines/geodata/) | Natural Earth propagation chain |
+| [llm](pipelines/llm/) | 16+4 model sovereignty audit (forced-choice + free-recall) |
+| [academic](pipelines/academic/) | 91,670 OpenAlex papers, 3-stage classification |
+| [grounding](pipelines/grounding/) | Web search citation audit (4 chatbots x 10 languages) |
+| [media](pipelines/media/) | GDELT framing analysis (154K articles) |
+| [wikipedia](pipelines/wikipedia/) | Crimean city sitelink audit |
+| [weather](pipelines/weather/) | Weather platform sovereignty check |
+| [telecom](pipelines/telecom/) | ASN reassignment audit |
+| [ip](pipelines/ip/) | IP geolocation audit |
+| [institutions](pipelines/institutions/) | Domain registry audit |
+| [religious](pipelines/religious/) | OCU parish tracking |
+| [c4_sovereignty](c4_sovereignty/) | Rust classifier (90 signals, 3 languages) |
 
 ## Reproduce
 
