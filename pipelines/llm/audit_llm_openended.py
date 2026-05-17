@@ -83,7 +83,7 @@ OPENENDED_QUESTIONS = {
     },
 }
 
-# Use the same 50 languages as the forced-choice audit for apples-to-apples RLHF gap
+# Use the same 50 languages as the forced-choice audit for apples-to-apples declarative-generative gap
 OPENENDED_LANGS = list(LANGS.keys())
 
 

@@ -53,8 +53,8 @@ const jsonPayload = JSON.stringify(rows);
     <h1 class="text-3xl md:text-4xl font-bold text-[#333333] mb-2">SAS weight explorer</h1>
     <p class="text-[#555555] max-w-3xl mb-6">
       The <strong class="text-[#1e1e2e]">Sovereignty Alignment Score</strong> is a weighted composite of four tier means:
-      direct territorial (D̄), legal-normative (L̄), implicit sovereignty (Ī), and free-recall (R̄). The formula is a
-      dot product, <span class="font-mono text-[#333333]">SAS = <strong class="text-[#D4860B]">w</strong> · [D̄, L̄, Ī, R̄]</span>,
+      direct territorial (d), legal-normative (l), implicit sovereignty (i), and free-recall (r). The formula is a
+      dot product, <span class="font-mono text-[#333333]">SAS = <strong class="text-[#D4860B]">w</strong> · [d, l, i, r]</span>,
       where <strong class="text-[#1e1e2e]">w</strong> is the weight vector. Our primary report uses the <strong class="text-[#fe640b]">Legal-heavy</strong>
       weight vector <span class="font-mono text-[#D4860B]"><strong>w</strong> = [0.10, 0.50, 0.20, 0.20]</span> — 50% of
       the weight on the legal-normative tier because L directly tests alignment with the international-law framework
@@ -67,7 +67,7 @@ const jsonPayload = JSON.stringify(rows);
     <div class="bg-white border border-[#E5E5E5] rounded-xl p-3 mb-4 text-[11px] text-[#777777]">
       <strong class="text-[#1e1e2e]">Notation:</strong> we follow the standard ML-paper convention — <strong class="text-[#1e1e2e]">bold lowercase</strong>
       for vectors (<strong class="text-[#1e1e2e]">w</strong>, <strong class="text-[#1e1e2e]">x</strong>), regular italic
-      for scalar components (<span class="italic">w<sub>D</sub></span>, <span class="italic">D̄</span>), and square brackets
+      for scalar components (<span class="italic">w<sub>D</sub></span>, <span class="italic">d</span>), and square brackets
       <span class="font-mono">[·, ·, ·, ·]</span> for the components of a vector.
     </div>
 
@@ -76,7 +76,7 @@ const jsonPayload = JSON.stringify(rows);
       Each tier mean is on [0, 1] where 1.0 = Ukraine-aligned, 0.5 = disputed/hedged, 0.0 = Russia-aligned.
       Each model was audited at <span class="font-mono text-[#333333]">temperature=0</span> with
       <span class="font-mono text-[#333333]">seed=42</span> on 1,850 forced-choice queries + 676 open-ended queries across 50 languages and 12 cities.
-      D̄ / L̄ / Ī pool across all 50 forced-tier languages; R̄ pools across 13 free-recall languages.
+      d / l / i pool across all 50 forced-tier languages; r pools across 13 free-recall languages.
       Source data: <a class="text-[#CD2E4A] hover:underline" href="https://github.com/IvanDobrovolsky/crimeaisukraine/blob/main/data/sas_scores.json">data/sas_scores.json</a>,
       regenerable via <span class="font-mono text-[#333333]">python3 scripts/compute_sas.py</span>.
       Generated <span class="font-mono">{generatedAt.slice(0, 16).replace('T', ' ')}</span>.
@@ -181,18 +181,18 @@ const jsonPayload = JSON.stringify(rows);
       <div class="flex items-baseline justify-between mb-2 flex-wrap gap-2">
         <h2 class="text-lg font-bold text-[#333333]">Tier-space visualisations</h2>
         <div class="text-[10px] text-[#777777]">
-          point positions are raw D̄/L̄/Ī/R̄ (weight-free) · point colour is current SAS under your weights
+          point positions are raw d/l/i/r (weight-free) · point colour is current SAS under your weights
         </div>
       </div>
       <p class="text-xs text-[#555555] mb-4 max-w-3xl">
         Each model is a single point in tier space. The <strong class="text-[#CD2E4A]">2D view</strong> is the weight-free
-        Pareto plane — D̄ horizontal, R̄ vertical, y = x dashed — so its point positions never move. Dragging the sliders
+        Pareto plane — d horizontal, r vertical, y = x dashed — so its point positions never move. Dragging the sliders
         only recolours the 2D points to their current SAS. The <strong class="text-[#D4860B]">3D view</strong> is a live
-        response surface: X = D̄ and Y = R̄ anchor each model to its Pareto plane position, while the Z coordinate is the
+        response surface: X = d and Y = r anchor each model to its Pareto plane position, while the Z coordinate is the
         model's SAS under your current weight vector <strong class="text-[#D4860B]">w</strong>. Drag a slider and every
         point physically rises or falls to its new SAS height. Set <strong class="text-[#D4860B]">w</strong> = [1, 0, 0, 0]
-        and the response surface collapses to Z = D̄ (Z equals X); set <strong class="text-[#D4860B]">w</strong> = [0, 0, 0, 1]
-        and it collapses to Z = R̄ (Z equals Y). The math becomes visible.
+        and the response surface collapses to Z = d (Z equals X); set <strong class="text-[#D4860B]">w</strong> = [0, 0, 0, 1]
+        and it collapses to Z = r (Z equals Y). The math becomes visible.
       </p>
       <div class="grid md:grid-cols-2 gap-4">
         <div>
@@ -227,7 +227,7 @@ const jsonPayload = JSON.stringify(rows);
     <div class="text-xs text-[#777777]">
       <p class="mb-2">
         <strong class="text-[#1e1e2e]">What to look for.</strong>
-        Drag the <em>w<sub>D</sub></em> slider all the way to 1 and the other three to 0: you are now ranking by forced-choice only (<strong class="text-[#1e1e2e]">w</strong> = [1, 0, 0, 0]). Notice that the closed flagships (Gemini 2.5 Pro, Claude Opus 4.6, GPT-5.4, Claude Sonnet 4.6) dominate. Now drag <em>w<sub>R</sub></em> all the way to 1 and the rest to 0: the ranking nearly <em>reverses</em>. Open and small models score higher on default generation because they never received the heavy RLHF surface patching the closed labs invested in. This is the RLHF-gap story in one gesture. The Spearman ρ between those two extremes is <strong class="text-[#CD2E4A]">−0.486</strong> — a ranking inversion in the weight space.
+        Drag the <em>w<sub>D</sub></em> slider all the way to 1 and the other three to 0: you are now ranking by forced-choice only (<strong class="text-[#1e1e2e]">w</strong> = [1, 0, 0, 0]). Notice that the closed flagships (Gemini 2.5 Pro, Claude Opus 4.6, GPT-5.4, Claude Sonnet 4.6) dominate. Now drag <em>w<sub>R</sub></em> all the way to 1 and the rest to 0: the ranking nearly <em>reverses</em>. Open and small models score higher on default generation because they never received the heavy RLHF surface patching the closed labs invested in. This is the declarative-generative gap story in one gesture. The Spearman ρ between those two extremes is <strong class="text-[#CD2E4A]">−0.486</strong> — a ranking inversion in the weight space.
       </p>
       <p class="mb-2">
         <strong class="text-[#1e1e2e]">What the primary (Legal-heavy) scheme does.</strong>
@@ -478,11 +478,11 @@ const jsonPayload = JSON.stringify(rows);
         const hover = rows.map(r =>
           '<b>' + r.name + '</b><br>' +
           r.org + ' · ' + (r.access || '—') + '<br>' +
-          'D̄ = ' + (r.D ?? 0).toFixed(3) +
-          '  L̄ = ' + (r.L ?? 0).toFixed(3) +
-          '  Ī = ' + (r.I ?? 0).toFixed(3) +
-          '  R̄ = ' + (r.R ?? 0).toFixed(3) + '<br>' +
-          'RLHF gap = ' + (r.rlhfGap != null ? (r.rlhfGap >= 0 ? '+' : '') + r.rlhfGap.toFixed(3) : '—') +
+          'd = ' + (r.D ?? 0).toFixed(3) +
+          '  l = ' + (r.L ?? 0).toFixed(3) +
+          '  i = ' + (r.I ?? 0).toFixed(3) +
+          '  r = ' + (r.R ?? 0).toFixed(3) + '<br>' +
+          'declarative-generative gap = ' + (r.rlhfGap != null ? (r.rlhfGap >= 0 ? '+' : '') + r.rlhfGap.toFixed(3) : '—') +
           '<extra></extra>'
         );
 
@@ -507,12 +507,12 @@ const jsonPayload = JSON.stringify(rows);
         // ── 2D: forced (D) vs free (R) scatter ────────────────────────
         const layout2d = Object.assign({}, baseLayout, {
           xaxis: {
-            title: { text: 'D̄ — direct territorial (forced-choice)', font: { color: '#333333', size: 12 } },
+            title: { text: 'd — direct territorial (forced-choice)', font: { color: '#333333', size: 12 } },
             range: [-0.02, 1.02], gridcolor: '#E5E5E5', zerolinecolor: '#D4D4D4',
             tickfont: { color: '#555555' },
           },
           yaxis: {
-            title: { text: 'R̄ — free-recall (default generation)', font: { color: '#333333', size: 12 } },
+            title: { text: 'r — free-recall (default generation)', font: { color: '#333333', size: 12 } },
             range: [-0.02, 1.02], gridcolor: '#E5E5E5', zerolinecolor: '#D4D4D4',
             tickfont: { color: '#555555' }, scaleanchor: 'x', scaleratio: 1,
           },
@@ -580,7 +580,7 @@ const jsonPayload = JSON.stringify(rows);
           displayModeBar: false, responsive: true, staticPlot: false,
         }).then(() => { plot2dReady = true; });
 
-        // ── 3D: (D̄, R̄, SAS) response surface ───────────────────────
+        // ── 3D: (d, r, SAS) response surface ───────────────────────
         // X and Y are the same Pareto plane as the 2D chart (weight-free
         // raw data). Z is the LIVE SAS under the current weight vector.
         // As sliders move, we recompute Z for every model and push via
@@ -591,12 +591,12 @@ const jsonPayload = JSON.stringify(rows);
         const layout3d = Object.assign({}, baseLayout, {
           scene: {
             xaxis: {
-              title: { text: 'D̄  (direct territorial)', font: { color: '#333333', size: 11 } },
+              title: { text: 'd  (direct territorial)', font: { color: '#333333', size: 11 } },
               range: [0, 1], gridcolor: '#E5E5E5', zerolinecolor: '#D4D4D4',
               backgroundcolor: '#FFFFFF', tickfont: { color: '#555555', size: 9 },
             },
             yaxis: {
-              title: { text: 'R̄  (free-recall)', font: { color: '#333333', size: 11 } },
+              title: { text: 'r  (free-recall)', font: { color: '#333333', size: 11 } },
               range: [0, 1], gridcolor: '#E5E5E5', zerolinecolor: '#D4D4D4',
               backgroundcolor: '#FFFFFF', tickfont: { color: '#555555', size: 9 },
             },

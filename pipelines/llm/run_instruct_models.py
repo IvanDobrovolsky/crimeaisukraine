@@ -1,5 +1,5 @@
 """
-Run instruct variants of open-weight models for base vs instruct RLHF gap comparison.
+Run instruct variants of open-weight models for base vs instruct declarative-generative gap comparison.
 
 Runs both forced-choice (15 questions × 50 languages) and open-ended (8 questions × 50 languages)
 against instruct-tuned Ollama models. Results append to existing JSONL files with new model names.
@@ -232,7 +232,7 @@ def run_openended(translations_path):
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("INSTRUCT MODEL RLHF GAP AUDIT")
+    print("INSTRUCT MODEL DECLARATIVE-GENERATIVE GAP AUDIT")
     print(f"Models: {[m['name'] for m in INSTRUCT_MODELS]}")
     print(f"Ollama: {OLLAMA_BASE_URL}")
     print("=" * 60)

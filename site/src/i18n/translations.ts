@@ -184,7 +184,7 @@ export const translations = {
     groundingKeyText: '5 of 7 US State Dept GEC-documented proxy sites remain accessible through LLM web search. 74 citations in targeted probes. These are SVR-directed sites hosting GRU false persona content. Social media blocked them. Search engines did not.',
     groundingGap: 'Google\'s Search content policy (support.google.com/websearch/answer/10622781) has no category for sanctions compliance or state propaganda. The EU Digital Services Act (Reg 2022/2065) does not require search engines to filter state propaganda.',
     corporaTitle: 'Training Corpora Analysis (C4)',
-    corporaDesc: '34.1M documents scanned in Google\'s C4 corpus (en/ru/uk) using a Rust classifier with 91 signals across 3 languages.',
+    corporaDesc: '34.1M documents scanned in Google\'s C4 corpus (en/ru/uk) using a Rust classifier with 90 signals across 3 languages.',
     corporaDocs: 'Documents',
     corporaRuFraming: 'Russia-framing',
     corporaStateMedia: 'State media',

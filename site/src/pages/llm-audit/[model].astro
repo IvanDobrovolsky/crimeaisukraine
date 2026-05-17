@@ -73,22 +73,22 @@ const hasSas = sas && sas.sas !== null;
             <div class="text-[10px] text-[#777777] mt-1">primary weights (0.10·D + 0.20·L + 0.30·I + 0.40·R)</div>
           </div>
           <div class="bg-white border border-[#E5E5E5] rounded-xl p-4">
-            <div class="text-[10px] text-[#777777] uppercase tracking-wider mb-1" title="Direct territorial">D̄</div>
+            <div class="text-[10px] text-[#777777] uppercase tracking-wider mb-1" title="Direct territorial">d</div>
             <div class="text-2xl font-bold text-[#333333]">{fmt(sas.D)}</div>
             <div class="text-[10px] text-[#777777] mt-1">direct territorial</div>
           </div>
           <div class="bg-white border border-[#E5E5E5] rounded-xl p-4">
-            <div class="text-[10px] text-[#777777] uppercase tracking-wider mb-1" title="Legal-normative">L̄</div>
+            <div class="text-[10px] text-[#777777] uppercase tracking-wider mb-1" title="Legal-normative">l</div>
             <div class="text-2xl font-bold text-[#333333]">{fmt(sas.L)}</div>
             <div class="text-[10px] text-[#777777] mt-1">legal-normative</div>
           </div>
           <div class="bg-white border border-[#E5E5E5] rounded-xl p-4">
-            <div class="text-[10px] text-[#777777] uppercase tracking-wider mb-1" title="Implicit sovereignty">Ī</div>
+            <div class="text-[10px] text-[#777777] uppercase tracking-wider mb-1" title="Implicit sovereignty">i</div>
             <div class="text-2xl font-bold text-[#333333]">{fmt(sas.I)}</div>
             <div class="text-[10px] text-[#777777] mt-1">implicit sovereignty</div>
           </div>
           <div class="bg-white border border-[#E5E5E5] rounded-xl p-4">
-            <div class="text-[10px] text-[#777777] uppercase tracking-wider mb-1" title="Free-recall">R̄</div>
+            <div class="text-[10px] text-[#777777] uppercase tracking-wider mb-1" title="Free-recall">r</div>
             <div class="text-2xl font-bold text-[#333333]">{fmt(sas.R)}</div>
             <div class="text-[10px] text-[#777777] mt-1">free-recall</div>
           </div>
@@ -96,7 +96,7 @@ const hasSas = sas && sas.sas !== null;
         {sas.rlhf_gap !== null && (
           <div class="bg-white border border-[#E5E5E5] rounded-xl p-4">
             <div class="flex items-baseline justify-between mb-1">
-              <div class="text-[10px] text-[#777777] uppercase tracking-wider">RLHF gap (D̄ − R̄)</div>
+              <div class="text-[10px] text-[#777777] uppercase tracking-wider">declarative-generative gap (d − r)</div>
               <div class="text-2xl font-bold" style={`color: ${sas.rlhf_gap >= 0.15 ? '#CD2E4A' : sas.rlhf_gap >= 0.05 ? '#D4860B' : sas.rlhf_gap > -0.05 ? '#555555' : sas.rlhf_gap > -0.20 ? '#2D8A4E' : '#2D8A4E'}`}>
                 {sas.rlhf_gap > 0 ? '+' : ''}{sas.rlhf_gap.toFixed(3)}
               </div>

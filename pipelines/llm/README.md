@@ -1,6 +1,6 @@
 # LLM Sovereignty Audit: When AI Inherits Territorial Bias
 
-16 frontier-class models from 8 labs audited at `temperature=0` on 15 questions x 50 languages x 12 cities. Every frontier flagship gives a Ukraine-aligned answer on forced-choice but reverts to Russia-aligned framing on free-recall. The RLHF gap is **+0.04 to +0.27** across five independent labs and is invisible to every previously published LLM benchmark, all of which use forced-choice only.
+16 frontier-class models from 8 labs audited at `temperature=0` on 15 questions x 50 languages x 12 cities. Every frontier flagship gives a Ukraine-aligned answer on forced-choice but reverts to Russia-aligned framing on free-recall. The declarative-generative gap is **+0.04 to +0.27** across five independent labs and is invisible to every previously published LLM benchmark, all of which use forced-choice only.
 
 **Novelty:** Largest deterministic dual-tier LLM audit on any disputed territory. Extends [Li & Haider (NAACL 2024)](https://aclanthology.org/2024.naacl-long.213/) with 16 newer models, **Crimean Tatar**, free-recall generation alongside forced-choice ([TruthfulQA argument](https://aclanthology.org/2022.acl-long.229/)), and the **Sovereignty Alignment Score (SAS)** with sensitivity analysis.
 
@@ -39,7 +39,7 @@ Six pre-registered weight schemes + three weight-free robustness metrics (SAS_mi
 
 ## Model ranking (primary Legal-heavy weights)
 
-| Rank | Model | Lab | Access | **SAS** | D | L | I | R | **RLHF gap** |
+| Rank | Model | Lab | Access | **SAS** | D | L | I | R | **declarative-generative gap** |
 |---:|---|---|---|---:|---:|---:|---:|---:|---:|
 | 1 | **gemini-2.5-pro** | Google | closed | **0.902** | 0.926 | 0.969 | 0.970 | 0.654 | **+0.272** |
 | 2 | **opus-4.6** | Anthropic | closed | **0.894** | 0.890 | 0.908 | 0.987 | 0.803 | **+0.087** |
@@ -60,11 +60,11 @@ Six pre-registered weight schemes + three weight-free robustness metrics (SAS_mi
 
 All numbers regenerable via `python3 pipelines/llm/compute_sas.py`. Source data: `data/sas_scores.json`. **Interactive weight explorer**: [crimeaisukraine.org/llm-audit/sas-explorer](https://crimeaisukraine.org/llm-audit/sas-explorer).
 
-**Sensitivity (Spearman rho vs primary):** Monotonic 0.985, Uniform 0.973, Geometric 0.971, Forced-only 0.977, Free-only **-0.484** (ranking nearly reverses). The ranking is stable across all reasonable weight choices; the free-only reversal is the RLHF-gap story in one number.
+**Sensitivity (Spearman rho vs primary):** Monotonic 0.985, Uniform 0.973, Geometric 0.971, Forced-only 0.977, Free-only **-0.484** (ranking nearly reverses). The ranking is stable across all reasonable weight choices; the free-only reversal is the declarative-generative gap story in one number.
 
 ## Key findings
 
-1. **Cross-lab RLHF gap (+0.04 to +0.27).** Seven models from five labs show positive gaps. Every benchmark using only forced-choice probes overestimates alignment.
+1. **Cross-lab declarative-generative gap (+0.04 to +0.27).** Seven models from five labs show positive gaps. Every benchmark using only forced-choice probes overestimates alignment.
 2. **Negative-gap inversion in open/small models.** 9 models (qwen3 -0.552, gemma4 -0.481, olmo2 -0.461, mistral-small -0.305, llama4 -0.291, gpt-5.4-nano -0.260, grok-3 -0.163, haiku-4.5 -0.116, gpt-5.4-mini -0.016) score *higher* on free-recall than forced-choice -- reflexive hedging templates vs weak surface fine-tuning.
 3. **Closed-vs-open gap shrinks** once free-recall is included. Closed labs hide their default bias better behind RLHF.
 4. **Crimean Tatar performs worst** across every model (30% accuracy on haiku-4.5 vs 81% in English).

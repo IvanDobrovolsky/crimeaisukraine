@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-04-27T00:01:37.918049+00:00",
-  "classifier": "rust crimea-classify (91 signals)",
+  "classifier": "rust crimea-classify (90 signals)",
   "period": "2010-2026",
   "total_articles_fetched": 32138,
   "total_api_calls": 396,

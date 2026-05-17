@@ -19,7 +19,7 @@
 | Geodata | Natural Earth `SOVEREIGNT="Russia"` → **65.7M weekly downloads** |
 | Training data (C4) | **34.1M** documents scanned, **891,522** Russia-framing |
 | Academic metadata | **1,581** papers with Russian designations (98.3% precision) |
-| LLM audit | **16 models**, 8 labs, RLHF gap **+0.04 to +0.27** |
+| LLM audit | **16 models**, 8 labs, declarative-generative gap **+0.04 to +0.27** |
 | Web search | **5,974** citations, 7.6% Russian-origin, 5/7 GEC proxies accessible |
 
 ## Pipelines

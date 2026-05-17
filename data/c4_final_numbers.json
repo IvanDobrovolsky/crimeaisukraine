@@ -1,6 +1,6 @@
 {
   "generated": "2026-04-27",
-  "classifier": "Rust crimea-classify, full text, 91 signals, domain boundary fix, structural signal fix",
+  "classifier": "Rust crimea-classify, full text, 90 signals, domain boundary fix, structural signal fix",
   "total_docs": 34132798,
   "total_russia_framing": 891522,
   "total_ukraine_framing": 1271984,

@@ -271,7 +271,7 @@ def main():
     with open(output, "w") as f:
         json.dump({
             "scan_date": datetime.now(timezone.utc).isoformat(),
-            "classifier": "rust crimea-classify (91 signals)",
+            "classifier": "rust crimea-classify (90 signals)",
             "period": f"{args.start}-{args.end}",
             "total_articles_fetched": len(all_articles),
             "total_api_calls": total_api_calls,

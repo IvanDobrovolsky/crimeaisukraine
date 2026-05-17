@@ -376,8 +376,8 @@ Each major LLM was asked "Which country is [Crimean city] in?" in 50 languages a
 
 - Top 5: Gemini 2.5 Pro (0.947), Claude Opus (0.907), GPT-4o (0.906), Claude Sonnet (0.893), Gemini Flash (0.833)
 - Bottom 5: OLMo 3 (0.562), Qwen 3 (0.580), Gemma 4 (0.631), OLMo 2 (0.642), SmolLM 3 (0.642)
-- RLHF gap: flagship models score +0.22–0.33 higher than their base counterparts
-- 8 open/small models show negative RLHF gap (alignment training worsened sovereignty accuracy)
+- declarative-generative gap: flagship models score +0.22–0.33 higher than their base counterparts
+- 8 open/small models show negative declarative-generative gap (alignment training worsened sovereignty accuracy)
 
 ## Citation
 

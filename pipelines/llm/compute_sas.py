@@ -384,7 +384,7 @@ def main():
             "n_free":   len(r_all),
         }
 
-    # RLHF-gap = D - R
+    # declarative-generative gap = D - R
     rlhf_gap = {}
     for m in all_models:
         d = tier_means[m]["D"]
@@ -550,7 +550,7 @@ def main():
     if pc1:
         print(f"PC1 weights (data-driven): D={pc1[0]:.3f}  L={pc1[1]:.3f}  I={pc1[2]:.3f}  R={pc1[3]:.3f}")
     print()
-    print(f"{'model':<22} {'SAS':>7} {'uniform':>8} {'min':>7} {'HM':>7} {'PC1':>7} {'RLHF':>8} {'n':>4}")
+    print(f"{'model':<22} {'SAS':>7} {'uniform':>8} {'min':>7} {'HM':>7} {'PC1':>7} {'Gap':>8} {'n':>4}")
     print("-" * 80)
 
     sortable = [(per_model_scheme["primary"][m]["sas_mean"], m) for m in all_models
