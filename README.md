@@ -25,8 +25,6 @@
 
 ## Pipelines
 
-Each pipeline is self-contained with its own data, scripts, and manifest.
-
 | Pipeline | Description |
 |----------|-------------|
 | [geodata](pipelines/geodata/) | Natural Earth propagation chain |
@@ -45,20 +43,13 @@ Each pipeline is self-contained with its own data, scripts, and manifest.
 ## Reproduce
 
 ```bash
-# LLM audit (requires Ollama or API keys)
-python pipelines/llm/audit_llm_sovereignty_full.py   # forced-choice
-python pipelines/llm/audit_llm_openended.py           # free-recall
-python pipelines/llm/compute_sas.py                    # SAS scores
-
-# C4 classifier (requires C4 corpus access)
-cd c4_sovereignty/scanner && cargo build --release
-./target/release/crimea-classify --input data/*.jsonl --output classified.jsonl
-
-# Tokenizer demo (local, no GPU needed)
-python pipelines/llm/tokenizer_demo.py
-
-# Site
-cd site && npm install && npm run dev
+make help                    # list all targets
+make pipeline-llm            # LLM sovereignty audit
+make pipeline-academic       # academic framing pipeline
+make pipeline-geodata        # Natural Earth propagation
+make pipeline-media          # GDELT media framing
+make all                     # full run (all pipelines)
+make site                    # build site
 ```
 
 ## Data
@@ -85,8 +76,4 @@ All datasets on [HuggingFace](https://huggingface.co/CrimeaIsUkraineOrg):
 }
 ```
 
-## Author
-
-**Ivan Dobrovolskyi** — ivan@crimeaisukraine.org
-
-MIT (code) / CC-BY-4.0 (text and data)
+Ivan Dobrovolskyi — MIT (code) / CC-BY-4.0 (text and data)
