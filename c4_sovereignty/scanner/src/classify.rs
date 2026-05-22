@@ -53,7 +53,7 @@ struct OutputDoc {
 }
 
 // =========================================================================
-// Signal definitions — ported from sovereignty_signals.py (91 signals)
+// Signal definitions — ported from sovereignty_signals.py (90 signals)
 // =========================================================================
 
 struct Signal {

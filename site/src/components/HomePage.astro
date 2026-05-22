@@ -1377,7 +1377,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
                 if (v >= 0.65) return '#D4860B33';
                 return '#CD2E4A33';
               };
-              const gap = r.rlhf_gap;
+              const gap = r.dg_gap;
               const gapColor = gap === null ? '#555555' : gap >= 0.15 ? '#CD2E4A' : gap >= 0.05 ? '#D4860B' : gap > -0.05 ? '#555555' : gap > -0.20 ? '#2D8A4E' : '#2D8A4E';
               const f = (v: number | null) => v === null ? '—' : v.toFixed(3);
               const accessBadge = m.access === 'closed' ? 'closed' : 'open';

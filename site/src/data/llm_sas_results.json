@@ -31,7 +31,7 @@
       "L": null,
       "I": 0.4524,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 47
     },
     "gemini-2.5-flash": {
@@ -47,7 +47,7 @@
       "L": 0.9793,
       "I": 0.7721,
       "R": 0.708,
-      "rlhf_gap": 0.1556,
+      "dg_gap": 0.1556,
       "n_languages": 50
     },
     "gemini-2.5-pro": {
@@ -63,7 +63,7 @@
       "L": 0.9693,
       "I": 0.9704,
       "R": 0.6541,
-      "rlhf_gap": 0.2718,
+      "dg_gap": 0.2718,
       "n_languages": 50
     },
     "gemma2-27b": {
@@ -79,7 +79,7 @@
       "L": null,
       "I": 1.0,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 1
     },
     "gemma2-2b": {
@@ -95,7 +95,7 @@
       "L": null,
       "I": 0.8343,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 50
     },
     "gemma3-4b": {
@@ -111,7 +111,7 @@
       "L": 0.9412,
       "I": 0.8955,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 50
     },
     "gemma4": {
@@ -127,7 +127,7 @@
       "L": 0.691,
       "I": 0.6914,
       "R": 0.8771,
-      "rlhf_gap": -0.4813,
+      "dg_gap": -0.4813,
       "n_languages": 50
     },
     "gpt-5.4": {
@@ -143,7 +143,7 @@
       "L": 0.8838,
       "I": 0.9744,
       "R": 0.7255,
-      "rlhf_gap": 0.1996,
+      "dg_gap": 0.1996,
       "n_languages": 50
     },
     "gpt-5.4-mini": {
@@ -159,7 +159,7 @@
       "L": 0.8952,
       "I": 0.7563,
       "R": 0.7299,
-      "rlhf_gap": -0.0156,
+      "dg_gap": -0.0156,
       "n_languages": 50
     },
     "gpt-5.4-nano": {
@@ -175,7 +175,7 @@
       "L": 0.7466,
       "I": 0.9138,
       "R": 0.7968,
-      "rlhf_gap": -0.2596,
+      "dg_gap": -0.2596,
       "n_languages": 50
     },
     "grok-3": {
@@ -191,7 +191,7 @@
       "L": 0.8362,
       "I": 0.9353,
       "R": 0.7124,
-      "rlhf_gap": -0.1632,
+      "dg_gap": -0.1632,
       "n_languages": 50
     },
     "grok-4-fast": {
@@ -207,7 +207,7 @@
       "L": 0.8464,
       "I": 0.7195,
       "R": 0.6611,
-      "rlhf_gap": 0.0538,
+      "dg_gap": 0.0538,
       "n_languages": 50
     },
     "grok-4.20": {
@@ -223,7 +223,7 @@
       "L": 0.9655,
       "I": 0.9039,
       "R": 0.6023,
-      "rlhf_gap": 0.0424,
+      "dg_gap": 0.0424,
       "n_languages": 50
     },
     "haiku-4.5": {
@@ -239,7 +239,7 @@
       "L": 0.8537,
       "I": 0.8034,
       "R": 0.7448,
-      "rlhf_gap": -0.1162,
+      "dg_gap": -0.1162,
       "n_languages": 50
     },
     "llama3.1-8b": {
@@ -255,7 +255,7 @@
       "L": null,
       "I": 0.7897,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 50
     },
     "llama3.2-1b": {
@@ -271,7 +271,7 @@
       "L": null,
       "I": 0.4046,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 46
     },
     "llama3.2-3b": {
@@ -287,7 +287,7 @@
       "L": 0.6504,
       "I": 0.5504,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 50
     },
     "llama3.3-70b": {
@@ -303,7 +303,7 @@
       "L": null,
       "I": 0.3333,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 3
     },
     "llama4": {
@@ -319,7 +319,7 @@
       "L": 0.84,
       "I": 0.8743,
       "R": 0.8517,
-      "rlhf_gap": -0.2908,
+      "dg_gap": -0.2908,
       "n_languages": 50
     },
     "mistral-7b": {
@@ -335,7 +335,7 @@
       "L": null,
       "I": 0.7699,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 49
     },
     "mistral-small": {
@@ -351,7 +351,7 @@
       "L": 0.7878,
       "I": 0.6587,
       "R": 0.7893,
-      "rlhf_gap": -0.305,
+      "dg_gap": -0.305,
       "n_languages": 50
     },
     "olmo2": {
@@ -367,7 +367,7 @@
       "L": 0.5953,
       "I": 0.7392,
       "R": 0.8965,
-      "rlhf_gap": -0.4607,
+      "dg_gap": -0.4607,
       "n_languages": 50
     },
     "opus-4.6": {
@@ -383,7 +383,7 @@
       "L": 0.9078,
       "I": 0.9871,
       "R": 0.8033,
-      "rlhf_gap": 0.0871,
+      "dg_gap": 0.0871,
       "n_languages": 50
     },
     "phi3-mini": {
@@ -399,7 +399,7 @@
       "L": null,
       "I": 0.3046,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 40
     },
     "qwen2.5-14b": {
@@ -415,7 +415,7 @@
       "L": null,
       "I": 0.6,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 5
     },
     "qwen2.5-32b": {
@@ -431,7 +431,7 @@
       "L": null,
       "I": 0.4,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 5
     },
     "qwen2.5-3b": {
@@ -447,7 +447,7 @@
       "L": null,
       "I": 0.2803,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 49
     },
     "qwen2.5-72b": {
@@ -463,7 +463,7 @@
       "L": null,
       "I": 1.0,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 1
     },
     "qwen2.5-7b": {
@@ -479,7 +479,7 @@
       "L": 0.8435,
       "I": 0.8166,
       "R": null,
-      "rlhf_gap": null,
+      "dg_gap": null,
       "n_languages": 50
     },
     "qwen3": {
@@ -495,7 +495,7 @@
       "L": 0.6849,
       "I": 0.6604,
       "R": 0.7929,
-      "rlhf_gap": -0.5521,
+      "dg_gap": -0.5521,
       "n_languages": 50
     },
     "sonnet-4.6": {
@@ -511,7 +511,7 @@
       "L": 0.9401,
       "I": 0.9082,
       "R": 0.8015,
-      "rlhf_gap": 0.1183,
+      "dg_gap": 0.1183,
       "n_languages": 50
     }
   }

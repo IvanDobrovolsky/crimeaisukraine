@@ -2892,7 +2892,7 @@
           "questions_open_ended": 9,
           "top_model": "gemini-2.5-pro",
           "top_model_sas": 0.902,
-          "rlhf_gap_range": "+0.04 to +0.27",
+          "declarative_generative_gap_range": "+0.04 to +0.27",
           "positive_gap_models": 7,
           "negative_gap_models": 9,
           "weight_schemes_tested": 6,
@@ -2965,7 +2965,7 @@
         },
         "key_findings": [
           "Declarative-generative gap: 7 flagship models show positive gap (+0.04 to +0.27), 9 remaining show negative.",
-          "Instruct comparison: instruction tuning improves forced-choice in 3/4 models but worsens free-recall in all 4 (avg -8.2pp).",
+          "Instruct comparison: instruction tuning improves forced-choice in 3/4 models but worsens free-recall in all 4 (avg -8.0pp).",
           "SAS ranking stable across weight schemes (Spearman rho >= 0.97)."
         ],
         "limitations": [
@@ -113674,28 +113674,6 @@
           "release": "2024-11",
           "tier": "frontier",
           "url": "https://allenai.org/olmo"
-        },
-        {
-          "id": "olmo3",
-          "display_name": "OLMo 3",
-          "org": "AI2",
-          "access": "open",
-          "type": "Ollama",
-          "training_data": "AI2 open corpus v3",
-          "release": "2025-10",
-          "tier": "frontier",
-          "url": "https://allenai.org/olmo"
-        },
-        {
-          "id": "smollm3",
-          "display_name": "SmolLM 3",
-          "org": "HuggingFaceTB",
-          "access": "open",
-          "type": "Ollama",
-          "training_data": "FineWeb-Edu",
-          "release": "2025-07",
-          "tier": "smaller",
-          "url": "https://huggingface.co/HuggingFaceTB/SmolLM3-3B"
         }
       ]
     },

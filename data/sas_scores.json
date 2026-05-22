@@ -1185,163 +1185,6 @@
       "n_free": 957
     }
   },
-  "rlhf_gap": {
-    "deepseek-r1-8b": {
-      "D_mean": null,
-      "R_mean": null,
-      "gap": null
-    },
-    "gemini-2.5-flash": {
-      "D_mean": 0.8636,
-      "R_mean": 0.708,
-      "gap": 0.1556
-    },
-    "gemini-2.5-pro": {
-      "D_mean": 0.9259,
-      "R_mean": 0.6541,
-      "gap": 0.2718
-    },
-    "gemma2-27b": {
-      "D_mean": null,
-      "R_mean": null,
-      "gap": null
-    },
-    "gemma2-2b": {
-      "D_mean": null,
-      "R_mean": null,
-      "gap": null
-    },
-    "gemma3-4b": {
-      "D_mean": 0.3897,
-      "R_mean": null,
-      "gap": null
-    },
-    "gemma4": {
-      "D_mean": 0.3958,
-      "R_mean": 0.8771,
-      "gap": -0.4813
-    },
-    "gpt-5.4": {
-      "D_mean": 0.9251,
-      "R_mean": 0.7255,
-      "gap": 0.1996
-    },
-    "gpt-5.4-mini": {
-      "D_mean": 0.7143,
-      "R_mean": 0.7299,
-      "gap": -0.0156
-    },
-    "gpt-5.4-nano": {
-      "D_mean": 0.5372,
-      "R_mean": 0.7968,
-      "gap": -0.2596
-    },
-    "grok-3": {
-      "D_mean": 0.5492,
-      "R_mean": 0.7124,
-      "gap": -0.1632
-    },
-    "grok-4-fast": {
-      "D_mean": 0.7149,
-      "R_mean": 0.6611,
-      "gap": 0.0538
-    },
-    "grok-4.20": {
-      "D_mean": 0.6447,
-      "R_mean": 0.6023,
-      "gap": 0.0424
-    },
-    "haiku-4.5": {
-      "D_mean": 0.6286,
-      "R_mean": 0.7448,
-      "gap": -0.1162
-    },
-    "llama3.1-8b": {
-      "D_mean": 0.4022,
-      "R_mean": null,
-      "gap": null
-    },
-    "llama3.2-1b": {
-      "D_mean": null,
-      "R_mean": null,
-      "gap": null
-    },
-    "llama3.2-3b": {
-      "D_mean": 0.4722,
-      "R_mean": null,
-      "gap": null
-    },
-    "llama3.3-70b": {
-      "D_mean": null,
-      "R_mean": null,
-      "gap": null
-    },
-    "llama4": {
-      "D_mean": 0.5609,
-      "R_mean": 0.8517,
-      "gap": -0.2908
-    },
-    "mistral-7b": {
-      "D_mean": 0.3333,
-      "R_mean": null,
-      "gap": null
-    },
-    "mistral-small": {
-      "D_mean": 0.4843,
-      "R_mean": 0.7893,
-      "gap": -0.305
-    },
-    "olmo2": {
-      "D_mean": 0.4358,
-      "R_mean": 0.8965,
-      "gap": -0.4607
-    },
-    "opus-4.6": {
-      "D_mean": 0.8904,
-      "R_mean": 0.8033,
-      "gap": 0.0871
-    },
-    "phi3-mini": {
-      "D_mean": null,
-      "R_mean": null,
-      "gap": null
-    },
-    "qwen2.5-14b": {
-      "D_mean": null,
-      "R_mean": null,
-      "gap": null
-    },
-    "qwen2.5-32b": {
-      "D_mean": null,
-      "R_mean": null,
-      "gap": null
-    },
-    "qwen2.5-3b": {
-      "D_mean": null,
-      "R_mean": null,
-      "gap": null
-    },
-    "qwen2.5-72b": {
-      "D_mean": null,
-      "R_mean": null,
-      "gap": null
-    },
-    "qwen2.5-7b": {
-      "D_mean": 0.4332,
-      "R_mean": null,
-      "gap": null
-    },
-    "qwen3": {
-      "D_mean": 0.2408,
-      "R_mean": 0.7929,
-      "gap": -0.5521
-    },
-    "sonnet-4.6": {
-      "D_mean": 0.9198,
-      "R_mean": 0.8015,
-      "gap": 0.1183
-    }
-  },
   "sensitivity_spearman_vs_primary": {
     "monotonic": 0.9625,
     "uniform": 0.9774,
@@ -18349,6 +18192,163 @@
         ],
         "renormalized": false
       }
+    }
+  },
+  "dg_gap": {
+    "deepseek-r1-8b": {
+      "D_mean": null,
+      "R_mean": null,
+      "gap": null
+    },
+    "gemini-2.5-flash": {
+      "D_mean": 0.8636,
+      "R_mean": 0.708,
+      "gap": 0.1556
+    },
+    "gemini-2.5-pro": {
+      "D_mean": 0.9259,
+      "R_mean": 0.6541,
+      "gap": 0.2718
+    },
+    "gemma2-27b": {
+      "D_mean": null,
+      "R_mean": null,
+      "gap": null
+    },
+    "gemma2-2b": {
+      "D_mean": null,
+      "R_mean": null,
+      "gap": null
+    },
+    "gemma3-4b": {
+      "D_mean": 0.3897,
+      "R_mean": null,
+      "gap": null
+    },
+    "gemma4": {
+      "D_mean": 0.3958,
+      "R_mean": 0.8771,
+      "gap": -0.4813
+    },
+    "gpt-5.4": {
+      "D_mean": 0.9251,
+      "R_mean": 0.7255,
+      "gap": 0.1996
+    },
+    "gpt-5.4-mini": {
+      "D_mean": 0.7143,
+      "R_mean": 0.7299,
+      "gap": -0.0156
+    },
+    "gpt-5.4-nano": {
+      "D_mean": 0.5372,
+      "R_mean": 0.7968,
+      "gap": -0.2596
+    },
+    "grok-3": {
+      "D_mean": 0.5492,
+      "R_mean": 0.7124,
+      "gap": -0.1632
+    },
+    "grok-4-fast": {
+      "D_mean": 0.7149,
+      "R_mean": 0.6611,
+      "gap": 0.0538
+    },
+    "grok-4.20": {
+      "D_mean": 0.6447,
+      "R_mean": 0.6023,
+      "gap": 0.0424
+    },
+    "haiku-4.5": {
+      "D_mean": 0.6286,
+      "R_mean": 0.7448,
+      "gap": -0.1162
+    },
+    "llama3.1-8b": {
+      "D_mean": 0.4022,
+      "R_mean": null,
+      "gap": null
+    },
+    "llama3.2-1b": {
+      "D_mean": null,
+      "R_mean": null,
+      "gap": null
+    },
+    "llama3.2-3b": {
+      "D_mean": 0.4722,
+      "R_mean": null,
+      "gap": null
+    },
+    "llama3.3-70b": {
+      "D_mean": null,
+      "R_mean": null,
+      "gap": null
+    },
+    "llama4": {
+      "D_mean": 0.5609,
+      "R_mean": 0.8517,
+      "gap": -0.2908
+    },
+    "mistral-7b": {
+      "D_mean": 0.3333,
+      "R_mean": null,
+      "gap": null
+    },
+    "mistral-small": {
+      "D_mean": 0.4843,
+      "R_mean": 0.7893,
+      "gap": -0.305
+    },
+    "olmo2": {
+      "D_mean": 0.4358,
+      "R_mean": 0.8965,
+      "gap": -0.4607
+    },
+    "opus-4.6": {
+      "D_mean": 0.8904,
+      "R_mean": 0.8033,
+      "gap": 0.0871
+    },
+    "phi3-mini": {
+      "D_mean": null,
+      "R_mean": null,
+      "gap": null
+    },
+    "qwen2.5-14b": {
+      "D_mean": null,
+      "R_mean": null,
+      "gap": null
+    },
+    "qwen2.5-32b": {
+      "D_mean": null,
+      "R_mean": null,
+      "gap": null
+    },
+    "qwen2.5-3b": {
+      "D_mean": null,
+      "R_mean": null,
+      "gap": null
+    },
+    "qwen2.5-72b": {
+      "D_mean": null,
+      "R_mean": null,
+      "gap": null
+    },
+    "qwen2.5-7b": {
+      "D_mean": 0.4332,
+      "R_mean": null,
+      "gap": null
+    },
+    "qwen3": {
+      "D_mean": 0.2408,
+      "R_mean": 0.7929,
+      "gap": -0.5521
+    },
+    "sonnet-4.6": {
+      "D_mean": 0.9198,
+      "R_mean": 0.8015,
+      "gap": 0.1183
     }
   }
 }

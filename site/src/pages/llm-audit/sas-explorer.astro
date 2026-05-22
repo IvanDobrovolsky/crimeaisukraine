@@ -36,7 +36,7 @@ const rows = Object.entries(sasAny.results)
       I: r.I,
       R: r.R,
       primarySas: r.sas,
-      rlhfGap: r.rlhf_gap,
+      dgGap: r.dg_gap,
       n: r.n_languages,
     };
   })
@@ -336,7 +336,7 @@ const jsonPayload = JSON.stringify(rows);
 
         const gapEl = document.createElement('div');
         gapEl.className = 'text-[10px] font-mono text-right hidden md:block';
-        const g = r.rlhfGap;
+        const g = r.dgGap;
         if (g == null) {
           gapEl.textContent = '—';
           gapEl.style.color = '#777777';
@@ -482,7 +482,7 @@ const jsonPayload = JSON.stringify(rows);
           '  l = ' + (r.L ?? 0).toFixed(3) +
           '  i = ' + (r.I ?? 0).toFixed(3) +
           '  r = ' + (r.R ?? 0).toFixed(3) + '<br>' +
-          'declarative-generative gap = ' + (r.rlhfGap != null ? (r.rlhfGap >= 0 ? '+' : '') + r.rlhfGap.toFixed(3) : '—') +
+          'declarative-generative gap = ' + (r.dgGap != null ? (r.dgGap >= 0 ? '+' : '') + r.dgGap.toFixed(3) : '—') +
           '<extra></extra>'
         );
 

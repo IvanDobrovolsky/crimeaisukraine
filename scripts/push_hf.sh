@@ -23,6 +23,10 @@ declare -A DATASET_MAP=(
   ["media-framing"]="${PREFIX}-media"
   ["llm-sovereignty-audit"]="${PREFIX}-llm"
   ["training-corpora-framing"]="${PREFIX}-corpora"
+  ["validation"]="${PREFIX}-validation"
+  ["c4-analysis"]="${PREFIX}-c4-analysis"
+  ["grounding"]="${PREFIX}-grounding"
+  ["source-domains"]="${PREFIX}-source-domains"
 )
 
 # Check HF auth

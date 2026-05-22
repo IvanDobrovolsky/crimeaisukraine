@@ -117,7 +117,14 @@ Each row represents one platform or service tested for how it classifies Crimea 
 
 ## Citation
 
-Dobrovolskyi, I. (2026). Digital Sovereignty of Crimea: A Systematic Audit of Platform Classifications. *Working paper.*
+```bibtex
+@misc{{dobrovolskyi2026digital,
+  author = {{Dobrovolskyi, Ivan}},
+  title = {{Digital Annexation: A Computational Audit of Crimea's Sovereignty Framing in Large Language Models}},
+  year = {{2026}},
+  url = {{https://crimeaisukraine.org}}
+}}
+```
 
 ## License
 
@@ -178,11 +185,13 @@ size_categories:
 
 # Crimea Digital Sovereignty: Academic Paper Sovereignty Framing
 
-{len(df_academic_full):,} academic papers mentioning Crimea, scanned for sovereignty framing signals.
+{len(df_academic_full):,} academic papers mentioning Crimea (OpenAlex, 2010\u20132025), scanned by an 81-signal regex classifier across 3 languages.
 
 ## Description
 
-Academic papers from OpenAlex (2014–2025) that mention Crimea, classified by whether their institutional metadata, affiliations, or text frames Crimea as Ukrainian or Russian territory. Stage-3 manual annotation confirms 1,581 papers with Russian sovereignty framing.
+Three-stage pipeline: (1) regex classifier identifies 5,151 candidates from 91,670 papers, (2) LLM verification (Claude Haiku) narrows to 1,611, (3) manual annotation confirms 1,581 Russia-framing papers (98.3% precision). 161 Western publisher papers verified via CrossRef DOI prefix matching.
+
+84% are mundane science (viticulture, ecology, medicine) \u2014 sovereignty is normalised through institutional metadata, not explicit political claims.
 
 ## Fields
 
@@ -196,21 +205,28 @@ Academic papers from OpenAlex (2014–2025) that mention Crimea, classified by w
 | `journal` | Journal name |
 | `language` | Paper language |
 | `label` | LLM-assigned sovereignty label |
-| `ua_score` | Ukraine sovereignty score (0–1) |
-| `ru_score` | Russia sovereignty score (0–1) |
+| `ua_score` | Ukraine sovereignty score (0\u20131) |
+| `ru_score` | Russia sovereignty score (0\u20131) |
 | `signals` | Sovereignty signals found (JSON string) |
-| `stage3_russia_confirmed` | Boolean — manually verified as Russia-framing in Stage 3 |
+| `stage3_russia_confirmed` | Boolean \u2014 manually verified as Russia-framing in Stage 3 |
 
 ## Key Findings
 
 - 91,670 papers scanned, 5,151 with sovereignty signals
-- 1,581 manually verified as Russia-framing (Stage 3)
-- 84% are mundane science (viticulture, ecology, medicine) — sovereignty is normalised through institutional metadata
-- LLM precision: 98.3% against manual annotation
+- 1,581 manually verified as Russia-framing (Stage 3, 98.3% precision)
+- 161 papers published by Western/international publishers (Elsevier, Springer, Wiley, MDPI, IEEE, etc.)
+- Russia-framing absent before 2014, rises to rival Ukraine-framing by 2021
 
 ## Citation
 
-Dobrovolskyi, I. (2026). Digital Sovereignty of Crimea: A Systematic Audit. *Working paper.*
+```bibtex
+@misc{{dobrovolskyi2026digital,
+  author = {{Dobrovolskyi, Ivan}},
+  title = {{Digital Annexation: A Computational Audit of Crimea's Sovereignty Framing in Large Language Models}},
+  year = {{2026}},
+  url = {{https://crimeaisukraine.org}}
+}}
+```
 
 ## License
 
@@ -285,7 +301,14 @@ Articles identified from GDELT's global news monitoring that frame Crimea as Rus
 
 ## Citation
 
-Dobrovolskyi, I. (2026). Digital Sovereignty of Crimea. *Working paper.*
+```bibtex
+@misc{{dobrovolskyi2026digital,
+  author = {{Dobrovolskyi, Ivan}},
+  title = {{Digital Annexation: A Computational Audit of Crimea's Sovereignty Framing in Large Language Models}},
+  year = {{2026}},
+  url = {{https://crimeaisukraine.org}}
+}}
+```
 
 ## License
 
@@ -344,11 +367,13 @@ size_categories:
 
 # Crimea Digital Sovereignty: LLM Sovereignty Audit
 
-{len(df_llm):,} forced-choice sovereignty queries across 18 LLM models and 50 languages.
+{len(df_llm):,} forced-choice sovereignty queries across 16 models (+ 4 instruct variants) and 50 languages.
 
 ## Description
 
-Each major LLM was asked "Which country is [Crimean city] in?" in 50 languages at temperature=0. Responses were classified as Ukraine (correct), Russia (incorrect), or ambiguous. The Sovereignty Alignment Score (SAS) is a composite metric using tiered weighting.
+16 frontier LLMs from eight laboratories were tested on 23 sovereignty probes (14 forced-choice + 9 free-recall) across 50 languages at temperature=0, seed=42. Responses were classified as Ukraine (correct under international law), Russia (incorrect), or ambiguous. The Sovereignty Alignment Score (SAS) is a weighted composite: SAS = w^T s, where s = (d, l, i, r)^T and w = (0.10, 0.50, 0.20, 0.20)^T.
+
+Four open-weight models were additionally tested as base vs. instruct pairs to isolate the effect of instruction tuning.
 
 ## Files
 
@@ -359,29 +384,57 @@ Each major LLM was asked "Which country is [Crimean city] in?" in 50 languages a
 
 | Field | Description |
 |-------|-------------|
-| `model` | Model identifier (e.g., claude-sonnet-4-20250514, gpt-4o) |
-| `question_id` | Question identifier |
+| `model` | Model identifier (e.g., opus-4.6, gpt-5.4, gemini-2.5-pro) |
+| `question_id` | Question identifier (23 probes: q1-q15 + oq1-oq9) |
 | `question_type` | forced_choice or open_ended |
-| `city` | Crimean city tested (Simferopol, Sevastopol, Yalta, Kerch) |
-| `language` | ISO language code |
+| `city` | Crimean city tested (Simferopol, Sevastopol, Yalta, Kerch, etc.) |
+| `language` | ISO language code (50 languages) |
 | `language_name` | Language name |
 | `prompt` | Exact prompt sent |
 | `raw_answer` | Raw model response |
 | `classified` | Classified answer: ukraine, russia, ambiguous |
-| `expected` | Expected answer (ukraine) |
+| `expected` | Expected answer |
 | `correct` | Boolean — did model answer correctly |
 | `timestamp` | Query timestamp |
 
 ## Key Findings
 
-- Top 5: Gemini 2.5 Pro (0.947), Claude Opus (0.907), GPT-4o (0.906), Claude Sonnet (0.893), Gemini Flash (0.833)
-- Bottom 5: OLMo 3 (0.562), Qwen 3 (0.580), Gemma 4 (0.631), OLMo 2 (0.642), SmolLM 3 (0.642)
-- declarative-generative gap: flagship models score +0.22–0.33 higher than their base counterparts
-- 8 open/small models show negative declarative-generative gap (alignment training worsened sovereignty accuracy)
+- **Top models (SAS):** Gemini 2.5 Pro (0.902), Claude Opus 4.6 (0.894), Claude Sonnet 4.6 (0.894), GPT-5.4 (0.868), Gemini 2.5 Flash (0.856)
+- **Bottom models (SAS):** Qwen 3 (0.652), OLMo 2 (0.656), Gemma 4 (0.684), Mistral Small (0.715), GPT-5.4 Nano (0.737)
+- **Declarative-generative gap:** 7 closed-source models show positive gaps (+0.04 to +0.27 on a 0\u20131 scale); all 9 remaining models show negative gaps
+- **Instruct effect:** instruction tuning improves forced-choice (d) in 3/4 models but decreases free-recall (r) in all 4 (avg \u22128.0 pp)
+
+## Models (16 main + 4 instruct variants)
+
+| Model | Lab | SAS | d | r | \u0394 (d\u2212r) |
+|-------|-----|-----|---|---|------|
+| Gemini 2.5 Pro | Google | 0.902 | 0.926 | 0.654 | +0.272 |
+| Claude Opus 4.6 | Anthropic | 0.894 | 0.890 | 0.803 | +0.087 |
+| Claude Sonnet 4.6 | Anthropic | 0.894 | 0.920 | 0.802 | +0.118 |
+| GPT-5.4 | OpenAI | 0.868 | 0.925 | 0.726 | +0.200 |
+| Gemini 2.5 Flash | Google | 0.856 | 0.864 | 0.708 | +0.156 |
+| Grok 4.20 | xAI | 0.832 | 0.645 | 0.602 | +0.042 |
+| Grok 3 | xAI | 0.802 | 0.549 | 0.712 | \u22120.163 |
+| GPT-5.4 Mini | OpenAI | 0.801 | 0.714 | 0.730 | \u22120.016 |
+| Llama 4 Scout | Meta | 0.796 | 0.561 | 0.852 | \u22120.291 |
+| Claude Haiku 4.5 | Anthropic | 0.770 | 0.629 | 0.745 | \u22120.116 |
+| Grok 4 Fast | xAI | 0.767 | 0.715 | 0.661 | +0.054 |
+| GPT-5.4 Nano | OpenAI | 0.737 | 0.537 | 0.797 | \u22120.260 |
+| Mistral Small | Mistral | 0.715 | 0.484 | 0.789 | \u22120.305 |
+| Gemma 4 | Google | 0.684 | 0.396 | 0.877 | \u22120.481 |
+| OLMo 2 | AI2 | 0.656 | 0.436 | 0.897 | \u22120.461 |
+| Qwen 3 | Alibaba | 0.652 | 0.241 | 0.793 | \u22120.552 |
 
 ## Citation
 
-Dobrovolskyi, I. (2026). Digital Sovereignty of Crimea. *Working paper.*
+```bibtex
+@misc{{dobrovolskyi2026digital,
+  author = {{Dobrovolskyi, Ivan}},
+  title = {{Digital Annexation: A Computational Audit of Crimea's Sovereignty Framing in Large Language Models}},
+  year = {{2026}},
+  url = {{https://crimeaisukraine.org}}
+}}
+```
 
 ## License
 
@@ -456,26 +509,56 @@ size_categories:
 
 # Crimea Digital Sovereignty: Training Corpora Sovereignty Framing
 
-Analysis of how LLM training corpora (C4, RedPajama) frame Crimea's sovereignty.
+Analysis of how LLM training corpora frame Crimea's sovereignty. A Rust-based classifier with 90 legal-grounded signals scanned 34.1M Crimea-mentioning documents across three C4 language splits.
 
 ## Description
 
-Documents from major LLM training corpora that mention Crimea, classified by sovereignty framing. This dataset demonstrates how pre-training data influences model outputs on disputed territory questions.
+Documents from Google's C4 corpus that mention Crimea, classified by sovereignty framing using a deterministic regex classifier (no ML/learned parameters). 90 signals across English, Russian, and Ukrainian, each grounded in legal provenance (OFAC SDN, EU Regulations, GEC reports).
 
 ## Files
 
 - `data.parquet` — C4-English Crimea mentions ({len(df_c4en):,} documents)
 - `sovereignty_training.parquet` — Curated sovereignty training examples ({len(df_sov):,} examples)
 
-## Key Findings
+## Key Findings (full C4 census)
 
-- C4-Russian: 58.7% Russia-framed
-- C4-English: 10.0% Russia-framed
-- Models trained on higher Russia-framing corpora produce more incorrect sovereignty answers
+| Split | Total docs | Russia-framing | % |
+|-------|-----------|----------------|---|
+| English | 286,117 | 3,607 | 1.26% |
+| Ukrainian | 3,639,461 | 6,271 | 0.17% |
+| Russian | 30,207,220 | 881,644 | 2.92% |
+| **Total** | **34,132,798** | **891,522** | **2.61%** |
+
+- 95.3% of Russia-framing documents originate from independent (non-state) sources
+- Only 4.7% from state-controlled or sanctioned sources (OFAC/EU/UK lists)
+- Validated by two independent annotators on 300 samples (100 per split): weighted precision 93.9%
+
+## Source classification
+
+| Source tier | Count | % | Legal provenance |
+|------------|-------|---|-----------------|
+| Independent | 849,761 | 95.3% | No state ties identified |
+| State-adjacent | 16,772 | 1.9% | Sberbank/Gazprom, EU Pkg 16 |
+| State media (T1) | 14,406 | 1.6% | OFAC SDN, EU Regulations |
+| Sanctioned proxy | 4,928 | 0.6% | GEC 2020, OFAC EO14024 |
+| Government | 3,156 | 0.4% | Russian federal law |
+| State-controlled (T2) | 2,470 | 0.3% | Gazprom Media/NMG |
+| Pravda network | 29 | <0.1% | VIGINUM/SGDSN 2024 |
+
+## Classifier source code
+
+[github.com/IvanDobrovolsky/crimeaisukraine/c4_sovereignty/scanner](https://github.com/IvanDobrovolsky/crimeaisukraine/tree/main/c4_sovereignty/scanner)
 
 ## Citation
 
-Dobrovolskyi, I. (2026). Digital Sovereignty of Crimea. *Working paper.*
+```bibtex
+@misc{{dobrovolskyi2026digital,
+  author = {{Dobrovolskyi, Ivan}},
+  title = {{Digital Annexation: A Computational Audit of Crimea's Sovereignty Framing in Large Language Models}},
+  year = {{2026}},
+  url = {{https://crimeaisukraine.org}}
+}}
+```
 
 ## License
 

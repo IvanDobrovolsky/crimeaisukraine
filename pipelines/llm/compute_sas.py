@@ -385,11 +385,11 @@ def main():
         }
 
     # declarative-generative gap = D - R
-    rlhf_gap = {}
+    dg_gap = {}
     for m in all_models:
         d = tier_means[m]["D"]
         r = tier_means[m]["R"]
-        rlhf_gap[m] = {
+        dg_gap[m] = {
             "D_mean": d,
             "R_mean": r,
             "gap": round(d - r, 4) if (d is not None and r is not None) else None,
@@ -469,7 +469,7 @@ def main():
             "pc1":           per_model_pc1,
         },
         "tier_means": tier_means,
-        "rlhf_gap": rlhf_gap,
+        "dg_gap": dg_gap,
         "sensitivity_spearman_vs_primary": sensitivity,
         "per_cell": per_cell_primary,
     }
@@ -489,7 +489,7 @@ def main():
             {
                 "name": m,
                 "tiers": {t: tier_means[m][t] for t in "DLIR"},
-                "rlhf_gap": rlhf_gap[m]["gap"],
+                "dg_gap": dg_gap[m]["gap"],
                 "n_languages": per_model_scheme["primary"][m]["n_languages"],
             }
             for m in sorted(all_models,
@@ -531,7 +531,7 @@ def main():
                 "L": tier_means[m]["L"],
                 "I": tier_means[m]["I"],
                 "R": tier_means[m]["R"],
-                "rlhf_gap": rlhf_gap[m]["gap"],
+                "dg_gap": dg_gap[m]["gap"],
                 "n_languages": per_model_scheme["primary"][m]["n_languages"],
             }
             for m in all_models
@@ -561,7 +561,7 @@ def main():
         mn = per_model_min[m]
         hm = per_model_hm[m]
         pc = per_model_pc1.get(m)
-        gap = rlhf_gap[m]["gap"]
+        gap = dg_gap[m]["gap"]
         nl = per_model_scheme["primary"][m]["n_languages"]
         def fmt(v):
             return f"{v:.3f}" if isinstance(v, (int, float)) else "  —  "
