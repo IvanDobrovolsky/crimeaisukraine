@@ -87,7 +87,7 @@
   },
   "key_findings": [
     "Declarative-generative gap: 7 models show positive gap (+0.04 to +0.27), 9 show negative.",
-    "Instruct comparison: d improves 3/4, r decreases all 4 (avg -8.2pp).",
+    "Instruct comparison: d improves 3/4, r decreases all 4 (avg -8.0pp).",
     "SAS ranking stable across weight schemes (Spearman rho >= 0.97)."
   ],
   "limitations": [
