@@ -1024,7 +1024,7 @@ const mediaViolatorsByFilter = mediaViolators as any;
       <h3 class="text-xs font-bold text-[#777777] uppercase tracking-wider mb-2">
         {lang === 'uk' ? 'Хто ці 239 порушників?' : 'Who are the 239 non-Russian violators?'}
       </h3>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center">
         <div class="bg-[#FFFFFF] rounded-lg p-3 border border-[#E5E5E5]">
           <div class="text-lg font-bold text-[#CD2E4A]">53</div>
           <div class="text-[9px] text-[#777777]">{lang === 'uk' ? 'Проросійський фрінж' : 'Pro-Russian fringe'}</div>
@@ -1032,6 +1032,10 @@ const mediaViolatorsByFilter = mediaViolators as any;
         <div class="bg-[#FFFFFF] rounded-lg p-3 border border-[#E5E5E5]">
           <div class="text-lg font-bold text-[#D4860B]">47</div>
           <div class="text-[9px] text-[#777777]">{lang === 'uk' ? 'Агрегатори контенту' : 'Content aggregators'}</div>
+        </div>
+        <div class="bg-[#FFFFFF] rounded-lg p-3 border border-[#E5E5E5]">
+          <div class="text-lg font-bold text-[#777777]">127</div>
+          <div class="text-[9px] text-[#777777]">{lang === 'uk' ? 'Інші некласифіковані' : 'Other uncategorized'}</div>
         </div>
         <div class="bg-[#FFFFFF] rounded-lg p-3 border border-[#E5E5E5]">
           <div class="text-lg font-bold text-[#777777]">12</div>
@@ -1179,8 +1183,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.llmAuditTitle}</h2>
     <p class="text-[#555555] mb-3">
       {lang === 'uk'
-        ? '16 моделей з 8 лабораторій, детермінований аудит при temperature=0. Дворівнева елісітація: 1850 запитань з вимушеним вибором + 676 відкритих запитань на модель. ~45 500 запитів загалом.'
-        : '16 models from 8 labs, deterministic audit at temperature=0. Dual-tier elicitation: 1,850 forced-choice queries + 676 open-ended queries per model. ~45,500 queries total.'}
+        ? `16 моделей з 8 лабораторій, детермінований аудит при temperature=0. Дворівнева елісітація: 1 850 запитань з вимушеним вибором + 2 600 відкритих запитань на модель. ~${llmTotalQueries.toLocaleString()} запитів загалом.`
+        : `16 models from 8 labs, deterministic audit at temperature=0. Dual-tier elicitation: 1,850 forced-choice queries + 2,600 open-ended queries per model. ~${llmTotalQueries.toLocaleString()} queries total.`}
     </p>
     <div class="text-xs text-[#777777] mb-4 flex flex-wrap items-center gap-2">
       <span class="text-[#555555]">📂 pipelines/llm/</span>
@@ -1252,8 +1256,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
           </div>
           <div class="text-xs text-[#555555] mt-1">
             {lang === 'uk'
-              ? '4 слайдера · 33 моделі · живий Spearman ρ проти первинної схеми · підключи будь-які ваги, що тобі подобаються'
-              : '4 sliders · 33 models · live Spearman ρ vs the primary scheme · plug in any weights you like'}
+              ? '4 слайдера · 31 модель · живий Spearman ρ проти первинної схеми · підключи будь-які ваги, що тобі подобаються'
+              : '4 sliders · 31 models · live Spearman ρ vs the primary scheme · plug in any weights you like'}
           </div>
         </div>
         <div class="text-[#CD2E4A] group-hover:text-[#333333] transition text-2xl">→</div>
