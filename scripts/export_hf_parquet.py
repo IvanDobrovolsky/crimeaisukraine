@@ -189,7 +189,7 @@ size_categories:
 
 ## Description
 
-Three-stage pipeline: (1) regex classifier identifies 5,151 candidates from 91,670 papers, (2) LLM verification (Claude Haiku) narrows to 1,611, (3) manual annotation confirms 1,581 Russia-framing papers (98.3% precision). 161 Western publisher papers verified via CrossRef DOI prefix matching.
+Three-stage pipeline: (1) regex classifier identifies 5,151 candidates from 91,670 papers, (2) LLM verification (Claude Haiku) narrows to 1,611, (3) manual annotation confirms 1,581 Russia-framing papers (98.5% precision). 161 Western publisher papers verified via CrossRef DOI prefix matching.
 
 84% are mundane science (viticulture, ecology, medicine) \u2014 sovereignty is normalised through institutional metadata, not explicit political claims.
 
@@ -213,7 +213,7 @@ Three-stage pipeline: (1) regex classifier identifies 5,151 candidates from 91,6
 ## Key Findings
 
 - 91,670 papers scanned, 5,151 with sovereignty signals
-- 1,581 manually verified as Russia-framing (Stage 3, 98.3% precision)
+- 1,581 manually verified as Russia-framing (Stage 3, 98.5% precision)
 - 161 papers published by Western/international publishers (Elsevier, Springer, Wiley, MDPI, IEEE, etc.)
 - Russia-framing absent before 2014, rises to rival Ukraine-framing by 2021
 

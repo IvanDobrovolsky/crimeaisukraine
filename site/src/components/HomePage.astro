@@ -1055,8 +1055,8 @@ const mediaViolatorsByFilter = mediaViolators as any;
   <div class="bg-[#F7F7F7] border border-[#E5E5E5] rounded-2xl p-8 md:p-10">
     <h2 class="text-2xl md:text-3xl font-bold mb-2">{t.framingAcademicTitle} — 91,670 {lang === 'uk' ? 'робіт' : 'Papers'}</h2>
     <p class="text-[#555555] mb-4">{lang === 'uk'
-      ? 'OpenAlex, 2010–2026. 91 670 робіт → Етап 1 regex: 5 151 → Етап 2 LLM: 1 581 → Етап 3 ручна перевірка: 1 581 підтверджено (точність 98,3%, хибно-позитивних 1,7%).'
-      : 'OpenAlex, 2010–2026. 91,670 papers → Stage 1 regex: 5,151 → Stage 2 LLM: 1,581 → Stage 3 human review: 1,581 confirmed (98.3% precision, 1.7% false positive rate).'
+      ? 'OpenAlex, 2010–2026. 91 670 робіт → Етап 1 regex: 5 151 → Етап 2 LLM: 1 581 → Етап 3 ручна перевірка: 1 581 підтверджено (точність 98,5%, хибно-позитивних 1,5%).'
+      : 'OpenAlex, 2010–2026. 91,670 papers → Stage 1 regex: 5,151 → Stage 2 LLM: 1,581 → Stage 3 human review: 1,581 confirmed (98.5% precision, 1.5% false positive rate).'
     }</p>
     <div class="text-xs text-[#777777] mb-6 flex flex-wrap items-center gap-2">
       <span class="text-[#555555]">📂 pipelines/academic/</span>
@@ -1086,9 +1086,9 @@ const mediaViolatorsByFilter = mediaViolators as any;
           <span class="font-mono text-[#333333]">1,605 {t.stage3Reviewed} → 1,581 {t.stage3Confirmed}</span>
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-[#2D8A4E] font-bold">{t.precisionLabel}: 98.3%</span>
+          <span class="text-[#2D8A4E] font-bold">{t.precisionLabel}: 98.5%</span>
           <span class="text-[#777777]">|</span>
-          <span class="text-[#555555]">{t.fpLabel}: 1.7%</span>
+          <span class="text-[#555555]">{t.fpLabel}: 1.5%</span>
         </div>
       </div>
     </div>

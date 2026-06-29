@@ -18,10 +18,10 @@
 |-------|---------|
 | Geodata | Natural Earth `SOVEREIGNT="Russia"` propagates to 65.7M weekly downloads |
 | Training data | 891,522 / 34.1M Crimea-mentioning C4 docs contain Russian designations (2.61%). 95.3% from non-sanctioned sources |
-| Academic | 1,581 papers with Russian affiliations confirmed (98.3% precision). 161 Western publishers |
+| Academic | 1,581 papers with Russian affiliations confirmed (98.5% precision). 161 Western publishers |
 | LLM behavior | 16 models, 50 languages. Declarative-generative gap +0.04 to +0.27 on 7 flagships |
 | Instruct comparison | Instruction tuning improves forced-choice in 3/4 models, worsens free-recall in all 4 |
-| Web search | 5,974 citations, 7.6% Russian-origin. 5/7 GEC proxy sites accessible |
+| Web search | 5,974 citations, 7.6% Russian-origin. No GEC proxies in baseline; 5/7 accessible via targeted probes |
 
 ## Pipelines
 

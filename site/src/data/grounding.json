@@ -116,7 +116,7 @@
   "key_findings": [
     "7.6% of web search citations originate from Russian domains.",
     "5 sanctioned media citations (all RIA Novosti, all Perplexity).",
-    "5 of 7 US State Dept GEC-documented proxy sites accessible through LLM web search.",
+    "No GEC-documented proxy sites appeared in the 1,000-response baseline. Targeted probes confirmed 5 of 7 remain accessible.",
     "Google Search content policy has no category for sanctions or state propaganda.",
     "EU Digital Services Act does not require search engines to filter state propaganda."
   ],
