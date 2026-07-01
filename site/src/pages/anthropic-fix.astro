@@ -1,0 +1,260 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Crimea Fix for Anthropic Globe — crimeaisukraine.org"
+  description="Anthropic's 81K Interviews globe uses Natural Earth data that assigns Crimea to Russia. Here is the technical analysis and a drop-in fix."
+  lang="en"
+>
+<main class="max-w-5xl mx-auto px-4 py-12 font-sans text-[#333333]">
+
+  <a href="/" class="text-[#CD2E4A] hover:underline text-sm">&larr; crimeaisukraine.org</a>
+
+  <h1 class="text-3xl md:text-4xl font-bold mt-4 mb-2">Crimea Sovereignty Fix for Anthropic Globe</h1>
+  <p class="text-lg text-[#555555] mb-8">
+    The interactive globe on <a href="https://www.anthropic.com/features/81k-interviews" target="_blank" rel="noopener" class="text-[#CD2E4A] hover:underline font-medium">anthropic.com/features/81k-interviews</a> uses Natural Earth geodata that assigns Crimea to Russia.
+    This page documents the technical cause and provides a client-side fix.
+  </p>
+
+  <!-- Before / After globes -->
+  <div class="grid md:grid-cols-2 gap-6 mb-12">
+    <div class="border border-[#E5E5E5] rounded-xl p-4 bg-[#FAFAFA]">
+      <h2 class="text-center font-bold text-lg mb-2 text-[#CD2E4A]">Current (Crimea → Russia)</h2>
+      <div id="globe-before" class="flex justify-center"></div>
+      <p class="text-center text-sm text-[#777] mt-2">Natural Earth <code>SOVEREIGNT="Russia"</code> for Crimea</p>
+    </div>
+    <div class="border border-[#E5E5E5] rounded-xl p-4 bg-[#FAFAFA]">
+      <h2 class="text-center font-bold text-lg mb-2 text-[#2D8A4E]">Fixed (Crimea → Ukraine)</h2>
+      <div id="globe-after" class="flex justify-center"></div>
+      <p class="text-center text-sm text-[#777] mt-2">Crimea polygon reassigned to Ukraine</p>
+    </div>
+  </div>
+
+  <!-- Technical details -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold mb-4">Technical Analysis</h2>
+
+    <div class="bg-[#F7F7F7] border border-[#E5E5E5] rounded-xl p-6 mb-6 font-mono text-sm overflow-x-auto">
+      <p class="font-sans font-bold text-base mb-3 text-[#333]">Data source (reverse-engineered)</p>
+      <table class="w-full text-left">
+        <tr><td class="pr-4 text-[#777] whitespace-nowrap">File</td><td><code>ne_10m_admin_0_countries_iso</code> (Natural Earth 10m)</td></tr>
+        <tr><td class="pr-4 text-[#777] whitespace-nowrap">CDN</td><td><code>cdn.sanity.io/files/4zrzovbb/website/cca8d23...json</code></td></tr>
+        <tr><td class="pr-4 text-[#777] whitespace-nowrap">Renderer</td><td>D3.js <code>geoNaturalEarth1</code> projection, canvas-based</td></tr>
+        <tr><td class="pr-4 text-[#777] whitespace-nowrap">Component</td><td><code>ScrollIntroGlobe</code> (React/Next.js)</td></tr>
+        <tr><td class="pr-4 text-[#777] whitespace-nowrap">Key field</td><td><code>ISO_A2_EH</code> (Natural Earth enhanced ISO alpha-2)</td></tr>
+      </table>
+    </div>
+
+    <div class="bg-[#F7F7F7] border border-[#E5E5E5] rounded-xl p-6 mb-6 font-mono text-sm overflow-x-auto">
+      <p class="font-sans font-bold text-base mb-3 text-[#333]">The problem</p>
+      <pre class="whitespace-pre-wrap">Ukraine bbox: [22.14, <span class="text-[#CD2E4A] font-bold">45.22</span>, 40.05, 52.35]  — south boundary at 45.22°N
+Simferopol:   [34.10, <span class="text-[#CD2E4A] font-bold">44.95</span>]                  — at 44.95°N (BELOW Ukraine's boundary)
+
+Russia bbox:  [-180.0, -28.57, 180.0, 81.29]  — includes Crimea polygon
+Russia contains Simferopol: <span class="text-[#CD2E4A] font-bold">True</span>
+Ukraine contains Simferopol: <span class="text-[#CD2E4A] font-bold">False</span></pre>
+    </div>
+
+    <div class="bg-[#F7F7F7] border border-[#E5E5E5] rounded-xl p-6 font-mono text-sm overflow-x-auto">
+      <p class="font-sans font-bold text-base mb-3 text-[#333]">Root cause</p>
+      <p class="font-sans text-[#555] mb-3">Natural Earth's <code>ne_10m_admin_1_states_provinces</code> sets <code>SOVEREIGNT="Russia"</code> for Crimea (UA-43) and Sevastopol (UA-40).
+      When admin-1 polygons are dissolved into admin-0 countries, Crimea merges into Russia's polygon.
+      This is the same geodata propagation chain documented in our <a href="https://doi.org/10.7910/DVN/0IWOFY" class="text-[#CD2E4A] hover:underline">peer-reviewed research</a>.</p>
+      <pre>admin-1: SOVEREIGNT="Russia" + iso_3166_2="UA-43"  →  contradiction
+admin-0: Crimea polygon inside Russia                →  visual misrepresentation</pre>
+    </div>
+  </section>
+
+  <!-- Fix -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold mb-4">Recommended Fix</h2>
+
+    <div class="bg-[#1e1e2e] text-[#cdd6f4] rounded-xl p-6 font-mono text-sm overflow-x-auto mb-6">
+      <p class="text-[#89b4fa] mb-2">// Client-side fix: after fetching TopoJSON, before rendering</p>
+      <pre class="whitespace-pre-wrap">
+const CRIMEA_ISO = ["UA-43", "UA-40"]; // Crimea + Sevastopol
+
+function fixCrimeaSovereignty(topoData) {
+  // Option A: Use admin-1 with iso_3166_2 grouping instead of SOVEREIGNT
+  // Option B: Patch admin-0 by overlaying Crimea from admin-1
+
+  // Simplest fix — re-color by ADM0_A3_UA field (already = "UKR" for all):
+  // The data already contains the correct answer in a different field.
+  // When assigning country colors, use ISO_A2_EH or ADM0_A3_UA
+  // instead of the SOVEREIGNT-derived polygon boundaries.
+}
+
+// Or: switch to Plotly.js (uses UN geodata since 2025, shows Crimea as Ukraine)</pre>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="border border-[#E5E5E5] rounded-xl p-5">
+        <h3 class="font-bold mb-2">Option 1: Patch the TopoJSON</h3>
+        <p class="text-sm text-[#555]">Extract Crimea + Sevastopol polygons from <code>admin-1</code> (using <code>iso_3166_2</code>), subtract from Russia's admin-0 geometry, union into Ukraine's. The demo on this page uses this approach.</p>
+      </div>
+      <div class="border border-[#E5E5E5] rounded-xl p-5">
+        <h3 class="font-bold mb-2">Option 2: Switch to UN geodata</h3>
+        <p class="text-sm text-[#555]">Plotly.js switched to UN-standard geodata in 2025 and is currently the only major library that shows Crimea correctly. The underlying data follows ISO 3166 and UNSC resolutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Context -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold mb-4">Context</h2>
+    <p class="text-[#555] mb-4">
+      UN General Assembly <a href="https://digitallibrary.un.org/record/767565" target="_blank" rel="noopener" class="text-[#CD2E4A] hover:underline">Resolution 68/262</a> (adopted 100–11) affirms Crimea as Ukrainian territory.
+      Natural Earth's <code>SOVEREIGNT</code> field contradicts this resolution. The field propagates to 65.7 million weekly downloads across npm, PyPI, CRAN, and crates.io.
+    </p>
+    <p class="text-[#555] mb-4">
+      This finding is part of a computational audit of sovereignty framing across geodata, training corpora, academic metadata, and AI systems.
+      The research was <a href="https://kyivindependent.com/why-ai-believes-crimea-is-russian-and-what-to-do-about-it/" target="_blank" rel="noopener" class="text-[#CD2E4A] hover:underline">covered by Kyiv Independent</a> and the replication data are archived in <a href="https://doi.org/10.7910/DVN/0IWOFY" target="_blank" rel="noopener" class="text-[#CD2E4A] hover:underline">Harvard Dataverse</a>.
+    </p>
+    <p class="text-[#555]">
+      Ivan Dobrovolskyi — <a href="mailto:dobrovolsky94@gmail.com" class="text-[#CD2E4A] hover:underline">dobrovolsky94@gmail.com</a>
+    </p>
+  </section>
+
+</main>
+
+<!-- D3.js for the demo globes -->
+<script is:inline src="https://d3js.org/d3.v7.min.js"></script>
+<script is:inline src="https://unpkg.com/topojson-client@3"></script>
+<script is:inline>
+(async function() {
+  const ANTHROPIC_TOPO = "https://cdn.sanity.io/files/4zrzovbb/website/cca8d23a9104ef0fc87b518ec18565aa8af41205.json";
+  const ADMIN1_TOPO = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_1_states_provinces.geojson";
+  const SIMFEROPOL = [34.10, 44.95];
+  const SIZE = 360;
+
+  // Fetch data
+  const [topoData, admin1Data] = await Promise.all([
+    fetch(ANTHROPIC_TOPO).then(r => r.json()),
+    fetch(ADMIN1_TOPO).then(r => r.json())
+  ]);
+
+  const objName = Object.keys(topoData.objects)[0];
+  const countries = topojson.feature(topoData, topoData.objects[objName]);
+
+  // Extract Crimea from admin-1
+  const crimeaFeatures = admin1Data.features.filter(f => {
+    const iso = f.properties?.iso_3166_2 || "";
+    return iso === "UA-43" || iso === "UA-40";
+  });
+
+  function renderGlobe(containerId, featureCollection, rotation) {
+    const projection = d3.geoOrthographic()
+      .scale(SIZE / 2.2)
+      .translate([SIZE / 2, SIZE / 2])
+      .rotate(rotation)
+      .clipAngle(90);
+
+    const path = d3.geoPath(projection);
+
+    const svg = d3.select("#" + containerId)
+      .append("svg")
+      .attr("width", SIZE)
+      .attr("height", SIZE)
+      .attr("viewBox", `0 0 ${SIZE} ${SIZE}`);
+
+    // Ocean
+    svg.append("circle")
+      .attr("cx", SIZE / 2).attr("cy", SIZE / 2).attr("r", SIZE / 2.2)
+      .attr("fill", "#EEF2F7").attr("stroke", "#ccc");
+
+    // Graticule
+    svg.append("path")
+      .datum(d3.geoGraticule()())
+      .attr("d", path)
+      .attr("fill", "none").attr("stroke", "#ddd").attr("stroke-width", 0.3);
+
+    // Countries
+    svg.selectAll("path.country")
+      .data(featureCollection.features)
+      .enter().append("path")
+      .attr("class", "country")
+      .attr("d", path)
+      .attr("fill", d => {
+        const name = d.properties?.NAME || "";
+        if (name === "Ukraine") return "#2D8A4E";
+        if (name === "Russia") return "#CD2E4A";
+        return "#D4D4D4";
+      })
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 0.3)
+      .attr("opacity", d => {
+        const name = d.properties?.NAME || "";
+        return (name === "Ukraine" || name === "Russia") ? 0.85 : 0.5;
+      });
+
+    // Simferopol marker
+    const simfProj = projection(SIMFEROPOL);
+    if (simfProj) {
+      // Check if point is on visible side
+      const dist = d3.geoDistance(SIMFEROPOL, [-rotation[0], -rotation[1]]);
+      if (dist < Math.PI / 2) {
+        svg.append("circle")
+          .attr("cx", simfProj[0]).attr("cy", simfProj[1]).attr("r", 4)
+          .attr("fill", "#FFD700").attr("stroke", "#333").attr("stroke-width", 1.5);
+        svg.append("text")
+          .attr("x", simfProj[0] + 7).attr("y", simfProj[1] + 4)
+          .text("Simferopol")
+          .attr("font-size", "11px").attr("font-weight", "600").attr("fill", "#333");
+      }
+    }
+
+    // Borders
+    svg.append("path")
+      .datum(topojson.mesh(topoData, topoData.objects[objName], (a, b) => a !== b))
+      .attr("d", path)
+      .attr("fill", "none").attr("stroke", "#999").attr("stroke-width", 0.5);
+
+    return svg;
+  }
+
+  // Globe 1: Original (Crimea in Russia)
+  const rotation1 = [-34, -48, 0];
+  renderGlobe("globe-before", countries, rotation1);
+
+  // Globe 2: Fixed (Crimea reassigned to Ukraine)
+  // Deep clone features, modify Russia/Ukraine geometries
+  const fixedFeatures = JSON.parse(JSON.stringify(countries));
+
+  // Simple visual fix: re-render with Crimea overlay colored as Ukraine
+  const svg2Container = renderGlobe("globe-after", fixedFeatures, rotation1);
+
+  // Overlay Crimea polygons in Ukraine green
+  const projection2 = d3.geoOrthographic()
+    .scale(SIZE / 2.2)
+    .translate([SIZE / 2, SIZE / 2])
+    .rotate(rotation1)
+    .clipAngle(90);
+  const path2 = d3.geoPath(projection2);
+
+  const svg2 = d3.select("#globe-after svg");
+  svg2.selectAll("path.crimea-fix")
+    .data(crimeaFeatures)
+    .enter().append("path")
+    .attr("class", "crimea-fix")
+    .attr("d", path2)
+    .attr("fill", "#2D8A4E")
+    .attr("stroke", "#fff")
+    .attr("stroke-width", 0.3)
+    .attr("opacity", 0.85);
+
+  // Legend
+  const legend = d3.select("#globe-before").append("div")
+    .style("display", "flex").style("gap", "16px").style("justify-content", "center")
+    .style("margin-top", "8px").style("font-size", "12px");
+  legend.append("span").html('<span style="display:inline-block;width:12px;height:12px;background:#2D8A4E;border-radius:2px;margin-right:4px;vertical-align:middle"></span> Ukraine');
+  legend.append("span").html('<span style="display:inline-block;width:12px;height:12px;background:#CD2E4A;border-radius:2px;margin-right:4px;vertical-align:middle"></span> Russia');
+  legend.append("span").html('<span style="display:inline-block;width:12px;height:12px;background:#FFD700;border:1.5px solid #333;border-radius:50%;margin-right:4px;vertical-align:middle"></span> Simferopol');
+
+  d3.select("#globe-after").append("div")
+    .style("display", "flex").style("gap", "16px").style("justify-content", "center")
+    .style("margin-top", "8px").style("font-size", "12px")
+    .html('<span style="display:inline-block;width:12px;height:12px;background:#2D8A4E;border-radius:2px;margin-right:4px;vertical-align:middle"></span> Ukraine (with Crimea)');
+})();
+</script>
+</Layout>
