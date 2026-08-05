@@ -683,6 +683,21 @@ const mediaViolatorsByFilter = mediaViolators as any;
       </div>
     </a>
 
+    <!-- Link to JS library census -->
+    <a href="/geodata-propagation" class="block mb-6 bg-gradient-to-r from-[#CD2E4A]/20 to-[#D4860B]/10 border border-[#CD2E4A]/40 hover:border-[#CD2E4A] rounded-xl p-4 transition group">
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <div class="font-bold text-[#333333] group-hover:text-[#CD2E4A] transition">{lang === 'uk'
+            ? 'Інтерактив: хто малює Крим російським? Перепис усіх JS-бібліотек мап →'
+            : 'Interactive: Who draws Crimea Russian? A census of every JS map library \u2192'}</div>
+          <div class="text-xs text-[#555555] mt-1">{lang === 'uk'
+            ? 'Кожна бібліотека протестована емпірично. 24.9M завантажень/тиждень у сім\u2019ї Natural Earth (Крим → Росія). plotly перейшов на дані ООН — але CDN-дефолт досі віддає Крим Росії.'
+            : 'Every library tested empirically. 24.9M weekly downloads in the Natural Earth default family (Crimea \u2192 Russia). plotly switched to UN data \u2014 but its CDN default still serves the annexation.'}</div>
+        </div>
+        <span class="text-2xl shrink-0">📊</span>
+      </div>
+    </a>
+
     <!-- 5-stat header row -->
     <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
       <div class="bg-[#FFFFFF] rounded-xl p-4 border border-[#CD2E4A]/30 text-center">

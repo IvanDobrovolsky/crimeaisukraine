@@ -1,0 +1,51 @@
+{
+  "checked": "2026-08-05",
+  "note": "npm weekly downloads hardcoded as of 2026-08-05 (api.npmjs.org). Crimea verdicts verified by point-in-polygon test of Simferopol/Sevastopol against each library's shipped/CDN geometry, with Kyiv/Moscow calibration. Full evidence: data/geodata_js_census.json in the research repo.",
+  "families": [
+    { "id": "ne_default", "label": "Natural Earth default", "color": "#CD2E4A", "sub": "SOVEREIGNT=Russia for Crimea; repo dormant since June 2022" },
+    { "id": "un_geodata", "label": "UN geodata", "color": "#2D8A4E", "sub": "adopted by plotly v3.1 (2025)" },
+    { "id": "pre2014_snapshot", "label": "Pre-2014 NE snapshot", "color": "#57A773", "sub": "frozen before the annexation — correct by inertia" },
+    { "id": "corrected_custom", "label": "Custom corrected data", "color": "#2D8A4E", "sub": "vendor-maintained geometry" },
+    { "id": "carveout", "label": "Neutral carve-out", "color": "#8A8A8A", "sub": "Crimea assigned to no one" },
+    { "id": "tiles_or_user_data", "label": "Tiles / user data", "color": "#9AA3AD", "sub": "no bundled polygons" }
+  ],
+  "verdicts": {
+    "russia": { "label": "Crimea → Russia", "color": "#CD2E4A" },
+    "russia_recipe": { "label": "Crimea → Russia (via canonical recipes)", "color": "#CD2E4A" },
+    "ukraine": { "label": "Crimea → Ukraine", "color": "#2D8A4E" },
+    "ukraine_recipe": { "label": "Crimea → Ukraine (via canonical recipes)", "color": "#2D8A4E" },
+    "ukraine_split": { "label": "npm → Ukraine · CDN default → Russia", "color": "#D4860B" },
+    "neither": { "label": "Crimea → no one (carve-out)", "color": "#8A8A8A" },
+    "depends": { "label": "Depends on data the developer supplies", "color": "#9AA3AD" },
+    "untested": { "label": "Not tested (proprietary format)", "color": "#C9C9C9" }
+  },
+  "libraries": [
+    { "name": "d3 + d3-geo", "npm_week": 17442478, "family": "ne_default", "verdict": "russia_recipe", "recipe": true, "detail": "No bundled geometry, but the canonical D3 choropleth recipe fetches world-atlas. d3-geo alone: 26.0M/wk." },
+    { "name": "topojson-client", "npm_week": 5387222, "family": "ne_default", "verdict": "russia_recipe", "recipe": true, "detail": "world-atlas companion decoder in every D3 map tutorial." },
+    { "name": "react-simple-maps", "npm_week": 920944, "family": "ne_default", "verdict": "russia_recipe", "recipe": true, "detail": "Official docs point at world-atlas CDN TopoJSON." },
+    { "name": "@observablehq/plot", "npm_week": 602268, "family": "ne_default", "verdict": "russia_recipe", "recipe": true, "detail": "Geo mark examples use world-atlas." },
+    { "name": "world-atlas", "npm_week": 545551, "family": "ne_default", "verdict": "russia", "recipe": false, "detail": "Repackaged NE. countries-110m and countries-50m both verified: Crimean cities inside Russia polygon." },
+    { "name": "chartjs-chart-geo", "npm_week": 46276, "family": "ne_default", "verdict": "russia_recipe", "recipe": true, "detail": "Docs fetch world-atlas from unpkg. Host library chart.js: 12.8M/wk." },
+    { "name": "plotly.js", "npm_week": 1108211, "family": "un_geodata", "verdict": "ukraine_split", "recipe": false, "detail": "v3.1 (2025) switched bundled maps to UN geodata — verified Ukraine. BUT cdn.plot.ly default still serves the legacy Natural Earth map — verified Russia. Migration issue #7505 open since Aug 2025. Count = plotly.js + plotly.js-dist-min." },
+    { "name": "echarts", "npm_week": 4497949, "family": "pre2014_snapshot", "verdict": "ukraine", "recipe": false, "detail": "The de-facto standard world.json (echarts@4.9) predates 2014 — verified Ukraine. v5 unbundled maps." },
+    { "name": "highcharts", "npm_week": 2511516, "family": "carveout", "verdict": "neither", "recipe": false, "detail": "Deliberate policy: world map contains no polygon for Crimea; paired ru-all / ru-all-disputed variants push the choice to the developer." },
+    { "name": "vega + vega-lite", "npm_week": 1520633, "family": "pre2014_snapshot", "verdict": "ukraine_recipe", "recipe": true, "detail": "vega-datasets world-110m is a pre-2014 NE snapshot — verified Ukraine." },
+    { "name": "@amcharts/amcharts5", "npm_week": 336109, "family": "corrected_custom", "verdict": "ukraine", "recipe": false, "detail": "worldLow verified Ukraine; no Russia-worldview variant exists." },
+    { "name": "datamaps", "npm_week": 261704, "family": "pre2014_snapshot", "verdict": "ukraine", "recipe": false, "detail": "Embedded world topology frozen ~2013 — verified Ukraine (calibrated). Unmaintained." },
+    { "name": "jsvectormap", "npm_week": 66823, "family": "pre2014_snapshot", "verdict": "ukraine", "recipe": false, "detail": "jvectormap-lineage Miller paths — Simferopol verified in UA path." },
+    { "name": "fusioncharts", "npm_week": 49067, "family": "tiles_or_user_data", "verdict": "untested", "recipe": false, "detail": "Proprietary webpack bundle; geometry not extracted — flagged, not guessed." },
+    { "name": "anychart", "npm_week": 8887, "family": "corrected_custom", "verdict": "ukraine", "recipe": false, "detail": "CDN geodata world.json verified Ukraine (calibrated mill+affine)." },
+    { "name": "leaflet + react-leaflet", "npm_week": 10288605, "family": "tiles_or_user_data", "verdict": "depends", "recipe": false, "detail": "No bundled polygons. Choropleth overlays pull whatever GeoJSON the tutorial uses: datahub geo-countries (Russia) or johan (Ukraine) — a coin flip." },
+    { "name": "ol (OpenLayers)", "npm_week": 789796, "family": "tiles_or_user_data", "verdict": "depends", "recipe": false, "detail": "No bundled polygons." }
+  ],
+  "totals": {
+    "ne_default_exposure": 24944729,
+    "ukraine_bundled": 6279683,
+    "carveout": 2511516,
+    "agnostic": 11078401
+  },
+  "datasets_no_npm": [
+    { "name": "datahub geo-countries", "verdict": "russia", "detail": "NE-derived GeoJSON used across Leaflet/folium tutorials — verified Russia." },
+    { "name": "johan/world.geo.json", "verdict": "ukraine", "detail": "Pre-2014 tutorial staple — verified Ukraine." }
+  ]
+}

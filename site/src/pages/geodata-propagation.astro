@@ -1,0 +1,245 @@
+---
+import Layout from '../layouts/Layout.astro';
+import census from '../data/geodata_libraries.json';
+
+const verdicts = census.verdicts as Record<string, { label: string; color: string }>;
+const fmt = (n: number) => n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : Math.round(n / 1e3) + 'K';
+const libsSorted = [...census.libraries].sort((a, b) => b.npm_week - a.npm_week);
+---
+
+<Layout
+  title="Geodata Propagation Census — crimeaisukraine.org"
+  description="Every JavaScript web mapping library, empirically tested: whose world map shows Crimea as Russian, whose as Ukrainian, and why. npm weekly downloads, verified point-in-polygon results, and the propagation chart from data source to library."
+  lang="en"
+>
+<main class="max-w-6xl mx-auto px-4 py-12 font-sans text-[#333333]">
+
+  <a href="/" class="text-[#CD2E4A] hover:underline text-sm">&larr; crimeaisukraine.org</a>
+
+  <h1 class="text-3xl md:text-4xl font-bold mt-4 mb-2">Who Draws Crimea Russian? A Census of Every JS Map Library</h1>
+  <p class="text-lg text-[#555555] mb-2">
+    We point-in-polygon tested the world geometry actually shipped by every JavaScript web mapping and charting
+    library (Simferopol + Sevastopol, with Kyiv/Moscow calibration controls), and traced each back to its data
+    source. Downloads are npm weekly figures as of {census.checked}.
+  </p>
+
+  <!-- Headline badges -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8 text-center">
+    <div class="border border-[#CD2E4A]/40 bg-[#CD2E4A]/5 rounded-xl p-3">
+      <div class="text-2xl font-black text-[#CD2E4A]">{fmt(census.totals.ne_default_exposure)}<span class="text-sm font-bold">/wk</span></div>
+      <div class="text-xs text-[#555]">downloads in the Natural Earth default family (Crimea → Russia)</div>
+    </div>
+    <div class="border border-[#2D8A4E]/40 bg-[#2D8A4E]/5 rounded-xl p-3">
+      <div class="text-2xl font-black text-[#2D8A4E]">{fmt(census.totals.ukraine_bundled)}<span class="text-sm font-bold">/wk</span></div>
+      <div class="text-xs text-[#555]">ship geometry with Crimea → Ukraine (override or pre-2014 freeze)</div>
+    </div>
+    <div class="border border-[#8A8A8A]/40 bg-[#8A8A8A]/5 rounded-xl p-3">
+      <div class="text-2xl font-black text-[#8A8A8A]">{fmt(census.totals.carveout)}<span class="text-sm font-bold">/wk</span></div>
+      <div class="text-xs text-[#555]">deliberate neutral carve-out (Highcharts: Crimea → no one)</div>
+    </div>
+    <div class="border border-[#9AA3AD]/40 bg-[#9AA3AD]/5 rounded-xl p-3">
+      <div class="text-2xl font-black text-[#9AA3AD]">{fmt(census.totals.agnostic)}<span class="text-sm font-bold">/wk</span></div>
+      <div class="text-xs text-[#555]">data-agnostic (tiles / user-supplied GeoJSON)</div>
+    </div>
+  </div>
+
+  <!-- Propagation chart -->
+  <section class="mb-10">
+    <div class="border border-[#E5E5E5] rounded-xl bg-[#FAFAFA] p-4">
+      <h2 class="font-bold text-lg mb-1">The propagation chart: data source → library → weekly reach</h2>
+      <p class="text-sm text-[#777] mb-3">
+        Ribbon width = npm weekly downloads. Color = what Crimea renders as. Dashed ribbons = the library bundles
+        no geometry, but its canonical examples fetch that source ("recipe-level"). Hover for evidence.
+      </p>
+      <div id="prop-chart" class="w-full overflow-x-auto"></div>
+      <div id="prop-tooltip" class="pointer-events-none fixed z-50 hidden max-w-sm bg-white border border-[#ccc] rounded-lg shadow-lg p-3 text-xs leading-snug"></div>
+      <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs">
+        <span class="inline-flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-sm bg-[#CD2E4A]"></span>Crimea → Russia</span>
+        <span class="inline-flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-sm bg-[#2D8A4E]"></span>Crimea → Ukraine</span>
+        <span class="inline-flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-sm bg-[#D4860B]"></span>Split (npm ✓ / CDN ✗)</span>
+        <span class="inline-flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-sm bg-[#8A8A8A]"></span>Neither (carve-out)</span>
+        <span class="inline-flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-sm bg-[#9AA3AD]"></span>Depends / untested</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-4">The census table</h2>
+    <div class="overflow-x-auto border border-[#E5E5E5] rounded-xl">
+      <table class="w-full text-sm text-left">
+        <thead class="bg-[#F2F2F2] text-[#555]">
+          <tr>
+            <th class="px-3 py-2">Library</th>
+            <th class="px-3 py-2 text-right whitespace-nowrap">npm / week</th>
+            <th class="px-3 py-2 whitespace-nowrap">Crimea renders as</th>
+            <th class="px-3 py-2">Evidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          {libsSorted.map((l) => (
+            <tr class="border-t border-[#EEE] align-top">
+              <td class="px-3 py-2 font-semibold whitespace-nowrap">{l.name}{l.recipe && <span class="ml-1 text-[10px] text-[#777] font-normal">(recipe)</span>}</td>
+              <td class="px-3 py-2 text-right font-mono">{fmt(l.npm_week)}</td>
+              <td class="px-3 py-2 font-medium whitespace-nowrap" style={`color:${verdicts[l.verdict].color}`}>{verdicts[l.verdict].label}</td>
+              <td class="px-3 py-2 text-[#555]">{l.detail}</td>
+            </tr>
+          ))}
+          {census.datasets_no_npm.map((d) => (
+            <tr class="border-t border-[#EEE] align-top bg-[#FAFAFA]">
+              <td class="px-3 py-2 font-semibold whitespace-nowrap">{d.name} <span class="text-[10px] text-[#777] font-normal">(dataset)</span></td>
+              <td class="px-3 py-2 text-right font-mono">—</td>
+              <td class="px-3 py-2 font-medium whitespace-nowrap" style={`color:${verdicts[d.verdict].color}`}>{verdicts[d.verdict].label}</td>
+              <td class="px-3 py-2 text-[#555]">{d.detail}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-[#999] mt-2">
+      Methodology: point-in-polygon of Simferopol (34.10°E, 44.95°N) and Sevastopol (33.52°E, 44.60°N) against
+      each library's shipped or CDN-served world geometry, decoded from TopoJSON, GeoJSON, Miller-projected SVG
+      paths, or proj4-transformed coordinates; results accepted only when Kyiv→Ukraine and Moscow→Russia
+      calibration passed. FusionCharts flagged untested (proprietary bundle), not guessed.
+    </p>
+  </section>
+
+  <!-- Findings -->
+  <section class="mb-12 grid md:grid-cols-2 gap-4 text-sm text-[#555]">
+    <div class="border border-[#E5E5E5] rounded-xl p-4">
+      <p class="font-bold text-[#333] mb-1">The plotly split brain</p>
+      <p>plotly switched its bundled maps to UN geodata in 2025 (v3.1) — the only vendor that moved to a de jure
+      source. But <code>cdn.plot.ly/world_110m.json</code>, the CDN default, still serves the legacy Natural
+      Earth map with Crimea in Russia (verified {census.checked}). The migration issue
+      (<a href="https://github.com/plotly/plotly.js/issues/7505" target="_blank" rel="noopener" class="text-[#CD2E4A] hover:underline">#7505</a>)
+      has been open since August 2025. Fixes that don't reach defaults don't fix anything.</p>
+    </div>
+    <div class="border border-[#E5E5E5] rounded-xl p-4">
+      <p class="font-bold text-[#333] mb-1">Correct by accident</p>
+      <p>≈5.1M weekly downloads (echarts, datamaps, jsvectormap, vega) ship Crimea-in-Ukraine geometry only
+      because their world maps predate 2014 and nobody updated them. Correctness in the JS map ecosystem is
+      mostly inertia — in both directions.</p>
+    </div>
+    <div class="border border-[#E5E5E5] rounded-xl p-4">
+      <p class="font-bold text-[#333] mb-1">The recipe-level giants</p>
+      <p>d3 (17.4M/wk), topojson-client (5.4M/wk), react-simple-maps and Observable Plot ship no geometry — but
+      their canonical examples all fetch world-atlas, the NE repackage. This is exactly the pathway
+      code-generating AI reproduces: the model writes the tutorial it was trained on.</p>
+    </div>
+    <div class="border border-[#E5E5E5] rounded-xl p-4">
+      <p class="font-bold text-[#333] mb-1">Every strategy exists; the root refuses all of them</p>
+      <p>UN source (plotly), neutral carve-out (Highcharts), corrected custom data (amCharts, anychart) — the
+      downstream ecosystem has demonstrated three viable fixes. Natural Earth, the root feeding D3, world-atlas
+      and the AI training corpora, ships the pro-Russia default and keeps the alternatives in opt-in files.
+      See the <a href="/natural-earth-audit" class="text-[#CD2E4A] hover:underline">Natural Earth consistency audit</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<script type="application/json" id="census-data" set:html={JSON.stringify(census)}></script>
+<script is:inline src="https://d3js.org/d3.v7.min.js"></script>
+<script is:inline>
+(function () {
+  const C = JSON.parse(document.getElementById('census-data').textContent);
+  const W = 1100, PADL = 230, PADR = 300, PADT = 20, PADB = 20;
+  const tooltip = d3.select('#prop-tooltip');
+  const fmt = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : Math.round(n / 1e3) + 'K');
+
+  // order libraries by family then downloads
+  const famOrder = ['ne_default', 'un_geodata', 'pre2014_snapshot', 'corrected_custom', 'carveout', 'tiles_or_user_data'];
+  const libs = [...C.libraries].sort((a, b) =>
+    famOrder.indexOf(a.family) - famOrder.indexOf(b.family) || b.npm_week - a.npm_week);
+
+  const totalDl = d3.sum(libs, (d) => d.npm_week);
+  const GAP = 8, INNERH = 640;
+  const scaleH = (INNERH - GAP * (libs.length - 1)) / totalDl;
+  const MINH = 14;
+  // compute heights with minimum, then total height
+  libs.forEach((d) => (d.h = Math.max(d.npm_week * scaleH, MINH)));
+  const H = PADT + PADB + d3.sum(libs, (d) => d.h) + GAP * (libs.length - 1);
+
+  // family nodes: aggregate member heights
+  const fams = famOrder.map((id) => ({
+    ...C.families.find((f) => f.id === id),
+    members: libs.filter((l) => l.family === id),
+  })).filter((f) => f.members.length);
+
+  const svg = d3.select('#prop-chart').append('svg')
+    .attr('viewBox', `0 0 ${W} ${H}`)
+    .attr('width', '100%').style('max-width', `${W}px`).style('display', 'block').style('margin', '0 auto');
+
+  // library node positions (right column)
+  let y = PADT;
+  libs.forEach((d) => { d.y0 = y; d.y1 = y + d.h; y += d.h + GAP; });
+
+  // family node positions (left column): stack to align with member span
+  const FGAP = 14;
+  let fy = PADT;
+  fams.forEach((f) => {
+    f.h = d3.sum(f.members, (m) => m.h) + GAP * (f.members.length - 1);
+    f.y0 = fy; f.y1 = fy + f.h; fy += f.h + FGAP;
+  });
+  // if family column taller than library column, it's fine — svg height covers both
+  const totalFH = fy - FGAP + PADB;
+
+  const X0 = PADL, X1 = W - PADR;
+
+  // family rects + labels
+  const famG = svg.selectAll('g.fam').data(fams).enter().append('g');
+  famG.append('rect')
+    .attr('x', X0 - 14).attr('width', 14)
+    .attr('y', (f) => f.y0).attr('height', (f) => f.h)
+    .attr('rx', 3).attr('fill', (f) => f.color).attr('opacity', 0.85);
+  famG.append('text')
+    .attr('x', X0 - 22).attr('y', (f) => (f.y0 + f.y1) / 2 - 4)
+    .attr('text-anchor', 'end').attr('font-size', '13px').attr('font-weight', '700').attr('fill', '#333')
+    .text((f) => f.label);
+  famG.append('text')
+    .attr('x', X0 - 22).attr('y', (f) => (f.y0 + f.y1) / 2 + 11)
+    .attr('text-anchor', 'end').attr('font-size', '10px').attr('fill', '#777')
+    .text((f) => f.sub);
+
+  // links (ribbons): from family stack position to library node
+  fams.forEach((f) => {
+    let sy = f.y0;
+    f.members.forEach((m) => {
+      m.fy0 = sy; m.fy1 = sy + m.h; sy += m.h + GAP;
+    });
+  });
+  const link = (m) => {
+    const xm = (X0 + X1) / 2;
+    return `M${X0},${m.fy0} C${xm},${m.fy0} ${xm},${m.y0} ${X1},${m.y0}` +
+           `L${X1},${m.y1} C${xm},${m.y1} ${xm},${m.fy1} ${X0},${m.fy1} Z`;
+  };
+  svg.selectAll('path.ribbon').data(libs).enter().append('path')
+    .attr('d', link)
+    .attr('fill', (m) => C.verdicts[m.verdict].color)
+    .attr('opacity', 0.35)
+    .attr('stroke', (m) => (m.recipe ? C.verdicts[m.verdict].color : 'none'))
+    .attr('stroke-dasharray', (m) => (m.recipe ? '5,4' : null))
+    .attr('stroke-width', (m) => (m.recipe ? 1.2 : 0))
+    .on('mousemove', function (event, m) {
+      d3.select(this).attr('opacity', 0.6);
+      tooltip.classed('hidden', false)
+        .style('left', Math.min(event.clientX + 14, window.innerWidth - 340) + 'px')
+        .style('top', event.clientY + 14 + 'px')
+        .html(`<p class="font-bold mb-1">${m.name} — ${fmt(m.npm_week)}/week</p>` +
+              `<p style="color:${C.verdicts[m.verdict].color}" class="font-medium mb-1">${C.verdicts[m.verdict].label}</p>` +
+              `<p class="text-[#555]">${m.detail}</p>`);
+    })
+    .on('mouseleave', function () { d3.select(this).attr('opacity', 0.35); tooltip.classed('hidden', true); });
+
+  // library rects + labels
+  const libG = svg.selectAll('g.lib').data(libs).enter().append('g');
+  libG.append('rect')
+    .attr('x', X1).attr('width', 14)
+    .attr('y', (m) => m.y0).attr('height', (m) => m.h)
+    .attr('rx', 3).attr('fill', (m) => C.verdicts[m.verdict].color).attr('opacity', 0.9);
+  libG.append('text')
+    .attr('x', X1 + 22).attr('y', (m) => (m.y0 + m.y1) / 2 + 4)
+    .attr('font-size', '12px').attr('font-weight', '600').attr('fill', '#333')
+    .text((m) => `${m.name} · ${fmt(m.npm_week)}/wk${m.recipe ? ' (recipe)' : ''}`);
+})();
+</script>
+</Layout>
