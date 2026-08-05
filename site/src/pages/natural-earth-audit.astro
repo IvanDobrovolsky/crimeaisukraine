@@ -39,7 +39,18 @@ const ruleColor = (v: string) =>
         </div>
       </div>
       <p id="pov-caption" class="text-sm text-[#777] mb-2">Default file (what every downstream library ships): Crimea → Russia, clean "Sovereign country".</p>
-      <div id="ne-map" class="w-full overflow-x-auto"></div>
+      <div class="flex flex-wrap items-center gap-1.5 mb-2 text-xs">
+        <span class="text-[#777]">Zoom to:</span>
+        <button class="zoom-preset px-2 py-1 rounded border border-[#ccc] bg-white hover:border-[#CD2E4A]" data-bbox="26,38.5,49,52.5">Black Sea</button>
+        <button class="zoom-preset px-2 py-1 rounded border border-[#ccc] bg-white hover:border-[#CD2E4A]" data-bbox="31.5,44,37.5,46.5">Crimea</button>
+        <button class="zoom-preset px-2 py-1 rounded border border-[#ccc] bg-white hover:border-[#CD2E4A]" data-bbox="37,29.5,47,44">Caucasus &amp; Levant</button>
+        <button class="zoom-preset px-2 py-1 rounded border border-[#ccc] bg-white hover:border-[#CD2E4A]" data-bbox="30,32,36,36">Cyprus</button>
+        <button class="zoom-preset px-2 py-1 rounded border border-[#ccc] bg-white hover:border-[#CD2E4A]" data-bbox="70,24,100,40">Kashmir</button>
+        <button class="zoom-preset px-2 py-1 rounded border border-[#ccc] bg-white hover:border-[#CD2E4A]" data-bbox="40,-2,55,13">Horn of Africa</button>
+        <button id="zoom-reset" class="hidden px-2 py-1 rounded border border-[#333] bg-[#333] text-white">⟲ Reset view</button>
+        <span class="text-[#999] ml-auto">scroll to zoom · drag to pan</span>
+      </div>
+      <div id="ne-map" class="w-full overflow-hidden rounded-lg"></div>
       <div id="ne-tooltip" class="pointer-events-none fixed z-50 hidden max-w-xs bg-white border border-[#ccc] rounded-lg shadow-lg p-3 text-xs leading-snug"></div>
       <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs">
         {Object.entries(classes).map(([key, c]) => (
@@ -196,10 +207,12 @@ const ruleColor = (v: string) =>
     .style('display', 'block')
     .style('margin', '0 auto');
 
-  svg.append('path').attr('d', path({ type: 'Sphere' })).attr('fill', '#EEF2F7').attr('stroke', '#ccc');
+  const g = svg.append('g');
+
+  g.append('path').attr('d', path({ type: 'Sphere' })).attr('fill', '#EEF2F7').attr('stroke', '#ccc');
 
   // Base countries (NE default look)
-  svg
+  g
     .selectAll('path.country')
     .data(countries.features)
     .enter()
@@ -213,6 +226,7 @@ const ruleColor = (v: string) =>
     .attr('opacity', (d) => (rowByAdmin0[d.properties.name] ? 0.9 : 1))
     .attr('stroke', '#fff')
     .attr('stroke-width', 0.4)
+    .attr('vector-effect', 'non-scaling-stroke')
     .on('mousemove', function (event, d) {
       const row = rowByAdmin0[d.properties.name];
       if (row) showTip(event, row);
@@ -221,7 +235,7 @@ const ruleColor = (v: string) =>
 
   // Disputed overlays
   const brkName = (f) => f.properties.BRK_NAME || f.properties.NAME || '';
-  svg
+  g
     .selectAll('path.disputed')
     .data(disputed.features)
     .enter()
@@ -236,6 +250,7 @@ const ruleColor = (v: string) =>
     .attr('opacity', 0.92)
     .attr('stroke', '#333')
     .attr('stroke-width', (f) => (brkName(f) === 'Crimea' ? 1.4 : 0.4))
+    .attr('vector-effect', 'non-scaling-stroke')
     .attr('id', (f) => (brkName(f) === 'Crimea' ? 'crimea-shape' : null))
     .on('mousemove', function (event, f) {
       const row = rowByBrk[brkName(f)];
@@ -255,9 +270,12 @@ const ruleColor = (v: string) =>
 
   // Crimea label
   const crimeaFeature = disputed.features.find((f) => brkName(f) === 'Crimea');
+  let crimeaLabel = null;
+  let crimeaCentroid = null;
   if (crimeaFeature) {
     const c = path.centroid(crimeaFeature);
-    svg
+    crimeaCentroid = c;
+    crimeaLabel = g
       .append('text')
       .attr('x', c[0] + 8)
       .attr('y', c[1] - 8)
@@ -269,6 +287,43 @@ const ruleColor = (v: string) =>
       .attr('stroke-width', 3)
       .attr('paint-order', 'stroke');
   }
+
+  // Zoom & pan
+  const zoom = d3
+    .zoom()
+    .scaleExtent([1, 16])
+    .translateExtent([[0, 0], [W, H]])
+    .on('zoom', (event) => {
+      g.attr('transform', event.transform);
+      const k = event.transform.k;
+      if (crimeaLabel) {
+        // keep label at constant screen size and offset
+        crimeaLabel
+          .attr('font-size', `${13 / k}px`)
+          .attr('stroke-width', 3 / k)
+          .attr('x', crimeaCentroid[0] + 8 / k)
+          .attr('y', crimeaCentroid[1] - 8 / k);
+      }
+      document.getElementById('zoom-reset').classList.toggle('hidden', k === 1);
+    });
+  svg.call(zoom).style('cursor', 'grab');
+  svg.on('dblclick.zoom', null); // keep double-click for reset button instead
+
+  document.getElementById('zoom-reset').addEventListener('click', () => {
+    svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
+  });
+  document.querySelectorAll('.zoom-preset').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const [x0, y0, x1, y1] = btn.dataset.bbox.split(',').map(Number);
+      const p0 = projection([x0, y1]), p1 = projection([x1, y0]);
+      const k = Math.min(16, 0.9 / Math.max((p1[0] - p0[0]) / W, (p1[1] - p0[1]) / H));
+      const cx = (p0[0] + p1[0]) / 2, cy = (p0[1] + p1[1]) / 2;
+      svg.transition().duration(500).call(
+        zoom.transform,
+        d3.zoomIdentity.translate(W / 2 - k * cx, H / 2 - k * cy).scale(k)
+      );
+    });
+  });
 
   function showTip(event, row) {
     const cls = AUDIT.classes[row.class];
