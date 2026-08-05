@@ -1,0 +1,45 @@
+{
+  "checked": "2026-08-05",
+  "method": "Point-in-polygon (Simferopol 34.10E/44.95N, Sevastopol 33.52E/44.60N) against each library's shipped/CDN world geometry, fetched live. Download counts: api.npmjs.org and pypistats.org, week ending 2026-08-05.",
+  "crimea_test_verified": {
+    "russia": [
+      {"node": "natural-earth default admin_0", "role": "root", "evidence": "ne_10m/110m_admin_0_countries master; SOVEREIGNT=Russia; verified 2026-07-30 and 2026-08-05"},
+      {"node": "world-atlas (npm)", "downloads_week": 545551, "evidence": "countries-110m.json via jsDelivr; verified 2026-07-30"},
+      {"node": "datahub geo-countries", "evidence": "datasets/geo-countries main; verified 2026-08-05; common in folium/Python choropleth tutorials"}
+    ],
+    "ukraine": [
+      {"node": "plotly.js bundled topojson", "downloads_week_npm": 721753, "downloads_week_pypi_plotly": 16540193, "evidence": "dist/topojson/world_110m.json; verified 2026-07-30; fix provenance untraced"},
+      {"node": "echarts world.json (4.9)", "downloads_week": 4497949, "evidence": "verified 2026-07-30"},
+      {"node": "amcharts5 worldLow", "downloads_week": 336109, "evidence": "amcharts.com/lib/5/geodata/json/worldLow.json; verified 2026-08-05"},
+      {"node": "vega-datasets world-110m", "downloads_week": 9058, "evidence": "pre-2014 NE snapshot, accidentally correct; verified 2026-08-05"},
+      {"node": "johan/world.geo.json", "evidence": "pre-2014 NE snapshot, ubiquitous in tutorials; verified 2026-07-30"}
+    ],
+    "neither_hole": [
+      {"node": "highcharts custom/world.geo.json", "downloads_week": 2511516, "evidence": "no feature contains Simferopol/Sevastopol; verified 2026-08-05"},
+      {"node": "natural-earth ISO POV variant", "evidence": "admin_0_countries_iso: Crimea in neither polygon; verified 2026-08-05"}
+    ]
+  },
+  "definitional_ne_consumers_not_separately_tested": [
+    {"node": "geopandas naturalearth_lowres", "downloads_week_pypi": 4430971, "note": "bundled dataset (pre-1.0) is repackaged NE 110m; deprecated but ubiquitous in tutorials and cached environments"},
+    {"node": "cartopy", "downloads_week_pypi": 433217, "note": "downloads NE admin_0 from NACIS CDN at runtime"},
+    {"node": "rnaturalearth (R)", "note": "explicit NE wrapper"},
+    {"node": "react-simple-maps", "downloads_week": 920944, "note": "docs and examples point to world-atlas CDN URLs"},
+    {"node": "d3 / topojson-client", "downloads_week": [17442478, 5387222], "note": "no bundled geometry, but canonical choropleth recipes use world-atlas"},
+    {"node": "Observable Plot / bl.ocks examples", "note": "world-atlas family"}
+  ],
+  "separate_family_osm_tiles": [
+    {"node": "leaflet", "downloads_week": 6679244, "note": "raster/vector tiles (OSM et al.), not admin0 polygons; choropleth overlays typically pull johan or datahub GeoJSON"},
+    {"node": "folium", "downloads_week_pypi": 789019, "note": "Leaflet wrapper; same pattern"}
+  ],
+  "genai_codegen_mapping": {
+    "d3_choropleth": "world-atlas -> RUSSIA",
+    "react_dashboard (react-simple-maps)": "world-atlas -> RUSSIA",
+    "python geopandas/matplotlib": "NE lowres -> RUSSIA",
+    "python cartopy": "NE runtime download -> RUSSIA",
+    "folium choropleth": "datahub (RUSSIA) or johan (UKRAINE) - tutorial-dependent coin flip",
+    "plotly express choropleth": "plotly topojson -> UKRAINE",
+    "echarts dashboard": "echarts world.json -> UKRAINE",
+    "highcharts dashboard": "carve-out -> NEITHER",
+    "vega-lite": "vega-datasets -> UKRAINE (frozen pre-2014 data)"
+  }
+}

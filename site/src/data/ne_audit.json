@@ -1,0 +1,214 @@
+{
+  "checked": "2026-08-05",
+  "source": "Natural Earth master (data frozen June 2022, v5.2.0-pre): ne_10m/110m_admin_0_countries, ne_50m_admin_0_breakaway_disputed_areas, POV variants. Method: point-in-polygon of representative cities. Raw data: data/ne_consistency_matrix.json in the research repo.",
+  "classes": {
+    "absorbed_clean": {
+      "label": "Absorbed into occupier — no dispute marker",
+      "color": "#CD2E4A",
+      "description": "Territory merged into the occupying state's polygon; that polygon is typed a clean \"Sovereign country\"."
+    },
+    "absorbed_marked": {
+      "label": "Absorbed into occupier — dispute marker on polygon",
+      "color": "#E58A00",
+      "description": "Territory inside the occupier's polygon, but the polygon itself carries TYPE=\"Disputed\"."
+    },
+    "kept_dejure": {
+      "label": "Kept with de jure state despite de facto loss",
+      "color": "#2B6CB0",
+      "description": "De facto control lost, but NE keeps the territory in the de jure state's polygon."
+    },
+    "own_unit": {
+      "label": "Own separate unit",
+      "color": "#6B46C1",
+      "description": "NE carves the territory out as its own admin-0 entity — occupier's polygon unchanged."
+    },
+    "split_defacto": {
+      "label": "Split along de facto lines",
+      "color": "#8A8A8A",
+      "description": "Divided between controlling states along lines of control."
+    }
+  },
+  "rows": [
+    {
+      "territory": "Crimea",
+      "brk_names": ["Crimea"],
+      "de_facto": "Russia (occupied & annexed 2014)",
+      "de_jure": "Ukraine (UNGA 68/262)",
+      "ne_assignment": "Russia — \"Sovereign country\"",
+      "class": "absorbed_clean",
+      "rule_followed": "Yes — the only Russia-linked territory where it is",
+      "note": "The only 21st-century annexation of a UN member's territory absorbed into the annexing state's polygon. NE's own USA-POV and UKR-POV variant files put Crimea in Ukraine; the ISO-POV leaves it unassigned. Only the default — the file every downstream library ships — awards it to Russia."
+    },
+    {
+      "territory": "Donetsk (DNR)",
+      "brk_names": ["Donetsk People's Republic"],
+      "de_facto": "DNR/Russia since 2014 — same year as Crimea",
+      "de_jure": "Ukraine",
+      "ne_assignment": "Ukraine",
+      "class": "kept_dejure",
+      "rule_followed": "No",
+      "note": "Disputed-layer entry: \"Self admin.; Claimed by Ukraine\", SOVEREIGNT=Ukraine. Same war, same aggressor, same year as Crimea — opposite treatment."
+    },
+    {
+      "territory": "Luhansk (LNR)",
+      "brk_names": ["Luhansk People's Republic"],
+      "de_facto": "LNR/Russia since 2014 — same year as Crimea",
+      "de_jure": "Ukraine",
+      "ne_assignment": "Ukraine",
+      "class": "kept_dejure",
+      "rule_followed": "No",
+      "note": "Same as DNR."
+    },
+    {
+      "territory": "South Ukraine (Mariupol, Melitopol, Kherson)",
+      "brk_names": [],
+      "de_facto": "Russia (Feb–May 2022, before NE's June 2022 data freeze)",
+      "de_jure": "Ukraine",
+      "ne_assignment": "Ukraine",
+      "class": "kept_dejure",
+      "rule_followed": "No",
+      "note": "Under full Russian control when NE last touched its data — polygons unchanged. Under NE's revealed rule (sovereignty flips on formal annexation), the Sept 2022 \"annexations\" would flip these to Russia in any future NE update."
+    },
+    {
+      "territory": "Abkhazia",
+      "brk_names": ["Abkhazia"],
+      "de_facto": "Self-declared, Russian garrison since 2008",
+      "de_jure": "Georgia",
+      "ne_assignment": "Georgia",
+      "class": "kept_dejure",
+      "rule_followed": "No",
+      "note": "14 years of de facto separation at data freeze — never reassigned."
+    },
+    {
+      "territory": "South Ossetia",
+      "brk_names": ["South Ossetia"],
+      "de_facto": "Self-declared, Russian garrison since 2008",
+      "de_jure": "Georgia",
+      "ne_assignment": "Georgia",
+      "class": "kept_dejure",
+      "rule_followed": "No",
+      "note": "Same as Abkhazia."
+    },
+    {
+      "territory": "Transnistria",
+      "brk_names": ["Transnistria"],
+      "de_facto": "Self-declared since 1992, Russian troops present",
+      "de_jure": "Moldova",
+      "ne_assignment": "Moldova",
+      "class": "kept_dejure",
+      "rule_followed": "No",
+      "note": "30 years of de facto separation at data freeze — never reassigned."
+    },
+    {
+      "territory": "Nagorno-Karabakh (Artsakh)",
+      "brk_names": ["Artsakh"],
+      "de_facto": "Armenian-held at NE's June 2022 freeze",
+      "de_jure": "Azerbaijan",
+      "ne_assignment": "Azerbaijan",
+      "class": "kept_dejure",
+      "rule_followed": "No (at authoring time)",
+      "note": "Fully Azerbaijani since the Sept 2023 offensive; Artsakh dissolved 1 Jan 2024. NE's assignment now matches reality — but it predates those events, so when authored it contradicted the de facto rule."
+    },
+    {
+      "territory": "Northern Cyprus",
+      "brk_names": ["N. Cyprus"],
+      "de_facto": "TRNC since Turkish invasion 1974",
+      "de_jure": "Cyprus",
+      "ne_assignment": "Own unit \"Northern Cyprus\"",
+      "class": "own_unit",
+      "rule_followed": "Partially — de facto recognized without rewarding Turkey",
+      "note": "The exact precedent for Crimea: armed invasion → separate unit, occupier's polygon unchanged. NE chose not to apply it."
+    },
+    {
+      "territory": "Somaliland",
+      "brk_names": ["Somaliland"],
+      "de_facto": "Self-governing since 1991",
+      "de_jure": "Somalia",
+      "ne_assignment": "Own unit \"Somaliland\"",
+      "class": "own_unit",
+      "rule_followed": "Partially — own unit",
+      "note": ""
+    },
+    {
+      "territory": "Taiwan",
+      "brk_names": [],
+      "admin0_names": ["Taiwan"],
+      "de_facto": "ROC since 1949",
+      "de_jure": "Contested",
+      "ne_assignment": "Own unit \"Taiwan\"",
+      "class": "own_unit",
+      "rule_followed": "Partially — own unit",
+      "note": ""
+    },
+    {
+      "territory": "Kosovo",
+      "brk_names": [],
+      "admin0_names": ["Kosovo"],
+      "de_facto": "Independent since 2008 (partially recognized)",
+      "de_jure": "Contested",
+      "ne_assignment": "Own unit \"Kosovo\" — TYPE=Disputed",
+      "class": "own_unit",
+      "rule_followed": "Partially — own unit with dispute marker",
+      "note": ""
+    },
+    {
+      "territory": "Golan Heights",
+      "brk_names": ["Golan Heights"],
+      "de_facto": "Israel (occupied 1967, annexed 1981)",
+      "de_jure": "Syria",
+      "ne_assignment": "Israel — but Israel's entire polygon is TYPE=\"Disputed\"",
+      "class": "absorbed_marked",
+      "rule_followed": "Yes — with a country-level dispute marker",
+      "note": "Closest parallel to Crimea (unrecognized annexation). Difference: Israel's polygon is typed Disputed; Russia's is a clean Sovereign country."
+    },
+    {
+      "territory": "Kuril Islands",
+      "brk_names": ["Kuril Is."],
+      "de_facto": "Russia since 1945",
+      "de_jure": "Claimed by Japan",
+      "ne_assignment": "Russia — \"Sovereign country\"",
+      "class": "absorbed_clean",
+      "rule_followed": "Yes",
+      "note": "Post-WWII case; disputed-layer entry exists (\"Claimed by Japan\")."
+    },
+    {
+      "territory": "Western Sahara",
+      "brk_names": ["W. Sahara"],
+      "de_facto": "Split: Morocco (west) / SADR (east) since 1975",
+      "de_jure": "Non-self-governing territory (UN)",
+      "ne_assignment": "Split: Moroccan zone → Morocco; SADR zone → own unit, TYPE=Indeterminate",
+      "class": "split_defacto",
+      "rule_followed": "Yes — split along berm",
+      "note": ""
+    },
+    {
+      "territory": "Kashmir (Jammu & Kashmir / Gilgit-Baltistan / Aksai Chin)",
+      "brk_names": ["Jammu and Kashmir", "Gilgit-Baltistan", "Aksai Chin", "Siachen Glacier", "Shaksam Valley", "Demchok"],
+      "de_facto": "Split: India / Pakistan / China since 1947–62",
+      "de_jure": "Disputed",
+      "ne_assignment": "Split along lines of control; extensive disputed-layer coverage",
+      "class": "split_defacto",
+      "rule_followed": "Yes — split with dispute markers",
+      "note": ""
+    },
+    {
+      "territory": "West Bank & Gaza",
+      "brk_names": [],
+      "admin0_names": ["Palestine"],
+      "de_facto": "Israeli occupation / PA / Hamas",
+      "de_jure": "Palestine (UN observer state)",
+      "ne_assignment": "ADMIN=Palestine, SOVEREIGNT=Israel, TYPE=Indeterminate",
+      "class": "absorbed_marked",
+      "rule_followed": "Mixed — separate ADMIN unit, occupier sovereignty",
+      "note": ""
+    }
+  ],
+  "other_disputed_features": ["Abyei", "Ilemi Triangle", "Arunachal Pradesh", "North Borneo", "Courantyne Headwaters", "Lawa Headwaters", "Bara Hotii Valleys", "Samdu Valleys", "Tirpani Valleys", "Junagadh and Manavadar"],
+  "pov_variants": {
+    "default": { "label": "Default (what every library ships)", "crimea": "russia", "text": "Crimea → Russia, clean \"Sovereign country\"" },
+    "usa": { "label": "USA point-of-view file", "crimea": "ukraine", "text": "Crimea → Ukraine" },
+    "ukr": { "label": "Ukraine point-of-view file", "crimea": "ukraine", "text": "Crimea → Ukraine" },
+    "iso": { "label": "ISO point-of-view file", "crimea": "none", "text": "Crimea → unassigned (in neither polygon)" }
+  },
+  "headline": "Of the 8 Russia-linked occupied territories in Natural Earth's data, the \"de facto control\" rule is applied to exactly one — the only one whose reassignment benefits Russia's sovereignty claim: Crimea."
+}

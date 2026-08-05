@@ -1,0 +1,408 @@
+---
+import Layout from '../layouts/Layout.astro';
+import audit from '../data/ne_audit.json';
+
+const classes = audit.classes as Record<string, { label: string; color: string; description: string }>;
+const rows = audit.rows;
+const ruleColor = (v: string) =>
+  v.startsWith('No') ? 'text-[#CD2E4A]' : v.startsWith('Yes') ? 'text-[#2D8A4E]' : 'text-[#8A6D00]';
+---
+
+<Layout
+  title="Natural Earth Consistency Audit — crimeaisukraine.org"
+  description="Natural Earth defends Crimea→Russia as a neutral 'de facto control' policy. We tested every comparable disputed territory in its own data. The rule is applied to exactly one Russia-linked territory: the one that benefits Russia."
+  lang="en"
+>
+<main class="max-w-6xl mx-auto px-4 py-12 font-sans text-[#333333]">
+
+  <a href="/" class="text-[#CD2E4A] hover:underline text-sm">&larr; crimeaisukraine.org</a>
+
+  <h1 class="text-3xl md:text-4xl font-bold mt-4 mb-2">Is Natural Earth's "De Facto" Policy Actually a Policy?</h1>
+  <p class="text-lg text-[#555555] mb-2">
+    Natural Earth — the geodatabase behind most AI-generated maps — defends assigning Crimea to Russia as
+    neutral application of a "de facto control" rule. We audited every comparable territory in Natural Earth's
+    own data (master branch, frozen since June&nbsp;2022; checked {audit.checked}).
+  </p>
+  <p class="text-base font-semibold text-[#CD2E4A] mb-8">{audit.headline}</p>
+
+  <!-- Map -->
+  <section class="mb-6">
+    <div class="border border-[#E5E5E5] rounded-xl bg-[#FAFAFA] p-4">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+        <h2 class="font-bold text-lg">The default Natural Earth map, disputed territories highlighted</h2>
+        <div id="pov-toggle" class="flex flex-wrap gap-1 text-xs">
+          <span class="text-[#777] self-center mr-1">Crimea in NE's own variant files:</span>
+          <button data-pov="default" class="pov-btn px-2 py-1 rounded border border-[#CD2E4A] bg-[#CD2E4A] text-white">Default</button>
+          <button data-pov="usa" class="pov-btn px-2 py-1 rounded border border-[#ccc] bg-white">USA POV</button>
+          <button data-pov="ukr" class="pov-btn px-2 py-1 rounded border border-[#ccc] bg-white">Ukraine POV</button>
+          <button data-pov="iso" class="pov-btn px-2 py-1 rounded border border-[#ccc] bg-white">ISO POV</button>
+        </div>
+      </div>
+      <p id="pov-caption" class="text-sm text-[#777] mb-2">Default file (what every downstream library ships): Crimea → Russia, clean "Sovereign country".</p>
+      <div id="ne-map" class="w-full overflow-x-auto"></div>
+      <div id="ne-tooltip" class="pointer-events-none fixed z-50 hidden max-w-xs bg-white border border-[#ccc] rounded-lg shadow-lg p-3 text-xs leading-snug"></div>
+      <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs">
+        {Object.entries(classes).map(([key, c]) => (
+          <span class="inline-flex items-center gap-1.5">
+            <span class="inline-block w-3 h-3 rounded-sm" style={`background:${c.color}`}></span>{c.label}
+          </span>
+        ))}
+      </div>
+      <p class="text-xs text-[#999] mt-2">
+        Base map: Natural Earth default admin-0 (via world-atlas 110m). Overlays: NE's own
+        <code>ne_50m_admin_0_breakaway_disputed_areas</code> — the opt-in layer that downstream libraries do not ship.
+        Hover any highlighted territory for its treatment.
+      </p>
+    </div>
+
+    <!-- Black Sea inset: the Russia test -->
+    <div class="grid md:grid-cols-2 gap-4 mt-4">
+      <div class="border border-[#E5E5E5] rounded-xl bg-[#FAFAFA] p-4">
+        <h3 class="font-bold mb-1">The Russia test</h3>
+        <p class="text-sm text-[#555] mb-2">
+          Every Russia-linked occupied territory, one region. Blue = NE kept the de jure state.
+          Red = NE handed sovereignty to Russia. There is exactly one red territory.
+        </p>
+        <div id="ne-inset" class="w-full"></div>
+      </div>
+      <div class="border border-[#E5E5E5] rounded-xl p-4 text-sm text-[#555] flex flex-col justify-center">
+        <p class="mb-3">
+          <span class="font-bold text-[#333]">Seven territories, one aggressor, one rule — applied once.</span>
+          Donetsk and Luhansk were seized the same year as Crimea (2014). Abkhazia, South Ossetia and
+          Transnistria have been under Russian military control for decades. Mariupol, Melitopol and Kherson
+          (gold dots) were under full Russian control when Natural Earth last edited its data in June 2022.
+        </p>
+        <p>
+          None of them were reassigned. Only Crimea — the one territory Russia had formally declared annexed —
+          was merged into Russia's polygon, with no dispute marker.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold mb-4">One rule, five treatments</h2>
+    <div class="overflow-x-auto border border-[#E5E5E5] rounded-xl">
+      <table class="w-full text-sm text-left">
+        <thead class="bg-[#F2F2F2] text-[#555]">
+          <tr>
+            <th class="px-3 py-2 whitespace-nowrap">Territory</th>
+            <th class="px-3 py-2">De facto (at NE freeze, June 2022)</th>
+            <th class="px-3 py-2">De jure</th>
+            <th class="px-3 py-2">Natural Earth default puts it in</th>
+            <th class="px-3 py-2 whitespace-nowrap">"De facto" rule followed?</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr class={`border-t border-[#EEE] align-top ${r.territory === 'Crimea' ? 'bg-[#FDF0F2]' : ''}`}>
+              <td class="px-3 py-2 font-semibold whitespace-nowrap">
+                <span class="inline-block w-2.5 h-2.5 rounded-sm mr-1.5 align-middle" style={`background:${classes[r.class].color}`}></span>{r.territory}
+              </td>
+              <td class="px-3 py-2">{r.de_facto}</td>
+              <td class="px-3 py-2">{r.de_jure}</td>
+              <td class="px-3 py-2">{r.ne_assignment}</td>
+              <td class={`px-3 py-2 font-medium ${ruleColor(r.rule_followed)}`}>{r.rule_followed}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm text-[#555]">
+      <div class="border border-[#E5E5E5] rounded-xl p-4">
+        <p class="font-bold text-[#333] mb-1">Same year, same war, opposite treatment</p>
+        <p>Crimea and the Donetsk/Luhansk "republics" were all seized in 2014. Crimea was merged into Russia's
+        polygon; DNR/LNR stayed Ukrainian. Mariupol, Melitopol and Kherson were under full Russian control when
+        NE last touched its data — their polygons never changed.</p>
+      </div>
+      <div class="border border-[#E5E5E5] rounded-xl p-4">
+        <p class="font-bold text-[#333] mb-1">The Northern Cyprus precedent</p>
+        <p>Armed invasion (1974) → self-declared entity → NE gives it a <em>separate unit</em> while Turkey's
+        polygon stays unchanged. NE had this template for 40+ years and chose not to apply it to Crimea.</p>
+      </div>
+      <div class="border border-[#E5E5E5] rounded-xl p-4">
+        <p class="font-bold text-[#333] mb-1">Even the closest parallel is marked</p>
+        <p>The Golan Heights are assigned to Israel — but Israel's entire polygon carries
+        <code>TYPE="Disputed"</code>. Russia's polygon, Crimea inside, is a clean
+        <code>"Sovereign country"</code>.</p>
+      </div>
+      <div class="border border-[#E5E5E5] rounded-xl p-4">
+        <p class="font-bold text-[#333] mb-1">NE's own files disagree with NE</p>
+        <p>Natural Earth ships worldview variants: the USA-POV and Ukraine-POV files put Crimea in Ukraine; the
+        ISO-POV file leaves it unassigned. Only the default — the file that propagates to every charting library
+        and every AI training corpus — awards Crimea to Russia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implication -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold mb-3">Why this matters now</h2>
+    <p class="text-[#555] mb-3">
+      The pattern that actually fits the data: <strong>sovereignty flips when the occupier formally declares
+      annexation</strong> (Crimea 2014, Golan 1981). Natural Earth froze its data in June 2022. Russia declared
+      the annexation of Donetsk, Luhansk, Kherson and Zaporizhzhia oblasts on 30 September 2022. If Natural
+      Earth resumes updates under its revealed rule, four more Ukrainian oblasts flip to
+      <code>SOVEREIGNT="Russia"</code> — and propagate to every dependent library and every AI training corpus.
+    </p>
+    <p class="text-[#555]">
+      Methodology and raw results:
+      <a href="https://github.com/nvkelso/natural-earth-vector/issues/1021" target="_blank" rel="noopener" class="text-[#CD2E4A] hover:underline">community proposal for a De Jure/UN Consensus worldview</a> ·
+      <a href="https://kyivindependent.com/why-ai-believes-crimea-is-russian-and-what-to-do-about-it/" target="_blank" rel="noopener" class="text-[#CD2E4A] hover:underline">Kyiv Independent coverage</a> ·
+      <a href="https://doi.org/10.7910/DVN/0IWOFY" target="_blank" rel="noopener" class="text-[#CD2E4A] hover:underline">replication data (Harvard Dataverse)</a>
+    </p>
+  </section>
+
+</main>
+
+<script type="application/json" id="ne-audit-data" set:html={JSON.stringify(audit)}></script>
+<script is:inline src="https://d3js.org/d3.v7.min.js"></script>
+<script is:inline src="https://unpkg.com/topojson-client@3"></script>
+<script is:inline>
+(async function () {
+  const AUDIT = JSON.parse(document.getElementById('ne-audit-data').textContent);
+  const WORLD_110M = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+  const DISPUTED_50M = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_breakaway_disputed_areas.geojson';
+
+  const W = 1100, H = 560;
+  const container = d3.select('#ne-map');
+  const tooltip = d3.select('#ne-tooltip');
+
+  const [world, disputed] = await Promise.all([
+    fetch(WORLD_110M).then((r) => r.json()),
+    fetch(DISPUTED_50M).then((r) => r.json()),
+  ]);
+
+  const countries = topojson.feature(world, world.objects.countries);
+
+  // brk_name -> row lookup
+  const rowByBrk = {};
+  const rowByAdmin0 = {};
+  for (const row of AUDIT.rows) {
+    (row.brk_names || []).forEach((n) => (rowByBrk[n] = row));
+    (row.admin0_names || []).forEach((n) => (rowByAdmin0[n] = row));
+  }
+  const otherDisputed = new Set(AUDIT.other_disputed_features || []);
+
+  const projection = d3.geoNaturalEarth1().fitSize([W, H], { type: 'Sphere' });
+  const path = d3.geoPath(projection);
+
+  const svg = container
+    .append('svg')
+    .attr('viewBox', `0 0 ${W} ${H}`)
+    .attr('width', '100%')
+    .style('max-width', `${W}px`)
+    .style('display', 'block')
+    .style('margin', '0 auto');
+
+  svg.append('path').attr('d', path({ type: 'Sphere' })).attr('fill', '#EEF2F7').attr('stroke', '#ccc');
+
+  // Base countries (NE default look)
+  svg
+    .selectAll('path.country')
+    .data(countries.features)
+    .enter()
+    .append('path')
+    .attr('class', 'country')
+    .attr('d', path)
+    .attr('fill', (d) => {
+      const row = rowByAdmin0[d.properties.name];
+      return row ? AUDIT.classes[row.class].color : '#E3E3E3';
+    })
+    .attr('opacity', (d) => (rowByAdmin0[d.properties.name] ? 0.9 : 1))
+    .attr('stroke', '#fff')
+    .attr('stroke-width', 0.4)
+    .on('mousemove', function (event, d) {
+      const row = rowByAdmin0[d.properties.name];
+      if (row) showTip(event, row);
+    })
+    .on('mouseleave', hideTip);
+
+  // Disputed overlays
+  const brkName = (f) => f.properties.BRK_NAME || f.properties.NAME || '';
+  svg
+    .selectAll('path.disputed')
+    .data(disputed.features)
+    .enter()
+    .append('path')
+    .attr('class', 'disputed')
+    .attr('d', path)
+    .attr('fill', (f) => {
+      const row = rowByBrk[brkName(f)];
+      if (row) return AUDIT.classes[row.class].color;
+      return otherDisputed.has(brkName(f)) ? '#BFC7D1' : '#BFC7D1';
+    })
+    .attr('opacity', 0.92)
+    .attr('stroke', '#333')
+    .attr('stroke-width', (f) => (brkName(f) === 'Crimea' ? 1.4 : 0.4))
+    .attr('id', (f) => (brkName(f) === 'Crimea' ? 'crimea-shape' : null))
+    .on('mousemove', function (event, f) {
+      const row = rowByBrk[brkName(f)];
+      if (row) {
+        showTip(event, row);
+      } else {
+        tooltip
+          .classed('hidden', false)
+          .style('left', event.clientX + 14 + 'px')
+          .style('top', event.clientY + 14 + 'px')
+          .html(
+            `<p class="font-bold mb-1">${brkName(f)}</p><p class="text-[#777]">In NE's disputed layer (border dispute) — not part of the occupation comparison set.</p>`
+          );
+      }
+    })
+    .on('mouseleave', hideTip);
+
+  // Crimea label
+  const crimeaFeature = disputed.features.find((f) => brkName(f) === 'Crimea');
+  if (crimeaFeature) {
+    const c = path.centroid(crimeaFeature);
+    svg
+      .append('text')
+      .attr('x', c[0] + 8)
+      .attr('y', c[1] - 8)
+      .text('Crimea')
+      .attr('font-size', '13px')
+      .attr('font-weight', '700')
+      .attr('fill', '#CD2E4A')
+      .attr('stroke', '#fff')
+      .attr('stroke-width', 3)
+      .attr('paint-order', 'stroke');
+  }
+
+  function showTip(event, row) {
+    const cls = AUDIT.classes[row.class];
+    tooltip
+      .classed('hidden', false)
+      .style('left', event.clientX + 14 + 'px')
+      .style('top', event.clientY + 14 + 'px')
+      .html(
+        `<p class="font-bold mb-1">${row.territory}</p>` +
+          `<p><span class="text-[#777]">De facto:</span> ${row.de_facto}</p>` +
+          `<p><span class="text-[#777]">De jure:</span> ${row.de_jure}</p>` +
+          `<p><span class="text-[#777]">NE default:</span> ${row.ne_assignment}</p>` +
+          `<p class="mt-1"><span class="inline-block w-2 h-2 rounded-sm mr-1" style="background:${cls.color}"></span>${cls.label}</p>` +
+          (row.note ? `<p class="mt-1 text-[#777]">${row.note}</p>` : '')
+      );
+  }
+  function hideTip() {
+    tooltip.classed('hidden', true);
+  }
+
+  // POV toggle: recolor Crimea
+  const POV_COLORS = { russia: '#CD2E4A', ukraine: '#2D8A4E', none: 'url(#hatch)' };
+  const defs = svg.append('defs');
+  defs
+    .append('pattern')
+    .attr('id', 'hatch')
+    .attr('width', 5)
+    .attr('height', 5)
+    .attr('patternUnits', 'userSpaceOnUse')
+    .attr('patternTransform', 'rotate(45)')
+    .append('rect')
+    .attr('width', 2)
+    .attr('height', 5)
+    .attr('fill', '#9AA3AD');
+
+  // ---- Black Sea inset ----
+  (function renderInset() {
+    const IW = 520, IH = 420;
+    const bbox = { type: 'Polygon', coordinates: [[[25.5, 38.5], [25.5, 52.5], [48.5, 52.5], [48.5, 38.5], [25.5, 38.5]]] };
+    const iproj = d3.geoMercator().fitSize([IW, IH], bbox);
+    const ipath = d3.geoPath(iproj);
+
+    const isvg = d3
+      .select('#ne-inset')
+      .append('svg')
+      .attr('viewBox', `0 0 ${IW} ${IH}`)
+      .attr('width', '100%')
+      .style('display', 'block');
+
+    isvg.append('rect').attr('width', IW).attr('height', IH).attr('fill', '#EEF2F7');
+
+    isvg
+      .selectAll('path.icountry')
+      .data(countries.features)
+      .enter()
+      .append('path')
+      .attr('d', ipath)
+      .attr('fill', '#E3E3E3')
+      .attr('stroke', '#fff')
+      .attr('stroke-width', 0.6);
+
+    const insetSet = new Set([
+      'Crimea', "Donetsk People's Republic", "Luhansk People's Republic",
+      'Abkhazia', 'South Ossetia', 'Transnistria',
+    ]);
+    isvg
+      .selectAll('path.idisputed')
+      .data(disputed.features.filter((f) => insetSet.has(brkName(f))))
+      .enter()
+      .append('path')
+      .attr('d', ipath)
+      .attr('fill', (f) => AUDIT.classes[rowByBrk[brkName(f)].class].color)
+      .attr('opacity', 0.92)
+      .attr('stroke', '#333')
+      .attr('stroke-width', (f) => (brkName(f) === 'Crimea' ? 1.6 : 0.6))
+      .on('mousemove', (event, f) => showTip(event, rowByBrk[brkName(f)]))
+      .on('mouseleave', hideTip);
+
+    const labels = {
+      Crimea: [0, 24], "Donetsk People's Republic": [10, -6], "Luhansk People's Republic": [10, -20],
+      Abkhazia: [-8, 20], 'South Ossetia': [12, -8], Transnistria: [-14, -10],
+    };
+    const shortName = {
+      "Donetsk People's Republic": 'Donetsk (DNR)', "Luhansk People's Republic": 'Luhansk (LNR)',
+      'South Ossetia': 'S. Ossetia',
+    };
+    disputed.features
+      .filter((f) => insetSet.has(brkName(f)))
+      .forEach((f) => {
+        const n = brkName(f);
+        const c = ipath.centroid(f);
+        isvg
+          .append('text')
+          .attr('x', c[0] + labels[n][0])
+          .attr('y', c[1] + labels[n][1])
+          .text(shortName[n] || n)
+          .attr('font-size', '11px')
+          .attr('font-weight', n === 'Crimea' ? '700' : '600')
+          .attr('fill', n === 'Crimea' ? '#CD2E4A' : '#2B6CB0')
+          .attr('text-anchor', 'middle')
+          .attr('stroke', '#fff')
+          .attr('stroke-width', 3)
+          .attr('paint-order', 'stroke');
+      });
+
+    // 2022-occupied cities that kept Ukraine's polygon
+    const cities = [
+      ['Mariupol', 37.55, 47.10], ['Melitopol', 35.37, 46.85], ['Kherson', 32.62, 46.66],
+    ];
+    cities.forEach(([name, lon, lat]) => {
+      const p = iproj([lon, lat]);
+      isvg.append('circle').attr('cx', p[0]).attr('cy', p[1]).attr('r', 4)
+        .attr('fill', '#FFD700').attr('stroke', '#333').attr('stroke-width', 1.2);
+      isvg.append('text').attr('x', p[0]).attr('y', p[1] + 16).text(name)
+        .attr('font-size', '10px').attr('font-weight', '600').attr('fill', '#333')
+        .attr('text-anchor', 'middle')
+        .attr('stroke', '#fff').attr('stroke-width', 3).attr('paint-order', 'stroke');
+    });
+    isvg.append('text').attr('x', 10).attr('y', IH - 10)
+      .text('Gold dots: Russian-controlled at NE\u2019s June 2022 data freeze \u2014 polygons unchanged (still Ukraine)')
+      .attr('font-size', '10px').attr('fill', '#777');
+  })();
+
+  document.querySelectorAll('.pov-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const pov = AUDIT.pov_variants[btn.dataset.pov];
+      document.querySelectorAll('.pov-btn').forEach((b) => {
+        b.className = 'pov-btn px-2 py-1 rounded border border-[#ccc] bg-white';
+      });
+      btn.className = 'pov-btn px-2 py-1 rounded border border-[#CD2E4A] bg-[#CD2E4A] text-white';
+      d3.select('#crimea-shape').attr('fill', POV_COLORS[pov.crimea]);
+      document.getElementById('pov-caption').textContent = `${pov.label}: ${pov.text}.`;
+    });
+  });
+})();
+</script>
+</Layout>

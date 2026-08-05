@@ -1,0 +1,289 @@
+{
+  "checked": "2026-08-05",
+  "source": "Natural Earth master branch (data frozen since June 2022, v5.2.0-pre), 10m admin_0_countries + admin_0_disputed_areas + POV variants",
+  "method": "point-in-polygon of representative cities against each layer, fetched live from raw.githubusercontent.com/nvkelso/natural-earth-vector",
+  "default_admin0_assignments": [
+    {
+      "territory": "Crimea",
+      "test_points": [
+        "Simferopol",
+        "Sevastopol"
+      ],
+      "de_facto_since": "2014 (Russia)",
+      "de_jure": "Ukraine",
+      "ne_admin": "Russia",
+      "ne_sovereignt": "Russia",
+      "ne_type": "Sovereign country",
+      "separate_unit": false
+    },
+    {
+      "territory": "Donetsk (DNR)",
+      "test_points": [
+        "Donetsk city"
+      ],
+      "de_facto_since": "2014 (DNR/Russia)",
+      "de_jure": "Ukraine",
+      "ne_admin": "Ukraine",
+      "ne_sovereignt": "Ukraine",
+      "ne_type": "Sovereign country",
+      "separate_unit": false
+    },
+    {
+      "territory": "Luhansk (LNR)",
+      "test_points": [
+        "Luhansk city"
+      ],
+      "de_facto_since": "2014 (LNR/Russia)",
+      "de_jure": "Ukraine",
+      "ne_admin": "Ukraine",
+      "ne_sovereignt": "Ukraine",
+      "ne_type": "Sovereign country",
+      "separate_unit": false
+    },
+    {
+      "territory": "South Ukraine occupied Feb-May 2022",
+      "test_points": [
+        "Mariupol",
+        "Melitopol",
+        "Kherson city",
+        "Nova Kakhovka"
+      ],
+      "de_facto_since": "2022 (Russia, before NE data freeze June 2022)",
+      "de_jure": "Ukraine",
+      "ne_admin": "Ukraine",
+      "ne_sovereignt": "Ukraine",
+      "ne_type": "Sovereign country",
+      "separate_unit": false
+    },
+    {
+      "territory": "Abkhazia",
+      "test_points": [
+        "Sukhumi"
+      ],
+      "de_facto_since": "1993/2008 (Russian garrison)",
+      "de_jure": "Georgia",
+      "ne_admin": "Georgia",
+      "ne_sovereignt": "Georgia",
+      "ne_type": "Sovereign country",
+      "separate_unit": false
+    },
+    {
+      "territory": "South Ossetia",
+      "test_points": [
+        "Tskhinvali"
+      ],
+      "de_facto_since": "2008 (Russian garrison)",
+      "de_jure": "Georgia",
+      "ne_admin": "Georgia",
+      "ne_sovereignt": "Georgia",
+      "ne_type": "Sovereign country",
+      "separate_unit": false
+    },
+    {
+      "territory": "Transnistria",
+      "test_points": [
+        "Tiraspol"
+      ],
+      "de_facto_since": "1992",
+      "de_jure": "Moldova",
+      "ne_admin": "Moldova",
+      "ne_sovereignt": "Moldova",
+      "ne_type": "Sovereign country",
+      "separate_unit": false
+    },
+    {
+      "territory": "Nagorno-Karabakh (Artsakh)",
+      "test_points": [
+        "Stepanakert"
+      ],
+      "de_facto_since": "1994-2023 (Armenian control at NE freeze)",
+      "de_jure": "Azerbaijan",
+      "ne_admin": "Azerbaijan",
+      "ne_sovereignt": "Azerbaijan",
+      "ne_type": "Sovereign country",
+      "separate_unit": false,
+      "status_note": "Fully Azerbaijani since Sept 2023 offensive; Artsakh dissolved 1 Jan 2024. NE assignment now matches reality but predates it: at the June 2022 data freeze the territory was Armenian-held, so the assignment contradicted the de facto rule when authored."
+    },
+    {
+      "territory": "Northern Cyprus",
+      "test_points": [
+        "North Nicosia"
+      ],
+      "de_facto_since": "1974 (Turkish invasion)",
+      "de_jure": "Cyprus",
+      "ne_admin": "Northern Cyprus",
+      "ne_sovereignt": "Northern Cyprus",
+      "ne_type": "Sovereign country",
+      "separate_unit": true
+    },
+    {
+      "territory": "Taiwan",
+      "test_points": [
+        "Taipei"
+      ],
+      "de_facto_since": "1949",
+      "de_jure": "contested",
+      "ne_admin": "Taiwan",
+      "ne_sovereignt": "Taiwan",
+      "ne_type": "Sovereign country",
+      "separate_unit": true
+    },
+    {
+      "territory": "Somaliland",
+      "test_points": [
+        "Hargeisa"
+      ],
+      "de_facto_since": "1991",
+      "de_jure": "Somalia",
+      "ne_admin": "Somaliland",
+      "ne_sovereignt": "Somaliland",
+      "ne_type": "Sovereign country",
+      "separate_unit": true
+    },
+    {
+      "territory": "Kosovo",
+      "test_points": [
+        "Pristina"
+      ],
+      "de_facto_since": "2008",
+      "de_jure": "contested",
+      "ne_admin": "Kosovo",
+      "ne_sovereignt": "Kosovo",
+      "ne_type": "Disputed",
+      "separate_unit": true
+    },
+    {
+      "territory": "Western Sahara (Moroccan zone)",
+      "test_points": [
+        "Laayoune"
+      ],
+      "de_facto_since": "1975",
+      "de_jure": "non-self-governing (UN)",
+      "ne_admin": "Morocco",
+      "ne_sovereignt": "Morocco",
+      "ne_type": "Sovereign country",
+      "separate_unit": false
+    },
+    {
+      "territory": "Western Sahara (SADR zone)",
+      "test_points": [
+        "Tifariti"
+      ],
+      "de_facto_since": "1975",
+      "de_jure": "non-self-governing (UN)",
+      "ne_admin": "Western Sahara",
+      "ne_sovereignt": "Western Sahara",
+      "ne_type": "Indeterminate",
+      "separate_unit": true
+    },
+    {
+      "territory": "Golan Heights",
+      "test_points": [
+        "Katzrin"
+      ],
+      "de_facto_since": "1967, annexed 1981",
+      "de_jure": "Syria",
+      "ne_admin": "Israel",
+      "ne_sovereignt": "Israel",
+      "ne_type": "Disputed (entire Israel feature)",
+      "separate_unit": false
+    },
+    {
+      "territory": "West Bank / Gaza",
+      "test_points": [
+        "Ramallah",
+        "Gaza City"
+      ],
+      "de_facto_since": "1967",
+      "de_jure": "Palestine",
+      "ne_admin": "Palestine",
+      "ne_sovereignt": "Israel",
+      "ne_type": "Indeterminate",
+      "separate_unit": true
+    },
+    {
+      "territory": "Kuril Islands",
+      "test_points": [
+        "Yuzhno-Kurilsk"
+      ],
+      "de_facto_since": "1945",
+      "de_jure": "claimed by Japan",
+      "ne_admin": "Russia",
+      "ne_sovereignt": "Russia",
+      "ne_type": "Sovereign country",
+      "separate_unit": false
+    },
+    {
+      "territory": "Kashmir (Pakistan-administered)",
+      "test_points": [
+        "Gilgit"
+      ],
+      "de_facto_since": "1947",
+      "de_jure": "disputed",
+      "ne_admin": "Pakistan",
+      "ne_sovereignt": "Pakistan",
+      "ne_type": "Sovereign country",
+      "separate_unit": false
+    },
+    {
+      "territory": "Kashmir (India-administered)",
+      "test_points": [
+        "Srinagar"
+      ],
+      "de_facto_since": "1947",
+      "de_jure": "disputed",
+      "ne_admin": "India",
+      "ne_sovereignt": "India",
+      "ne_type": "Sovereign country",
+      "separate_unit": false
+    }
+  ],
+  "disputed_areas_layer": {
+    "crimea_entry": {
+      "name": "Crimea",
+      "sovereignt": "Russia",
+      "admin": "Russia",
+      "note": "Admin. by Russia; Claimed by Ukraine"
+    },
+    "russia_backed_entries_kept_de_jure": [
+      {
+        "name": "Donetsk People's Republic",
+        "sovereignt": "Ukraine",
+        "note": "Self admin.; Claimed by Ukraine"
+      },
+      {
+        "name": "Luhansk People's Republic",
+        "sovereignt": "Ukraine",
+        "note": "Self admin.; Claimed by Ukraine"
+      },
+      {
+        "name": "Abkhazia",
+        "sovereignt": "Georgia",
+        "note": "Self admin.; Claimed by Georgia"
+      },
+      {
+        "name": "South Ossetia",
+        "sovereignt": "Georgia",
+        "note": "Self admin.; Claimed by Georgia"
+      },
+      {
+        "name": "Transnistria",
+        "sovereignt": "Moldova",
+        "note": "Self admin.; Claimed by Moldova"
+      },
+      {
+        "name": "Artsakh",
+        "sovereignt": "Azerbaijan",
+        "note": "Self admin.; Claimed by Azer."
+      }
+    ],
+    "note": "Crimea is the ONLY entry in the disputed_areas layer where a Russia-linked territory's SOVEREIGNT is assigned to Russia rather than the de jure state or its own unit."
+  },
+  "pov_variants": {
+    "default": "Crimea -> Russia (Sovereign country, no feature-level dispute marker)",
+    "ne_10m_admin_0_countries_usa": "Crimea -> Ukraine (Sovereign country)",
+    "ne_10m_admin_0_countries_ukr": "Crimea -> Ukraine (Sovereign country)",
+    "ne_10m_admin_0_countries_iso": "Crimea -> unassigned hole (in neither Russia nor Ukraine polygon)",
+    "note": "Downstream distributions (world-atlas, geopandas, cartopy) ship only the default file; POV variants and disputed_areas overlay are opt-in and effectively never propagate."
+  }
+}

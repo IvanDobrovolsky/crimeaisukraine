@@ -668,6 +668,21 @@ const mediaViolatorsByFilter = mediaViolators as any;
       }</p>
     </div>
 
+    <!-- Link to interactive consistency audit -->
+    <a href="/natural-earth-audit" class="block mb-6 bg-gradient-to-r from-[#CD2E4A]/20 to-[#D4860B]/10 border border-[#CD2E4A]/40 hover:border-[#CD2E4A] rounded-xl p-4 transition group">
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <div class="font-bold text-[#333333] group-hover:text-[#CD2E4A] transition">{lang === 'uk'
+            ? 'Інтерактив: чи є «de facto»-політика Natural Earth насправді політикою? →'
+            : 'Interactive: Is Natural Earth\u2019s \u201Cde facto\u201D policy actually a policy? \u2192'}</div>
+          <div class="text-xs text-[#555555] mt-1">{lang === 'uk'
+            ? 'Кожна спірна територія у власних даних NE — на мапі та в таблиці. Серед територій, пов\u2019язаних з Росією, правило застосовано рівно один раз: Крим. Власні POV-файли NE (USA, ISO) суперечать дефолту.'
+            : 'Every disputed territory in NE\u2019s own data, mapped and classified. Among Russia-linked territories the rule is applied exactly once: Crimea. NE\u2019s own POV files (USA, ISO) contradict the default.'}</div>
+        </div>
+        <span class="text-2xl shrink-0">🗺️</span>
+      </div>
+    </a>
+
     <!-- 5-stat header row -->
     <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
       <div class="bg-[#FFFFFF] rounded-xl p-4 border border-[#CD2E4A]/30 text-center">
